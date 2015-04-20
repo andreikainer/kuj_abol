@@ -7,4 +7,3 @@ Developers:
 3. Olga Smirnova
 
 Designed and developed for AK Sponsoring-Agentur GmbH# kinderfoerderungen.at
-check olga
