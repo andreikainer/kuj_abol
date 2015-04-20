@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration {
             $table->text('full_desc')->nullable();
             $table->float('target_amount')->nullable();
             $table->string('child_name', 20)->nullable();
+            $table->string('slug');
             $table->integer('user_id')->unsigned();
             $table->boolean('approved')->default(0);
             $table->boolean('succ_funded')->default(0);
