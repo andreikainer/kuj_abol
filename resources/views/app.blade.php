@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
     <!-- Slick-theme.css for default styling -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css"/>
-        <link rel="stylesheet" type="text/css"href="assets/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 	<!-- Fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
