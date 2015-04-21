@@ -4857,5 +4857,7 @@ html {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     color: #6f798b; }
 
+body {
+  padding-top: 6.25rem; }
 
 /*# sourceMappingURL=app.css.map */
