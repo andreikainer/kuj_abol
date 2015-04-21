@@ -2,12 +2,6 @@
   /*-- BASIC STYLES FOR THE HTML AND BODY --*/
 /*------------------------------------------------------------------*/
 html {
-  background-color: $lgrey;
-  color: $text;
-
-  font-family: $lato;
-  font-size: 1rem;
-  line-height: 1.65em;
 
   h1 {
     color: $white;
@@ -19,6 +13,31 @@ html {
   }
 }
 
+ul {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
 body {
   padding-top: 6.25rem;
+  background-color: $lgrey;
+  color: $text;
+  font-family: $lato;
+  font-size: 1rem;
+  line-height: 1.65em;
+}
+
+.heading {
+  padding-top: 0.65rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: $dgrey;
+  border-top: 1px solid $dgrey;
+}
+
+.mt-3em {
+  margin-top: 3rem;
 }

@@ -4819,17 +4819,49 @@ button.close {
     display: none !important; } }
 
 /*------------------------------------------------------------------*/
+/*-- MIXINS --*/
+/*------------------------------------------------------------------*/
+/*-- Transition --*/
+/*-- Border radius --*/
+/*-- Tint and Shade --*/
+/*------------------------------------------------------------------*/
 /*-- COLORS --*/
 /*------------------------------------------------------------------*/
 /*------------------------------------------------------------------*/
 /*-- FONTS --*/
 /*------------------------------------------------------------------*/
 /*------------------------------------------------------------------*/
-/*-- MIXINS --*/
+/*-- BASIC STYLES FOR THE HTML AND BODY --*/
 /*------------------------------------------------------------------*/
-/*-- Transition --*/
-/*-- Border radius --*/
-/*-- Tint and Shade --*/
+html h1 {
+  color: white; }
+html h2 {
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  color: #6f798b; }
+
+ul {
+  padding: 0; }
+  ul li {
+    list-style: none; }
+
+body {
+  padding-top: 6.25rem;
+  background-color: #f9f9f9;
+  color: #4b4b4b;
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.65em; }
+
+.heading {
+  padding-top: 0.65rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  border-top: 1px solid #d2d2d2; }
+
+.mt-3em {
+  margin-top: 3rem; }
+
 /*------------------------------------------------------------------*/
 /*-- BUTTONS --*/
 /*------------------------------------------------------------------*/
@@ -4839,25 +4871,67 @@ button.close {
 /*------------------------------------------------------------------*/
 /*-- FORMS --*/
 /*------------------------------------------------------------------*/
+.form-error {
+  padding: 0.65rem;
+  color: #ed5a4d;
+  background: #f7bdb7;
+  border: 1px dashed #ed5a4d; }
+
+.form-label {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem; }
+
+.form-input {
+  width: 100%;
+  padding: 0.65rem;
+  font-size: 1.25rem;
+  border: 1px solid #d2d2d2;
+  border-top: 0.5rem solid #3fa3db; }
+  .form-input:focus {
+    outline: none !important;
+    box-shadow: none !important; }
+
+.form-border {
+  border: 1px solid #d2d2d2;
+  border-radius: 0.35rem; }
+
+.form-element {
+  background: white;
+  padding: 1.65rem; }
+
+.form-section-tab-container {
+  margin-bottom: -1px;
+  background: white;
+  border: 1px solid #d2d2d2;
+  border-bottom: 1px solid white;
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem; }
+
+.form-section-tab {
+  width: 20%;
+  float: left;
+  padding: 0.65rem 0.65rem 0.7rem 0.65rem;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  line-height: 3.25rem;
+  font-weight: bold;
+  background: #ededed;
+  border-bottom: 1px solid #d2d2d2;
+  border-right: 1px solid #d2d2d2; }
+  .form-section-tab:last-of-type {
+    border-right: none; }
+  @media all and (max-width: 900px) {
+    .form-section-tab {
+      font-size: 1rem; } }
+  @media all and (max-width: 500px) {
+    .form-section-tab {
+      font-size: 0.75rem; } }
+  @media all and (max-width: 350px) {
+    .form-section-tab {
+      font-size: 0.5rem; } }
+
 /*------------------------------------------------------------------*/
 /*-- CAROUSEL --*/
 /*------------------------------------------------------------------*/
-/*------------------------------------------------------------------*/
-/*-- BASIC STYLES FOR THE HTML AND BODY --*/
-/*------------------------------------------------------------------*/
-html {
-  background-color: tint(#4b4b4b, 97%);
-  color: #4b4b4b;
-  font-family: 'Lato', 'Open Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1.65em; }
-  html h1 {
-    color: white; }
-  html h2 {
-    font-family: 'Montserrat', 'Open Sans', sans-serif;
-    color: #6f798b; }
-
-body {
-  padding-top: 6.25rem; }
 
 /*# sourceMappingURL=app.css.map */

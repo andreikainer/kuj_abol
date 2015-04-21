@@ -90,7 +90,7 @@
                        				<li><a href="#">Page 1-3</a></li>
                      			</ul>
                   			</li>
-                   			<li><a href="#">CREATE PROJECT</a></li>
+                   			<li><a href="{{ action('PagesController@createProject') }}">CREATE PROJECT</a></li>
                    			<li><a href="#">CONTRIBUTE</a></li>
                  		</ul>
 
@@ -106,7 +106,7 @@
 
 
 <!--================== Main Content =================================================-->
-        <div class="container-fluid" role="main">
+        <div class="row" role="main">
 
 	        @yield('content')
 
