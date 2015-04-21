@@ -8,16 +8,16 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <ul class="form-section-tab-container clearfix">
-                    {{--<li class="form-section-tab text-center">Start</li>--}}
-                    {{--<li class="form-section-tab text-center">Project Details</li>--}}
-                    {{--<li class="form-section-tab text-center">Your Details</li>--}}
-                    {{--<li class="form-section-tab text-center">Supporting Evidence</li>--}}
-                    {{--<li class="form-section-tab text-center">Summary</li>--}}
                     <li class="form-section-tab text-center">Start</li>
-                    <li class="form-section-tab text-center">Projektdetails</li>
-                    <li class="form-section-tab text-center">Deine Angaben</li>
-                    <li class="form-section-tab text-center">Antragsunterlagen</li>
-                    <li class="form-section-tab text-center">Zusammenfassung</li>
+                    <li class="form-section-tab text-center">Project Details</li>
+                    <li class="form-section-tab text-center">Your Details</li>
+                    <li class="form-section-tab text-center">Supporting Evidence</li>
+                    <li class="form-section-tab text-center">Summary</li>
+                    {{--<li class="form-section-tab text-center">Start</li>--}}
+                    {{--<li class="form-section-tab text-center">Projektdetails</li>--}}
+                    {{--<li class="form-section-tab text-center">Deine Angaben</li>--}}
+                    {{--<li class="form-section-tab text-center">Antragsunterlagen</li>--}}
+                    {{--<li class="form-section-tab text-center">Zusammenfassung</li>--}}
                 </ul>
             </div>
         </div>

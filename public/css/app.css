@@ -4908,9 +4908,9 @@ body {
   border-top-right-radius: 0.35rem; }
 
 .form-section-tab {
-  width: 20%;
+  min-width: 20%;
   float: left;
-  padding: 0.65rem 0.65rem 0.7rem 0.65rem;
+  padding: 0.65rem 0 0.7rem 0;
   box-sizing: border-box;
   font-size: 1.25rem;
   line-height: 3.25rem;
@@ -4920,15 +4920,26 @@ body {
   border-right: 1px solid #d2d2d2; }
   .form-section-tab:last-of-type {
     border-right: none; }
-  @media all and (max-width: 900px) {
+  @media all and (max-width: 1020px) {
     .form-section-tab {
       font-size: 1rem; } }
-  @media all and (max-width: 500px) {
+  @media all and (max-width: 560px) {
     .form-section-tab {
-      font-size: 0.75rem; } }
-  @media all and (max-width: 350px) {
+      min-width: 18%; }
+      .form-section-tab:nth-of-type(4) {
+        width: 28%; } }
+  @media all and (max-width: 490px) {
     .form-section-tab {
-      font-size: 0.5rem; } }
+      min-width: 21.5%;
+      font-size: 0.75rem; }
+      .form-section-tab:nth-of-type(1) {
+        min-width: 15% !important;
+        max-width: 15% !important; }
+      .form-section-tab:nth-of-type(2) {
+        min-width: 18% !important;
+        max-width: 18% !important; }
+      .form-section-tab:nth-of-type(4) {
+        max-width: 24%; } }
 
 /*------------------------------------------------------------------*/
 /*-- CAROUSEL --*/
