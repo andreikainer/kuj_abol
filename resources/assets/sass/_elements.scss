@@ -35,6 +35,7 @@
 
 .form-label {
   font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 1.25rem;
 }
 
@@ -62,9 +63,8 @@
 }
 
 .form-section-tab-container {
-  margin-bottom: -1px;
+  margin-bottom: -5px;
   background: $white;
-  border: 1px solid $dgrey;
   border-bottom: 1px solid $white;
   border-top-left-radius: 0.35rem;
   border-top-right-radius: 0.35rem;
@@ -80,11 +80,20 @@
   line-height: 3.25rem;
   font-weight: bold;
   background: tint($text, 90%);
+  border-top: 4px solid $bluegrey;
   border-bottom: 1px solid $dgrey;
   border-right: 1px solid $dgrey;
+  border-top-right-radius: 0.35rem;
+  border-top-left-radius: 0.35rem;
+  transition: background 0.3s ease;
 
-  &:last-of-type {
-    border-right: none;
+  &:hover {
+    cursor: pointer;
+    background: tint($dgrey, 92%);
+  }
+
+  &:first-of-type {
+    border-left: 1px solid $dgrey;
   }
 
   @media all and (max-width: 1020px) {
@@ -117,6 +126,22 @@
       max-width: 24%;
     }
   }
+}
+
+.form-section-tab-active {
+  background: $white;
+  border-top: 4px solid $blue;
+  border-bottom: none;
+  color: $blue;
+
+  &:hover {
+    background: $white;
+  }
+}
+
+.form-radius-btm-only {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 
