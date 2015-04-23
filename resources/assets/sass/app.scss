@@ -220,70 +220,70 @@ $flag-y: 2.3rem !default;
 footer {
   margin-top: 1rem;
   background-color: $bluegrey;
-}
 
-.socialmedia button {
-  margin: 0 auto;
-  background-color: $blue;
-}
-.socialmedia a {
-  display: inline-block;
-}
-.socialmedia>div {
-  width: 12rem;
-  margin: 0 auto;
-}
-.socialmedia div:nth-child(3) {
-  width: 100%;
-}
-.socialmedia form {
-  width: 21.6rem;
-  margin: 0 auto;
-}
-.socialmedia form div:first-of-type {
-  display: inline-block;
-  width: 16rem;
-  margin-top: .9rem;
-  vertical-align: middle;
-  @media(min-width: 768px) {
-    width: 11rem;
+  .socialmedia button {
+    margin: 0 auto;
+    background-color: $blue;
   }
-}
-.socialmedia input {
-  width: 16rem;
-  @media(min-width: 768px) {
-    width: 11rem;
+  .socialmedia a {
+    display: inline-block;
   }
-}
-#newsletter {
-  display: inline-block;
-  background-color: $dgrey;
-}
-
-.footer-text-content a, h5, p {
-  display: block;
-  color: $white;
-
-}
-.footer-text-content h5 {
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-.footer-text-content a {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.7rem;
-  text-decoration: underline;
-
-  @media(min-width: 768px) {
-    font-size: .8rem;
+  .socialmedia > div {
+    width: 12rem;
+    margin: 0 auto;
   }
-}
-.footer-text-content p {
-  font-weight: 100;
-}
-.footer-text-content p a {
-  display: inline-block;
-  line-height: auto;
-  vertical-align: top;
+  .socialmedia div:nth-child(3) {
+    width: 100%;
+  }
+  .socialmedia form {
+    width: 21.6rem;
+    margin: 0 auto;
+  }
+  .socialmedia form div:first-of-type {
+    display: inline-block;
+    width: 16rem;
+    margin-top: .9rem;
+    vertical-align: middle;
+    @media(min-width: 768px) {
+      width: 11rem;
+    }
+  }
+  .socialmedia input {
+    width: 16rem;
+    @media(min-width: 768px) {
+      width: 11rem;
+    }
+  }
+  #newsletter {
+    display: inline-block;
+    background-color: $dgrey;
+  }
+
+  .footer-text-content a, h5, p {
+    display: block;
+    color: $white;
+
+  }
+  .footer-text-content h5 {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  .footer-text-content a {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    text-decoration: underline;
+
+    @media(min-width: 768px) {
+      font-size: .8rem;
+    }
+  }
+  .footer-text-content p {
+    font-weight: 100;
+  }
+  .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top;
+  }
 }

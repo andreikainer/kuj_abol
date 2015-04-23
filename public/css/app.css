@@ -5301,68 +5301,55 @@ hr {
 footer {
   margin-top: 1rem;
   background-color: #6f798b; }
-
-.socialmedia button {
-  margin: 0 auto;
-  background-color: #3fa3db; }
-
-.socialmedia a {
-  display: inline-block; }
-
-.socialmedia > div {
-  width: 12rem;
-  margin: 0 auto; }
-
-.socialmedia div:nth-child(3) {
-  width: 100%; }
-
-.socialmedia form {
-  width: 21.6rem;
-  margin: 0 auto; }
-
-.socialmedia form div:first-of-type {
-  display: inline-block;
-  width: 16rem;
-  margin-top: .9rem;
-  vertical-align: middle; }
-  @media (min-width: 768px) {
-    .socialmedia form div:first-of-type {
-      width: 11rem; } }
-
-.socialmedia input {
-  width: 16rem; }
-  @media (min-width: 768px) {
-    .socialmedia input {
-      width: 11rem; } }
-
-#newsletter {
-  display: inline-block;
-  background-color: #d2d2d2; }
-
-.footer-text-content a, h5, p {
-  display: block;
-  color: white; }
-
-.footer-text-content h5 {
-  font-size: 1.2rem;
-  font-weight: 300; }
-
-.footer-text-content a {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.7rem;
-  text-decoration: underline; }
-  @media (min-width: 768px) {
-    .footer-text-content a {
-      font-size: .8rem; } }
-
-.footer-text-content p {
-  font-weight: 100; }
-
-.footer-text-content p a {
-  display: inline-block;
-  line-height: auto;
-  vertical-align: top; }
+  footer .socialmedia button {
+    margin: 0 auto;
+    background-color: #3fa3db; }
+  footer .socialmedia a {
+    display: inline-block; }
+  footer .socialmedia > div {
+    width: 12rem;
+    margin: 0 auto; }
+  footer .socialmedia div:nth-child(3) {
+    width: 100%; }
+  footer .socialmedia form {
+    width: 21.6rem;
+    margin: 0 auto; }
+  footer .socialmedia form div:first-of-type {
+    display: inline-block;
+    width: 16rem;
+    margin-top: .9rem;
+    vertical-align: middle; }
+    @media (min-width: 768px) {
+      footer .socialmedia form div:first-of-type {
+        width: 11rem; } }
+  footer .socialmedia input {
+    width: 16rem; }
+    @media (min-width: 768px) {
+      footer .socialmedia input {
+        width: 11rem; } }
+  footer #newsletter {
+    display: inline-block;
+    background-color: #d2d2d2; }
+  footer .footer-text-content a, footer h5, footer p {
+    display: block;
+    color: white; }
+  footer .footer-text-content h5 {
+    font-size: 1.2rem;
+    font-weight: 300; }
+  footer .footer-text-content a {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    text-decoration: underline; }
+    @media (min-width: 768px) {
+      footer .footer-text-content a {
+        font-size: .8rem; } }
+  footer .footer-text-content p {
+    font-weight: 100; }
+  footer .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top; }
 
 
 /*# sourceMappingURL=app.css.map */
