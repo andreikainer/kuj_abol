@@ -1,4 +1,4 @@
-{!! Form::open(['class' => 'form-element bt-none']) !!}
+{!! Form::open(['class' => 'form-element form-radius-btm-only bt-none']) !!}
 
     <fieldset id="cpp-section-1" class="create-project-fieldset">
         <div class="col-md-12 col-sm-12">
