@@ -4900,7 +4900,7 @@ body {
   border-radius: 0.35rem; }
 
 .form-section-tab-container {
-  margin-bottom: -2px;
+  margin-bottom: -1px;
   background: white;
   border-bottom: 1px solid white;
   border-top-left-radius: 0.35rem;
@@ -4965,6 +4965,10 @@ body {
 /*------------------------------------------------------------------*/
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
 /*------------------------------------------------------------------*/
+.create-project-fieldset {
+  padding: 1.65rem 0;
+  display: none; }
+
 .cpp-error {
   margin-top: 2.75rem; }
   @media all and (max-width: 768px) {
@@ -5009,6 +5013,9 @@ body {
   color: #3fa3db; }
   .evidence-explanation p:first-of-type {
     margin-top: 10px; }
+
+.bt-none {
+  border-top: none; }
 
 
 /*# sourceMappingURL=app.css.map */

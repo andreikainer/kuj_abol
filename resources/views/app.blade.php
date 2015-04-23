@@ -149,7 +149,7 @@
 
 <!-- ABOL js -->
 	<script src="{{ asset('/js/main.js') }}"></script>
-	<script>@yield('additional_js')</script> <!-- here you may put any additional js that is not necessary on the other pages -->
+	@yield('additional_js') <!-- here you may put any additional js that is not necessary on the other pages -->
 
 </body>
 </html>

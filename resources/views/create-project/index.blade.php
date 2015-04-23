@@ -9,21 +9,23 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <ul class="form-section-tab-container clearfix">
-                    <li class="form-section-tab form-section-tab-active text-center">Start</li>
-                    <li class="form-section-tab text-center">Project Details</li>
-                    <li class="form-section-tab text-center">Your Details</li>
-                    <li class="form-section-tab text-center">Supporting Evidence</li>
-                    <li class="form-section-tab text-center">Summary</li>
-                    {{--<li class="form-section-tab text-center">Start</li>--}}
-                    {{--<li class="form-section-tab text-center">Projektdetails</li>--}}
-                    {{--<li class="form-section-tab text-center">Deine Angaben</li>--}}
-                    {{--<li class="form-section-tab text-center">Antragsunterlagen</li>--}}
-                    {{--<li class="form-section-tab text-center">Zusammenfassung</li>--}}
+                    <li class="form-section-tab form-section-tab-active text-center" data-section="1">Start</li>
+                    <li class="form-section-tab text-center" data-section="2">Project Details</li>
+                    <li class="form-section-tab text-center" data-section="3">Your Details</li>
+                    <li class="form-section-tab text-center" data-section="4">Supporting Evidence</li>
+                    <li class="form-section-tab text-center" data-section="5">Summary</li>
+                    {{--<li class="form-section-tab text-center" data-section="1">Start</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="2">Projektdetails</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="3">Deine Angaben</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="4">Antragsunterlagen</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="5">Zusammenfassung</li>--}}
                 </ul>
             </div>
         </div> <!-- end section tabs -->
         <div class="row">
-            @include('forms.create-project-form')
+            <div class="col-md-12 col-sm-12">
+                @include('forms.create-project-form')
+            </div>
         </div> <!-- end form -->
     </div>
     <div class="col-md-4 col-sm-4 mt-3em">
@@ -31,4 +33,8 @@
             Aside content.
         </aside>
     </div>
+@endsection
+
+@section('additional_js')
+    <script src="{{ asset('js/create-project-page/create-project.js') }}"></script>
 @endsection

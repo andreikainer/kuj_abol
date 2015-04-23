@@ -1,6 +1,11 @@
 /*------------------------------------------------------------------*/
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
 /*------------------------------------------------------------------*/
+.create-project-fieldset {
+  padding: 1.65rem 0;
+  display: none;
+}
+
 .cpp-error {
   margin-top: 2.75rem;
 
@@ -54,4 +59,8 @@
   p:first-of-type {
     margin-top: 10px;
   }
+}
+
+.bt-none {
+  border-top: none;
 }
