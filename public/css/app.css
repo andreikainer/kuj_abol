@@ -4892,16 +4892,15 @@ body {
     outline: none !important;
     box-shadow: none !important; }
 
-.form-border {
+.form-element {
+  background: white;
+  padding-top: 1.65rem;
+  padding-bottom: 1.65rem;
   border: 1px solid #d2d2d2;
   border-radius: 0.35rem; }
 
-.form-element {
-  background: white;
-  padding: 1.65rem; }
-
 .form-section-tab-container {
-  margin-bottom: -5px;
+  margin-bottom: -2px;
   background: white;
   border-bottom: 1px solid white;
   border-top-left-radius: 0.35rem;
@@ -4951,7 +4950,7 @@ body {
 .form-section-tab-active {
   background: white;
   border-top: 4px solid #3fa3db;
-  border-bottom: none;
+  border-bottom: 1px solid white;
   color: #3fa3db; }
   .form-section-tab-active:hover {
     background: white; }
@@ -4966,10 +4965,11 @@ body {
 /*------------------------------------------------------------------*/
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
 /*------------------------------------------------------------------*/
-.create-project-fieldset {
-  padding: 3rem 0;
-  border: 1px solid red;
-  float: left; }
+.cpp-error {
+  margin-top: 2.75rem; }
+  @media all and (max-width: 768px) {
+    .cpp-error {
+      margin-top: 0.5rem; } }
 
 .image-upload-wrapper {
   position: relative !important; }
@@ -4995,12 +4995,6 @@ body {
   width: 100%;
   height: 100%;
   visibility: hidden; }
-
-.cpp-error {
-  margin-top: 2.75rem; }
-  @media all and (max-width: 768px) {
-    .cpp-error {
-      margin-top: 0.5rem; } }
 
 .label-desc {
   font-size: 1rem;

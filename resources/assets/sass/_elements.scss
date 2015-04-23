@@ -52,23 +52,20 @@
   }
 }
 
-.form-border {
+.form-element {
+  background: $white;
+  padding-top: 1.65rem;
+  padding-bottom: 1.65rem;
   border: 1px solid $dgrey;
   @include border-radius(0.35rem);
 }
 
-.form-element {
-  background: $white;
-  padding: 1.65rem;
-}
-
 .form-section-tab-container {
-  margin-bottom: -5px;
+  margin-bottom: -2px;
   background: $white;
   border-bottom: 1px solid $white;
   border-top-left-radius: 0.35rem;
   border-top-right-radius: 0.35rem;
-
 }
 
 .form-section-tab {
@@ -131,7 +128,7 @@
 .form-section-tab-active {
   background: $white;
   border-top: 4px solid $blue;
-  border-bottom: none;
+  border-bottom: 1px solid $white;
   color: $blue;
 
   &:hover {

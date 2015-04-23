@@ -1,23 +1,33 @@
-{!! Form::open(['class' => 'form-border form-element form-radius-btm-only clearfix']) !!}
+{!! Form::open() !!}
 
-    <fieldset class="col-md-12 col-sm-12 create-project-fieldset">
-        @include('forms.partials.create-project-start')
+    <fieldset class="create-project-fieldset">
+        <div class="col-md-12 col-sm-12">
+            @include('forms.partials.create-project-start')
+        </div>
     </fieldset>
 
-    <fieldset class="col-md-12 col-sm-12 create-project-fieldset">
-        @include('forms.partials.create-project-proj-details')
+    <fieldset class="create-project-fieldset">
+        <div class="col-md-12 col-sm-12">
+            @include('forms.partials.create-project-proj-details')
+        </div>
     </fieldset>
 
-    <fieldset class="col-md-12 col-sm-12 create-project-fieldset">
-        @include('forms.partials.create-project-your-details')
+    <fieldset class="create-project-fieldset">
+        <div class="col-md-12 col-sm-12">
+            @include('forms.partials.create-project-your-details')
+        </div>
     </fieldset>
 
-    <fieldset class="col-md-12 col-sm-12 create-project-fieldset">
-        @include('forms.partials.create-project-supporting-evidence')
+    <fieldset class="create-project-fieldset">
+        <div class="col-md-12 col-sm-12">
+            @include('forms.partials.create-project-supporting-evidence')
+        </div>
     </fieldset>
 
-    <fieldset class="col-md-12 col-sm-12 create-project-fieldset">
-        @include('forms.partials.create-project-summary')
+    <fieldset class="create-project-fieldset">
+        <div class="col-md-12 col-sm-12">
+            @include('forms.partials.create-project-summary')
+        </div>
     </fieldset>
 
 {!! Form::close() !!}

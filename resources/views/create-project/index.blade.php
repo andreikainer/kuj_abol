@@ -22,10 +22,12 @@
                 </ul>
             </div>
         </div> <!-- end section tabs -->
-        @include('forms.create-project-form')
+        <div class="row">
+            @include('forms.create-project-form')
+        </div> <!-- end form -->
     </div>
     <div class="col-md-4 col-sm-4 mt-3em">
-        <aside class="form-element form-border">
+        <aside class="form-element">
             Aside content.
         </aside>
     </div>
