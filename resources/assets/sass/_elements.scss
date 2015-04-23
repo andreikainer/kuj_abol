@@ -1,16 +1,163 @@
 /*------------------------------------------------------------------*/
+/*-- CLASSES --*/
+/*------------------------------------------------------------------*/
+
+/*-- to remove blue frame from links, buttons and input fields --*/
+.no-ouline {
+  onutline: none;
+}
+
+/*-- to give an elem white bg color --*/
+.white-bg {
+  background-color: $white;
+}
+
+/*-- to center align the block --*/
+.alignme-center {
+  @media(min-width: 768px) {
+    display: inline-block;
+  }
+}
+
+/*-- messages for old browsers and users with disabled JS --*/
+.message {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 1000;
+  margin-top: -.61em;
+  padding: 1em;
+  background-color: $orange;
+}
+.message p {
+  font-family: $lato;
+  font-size: 1.3em;
+  font-weight: 100;
+  color: white;
+}
+
+
+
+
+/*------------------------------------------------------------------*/
   /*-- BUTTONS --*/
 /*------------------------------------------------------------------*/
-.button-main {}
 
-.button-sec {}
+/*-- main CTA's buttons --*/
+.button-main, .button-main:link, .button-main:visited {
+  @extend .no-outline;
 
-.button-circle {}
+  background-color: $blue;
+  color: $white;
+  border-color: $blue;
+
+  font-family: $lato;
+  letter-spacing: .06em;
+
+}
+.button-main:hover, .button-main:active {
+  background-color: darken($blue, 10%);
+  color: $white;
+}
+
+
+/*-- secondary CTA's buttons --*/
+.button-sec, .button-sec:link, .button-sec:visited  {
+  @extend .no-outline;
+
+  background-color: $bluegrey;
+  color: $white;
+}
+.button-sec:hover, .button-sec:active {
+  color: $white;
+}
+
+/*-- LOG IN and REGISTER buttons --*/
+.button-user {
+//  width: 6.4em; GOOD FOR ENG
+  width: 7.2em;
+}
+
+
+/*-- for HELP, SEARCH, HUMBURGER, LANGUAGE CHOOSING buttons --*/
+.button-circle, .button-circle:link, .button-circle:visited {
+  @extend .no-outline;
+
+  width: 2.45rem;
+  margin-right: .2em;
+  margin-bottom: 0;
+  border-radius: 50%;
+
+  background-color: $bluegrey;
+  color: $white;
+}
+.button-circle:hover, .button-circle:active {
+  background-color: $dgrey;
+}
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.0.2
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ * Hover.css Copyright Ian Lunn 2014. Generated with Sass.
+ */
+/* Push */
+@-webkit-keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.hvr-push {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+  -webkit-animation-name: hvr-push;
+  animation-name: hvr-push;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+
 
 .button-link {}
 
 .button-transparent {}
-
 
 
 /*------------------------------------------------------------------*/

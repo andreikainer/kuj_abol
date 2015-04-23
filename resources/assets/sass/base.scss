@@ -2,12 +2,21 @@
   /*-- BASIC STYLES FOR THE HTML AND BODY --*/
 /*------------------------------------------------------------------*/
 html {
+  min-width: 20rem;
+
   background-color: $lgrey;
   color: $text;
 
-  font-family: $lato;
   font-size: 1rem;
   line-height: 1.65em;
+}
+
+body {
+  padding-top: 5rem;
+  background-color: pink;
+
+  color: $text;
+  font-family: $lato;
 
   h1 {
     color: $white;
@@ -17,8 +26,11 @@ html {
     font-family: $montserrat;
     color: $bluegrey;
   }
-}
 
-body {
-  padding-top: 6.25rem;
+  @media(min-width: 768px) {
+    padding-top: 11em;
+  }
+  @media(min-width: 992px) {
+    padding-top: 7em;
+  }
 }
