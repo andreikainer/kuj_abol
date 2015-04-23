@@ -4852,7 +4852,7 @@ body {
     color: #6f798b; }
   @media (min-width: 768px) {
     body {
-      padding-top: 11em; } }
+      padding-top: 11rem; } }
   @media (min-width: 992px) {
     body {
       padding-top: 7em; } }
@@ -4906,11 +4906,15 @@ body {
 
 /*-- secondary CTA's buttons --*/
 .button-sec, .button-sec:link, .button-sec:visited {
-  background-color: #6f798b;
-  color: white; }
+  background-color: #d2d2d2;
+  color: #4b4b4b;
+  border-color: #d2d2d2;
+  font-weight: 700; }
 
 .button-sec:hover, .button-sec:active {
-  color: white; }
+  color: white;
+  background-color: #b8b8b8;
+  border-color: #b8b8b8; }
 
 /*-- LOG IN and REGISTER buttons --*/
 .button-user {
@@ -4924,9 +4928,6 @@ body {
   border-radius: 50%;
   background-color: #6f798b;
   color: white; }
-
-.button-circle:hover, .button-circle:active {
-  background-color: #d2d2d2; }
 
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)
@@ -5043,19 +5044,10 @@ body {
       #main_nav ul > li a:hover, #main_nav ul > li a:active {
         color: #3fa3db; }
       #main_nav ul > li:nth-child(3) {
-        margin-left: 5em; }
-      @media (min-width: 768px) and (max-width: 820px) {
-        #main_nav ul > li:nth-child(4) {
-          margin-left: 3em;
-          margin-right: 3em; } }
-      @media (min-width: 821px) and (max-width: 970px) {
-        #main_nav ul > li:nth-child(4) {
-          margin-left: 5em;
-          margin-right: 5em; } }
-      @media (min-width: 971px) and (max-width: 991px) {
-        #main_nav ul > li:nth-child(4) {
-          margin-left: 8em;
-          margin-right: 8em; } }
+        margin-left: 4.6rem; }
+      #main_nav ul > li:nth-child(4) {
+        margin-left: 3.2rem;
+        margin-right: 3.2rem; }
       #main_nav ul li > ul li {
         margin-left: 0;
         margin-right: 0; }
@@ -5069,10 +5061,7 @@ body {
     #main_nav {
       margin-top: 3.48em; }
       #main_nav ul > li:not(last-child) {
-        margin-right: 2em; }
-        @media (min-width: 992px) and (max-width: 1064px) {
-          #main_nav ul > li:not(last-child) {
-            margin-right: 1em; } }
+        margin-right: 1.4rem; }
       #main_nav ul > li a, #main_nav ul > li a:link, #main_nav ul > li a:visited {
         border-top: solid .25em white;
         padding: .465em; }
@@ -5085,7 +5074,7 @@ body {
 
 /*-- the line that separates main menu links on small view --*/
 hr {
-  width: 120%;
+  width: 130%;
   margin-top: 0;
   margin-bottom: 0; }
 
@@ -5097,7 +5086,7 @@ hr {
   margin-bottom: .5em; }
   @media (max-width: 1199px) and (min-width: 1100px) {
     .circles {
-      padding-left: 60px; } }
+      padding-left: 3.75em; } }
   @media (min-width: 992px) {
     .circles {
       padding-left: 3.5em; } }
@@ -5149,10 +5138,70 @@ hr {
 /*-- Footer styles --*/
 /*------------------------------------------------------------------*/
 footer {
+  margin-top: 1rem;
   background-color: #6f798b; }
 
 .socialmedia button {
+  margin: 0 auto;
   background-color: #3fa3db; }
+
+.socialmedia a {
+  display: inline-block; }
+
+.socialmedia > div {
+  width: 12rem;
+  margin: 0 auto; }
+
+.socialmedia div:nth-child(3) {
+  width: 100%; }
+
+.socialmedia form {
+  width: 21.6rem;
+  margin: 0 auto; }
+
+.socialmedia form div:first-of-type {
+  display: inline-block;
+  width: 16rem;
+  margin-top: .9rem;
+  vertical-align: middle; }
+  @media (min-width: 768px) {
+    .socialmedia form div:first-of-type {
+      width: 11rem; } }
+
+.socialmedia input {
+  width: 16rem; }
+  @media (min-width: 768px) {
+    .socialmedia input {
+      width: 11rem; } }
+
+#newsletter {
+  display: inline-block;
+  background-color: #d2d2d2; }
+
+.footer-text-content a, h5, p {
+  display: block;
+  color: white; }
+
+.footer-text-content h5 {
+  font-size: 1.2rem;
+  font-weight: 300; }
+
+.footer-text-content a {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7rem;
+  text-decoration: underline; }
+  @media (min-width: 768px) {
+    .footer-text-content a {
+      font-size: .8rem; } }
+
+.footer-text-content p {
+  font-weight: 100; }
+
+.footer-text-content p a {
+  display: inline-block;
+  line-height: auto;
+  vertical-align: top; }
 
 
 /*# sourceMappingURL=app.css.map */

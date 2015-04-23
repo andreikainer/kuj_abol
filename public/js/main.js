@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    console.log('pipa');
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -65,6 +66,7 @@ $(document).ready(function(){
  */
     function changeCircleBtnGroupAlignment()
     {
+        console.log('polo');
         $('.circles').toggleClass('col-sm-4', false)
                         .toggleClass('col-sm-push-5', false)
                         .toggleClass('col-sm-3', true)
@@ -73,6 +75,7 @@ $(document).ready(function(){
 
     if($(window).innerWidth() > 887 && $(window).innerWidth() < 992)
     {
+        console.log('marko');
         changeCircleBtnGroupAlignment();
     }
 });

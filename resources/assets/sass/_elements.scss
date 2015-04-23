@@ -65,11 +65,16 @@
 .button-sec, .button-sec:link, .button-sec:visited  {
   @extend .no-outline;
 
-  background-color: $bluegrey;
-  color: $white;
+  background-color: $dgrey;
+  color: $text;
+  border-color: $dgrey;
+
+  font-weight: 700;
 }
 .button-sec:hover, .button-sec:active {
   color: $white;
+  background-color: darken($dgrey, 10%);
+  border-color: darken($dgrey, 10%);
 }
 
 /*-- LOG IN and REGISTER buttons --*/
@@ -90,9 +95,6 @@
 
   background-color: $bluegrey;
   color: $white;
-}
-.button-circle:hover, .button-circle:active {
-  background-color: $dgrey;
 }
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)

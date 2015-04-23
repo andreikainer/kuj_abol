@@ -24,7 +24,7 @@
 
 
 	<!-- Fonts -->
-	    <link href='http://fonts.googleapis.com/css?family=Lato:100,300&subset=latin-ext' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,700&subset=latin-ext' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
     <!-- Font awesome -->
         <link rel="stylesheet" href="{{ asset('/css/font-awesome-4.2.0/css/font-awesome.min.css') }}">
@@ -157,40 +157,87 @@
 <!--================== Footer =================================================-->
 	        <footer role="complementary" class="clearfix row">
 
-	            <div class="col-md4 col-lg-4">
-
-	            </div>
-
             <!-- Social Media Buttons -->
-	            <div class="col-xs-12 col-sm-4 col-md4 col-lg-4 socialmedia">
-                <!-- youtube_btn -->
-                    <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw">
-                        <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="youtube">
-                            <i class="fa fa-youtube"></i>
-                        </button>
-                    </a>
-                <!-- googleplus_btn -->
-                <a href="https://plus.google.com/114913587570028591368/videos">
-                    <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="googleplus">
-                        <i class="fa fa-google-plus"></i>
-                    </button>
-                </a>
-                <!-- twitter_btn -->
-                <a href="https://twitter.com/KuJfoerderungen">
-                    <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="twitter">
-                        <i class="fa fa-twitter"></i>
-                    </button>
-                </a>
-                <!-- facebook_btn -->
-                <a href="https://www.facebook.com/kinderfoerderungen">
-                    <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="facebook">
-                        <i class="fa fa-facebook"></i>
-                    </button>
-                </a>
+	            <div class="col-xs-12 col-xs-pull-0 col-sm-4 col-sm-push-4 col-md4 col-lg-4 block socialmedia">
+	                <br>
+	                <div>
+	                <!-- facebook_btn -->
+                        <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center">
+                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="facebook">
+                                <i class="fa fa-facebook"></i>
+                            </button>
+                        </a>
+                    <!-- twitter_btn -->
+                        <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center">
+                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="twitter">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+                        </a>
+                    <!-- youtube_btn -->
+                        <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center">
+                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="youtube">
+                                <i class="fa fa-youtube-play"></i>
+                            </button>
+                        </a>
+                    <!-- googleplus_btn -->
+                        <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center">
+                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="googleplus">
+                                <i class="fa fa-google-plus"></i>
+                            </button>
+                        </a>
+                    </div>
+
+                    <div>
+                        <form class="form">
+                            <div class="form-group">
+                                <label class="hidden">Newsletter</label>
+                                <input type="email" class="form-control" placeholder="Newsletter">
+                            </div>
+                            <button type="submit" class="btn btn-default button-sec" id="newsletter">Sign up</button>
+                        </form>
+                    </div>
                 </div>
 
-                <div class="col-md4 col-lg-4">
 
+
+            <!-- Site Map -->
+	            <div class="col-xs-11 col-xs-push-1 col-sm-4 col-sm-pull-10 col-md-4 col-lg-4">
+                    <br>
+	                <div class="footer-text-content">
+	                    <h5>Sitemap</h5>
+	                    <a href="#">So funktionert's</a>
+	                    <a href="#">Ansuchen einreichen</a>
+	                    <a href="#">Fördern</a>
+
+	                    <br>
+
+	                    <a href="#">Blog</a>
+                        <a href="#">Sponsoren</a>
+
+                        <br>
+
+                        <a href="#">Allgemeine Geschäftsbedingungen</a>
+                        <a href="#">Impressum</a>
+	                </div>
+	            </div>
+
+
+            <!-- Contacts -->
+                <div class="col-xs-11 col-xs-push-1 col-sm-3 col-sm-pull-1 col-md-4 col-lg-4">
+                    <br><br>
+                    <div class="footer-text-content">
+                        <h5>Kontakte</h5>
+                        <p>address: <a href="#">Mühlhofstraße 3/2/12<br>
+                                                2524 Teesdorf Austria
+                                    </a>
+                        <p>email: <a href="#">wilhelmine.bauer@sponsoring-agentur.at</a>
+                        <p>phone: <a href="tel:+4366488299511">+43 664 8829 9511</a>
+
+                	    <br>
+
+                	    <p>&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
+                        <p>website gemacht <a href="#">ABOL</a></p>
+                	</div>
                 </div>
 
 
