@@ -2,6 +2,7 @@
 @import 'vars';
 @import 'base';
 @import 'elements';
+@import 'create_project_page';
 
 /*------------------------------------------------------------------*/
   /*-- Logo styles --*/
@@ -91,18 +92,6 @@
     ul>li:nth-child(4) {
       margin-left: 3.2rem;
       margin-right: 3.2rem;
-//      @media(min-width: 768px) and (max-width: 820px) {
-//        margin-left: 3em;
-//        margin-right: 3em;
-//      }
-//      @media(min-width: 821px) and (max-width: 970px) {
-//        margin-left: 5em;
-//        margin-right: 5em;
-//      }
-//      @media(min-width: 971px) and (max-width: 991px) {
-//        margin-left: 8em;
-//        margin-right: 8em;
-//      }
     }
     ul li>ul li {
       margin-left: 0;
@@ -233,7 +222,7 @@ footer {
     display: inline-block;
   }
 
-  .socialmedia>div {
+  .socialmedia > div {
     width: 10.5rem;
     margin: 0 auto;
   }
@@ -281,7 +270,7 @@ footer {
   .footer-text-content h5 {
     font-family: $montserrat;
     font-size: 1rem;
-/*-- to adjust the text size for different views --*/
+ /*-- to adjust the text size for different views --*/
     @media(min-width: 768px) and (max-width: 991px) {
       font-size: 1rem;
       line-height: 1rem;
@@ -295,7 +284,7 @@ footer {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.7rem;
-/*-- to adjust the text size for different views --*/
+ /*-- to adjust the text size for different views --*/
     @media(min-width: 768px) and (max-width: 991px) {
       font-size: .7rem;
       line-height: 1.2rem;
@@ -335,7 +324,7 @@ footer {
     }
   }
 
- /*-- to adjust the position of three footer's blocks --*/
+/*-- to adjust the position of three footer's blocks --*/
   @media(min-width: 992px) {
     div:nth-child(2) {
       left: -20rem;
@@ -344,5 +333,14 @@ footer {
 
   .no-bottom-margin {
     margin-bottom: 0;
+  }
+
+  .footer-text-content p {
+    font-weight: 100;
+  }
+  .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top;
   }
 }
