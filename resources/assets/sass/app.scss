@@ -81,7 +81,12 @@
 
 
     ul>li:nth-child(3) {
-      margin-left: 4.6rem;
+      @media(min-width: 768px) and (max-width: 991px) {
+        margin-left: 3rem;
+      }
+      @media(min-width: 911px) and (max-width: 991px) {
+        margin-left: 4.5rem;
+      }
     }
     ul>li:nth-child(4) {
       margin-left: 3.2rem;
@@ -120,12 +125,6 @@
     ul>li:not(last-child) {
       margin-right: 1.4rem;
     }
-//    ul>li:not(last-child) {
-//      @media(min-width: 992px) and (max-width: 1064px) {
-//        margin-right: 1em;
-//      }
-//  }
-
     ul>li a, ul>li a:link, ul>li a:visited {
       border-top: solid .25em $white;
       padding: .465em;
@@ -154,7 +153,7 @@ hr {
 .circles {
   display: inline-block;
   margin-bottom: .5em;
-//  padding-left: 3rem;
+
   @media(max-width: 1199px) and (min-width: 1100px) {
     padding-left: 3.75em;
   }
@@ -219,70 +218,131 @@ $flag-y: 2.3rem !default;
 footer {
   margin-top: 1rem;
   background-color: $bluegrey;
-}
 
-.socialmedia button {
-  margin: 0 auto;
-  background-color: $blue;
-}
-.socialmedia a {
-  display: inline-block;
-}
-.socialmedia>div {
-  width: 12rem;
-  margin: 0 auto;
-}
-.socialmedia div:nth-child(3) {
-  width: 100%;
-}
-.socialmedia form {
-  width: 21.6rem;
-  margin: 0 auto;
-}
-.socialmedia form div:first-of-type {
-  display: inline-block;
-  width: 16rem;
-  margin-top: .9rem;
-  vertical-align: middle;
-  @media(min-width: 768px) {
-    width: 11rem;
+  div {
+    margin-top: 1rem;
+    margin-bottom: 1em;
   }
-}
-.socialmedia input {
-  width: 16rem;
-  @media(min-width: 768px) {
-    width: 11rem;
+
+  .socialmedia button {
+    margin: 0 auto;
+    background-color: $blue;
   }
-}
-#newsletter {
-  display: inline-block;
-  background-color: $dgrey;
-}
 
-.footer-text-content a, h5, p {
-  display: block;
-  color: $white;
-
-}
-.footer-text-content h5 {
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-.footer-text-content a {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.7rem;
-  text-decoration: underline;
-
-  @media(min-width: 768px) {
-    font-size: .8rem;
+  .socialmedia a {
+    display: inline-block;
   }
-}
-.footer-text-content p {
-  font-weight: 100;
-}
-.footer-text-content p a {
-  display: inline-block;
-  line-height: auto;
-  vertical-align: top;
+
+  .socialmedia>div {
+    width: 10.5rem;
+    margin: 0 auto;
+  }
+
+  .socialmedia div:nth-child(2) {
+    width: 20rem;
+  }
+
+  .socialmedia div:nth-child(3) {
+    width: 100%;
+  }
+
+  .socialmedia form {
+    width: 21.6rem;
+    margin: 0 auto;
+  }
+
+  .socialmedia form div:first-of-type {
+    display: inline-block;
+    width: 16rem;
+    margin-top: .9rem;
+    vertical-align: middle;
+    @media(min-width: 768px) and (max-width: 991px) {
+      width: 11rem;
+    }
+  }
+
+  .socialmedia input {
+    width: 16rem;
+    @media(min-width: 768px) and (max-width: 991px) {
+      width: 11rem;
+    }
+  }
+
+  #newsletter {
+    display: inline-block;
+    background-color: $dgrey;
+  }
+
+  .footer-text-content a, h5, p {
+    display: block;
+    color: $white;
+  }
+
+  .footer-text-content h5 {
+    font-family: $montserrat;
+    font-size: 1rem;
+/*-- to adjust the text size for different views --*/
+    @media(min-width: 768px) and (max-width: 991px) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+    @media(min-width: 992px) {
+      font-size: .9rem;
+    }
+  }
+
+  .footer-text-content a, p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+/*-- to adjust the text size for different views --*/
+    @media(min-width: 768px) and (max-width: 991px) {
+      font-size: .7rem;
+      line-height: 1.2rem;
+    }
+    @media(min-width: 992px) {
+      font-size: .7rem;
+      line-height: 1rem;
+    }
+  }
+
+  .footer-text-content a {
+    text-decoration: underline;
+  }
+
+  .footer-text-content a:hover {
+    text-decoration: none;
+  }
+
+  .footer-text-content p {
+    font-weight: 100;
+    line-height: 1.4rem;
+    @media(min-width: 992px) {
+      line-height: 1rem;
+    }
+  }
+
+  .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top;
+  }
+
+  i {
+    margin-right: 1rem;
+    @media(min-width: 992px) {
+      margin-right: .6rem;
+    }
+  }
+
+ /*-- to adjust the position of three footer's blocks --*/
+  @media(min-width: 992px) {
+    div:nth-child(2) {
+      left: -20rem;
+    }
+  }
+
+  .no-bottom-margin {
+    margin-bottom: 0;
+  }
 }
