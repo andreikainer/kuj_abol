@@ -4844,9 +4844,7 @@ body {
   padding-top: 5rem;
   background-color: #f9f9f9;
   color: #4b4b4b;
-  font-family: 'Lato', 'Open Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1.65em; }
+  font-family: 'Lato', 'Open Sans', sans-serif; }
   @media (min-width: 768px) {
     body {
       padding-top: 10.1rem; } }
@@ -5381,16 +5379,22 @@ footer {
     display: inline-block;
     line-height: auto;
     vertical-align: top; }
-  footer i {
+  footer div:nth-child(3) i {
     margin-right: 1rem; }
     @media (min-width: 992px) {
-      footer i {
+      footer div:nth-child(3) i {
         margin-right: .6rem; } }
   @media (min-width: 992px) {
     footer div:nth-child(2) {
       left: -20rem; } }
   footer .no-bottom-margin {
     margin-bottom: 0; }
+  footer .footer-text-content p {
+    font-weight: 100; }
+  footer .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top; }
 
 
 /*# sourceMappingURL=app.css.map */
