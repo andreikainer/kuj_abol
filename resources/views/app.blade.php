@@ -71,10 +71,24 @@
 	                <div class="row">
                	        <div class="col-md-2 col-lg-2 navbar-header">
 
-                 	    <!-- hamburger_btn -->
-           			    	<button type="button" class="navbar-toggle collapsed button-circle humburger" data-toggle="collapse" data-target="#main_nav">
+                 	    <!-- hamburger_btn for mobile -->
+           			    	<button type="button" class="navbar-toggle collapsed button-circle mobile-circle-button" data-toggle="collapse" data-target="#main_nav">
            			    		<i class="fa fa-bars"></i>
            			    	</button>
+
+                        <!-- language_btn for mobile -->
+                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle">
+                            </button>
+
+                        <!-- ask question_btn -->
+                            <button type="button" class="navbar-toggle collapsed visible-xs button-circle mobile-circle-button" class="question" data-toggle="collapse" data-target="#help_modal">
+                                <i class="fa fa-question"></i>
+                            </button>
+
+           			    <!-- search_btn for mobile -->
+                            <button type="button" role="search" class="navbar-toggle collapsed visible-xs button-circle mobile-circle-button magnif" data-toggle="collapse" data-target="#search_modal">
+                                <i class="fa fa-search"></i>
+                            </button>
 
                  	    <!-- logo -->
            			    	<a href="#" class="navbar-brand logo">
@@ -88,16 +102,16 @@
                             <div>
                                 <div class="alignme-center clearfix">
                                 <!-- language_btn -->
-                                    <button type="button" class="navbar-toggle button-circle hvr-push flag gb" id="language-toggle">
+                                    <button type="button" class="navbar-toggle button-circle hvr-push flag gb language-toggle">
                                     </button>
 
                                 <!-- ask question_btn -->
-                                    <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="question" data-toggle="collapse" data-target="#help_modal">
+                                    <button type="button" class="navbar-toggle collapsed button-circle hvr-push" class="question" data-toggle="collapse" data-target="#help_modal">
                                         <i class="fa fa-question"></i>
                                     </button>
 
                                 <!-- search_btn -->
-                                    <button type="button" role="search" class="navbar-toggle collapsed button-circle hvr-push" id="magnifier" data-toggle="collapse" data-target="#search_modal">
+                                    <button type="button" role="search" class="navbar-toggle collapsed button-circle hvr-push magnif" id="magnifier" data-toggle="collapse" data-target="#search_modal">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
