@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
 
-Route::controllers([
+get('create-project', 'PagesController@createProject');
+
+get('/', 'HomeController@index');
+
+get::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);

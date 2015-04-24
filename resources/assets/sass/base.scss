@@ -13,19 +13,10 @@ html {
 
 body {
   padding-top: 5rem;
-  background-color: pink;
+  background-color: $lgrey;
 
   color: $text;
   font-family: $lato;
-
-  h1 {
-    color: $white;
-  }
-
-  h2 {
-    font-family: $montserrat;
-    color: $bluegrey;
-  }
 
   @media(min-width: 768px) {
     padding-top: 10.1rem;
@@ -33,4 +24,33 @@ body {
   @media(min-width: 992px) {
     padding-top: 7em;
   }
+}
+
+h1 {
+  color: $white;
+}
+
+h2 {
+  font-family: $montserrat;
+  color: $bluegrey;
+}
+
+ul {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+.heading {
+  padding-top: 0.65rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: $dgrey;
+  border-top: 1px solid $dgrey;
+}
+
+.mt-3em {
+  margin-top: 3rem;
 }
