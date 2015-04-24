@@ -12,11 +12,11 @@
 */
 
 
-get('create-project', 'PagesController@createProject');
+Route::get('create-project', 'PagesController@createProject');
 
-get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
-get::controllers([
+Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
