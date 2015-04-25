@@ -4844,9 +4844,7 @@ body {
   padding-top: 5rem;
   background-color: #f9f9f9;
   color: #4b4b4b;
-  font-family: 'Lato', 'Open Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1.65em; }
+  font-family: 'Lato', 'Open Sans', sans-serif; }
   @media (min-width: 768px) {
     body {
       padding-top: 10.1rem; } }
