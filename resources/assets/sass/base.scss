@@ -9,6 +9,7 @@ html {
 
   font-size: 1rem;
   line-height: 1.65em;
+
 }
 
 body {
@@ -43,9 +44,13 @@ ul {
   }
 }
 
+label {
+  font-weight: normal;
+}
+
 .heading {
   padding-top: 0.65rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   color: $dgrey;
   border-top: 1px solid $dgrey;

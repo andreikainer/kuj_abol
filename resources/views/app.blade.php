@@ -143,7 +143,7 @@
                             			<li><a href="#">Our Team</a></li>
                             		</ul>
                   	        	</li>
-                   	        	<li><a href="#">Ansuchen einreichen</a></li>
+                   	        	<li><a href="{{ action('PagesController@createProject') }}">Ansuchen einreichen</a></li>
                    	        	<li><a href="#">Fördern</a></li>
                  	        </ul>
                         </div>
@@ -287,7 +287,7 @@
 
 <!-- ABOL js -->
 	<script src="{{ asset('/js/main.js') }}"></script>
-	<script>@yield('additional_js')</script> <!-- here you may put any additional js that is not necessary on the other pages -->
+	@yield('additional_js') <!-- here you may put any additional js that is not necessary on the other pages -->
 
 </body>
 </html>

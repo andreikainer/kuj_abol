@@ -9,16 +9,16 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <ul class="form-section-tab-container clearfix">
+                    {{--<li class="form-section-tab form-section-tab-active text-center" data-section="1">Start</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="2">Project Details</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="3">Your Details</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="4">Supporting Evidence</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="5">Summary</li>--}}
                     <li class="form-section-tab form-section-tab-active text-center" data-section="1">Start</li>
-                    <li class="form-section-tab text-center" data-section="2">Project Details</li>
-                    <li class="form-section-tab text-center" data-section="3">Your Details</li>
-                    <li class="form-section-tab text-center" data-section="4">Supporting Evidence</li>
-                    <li class="form-section-tab text-center" data-section="5">Summary</li>
-                    {{--<li class="form-section-tab text-center" data-section="1">Start</li>--}}
-                    {{--<li class="form-section-tab text-center" data-section="2">Projektdetails</li>--}}
-                    {{--<li class="form-section-tab text-center" data-section="3">Deine Angaben</li>--}}
-                    {{--<li class="form-section-tab text-center" data-section="4">Antragsunterlagen</li>--}}
-                    {{--<li class="form-section-tab text-center" data-section="5">Zusammenfassung</li>--}}
+                    <li class="form-section-tab text-center" data-section="2">Projektdetails</li>
+                    <li class="form-section-tab text-center" data-section="3">Deine Angaben</li>
+                    <li class="form-section-tab text-center" data-section="4">Antragsunterlagen</li>
+                    <li class="form-section-tab text-center" data-section="5">Zusammenfassung</li>
                 </ul>
             </div>
         </div> <!-- end section tabs -->

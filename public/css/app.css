@@ -4864,9 +4864,12 @@ ul {
   ul li {
     list-style: none; }
 
+label {
+  font-weight: normal; }
+
 .heading {
   padding-top: 0.65rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   color: #d2d2d2;
   border-top: 1px solid #d2d2d2; }
@@ -5010,19 +5013,19 @@ ul {
   border: 1px dashed #ed5a4d; }
 
 .form-label {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1.25rem; }
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #6f798b; }
 
 .form-input {
   width: 100%;
-  padding: 0.65rem;
-  font-size: 1.25rem;
+  padding: 1.15rem 0.65rem 0.65rem 0.65rem;
   border: 1px solid #d2d2d2;
-  border-top: 0.5rem solid #3fa3db; }
+  border-top: none;
+  box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
   .form-input:focus {
-    outline: none !important;
-    box-shadow: none !important; }
+    outline: none !important; }
 
 .form-element {
   background: white;
@@ -5042,9 +5045,8 @@ ul {
   float: left;
   padding: 0.65rem 0 0.7rem 0;
   box-sizing: border-box;
-  font-size: 1.25rem;
-  line-height: 3.25rem;
-  font-weight: bold;
+  line-height: 2.25rem;
+  font-weight: 500;
   background: #ededed;
   border-top: 4px solid #6f798b;
   border-bottom: 1px solid #d2d2d2;
@@ -5057,26 +5059,6 @@ ul {
     background: #fbfbfb; }
   .form-section-tab:first-of-type {
     border-left: 1px solid #d2d2d2; }
-  @media all and (max-width: 1020px) {
-    .form-section-tab {
-      font-size: 1rem; } }
-  @media all and (max-width: 560px) {
-    .form-section-tab {
-      min-width: 18%; }
-      .form-section-tab:nth-of-type(4) {
-        width: 28%; } }
-  @media all and (max-width: 490px) {
-    .form-section-tab {
-      min-width: 21.5%;
-      font-size: 0.75rem; }
-      .form-section-tab:nth-of-type(1) {
-        min-width: 15% !important;
-        max-width: 15% !important; }
-      .form-section-tab:nth-of-type(2) {
-        min-width: 18% !important;
-        max-width: 18% !important; }
-      .form-section-tab:nth-of-type(4) {
-        max-width: 24%; } }
 
 .form-section-tab-active {
   background: white;
@@ -5099,6 +5081,8 @@ ul {
 .create-project-fieldset {
   padding: 1.65rem 0;
   display: none; }
+  .create-project-fieldset:first-of-type {
+    display: inherit; }
 
 .cpp-error {
   margin-top: 2.75rem; }
@@ -5119,8 +5103,6 @@ ul {
 
 .image-upload-label-heading {
   margin-top: 10px;
-  font-weight: 100;
-  font-size: 1.25rem;
   color: #3fa3db; }
 
 .image-upload-input {
@@ -5139,8 +5121,6 @@ ul {
   padding: 1.25rem;
   margin-bottom: 3rem;
   border: 1px solid #d2d2d2;
-  font-size: 1.25rem;
-  line-height: 2.25rem;
   color: #3fa3db; }
   .evidence-explanation p:first-of-type {
     margin-top: 10px; }
