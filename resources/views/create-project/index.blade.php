@@ -8,18 +8,27 @@
         <!-- Section Tabs -->
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <ul class="form-section-tab-container clearfix">
+                {{--<ul class="form-section-tab-container clearfix">--}}
                     {{--<li class="form-section-tab form-section-tab-active text-center" data-section="1">Start</li>--}}
                     {{--<li class="form-section-tab text-center" data-section="2">Project Details</li>--}}
                     {{--<li class="form-section-tab text-center" data-section="3">Your Details</li>--}}
                     {{--<li class="form-section-tab text-center" data-section="4">Supporting Evidence</li>--}}
                     {{--<li class="form-section-tab text-center" data-section="5">Summary</li>--}}
-                    <li class="form-section-tab form-section-tab-active text-center" data-section="1">Start</li>
-                    <li class="form-section-tab text-center" data-section="2">Projektdetails</li>
-                    <li class="form-section-tab text-center" data-section="3">Deine Angaben</li>
-                    <li class="form-section-tab text-center" data-section="4">Antragsunterlagen</li>
-                    <li class="form-section-tab text-center" data-section="5">Zusammenfassung</li>
-                </ul>
+                    {{--<li class="form-section-tab form-section-tab-active text-center" data-section="1">Start</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="2">Projektdetails</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="3">Deine Angaben</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="4">Antragsunterlagen</li>--}}
+                    {{--<li class="form-section-tab text-center" data-section="5">Zusammenfassung</li>--}}
+                {{--</ul>--}}
+                <div class="col-md-7 col-sm-7 col-xs-7 padding-none">
+                    <div class="col-md-4 col-sm-4 col-xs-4 text-center padding-none" style="background: red">Start</div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 text-center padding-none border-left" style="background: red">Projektdetails</div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 text-center padding-none border-left" style="background: red">Deine Angaben</div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5 padding-none">
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center padding-none border-left" style="background: #008000">Antragsunterlagen</div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center padding-none border-left" style="background: #008000">Zusammenfassung</div>
+                </div>
             </div>
         </div> <!-- end section tabs -->
         <div class="row">
