@@ -4900,7 +4900,7 @@ ul {
   padding: 1em;
   background-color: #ed5a4d; }
 
-.message p {
+.message > p {
   font-family: 'Lato', 'Open Sans', sans-serif;
   font-size: 1.3em;
   font-weight: 100;
@@ -4926,7 +4926,7 @@ ul {
   background-color: #d2d2d2;
   color: #4b4b4b;
   border-color: #d2d2d2;
-  font-weight: 700; }
+  font-weight: 300; }
 
 .button-sec:hover, .button-sec:active {
   color: white;
@@ -5202,8 +5202,12 @@ ul {
         margin-right: 0; }
       #main_nav ul > li a:hover, #main_nav ul > li a:active {
         color: #3fa3db; }
-      #main_nav ul > li:nth-child(3) {
-        margin-left: 4.6rem; }
+      @media (min-width: 768px) and (max-width: 991px) {
+        #main_nav ul > li:nth-child(3) {
+          margin-left: 3rem; } }
+      @media (min-width: 911px) and (max-width: 991px) {
+        #main_nav ul > li:nth-child(3) {
+          margin-left: 4.5rem; } }
       #main_nav ul > li:nth-child(4) {
         margin-left: 3.2rem;
         margin-right: 3.2rem; }
@@ -5258,7 +5262,7 @@ hr {
   margin-left: 3.7em; }
 
 /*-- Humburger btn --*/
-.humburger {
+.mobile-circle-button {
   margin-bottom: .9em;
   margin-top: .9em; }
 
@@ -5298,15 +5302,21 @@ hr {
 /*------------------------------------------------------------------*/
 footer {
   margin-top: 1rem;
-  background-color: #6f798b; }
+  background-color: #6f798b;
+  /*-- to adjust the position of three footer's blocks --*/ }
+  footer div {
+    margin-top: 1rem;
+    margin-bottom: 1em; }
   footer .socialmedia button {
     margin: 0 auto;
     background-color: #3fa3db; }
   footer .socialmedia a {
     display: inline-block; }
   footer .socialmedia > div {
-    width: 12rem;
+    width: 10.5rem;
     margin: 0 auto; }
+  footer .socialmedia div:nth-child(2) {
+    width: 20rem; }
   footer .socialmedia div:nth-child(3) {
     width: 100%; }
   footer .socialmedia form {
@@ -5317,12 +5327,12 @@ footer {
     width: 16rem;
     margin-top: .9rem;
     vertical-align: middle; }
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 991px) {
       footer .socialmedia form div:first-of-type {
         width: 11rem; } }
   footer .socialmedia input {
     width: 16rem; }
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 991px) {
       footer .socialmedia input {
         width: 11rem; } }
   footer #newsletter {
@@ -5332,16 +5342,53 @@ footer {
     display: block;
     color: white; }
   footer .footer-text-content h5 {
-    font-size: 1.2rem;
-    font-weight: 300; }
-  footer .footer-text-content a {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-size: 1rem;
+    /*-- to adjust the text size for different views --*/ }
+    @media (min-width: 768px) and (max-width: 991px) {
+      footer .footer-text-content h5 {
+        font-size: 1rem;
+        line-height: 1rem; } }
+    @media (min-width: 992px) {
+      footer .footer-text-content h5 {
+        font-size: .9rem; } }
+  footer .footer-text-content a, footer p {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.7rem;
+    /*-- to adjust the text size for different views --*/ }
+    @media (min-width: 768px) and (max-width: 991px) {
+      footer .footer-text-content a, footer p {
+        font-size: .7rem;
+        line-height: 1.2rem; } }
+    @media (min-width: 992px) {
+      footer .footer-text-content a, footer p {
+        font-size: .7rem;
+        line-height: 1rem; } }
+  footer .footer-text-content a {
     text-decoration: underline; }
-    @media (min-width: 768px) {
-      footer .footer-text-content a {
-        font-size: .8rem; } }
+  footer .footer-text-content a:hover {
+    text-decoration: none; }
+  footer .footer-text-content p {
+    font-weight: 100;
+    line-height: 1.4rem; }
+    @media (min-width: 992px) {
+      footer .footer-text-content p {
+        line-height: 1rem; } }
+  footer .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top; }
+  footer div:nth-child(3) i {
+    margin-right: 1rem; }
+    @media (min-width: 992px) {
+      footer div:nth-child(3) i {
+        margin-right: .6rem; } }
+  @media (min-width: 992px) {
+    footer div:nth-child(2) {
+      left: -20rem; } }
+  footer .no-bottom-margin {
+    margin-bottom: 0; }
   footer .footer-text-content p {
     font-weight: 100; }
   footer .footer-text-content p a {

@@ -29,11 +29,11 @@
   padding: 1em;
   background-color: $orange;
 }
-.message p {
+.message>p {
   font-family: $lato;
   font-size: 1.3em;
   font-weight: 100;
-  color: white;
+  color: $white;
 }
 
 
@@ -69,7 +69,7 @@
   color: $text;
   border-color: $dgrey;
 
-  font-weight: 700;
+  font-weight: 300;
 }
 .button-sec:hover, .button-sec:active {
   color: $white;

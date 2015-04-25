@@ -1,9 +1,9 @@
 $(document).ready(function(){
     console.log('pipa');
 
-    /*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
-    /*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
 
     /*-- Opera MIni Backup -----------------------------------------------*/
     var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
@@ -15,9 +15,9 @@ $(document).ready(function(){
 
 
 
-    /*------------------------------------------------------------------*/
-    /*-- SMOOTH SCROLL --*/
-    /*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+  /*-- SMOOTH SCROLL --*/
+/*------------------------------------------------------------------*/
 //https://github.com/cferdinandi/smooth-scroll#how-to-contribute - here you may find compiled and production-ready code.
 //    smoothScroll.init({
 //        speed: 500, // How fast to complete the scroll in milliseconds
@@ -28,14 +28,14 @@ $(document).ready(function(){
 
 
 
-    /*------------------------------------------------------------------*/
-    /*-- LANGUAGE CHANGE BUTTON --*/
-    /*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+  /*-- LANGUAGE CHANGE BUTTON --*/
+/*------------------------------------------------------------------*/
     /*
      * check what land flag is displaying
      * toggle the flag on a press button event
      */
-    $('#language-toggle').on("click", function()
+    $('.language-toggle').on("click", function()
     {
         if($(this).hasClass('de'))
         {
