@@ -9,13 +9,13 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="col-md-7 col-sm-7 col-xs-7 padding-none">
-                    <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="1">Start</div>
-                    <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab" data-section="2">Projektdetails</div>
-                    <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab" data-section="3">Deine Angaben</div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0">Start</div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab" data-section="1">Projektdetails</div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab" data-section="2">Deine Angaben</div>
                 </div>
                 <div class="col-md-5 col-sm-5 col-xs-5 padding-none">
-                    <div class="col-md-6 col-sm-6 col-xs-6 text-center form-section-tab" data-section="4">Antragsunterlagen</div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 text-center form-section-tab" data-section="5">Zusammenfassung</div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center form-section-tab" data-section="3">Antragsunterlagen</div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center form-section-tab" data-section="4">Zusammenfassung</div>
                 </div>
             </div>
         </div> <!-- end section tabs -->

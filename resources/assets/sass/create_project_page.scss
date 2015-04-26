@@ -81,6 +81,10 @@
   }
 }
 
+.form-input-disabled {
+  cursor: not-allowed;
+}
+
 .no-projects {
   padding: 1.25rem;
   border: 1px solid $dgrey;

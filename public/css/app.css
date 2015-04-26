@@ -4839,6 +4839,8 @@ html {
   color: #4b4b4b;
   font-size: 1rem;
   line-height: 1.65em; }
+  html input[disabled] {
+    cursor: not-allowed; }
 
 body {
   padding-top: 5rem;
@@ -5146,6 +5148,9 @@ label {
   color: #3fa3db; }
   .form-explanation p:first-of-type {
     margin-top: 10px; }
+
+.form-input-disabled {
+  cursor: not-allowed; }
 
 .no-projects {
   padding: 1.25rem;
