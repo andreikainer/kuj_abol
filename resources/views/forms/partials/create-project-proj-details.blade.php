@@ -1,5 +1,5 @@
 <!-- Short Description Form Input -->
-        <div class="row form-group">
+        <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('short_desc', 'Short Description:', ['class' => 'form-label']) !!}
                 {!! Form::textarea('short_desc', null, ['class' => 'form-input', 'placeholder' => 'A short description about your project. In 180 characters or less.']) !!}
@@ -10,7 +10,7 @@
         </div> <!-- end short description -->
 
         <!-- Main Image Form Input -->
-        <div class="row form-group">
+        <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 <div class="form-label">Main Image:</div>
                 <div class="image-upload-wrapper">
@@ -34,7 +34,7 @@
         </div> <!-- end main image -->
 
         <!-- Secondary Image Form Inputs -->
-        <div class="row form-group">
+        <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 form-label">Secondary Images:</div>
@@ -64,7 +64,7 @@
         </div> <!-- end secondary images -->
 
         <!-- Full Description Form Input -->
-        <div class="row form-group">
+        <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('full_desc', 'Full Description:', ['class' => 'form-label']) !!}
                 {!! Form::textarea('full_desc', null, ['class' => 'form-input', 'placeholder' => 'The full description of your project. This is where you tell your story.']) !!}

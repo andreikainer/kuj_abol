@@ -1,4 +1,4 @@
-<div class="evidence-explanation">
+<div class="form-explanation">
             <p>
                 We require supporting evidence of your child's ailment.
             </p>
@@ -12,7 +12,7 @@
         </div> <!-- end evidence explanation -->
 
         <!-- Documents of Evidence Form Input -->
-        <div class="row form-group">
+        <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 form-label">Documents of Evidence: <span class="label-desc">minimum of 2 documents mandatory</span></div>

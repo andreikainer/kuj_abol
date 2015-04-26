@@ -12,10 +12,30 @@
 
 .cpp-error {
   margin-top: 2.75rem;
+  display: none;
 
   @media all and (max-width: 768px) {
     margin-top: 0.5rem;
   }
+}
+
+.form-button-main {
+  padding: 0.65rem 0;
+  font-weight: 500;
+  color: $white;
+  background: $green;
+  border: 1px solid darken($green, 10%);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: lighten($green, 10%);
+  }
+}
+
+.form-start-button {
+  margin-top: 0.25rem;
 }
 
 .image-upload-wrapper {
@@ -50,12 +70,22 @@
   font-weight: normal;
 }
 
-.evidence-explanation {
+.form-explanation {
   padding: 1.25rem;
   margin-bottom: 3rem;
   border: 1px solid $dgrey;
   color: $blue;
   
+  p:first-of-type {
+    margin-top: 10px;
+  }
+}
+
+.no-projects {
+  padding: 1.25rem;
+  border: 1px solid $dgrey;
+  background: $lgrey;
+
   p:first-of-type {
     margin-top: 10px;
   }
