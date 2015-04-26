@@ -1,5 +1,14 @@
 (function()
 {
+    /**
+     * Global Variables
+     */
+
+    var fieldsetCollection = $('fieldset');
+    var tabCollection = $('.form-section-tab');
+
+
+
 
     /**
      * Messages Object
@@ -26,7 +35,12 @@
 
     $('*[data-button="next"]').on('click', function()
     {
-        $.publish('next-button.click');
+        $.publish('next-button.click', this);
+    });
+
+    $('*[data-button="back"]').on('click', function()
+    {
+        $.publish('back-button.click', this);
     });
 
 
@@ -38,9 +52,7 @@
 
     $.subscribe('section-tab.click', function(event, data)
     {
-        var fieldsetCollection = $('fieldset');
-        var tabCollection = $('.form-section-tab');
-        showSection(fieldsetCollection, data.getAttribute('data-section'));
+        showSection(fieldsetCollection, $(data).data('section'));
         makeTabActive(tabCollection, data);
     });
 
@@ -50,15 +62,18 @@
         showErrorMessage(name, errorMessages.disabled);
     });
 
-    $.subscribe('next-button.click', function()
+    $.subscribe('next-button.click', function(event, data)
     {
-        console.log('waiting for instruction...');
+        var currSection = $(data).parents('fieldset').data('section');
+        showSection(fieldsetCollection, currSection+1);
+        makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection+1)+'"]'));
+    });
 
-        // find out which fieldset this button belongs to,
-
-        // call showSection function on the next fieldset.
-
-        // call makeTabActive on the correct tab.
+    $.subscribe('back-button.click', function(event, data)
+    {
+        var currSection = $(data).parents('fieldset').data('section');
+        showSection(fieldsetCollection, currSection-1);
+        makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection-1)+'"]'));
     });
 
 
