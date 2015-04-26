@@ -5099,8 +5099,11 @@ label {
     .cpp-error {
       margin-top: 0.5rem; } }
 
-.form-button-main {
-  padding: 0.65rem 0;
+.error-box {
+  margin-bottom: 2rem; }
+
+.form-button {
+  padding: 0.65rem;
   font-weight: 500;
   color: white;
   background: #2ecc71;
@@ -5108,8 +5111,22 @@ label {
   border-radius: 0.35rem;
   cursor: pointer;
   transition: background 0.3s ease; }
-  .form-button-main:hover {
+  .form-button:hover {
     background: #54d98c; }
+
+.form-button-secondary {
+  background: #6f798b;
+  border: 1px solid #58606f;
+  transition: background 0.3s ease; }
+  .form-button-secondary:hover {
+    background: #8b93a2; }
+
+.form-button-nav {
+  background: #3fa3db;
+  border: 1px solid #248ac3;
+  transition: background 0.3s ease; }
+  .form-button-nav:hover {
+    background: #6ab8e3; }
 
 .form-start-button {
   margin-top: 0.25rem; }

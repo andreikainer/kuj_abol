@@ -2,11 +2,14 @@
 
 @section('content')
     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-        <h2 class="heading">Create Project</h2>
+        <h2 class="heading">Ansuchen einreichen</h2>
     </div>-
     <div class="col-md-8 col-sm-8 mt-3em">
         <!-- Section Tabs -->
         <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="error-box form-error">Error Box</div>
+            </div>
             <div class="col-md-12 col-sm-12">
                 <div class="col-md-7 col-sm-7 col-xs-7 padding-none">
                     <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0">Start</div>

@@ -14,7 +14,7 @@
                 {!! Form::text('project_name', null, ['class' => 'form-input']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
-                <div class="form-button-main form-start-button text-center">Projekt starten</div>
+                <div class="form-button form-start-button text-center" data-button="start">Projekt starten</div>
             </div>
         </div>
     </div>

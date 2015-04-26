@@ -19,8 +19,12 @@
   }
 }
 
-.form-button-main {
-  padding: 0.65rem 0;
+.error-box {
+  margin-bottom: 2rem;
+}
+
+.form-button {
+  padding: 0.65rem;
   font-weight: 500;
   color: $white;
   background: $green;
@@ -31,6 +35,26 @@
 
   &:hover {
     background: lighten($green, 10%);
+  }
+}
+
+.form-button-secondary {
+  background: $bluegrey;
+  border: 1px solid darken($bluegrey, 10%);
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: lighten($bluegrey, 10%);
+  }
+}
+
+.form-button-nav {
+  background: $blue;
+  border: 1px solid darken($blue, 10%);
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: lighten($blue, 10%);
   }
 }
 

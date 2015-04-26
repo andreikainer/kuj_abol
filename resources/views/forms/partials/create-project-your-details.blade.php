@@ -1,4 +1,10 @@
-<!-- Name of Child Form Input -->
+<div class="row">
+            <div class="col-md-3 col-sm-3 col-md-offset-9 col-sm-offset-9">
+                <div class="form-button form-button-secondary text-center" data-button="save">Speichern Fortschritt</div>
+            </div>
+        </div>
+
+        <!-- Name of Child Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('child_name', 'Name of Child:', ['class' => 'form-label']) !!}
@@ -63,3 +69,12 @@
                 <div class="form-error cpp-error" data-error="tel_number"></div>
             </div>
         </div> <!-- end telephone number -->
+
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+                <div class="form-button form-button-nav text-center" data-button="back">zurück</div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-md-offset-8 col-sm-offset-8">
+                <div class="form-button form-button-nav text-center" data-button="next">nächster</div>
+            </div>
+        </div>
