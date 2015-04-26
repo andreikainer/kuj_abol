@@ -11,7 +11,7 @@
 }
 
 .cpp-error {
-  margin-top: 2.75rem;
+  margin-top: 2.25rem;
   display: none;
 
   @media all and (max-width: 768px) {
@@ -39,6 +39,7 @@
 }
 
 .form-button-secondary {
+  display: inline-block;
   background: $bluegrey;
   border: 1px solid darken($bluegrey, 10%);
   transition: background 0.3s ease;
@@ -49,6 +50,7 @@
 }
 
 .form-button-nav {
+  display: inline-block;
   background: $blue;
   border: 1px solid darken($blue, 10%);
   transition: background 0.3s ease;
@@ -125,4 +127,8 @@
 
 .padding-none {
   padding: 0;
+}
+
+.text-right {
+  text-align: right;
 }

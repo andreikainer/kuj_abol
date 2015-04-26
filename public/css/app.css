@@ -5093,7 +5093,7 @@ label {
     display: inherit; }
 
 .cpp-error {
-  margin-top: 2.75rem;
+  margin-top: 2.25rem;
   display: none; }
   @media all and (max-width: 768px) {
     .cpp-error {
@@ -5115,6 +5115,7 @@ label {
     background: #54d98c; }
 
 .form-button-secondary {
+  display: inline-block;
   background: #6f798b;
   border: 1px solid #58606f;
   transition: background 0.3s ease; }
@@ -5122,6 +5123,7 @@ label {
     background: #8b93a2; }
 
 .form-button-nav {
+  display: inline-block;
   background: #3fa3db;
   border: 1px solid #248ac3;
   transition: background 0.3s ease; }
@@ -5181,6 +5183,9 @@ label {
 
 .padding-none {
   padding: 0; }
+
+.text-right {
+  text-align: right; }
 
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/

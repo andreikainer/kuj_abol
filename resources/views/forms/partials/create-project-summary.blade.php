@@ -8,7 +8,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-2 col-sm-2">
+    <div class="col-md-6 col-sm-6 col-xs-6">
         <div class="form-button form-button-nav text-center" data-button="back">zurück</div>
     </div>
 </div>

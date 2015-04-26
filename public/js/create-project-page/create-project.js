@@ -24,6 +24,11 @@
         $.publish('disabled-input.click', this);
     });
 
+    $('*[data-button="next"]').on('click', function()
+    {
+        $.publish('next-button.click');
+    });
+
 
 
 
@@ -43,6 +48,17 @@
     {
         var name = (data.hasAttribute('name')) ? data.getAttribute('name') : data.getAttribute('for');
         showErrorMessage(name, errorMessages.disabled);
+    });
+
+    $.subscribe('next-button.click', function()
+    {
+        console.log('waiting for instruction...');
+
+        // find out which fieldset this button belongs to,
+
+        // call showSection function on the next fieldset.
+
+        // call makeTabActive on the correct tab.
     });
 
 
