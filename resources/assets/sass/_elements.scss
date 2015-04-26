@@ -209,18 +209,8 @@
   @include border-radius(0.35rem);
 }
 
-.form-section-tab-container {
-  margin-bottom: 0;
-  background: $white;
-  border-top-left-radius: 0.35rem;
-  border-top-right-radius: 0.35rem;
-}
-
 .form-section-tab {
-  min-width: 20%;
-  float: left;
   padding: 0.65rem 0 0.7rem 0;
-  box-sizing: border-box;
   line-height: 2.25rem;
   font-weight: 500;
   background: tint($text, 90%);
@@ -231,14 +221,24 @@
   border-top-left-radius: 0.35rem;
   transition: background 0.3s ease;
 
+  @media all and (max-width: 768px) {
+    font-size: 0.7rem;
+    line-height: 2rem;
+  }
+
+  @media all and (max-width: 500px) {
+    font-size: 0.5rem;
+    line-height: 1.75rem;
+  }
+
   &:hover {
     cursor: pointer;
     background: tint($dgrey, 92%);
   }
+}
 
-  &:first-of-type {
-    border-left: 1px solid $dgrey;
-  }
+.form-section-tab-border-left {
+  border-left: 1px solid $dgrey;
 }
 
 .form-section-tab-active {
