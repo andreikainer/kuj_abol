@@ -12,4 +12,9 @@ class PagesController extends Controller {
         return view('create-project.index');
     }
 
+    public function viewProject()
+    {
+        return view('projectpage');
+    }
+
 }
