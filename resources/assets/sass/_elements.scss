@@ -183,21 +183,21 @@
 }
 
 .form-label {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: $bluegrey;
 }
 
 .form-input {
   width: 100%;
-  padding: 0.65rem;
-  font-size: 1.25rem;
+  padding: 1.15rem 0.65rem 0.65rem 0.65rem;
   border: 1px solid $dgrey;
-  border-top: 0.5rem solid $blue;
+  border-top: none;
+  box-shadow: inset 0 0.5rem 0 0 $blue;
 
   &:focus {
     outline: none !important;
-    box-shadow: none !important;
   }
 }
 
@@ -209,21 +209,10 @@
   @include border-radius(0.35rem);
 }
 
-.form-section-tab-container {
-  margin-bottom: 0;
-  background: $white;
-  border-top-left-radius: 0.35rem;
-  border-top-right-radius: 0.35rem;
-}
-
 .form-section-tab {
-  min-width: 20%;
-  float: left;
   padding: 0.65rem 0 0.7rem 0;
-  box-sizing: border-box;
-  font-size: 1.25rem;
-  line-height: 3.25rem;
-  font-weight: bold;
+  line-height: 2.25rem;
+  font-weight: 500;
   background: tint($text, 90%);
   border-top: 4px solid $bluegrey;
   border-bottom: 1px solid $dgrey;
@@ -232,45 +221,24 @@
   border-top-left-radius: 0.35rem;
   transition: background 0.3s ease;
 
+  @media all and (max-width: 768px) {
+    font-size: 0.7rem;
+    line-height: 2rem;
+  }
+
+  @media all and (max-width: 500px) {
+    font-size: 0.5rem;
+    line-height: 1.75rem;
+  }
+
   &:hover {
     cursor: pointer;
     background: tint($dgrey, 92%);
   }
+}
 
-  &:first-of-type {
-    border-left: 1px solid $dgrey;
-  }
-
-  @media all and (max-width: 1020px) {
-    font-size: 1rem;
-  }
-
-  @media all and (max-width: 560px) {
-    min-width: 18%;
-
-    &:nth-of-type(4) {
-      width: 28%;
-    }
-  }
-
-  @media all and (max-width: 490px) {
-    min-width: 21.5%;
-    font-size: 0.75rem;
-
-    &:nth-of-type(1) {
-      min-width: 15% !important;
-      max-width: 15% !important;
-    }
-
-    &:nth-of-type(2) {
-      min-width: 18% !important;
-      max-width: 18% !important;
-    }
-
-    &:nth-of-type(4) {
-      max-width: 24%;
-    }
-  }
+.form-section-tab-border-left {
+  border-left: 1px solid $dgrey;
 }
 
 .form-section-tab-active {

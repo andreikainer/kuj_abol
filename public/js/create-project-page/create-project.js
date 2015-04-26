@@ -2,7 +2,7 @@
 {
     // on click of section tabs, serve up the correct fieldset.
     // and hide the others
-    $('li.form-section-tab').on('click', function()
+    $('.form-section-tab').on('click', function()
     {
         $.publish('section-tab.click', this.getAttribute('data-section'));
     });
