@@ -15,7 +15,12 @@
     var errorMessages = {
         'disabled' : 'Please name your project, and click "Start Project" to enable form.',
         'required' : 'This field is required.',
-        'alphaNumeric' : 'Must contain letters and numbers only, And not begin with a space.'
+        'alphaNumeric' : 'Must contain letters and numbers only, And not begin with a space.',
+        'numOnly' : 'Must contain numbers only.',
+        'maxLength' : function(limit)
+        {
+            return 'This field must not exceed '+limit+' characters';
+        }
     };
 
 
@@ -52,6 +57,21 @@
         $.publish('project-name.blur', this);
     });
 
+    $('textarea[name="short_desc"]').on('blur', function()
+    {
+        $.publish('short-description.blur', this);
+    });
+
+    $('textarea[name="full_desc"]').on('blur', function()
+    {
+        $.publish('full-description.blur', this);
+    });
+
+    $('input[name="target_amount"]').on('blur', function()
+    {
+        $.publish('target-amount.blur', this);
+    });
+
 
 
 
@@ -84,18 +104,75 @@
         showSection(fieldsetCollection, currSection-1);
         makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection-1)+'"]'));
     });
+    
 
+    // Form Validation Events.
     $.subscribe('project-name.blur', function(event, data)
     {
-        if (FormValidation.checkNotEmpty(data.value)) {
-            if (FormValidation.checkAlphaNumeric(data.value)) {
-                hideErrorMessage(data.getAttribute('name'));
-            } else {
-                showErrorMessage(data.getAttribute('name'), errorMessages.alphaNumeric);
-            }
-        } else {
-            showErrorMessage(data.getAttribute('name'), errorMessages.required);
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
         }
+        if (! FormValidation.checkAlphaNumeric(data.value)) {
+            showErrorMessage(name, errorMessages.alphaNumeric);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('short-description.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)){
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkAlphaNumeric(data.value)) {
+            showErrorMessage(name, errorMessages.alphaNumeric);
+            return false;
+        }
+        if (! FormValidation.checkMaxLength(data.value, 180)) {
+            showErrorMessage(name, errorMessages.maxLength(180));
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('full-description.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkAlphaNumeric(data.value)) {
+            showErrorMessage(name, errorMessages.alphaNumeric);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('target-amount.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkNumOnly(data.value)) {
+            showErrorMessage(name, errorMessages.numOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
     });
 
 

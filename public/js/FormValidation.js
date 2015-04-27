@@ -33,28 +33,28 @@ var FormValidation = {
     // Allow letters only, must not begin with a space.
     checkAlphaOnly: function(value)
     {
-        var regex = /^[a-zA-ZÀ-ž]+( +[a-zA-ZÀ-ž]+)*$/;
+        var regex = /^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/;
         return regex.test(value);
     },
 
     // Allow numbers only, must not begin with a space.
     checkNumOnly: function(value)
     {
-        var regex = /^[0-9]+( +[0-9]+)*$/;
+        var regex = /^[0-9]+([\s0-9]+)*$/;
         return regex.test(value);
     },
 
     // Allow letters and numbers, must not begin with a space.
     checkAlphaNumeric : function(value)
     {
-        var regex = /^[a-zA-ZÀ-ž0-9]+( +[a-zA-ZÀ-ž0-9]+)*$/
+        var regex = /^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/
         return regex.test(value);
     },
 
     // Allow + sign, and round brackets. Must not begin with a space.
     checkValidPhone : function(value)
     {
-        var regex = /^[+()0-9]+( +[+()0-9]+)*$/;
+        var regex = /^[+()0-9]+([\s+()0-9]+)*$/;
         return regex.test(value);
     },
 
