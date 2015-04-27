@@ -13,17 +13,17 @@ html {
 }
 
 body {
-  padding-top: 5rem;
+  padding-top: 4.09rem;
   background-color: $lgrey;
 
   color: $text;
   font-family: $lato;
 
   @media(min-width: 768px) {
-    padding-top: 10.1rem;
+    padding-top: 9.15rem;
   }
   @media(min-width: 992px) {
-    padding-top: 7em;
+    padding-top: 6.39em;
   }
 }
 
@@ -59,9 +59,18 @@ label {
   font-size: 1.5rem;
   text-transform: uppercase;
   color: $dgrey;
-  border-top: 1px solid $dgrey;
+  border-top: 2px solid $dgrey;
 }
 
 .mt-3em {
   margin-top: 3rem;
+}
+.mt-2em {
+  margin-top: 2rem;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.pad-zero {
+  padding: 0 !important;
 }

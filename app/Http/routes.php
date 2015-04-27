@@ -14,9 +14,10 @@
 
 Route::get('create-project', 'PagesController@createProject');
 
+
 Route::get('project', 'PagesController@viewProjects');
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'PagesController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

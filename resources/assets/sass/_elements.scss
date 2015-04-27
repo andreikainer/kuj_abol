@@ -43,7 +43,7 @@
   /*-- BUTTONS --*/
 /*------------------------------------------------------------------*/
 
-/*-- main CTA's buttons --*/
+/*-- main small CTA's buttons --*/
 .button-main, .button-main:link, .button-main:visited {
   @extend .no-outline;
 
@@ -53,13 +53,29 @@
 
   font-family: $lato;
   letter-spacing: .06em;
-
 }
 .button-main:hover, .button-main:active {
-  background-color: darken($blue, 10%);
+  background-color: darken($blue, 15%);
   color: $white;
 }
 
+/*-- main big CTA's buttons --*/
+.button-main-big, .button-main-big:link, .button-main-big:visited {
+  @extend .no-outline;
+  @extend .button-main;
+
+  width: 100%;
+  font-size: 1.1em;
+  line-height: 1.6rem;
+
+  @media(max-width: 768px)
+  {
+    font-size: 1.1rem;
+  }
+}
+.button-main-big:hover, .button-main-big:active {
+  @extend .button-main:hover;
+}
 
 /*-- secondary CTA's buttons --*/
 .button-sec, .button-sec:link, .button-sec:visited  {
@@ -157,9 +173,31 @@
 
 
 
-.button-link {}
+.button-link {
+  @extend .no-outline;
 
-.button-transparent {}
+  font-size: 1rem;
+  font-weight: 700;
+  color: $blue;
+}
+
+.button-transparent, .button-transparent:link, .button-transparent:visited {
+  @extend .no-outline;
+
+  border: .125rem solid $white;
+  @include border-radius(5px);
+  background-color: none;
+  padding: .5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  font-family: $montserrat;
+  color: $white;
+}
+.button-transparent:hover, .button-transparent:focus, .button-transparent:active {
+  color: darken($white, 10%);
+  text-decoration: none;
+}
 
 
 /*------------------------------------------------------------------*/
