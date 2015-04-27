@@ -23,8 +23,8 @@
     };
 
 }(jQuery));
-$(document).ready(function(){
-    console.log('pipa');
+$(document).ready(function()
+{
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -56,10 +56,10 @@ $(document).ready(function(){
 /*------------------------------------------------------------------*/
   /*-- LANGUAGE CHANGE BUTTON --*/
 /*------------------------------------------------------------------*/
-    /*
-     * check what land flag is displaying
-     * toggle the flag on a press button event
-     */
+/*
+ * check what land flag is displaying
+ * toggle the flag on a press button event
+ */
     $('.language-toggle').on("click", function()
     {
         if($(this).hasClass('de'))
@@ -72,36 +72,51 @@ $(document).ready(function(){
 
 
 
-    //$('.main_carousel').slick(
-    //    {
-    //        dots: true,
-    //        infinite: true,
-    //        speed: 500,
-    //        fade: true,
-    //        cssEase: 'linear',
-    //        autoplay: true,
-    //        //pauseOnHover: true,
-    //        //pauseonDotsHover: true,
-    //        swipe: true
-    //    });
 
-    /*
-     * changeCircleBtnGroupAlignment
-     * changes the grid layout components of a group of circle buttons (search_btn, help_btn, lang_btn)
-     */
+/*------------------------------------------------------------------*/
+    /*-- FUNCTIONS --*/
+/*------------------------------------------------------------------*/
+/*
+ * changeCircleBtnGroupAlignment
+ * changes the grid layout components of a group of circle buttons (search_btn, help_btn, lang_btn)
+ */
     function changeCircleBtnGroupAlignment()
     {
-        console.log('polo');
         $('.circles').toggleClass('col-sm-4', false)
             .toggleClass('col-sm-push-5', false)
             .toggleClass('col-sm-3', true)
             .toggleClass('col-sm-push-6', true);
     }
 
+/*
+ * changeRightBtnGroupAlignment
+ * changes the grid layout components of right group of buttons in the header
+ */
+    function changeRightBtnGroupAlignment()
+    {
+        $('.circles div div').toggleClass('alignme-center', false);
+    }
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+    /*-- CODE --*/
+/*------------------------------------------------------------------*/
     if($(window).innerWidth() > 887 && $(window).innerWidth() < 992)
     {
-        console.log('marko');
         changeCircleBtnGroupAlignment();
+    }else if($(window).innerWidth() >= 1475)
+    {
+        changeRightBtnGroupAlignment();
     }
+
 });
 //# sourceMappingURL=main.js.map

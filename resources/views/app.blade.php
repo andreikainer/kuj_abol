@@ -13,6 +13,9 @@
 		<title>Kinder-und Jugenfönderungen</title>
 		<link rel="icon" type="image/png" href="{{ asset('/img/logo_tab.png') }}">
 
+		<script>(function(w){var dpr=((w.devicePixelRatio===undefined)?1:w.devicePixelRatio);if(!!w.navigator.standalone){var r=new XMLHttpRequest();r.open('GET','/retinaimages.php?devicePixelRatio='+dpr,false);r.send()}else{document.cookie='devicePixelRatio='+dpr+'; path=/'}})(window)</script>
+        <noscript><style id="devicePixelRatio" media="only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)">html{background-image:url("/retinaimages.php?devicePixelRatio=2")}</style></noscript>
+
     <!-- Slick carousel -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
     <!-- Slick-theme.css for default styling -->
@@ -156,7 +159,8 @@
 
 
 <!--================== Main Content =================================================-->
-        @yield('content')
+
+	            @yield('content')
 
 
 
@@ -229,16 +233,6 @@
                 <div class="col-xs-12 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
                     <div class="footer-text-content">
                         <h5>Kontakte</h5>
-                        {{--<p>address: <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>--}}
-                                                {{--2524 Teesdorf Austria--}}
-                                    {{--</a></p>--}}
-                        {{--<p>email: <a href="#">wilhelmine.bauer@sponsoring-agentur.at</a> </p>--}}
-                        {{--<p>phone: <a href="tel:+4366488299511">+43 664 8829 9511</a> </p>--}}
-
-                	    {{--<br><br>--}}
-
-                	    {{--<p>&copy;copyright {{ Carbon\Carbon::now()->year }}</p>--}}
-                        {{--<p>website gemacht <a href="#">ABOL</a></p>--}}
 
                         <p><i class="fa fa-home form-inline"></i> <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>
                                                                         2524 Teesdorf Austria
