@@ -13,7 +13,7 @@
 
 Route::get('create-project', 'PagesController@createProject');
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'PagesController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

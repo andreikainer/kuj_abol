@@ -4850,7 +4850,7 @@ body {
       padding-top: 10.1rem; } }
   @media (min-width: 992px) {
     body {
-      padding-top: 7em; } }
+      padding-top: 6.39em; } }
 
 h1 {
   color: white; }
@@ -4868,8 +4868,8 @@ ul {
   padding-top: 0.65rem;
   font-size: 2rem;
   text-transform: uppercase;
-  color: #d2d2d2;
-  border-top: 1px solid #d2d2d2; }
+  color: #6f798b;
+  border-top: 2px solid #6f798b; }
 
 .mt-3em {
   margin-top: 3rem; }
@@ -4996,6 +4996,20 @@ ul {
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1; }
+
+.button-transparent, .button-transparent:link, .button-transparent:visited {
+  border: .125rem solid white;
+  border-radius: 5px;
+  background-color: none;
+  padding: .5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  color: white; }
+
+.button-transparent:hover, .button-transparent:focus, .button-transparent:active {
+  color: #e6e6e6;
+  text-decoration: none; }
 
 /*------------------------------------------------------------------*/
 /*-- MODALS --*/
@@ -5266,6 +5280,9 @@ hr {
   margin-bottom: .9em;
   margin-top: .9em; }
 
+.circles > div div {
+  width: 11.25rem; }
+
 .circles > div div:nth-child(2) {
   margin-top: .6em; }
 
@@ -5395,6 +5412,42 @@ footer {
     display: inline-block;
     line-height: auto;
     vertical-align: top; }
+
+/*------------------------------------------------------------------*/
+/*-- Jumbotron styles --*/
+/*------------------------------------------------------------------*/
+/*CSS for serving the retina image to devices with a high "device-pixel-ratio":*/
+.jumbotron {
+  padding: 0; }
+  .jumbotron div {
+    padding: 0;
+    /*-- Correcting some Slick default styles --*/ }
+    .jumbotron div h1, .jumbotron div p {
+      color: white; }
+    .jumbotron div .slick-prev, .jumbotron div .slick-next, .jumbotron div .slick-next::before, .jumbotron div .slick-prev::before {
+      display: none !important; }
+    @media (min-width: 1366px) {
+      .jumbotron div .slick-slide img {
+        margin: 0 auto; } }
+    .jumbotron div .slick-dots li button:before {
+      font-size: .875rem;
+      color: #6f798b; }
+    .jumbotron div .slick-dots li.slick-active button:before {
+      opacity: 100%;
+      color: #6f798b; }
+  .jumbotron .jumbotron-text {
+    position: absolute;
+    top: 2rem;
+    left: 5rem; }
+
+.percentage {
+  margin-bottom: 0;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  color: #2ecc71; }
+
+.progress-bar-success {
+  color: #2ecc71; }
 
 
 /*# sourceMappingURL=app.css.map */

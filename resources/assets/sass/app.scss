@@ -163,6 +163,9 @@ hr {
   margin-top: .9em;
 }
 
+.circles>div div {
+  width: 11.25rem;
+}
 .circles>div div:nth-child(2) {
   margin-top: .6em;
 }
@@ -343,4 +346,70 @@ footer {
     line-height: auto;
     vertical-align: top;
   }
+}
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- Jumbotron styles --*/
+/*------------------------------------------------------------------*/
+
+/*CSS for serving the retina image to devices with a high "device-pixel-ratio":*/
+//@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+//
+//}
+
+.jumbotron {
+  padding: 0;
+
+  div {
+    padding: 0;
+
+    img {
+      //      float: left;
+      //      margin-bottom: -10.625rem;
+//      position: absolute;
+    }
+
+    h1, p {
+      color: $white;
+    }
+
+/*-- Correcting some Slick default styles --*/
+    .slick-prev, .slick-next, .slick-next::before, .slick-prev::before {
+      display: none !important;
+    }
+    .slick-slide img {
+      @media (min-width: 1366px) {
+        margin: 0 auto;
+      }
+    }
+    .slick-dots li button:before {
+      font-size: .875rem;
+      color: $bluegrey;
+    }
+    .slick-dots li.slick-active button:before {
+      opacity: 100%;
+      color: $bluegrey;
+    }
+  }
+
+  .jumbotron-text {
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+  }
+}
+
+
+.percentage {
+  margin-bottom: 0;
+
+  font-family: $montserrat;
+  font-size: 1.3rem;
+  color: $green;
+}
+.progress-bar-success {
+  background-color: $green;
 }

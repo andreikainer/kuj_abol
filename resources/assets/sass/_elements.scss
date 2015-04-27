@@ -53,7 +53,6 @@
 
   font-family: $lato;
   letter-spacing: .06em;
-
 }
 .button-main:hover, .button-main:active {
   background-color: darken($blue, 10%);
@@ -157,9 +156,27 @@
 
 
 
-.button-link {}
+.button-link {
+  @extend .no-outline;
+}
 
-.button-transparent {}
+.button-transparent, .button-transparent:link, .button-transparent:visited {
+  @extend .no-outline;
+
+  border: .125rem solid $white;
+  @include border-radius(5px);
+  background-color: none;
+  padding: .5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  font-family: $montserrat;
+  color: $white;
+}
+.button-transparent:hover, .button-transparent:focus, .button-transparent:active {
+  color: darken($white, 10%);
+  text-decoration: none;
+}
 
 
 /*------------------------------------------------------------------*/
