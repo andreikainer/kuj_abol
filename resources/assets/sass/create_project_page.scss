@@ -11,10 +11,52 @@
 }
 
 .cpp-error {
-  margin-top: 2.75rem;
+  margin-top: 2.25rem;
+  display: none;
 
   @media all and (max-width: 768px) {
     margin-top: 0.5rem;
+  }
+}
+
+.error-box {
+  margin-bottom: 2rem;
+}
+
+.form-button {
+  padding: 0.65rem;
+  font-weight: 500;
+  color: $white;
+  background: $green;
+  border: 1px solid darken($green, 10%);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: lighten($green, 10%);
+  }
+}
+
+.form-button-secondary {
+  display: inline-block;
+  background: $bluegrey;
+  border: 1px solid darken($bluegrey, 10%);
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: lighten($bluegrey, 10%);
+  }
+}
+
+.form-button-nav {
+  display: inline-block;
+  background: $blue;
+  border: 1px solid darken($blue, 10%);
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: lighten($blue, 10%);
   }
 }
 
@@ -50,12 +92,26 @@
   font-weight: normal;
 }
 
-.evidence-explanation {
+.form-explanation {
   padding: 1.25rem;
   margin-bottom: 3rem;
   border: 1px solid $dgrey;
   color: $blue;
   
+  p:first-of-type {
+    margin-top: 10px;
+  }
+}
+
+.form-input-disabled {
+  cursor: not-allowed;
+}
+
+.no-projects {
+  padding: 1.25rem;
+  border: 1px solid $dgrey;
+  background: $lgrey;
+
   p:first-of-type {
     margin-top: 10px;
   }
@@ -67,4 +123,8 @@
 
 .padding-none {
   padding: 0;
+}
+
+.text-right {
+  text-align: right;
 }

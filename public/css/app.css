@@ -4839,6 +4839,8 @@ html {
   color: #4b4b4b;
   font-size: 1rem;
   line-height: 1.65em; }
+  html input[disabled] {
+    cursor: not-allowed; }
 
 body {
   padding-top: 4.09rem;
@@ -4878,6 +4880,12 @@ label {
 
 .mt-3em {
   margin-top: 3rem; }
+
+.mb-3em {
+  margin-bottom: 3rem; }
+
+.mb-6em {
+  margin-bottom: 6rem; }
 
 .mt-2em {
   margin-top: 2rem; }
@@ -5124,10 +5132,42 @@ label {
     display: inherit; }
 
 .cpp-error {
-  margin-top: 2.75rem; }
+  margin-top: 2.25rem;
+  display: none; }
   @media all and (max-width: 768px) {
     .cpp-error {
       margin-top: 0.5rem; } }
+
+.error-box {
+  margin-bottom: 2rem; }
+
+.form-button {
+  padding: 0.65rem;
+  font-weight: 500;
+  color: white;
+  background: #2ecc71;
+  border: 1px solid #25a25a;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: background 0.3s ease; }
+  .form-button:hover {
+    background: #54d98c; }
+
+.form-button-secondary {
+  display: inline-block;
+  background: #6f798b;
+  border: 1px solid #58606f;
+  transition: background 0.3s ease; }
+  .form-button-secondary:hover {
+    background: #8b93a2; }
+
+.form-button-nav {
+  display: inline-block;
+  background: #3fa3db;
+  border: 1px solid #248ac3;
+  transition: background 0.3s ease; }
+  .form-button-nav:hover {
+    background: #6ab8e3; }
 
 .image-upload-wrapper {
   position: relative !important; }
@@ -5156,12 +5196,22 @@ label {
   font-size: 1rem;
   font-weight: normal; }
 
-.evidence-explanation {
+.form-explanation {
   padding: 1.25rem;
   margin-bottom: 3rem;
   border: 1px solid #d2d2d2;
   color: #3fa3db; }
-  .evidence-explanation p:first-of-type {
+  .form-explanation p:first-of-type {
+    margin-top: 10px; }
+
+.form-input-disabled {
+  cursor: not-allowed; }
+
+.no-projects {
+  padding: 1.25rem;
+  border: 1px solid #d2d2d2;
+  background: #f9f9f9; }
+  .no-projects p:first-of-type {
     margin-top: 10px; }
 
 .bt-none {
@@ -5169,6 +5219,9 @@ label {
 
 .padding-none {
   padding: 0; }
+
+.text-right {
+  text-align: right; }
 
 .dgrey {
   background: #d2d2d2; }

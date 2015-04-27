@@ -10,6 +10,10 @@ html {
   font-size: 1rem;
   line-height: 1.65em;
 
+  input[disabled] {
+    cursor: not-allowed;
+  }
+
 }
 
 body {
@@ -65,6 +69,15 @@ label {
 .mt-3em {
   margin-top: 3rem;
 }
+
+.mb-3em {
+  margin-bottom: 3rem;
+}
+
+.mb-6em {
+  margin-bottom: 6rem;
+}
+
 .mt-2em {
   margin-top: 2rem;
 }
