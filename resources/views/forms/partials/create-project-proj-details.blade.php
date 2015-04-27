@@ -7,9 +7,15 @@
         <!-- Short Description Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
-                {!! Form::label('short_desc', 'Short Description:', ['class' => 'form-label']) !!}
-                {!! Form::textarea('short_desc', null, ['class' => 'form-input', 'placeholder' => 'A short description about your project. In 180 characters or less.']) !!}
-                {{--{!! Form::textarea('short_desc', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly', 'placeholder' => 'A short description about your project. In 180 characters or less.']) !!}--}}
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        {!! Form::label('short_desc', 'Short Description:', ['class' => 'form-label']) !!}
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                        <div class="character-count"></div>
+                    </div>
+                </div>
+                {!! Form::textarea('short_desc', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly', 'placeholder' => 'A short description about your project. In 180 characters or less.']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="short_desc"></div>

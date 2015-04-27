@@ -54,6 +54,11 @@
         $.publish('back-button.click', this);
     });
 
+    $('textarea[name="short_desc"]:not(.form-input-disabled)').on('keyup', function()
+    {
+        $.publish('short-description.keyup', this);
+    });
+
     // Form Field blur events.
     $('input[name="project_name"]').on('blur', function()
     {
@@ -138,6 +143,14 @@
         makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection-1)+'"]'));
     });
 
+    $.subscribe('short-description.keyup', function(event, data)
+    {
+        var limit = 180;
+        if (data.value.length <= limit) {
+            updateCharCount(data.value.length, limit, $('.character-count'));
+        }
+    });
+
 
     // Form Validation Events.
     $.subscribe('project-name.blur', function(event, data)
@@ -164,10 +177,6 @@
             showErrorMessage(name, errorMessages.required);
             return false;
         }
-        if (! FormValidation.checkAlphaNumeric(data.value)) {
-            showErrorMessage(name, errorMessages.alphaNumeric);
-            return false;
-        }
         if (! FormValidation.checkMaxLength(data.value, 180)) {
             showErrorMessage(name, errorMessages.maxLength(180));
             return false;
@@ -182,10 +191,6 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages.required);
-            return false;
-        }
-        if (! FormValidation.checkAlphaNumeric(data.value)) {
-            showErrorMessage(name, errorMessages.alphaNumeric);
             return false;
         }
 
@@ -330,5 +335,10 @@
     function hideErrorMessage(name)
     {
         $('.form-error[data-error*="'+name+'"]').fadeOut();
+    }
+
+    function updateCharCount(length, limit, display)
+    {
+        $(display).html('characters remaining '+(limit-length)).fadeIn();
     }
 })();

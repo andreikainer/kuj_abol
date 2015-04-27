@@ -5223,6 +5223,9 @@ label {
 .text-right {
   text-align: right; }
 
+.character-count {
+  display: none; }
+
 .dgrey {
   background: #d2d2d2; }
 
