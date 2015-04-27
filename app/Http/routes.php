@@ -11,15 +11,21 @@
 |
 */
 
+/** This group is used to Localize Routes to the right language **/
 
-Route::get('create-project', 'PagesController@createProject');
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+    {
+        Route::get('/', 'PagesController@index');
 
+				Route::get('project', 'PagesController@viewProjects');
 
-Route::get('project', 'PagesController@viewProjects');
+				Route::get('create-project', 'PagesController@createProject');
 
-Route::get('/', 'PagesController@index');
+				Route::controllers([
+					'auth' => 'Auth\AuthController',
+					'password' => 'Auth\PasswordController',
+				]);
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+				/** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
+
+    });

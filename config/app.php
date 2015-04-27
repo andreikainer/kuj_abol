@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'de',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -135,7 +135,8 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider',
+    'Illuminate\Html\HtmlServiceProvider',
+		'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -193,9 +194,9 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-        'Html'      => 'Illuminate\Html\HtmlFacade',
-        'Form'      => 'Illuminate\Html\FormFacade',
-
+    'Html'      => 'Illuminate\Html\HtmlFacade',
+    'Form'      => 'Illuminate\Html\FormFacade',
+		'LaravelLocalization'   => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
 	],
 
 ];
