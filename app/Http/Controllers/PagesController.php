@@ -7,9 +7,20 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller {
 
-	public function createProject()
+/*-- Home Page --*/
+    public function index()
+    {
+        return view('pages.home');
+    }
+
+    public function createProject()
     {
         return view('create-project.index');
+    }
+
+    public function viewProjects()
+    {
+        return view('projectpage');
     }
 
 }

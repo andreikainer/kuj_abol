@@ -1,0 +1,99 @@
+.dgrey{
+  background: $dgrey;
+}
+
+.boarder{
+  border: 3px solid $dgrey;
+}
+
+.list-item{
+  list-style: circle;
+}
+
+#progress_bar{
+  background: $green;
+  padding-left: 1em;
+}
+
+//#project_statistics{
+//  margin-right: 3px;
+//}
+
+.contribute{
+  font-size: 2.5rem;
+  margin: 0.7em 0;
+  font-weight: bold;
+
+//  @media (min-width: 768px) {
+//    font-size: 25pt;
+//  }
+}
+
+/* Countdown */
+.countdown-value {
+  border: 3px solid $dgrey;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.5em;
+  width: 4.5em;
+  height: 4.5em;
+
+//  @media (min-width: 768px) {
+//    width: 4.5em;
+//    height: 4.5em;
+//    margin: 0.5em;
+//  }
+}
+.countdown-value span {
+  display: block;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  padding-top: 0.15em;
+
+//  @media (min-width: 768px) {
+//    font-size: 20pt;
+//    padding-top: 0.3em;
+//  }
+}
+#time strong {
+  font-size: 0.9rem;
+  margin: 0.4em;
+  text-transform: uppercase;
+  width: 5.0em;
+  display: inline-block;
+
+  //  @media (min-width: 768px) {
+  //    top: 4.5em;
+  //    font-size: 10pt;
+  //  }
+
+}
+
+#facebook-share {
+  width: 40%;
+  margin: 5%;
+}
+
+#favorite {
+  width: 40%;
+  margin: 5%;
+}
+
+.pack1{
+  background: $bluegrey;
+  color: $white;
+  padding: 0.5em;
+  margin-top: 2em;
+  border-radius: 0.35em;
+  font-weight: bold;
+
+  :hover{
+    cursor: pointer;
+  }
+}
+
+.packs2-4{
+  background: $blue;
+}
+

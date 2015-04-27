@@ -4,6 +4,10 @@
 .create-project-fieldset {
   padding: 1.65rem 0;
   display: none;
+
+  &:first-of-type {
+    display: inherit;
+  }
 }
 
 .cpp-error {
@@ -29,8 +33,6 @@
 
 .image-upload-label-heading {
   margin-top: 10px;
-  font-weight: 100;
-  font-size: 1.25rem;
   color: $blue;
 }
 
@@ -52,8 +54,6 @@
   padding: 1.25rem;
   margin-bottom: 3rem;
   border: 1px solid $dgrey;
-  font-size: 1.25rem;
-  line-height: 2.25rem;
   color: $blue;
   
   p:first-of-type {
@@ -63,4 +63,8 @@
 
 .bt-none {
   border-top: none;
+}
+
+.padding-none {
+  padding: 0;
 }
