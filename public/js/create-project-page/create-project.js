@@ -8,15 +8,18 @@
     var tabCollection = $('.form-section-tab');
 
 
-
-
     /**
      * Messages Object
      */
 
     var errorMessages = {
-        'disabled' : 'Please name your project, and click "Start Project" to enable form.'
+        'disabled' : 'Please name your project, and click "Start Project" to enable form.',
+        'required' : 'This field is required.',
+        'alphaNumeric' : 'Must contain letters and numbers only, And not begin with a space.'
     };
+
+
+
 
 
     /**
@@ -41,6 +44,12 @@
     $('*[data-button="back"]').on('click', function()
     {
         $.publish('back-button.click', this);
+    });
+
+    // Form Field blur events.
+    $('input[name="project_name"]').on('blur', function()
+    {
+        $.publish('project-name.blur', this);
     });
 
 
@@ -76,6 +85,19 @@
         makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection-1)+'"]'));
     });
 
+    $.subscribe('project-name.blur', function(event, data)
+    {
+        if (FormValidation.checkNotEmpty(data.value)) {
+            if (FormValidation.checkAlphaNumeric(data.value)) {
+                hideErrorMessage(data.getAttribute('name'));
+            } else {
+                showErrorMessage(data.getAttribute('name'), errorMessages.alphaNumeric);
+            }
+        } else {
+            showErrorMessage(data.getAttribute('name'), errorMessages.required);
+        }
+    });
+
 
 
     /**
@@ -97,5 +119,10 @@
     function showErrorMessage(name, message)
     {
         $('.form-error[data-error*="'+name+'"]').html(message).fadeIn();
+    }
+
+    function hideErrorMessage(name)
+    {
+        $('.form-error[data-error*="'+name+'"]').fadeOut();
     }
 })();
