@@ -156,15 +156,7 @@
 
 
 <!--================== Main Content =================================================-->
-        <div class="container-fluid">
-            <div class="row" role="main">
-
-	            @yield('content')
-
-            </div> <!-- main content ends -->
-
-
-
+        @yield('content')
 
 
 
@@ -176,25 +168,25 @@
 	                <div>
 	                <!-- facebook_btn -->
                         <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="facebook">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="facebook">
                                 <i class="fa fa-facebook"></i>
                             </button>
                         </a>
                     <!-- twitter_btn -->
                         <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="twitter">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="twitter">
                                 <i class="fa fa-twitter"></i>
                             </button>
                         </a>
                     <!-- youtube_btn -->
                         <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="youtube">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="youtube">
                                 <i class="fa fa-youtube-play"></i>
                             </button>
                         </a>
                     <!-- googleplus_btn -->
                         <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="googleplus">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="googleplus">
                                 <i class="fa fa-google-plus"></i>
                             </button>
                         </a>

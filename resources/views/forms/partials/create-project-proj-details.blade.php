@@ -84,8 +84,7 @@
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('target_amount', 'Fundraise Amount:', ['class' => 'form-label']) !!}
-                {!! Form::text('target_amount', null, ['class' => 'form-input', 'placeholder' => 'The amount you wish to fundraise. Minimum &#8364;500 ']) !!}
-                {{--{!! Form::text('target_amount', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly', 'placeholder' => 'The amount you wish to fundraise. Minimum &#8364;500 ']) !!}--}}
+                {!! Form::text('target_amount', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly', 'placeholder' => 'The amount you wish to fundraise. Minimum &#8364;500 ']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="target_amount"></div>

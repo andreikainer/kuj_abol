@@ -15,8 +15,11 @@
     var errorMessages = {
         'disabled' : 'Please name your project, and click "Start Project" to enable form.',
         'required' : 'This field is required.',
-        'alphaNumeric' : 'Must contain letters and numbers only, And not begin with a space.',
-        'numOnly' : 'Must contain numbers only.',
+        'alphaNumeric' : 'Must contain letters and numbers only. And not begin with a space.',
+        'numOnly' : 'Must contain numbers only. And not begin with a space.',
+        'alphaOnly' : 'Must contain letters only. And not begin with a space.',
+        'email' : 'Must be of a correct email format. And not begin with a space.',
+        'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
         'maxLength' : function(limit)
         {
             return 'This field must not exceed '+limit+' characters';
@@ -57,19 +60,49 @@
         $.publish('project-name.blur', this);
     });
 
-    $('textarea[name="short_desc"]').on('blur', function()
+    $('textarea[name="short_desc"]:not(.form-input-disabled)').on('blur', function()
     {
         $.publish('short-description.blur', this);
     });
 
-    $('textarea[name="full_desc"]').on('blur', function()
+    $('textarea[name="full_desc"]:not(.form-input-disabled)').on('blur', function()
     {
         $.publish('full-description.blur', this);
     });
 
-    $('input[name="target_amount"]').on('blur', function()
+    $('input[name="target_amount"]:not(.form-input-disabled)').on('blur', function()
     {
         $.publish('target-amount.blur', this);
+    });
+
+    $('input[name="child_name"]:not(.form-input-disabled)').on('blur', function()
+    {
+        $.publish('child-name.blur', this);
+    });
+
+    $('input[name="first_name"]:not(.form-input-disabled)').on('blur', function()
+    {
+        $.publish('first-name.blur', this);
+    });
+
+    $('input[name="last_name"]:not(.form-input-disabled)').on('blur', function()
+    {
+        $.publish('last-name.blur', this);
+    });
+
+    $('input[name="email"]:not(.form-input-disabled)').on('blur', function()
+    {
+        $.publish('email.blur', this);
+    });
+
+    $('textarea[name="address"]:not(.form-input-disabled)').on('blur', function()
+    {
+        $.publish('address.blur', this);
+    });
+
+    $('input[name="tel_number"]:not(.form-input-disabled)').on('blur', function()
+    {
+        $.publish('tel-number.blur', this);
     });
 
 
@@ -104,7 +137,7 @@
         showSection(fieldsetCollection, currSection-1);
         makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection-1)+'"]'));
     });
-    
+
 
     // Form Validation Events.
     $.subscribe('project-name.blur', function(event, data)
@@ -169,6 +202,102 @@
         }
         if (! FormValidation.checkNumOnly(data.value)) {
             showErrorMessage(name, errorMessages.numOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('child-name.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkAlphaOnly(data.value)) {
+            showErrorMessage(name, errorMessages.alphaOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('first-name.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkAlphaOnly(data.value)) {
+            showErrorMessage(name, errorMessages.alphaOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('last-name.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkAlphaOnly(data.value)) {
+            showErrorMessage(name, errorMessages.alphaOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('email.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkValidEmail(data.value)) {
+            showErrorMessage(name, errorMessages.email);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('address.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkAlphaNumeric(data.value)) {
+            showErrorMessage(name, errorMessages.alphaNumeric);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('tel-number.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages.required);
+            return false;
+        }
+        if (! FormValidation.checkValidPhone(data.value)) {
+            showErrorMessage(name, errorMessages.phone);
             return false;
         }
 
