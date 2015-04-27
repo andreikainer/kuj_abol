@@ -14,7 +14,7 @@
 
 Route::get('create-project', 'PagesController@createProject');
 
-Route::get('project', 'PagesController@viewProject');
+Route::get('project', 'PagesController@viewProjects');
 
 Route::get('/', 'HomeController@index');
 

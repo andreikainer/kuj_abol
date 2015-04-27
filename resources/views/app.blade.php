@@ -156,12 +156,11 @@
 
 
 <!--================== Main Content =================================================-->
-        <div class="container-fluid">
-            <div class="row" role="main">
+
 
 	            @yield('content')
 
-            </div> <!-- main content ends -->
+
 
 
 
@@ -282,6 +281,8 @@
 
 <!-- Slick carousel -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+<!-- MooTools -->
+    <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>
 
 	<script src="{{ asset('/js/modernizr.js') }}"></script>
 
