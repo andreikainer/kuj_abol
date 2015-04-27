@@ -5439,7 +5439,6 @@ footer {
 /*------------------------------------------------------------------*/
 /*-- Jumbotron styles --*/
 /*------------------------------------------------------------------*/
-/*CSS for serving the retina image to devices with a high "device-pixel-ratio":*/
 .jumbotron {
   padding: 0; }
   .jumbotron div {
