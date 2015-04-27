@@ -43,7 +43,7 @@
   /*-- BUTTONS --*/
 /*------------------------------------------------------------------*/
 
-/*-- main CTA's buttons --*/
+/*-- main small CTA's buttons --*/
 .button-main, .button-main:link, .button-main:visited {
   @extend .no-outline;
 
@@ -55,10 +55,27 @@
   letter-spacing: .06em;
 }
 .button-main:hover, .button-main:active {
-  background-color: darken($blue, 10%);
+  background-color: darken($blue, 15%);
   color: $white;
 }
 
+/*-- main big CTA's buttons --*/
+.button-main-big, .button-main-big:link, .button-main-big:visited {
+  @extend .no-outline;
+  @extend .button-main;
+
+  width: 100%;
+  font-size: 1.1em;
+  line-height: 1.6rem;
+
+  @media(max-width: 768px)
+  {
+    font-size: 1.1rem;
+  }
+}
+.button-main-big:hover, .button-main-big:active {
+  @extend .button-main:hover;
+}
 
 /*-- secondary CTA's buttons --*/
 .button-sec, .button-sec:link, .button-sec:visited  {
@@ -158,6 +175,10 @@
 
 .button-link {
   @extend .no-outline;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: $blue;
 }
 
 .button-transparent, .button-transparent:link, .button-transparent:visited {

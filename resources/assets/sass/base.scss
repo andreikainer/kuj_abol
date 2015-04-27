@@ -12,14 +12,14 @@ html {
 }
 
 body {
-  padding-top: 5rem;
+  padding-top: 4.09rem;
   background-color: $lgrey;
 
   color: $text;
   font-family: $lato;
 
   @media(min-width: 768px) {
-    padding-top: 10.1rem;
+    padding-top: 9.15rem;
   }
   @media(min-width: 992px) {
     padding-top: 6.39em;
@@ -45,10 +45,10 @@ ul {
 
 .heading {
   padding-top: 0.65rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
-  color: $bluegrey; //$dgrey
-  border-top: 2px solid $bluegrey; //1px $dgrey
+  color: $dgrey;
+  border-top: 2px solid $dgrey;
 }
 
 .mt-3em {
@@ -56,4 +56,10 @@ ul {
 }
 .mt-2em {
   margin-top: 2rem;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.pad-zero {
+  padding: 0 !important;
 }

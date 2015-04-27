@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    console.log('pipa');
+$(document).ready(function()
+{
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -92,4 +92,5 @@ $(document).ready(function(){
     {
         changeRightBtnGroupAlignment();
     }
+
 });

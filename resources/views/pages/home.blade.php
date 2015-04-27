@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <div class="container-fluid clearfix main_carousel">
                 <div class="main_carousel_item">
-                    <img src="{{ asset('img/main-carousel/lg/home.jpg') }}" class="img-responsive text-center">
+                    <img src="img/main-carousel/lg/home.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                    <img src="{{ asset('img/main-carousel/lg/two.jpg') }}" class="img-responsive">
+                    <img src="img/main-carousel/lg/two.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                     <img src="{{ asset('img/main-carousel/lg/three.jpg') }}" class="img-responsive">
+                    <img src="img/main-carousel/lg/three.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                     <img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive">
+                     <img src="img/main-carousel/lg/five.jpg" class="img-responsive" alt="image">
 
                      <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
@@ -49,8 +49,10 @@
 
 
 <!-- Main content -->
-        <div class="container-fluid">
-            <div class="row" role="main">
+        <div class="container-fluid" role="main">
+
+<!-- Current projects -->
+            <div class="row">
 
                 <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
                     <h2 class="heading">Current Projects</h2>
@@ -58,13 +60,13 @@
 
             </div>
 
-            <div class="row" role="main">
+            <div class="row">
 
                 <div class="col-lg-10 col-lg-offset-1 mt-2em">
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
+                            <div class="thumbnail pad-zero">
+                                <img srcset="img/main-carousel/xs/home.jpg" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -73,19 +75,19 @@
                                     <p class="percentage text-right">40%</p>
 
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
 
-                                    <p><a href="#" class="btn btn-primary button-main" role="button">Button</a></p>
+                                    <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
+                            <div class="thumbnail pad-zero">
+                                <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>
@@ -93,18 +95,18 @@
                                     <p class="percentage text-right">40%</p>
 
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
 
-                                    <p><a href="#" class="btn btn-primary button-main" role="button">Button</a></p>
+                                    <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
+                            <div class="thumbnail pad-zero">
                                 <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -113,19 +115,19 @@
                                     <p class="percentage text-right">40%</p>
 
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
 
-                                  <p><a href="#" class="btn btn-primary button-main" role="button">Button</a></p>
+                                  <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
+                            <div class="thumbnail pad-zero">
+                                <img src="{{ asset('img/main-carousel/xs/four.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>
@@ -133,20 +135,102 @@
                                     <p class="percentage text-right">40%</p>
 
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
 
-                                    <p><a href="#" class="btn btn-primary button-main" role="button">Button</a></p>
+                                    <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
                                 </div>
                             </div>
                         </div>
 
                     </div> <!-- row ends -->
-                </div></div>
+                </div>
+            </div>
 
-            </div> <!-- main content ends -->
+
+<!-- Successful projects -->
+            <div class="row">
+
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                    <h2 class="heading">Successfully Funded Projects</h2>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-10 col-lg-offset-1 mt-2em">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail pad-zero">
+                                <img srcset="img/main-carousel/xs/home.jpg" alt="???">
+
+                                <div class="caption">
+                                    <h3>Project Name</h3>
+                                    <p>hakjlghlaghalkfdhglkahg</p>
+
+                                    <p class="percentage text-right">100%</p>
+
+                                    <div class="progress mb-0">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="1000" aria-valuemin="0" aria-valuemax="100" style="width: 1000%">
+                                            <span class="sr-only">100% Complete (finished)</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check fa-2x"></i>FINISHED</p>
+                                    <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail pad-zero">
+                                <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
+                                <div class="caption">
+                                    <h3>Project Name</h3>
+                                    <p>hakjlghlaghalkfdhglkahg</p>
+
+                                    <p class="percentage text-right">100%</p>
+
+                                    <div class="progress mb-0">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                            <span class="sr-only">100% Complete (finished)</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check fa-2x"></i>FINISHED</p>
+                                    <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail pad-zero">
+                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
+                                <div class="caption">
+                                    <h3>Project Name</h3>
+                                    <p>hakjlghlaghalkfdhglkahg</p>
+
+                                    <p class="percentage text-right">100%</p>
+
+                                    <div class="progress mb-0">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                            <span class="sr-only">100% Complete (finished)</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check fa-2x"></i>FINISHED</p>
+                                    <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- row ends -->
+                </div>
+            </div>
+
 @endsection
 
 @section('additional_js')

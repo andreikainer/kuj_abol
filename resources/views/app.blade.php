@@ -159,17 +159,8 @@
 
 
 <!--================== Main Content =================================================-->
-        {{--<div class="container-fluid">--}}
-            {{--<div class="row" role="main">--}}
 
 	            @yield('content')
-	        {{--<div class="container-fluid">--}}
-                        {{--<div class="row" role="main">--}}
-
-            {{--</div> <!-- main content ends -->--}}
-
-
-
 
 
 
@@ -181,25 +172,25 @@
 	                <div>
 	                <!-- facebook_btn -->
                         <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="facebook">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="facebook">
                                 <i class="fa fa-facebook"></i>
                             </button>
                         </a>
                     <!-- twitter_btn -->
                         <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="twitter">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="twitter">
                                 <i class="fa fa-twitter"></i>
                             </button>
                         </a>
                     <!-- youtube_btn -->
                         <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="youtube">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="youtube">
                                 <i class="fa fa-youtube-play"></i>
                             </button>
                         </a>
                     <!-- googleplus_btn -->
                         <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle collapsed button-circle hvr-push" id="googleplus">
+                            <button type="button" class="navbar-toggle button-circle hvr-push" id="googleplus">
                                 <i class="fa fa-google-plus"></i>
                             </button>
                         </a>
@@ -242,16 +233,6 @@
                 <div class="col-xs-12 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
                     <div class="footer-text-content">
                         <h5>Kontakte</h5>
-                        {{--<p>address: <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>--}}
-                                                {{--2524 Teesdorf Austria--}}
-                                    {{--</a></p>--}}
-                        {{--<p>email: <a href="#">wilhelmine.bauer@sponsoring-agentur.at</a> </p>--}}
-                        {{--<p>phone: <a href="tel:+4366488299511">+43 664 8829 9511</a> </p>--}}
-
-                	    {{--<br><br>--}}
-
-                	    {{--<p>&copy;copyright {{ Carbon\Carbon::now()->year }}</p>--}}
-                        {{--<p>website gemacht <a href="#">ABOL</a></p>--}}
 
                         <p><i class="fa fa-home form-inline"></i> <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>
                                                                         2524 Teesdorf Austria

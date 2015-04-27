@@ -366,12 +366,6 @@ footer {
   div {
     padding: 0;
 
-    img {
-      //      float: left;
-      //      margin-bottom: -10.625rem;
-//      position: absolute;
-    }
-
     h1, p {
       color: $white;
     }
@@ -387,11 +381,11 @@ footer {
     }
     .slick-dots li button:before {
       font-size: .875rem;
-      color: $bluegrey;
+      color: $bluegrey !important;
     }
-    .slick-dots li.slick-active button:before {
-      opacity: 100%;
-      color: $bluegrey;
+    .slick-dots li .slick-active button:before {
+      color: $bluegrey !important;
+      opacity: 100% !important;
     }
   }
 
@@ -399,10 +393,29 @@ footer {
     position: absolute;
     top: 2rem;
     left: 5rem;
+    @media (max-width: 768px) {
+      top: .1rem;
+      left: 1rem;
+      padding: 1em;
+      padding-top: 0;
+      background-color: rgba(0, 0, 0, .5);
+    }
+    @media (min-width: 1366px) {
+      left: 14rem;
+    }
   }
 }
 
+.caption {
+  h3 {
+    font-size: 1.8rem;
+  }
+  p:first-of-type {
+    font-size: 1.1rem;
+  }
+}
 
+/*-- Progress bar styles --*/
 .percentage {
   margin-bottom: 0;
 
@@ -410,6 +423,15 @@ footer {
   font-size: 1.3rem;
   color: $green;
 }
-.progress-bar-success {
-  background-color: $green;
+.prog-bar-green {
+  background-color: $green !important;
 }
+
+/*-- Finished + check styles --*/
+.finished-green {
+  font-family: $montserrat;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $green;
+}
+

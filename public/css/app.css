@@ -4841,13 +4841,13 @@ html {
   line-height: 1.65em; }
 
 body {
-  padding-top: 5rem;
+  padding-top: 4.09rem;
   background-color: #f9f9f9;
   color: #4b4b4b;
   font-family: 'Lato', 'Open Sans', sans-serif; }
   @media (min-width: 768px) {
     body {
-      padding-top: 10.1rem; } }
+      padding-top: 9.15rem; } }
   @media (min-width: 992px) {
     body {
       padding-top: 6.39em; } }
@@ -4866,13 +4866,22 @@ ul {
 
 .heading {
   padding-top: 0.65rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
-  color: #6f798b;
-  border-top: 2px solid #6f798b; }
+  color: #d2d2d2;
+  border-top: 2px solid #d2d2d2; }
 
 .mt-3em {
   margin-top: 3rem; }
+
+.mt-2em {
+  margin-top: 2rem; }
+
+.mb-0 {
+  margin-bottom: 0 !important; }
+
+.pad-zero {
+  padding: 0 !important; }
 
 /*------------------------------------------------------------------*/
 /*-- CLASSES --*/
@@ -4909,17 +4918,26 @@ ul {
 /*------------------------------------------------------------------*/
 /*-- BUTTONS --*/
 /*------------------------------------------------------------------*/
-/*-- main CTA's buttons --*/
-.button-main, .button-main:link, .button-main:visited {
+/*-- main small CTA's buttons --*/
+.button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main-big:link, .button-main:visited, .button-main-big:visited {
   background-color: #3fa3db;
   color: white;
   border-color: #3fa3db;
   font-family: 'Lato', 'Open Sans', sans-serif;
   letter-spacing: .06em; }
 
-.button-main:hover, .button-main:active {
-  background-color: #248ac3;
+.button-main:hover, .button-main-big:hover, .button-main-big:active, .button-main:active, .button-main-big:active {
+  background-color: #207bad;
   color: white; }
+
+/*-- main big CTA's buttons --*/
+.button-main-big, .button-main-big:link, .button-main-big:visited {
+  width: 100%;
+  font-size: 1.1em;
+  line-height: 1.6rem; }
+  @media (max-width: 768px) {
+    .button-main-big, .button-main-big:link, .button-main-big:visited {
+      font-size: 1.1rem; } }
 
 /*-- secondary CTA's buttons --*/
 .button-sec, .button-sec:link, .button-sec:visited {
@@ -4996,6 +5014,11 @@ ul {
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1; }
+
+.button-link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3fa3db; }
 
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
@@ -5431,22 +5454,45 @@ footer {
         margin: 0 auto; } }
     .jumbotron div .slick-dots li button:before {
       font-size: .875rem;
-      color: #6f798b; }
-    .jumbotron div .slick-dots li.slick-active button:before {
-      opacity: 100%;
-      color: #6f798b; }
+      color: #6f798b !important; }
+    .jumbotron div .slick-dots li .slick-active button:before {
+      color: #6f798b !important;
+      opacity: 100% !important; }
   .jumbotron .jumbotron-text {
     position: absolute;
     top: 2rem;
     left: 5rem; }
+    @media (max-width: 768px) {
+      .jumbotron .jumbotron-text {
+        top: .1rem;
+        left: 1rem;
+        padding: 1em;
+        padding-top: 0;
+        background-color: rgba(0, 0, 0, 0.5); } }
+    @media (min-width: 1366px) {
+      .jumbotron .jumbotron-text {
+        left: 14rem; } }
 
+.caption h3 {
+  font-size: 1.8rem; }
+.caption p:first-of-type {
+  font-size: 1.1rem; }
+
+/*-- Progress bar styles --*/
 .percentage {
   margin-bottom: 0;
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-size: 1.3rem;
   color: #2ecc71; }
 
-.progress-bar-success {
+.prog-bar-green {
+  background-color: #2ecc71 !important; }
+
+/*-- Finished + check styles --*/
+.finished-green {
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #2ecc71; }
 
 
