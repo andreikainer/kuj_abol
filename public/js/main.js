@@ -44,16 +44,6 @@ $(document).ready(function()
   /*-- SMOOTH SCROLL --*/
 /*------------------------------------------------------------------*/
 //https://github.com/cferdinandi/smooth-scroll#how-to-contribute - here you may find compiled and production-ready code.
-
-    var headerHeightABOL;
-
-    if($(window).innerWidth() < 992)
-    {
-        headerHeightABOL = 170;
-    }else {
-        headerHeightABOL = 110;
-    }
-    
     smoothScroll.init({
         speed: 500,                 // How fast to complete the scroll in milliseconds
         easing: 'easeInOutQuint'    // Easing pattern to use
@@ -72,11 +62,11 @@ $(document).ready(function()
  */
     $('.language-toggle').on("click", function()
     {
-        if($(this).hasClass('de'))
+        if($(this).hasClass('at'))
         {
-            $(this).toggleClass('de', false).toggleClass('gb', true);
+            $(this).toggleClass('at', false).toggleClass('gb', true);
         }else{
-            $(this).toggleClass('de', true).toggleClass('gb', false);
+            $(this).toggleClass('at', true).toggleClass('gb', false);
         }
     });
 

@@ -37,11 +37,11 @@ $(document).ready(function()
  */
     $('.language-toggle').on("click", function()
     {
-        if($(this).hasClass('de'))
+        if($(this).hasClass('at'))
         {
-            $(this).toggleClass('de', false).toggleClass('gb', true);
+            $(this).toggleClass('at', false).toggleClass('gb', true);
         }else{
-            $(this).toggleClass('de', true).toggleClass('gb', false);
+            $(this).toggleClass('at', true).toggleClass('gb', false);
         }
     });
 

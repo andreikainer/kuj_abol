@@ -5441,10 +5441,10 @@ hr {
   background-position: center;
   background-size: cover;
   border: 0;
-  /* Germany */
+  /* Austria */
   /* UK */ }
-  .flag.DE, .flag.de {
-    background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/DE+(germany).svg'); }
+  .flag.AT, .flag.at {
+    background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/AT+(Austria)'); }
   .flag.GB, .flag.gb {
     background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/UK+(United+Kingdom).svg'); }
 
