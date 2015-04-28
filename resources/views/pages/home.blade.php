@@ -11,7 +11,7 @@
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
                         <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">Contribute now</a></p>
+                        <p><a class="button-transparent" href="#contribute" type="button" data-scroll>Contribute now</a></p>
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
                         <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">View tips</a></p>
+                        <p><a class="button-transparent" href="{{ action('PagesController@howItWorks') }}#tips" type="button" data-scroll>View tips</a></p>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img srcset="img/main-carousel/xs/home.jpg" alt="???">
+                                <img srcset="img/main-carousel/xs/two.jpg" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -228,8 +228,79 @@
                         </div>
 
                     </div> <!-- row ends -->
-                     <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
+                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
                 </div>
+            </div>
+
+
+<!-- Sponsors' logos -->
+            <div class="row">
+
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                    <h2 class="heading">Our Sponsors</h2>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
+                    <div class="row sponsors_carousel">
+
+                        <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
+                            <div class="logo-name img-responsive text-center hidden">onhghjgjhg ghjgkgglglgl glhglglhglhe</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="one">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">two</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="two">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">three</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="three">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                    </div>
+                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View all</a></p></div>
+                </div>
+
             </div>
 
 @endsection

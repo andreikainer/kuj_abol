@@ -135,8 +135,13 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+<<<<<<< HEAD
     'Illuminate\Html\HtmlServiceProvider',
 		'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
+=======
+        'Illuminate\Html\HtmlServiceProvider',
+        'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
+>>>>>>> olgasmirnova
 
 		/*
 		 * Application Service Providers...
@@ -194,9 +199,16 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+<<<<<<< HEAD
     'Html'      => 'Illuminate\Html\HtmlFacade',
     'Form'      => 'Illuminate\Html\FormFacade',
 		'LaravelLocalization'   => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
+=======
+        'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Form'      => 'Illuminate\Html\FormFacade',
+        'LaravelLocalization'   => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
+
+>>>>>>> olgasmirnova
 	],
 
 ];

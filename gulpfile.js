@@ -18,7 +18,6 @@ elixir(function(mix) {
 
     mix.scripts([
         'pubsub.js',
-        'main.js',
-        'projectpage.js'
+        'main.js'
     ], 'public/js/main.js', 'resources/assets/js');
 });
