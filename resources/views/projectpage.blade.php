@@ -12,16 +12,6 @@
             <img class="img-responsive center-block" src="{{ asset('/img/hansi.png') }}">
         </div> <!-- project images end-->
 
-        <ul class="language_bar_chooser">
-    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-        <li>
-            <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-                {{{ $properties['native'] }}}
-            </a>
-        </li>
-    @endforeach
-</ul>
-
         <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder">  <!-- statistics beginn-->
             <h3>Total funds raised:</h3>
             <h2><strong>&euro; 2359,53</strong></h2>

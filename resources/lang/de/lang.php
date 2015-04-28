@@ -11,7 +11,10 @@ return [
 	| key exist in both lang.php files. Put the english string straight in here.
 	*/
 
-	'test'       => 'Das ist die deutsche Überschrift',
-	'test2'      => 'Und alles hier ist Deutsch',
+	'how-it-works' 		=> 'wer wir sind',
+	'create-project' 	=> 'ansuchen einreichen',
+	'contribute' 			=> 'fördern',
 
+	'login'						=> 'Einloggen',
+	'register'				=> 'Registrieren',
 ];
