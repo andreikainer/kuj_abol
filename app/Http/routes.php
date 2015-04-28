@@ -15,6 +15,8 @@ Route::get('create-project', 'PagesController@createProject');
 
 Route::get('/', 'PagesController@index');
 
+Route::get('so-funktionert', 'PagesController@howItWorks');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -13,6 +13,12 @@ class PagesController extends Controller {
         return view('pages.home');
     }
 
+/*-- How It Works Page --*/
+    public function howItWorks()
+    {
+        return view('pages.how-it-works');
+    }
+
     public function createProject()
     {
         return view('create-project.index');

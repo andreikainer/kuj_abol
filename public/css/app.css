@@ -5017,8 +5017,9 @@ ul {
 
 .button-link {
   font-size: 1rem;
-  font-weight: 700;
-  color: #3fa3db; }
+  font-weight: 600;
+  color: #3fa3db;
+  text-decoration: underline !important; }
 
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
@@ -5128,8 +5129,25 @@ ul {
   border-top-right-radius: 0; }
 
 /*------------------------------------------------------------------*/
-/*-- CAROUSEL --*/
+/*-- PROJECT TILE --*/
 /*------------------------------------------------------------------*/
+.tile, .success {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0;
+  box-shadow: inset 0 .5rem 0 0 #6f798b;
+  padding-top: .5rem !important; }
+
+.tile:hover, .success:hover, .tile:focus, .success:focus, .tile:active, .success:active {
+  box-shadow: inset 0 .5rem 0 0 #3fa3db; }
+
+.success:hover, .success:focus, .success:active {
+  box-shadow: inset 0 .5rem 0 0 #2ecc71; }
+
+/*-- GREEN TICK for successful projects --*/
+.fa-check {
+  margin-right: .5rem; }
+
 /*------------------------------------------------------------------*/
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
 /*------------------------------------------------------------------*/

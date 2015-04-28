@@ -9,11 +9,11 @@
 		<meta name="descripion" content="????"> <!-- recomended 160 chrs, will be shown on search engine result pages -->
 		<!-- <meta name="robots" content="noindex, nofollow" /> -->
 		<meta charset="utf-8" />
+		<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 		<title>Kinder-und Jugenfönderungen</title>
 		<link rel="icon" type="image/png" href="{{ asset('/img/logo_tab.png') }}">
 
-		<script>(function(w){var dpr=((w.devicePixelRatio===undefined)?1:w.devicePixelRatio);if(!!w.navigator.standalone){var r=new XMLHttpRequest();r.open('GET','/retinaimages.php?devicePixelRatio='+dpr,false);r.send()}else{document.cookie='devicePixelRatio='+dpr+'; path=/'}})(window)</script>
         <noscript><style id="devicePixelRatio" media="only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)">html{background-image:url("/retinaimages.php?devicePixelRatio=2")}</style></noscript>
 
     <!-- Slick carousel -->
@@ -69,7 +69,7 @@
 
 <!--================== Header =================================================-->
         <header>
-            <nav class="navbar navbar-default navbar-fixed-top white-bg">
+            <nav class="navbar navbar-default navbar-fixed-top white-bg"  data-scroll-header>
                 <div class="container-fluid">
 	                <div class="row">
                	        <div class="col-md-2 col-lg-2 navbar-header">
@@ -94,7 +94,7 @@
                             </button>
 
                  	    <!-- logo -->
-           			    	<a href="#" class="navbar-brand logo">
+           			    	<a href="{{ action('PagesController@index') }}" class="navbar-brand logo">
            			    	    <img src="{{ asset('/img/logo.svg') }}" alt="logo">
            			    	</a>
 
@@ -136,18 +136,18 @@
                                 {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  Regestrieren</a></li>--}}
 
                    	        	<li class="dropdown">
-                            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">So funktionert’s <span class="caret"></span></a>
+                            		<a class="dropdown-toggle" data-toggle="dropdown" href="{{ action('PagesController@howItWorks') }}">So funktionert’s <span class="caret"></span></a>
                             		<ul class="dropdown-menu">
-                            		    <li><a href="#">Tips For Success</a></li>
-                            		    <li><a href="#">FAQ</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Tips For Success</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>FAQ</a></li>
                             		    <li role="presentation" class="divider"></li>
-                            		    <li><a href="#">Our Sponsors</a></li>
-                            		    <li><a href="#">Our Mission</a></li>
-                            			<li><a href="#">Our Team</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Sponsors</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Mission</a></li>
+                            			<li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Team</a></li>
                             		</ul>
                   	        	</li>
                    	        	<li><a href="{{ action('PagesController@createProject') }}">Ansuchen einreichen</a></li>
-                   	        	<li><a href="#">Fördern</a></li>
+                   	        	<li><a href="#contribute" data-scroll>FÖRDERN</a></li>
                  	        </ul>
                         </div>
 
@@ -270,6 +270,9 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
 
 	<script src="{{ asset('/js/modernizr.js') }}"></script>
+
+<!-- Smooth scroll -->
+    <script src="{{ asset('/js/smooth-scroll.js') }}"></script>
 
 <!-- ABOL js -->
 	<script src="{{ asset('/js/main.js') }}"></script>
