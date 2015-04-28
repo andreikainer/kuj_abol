@@ -190,7 +190,7 @@ $flag-y: 2.3rem !default;
   background-position: center;
   background-size: cover;
   border: 0;
-/* Germany */  &.DE, &.de { background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/DE+(austria).svg'); }
+/* Austria */  &.AT, &.at { background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/AT+(Austria)'); }
 /* UK */       &.GB, &.gb { background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/UK+(United+Kingdom).svg'); }
 }
 // Cross browser inline-block
