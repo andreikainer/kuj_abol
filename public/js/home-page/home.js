@@ -87,13 +87,24 @@
                   ]
   });
 
-/*-- To show sponsor's name on thumb hover --*/
-  $('.sponsors_carousel div img').hover(function ()
-  {
-      $(this).prev().toggleClass('hidden', false);
-  },
-  function () {
-      $(this).prev().toggleClass('hidden', true);
-  });
 
+/*-- To make block with sponsor's name the same size as logo --*/
+  var imgWidth    = $('.sponsors_carousel div img').css('width');
+  var imgHeight   = $('.sponsors_carousel div img').css('height');
+
+  $('.sponsors_carousel div div').css('width', imgWidth);
+  $('.sponsors_carousel div div').css('height', imgHeight);
+
+
+/*-- To show sponsor's name on thumb hover --*/
+  $('.sponsors_carousel div img').on({
+      mouseenter: function()
+      {
+          $(this).prev().toggleClass('hidden', false);
+      },
+      mouseleave: function()
+      {
+          $(this).prev().toggleClass('hidden', true);
+      }
+  });
 })();

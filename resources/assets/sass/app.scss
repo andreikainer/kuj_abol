@@ -414,6 +414,13 @@ footer {
   }
 }
 
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- Project Tiles styles --*/
+/*------------------------------------------------------------------*/
 /*-- Progress bar styles --*/
 .percentage {
   margin-bottom: 0;
@@ -434,6 +441,14 @@ footer {
   color: $green;
 }
 
+
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- Sponsors Carousel styles --*/
+/*------------------------------------------------------------------*/
 .sponsors_carousel {
   .slick-prev, .slick-next, .slick-prev:before, .slick-next:before {
     display: block !important;
@@ -450,11 +465,8 @@ footer {
     display: block;
     background-color: rgba(0, 0, 0, .7);
     position: absolute;
-    bottom: 50%;
 
     padding: .5rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
 
     font-size: 1rem;
     font-weight: 700;

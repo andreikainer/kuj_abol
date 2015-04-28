@@ -5597,6 +5597,9 @@ footer {
 .caption p:first-of-type {
   font-size: 1.1rem; }
 
+/*------------------------------------------------------------------*/
+/*-- Project Tiles styles --*/
+/*------------------------------------------------------------------*/
 /*-- Progress bar styles --*/
 .percentage {
   margin-bottom: 0;
@@ -5614,6 +5617,9 @@ footer {
   font-weight: 700;
   color: #2ecc71; }
 
+/*------------------------------------------------------------------*/
+/*-- Sponsors Carousel styles --*/
+/*------------------------------------------------------------------*/
 .sponsors_carousel {
   /*-- to show the sponsor's name --*/ }
   .sponsors_carousel .slick-prev, .sponsors_carousel .slick-next, .sponsors_carousel .slick-prev:before, .sponsors_carousel .slick-next:before {
@@ -5626,10 +5632,7 @@ footer {
     display: block;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
-    bottom: 50%;
     padding: .5rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
     font-size: 1rem;
     font-weight: 700;
     color: white; }

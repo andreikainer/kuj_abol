@@ -247,54 +247,54 @@
                 <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
                     <div class="row sponsors_carousel">
 
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">one</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="one">
+                        <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
+                            <div class="logo-name img-responsive text-center hidden">onhghjgjhg ghjgkgglglgl glhglglhglhe</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="one">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">two</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="two">
+                            <div class="logo-name img-responsive text-center hidden">two</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="two">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">three</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="three">
+                            <div class="logo-name img-responsive text-center hidden">three</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="three">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">four</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="four">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">five</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="five">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">four</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="four">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">five</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="five">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">five</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="five">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">four</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="four">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name text-center hidden">five</div>
-                            <img src="img/main-carousel/xs/seven.jpg" class="img-responsive" alt="five">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
                         </div>
 
                     </div>
