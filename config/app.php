@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'de',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -136,6 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
+        'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -195,6 +196,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Form'      => 'Illuminate\Html\FormFacade',
+        'LaravelLocalization'   => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
 
 	],
 

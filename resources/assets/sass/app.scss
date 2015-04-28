@@ -226,6 +226,10 @@ footer {
     display: inline-block;
   }
 
+  .socialmedia {
+    margin-top: 2rem;
+  }
+
   .socialmedia > div {
     width: 10.5rem;
     margin: 0 auto;
@@ -349,6 +353,9 @@ footer {
   }
 }
 
+
+
+
 /*------------------------------------------------------------------*/
   /*-- Jumbotron styles --*/
 /*------------------------------------------------------------------*/
@@ -427,3 +434,30 @@ footer {
   color: $green;
 }
 
+.sponsors_carousel {
+  .slick-prev, .slick-next, .slick-prev:before, .slick-next:before {
+    display: block !important;
+    color: $bluegrey !important;
+  }
+
+  div img {
+    min-width: 150px;
+    height: auto;
+  }
+
+/*-- to show the sponsor's name --*/
+  .logo-name {
+    display: block;
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    bottom: 50%;
+
+    padding: .5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: $white;
+  }
+}

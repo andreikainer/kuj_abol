@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "03b715cdcc1479f3f58235108bea581e",
+    "hash": "60996984e18c168dd40220241f174d39",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1064,6 +1064,54 @@
                 "storage"
             ],
             "time": "2015-03-29 14:01:43"
+        },
+        {
+            "name": "mcamara/laravel-localization",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mcamara/laravel-localization.git",
+                "reference": "952d26841ab9f4bc76460514609d38b98311c898"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/952d26841ab9f4bc76460514609d38b98311c898",
+                "reference": "952d26841ab9f4bc76460514609d38b98311c898",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.0.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [],
+                "psr-0": {
+                    "Mcamara\\LaravelLocalization": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Cámara",
+                    "email": "mcamara88@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy localization for Laravel",
+            "homepage": "https://github.com/mcamara/laravel-localization",
+            "keywords": [
+                "laravel",
+                "localization",
+                "php"
+            ],
+            "time": "2015-03-11 16:51:00"
         },
         {
             "name": "monolog/monolog",

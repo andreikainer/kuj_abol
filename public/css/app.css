@@ -5470,6 +5470,8 @@ footer {
     background-color: #3fa3db; }
   footer .socialmedia a {
     display: inline-block; }
+  footer .socialmedia {
+    margin-top: 2rem; }
   footer .socialmedia > div {
     width: 10.5rem;
     margin: 0 auto; }
@@ -5611,6 +5613,26 @@ footer {
   font-size: 1.8rem;
   font-weight: 700;
   color: #2ecc71; }
+
+.sponsors_carousel {
+  /*-- to show the sponsor's name --*/ }
+  .sponsors_carousel .slick-prev, .sponsors_carousel .slick-next, .sponsors_carousel .slick-prev:before, .sponsors_carousel .slick-next:before {
+    display: block !important;
+    color: #6f798b !important; }
+  .sponsors_carousel div img {
+    min-width: 150px;
+    height: auto; }
+  .sponsors_carousel .logo-name {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 50%;
+    padding: .5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white; }
 
 
 /*# sourceMappingURL=app.css.map */
