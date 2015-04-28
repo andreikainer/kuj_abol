@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <div class="container-fluid clearfix main_carousel">
                 <div class="main_carousel_item">
-                    <img src="img/main-carousel/lg/home.jpg" class="img-responsive" alt="image">
+                    <img src="img/main-carousel/lg/seven.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                    <img src="img/main-carousel/lg/two.jpg" class="img-responsive" alt="image">
+                    <img src="img/main-carousel/lg/six.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
@@ -55,7 +55,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-                    <h2 class="heading">Current Projects</h2>
+                    <h2 class="heading" id="contribute">Current Projects</h2>
                 </div>
 
             </div>
@@ -65,7 +65,7 @@
                 <div class="col-lg-10 col-lg-offset-1 mt-2em">
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero">
+                            <div class="thumbnail pad-zero tile">
                                 <img srcset="img/main-carousel/xs/home.jpg" alt="???">
 
                                 <div class="caption">
@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero">
+                            <div class="thumbnail pad-zero tile">
                                 <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -106,7 +106,7 @@
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero">
+                            <div class="thumbnail pad-zero tile">
                                 <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -126,7 +126,7 @@
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero">
+                            <div class="thumbnail pad-zero tile">
                                 <img src="{{ asset('img/main-carousel/xs/four.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -164,7 +164,7 @@
                 <div class="col-lg-10 col-lg-offset-1 mt-2em">
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero">
+                            <div class="thumbnail pad-zero success">
                                 <img srcset="img/main-carousel/xs/home.jpg" alt="???">
 
                                 <div class="caption">
@@ -179,14 +179,14 @@
                                         </div>
                                     </div>
 
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check fa-2x"></i>FINISHED</p>
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>FINISHED</p>
                                     <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero">
+                            <div class="thumbnail pad-zero success">
                                 <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -200,14 +200,14 @@
                                         </div>
                                     </div>
 
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check fa-2x"></i>FINISHED</p>
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>FINISHED</p>
                                     <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero">
+                            <div class="thumbnail pad-zero success">
                                 <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -221,13 +221,14 @@
                                         </div>
                                     </div>
 
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check fa-2x"></i>FINISHED</p>
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>FINISHED</p>
                                     <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
                                 </div>
                             </div>
                         </div>
 
                     </div> <!-- row ends -->
+                     <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
                 </div>
             </div>
 

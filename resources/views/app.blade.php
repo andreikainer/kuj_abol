@@ -14,7 +14,6 @@
 		<title>Kinder-und Jugenfönderungen</title>
 		<link rel="icon" type="image/png" href="{{ asset('/img/logo_tab.png') }}">
 
-		<script>(function(w){var dpr=((w.devicePixelRatio===undefined)?1:w.devicePixelRatio);if(!!w.navigator.standalone){var r=new XMLHttpRequest();r.open('GET','/retinaimages.php?devicePixelRatio='+dpr,false);r.send()}else{document.cookie='devicePixelRatio='+dpr+'; path=/'}})(window)</script>
         <noscript><style id="devicePixelRatio" media="only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)">html{background-image:url("/retinaimages.php?devicePixelRatio=2")}</style></noscript>
 
     <!-- Slick carousel -->
@@ -45,7 +44,6 @@
 <body>
 
 
-
 <!--================== Backups =================================================-->
 
 <!--[if lte IE 9]>
@@ -70,7 +68,7 @@
 
 <!--================== Header =================================================-->
         <header>
-            <nav class="navbar navbar-default navbar-fixed-top white-bg">
+            <nav class="navbar navbar-default navbar-fixed-top white-bg"  data-scroll-header>
                 <div class="container-fluid">
 	                <div class="row">
                	        <div class="col-md-2 col-lg-2 navbar-header">
@@ -95,7 +93,7 @@
                             </button>
 
                  	    <!-- logo -->
-           			    	<a href="#" class="navbar-brand logo">
+           			    	<a href="{{ action('PagesController@index') }}" class="navbar-brand logo">
            			    	    <img src="{{ asset('/img/logo.svg') }}" alt="logo">
            			    	</a>
 
@@ -106,8 +104,13 @@
                             <div>
                                 <div class="alignme-center clearfix">
                                 <!-- language_btn -->
-                                    <button type="button" class="navbar-toggle button-circle hvr-push flag gb language-toggle">
-                                    </button>
+																@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+																			<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
+																				<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+																						{{{ $properties['native'] }}}
+																				</a>
+																			</button>
+																@endforeach
 
                                 <!-- ask question_btn -->
                                     <button type="button" class="navbar-toggle collapsed button-circle hvr-push" class="question" data-toggle="collapse" data-target="#help_modal">
@@ -121,8 +124,8 @@
                                 </div>
 
                                 <div class="alignme-center">
-                                    <button type="button" class="btn btn-xs button-main button-user">Einloggen</button>
-                                    <button type="button" class="btn btn-xs button-main button-user">Regestrieren</button>
+                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('lang.login') }}</button>
+                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('lang.register') }}</button>
                                 </div>
 
                             </div>
@@ -131,24 +134,24 @@
                		    <div class="col-sm-7 col-md-2 col-md-pull-2 col-lg-2 col-lg-pull-1 collapse navbar-collapse" id="main_nav" role="navigation">
                  	       <hr class="visible-sm">
                  	       <ul class="nav navbar-nav">
-                   	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  Einloggen</a></li>
-                                <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  Regestrieren</a></li>
-                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  Einloggen</a></li>--}}
-                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  Regestrieren</a></li>--}}
+                   	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('lang.login') }}</a></li>
+                                <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('lang.register') }}</a></li>
+                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('lang.login') }}</a></li>--}}
+                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('lang.register') }}</a></li>--}}
 
                    	        	<li class="dropdown">
-                            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">So funktionert’s <span class="caret"></span></a>
+                            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ trans('lang.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
-                            		    <li><a href="#">Tips For Success</a></li>
-                            		    <li><a href="#">FAQ</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Tips For Success</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>FAQ</a></li>
                             		    <li role="presentation" class="divider"></li>
-                            		    <li><a href="#">Our Sponsors</a></li>
-                            		    <li><a href="#">Our Mission</a></li>
-                            			<li><a href="#">Our Team</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Sponsors</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Mission</a></li>
+                            			<li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Team</a></li>
                             		</ul>
                   	        	</li>
-                   	        	<li><a href="{{ action('PagesController@createProject') }}">Ansuchen einreichen</a></li>
-                   	        	<li><a href="#">Fördern</a></li>
+                   	        	<li><a href="{{ action('PagesController@createProject') }}">{{ trans('lang.create-project') }}</a></li>
+                   	        	<li><a href="{{ action('PagesController@viewProjects') }}">{{ trans('lang.contribute') }}</a></li>
                  	        </ul>
                         </div>
 
@@ -274,6 +277,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>
 
 	<script src="{{ asset('/js/modernizr.js') }}"></script>
+
+<!-- Smooth scroll -->
+    <script src="{{ asset('/js/smooth-scroll.js') }}"></script>
 
 <!-- ABOL js -->
 	<script src="{{ asset('/js/main.js') }}"></script>
