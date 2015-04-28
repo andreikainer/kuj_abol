@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img srcset="img/main-carousel/xs/home.jpg" alt="???">
+                                <img srcset="img/main-carousel/xs/two.jpg" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
