@@ -1,6 +1,16 @@
 (function()
 {
     /**
+     * Send the CSRF token with every AJAX request.
+     */
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+
+    /**
      * Global Variables
      */
 
@@ -20,6 +30,7 @@
         'alphaOnly' : 'Must contain letters only. And not begin with a space.',
         'email' : 'Must be of a correct email format. And not begin with a space.',
         'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
+        'image' : 'Please choose a valid image format',
         'maxLength' : function(limit)
         {
             return 'This field must not exceed '+limit+' characters';
@@ -58,6 +69,27 @@
     {
         $.publish('short-description.keyup', this);
     });
+
+    $('input[name="main_img"]').on('change', function()
+    {
+        $.publish('main-image.selected', this);
+    });
+
+    $('input[name="img_2"]').on('change', function()
+    {
+        $.publish('image-two.selected', this);
+    });
+
+    $('input[name="img_3"]').on('change', function()
+    {
+        $.publish('image-three.selected', this);
+    });
+
+    $('input[name="img_4"]').on('change', function()
+    {
+        $.publish('image-four.selected', this);
+    });
+
 
     // Form Field blur events.
     $('input[name="project_name"]').on('blur', function()
@@ -150,6 +182,32 @@
             updateCharCount(data.value.length, limit, $('.character-count'));
         }
     });
+
+    // Image Preview.
+    $.subscribe('main-image.selected image-two.selected image-three.selected image-four.selected', function(event, data)
+    {
+        if (! checkImageMime(data.files[0].type)) {
+            showErrorMessage('main_img', errorMessages.image);
+            return false;
+        }
+        var inputControls = $(data).parent('.image-upload-controls');
+        var previewContainer = inputControls.siblings('.form-image-preview');
+
+        loadImagePreview(data.files[0], previewContainer);
+
+        // hide the input field.
+        inputControls.fadeOut();
+        // fade the image into view.
+        previewContainer.delay(200).fadeIn()
+        .then(function()
+        {
+           console.log('button time');
+        });
+
+        //createImageCloseButton(previewContainer.parent());
+    });
+
+
 
 
     // Form Validation Events.
@@ -340,5 +398,47 @@
     function updateCharCount(length, limit, display)
     {
         $(display).html('characters remaining '+(limit-length)).fadeIn();
+    }
+
+    function checkImageMime(mime)
+    {
+        return (   mime === 'image/jpg'
+                || mime === 'image/jpeg'
+                || mime === 'image/png'
+                || mime === 'image/bmp'
+                || mime === 'image/tiff');
+    }
+
+    function loadImagePreview(file, container)
+    {
+        var reader = new FileReader();
+        reader.onload = function(e)
+        {
+            container.attr('src', e.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
+
+    function createImageCloseButton(container)
+    {
+        $(container).prepend('<span class="image-upload-close-button">X</span>');
+    }
+
+    function ajaxRequest(url, data, successEvent, errorEvent)
+    {
+        $.ajax({
+            url : url,
+            method : 'POST',
+            //dataType : 'json',
+            data : data,
+            success : function(response)
+            {
+                $.publish(successEvent, response);
+            },
+            error : function(response)
+            {
+                $.publish(errorEvent, response);
+            }
+        });
     }
 })();

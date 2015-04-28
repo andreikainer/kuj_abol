@@ -9,6 +9,7 @@
 		<meta name="descripion" content="????"> <!-- recomended 160 chrs, will be shown on search engine result pages -->
 		<!-- <meta name="robots" content="noindex, nofollow" /> -->
 		<meta charset="utf-8" />
+		<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 		<title>Kinder-und Jugenfönderungen</title>
 		<link rel="icon" type="image/png" href="{{ asset('/img/logo_tab.png') }}">
