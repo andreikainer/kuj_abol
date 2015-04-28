@@ -13,8 +13,8 @@ return [
 
 	'how-it-works' 		=> 'wer wir sind',
 	'create-project' 	=> 'ansuchen einreichen',
-	'contribute' 			=> 'fördern',
+	'contribute' 		=> 'fördern',
 
-	'login'						=> 'Einloggen',
-	'register'				=> 'Registrieren',
+	'login'				=> 'Einloggen',
+	'register'			=> 'Registrieren',
 ];
