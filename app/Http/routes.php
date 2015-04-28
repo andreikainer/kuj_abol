@@ -11,7 +11,11 @@
 |
 */
 
+
 Route::get('create-project', 'PagesController@createProject');
+
+
+Route::get('project', 'PagesController@viewProjects');
 
 Route::get('/', 'PagesController@index');
 
