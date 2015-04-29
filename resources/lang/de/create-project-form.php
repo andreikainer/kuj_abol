@@ -26,6 +26,7 @@ return [
     'save-progress'         => 'Speichern Fortschritt',
     'back'                  => 'zurück',
     'next'                  => 'nächster',
+    'submit'                => 'Zur Genehmigung einreichen',
 
     /**
      * Form Labels.
@@ -36,6 +37,14 @@ return [
     'secondary-images'      => 'Sekundär Bilder:',
     'full-description'      => 'Ausführliche Beschreibung:',
     'fundraise-amount'      => 'Fundraising Menge:',
+    'child-name'            => 'Name des Kindes:',
+    'first-name'            => 'Ihr Vorname:',
+    'last-name'             => 'Ihr Nachname:',
+    'email'                 => 'Ihre E-Mail Adresse:',
+    'address'               => 'Wohnadresse:',
+    'tel-number'            => 'Telefonnummer:',
+    'main-documents'        => 'Dokumente Beweis:',
+    'secondary-documents'   => 'zusätzliche Dokumente:',
 
     /**
      * Form Field Placeholders
@@ -55,4 +64,9 @@ return [
     'exp-main-image-2'      => 'Das wird die Hauptanzeige Foto für Ihr Projekt, <br/> so machen es gut!',
     'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 50MB Dateigrenze. <br/> Mindestgröße 768 x 1024 Pixel',
     'exp-secondary-image'   => 'Klicken Sie, um ein Bild hochzuladen.',
+    'exp-evidence-1'        => 'Wir benötigen Beweise für Ihr Kind die Krankheit.',
+    'exp-evidence-2'        => 'Eine schriftliche Brief von Ihrem Arzt oder Krankenhaus, die besagt, den Zustand Ihres Kindes Krankheit. <br/> Ein Dokument, Nachweise über Ihre finanzielle Situation, einschließlich Kinderbetreuungsgeld.',
+    'exp-evidence-3'        => 'Je mehr Beweise, die Sie einreichen, desto wahrscheinlicher ist das erfolgreiche Ergebnis der Anwendung.',
+    'exp-document-label'    => 'mindestens 2 Dokumente obligatorisch',
+    'exp-document-input'    => 'Klicken Sie hier um ein Dokument hochladen',
 ];

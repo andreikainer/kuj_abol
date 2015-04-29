@@ -3,12 +3,12 @@
         <p>This is the summary page.</p>
     </div>
     <div class="col-md-4 col-sm-4">
-        {!! Form::submit('Zur Genehmigung einreichen', ['class' => 'form-button']) !!}
+        {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button']) !!}
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-6">
-        <div class="form-button form-button-nav text-center" data-button="back">zurück</div>
+        <div class="form-button form-button-nav text-center" data-button="back">{{ trans('create-project-form.back') }}</div>
     </div>
 </div>
