@@ -163,11 +163,20 @@
         </header> <!-- header ends -->
 
 
+
+
+<!--**************************-->
+    <!-- SEARCH MODULE -->
+<!--**************************-->
         <div class="row hidden module" id="search_module">
-            <div class="col-md-6 col-md-offset-3">
-                test
+            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
+                @include('forms.search-form')
             </div>
+            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
         </div>
+
+
+
 <!--================== Main Content =================================================-->
 
 

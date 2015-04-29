@@ -5,7 +5,7 @@ $(document).ready(function()
     /*-- BACKUPS --*/
 /*------------------------------------------------------------------*/
 
-    /*-- Opera MIni Backup -----------------------------------------------*/
+/*-- Opera MIni Backup -----------------------------------------------*/
     var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
     if (isOperaMini)
     {
@@ -22,39 +22,6 @@ $(document).ready(function()
     smoothScroll.init({
         speed: 500,                 // How fast to complete the scroll in milliseconds
         easing: 'easeInOutQuint'    // Easing pattern to use
-    });
-
-
-
-
-
-/*------------------------------------------------------------------*/
-    /*-- SEARCH  BUTTON --*/
-/*------------------------------------------------------------------*/
-    $('.magnifier').on("click", function()
-    {
-        $('#search_module').toggleClass('hidden');
-    });
-
-
-
-
-
-/*------------------------------------------------------------------*/
-  /*-- LANGUAGE CHANGE BUTTON --*/
-/*------------------------------------------------------------------*/
-/*
- * check what land flag is displaying
- * toggle the flag on a press button event
- */
-    $('.language-toggle').on("click", function()
-    {
-        if($(this).hasClass('at'))
-        {
-            $(this).toggleClass('at', false).toggleClass('gb', true);
-        }else{
-            $(this).toggleClass('at', true).toggleClass('gb', false);
-        }
     });
 
 
@@ -83,6 +50,71 @@ $(document).ready(function()
     {
         $('.circles div div').toggleClass('alignme-center', false);
     }
+
+/*
+ * closeSearchModule
+ * hides the search module
+ */
+    function closeSearchModule()
+    {
+        $('#search_module').toggleClass('hidden', true);
+    }
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+    /*-- SEARCH OPTION --*/
+/*------------------------------------------------------------------*/
+// when Magnifier Button pressed, show/hide search module
+    $('.magnifier').on("click", function(e)
+    {
+        e.stopPropagation();
+        $('#search_module').toggleClass('hidden');
+    });
+// when user clicks somewhere outside search module, hide search module
+    $('html').on("click", function()
+    {
+        closeSearchModule();
+    });
+// when user clicks Close Button, hide search module
+    $('#search_module i').on("click", function(e)
+    {
+        closeSearchModule();
+    });
+// when clicked inside search module, don't hide it
+    $('#search_module').on("click", function(e)
+    {
+        e.stopPropagation();
+        $('input[name = search_inputfield]').on('input', function() {
+            console.log($(this).val());
+        });
+    });
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- LANGUAGE CHANGE OPTION --*/
+/*------------------------------------------------------------------*/
+/*
+ * check what land flag is displaying
+ * toggle the flag on a press button event
+ */
+    $('.language-toggle').on("click", function()
+    {
+        if($(this).hasClass('at'))
+        {
+            $(this).toggleClass('at', false).toggleClass('gb', true);
+        }else{
+            $(this).toggleClass('at', true).toggleClass('gb', false);
+        }
+    });
+
 
 
 
