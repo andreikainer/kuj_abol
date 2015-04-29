@@ -4875,8 +4875,8 @@ label {
   padding-top: 0.65rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: #d2d2d2;
-  border-top: 2px solid #d2d2d2; }
+  color: #6f798b;
+  border-top: 2px solid #6f798b; }
 
 .mt-3em {
   margin-top: 3rem; }
@@ -5250,6 +5250,9 @@ label {
 .list-item {
   list-style: circle; }
 
+.l-font {
+  font-size: 1.5rem; }
+
 #progress_bar {
   background: #2ecc71;
   padding-left: 1em; }
@@ -5602,8 +5605,15 @@ footer {
   font-size: 1.3rem;
   color: #2ecc71; }
 
+.progress {
+  background: #d2d2d2; }
+
 .prog-bar-green {
-  background-color: #2ecc71 !important; }
+  background-color: #2ecc71 !important;
+  min-width: 5em; }
+  .prog-bar-green span {
+    font-size: 2em;
+    line-height: 40px; }
 
 /*-- Finished + check styles --*/
 .finished-green {

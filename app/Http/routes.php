@@ -20,13 +20,15 @@ Route::group(
     ],
     function()
     {
-      Route::get('/', 'PagesController@index');
+        Route::get('/', 'PagesController@index');
 
-      Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
+        Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
 
-      Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
+        Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
 
-      Route::controllers([
+        Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
+
+        Route::controllers([
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',
       ]);

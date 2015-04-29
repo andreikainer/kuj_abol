@@ -415,8 +415,19 @@ footer {
   font-size: 1.3rem;
   color: $green;
 }
+
+.progress {
+  background: $dgrey;
+}
 .prog-bar-green {
   background-color: $green !important;
+  min-width: 5em;
+
+  span {
+    font-size: 2em;
+    line-height: 40px;
+
+  }
 }
 
 /*-- Finished + check styles --*/
