@@ -92,10 +92,10 @@
 
     ul>li:nth-child(3) {
       @media(min-width: 768px) and (max-width: 991px) {
-        margin-left: 3rem;
+        margin-left: 5rem;
       }
       @media(min-width: 911px) and (max-width: 991px) {
-        margin-left: 4.5rem;
+        margin-left: 8rem;
       }
     }
     ul>li:nth-child(4) {
@@ -446,6 +446,7 @@ footer {
   font-family: $montserrat;
   font-size: 1.8rem;
   font-weight: 700;
+  text-transform: uppercase;
   color: $green;
 }
 

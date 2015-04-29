@@ -11,7 +11,7 @@
                     <div class="jumbotron-text">
                         <h1>Hello, world!</h1>
                         <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#contribute" type="button" data-scroll>Contribute now</a></p>
+                        <p><a class="button-transparent" href="#contribute" type="button" data-scroll>{{ trans('lang.contribute-now') }}</a></p>
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-                    <h2 class="heading" id="contribute">Current Projects</h2>
+                    <h2 class="heading" id="contribute">{{ trans('lang.current-projects') }}</h2>
                 </div>
 
             </div>
@@ -154,7 +154,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-                    <h2 class="heading">Successfully Funded Projects</h2>
+                    <h2 class="heading">{{ trans('lang.successfully-funded-projects') }}</h2>
                 </div>
 
             </div>
@@ -179,7 +179,7 @@
                                         </div>
                                     </div>
 
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>FINISHED</p>
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('lang.finished') }}</p>
                                     <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
                                 </div>
                             </div>

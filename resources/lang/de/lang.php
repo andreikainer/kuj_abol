@@ -11,9 +11,9 @@ return [
 	| key exist in both lang.php files. Put the english string straight in here.
 	*/
 
-	'how-it-works'          => 'wer wir sind',
-	'create-project'        => 'ansuchen einreichen',
-	'contribute'            => 'fördern',
+	'how-it-works'          => 'Wer wir sind',
+	'create-project'        => 'Ansuchen einreichen',
+	'contribute'            => 'Fördern',
 
 	'login'				    => 'Einloggen',
 	'register'			    => 'Registrieren',
@@ -21,30 +21,30 @@ return [
 
     'search-result'         => '',
     'search'                => 'Suchen',
-    'search for a project'  => 'Förderungsprojekt suchen',
+    'search-for-a-project'  => 'Förderungsprojekt suchen',
 
-    'our mission'           => 'Unsere Philosphie',
-    'our team'              => 'Unser Team',
-    'tips for success'      => '',
-    'our sponsors'          => 'Sponsoren',
+    'our-mission'           => 'Unsere Philosphie',
+    'our-team'              => 'Unser Team',
+    'tips-for-success'      => '',
+    'our-sponsors'          => 'Sponsoren',
 
-    'current projects'      => 'Aktuelle Projekte',
-    'successfully funded projects'  => 'Erfolgreich geförderte Projekte',
-    'finished'              => 'Abgeschlossen',
-    'view more'             => '',
-    'view all'              => '',
-    'read more'             => '',
+    'current-projects'      => 'Aktuelle Projekte',
+    'successfully-funded-projects'  => 'Erfolgreich geförderte Projekte',
+    'finished'              => 'Gefördert',
+    'view-more'             => '',
+    'view-all'              => '',
+    'read-more'             => '',
     'details'               => '',
 
     'newsletter'            => '',
-    'sign up'               => '',
-    'site map'              => 'Sitemap',
-    'terms and conditions'  => 'Allgemeine Geschäftsbedingungen',
+    'sign-up'               => '',
+    'site-map'              => 'Sitemap',
+    'terms-and-conditions'  => 'Allgemeine Geschäftsbedingungen',
     'contacts'              => 'Contacts',
-    'website made by'       => '',
+    'website-made-by'       => '',
 
-    'contribute now'        => 'Jetzt fördern',
-    'view tips'             => '',
-    'view our sponsors'     => '',
-    'read a blog'           => '',
+    'contribute-now'        => 'Jetzt fördern',
+    'view-tips'             => '',
+    'view-our-sponsors'     => '',
+    'read-a-blog'           => '',
 ];

@@ -1,4 +1,4 @@
-{!! Form::open(['url' => 'search-results', 'class' => 'row form-inline']) !!}	<!-- post request goes to search-results page -->
+{!! Form::open(['url' => 'search-results', 'class' => 'row form-inline', 'method' => 'post']) !!}	<!-- post request goes to search-results page -->
 
     <div class="col-xs-12 col-sm-10 form-group">
         {!! Form::label('search_term', 'Search Term', ['class' => 'form-label sr-only']) !!}

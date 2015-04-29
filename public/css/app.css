@@ -5054,11 +5054,12 @@ label {
 /*-- MODULES --*/
 /*------------------------------------------------------------------*/
 .module {
+  display: none;
   padding: 1rem;
   position: fixed;
   z-index: 10;
   width: 100%;
-  left: 1rem;
+  left: .95rem;
   background-color: #d2d2d2; }
   .module i {
     display: none; }
@@ -5392,10 +5393,10 @@ label {
         color: #3fa3db; }
       @media (min-width: 768px) and (max-width: 991px) {
         #main_nav ul > li:nth-child(3) {
-          margin-left: 3rem; } }
+          margin-left: 5rem; } }
       @media (min-width: 911px) and (max-width: 991px) {
         #main_nav ul > li:nth-child(3) {
-          margin-left: 4.5rem; } }
+          margin-left: 8rem; } }
       #main_nav ul > li:nth-child(4) {
         margin-left: 3.2rem;
         margin-right: 3.2rem; }
@@ -5645,6 +5646,7 @@ footer {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
+  text-transform: uppercase;
   color: #2ecc71; }
 
 /*------------------------------------------------------------------*/

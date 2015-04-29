@@ -82,10 +82,13 @@ $(document).ready(function()
  */
     function closeSearchModule()
     {
-        $('#search_module').toggleClass('hidden', true);
+        $('#search_module').slideUp(400);
     }
 
-
+    function slideModule(btn)
+    {
+        $(btn.attr('data-target')).slideToggle(400);
+    }
 
 
 
@@ -97,7 +100,8 @@ $(document).ready(function()
     $('.magnifier').on("click", function(e)
     {
         e.stopPropagation();
-        $('#search_module').toggleClass('hidden');
+        slideModule($(this));
+        //$($(this).attr('data-target')).slideToggle(400);
     });
 // when user clicks somewhere outside search module, hide search module
     $('html').on("click", function()
@@ -130,14 +134,64 @@ $(document).ready(function()
  * check what land flag is displaying
  * toggle the flag on a press button event
  */
-    $('.language-toggle').on("click", function()
+    $('.language-toggle').on("click", function(e)
     {
+
+        //if(lang_changed === true)
+        //{
+        //    lang_changed = false;
+        //    return;
+        //}
+        //
+        //e.preventDefault();
+        //
+        //if($('.currLang').text() === 'de')
+        //{
+        //    $(this).attr('href', 'http://kuj.dev/en');
+        //    alert($(this).attr('href'));
+        //    lang_changed = true;
+        //}else{
+        //    $(this).attr('href', 'http://kuj.dev/de');
+        //    alert($(this).attr('href'));
+        //    lang_changed = true;
+        //}
+        //
+        //$(this).trigger("click");
+
+
         if($(this).hasClass('at'))
         {
             $(this).toggleClass('at', false).toggleClass('gb', true);
         }else{
             $(this).toggleClass('at', true).toggleClass('gb', false);
         }
+
+        //e.preventDefault();
+        ////console.log(window.location.href.substring(window.location.href.indexOf("/", window.location.href.indexOf("/", window.location.href.indexOf("/") +1))));
+        //
+        //var currUrl = window.location.href;
+        //currUrl = currUrl.split("/");
+        //console.log(currUrl[3]);
+        //
+        //if(currUrl[3] === 'de')
+        //{
+        //    currUrl[3] = 'en';
+        //    var newUrl = currUrl.join('/');
+        //
+        //    //$(this).toggleClass('at', false).toggleClass('gb', true);
+        //    //console.log(newUrl);
+        //    $(location).attr('href', newUrl);
+        //}
+
+        //if($(this).hasClass('at'))
+        //{
+        //    $(this).toggleClass('hidden', true);
+        //    console.log($('gb'));
+        //    $('.gb').toggleClass('hidden', false);
+        //}else{
+        //    $(this).toggleClass('hidden', false);
+        //    $('.gb').toggleClass('hidden', true);
+        //}
     });
 
 

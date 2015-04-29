@@ -41,3 +41,5 @@ Route::group(
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED for example just German pages**/
 
 // Route::get('test', '<Controller>@<Method>');
+
+Route::post('search-results', 'HeaderController@index');
