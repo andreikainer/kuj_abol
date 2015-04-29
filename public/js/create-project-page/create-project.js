@@ -191,20 +191,45 @@
             return false;
         }
         var inputControls = $(data).parent('.image-upload-controls');
-        var previewContainer = inputControls.siblings('.form-image-preview');
+        var previewContainer = inputControls.siblings('.image-upload-preview');
+        var loaderImage = $(data).siblings('.image-loader');
 
-        loadImagePreview(data.files[0], previewContainer);
-
-        // hide the input field.
-        inputControls.fadeOut();
-        // fade the image into view.
-        previewContainer.delay(200).fadeIn()
+        // Show the loading animation.
+        loaderImage.fadeIn('slow')
+        .wait(1500)
+        .fadeOut()
         .then(function()
         {
-           console.log('button time');
+            // Fade out the file input, and load the selected image.
+            inputControls.fadeOut('slow');
+            loadImagePreview(data.files[0], previewContainer);
+        })
+        .wait(700)
+        .then(function()
+        {
+            // Fade the selected image into view.
+            $(previewContainer).fadeIn('slow')
+            .wait(700)
+            .then(function()
+            {
+                // Create a close button, and attach a click event to it.
+                var closeButton = createImageCloseButton(previewContainer.parent());
+                $(closeButton).on('click', function()
+                {
+                    // Remove the value of the file input (this enables the change event to fire again).
+                    data.value = '';
+                    // Remove the close button from the DOM.
+                    $(this).remove();
+                    // Fade out the image preview, fade in the form control. Rinse and Repeat!
+                    previewContainer.fadeOut('slow')
+                    .wait(700)
+                    .then(function()
+                    {
+                        inputControls.fadeIn('slow');
+                    });
+                });
+            });
         });
-
-        //createImageCloseButton(previewContainer.parent());
     });
 
 
@@ -421,7 +446,7 @@
 
     function createImageCloseButton(container)
     {
-        $(container).prepend('<span class="image-upload-close-button">X</span>');
+        return $('<span class="image-upload-close-button">X</span>').prependTo(container);
     }
 
     function ajaxRequest(url, data, successEvent, errorEvent)

@@ -40,5 +40,6 @@
 
 @section('additional_js')
 <script src="{{ asset('js/FormValidation.js') }}"></script>
+        <script src="{{ asset('js/timing.js') }}"></script>
         <script src="{{ asset('js/create-project-page/create-project.js') }}"></script>
 @endsection

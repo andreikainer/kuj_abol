@@ -5159,10 +5159,6 @@ label {
 .error-box {
   margin-bottom: 2rem; }
 
-.form-image-preview {
-  width: 100%;
-  display: none; }
-
 .form-button {
   padding: 0.65rem;
   font-weight: 500;
@@ -5196,6 +5192,17 @@ label {
   @media all and (max-width: 768px) {
     .image-upload-wrapper {
       margin-bottom: 1.25rem; } }
+
+.image-loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url("../img/loader.gif") no-repeat center center;
+  display: none; }
+
+.image-upload-preview {
+  width: 100%;
+  display: none; }
 
 .image-upload-label {
   z-index: 1001;
