@@ -18,13 +18,21 @@
   img {
     width: 150px;
 
+//    @media(device-width: 320px) {
+//      width: 120px;
+//    }
+    @media(max-width: 320px) {
+      width: 120px;
+    }
     @media (min-width: 768px) {
       width: 212px;
       height: 76px;
     }
-
+    @media (min-width: 992px) {
+      margin-left: 1rem;
+    }
     @media (min-width: 1240px) {
-      margin-left: 25px;
+      margin-left: 1.56em;
     }
   }
 }
@@ -155,7 +163,7 @@ hr {
   }
 }
 /*-- Search btn --*/
-#magnifier {
+.magnifier {
   margin-left: 3.7em;
 }
 /*-- Humburger btn --*/

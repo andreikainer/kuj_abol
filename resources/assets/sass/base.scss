@@ -2,7 +2,9 @@
   /*-- BASIC STYLES FOR THE HTML AND BODY --*/
 /*------------------------------------------------------------------*/
 html {
-  min-width: 20rem;
+  min-width: 300px;
+  max-width: 100%;
+  overflow-x: hidden;
 
   background-color: $lgrey;
   color: $text;
@@ -62,8 +64,8 @@ label {
   padding-top: 0.65rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: $dgrey;
-  border-top: 2px solid $dgrey;
+  color: $bluegrey;
+  border-top: 2px solid $bluegrey;
 }
 
 .mt-3em {
@@ -79,7 +81,7 @@ label {
 }
 
 .mt-2em {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
 }
 .mb-0 {
   margin-bottom: 0 !important;

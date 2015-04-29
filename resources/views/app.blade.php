@@ -69,6 +69,10 @@
 
 <!--================== Header =================================================-->
         <header>
+            {{--<div class="hidden setLang">{{ LaravelLocalization::setLocale('de') }}</div>--}}
+            <div class="hidden currentLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
+
+
             <nav class="navbar navbar-default navbar-fixed-top white-bg"  data-scroll-header>
                 <div class="container-fluid">
 	                <div class="row">
@@ -89,7 +93,7 @@
                             </button>
 
            			    <!-- search_btn for mobile -->
-                            <button type="button" role="search" class="navbar-toggle collapsed visible-xs button-circle mobile-circle-button magnif" data-toggle="collapse" data-target="#search_modal">
+                            <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier">
                                 <i class="fa fa-search"></i>
                             </button>
 
@@ -107,6 +111,7 @@
                                 <!-- language_btn -->
                                     <button type="button" class="navbar-toggle button-circle hvr-push flag gb language-toggle">
                                     </button>
+                                    {{--<a href="{{ LaravelLocalization::setLocale('de')  }}" type="button" class="navbar-toggle button-circle hvr-push flag at language-toggle"></a>--}}
 
                                 <!-- ask question_btn -->
                                     <button type="button" class="navbar-toggle collapsed button-circle hvr-push" class="question" data-toggle="collapse" data-target="#help_modal">
@@ -114,7 +119,7 @@
                                     </button>
 
                                 <!-- search_btn -->
-                                    <button type="button" role="search" class="navbar-toggle collapsed button-circle hvr-push magnif" id="magnifier" data-toggle="collapse" data-target="#search_modal">
+                                    <button type="button" role="search" class="navbar-toggle button-circle hvr-push magnif magnifier">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
@@ -158,6 +163,11 @@
         </header> <!-- header ends -->
 
 
+        <div class="row hidden module" id="search_module">
+            <div class="col-md-6 col-md-offset-3">
+                test
+            </div>
+        </div>
 <!--================== Main Content =================================================-->
 
 
