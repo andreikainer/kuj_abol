@@ -20,20 +20,22 @@ Route::group(
     ],
     function()
     {
-      Route::get('/', 'PagesController@index');
+        Route::get('/', 'PagesController@index');
 
-      Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
+        Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
 
-      Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
+        Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
 
-      Route::controllers([
-        'auth' => 'Auth\AuthController',
-        'password' => 'Auth\PasswordController',
-      ]);
+        Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
 
-      /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
+        Route::controllers([
+            'auth' => 'Auth\AuthController',
+            'password' => 'Auth\PasswordController',
+         ]);
 
-      //Route::get(LaravelLocalization::transRoute('routes.<key>'), '<Controller>@<Method>');
+        /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
+
+        //Route::get(LaravelLocalization::transRoute('routes.<key>'), '<Controller>@<Method>');
     });
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED for example just German pages**/
