@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img srcset="img/main-carousel/xs/two.jpg" alt="???">
+                                <img srcset="img/main-carousel/xs/one.jpg" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -87,7 +87,7 @@
 
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
+                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>
@@ -127,7 +127,7 @@
 
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/four.jpg') }}" alt="????">
+                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>
@@ -165,7 +165,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
-                                <img srcset="img/main-carousel/xs/home.jpg" alt="???">
+                                <img srcset="img/main-carousel/xs/one.jpg" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -187,7 +187,7 @@
 
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
-                                <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
+                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>

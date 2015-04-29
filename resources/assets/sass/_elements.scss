@@ -191,7 +191,7 @@
 
   border: .125rem solid $white;
   @include border-radius(5px);
-  background-color: none;
+  background-color: transparent;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -206,9 +206,41 @@
 
 
 /*------------------------------------------------------------------*/
-  /*-- MODALS --*/
+  /*-- MODULES --*/
 /*------------------------------------------------------------------*/
+.module {
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: 1rem;
 
+  background-color: $dgrey;
+
+  i {
+    display: none;
+
+    @media(min-width: 768px) {
+      & {
+        display: block;
+        background: $white;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        padding: 0;
+        margin-left: 2rem;
+        margin-top: 3px;
+
+        &::before {
+          position: absolute;
+          bottom: -4px;
+          color: $orange;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
 
 
 
