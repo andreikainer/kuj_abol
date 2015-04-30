@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller {
 
@@ -26,6 +27,10 @@ class PagesController extends Controller {
 
     public function viewProjects()
     {
+        Mail::queue('emails.test', [], function($message)
+        {
+            $message->to('andreikainer@gmail.com', 'Andrei Kainer')->subject('Welcome to KuJ Crowdfunding!');
+        });
         return view('projectpage');
     }
 
