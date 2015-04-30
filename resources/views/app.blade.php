@@ -14,8 +14,6 @@
 		<title>Kinder-und Jugenfönderungen</title>
 		<link rel="icon" type="image/png" href="{{ asset('/img/logo_tab.png') }}">
 
-        <noscript><style id="devicePixelRatio" media="only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)">html{background-image:url("/retinaimages.php?devicePixelRatio=2")}</style></noscript>
-
     <!-- Slick carousel -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
     <!-- Slick-theme.css for default styling -->
@@ -86,13 +84,15 @@
                             <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle">
                             </button>
 
-                        <!-- ask question_btn -->
-                            <button type="button" class="navbar-toggle collapsed visible-xs button-circle mobile-circle-button" class="question" data-toggle="collapse" data-target="#help_modal">
-                                <i class="fa fa-question"></i>
+                        <!-- help_btn -->
+                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-buttonhvr-push question">
+                                <a href="{{ action('ContactFormController@getContactForm') }}">
+                                    <i class="fa fa-question"></i>
+                                </a>
                             </button>
 
            			    <!-- search_btn for mobile -->
-                            <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier">
+                            <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier" data-target="#search_module">
                                 <i class="fa fa-search"></i>
                             </button>
 
@@ -107,8 +107,9 @@
                		    <div class="col-sm-4 col-sm-push-5 col-md-3 col-md-push-7 col-lg-3 col-lg-push-8 hidden-xs circles">
                             <div>
                                 <div class="alignme-center clearfix">
-                                <!-- language_btn -->
 
+                                <!-- language_btn -->
+                                <div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
 								    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 								        <button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
 								        	<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
@@ -116,14 +117,18 @@
 								        	</a>
 								        </button>
 								    @endforeach
+								    {{--<a href="http://kuj.dev/en" type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle"></a>--}}
+								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}
 
-                                <!-- ask question_btn -->
-                                    <button type="button" class="navbar-toggle collapsed button-circle hvr-push" class="question" data-toggle="collapse" data-target="#help_modal">
-                                        <i class="fa fa-question"></i>
+                                <!-- help_btn -->
+                                    <button type="button" class="navbar-toggle button-circle hvr-push question">
+                                        <a href="{{ action('ContactFormController@getContactForm') }}">
+                                            <i class="fa fa-question"></i>
+                                        </a>
                                     </button>
 
                                 <!-- search_btn -->
-                                    <button type="button" role="search" class="navbar-toggle button-circle hvr-push magnif magnifier">
+                                    <button type="button" role="search" class="navbar-toggle button-circle hvr-push magnif magnifier" data-target="#search_module">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
@@ -141,18 +146,16 @@
                  	       <ul class="nav navbar-nav">
                    	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('lang.login') }}</a></li>
                                 <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('lang.register') }}</a></li>
-                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('lang.login') }}</a></li>--}}
-                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('lang.register') }}</a></li>--}}
 
                    	        	<li class="dropdown">
-                            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ trans('lang.how-it-works') }}<span class="caret"></span></a>
+                            		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('lang.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Tips For Success</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>FAQ</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Tips For Success</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">FAQ</a></li>
                             		    <li role="presentation" class="divider"></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Sponsors</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Mission</a></li>
-                            			<li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Team</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Our Sponsors</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Our Mission</a></li>
+                            			<li><a href="{{ action('PagesController@howItWorks') }}">Our Team</a></li>
                             		</ul>
                   	        	</li>
                    	        	<li><a href="{{ action('PagesController@createProject') }}">{{ trans('lang.create-project') }}</a></li>
@@ -172,12 +175,28 @@
 <!--**************************-->
     <!-- SEARCH MODULE -->
 <!--**************************-->
-        <div class="row hidden module" id="search_module">
-            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="row module" id="search_module">
+            <div class="col-xs-12 col-sm-11 col-md-8 col-md-offset-2">
+                <div class="row visible-xs">
+                    <button type="button" class="navbar-toggle button-circle">
+                        <i class="fa fa-times" data-mobile="true"></i>
+                    </button>
+                </div>
                 @include('forms.search-form')
             </div>
             <i class="fa fa-times-circle fa-2x col-sm-1"></i>
         </div>
+
+<!--**************************-->
+    <!-- LOGIN MODULE -->
+<!--**************************-->
+        <div class="row module" id="login_module">
+            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
+                {{--@include('emails.help')--}}
+            </div>
+            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
+        </div>
+
 
 
 
@@ -235,19 +254,19 @@
             <!-- Site Map -->
 	            <div class="col-xs-11 col-xs-push-1 col-sm-3 col-md-3 col-md-pull-12 col-lg-3">
 	                <div class="footer-text-content">
-	                    <h5>Sitemap</h5>
-	                    <a href="#">So funktionert's</a>
-	                    <a href="#">Ansuchen einreichen</a>
-	                    <a href="#">Fördern</a>
+	                    <h5>{{ trans('lang.site-map') }}</h5>
+	                    <a href="#">{{ trans('lang.how-it-works') }}</a>
+	                    <a href="#">{{ trans('lang.create-project') }}</a>
+	                    <a href="#">{{ trans('lang.contribute') }}</a>
 
 	                    <br>
 
 	                    <a href="#">Blog</a>
-                        <a href="#">Sponsoren</a>
+                        <a href="#">{{ trans('lang.our-sponsors') }}</a>
 
                         <br>
 
-                        <a href="#">Allgemeine Geschäftsbedingungen</a>
+                        <a href="#">{{ trans('lang.terms-and-conditions') }}</a>
                         <a href="#">Impressum</a>
 	                </div>
 	            </div>
@@ -256,7 +275,7 @@
             <!-- Contacts -->
                 <div class="col-xs-12 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
                     <div class="footer-text-content">
-                        <h5>Kontakte</h5>
+                        <h5>{{ trans('lang.contacts') }}</h5>
 
                         <p><i class="fa fa-home form-inline"></i> <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>
                                                                         2524 Teesdorf Austria
@@ -267,7 +286,7 @@
                         <br>
 
                         <p class="no-bottom-margin">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
-                        <p>website gemacht <a href="#">ABOL</a></p>
+                        <p>{{ trans('lang.website-made-by') }} <a href="#">ABOL</a></p>
                 	</div>
                 </div>
 
