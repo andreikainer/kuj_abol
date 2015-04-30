@@ -85,8 +85,10 @@
                             </button>
 
                         <!-- help_btn -->
-                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button question" data-target="#help_module">
-                                <i class="fa fa-question"></i>
+                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-buttonhvr-push question">
+                                <a href="{{ action('ContactFormController@getContactForm') }}">
+                                    <i class="fa fa-question"></i>
+                                </a>
                             </button>
 
            			    <!-- search_btn for mobile -->
@@ -195,20 +197,7 @@
             <i class="fa fa-times-circle fa-2x col-sm-1"></i>
         </div>
 
-<!--**************************-->
-    <!-- HELP MODULE -->
-<!--**************************-->
-        {{--<div class="row module" id="help_module">--}}
-            {{--<div class="col-xs-12 col-sm-11 col-md-7 col-md-offset-3">--}}
-                {{--<div class="row visible-xs">--}}
-                    {{--<button type="button" class="navbar-toggle button-circle">--}}
-                        {{--<i class="fa fa-times" data-mobile="true"></i>--}}
-                    {{--</button>--}}
-                {{--</div>--}}
-                {{--@include('emails.help')--}}
-            {{--</div>--}}
-            {{--<i class="fa fa-times-circle fa-2x col-sm-1"></i>--}}
-        {{--</div>--}}
+
 
 
 <!--================== Main Content =================================================-->
