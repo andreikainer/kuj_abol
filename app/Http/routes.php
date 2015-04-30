@@ -28,6 +28,10 @@ Route::group(
 
       Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
 
+
+      Route::get(LaravelLocalization::transRoute('contact'), 'ContactFormController@getContactForm');
+      Route::post(LaravelLocalization::transRoute('contact'), 'ContactFormController@postContactForm');
+
       Route::controllers([
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',

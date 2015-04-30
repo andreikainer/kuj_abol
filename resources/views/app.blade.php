@@ -84,13 +84,13 @@
                             <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle">
                             </button>
 
-                        <!-- ask question_btn -->
-                            <button type="button" class="navbar-toggle collapsed visible-xs button-circle mobile-circle-button" class="question" data-toggle="collapse" data-target="#help_modal">
+                        <!-- help_btn -->
+                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button question" data-target="#help_module">
                                 <i class="fa fa-question"></i>
                             </button>
 
            			    <!-- search_btn for mobile -->
-                            <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier">
+                            <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier" data-target="#search_module">
                                 <i class="fa fa-search"></i>
                             </button>
 
@@ -118,8 +118,8 @@
 								    {{--<a href="http://kuj.dev/en" type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle"></a>--}}
 								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}
 
-                                <!-- ask question_btn -->
-                                    <button type="button" class="navbar-toggle button-circle hvr-push" class="question" data-target="#help_module">
+                                <!-- help_btn -->
+                                    <button type="button" class="navbar-toggle button-circle hvr-push question" data-target="#help_module">
                                         <i class="fa fa-question"></i>
                                     </button>
 
@@ -142,11 +142,9 @@
                  	       <ul class="nav navbar-nav">
                    	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('lang.login') }}</a></li>
                                 <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('lang.register') }}</a></li>
-                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('lang.login') }}</a></li>--}}
-                                {{--<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('lang.register') }}</a></li>--}}
 
                    	        	<li class="dropdown">
-                            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ trans('lang.how-it-works') }}<span class="caret"></span></a>
+                            		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('lang.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
                             		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Tips For Success</a></li>
                             		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>FAQ</a></li>
@@ -174,7 +172,12 @@
     <!-- SEARCH MODULE -->
 <!--**************************-->
         <div class="row module" id="search_module">
-            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div class="col-xs-12 col-sm-11 col-md-8 col-md-offset-2">
+                <div class="row visible-xs">
+                    <button type="button" class="navbar-toggle button-circle">
+                        <i class="fa fa-times" data-mobile="true"></i>
+                    </button>
+                </div>
                 @include('forms.search-form')
             </div>
             <i class="fa fa-times-circle fa-2x col-sm-1"></i>
@@ -183,9 +186,9 @@
 <!--**************************-->
     <!-- LOGIN MODULE -->
 <!--**************************-->
-        <div class="row module" id="#login_module">
+        <div class="row module" id="login_module">
             <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
-                @include('forms.search-form')
+                {{--@include('emails.help')--}}
             </div>
             <i class="fa fa-times-circle fa-2x col-sm-1"></i>
         </div>
@@ -193,18 +196,23 @@
 <!--**************************-->
     <!-- HELP MODULE -->
 <!--**************************-->
-        <div class="row module" id="#help_module">
-            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
-                @include('forms.search-form')
-            </div>
-            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
-        </div>
+        {{--<div class="row module" id="help_module">--}}
+            {{--<div class="col-xs-12 col-sm-11 col-md-7 col-md-offset-3">--}}
+                {{--<div class="row visible-xs">--}}
+                    {{--<button type="button" class="navbar-toggle button-circle">--}}
+                        {{--<i class="fa fa-times" data-mobile="true"></i>--}}
+                    {{--</button>--}}
+                {{--</div>--}}
+                {{--@include('emails.help')--}}
+            {{--</div>--}}
+            {{--<i class="fa fa-times-circle fa-2x col-sm-1"></i>--}}
+        {{--</div>--}}
 
 
 <!--================== Main Content =================================================-->
 
 
-	            @yield('content')
+	            @yield('content');
 
 
 

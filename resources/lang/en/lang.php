@@ -45,4 +45,7 @@ return [
     'view-tips'             => 'View tips',
     'view-our-sponsors'     => 'View our sponsors',
     'read-a-blog'           => 'Read a blog',
+
+    'legal-stuff'           => 'Kinder- und Jugendförderungen is an initiative of the All for Kids Sponsoring Agency to support chronically ill, mentally or physically disabled children and their families.',
+
 ];

@@ -51,20 +51,48 @@ $(document).ready(function()
         $('.circles div div').toggleClass('alignme-center', false);
     }
 
+
+
+/*-----Functions for modules ---------------------------------------*/
+
 /*
- * closeSearchModule
+ * closeModule
  * hides the search module
  */
-    function closeSearchModule()
+    function closeModule()
     {
-        $('#search_module').slideUp(400);
+        $('.module').slideUp(400);
     }
 
+ /*
+  * slideModule
+  * @param btn; obj; button, that was pressed
+  * shows/hides the module
+  */
     function slideModule(btn)
     {
         $(btn.attr('data-target')).slideToggle(400);
     }
 
+// when user clicks somewhere outside search module, hide search module
+    $('html').on("click", function()
+    {
+        closeModule();
+    });
+// when user clicks Close Button, hide the module
+    $('.module i').on("click", function(e)
+    {
+        closeModule();
+    });
+// when clicked inside module, don't hide it
+    $('.module').on("click", function(e)
+    {
+        e.stopPropagation();
+        //$('input[name = search_inputfield]').on('input', function() {
+        //    console.log($(this).val());
+        //});
+    });
+/*------------------------------------------------------------------*/
 
 
 
@@ -76,28 +104,17 @@ $(document).ready(function()
     {
         e.stopPropagation();
         slideModule($(this));
-        //$($(this).attr('data-target')).slideToggle(400);
     });
-// when user clicks somewhere outside search module, hide search module
-    $('html').on("click", function()
-    {
-        closeSearchModule();
-    });
-// when user clicks Close Button, hide search module
-    $('#search_module i').on("click", function(e)
-    {
-        closeSearchModule();
-    });
-// when clicked inside search module, don't hide it
-    $('#search_module').on("click", function(e)
+
+/*------------------------------------------------------------------*/
+    /*-- HELP OPTION --*/
+/*------------------------------------------------------------------*/
+// when Question Button pressed, show/hide search module
+    $('.question').on("click", function(e)
     {
         e.stopPropagation();
-        $('input[name = search_inputfield]').on('input', function() {
-            console.log($(this).val());
-        });
+        slideModule($(this));
     });
-
-
 
 
 

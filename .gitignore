@@ -6,4 +6,5 @@
 .DS_Store
 /public/css/app.css.map
 /public/js/main.js.map
+/public/temp
 composer.lock

@@ -492,27 +492,33 @@ footer {
 /*------------------------------------------------------------------*/
   /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
-input[name=search_inputfield] {
-  @extend .no-outline;
-  @extend .form-input;
+//input[name=search_inputfield] {
+//  @extend .no-outline;
+//  @extend .form-input;
+//
+//  box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+//  z-index: 11;
+//}
 
-  box-shadow: inset 0 0.5rem 0 0 $bluegrey;
-  z-index: 11;
-}
-
-#search_module {
-    @media(max-width: 768px) {
-      .form-group {
-        padding: 0;
-      }
-    }
-}
-
-#search-for-this {
+.module-submit {
   font-family: $lato;
   font-size: 1.2rem;
 }
-#search-for-this:hover, #search-for-this:focus, #search-for-this:active {
+.module-submit:hover, .module-submit:focus, .module-submit:active {
   color: $bluegrey;
   border-color: $bluegrey;
+}
+
+#search_module {
+  height: auto;
+}
+#search-for-this {
+  margin-top: .2rem;
+}
+
+#help_module {
+  padding-bottom: 9rem;
+  @media(min-width: 992px) {
+    padding-bottom: 6rem;
+  }
 }

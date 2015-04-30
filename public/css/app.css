@@ -5051,35 +5051,6 @@ label {
   text-decoration: none; }
 
 /*------------------------------------------------------------------*/
-/*-- MODULES --*/
-/*------------------------------------------------------------------*/
-.module {
-  display: none;
-  padding: 1rem;
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  left: .95rem;
-  background-color: #d2d2d2; }
-  .module i {
-    display: none; }
-    @media (min-width: 768px) {
-      .module i {
-        display: block;
-        background: white;
-        border-radius: 50%;
-        height: 20px;
-        width: 20px;
-        padding: 0;
-        margin-left: 2rem;
-        margin-top: 3px; }
-        .module i::before {
-          position: absolute;
-          bottom: -4px;
-          color: #ed5a4d;
-          cursor: pointer; } }
-
-/*------------------------------------------------------------------*/
 /*-- FORMS --*/
 /*------------------------------------------------------------------*/
 .form-error {
@@ -5094,13 +5065,13 @@ label {
   margin-bottom: 0.75rem;
   color: #6f798b; }
 
-.form-input, input[name=search_inputfield] {
+.form-input, .module input:not([type=submit]), .module textarea {
   width: 100%;
   padding: 1.15rem 0.65rem 0.65rem 0.65rem;
   border: 1px solid #d2d2d2;
   border-top: none;
   box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
-  .form-input:focus, input[name=search_inputfield]:focus {
+  .form-input:focus, .module input:focus:not([type=submit]), .module textarea:focus {
     outline: none !important; }
 
 .form-element {
@@ -5167,6 +5138,65 @@ label {
 /*-- GREEN TICK for successful projects --*/
 .fa-check {
   margin-right: .5rem; }
+
+/*------------------------------------------------------------------*/
+/*-- MODULES --*/
+/*------------------------------------------------------------------*/
+.module {
+  display: none;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: .95rem;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #d2d2d2;
+  font-size: 1.1rem; }
+  @media (max-width: 768px) {
+    .module .form-group {
+      padding: 0; } }
+  .module i {
+    display: none; }
+    @media (min-width: 768px) {
+      .module i {
+        display: block;
+        background: white;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        margin-left: 2rem; }
+        .module i::before {
+          position: absolute;
+          bottom: -4px;
+          color: #ed5a4d;
+          cursor: pointer; } }
+  .module button.button-circle {
+    background-color: #ed5a4d !important;
+    margin-bottom: 1rem;
+    margin-top: 0 !important; }
+  .module i[data-mobile=true] {
+    display: block;
+    background-color: #ed5a4d !important; }
+    .module i[data-mobile=true]::before {
+      color: white; }
+  .module input:not([type=submit]), .module textarea {
+    box-shadow: inset 0 0.5rem 0 0 #6f798b;
+    z-index: 11; }
+  .module h4 {
+    color: #6f798b;
+    padding-left: 0;
+    padding-right: 0; }
+    @media (min-width: 768px) {
+      .module h4 {
+        margin-left: 1rem; } }
+    .module h4 a {
+      text-decoration: underline;
+      color: #3fa3db; }
+      .module h4 a:hover {
+        color: #248ac3; }
 
 /*------------------------------------------------------------------*/
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
@@ -5672,21 +5702,25 @@ footer {
 /*------------------------------------------------------------------*/
 /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
-input[name=search_inputfield] {
-  box-shadow: inset 0 0.5rem 0 0 #6f798b;
-  z-index: 11; }
-
-@media (max-width: 768px) {
-  #search_module .form-group {
-    padding: 0; } }
-
-#search-for-this {
+.module-submit {
   font-family: 'Lato', 'Open Sans', sans-serif;
   font-size: 1.2rem; }
 
-#search-for-this:hover, #search-for-this:focus, #search-for-this:active {
+.module-submit:hover, .module-submit:focus, .module-submit:active {
   color: #6f798b;
   border-color: #6f798b; }
+
+#search_module {
+  height: auto; }
+
+#search-for-this {
+  margin-top: .2rem; }
+
+#help_module {
+  padding-bottom: 9rem; }
+  @media (min-width: 992px) {
+    #help_module {
+      padding-bottom: 6rem; } }
 
 
 /*# sourceMappingURL=app.css.map */

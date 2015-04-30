@@ -47,4 +47,6 @@ return [
     'view-tips'             => '',
     'view-our-sponsors'     => '',
     'read-a-blog'           => '',
+
+    'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der All for Kids Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich behinderten Kinder sowie deren Familie.'
 ];
