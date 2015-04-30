@@ -9,7 +9,7 @@ class ContactFormController extends Controller {
 
     public function getContactForm()
     {
-        return 'hi';
+        return view('emails.help');
     }
 
     public function postContactForm(ContactFormRequest $request)

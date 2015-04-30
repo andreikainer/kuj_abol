@@ -119,8 +119,10 @@
 								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}
 
                                 <!-- help_btn -->
-                                    <button type="button" class="navbar-toggle button-circle hvr-push question" data-target="#help_module">
-                                        <i class="fa fa-question"></i>
+                                    <button type="button" class="navbar-toggle button-circle hvr-push question">
+                                        <a href="{{ action('ContactFormController@getContactForm') }}">
+                                            <i class="fa fa-question"></i>
+                                        </a>
                                     </button>
 
                                 <!-- search_btn -->
@@ -146,12 +148,12 @@
                    	        	<li class="dropdown">
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('lang.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Tips For Success</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>FAQ</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Tips For Success</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">FAQ</a></li>
                             		    <li role="presentation" class="divider"></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Sponsors</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Mission</a></li>
-                            			<li><a href="{{ action('PagesController@howItWorks') }}" data-scroll>Our Team</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Our Sponsors</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Our Mission</a></li>
+                            			<li><a href="{{ action('PagesController@howItWorks') }}">Our Team</a></li>
                             		</ul>
                   	        	</li>
                    	        	<li><a href="{{ action('PagesController@createProject') }}">{{ trans('lang.create-project') }}</a></li>
@@ -212,7 +214,7 @@
 <!--================== Main Content =================================================-->
 
 
-	            @yield('content');
+	            @yield('content')
 
 
 

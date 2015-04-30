@@ -115,6 +115,13 @@
 
   background-color: $bluegrey;
   color: $white;
+
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
 }
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)

@@ -1,6 +1,6 @@
-{!! Form::open(['class' => 'row', 'method' => 'post']) !!}
+{!! Form::open(['method' => 'post']) !!}
 
-    <div class="col-xs-12 col-md-10 form-group">
+    <div class="form-group">
     	{!! Form::label(null, 'Name', ['class' => 'form-label form-inline']) !!}
    	    {!! Form::text('name', null,
         		array('required',
@@ -8,7 +8,7 @@
               		'placeholder'=>'Your name')) !!}
     </div>
 
-    <div class="col-xs-12 col-md-10 form-group">
+    <div class="form-group">
     	{!! Form::label(null, 'Email', ['class' => 'form-label']) !!}
     	{!! Form::text('email', null,
         		array('required',
@@ -16,7 +16,7 @@
               		'placeholder'=>'Your email')) !!}
     </div>
 
-    <div class="col-xs-12 col-md-10 form-group">
+    <div class="form-group">
     	{!! Form::label(null, 'Message', ['class' => 'form-label']) !!}
     	{!! Form::textarea('message_body', null,
         		array('required',
@@ -25,7 +25,7 @@
     </div>
 
 <!-- if there are validation errors, show them here -->
-    <div class="col-xs-12 col-md-10 form-group">
+    <div class="form-group">
         @if($errors->any())
 	    	<ul>
 	    		@foreach($errors->all() as $error)
@@ -36,7 +36,7 @@
     </div>
 
 <!-- to give the user a feedback in a success point, show the success message -->
-    <div class="col-xs-12 col-md-10 form-group">
+    <div class="form-group">
         @if(Session::has('message'))
         	<div class="alert alert-info">
           		{{Session::get('message')}}
@@ -45,9 +45,9 @@
     </div>
 
 
-    <div class="col-xs-12 form-group">
+    <div class="form-group clearfix">
     	{!! Form::submit('Send',
-      		array('class'=>'col-xs-12 col-sm-3 button-transparent module-submit',
+      		array('class'=>'col-xs-12 col-sm-3 btn btn-primary button-main-big',
       		      'id' => 'send-question')) !!}
     </div>
 

@@ -4978,6 +4978,8 @@ label {
   border-radius: 50%;
   background-color: #6f798b;
   color: white; }
+  .button-circle a, .button-circle:link a, .button-circle:visited a {
+    color: white; }
 
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)
@@ -5716,11 +5718,12 @@ footer {
 #search-for-this {
   margin-top: .2rem; }
 
-#help_module {
-  padding-bottom: 9rem; }
-  @media (min-width: 992px) {
-    #help_module {
-      padding-bottom: 6rem; } }
+#help-page {
+  font-size: 1.1rem !important; }
+  #help-page input:not([type=submit]), #help-page textarea {
+    box-shadow: inset 0 0.5rem 0 0 #6f798b !important; }
+    #help-page input:not([type=submit]):hover, #help-page input:not([type=submit]):focus, #help-page input:not([type=submit]):active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active {
+      box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
 
 
 /*# sourceMappingURL=app.css.map */

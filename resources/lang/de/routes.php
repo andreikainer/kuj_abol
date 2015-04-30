@@ -13,5 +13,6 @@ return [
     'how-it-works'         => 'wer-wir-sind',
 	'create-project'       => 'ansuchen-einreichen',
 	'project'              => 'foerderungsprojekt',
-    'search-result'        => ''
+    'search-result'        => '',
+    'contact'              => 'kontakte',
 ];

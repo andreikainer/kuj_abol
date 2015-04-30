@@ -14,5 +14,6 @@ return [
 	'create-project'        => 'create-project',
 	'project'               => 'project',
     'search-result'         => 'search-result',
+    'contact'               => 'contact',
 
 ];
