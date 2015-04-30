@@ -68,6 +68,10 @@
 
 <!--================== Header =================================================-->
         <header>
+            {{--<div class="hidden setLang">{{ LaravelLocalization::setLocale('de') }}</div>--}}
+            {{--<div class="hidden currentLang">{{ LaravelLocalization::getCurrentLocale() }}</div>--}}
+
+
             <nav class="navbar navbar-default navbar-fixed-top white-bg"  data-scroll-header>
                 <div class="container-fluid">
 	                <div class="row">
@@ -88,7 +92,7 @@
                             </button>
 
            			    <!-- search_btn for mobile -->
-                            <button type="button" role="search" class="navbar-toggle collapsed visible-xs button-circle mobile-circle-button magnif" data-toggle="collapse" data-target="#search_modal">
+                            <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier">
                                 <i class="fa fa-search"></i>
                             </button>
 
@@ -104,13 +108,14 @@
                             <div>
                                 <div class="alignme-center clearfix">
                                 <!-- language_btn -->
-																@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-																			<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
-																				<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-																						{{{ $properties['native'] }}}
-																				</a>
-																			</button>
-																@endforeach
+
+								    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+								        <button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
+								        	<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+								        			{{{ $properties['native'] }}}
+								        	</a>
+								        </button>
+								    @endforeach
 
                                 <!-- ask question_btn -->
                                     <button type="button" class="navbar-toggle collapsed button-circle hvr-push" class="question" data-toggle="collapse" data-target="#help_modal">
@@ -118,7 +123,7 @@
                                     </button>
 
                                 <!-- search_btn -->
-                                    <button type="button" role="search" class="navbar-toggle collapsed button-circle hvr-push magnif" id="magnifier" data-toggle="collapse" data-target="#search_modal">
+                                    <button type="button" role="search" class="navbar-toggle button-circle hvr-push magnif magnifier">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
@@ -160,6 +165,20 @@
            	</nav>
 
         </header> <!-- header ends -->
+
+
+
+
+<!--**************************-->
+    <!-- SEARCH MODULE -->
+<!--**************************-->
+        <div class="row hidden module" id="search_module">
+            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
+                @include('forms.search-form')
+            </div>
+            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
+        </div>
+
 
 
 <!--================== Main Content =================================================-->

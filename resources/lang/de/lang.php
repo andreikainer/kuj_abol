@@ -45,6 +45,11 @@ return array(
                             <p>Bleiben Sie auf dem letzten Stand rund um unsere Förderungsprojekte.</p>
                             <p><a class="button-transparent" href=":cta-link" type="button">AKTUELLE NEUIGKEITEN</a></p>',
 
+    /*
+	|--------------------------------------------------------------------------
+	| PROJECT VIEW PAGE
+	|--------------------------------------------------------------------------
+    */
 
 
     'building-block-text1' => 'Unterstützen Sie dieses Förderungsprojekt mit einem fixen Betrag von :euro',

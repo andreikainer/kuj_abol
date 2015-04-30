@@ -4834,7 +4834,9 @@ button.close {
 /*-- BASIC STYLES FOR THE HTML AND BODY --*/
 /*------------------------------------------------------------------*/
 html {
-  min-width: 20rem;
+  min-width: 300px;
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: #f9f9f9;
   color: #4b4b4b;
   font-size: 1rem;
@@ -4888,7 +4890,7 @@ label {
   margin-bottom: 6rem; }
 
 .mt-2em {
-  margin-top: 2rem; }
+  margin-top: 1.6rem; }
 
 .mb-0 {
   margin-bottom: 0 !important; }
@@ -5037,7 +5039,7 @@ label {
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
   border-radius: 5px;
-  background-color: none;
+  background-color: transparent;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -5049,8 +5051,33 @@ label {
   text-decoration: none; }
 
 /*------------------------------------------------------------------*/
-/*-- MODALS --*/
+/*-- MODULES --*/
 /*------------------------------------------------------------------*/
+.module {
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: 1rem;
+  background-color: #d2d2d2; }
+  .module i {
+    display: none; }
+    @media (min-width: 768px) {
+      .module i {
+        display: block;
+        background: white;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        padding: 0;
+        margin-left: 2rem;
+        margin-top: 3px; }
+        .module i::before {
+          position: absolute;
+          bottom: -4px;
+          color: #ed5a4d;
+          cursor: pointer; } }
+
 /*------------------------------------------------------------------*/
 /*-- FORMS --*/
 /*------------------------------------------------------------------*/
@@ -5066,13 +5093,13 @@ label {
   margin-bottom: 0.75rem;
   color: #6f798b; }
 
-.form-input {
+.form-input, input[name=search_inputfield] {
   width: 100%;
   padding: 1.15rem 0.65rem 0.65rem 0.65rem;
   border: 1px solid #d2d2d2;
   border-top: none;
   box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
-  .form-input:focus {
+  .form-input:focus, input[name=search_inputfield]:focus {
     outline: none !important; }
 
 .form-element {
@@ -5357,13 +5384,19 @@ label {
       padding-top: .43em; } }
   .logo img {
     width: 150px; }
+    @media (max-width: 320px) {
+      .logo img {
+        width: 120px; } }
     @media (min-width: 768px) {
       .logo img {
         width: 212px;
         height: 76px; } }
+    @media (min-width: 992px) {
+      .logo img {
+        margin-left: 1rem; } }
     @media (min-width: 1240px) {
       .logo img {
-        margin-left: 25px; } }
+        margin-left: 1.56em; } }
 
 /*------------------------------------------------------------------*/
 /*-- Main Navigation styles --*/
@@ -5456,9 +5489,6 @@ hr {
       padding-left: 0; } }
 
 /*-- Search btn --*/
-#magnifier {
-  margin-left: 3.7em; }
-
 /*-- Humburger btn --*/
 .mobile-circle-button {
   margin-bottom: .9em;
@@ -5513,6 +5543,8 @@ footer {
     background-color: #3fa3db; }
   footer .socialmedia a {
     display: inline-block; }
+  footer .socialmedia {
+    margin-top: 2rem; }
   footer .socialmedia > div {
     width: 10.5rem;
     margin: 0 auto; }
@@ -5638,6 +5670,9 @@ footer {
 .caption p:first-of-type {
   font-size: 1.1rem; }
 
+/*------------------------------------------------------------------*/
+/*-- Project Tiles styles --*/
+/*------------------------------------------------------------------*/
 /*-- Progress bar styles --*/
 .percentage {
   margin-bottom: 0;
@@ -5661,6 +5696,45 @@ footer {
   font-size: 1.8rem;
   font-weight: 700;
   color: #2ecc71; }
+
+/*------------------------------------------------------------------*/
+/*-- Sponsors Carousel styles --*/
+/*------------------------------------------------------------------*/
+.sponsors_carousel {
+  /*-- to show the sponsor's name --*/ }
+  .sponsors_carousel .slick-prev, .sponsors_carousel .slick-next, .sponsors_carousel .slick-prev:before, .sponsors_carousel .slick-next:before {
+    display: block !important;
+    color: #6f798b !important; }
+  .sponsors_carousel div img {
+    min-width: 150px;
+    height: auto; }
+  .sponsors_carousel .logo-name {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white; }
+
+/*------------------------------------------------------------------*/
+/*-- Modules styles --*/
+/*------------------------------------------------------------------*/
+input[name=search_inputfield] {
+  box-shadow: inset 0 0.5rem 0 0 #6f798b;
+  z-index: 11; }
+
+@media (max-width: 768px) {
+  #search_module .form-group {
+    padding: 0; } }
+
+#search-for-this {
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  font-size: 1.2rem; }
+
+#search-for-this:hover, #search-for-this:focus, #search-for-this:active {
+  color: #6f798b;
+  border-color: #6f798b; }
 
 
 /*# sourceMappingURL=app.css.map */

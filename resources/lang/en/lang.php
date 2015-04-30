@@ -45,6 +45,11 @@ return [
                             <p>Stay up to date with our projects.</p>
                             <p><a class="button-transparent" href=":cta-link" type="button">OUR BLOG</a></p>',
 
+    /*
+   |--------------------------------------------------------------------------
+   | PROJECT VIEW PAGE
+   |--------------------------------------------------------------------------
+   */
 
     'building-block-text1' => 'Fund this project with a fixed amount of :euro',
     'building-block-text2' => 'Receive a personal thank-you letter from the supported family',
