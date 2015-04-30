@@ -9,9 +9,7 @@
                     <img src="img/main-carousel/lg/seven.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">Contribute now</a></p>
+                        {{!! trans('lang.carousel-text-1', ['cta-link' => '#contribute']) !!}}
                     </div>
                 </div>
 
@@ -19,9 +17,7 @@
                     <img src="img/main-carousel/lg/six.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">View tips</a></p>
+                        {{!! trans('lang.carousel-text-2', ['cta-link' => '#']) !!}}
                     </div>
                 </div>
 
@@ -29,9 +25,7 @@
                     <img src="img/main-carousel/lg/three.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">View our sponsors</a></p>
+                        {{!! trans('lang.carousel-text-3', ['cta-link' => '#']) !!}}
                     </div>
                 </div>
 
@@ -39,9 +33,7 @@
                      <img src="img/main-carousel/lg/five.jpg" class="img-responsive" alt="image">
 
                      <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">Read a blog</a></p>
+                         {{!! trans('lang.carousel-text-4', ['cta-link' => '#']) !!}}p
                      </div>
                 </div>
             </div>
