@@ -5265,6 +5265,12 @@ label {
   .no-projects p:first-of-type {
     margin-top: 10px; }
 
+.supporting-doc {
+  margin-bottom: 2rem; }
+  @media all and (max-width: 768px) {
+    .supporting-doc {
+      margin-bottom: 20px; } }
+
 .bt-none {
   border-top: none; }
 

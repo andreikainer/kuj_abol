@@ -31,6 +31,7 @@
         'email' : 'Must be of a correct email format. And not begin with a space.',
         'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
         'image' : 'Please choose a valid image format',
+        'document' : 'Please choose a valid image / document format.',
         'maxLength' : function(limit)
         {
             return 'This field must not exceed '+limit+' characters';
@@ -88,6 +89,36 @@
     $('input[name="img_4"]').on('change', function()
     {
         $.publish('image-four.selected', this);
+    });
+
+    $('input[name="doc_1_mand"]').on('change', function()
+    {
+        $.publish('document-one.selected', this);
+    });
+
+    $('input[name="doc_2_mand"]').on('change', function()
+    {
+        $.publish('document-two.selected', this);
+    });
+
+    $('input[name="doc_3"]').on('change', function()
+    {
+        $.publish('document-three.selected', this);
+    });
+
+    $('input[name="doc_4"]').on('change', function()
+    {
+        $.publish('document-four.selected', this);
+    });
+
+    $('input[name="doc_5"]').on('change', function()
+    {
+        $.publish('document-five.selected', this);
+    });
+
+    $('input[name="doc_6"]').on('change', function()
+    {
+        $.publish('document-six.selected', this);
     });
 
 
@@ -187,9 +218,10 @@
     $.subscribe('main-image.selected image-two.selected image-three.selected image-four.selected', function(event, data)
     {
         if (! checkImageMime(data.files[0].type)) {
-            showErrorMessage('main_img', errorMessages.image);
+            showErrorMessage(data.id, errorMessages.image);
             return false;
         }
+        hideErrorMessage(data.id);
         var inputControls = $(data).parent('.image-upload-controls');
         var previewContainer = inputControls.siblings('.image-upload-preview');
         var loaderImage = $(data).siblings('.image-loader');
@@ -227,6 +259,80 @@
                     {
                         inputControls.fadeIn('slow');
                     });
+                });
+            });
+        });
+    });
+
+    // Document Preview.
+    $.subscribe('document-one.selected document-two.selected document-three.selected document-four.selected document-five.selected document-six.selected', function(event, data)
+    {
+        if (! checkDocumentMime(data.files[0].type)) {
+            showErrorMessage(data.id, errorMessages.document);
+            return false;
+        }
+        hideErrorMessage(data.id);
+
+        // Show the loading animation.
+        var loaderImage = $(data).siblings('.image-loader');
+        // Read the document, and prepare data to send to PHP script.
+        var reader = new FileReader();
+        reader.onload = function(e)
+        {
+            loaderImage.fadeIn('slow');
+            var obj = {
+                'element' : data.id,
+                'filename' : data.files[0].name,
+                'data' : e.target.result
+            };
+            // Once finished reading document, publish an event and pass along obj.
+            $.publish('document-submit.ajax', obj);
+        }
+        reader.readAsDataURL(data.files[0]);
+    });
+
+    $.subscribe('document-submit.ajax', function(event, data)
+    {
+        // Make AJAX request to PHP script, POST up the received 'obj'
+        ajaxRequest('/temp-document', data, 'temp-document.success', 'temp-document.fail');
+    });
+
+    $.subscribe('temp-document.success', function(event, data)
+    {
+        var inputControls = $('#'+data.element).parent('.image-upload-controls');
+        var previewContainer = inputControls.siblings('.image-upload-preview');
+        var loaderImage = $('#'+data.element).siblings('.image-loader');
+
+        // Fade out the loading animation, file input. Set the src of the iframe.
+        loaderImage.fadeOut('slow')
+        .then(function()
+        {
+            inputControls.fadeOut('slow');
+            previewContainer.attr('src', '../'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+        })
+        .wait(700)
+        .then(function()
+        {
+            // Fade the document (iframe) into view.
+            previewContainer.fadeIn('slow');
+        })
+        .wait(700)
+        .then(function()
+        {
+            // Create a close button, and attach a click event to it.
+            var closeButton = createImageCloseButton(previewContainer.parent());
+            $(closeButton).on('click', function()
+            {
+                // Remove the value of the file input (this enables the change event to fire again).
+                $('#'+data.element).val('');
+                // Remove the close button from the DOM.
+                $(this).remove();
+                // Fade out the image preview, fade in the form control. Rinse and Repeat!
+                previewContainer.fadeOut('slow')
+                .wait(700)
+                .then(function()
+                {
+                    inputControls.fadeIn('slow');
                 });
             });
         });
@@ -434,6 +540,18 @@
                 || mime === 'image/tiff');
     }
 
+    function checkDocumentMime(mime)
+    {
+        return (   mime === 'image/jpg'
+        || mime === 'image/jpeg'
+        || mime === 'image/png'
+        || mime === 'image/bmp'
+        || mime === 'image/tiff'
+        || mime === 'application/pdf'
+        || mime === 'application/msword'
+        || mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    }
+
     function loadImagePreview(file, container)
     {
         var reader = new FileReader();
@@ -454,7 +572,7 @@
         $.ajax({
             url : url,
             method : 'POST',
-            //dataType : 'json',
+            dataType : 'json',
             data : data,
             success : function(response)
             {

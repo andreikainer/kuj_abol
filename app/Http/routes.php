@@ -13,6 +13,8 @@
 
 /** This group is used to Localize Routes to the right language **/
 
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -25,6 +27,8 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
 
         Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
+
+        Route::post(LaravelLocalization::transRoute('routes.temp-document'), 'AjaxController@tempDocument');
 
         Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
 

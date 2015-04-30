@@ -156,6 +156,14 @@
   }
 }
 
+.supporting-doc {
+  margin-bottom: 2rem;
+
+  @media all and (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
 .bt-none {
   border-top: none;
 }
