@@ -8,7 +8,8 @@
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('child_name', trans('create-project-form.child-name'), ['class' => 'form-label']) !!}
-                {!! Form::text('child_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
+                {!! Form::text('child_name', null, ['class' => 'form-input']) !!}
+                {{--{!! Form::text('child_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="child_name"></div>
@@ -19,7 +20,8 @@
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('first_name', trans('create-project-form.first-name'), ['class' => 'form-label']) !!}
-                {!! Form::text('first_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
+                {!! Form::text('first_name', null, ['class' => 'form-input']) !!}
+                {{--{!! Form::text('first_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="first_name"></div>
@@ -30,7 +32,8 @@
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('last_name', trans('create-project-form.last-name'), ['class' => 'form-label']) !!}
-                {!! Form::text('last_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
+                {!! Form::text('last_name', null, ['class' => 'form-input']) !!}
+                {{--{!! Form::text('last_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="last_name"></div>
@@ -41,7 +44,8 @@
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('email', trans('create-project-form.email'), ['class' => 'form-label']) !!}
-                {!! Form::email('email', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
+                {!! Form::email('email', null, ['class' => 'form-input']) !!}
+                {{--{!! Form::email('email', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="email"></div>
@@ -52,7 +56,8 @@
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('address', trans('create-project-form.address'), ['class' => 'form-label']) !!}
-                {!! Form::textarea('address', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
+                {!! Form::textarea('address', null, ['class' => 'form-input']) !!}
+                {{--{!! Form::textarea('address', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="address"></div>
@@ -63,7 +68,8 @@
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
                 {!! Form::label('tel_number', trans('create-project-form.tel-number'), ['class' => 'form-label']) !!}
-                {!! Form::text('tel_number', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
+                {!! Form::text('tel_number', null, ['class' => 'form-input']) !!}
+                {{--{!! Form::text('tel_number', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="form-error cpp-error" data-error="tel_number"></div>

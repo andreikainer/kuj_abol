@@ -367,13 +367,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkAlphaNumeric(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].alphaNumeric);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -383,13 +386,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)){
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkMaxLength(data.value, 180)) {
             showErrorMessage(name, errorMessages[window.locale].maxLength(180));
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -399,9 +405,11 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -411,13 +419,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkNumOnly(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].numOnly);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -427,13 +438,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkAlphaOnly(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].alphaOnly);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -443,13 +457,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkAlphaOnly(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].alphaOnly);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -459,13 +476,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkAlphaOnly(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].alphaOnly);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -475,13 +495,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkValidEmail(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].email);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -491,13 +514,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkAlphaNumeric(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].alphaNumeric);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -507,13 +533,16 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
+            addFailClass(data);
             return false;
         }
         if (! FormValidation.checkValidPhone(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].phone);
+            addFailClass(data);
             return false;
         }
 
+        addSuccessClass(data);
         hideErrorMessage(name);
     });
 
@@ -543,6 +572,16 @@
     function hideErrorMessage(name)
     {
         $('.form-error[data-error*="'+name+'"]').fadeOut();
+    }
+
+    function addFailClass(el)
+    {
+        $(el).removeClass('form-input-correct').addClass('form-input-error');
+    }
+
+    function addSuccessClass(el)
+    {
+        $(el).removeClass('form-input-error').addClass('form-input-correct');
     }
 
     function updateCharCount(length, limit, display)
