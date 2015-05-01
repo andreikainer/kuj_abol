@@ -158,7 +158,7 @@
                             			<li><a href="{{ action('PagesController@howItWorks') }}">Our Team</a></li>
                             		</ul>
                   	        	</li>
-                   	        	<li><a href="{{ action('PagesController@createProject') }}">{{ trans('lang.create-project') }}</a></li>
+                   	        	<li><a href="{{ action('ProjectsController@createProject') }}">{{ trans('lang.create-project') }}</a></li>
                    	        	<li><a href="{{ action('PagesController@viewProjects') }}">{{ trans('lang.contribute') }}</a></li>
                  	        </ul>
                         </div>

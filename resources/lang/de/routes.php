@@ -16,4 +16,5 @@ return [
     'get-locale'           => 'get-locale',
     'search-result'        => '',
     'contact'              => 'kontakte',
+    'create-project/store' => 'create-project/store',
 ];
