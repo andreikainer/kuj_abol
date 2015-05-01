@@ -14,5 +14,6 @@ return [
 	'create-project'       => 'ansuchen-einreichen',
 	'project'              => 'foerderungsprojekt',
     'get-locale'           => 'get-locale',
-
+    'search-result'        => '',
+    'contact'              => 'kontakte',
 ];

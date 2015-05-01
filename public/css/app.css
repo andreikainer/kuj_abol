@@ -4834,7 +4834,9 @@ button.close {
 /*-- BASIC STYLES FOR THE HTML AND BODY --*/
 /*------------------------------------------------------------------*/
 html {
-  min-width: 20rem;
+  min-width: 300px;
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: #f9f9f9;
   color: #4b4b4b;
   font-size: 1rem;
@@ -4888,7 +4890,7 @@ label {
   margin-bottom: 6rem; }
 
 .mt-2em {
-  margin-top: 2rem; }
+  margin-top: 1.6rem; }
 
 .mb-0 {
   margin-bottom: 0 !important; }
@@ -4976,6 +4978,8 @@ label {
   border-radius: 50%;
   background-color: #6f798b;
   color: white; }
+  .button-circle a, .button-circle:link a, .button-circle:visited a {
+    color: white; }
 
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)
@@ -5037,7 +5041,7 @@ label {
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
   border-radius: 5px;
-  background-color: none;
+  background-color: transparent;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -5048,9 +5052,6 @@ label {
   color: #e6e6e6;
   text-decoration: none; }
 
-/*------------------------------------------------------------------*/
-/*-- MODALS --*/
-/*------------------------------------------------------------------*/
 /*------------------------------------------------------------------*/
 /*-- FORMS --*/
 /*------------------------------------------------------------------*/
@@ -5066,13 +5067,13 @@ label {
   margin-bottom: 0.75rem;
   color: #6f798b; }
 
-.form-input {
+.form-input, .module input:not([type=submit]), .module textarea {
   width: 100%;
   padding: 1.15rem 0.65rem 0.65rem 0.65rem;
   border: 1px solid #d2d2d2;
   border-top: none;
   box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
-  .form-input:focus {
+  .form-input:focus, .module input:focus:not([type=submit]), .module textarea:focus {
     outline: none !important; }
 
 .form-element {
@@ -5139,6 +5140,65 @@ label {
 /*-- GREEN TICK for successful projects --*/
 .fa-check {
   margin-right: .5rem; }
+
+/*------------------------------------------------------------------*/
+/*-- MODULES --*/
+/*------------------------------------------------------------------*/
+.module {
+  display: none;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: .95rem;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #d2d2d2;
+  font-size: 1.1rem; }
+  @media (max-width: 768px) {
+    .module .form-group {
+      padding: 0; } }
+  .module i {
+    display: none; }
+    @media (min-width: 768px) {
+      .module i {
+        display: block;
+        background: white;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        margin-left: 2rem; }
+        .module i::before {
+          position: absolute;
+          bottom: -4px;
+          color: #ed5a4d;
+          cursor: pointer; } }
+  .module button.button-circle {
+    background-color: #ed5a4d !important;
+    margin-bottom: 1rem;
+    margin-top: 0 !important; }
+  .module i[data-mobile=true] {
+    display: block;
+    background-color: #ed5a4d !important; }
+    .module i[data-mobile=true]::before {
+      color: white; }
+  .module input:not([type=submit]), .module textarea {
+    box-shadow: inset 0 0.5rem 0 0 #6f798b;
+    z-index: 11; }
+  .module h4 {
+    color: #6f798b;
+    padding-left: 0;
+    padding-right: 0; }
+    @media (min-width: 768px) {
+      .module h4 {
+        margin-left: 1rem; } }
+    .module h4 a {
+      text-decoration: underline;
+      color: #3fa3db; }
+      .module h4 a:hover {
+        color: #248ac3; }
 
 /*------------------------------------------------------------------*/
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
@@ -5289,17 +5349,12 @@ label {
 .boarder {
   border: 3px solid #d2d2d2; }
 
-.list-item {
-  list-style: circle; }
+.l-font {
+  font-size: 1.2rem; }
 
-#progress_bar {
-  background: #2ecc71;
-  padding-left: 1em; }
-
-.contribute {
-  font-size: 2.5rem;
-  margin: 0.7em 0;
-  font-weight: bold; }
+@media (max-width: 767px) {
+  #project_statistics {
+    height: 43em; } }
 
 /* Countdown */
 .countdown-value {
@@ -5309,6 +5364,9 @@ label {
   margin: 0.5em;
   width: 4.5em;
   height: 4.5em; }
+  @media (min-width: 992px) and (max-width: 1999px) {
+    .countdown-value {
+      margin: 0.2em; } }
 
 .countdown-value span {
   display: block;
@@ -5323,14 +5381,37 @@ label {
   text-transform: uppercase;
   width: 5em;
   display: inline-block; }
+  @media (min-width: 992px) and (max-width: 1999px) {
+    #time strong {
+      margin: 0.75em;
+      font-size: 0.7rem; } }
+
+.contribute {
+  font-size: 2.5rem;
+  margin: 0.7em 0;
+  font-weight: bold; }
+  @media (min-width: 992px) and (max-width: 1999px) {
+    .contribute {
+      font-size: 2rem; } }
 
 #facebook-share {
   width: 40%;
-  margin: 5%; }
+  margin: 0 5%; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #facebook-share {
+      width: 30%;
+      margin: 0 10%; } }
 
 #favorite {
   width: 40%;
-  margin: 5%; }
+  margin: 0 5%; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #favorite {
+      width: 30%;
+      margin: 0 10%; } }
+
+#contribution-packs a {
+  text-decoration: none; }
 
 .pack1 {
   background: #6f798b;
@@ -5338,12 +5419,34 @@ label {
   padding: 0.5em;
   margin-top: 2em;
   border-radius: 0.35em;
-  font-weight: bold; }
-  .pack1 :hover {
-    cursor: pointer; }
+  width: 100%; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .pack1 {
+      width: 45%;
+      margin: 2%; } }
+
+.pack1:hover {
+  background: #2ecc71; }
 
 .packs2-4 {
-  background: #3fa3db; }
+  background: #3fa3db;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.35em;
+  margin-top: 2em;
+  width: 100%; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .packs2-4 {
+      width: 45%;
+      margin: 2%; } }
+
+.packs2-4:hover {
+  background: #2ecc71; }
+
+.list-item {
+  list-style: disc;
+  text-align: left;
+  margin-left: 1.5em; }
 
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/
@@ -5356,13 +5459,19 @@ label {
       padding-top: .43em; } }
   .logo img {
     width: 150px; }
+    @media (max-width: 320px) {
+      .logo img {
+        width: 120px; } }
     @media (min-width: 768px) {
       .logo img {
         width: 212px;
         height: 76px; } }
+    @media (min-width: 992px) {
+      .logo img {
+        margin-left: 1rem; } }
     @media (min-width: 1240px) {
       .logo img {
-        margin-left: 25px; } }
+        margin-left: 1.56em; } }
 
 /*------------------------------------------------------------------*/
 /*-- Main Navigation styles --*/
@@ -5401,10 +5510,10 @@ label {
         color: #3fa3db; }
       @media (min-width: 768px) and (max-width: 991px) {
         #main_nav ul > li:nth-child(3) {
-          margin-left: 3rem; } }
+          margin-left: 5rem; } }
       @media (min-width: 911px) and (max-width: 991px) {
         #main_nav ul > li:nth-child(3) {
-          margin-left: 4.5rem; } }
+          margin-left: 8rem; } }
       #main_nav ul > li:nth-child(4) {
         margin-left: 3.2rem;
         margin-right: 3.2rem; }
@@ -5455,9 +5564,6 @@ hr {
       padding-left: 0; } }
 
 /*-- Search btn --*/
-#magnifier {
-  margin-left: 3.7em; }
-
 /*-- Humburger btn --*/
 .mobile-circle-button {
   margin-bottom: .9em;
@@ -5512,6 +5618,8 @@ footer {
     background-color: #3fa3db; }
   footer .socialmedia a {
     display: inline-block; }
+  footer .socialmedia {
+    margin-top: 2rem; }
   footer .socialmedia > div {
     width: 10.5rem;
     margin: 0 auto; }
@@ -5637,6 +5745,9 @@ footer {
 .caption p:first-of-type {
   font-size: 1.1rem; }
 
+/*------------------------------------------------------------------*/
+/*-- Project Tiles styles --*/
+/*------------------------------------------------------------------*/
 /*-- Progress bar styles --*/
 .percentage {
   margin-bottom: 0;
@@ -5644,15 +5755,67 @@ footer {
   font-size: 1.3rem;
   color: #2ecc71; }
 
+.progress {
+  background: #d2d2d2; }
+
 .prog-bar-green {
-  background-color: #2ecc71 !important; }
+  background-color: #2ecc71 !important;
+  min-width: 5em; }
+  .prog-bar-green span {
+    font-size: 2em;
+    line-height: 40px; }
 
 /*-- Finished + check styles --*/
 .finished-green {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
+  text-transform: uppercase;
   color: #2ecc71; }
+
+/*------------------------------------------------------------------*/
+/*-- Sponsors Carousel styles --*/
+/*------------------------------------------------------------------*/
+.sponsors_carousel {
+  /*-- to show the sponsor's name --*/ }
+  .sponsors_carousel .slick-prev, .sponsors_carousel .slick-next, .sponsors_carousel .slick-prev:before, .sponsors_carousel .slick-next:before {
+    display: block !important;
+    color: #6f798b !important; }
+  .sponsors_carousel div img {
+    min-width: 150px;
+    height: auto; }
+  .sponsors_carousel .logo-name {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white; }
+
+/*------------------------------------------------------------------*/
+/*-- Modules styles --*/
+/*------------------------------------------------------------------*/
+.module-submit {
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  font-size: 1.2rem; }
+
+.module-submit:hover, .module-submit:focus, .module-submit:active {
+  color: #6f798b;
+  border-color: #6f798b; }
+
+#search_module {
+  height: auto; }
+
+#search-for-this {
+  margin-top: .2rem; }
+
+#help-page {
+  font-size: 1.1rem !important; }
+  #help-page input:not([type=submit]), #help-page textarea {
+    box-shadow: inset 0 0.5rem 0 0 #6f798b !important; }
+    #help-page input:not([type=submit]):hover, #help-page input:not([type=submit]):focus, #help-page input:not([type=submit]):active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active {
+      box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
 
 
 /*# sourceMappingURL=app.css.map */

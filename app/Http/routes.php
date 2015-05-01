@@ -22,6 +22,7 @@ Route::group(
     ],
     function()
     {
+
         Route::get('/', 'PagesController@index');
 
         Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
@@ -32,10 +33,14 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
 
+        Route::get(LaravelLocalization::transRoute('contact'), 'ContactFormController@getContactForm');
+        Route::post(LaravelLocalization::transRoute('contact'), 'ContactFormController@postContactForm');
+
         Route::controllers([
-            'auth' => 'Auth\AuthController',
-            'password' => 'Auth\PasswordController',
-         ]);
+
+          'auth' => 'Auth\AuthController',
+          'password' => 'Auth\PasswordController',
+        ]);
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
@@ -45,4 +50,7 @@ Route::group(
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED for example just German pages**/
 
 // Route::get('test', '<Controller>@<Method>');
+
 Route::post('temp-document', 'AjaxController@tempDocument');
+
+Route::post('search-results', 'HeaderController@index');

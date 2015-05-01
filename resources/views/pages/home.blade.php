@@ -9,9 +9,7 @@
                     <img src="img/main-carousel/lg/seven.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">Contribute now</a></p>
+                        {{!! trans('lang.carousel-text-1', ['cta-link' => '#contribute']) !!}}
                     </div>
                 </div>
 
@@ -19,9 +17,7 @@
                     <img src="img/main-carousel/lg/six.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">View tips</a></p>
+                        {{!! trans('lang.carousel-text-2', ['cta-link' => '#']) !!}}
                     </div>
                 </div>
 
@@ -29,9 +25,7 @@
                     <img src="img/main-carousel/lg/three.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">View our sponsors</a></p>
+                        {{!! trans('lang.carousel-text-3', ['cta-link' => '#']) !!}}
                     </div>
                 </div>
 
@@ -39,9 +33,7 @@
                      <img src="img/main-carousel/lg/five.jpg" class="img-responsive" alt="image">
 
                      <div class="jumbotron-text">
-                        <h1>Hello, world!</h1>
-                        <p>blah-blah</p>
-                        <p><a class="button-transparent" href="#" type="button">Read a blog</a></p>
+                         {{!! trans('lang.carousel-text-4', ['cta-link' => '#']) !!}}
                      </div>
                 </div>
             </div>
@@ -55,7 +47,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-                    <h2 class="heading" id="contribute">Current Projects</h2>
+                    <h2 class="heading" id="contribute">{{ trans('lang.current-projects') }}</h2>
                 </div>
 
             </div>
@@ -66,7 +58,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img srcset="img/main-carousel/xs/home.jpg" alt="???">
+                                <img srcset="img/main-carousel/xs/one.jpg" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -87,7 +79,7 @@
 
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
+                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>
@@ -127,7 +119,7 @@
 
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/four.jpg') }}" alt="????">
+                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>
@@ -154,7 +146,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-                    <h2 class="heading">Successfully Funded Projects</h2>
+                    <h2 class="heading">{{ trans('lang.successfully-funded-projects') }}</h2>
                 </div>
 
             </div>
@@ -165,7 +157,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
-                                <img srcset="img/main-carousel/xs/home.jpg" alt="???">
+                                <img srcset="img/main-carousel/xs/one.jpg" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -179,7 +171,7 @@
                                         </div>
                                     </div>
 
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>FINISHED</p>
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('lang.finished') }}</p>
                                     <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
                                 </div>
                             </div>
@@ -187,7 +179,7 @@
 
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
-                                <img src="{{ asset('img/main-carousel/xs/two.jpg') }}" alt="????">
+                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
                                     <p>hakjlghlaghalkfdhglkahg</p>
@@ -228,8 +220,79 @@
                         </div>
 
                     </div> <!-- row ends -->
-                     <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
+                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
                 </div>
+            </div>
+
+
+<!-- Sponsors' logos -->
+            <div class="row">
+
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                    <h2 class="heading">Our Sponsors</h2>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
+                    <div class="row sponsors_carousel">
+
+                        <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
+                            <div class="logo-name img-responsive text-center hidden">onhghjgjhg ghjgkgglglgl glhglglhglhe</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="one">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">two</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="two">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">three</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="three">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">four</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-2">
+                            <div class="logo-name img-responsive text-center hidden">five</div>
+                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                        </div>
+
+                    </div>
+                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View all</a></p></div>
+                </div>
+
             </div>
 
 @endsection

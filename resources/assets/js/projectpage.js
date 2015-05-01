@@ -138,3 +138,12 @@ var GKCounter = new Class({
 });
 
 new GKCounter(document.id('countdown'));
+
+/*------------------------------------------------------------------*/
+/*-- PROGRESS BAR --*/
+/*------------------------------------------------------------------*/
+
+$( document ).click(function() {
+    $( "#progress-bar" ).fadeIn(1000);
+});
+

@@ -42,7 +42,6 @@
 /*------------------------------------------------------------------*/
   /*-- BUTTONS --*/
 /*------------------------------------------------------------------*/
-
 /*-- main small CTA's buttons --*/
 .button-main, .button-main:link, .button-main:visited {
   @extend .no-outline;
@@ -99,6 +98,7 @@
 
 /*-- LOG IN and REGISTER buttons --*/
 .button-user {
+  @extend .no-outline;
 //  width: 6.4em; GOOD FOR ENG
   width: 7.2em;
 }
@@ -115,6 +115,13 @@
 
   background-color: $bluegrey;
   color: $white;
+
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
 }
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)
@@ -191,7 +198,7 @@
 
   border: .125rem solid $white;
   @include border-radius(5px);
-  background-color: none;
+  background-color: transparent;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -203,13 +210,6 @@
   color: darken($white, 10%);
   text-decoration: none;
 }
-
-
-/*------------------------------------------------------------------*/
-  /*-- MODALS --*/
-/*------------------------------------------------------------------*/
-
-
 
 
 
@@ -326,4 +326,102 @@
 /*-- GREEN TICK for successful projects --*/
 .fa-check {
   margin-right: .5rem;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- MODULES --*/
+/*------------------------------------------------------------------*/
+.module {
+  display: none;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: .95rem;
+
+  height: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: $dgrey;
+
+  font-size: 1.1rem;
+
+  @media(max-width: 768px) {
+    .form-group {
+      padding: 0;
+    }
+  }
+
+  i {
+    display: none;
+
+    @media(min-width: 768px) {
+      & {
+        display: block;
+        background: $white;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        margin-left: 2rem;
+
+        &::before {
+          position: absolute;
+          bottom: -4px;
+          color: $orange;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  button.button-circle {
+    background-color: $orange !important;
+    margin-bottom: 1rem;
+    margin-top: 0 !important;
+  }
+
+  i[data-mobile=true] {
+    display: block;
+    background-color: $orange !important;
+
+    &::before {
+      color: $white;
+    }
+  }
+
+  input:not([type=submit]), textarea {
+    @extend .no-outline;
+    @extend .form-input;
+
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+    z-index: 11;
+  }
+
+  h4 {
+    color: $bluegrey;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media(min-width: 768px) {
+      margin-left: 1rem;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $blue;
+
+      &:hover {
+        color: darken($blue, 10%);
+      }
+    }
+  }
 }
