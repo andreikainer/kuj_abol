@@ -4980,6 +4980,8 @@ label {
   color: white; }
   .button-circle a, .button-circle:link a, .button-circle:visited a {
     color: white; }
+    .button-circle a:hover, .button-circle:link a:hover, .button-circle:visited a:hover {
+      color: white; }
 
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)

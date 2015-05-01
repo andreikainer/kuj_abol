@@ -55,34 +55,6 @@ $(document).ready(function()
 
 
 
-<<<<<<< HEAD
-
-/*------------------------------------------------------------------*/
-  /*-- LANGUAGE CHANGE BUTTON --*/
-/*------------------------------------------------------------------*/
-/*
- * check what land flag is displaying
- * toggle the flag on a press button event
- */
-    $('.language-toggle').on("click", function()
-    {
-        if($(this).hasClass('at'))
-        {
-            $(this).toggleClass('at', false).toggleClass('gb', true);
-        }else{
-            $(this).toggleClass('at', true).toggleClass('gb', false);
-        }
-
-        // Set the global variable `locale` to the user's selected language.
-        getLocale();
-
-    });
-
-
-
-
-=======
->>>>>>> 2bddc2910e5293ed99eea1963e64524bbccf2b81
 /*------------------------------------------------------------------*/
     /*-- FUNCTIONS --*/
 /*------------------------------------------------------------------*/
@@ -110,7 +82,6 @@ $(document).ready(function()
     }
 
 
-<<<<<<< HEAD
     function getLocale()
     {
         $.ajax({
@@ -126,7 +97,6 @@ $(document).ready(function()
             }
         });
     }
-=======
 
 /*-----Functions for modules ---------------------------------------*/
 
@@ -233,6 +203,9 @@ $(document).ready(function()
             $(this).toggleClass('at', true).toggleClass('gb', false);
         }
 
+        // Set the global variable `locale` to the user's selected language.
+        getLocale();
+
         //e.preventDefault();
         ////console.log(window.location.href.substring(window.location.href.indexOf("/", window.location.href.indexOf("/", window.location.href.indexOf("/") +1))));
         //
@@ -263,8 +236,6 @@ $(document).ready(function()
 
 
 
-
->>>>>>> 2bddc2910e5293ed99eea1963e64524bbccf2b81
 
 
 
