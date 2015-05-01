@@ -17,11 +17,12 @@ return [
 	|--------------------------------------------------------------------------
     */
 
-    'how-it-works' 		    => 'how it works',
-	'create-project' 	    => 'create project',
-	'contribute' 			=> 'contribute',
-    'login'					=> 'Login',
-	'register'				=> 'Register',
+    'how-it-works'          => 'How It Works',
+    'create-project' 	    => 'Create Project',
+    'contribute' 		    => 'Contribute',
+
+    'login'				    => 'Login',
+    'register'			    => 'Register',
 
     /*
 	|--------------------------------------------------------------------------
@@ -54,13 +55,6 @@ return [
     'building-block-text1' => 'Fund this project with a fixed amount of :euro',
     'building-block-text2' => 'Receive a personal thank-you letter from the supported family',
     'building-block-text3' => 'Your contribution will be allocated to this project only',
-
-	'how-it-works'          => 'How It Works',
-	'create-project' 	    => 'Create Project',
-	'contribute' 		    => 'Contribute',
-
-	'login'				    => 'Login',
-	'register'			    => 'Register',
 
     'search'                => 'Search',
     'search-for-a-project'  => 'Search for a project',

@@ -4902,8 +4902,8 @@ label {
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
 /*-- to remove blue frame from links, buttons and input fields --*/
-.no-ouline {
-  onutline: none; }
+.no-outline, .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main:visited, .button-main:hover, .button-main-big:hover, .button-main-big:active, .button-main:active, .button-sec, .button-sec:link, .button-sec:visited, .button-sec:hover, .button-sec:active, .button-user, .button-circle, .button-circle:link, .button-circle:visited, .button-link, .button-transparent, .button-transparent:link, .button-transparent:visited, .module input:not([type=submit]), .module textarea {
+  outline: none !important; }
 
 /*-- to give an elem white bg color --*/
 .white-bg {
@@ -4937,7 +4937,7 @@ label {
 .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main-big:link, .button-main:visited, .button-main-big:visited {
   background-color: #3fa3db;
   color: white;
-  border-color: #3fa3db;
+  border-color: #3fa3db !important;
   font-family: 'Lato', 'Open Sans', sans-serif;
   letter-spacing: .06em; }
 
@@ -4980,6 +4980,8 @@ label {
   color: white; }
   .button-circle a, .button-circle:link a, .button-circle:visited a {
     color: white; }
+    .button-circle a:hover, .button-circle:link a:hover, .button-circle:visited a:hover {
+      color: white; }
 
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)
@@ -5686,7 +5688,8 @@ footer {
   .jumbotron .jumbotron-text {
     position: absolute;
     top: 2rem;
-    left: 5rem; }
+    left: 5rem;
+    text-shadow: 3px 2px 3px #323232; }
     @media (max-width: 768px) {
       .jumbotron .jumbotron-text {
         top: .1rem;
@@ -5697,6 +5700,9 @@ footer {
     @media (min-width: 1366px) {
       .jumbotron .jumbotron-text {
         left: 14rem; } }
+    @media (min-width: 768px) {
+      .jumbotron .jumbotron-text p:nth-child(3) {
+        margin-top: 6rem !important; } }
 
 .caption h3 {
   font-size: 1.8rem; }
@@ -5768,12 +5774,22 @@ footer {
 #search-for-this {
   margin-top: .2rem; }
 
+/*------------------------------------------------------------------*/
+/*-- Contact page styles --*/
+/*------------------------------------------------------------------*/
 #help-page {
   font-size: 1.1rem !important; }
+  #help-page .no-projects {
+    margin-bottom: 2rem;
+    background-color: white; }
   #help-page input:not([type=submit]), #help-page textarea {
     box-shadow: inset 0 0.5rem 0 0 #6f798b !important; }
     #help-page input:not([type=submit]):hover, #help-page input:not([type=submit]):focus, #help-page input:not([type=submit]):active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active {
       box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
+  #help-page div div ul.form-error {
+    padding-left: 2rem; }
+  #help-page div div ul.form-error li {
+    list-style-type: disc !important; }
 
 
 /*# sourceMappingURL=app.css.map */

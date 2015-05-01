@@ -9,7 +9,7 @@
                     <img src="img/main-carousel/lg/seven.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {{!! trans('lang.carousel-text-1', ['cta-link' => '#contribute']) !!}}
+                        {!! trans('lang.carousel-text-1', ['cta-link' => '#contribute']) !!}
                     </div>
                 </div>
 
@@ -17,7 +17,7 @@
                     <img src="img/main-carousel/lg/six.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {{!! trans('lang.carousel-text-2', ['cta-link' => '#']) !!}}
+                        {!! trans('lang.carousel-text-2', ['cta-link' => '#']) !!}
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@
                     <img src="img/main-carousel/lg/three.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {{!! trans('lang.carousel-text-3', ['cta-link' => '#']) !!}}
+                        {!! trans('lang.carousel-text-3', ['cta-link' => '#']) !!}
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@
                      <img src="img/main-carousel/lg/five.jpg" class="img-responsive" alt="image">
 
                      <div class="jumbotron-text">
-                         {{!! trans('lang.carousel-text-4', ['cta-link' => '#']) !!}}
+                         {!! trans('lang.carousel-text-4', ['cta-link' => '#']) !!}
                      </div>
                 </div>
             </div>

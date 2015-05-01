@@ -1,4 +1,15 @@
-{!! Form::open(['method' => 'post']) !!}
+<!-- if there are validation errors, show them here -->
+    <div class="form-group">
+        @if($errors->any())
+	    	<ul class="form-error">
+	    		@foreach($errors->all() as $error)
+	    		    <li> {{ $error }} </li>
+	    		@endforeach
+	    	</ul>
+        @endif
+    </div>
+
+{!! Form::open(['action' => 'ContactFormController@postContactForm', 'method' => 'post']) !!}
 
     <div class="form-group">
     	{!! Form::label(null, 'Name', ['class' => 'form-label form-inline']) !!}
@@ -23,27 +34,6 @@
               		'class'=>'form-input',
              		'placeholder'=>'Your message')) !!}
     </div>
-
-<!-- if there are validation errors, show them here -->
-    <div class="form-group">
-        @if($errors->any())
-	    	<ul>
-	    		@foreach($errors->all() as $error)
-	    		    <li class=”form-error”> {{ $error }} </li>
-	    		@endforeach
-	    	</ul>
-        @endif
-    </div>
-
-<!-- to give the user a feedback in a success point, show the success message -->
-    <div class="form-group">
-        @if(Session::has('message'))
-        	<div class="alert alert-info">
-          		{{Session::get('message')}}
-        	</div>
-        @endif
-    </div>
-
 
     <div class="form-group clearfix">
     	{!! Form::submit('Send',

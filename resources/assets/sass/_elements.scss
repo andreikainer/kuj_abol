@@ -3,8 +3,8 @@
 /*------------------------------------------------------------------*/
 
 /*-- to remove blue frame from links, buttons and input fields --*/
-.no-ouline {
-  onutline: none;
+.no-outline {
+  outline: none !important;
 }
 
 /*-- to give an elem white bg color --*/
@@ -48,7 +48,7 @@
 
   background-color: $blue;
   color: $white;
-  border-color: $blue;
+  border-color: $blue !important;
 
   font-family: $lato;
   letter-spacing: .06em;

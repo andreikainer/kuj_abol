@@ -85,11 +85,11 @@
                             </button>
 
                         <!-- help_btn -->
-                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-buttonhvr-push question">
-                                <a href="{{ action('ContactFormController@getContactForm') }}">
+                            <a href="{{ action('ContactFormController@getContactForm') }}">
+                                <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-buttonhvr-push question">
                                     <i class="fa fa-question"></i>
-                                </a>
-                            </button>
+                                </button>
+                            </a>
 
            			    <!-- search_btn for mobile -->
                             <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier" data-target="#search_module">
@@ -110,22 +110,28 @@
 
                                 <!-- language_btn -->
                                 <div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
-								    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-								        <button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
-								        	<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-								        			{{{ $properties['native'] }}}
-								        	</a>
-								        </button>
-								    @endforeach
+								    {{--@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
+								        {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">--}}
+								        	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
+								        			{{--{{{ $properties['native'] }}}--}}
+								        	{{--</a>--}}
+								        {{--</button>--}}
+								    {{--@endforeach--}}
+								    <button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
+                                    	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
+                                    			{{--{{{ $properties['native'] }}}--}}
+                                    	{{--</a>--}}
+                                    </button>
+
 								    {{--<a href="http://kuj.dev/en" type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle"></a>--}}
 								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}
 
                                 <!-- help_btn -->
-                                    <button type="button" class="navbar-toggle button-circle hvr-push question">
-                                        <a href="{{ action('ContactFormController@getContactForm') }}">
+                                    <a href="{{ action('ContactFormController@getContactForm') }}">
+                                        <button type="button" class="navbar-toggle button-circle hvr-push question">
                                             <i class="fa fa-question"></i>
-                                        </a>
-                                    </button>
+                                        </button>
+                                    </a>
 
                                 <!-- search_btn -->
                                     <button type="button" role="search" class="navbar-toggle button-circle hvr-push magnif magnifier" data-target="#search_module">

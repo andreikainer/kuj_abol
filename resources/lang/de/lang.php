@@ -18,11 +18,12 @@ return array(
 	|--------------------------------------------------------------------------
     */
 
-	'how-it-works' 		=> 'wer wir sind',
-	'create-project' 	=> 'ansuchen einreichen',
-	'contribute' 			=> 'fördern',
-    'login'					=> 'Einloggen',
-    'register'				=> 'Registrieren',
+    'how-it-works'          => 'Wer wir sind',
+    'create-project'        => 'Ansuchen einreichen',
+    'contribute'            => 'Fördern',
+
+    'login'				    => 'Einloggen',
+    'register'			    => 'Registrieren',
 
     /*
 	|--------------------------------------------------------------------------
@@ -56,15 +57,6 @@ return array(
     'building-block-text1' => 'Unterstützen Sie dieses Förderungsprojekt mit einem fixen Betrag von :euro',
     'building-block-text2' => 'Die geförderte Familie bedankt sich bei Ihnen mit einem persönlichen Schreiben',
     'building-block-text3' => 'Ihr Unterstützung wird ausschließlich für dieses Förderungsprojekt verwendet',
-
-
-	'how-it-works'          => 'Wer wir sind',
-	'create-project'        => 'Ansuchen einreichen',
-	'contribute'            => 'Fördern',
-
-	'login'				    => 'Einloggen',
-	'register'			    => 'Registrieren',
-
 
     'search-result'         => '',
     'search'                => 'Suchen',

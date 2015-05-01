@@ -30,8 +30,8 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
 
-        Route::get(LaravelLocalization::transRoute('contact'), 'ContactFormController@getContactForm');
-        Route::post(LaravelLocalization::transRoute('contact'), 'ContactFormController@postContactForm');
+        Route::get(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@getContactForm');
+        Route::post(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@postContactForm');
 
         Route::controllers([
 
