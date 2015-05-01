@@ -55,4 +55,14 @@ return array(
     'building-block-text1' => 'Unterstützen Sie dieses Förderungsprojekt mit einem fixen Betrag von :euro',
     'building-block-text2' => 'Die geförderte Familie bedankt sich bei Ihnen mit einem persönlichen Schreiben',
     'building-block-text3' => 'Ihr Unterstützung wird ausschließlich für dieses Förderungsprojekt verwendet',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | FOOTER
+    |--------------------------------------------------------------------------
+    */
+
+    'enter-email-here' => 'Email eintragen',
+    'sign-up'   =>  'Anmelden',
 );

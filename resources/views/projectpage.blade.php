@@ -1,12 +1,27 @@
 @extends('app')
 
 @section('content')
+    <!-- Facebook JS import -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.3&appId=924969747560616";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <div class="container-fluid">
         <div class="row" role="main"> <!--Body content-->
+
+            <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-12 text-center"> <!-- project title beginn-->
                 <h2 class="heading">Rollstuhlrampe für Hansi</h2>
             </div> <!-- project title end-->
+            </div>
 
+            <div class="row">
             <div class="col-sm-12 col-md-8"> <!-- project images beginn-->
                 <img class="img-responsive center-block" src="{{ asset('/img/hansi.png') }}">
             </div> <!-- project images end-->
@@ -30,13 +45,16 @@
                 <div class="btn button-main contribute">Fund this project</div>
                 <div class="heading"></div>
                 <div id="facebook-share" class="btn pull-left">
-                    <img src="{{ asset('/img/facebook_teilen.svg') }}" alt="facebook-share" width="100%">
+                    {{--<div class="fb-share-button" data-href="https://kinderfoerderungen.at" data-layout="button_count" style="width:100%;"></div>--}}
+                    <a href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at"><img src="{{ asset('/img/facebook_teilen.svg') }}" alt="facebook-share" width="100%"></a>
                 </div>
                 <div id="favorite" class="btn pull-left">
                     <img src="{{ asset('/img/merken.svg') }}" alt="favorite-button" width="100%">
                 </div>
             </div> <!-- statistics end-->
+            </div>
 
+            <div class="row">
             <div class="col-sm-12 col-md-8 text-center l-font"> <!-- project description beginn-->
                 <h2>Rollstuhlrampe für Hansi</h2>
                 <p>Wie heute kurz telefonisch besprochen, ist der 9 jährige Hansi von
@@ -104,11 +122,14 @@
                         </ul>
                 </div></a>
             </div> <!-- contribution packages end-->
+            </div>
 
             <div class="col-sm-12" style="background:red;"> <!-- sponsors row beginn-->
                 Olga's Sponsors row
             </div> <!-- sponsors row end-->
-        </div> <!-- main content ends -->
-        {{---- MooTools -->--}}
-        {{--<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>--}}
-        {{--<script src="{{ asset('/js/main.js') }}"></script>--}}
+        </div> <!-- main content end -->
+@endsection
+
+@section('additional_js')
+    <script src="{{ asset('js/view-project-page/view-project.js') }}"></script>
+@endsection

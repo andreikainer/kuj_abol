@@ -54,4 +54,14 @@ return [
     'building-block-text1' => 'Fund this project with a fixed amount of :euro',
     'building-block-text2' => 'Receive a personal thank-you letter from the supported family',
     'building-block-text3' => 'Your contribution will be allocated to this project only',
+
+    /*
+  |--------------------------------------------------------------------------
+  | FOOTER
+  |--------------------------------------------------------------------------
+  */
+
+    'enter-email-here' => 'Enter your email',
+    'sign-up'   =>  'Sign Up',
+
 ];
