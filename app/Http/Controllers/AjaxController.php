@@ -27,4 +27,11 @@ class AjaxController extends Controller {
         return json_encode(['element' => $inputElement, 'path' => $path]);
     }
 
+    public function getLocale(Request $request)
+    {
+        $locale = explode('/', $request->server('HTTP_REFERER'));
+        return $locale[3];
+    }
+
+
 }

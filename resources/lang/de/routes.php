@@ -13,6 +13,6 @@ return [
     'how-it-works'         => 'wer-wir-sind',
 	'create-project'       => 'ansuchen-einreichen',
 	'project'              => 'foerderungsprojekt',
-    'temp-document'        => 'temp-document',
+    'get-locale'           => 'get-locale',
 
 ];

@@ -23,18 +23,37 @@
      */
 
     var errorMessages = {
-        'disabled' : 'Please name your project, and click "Start Project" to enable form.',
-        'required' : 'This field is required.',
-        'alphaNumeric' : 'Must contain letters and numbers only. And not begin with a space.',
-        'numOnly' : 'Must contain numbers only. And not begin with a space.',
-        'alphaOnly' : 'Must contain letters only. And not begin with a space.',
-        'email' : 'Must be of a correct email format. And not begin with a space.',
-        'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
-        'image' : 'Please choose a valid image format',
-        'document' : 'Please choose a valid image / document format.',
-        'maxLength' : function(limit)
-        {
-            return 'This field must not exceed '+limit+' characters';
+        'en' : {
+            'disabled' : 'Please name your project, and click "Start Project" to enable form.',
+            'required' : 'This field is required.',
+            'alphaNumeric' : 'Must contain letters and numbers only. And not begin with a space.',
+            'numOnly' : 'Must contain numbers only. And not begin with a space.',
+            'alphaOnly' : 'Must contain letters only. And not begin with a space.',
+            'email' : 'Must be of a correct email format. And not begin with a space.',
+            'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
+            'image' : 'Please choose a valid image format',
+            'document' : 'Please choose a valid image / document format.',
+            'maxLength' : function(limit)
+            {
+                return 'This field must not exceed '+limit+' characters';
+            },
+            'charRemaining' : 'characters remaining'
+        },
+        'de' : {
+            'disabled' : 'Bitte nennen Sie Ihr Projekt, und klicken Sie auf "Projekt starten", um Form zu ermöglichen.',
+            'required' : 'Dieses Feld ist erforderlich',
+            'alphaNumeric' : 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
+            'numOnly' : 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
+            'alphaOnly' : 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.',
+            'email' : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
+            'phone' : 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.',
+            'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
+            'document' : 'Bitte wählen Sie ein gültiges Bild / Dokument-Format.',
+            'maxLength' : function(limit)
+            {
+                return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+            },
+            'charRemaining' : 'noch freie Zeichen'
         }
     };
 
@@ -189,7 +208,7 @@
     $.subscribe('disabled-input.click', function(event, data)
     {
         var name = (data.hasAttribute('name')) ? data.getAttribute('name') : data.getAttribute('for');
-        showErrorMessage(name, errorMessages.disabled);
+        showErrorMessage(name, errorMessages[window.locale].disabled);
     });
 
     $.subscribe('next-button.click', function(event, data)
@@ -218,7 +237,7 @@
     $.subscribe('main-image.selected image-two.selected image-three.selected image-four.selected', function(event, data)
     {
         if (! checkImageMime(data.files[0].type)) {
-            showErrorMessage(data.id, errorMessages.image);
+            showErrorMessage(data.id, errorMessages[window.locale].image);
             return false;
         }
         hideErrorMessage(data.id);
@@ -268,7 +287,7 @@
     $.subscribe('document-one.selected document-two.selected document-three.selected document-four.selected document-five.selected document-six.selected', function(event, data)
     {
         if (! checkDocumentMime(data.files[0].type)) {
-            showErrorMessage(data.id, errorMessages.document);
+            showErrorMessage(data.id, errorMessages[window.locale].document);
             return false;
         }
         hideErrorMessage(data.id);
@@ -347,11 +366,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkAlphaNumeric(data.value)) {
-            showErrorMessage(name, errorMessages.alphaNumeric);
+            showErrorMessage(name, errorMessages[window.locale].alphaNumeric);
             return false;
         }
 
@@ -363,11 +382,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)){
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkMaxLength(data.value, 180)) {
-            showErrorMessage(name, errorMessages.maxLength(180));
+            showErrorMessage(name, errorMessages[window.locale].maxLength(180));
             return false;
         }
 
@@ -379,7 +398,7 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
 
@@ -391,11 +410,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkNumOnly(data.value)) {
-            showErrorMessage(name, errorMessages.numOnly);
+            showErrorMessage(name, errorMessages[window.locale].numOnly);
             return false;
         }
 
@@ -407,11 +426,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkAlphaOnly(data.value)) {
-            showErrorMessage(name, errorMessages.alphaOnly);
+            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
             return false;
         }
 
@@ -423,11 +442,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkAlphaOnly(data.value)) {
-            showErrorMessage(name, errorMessages.alphaOnly);
+            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
             return false;
         }
 
@@ -439,11 +458,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkAlphaOnly(data.value)) {
-            showErrorMessage(name, errorMessages.alphaOnly);
+            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
             return false;
         }
 
@@ -455,11 +474,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkValidEmail(data.value)) {
-            showErrorMessage(name, errorMessages.email);
+            showErrorMessage(name, errorMessages[window.locale].email);
             return false;
         }
 
@@ -471,11 +490,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkAlphaNumeric(data.value)) {
-            showErrorMessage(name, errorMessages.alphaNumeric);
+            showErrorMessage(name, errorMessages[window.locale].alphaNumeric);
             return false;
         }
 
@@ -487,11 +506,11 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
             return false;
         }
         if (! FormValidation.checkValidPhone(data.value)) {
-            showErrorMessage(name, errorMessages.phone);
+            showErrorMessage(name, errorMessages[window.locale].phone);
             return false;
         }
 
@@ -528,7 +547,7 @@
 
     function updateCharCount(length, limit, display)
     {
-        $(display).html('characters remaining '+(limit-length)).fadeIn();
+        $(display).html(errorMessages[window.locale].charRemaining+' '+(limit-length)).fadeIn();
     }
 
     function checkImageMime(mime)
@@ -543,13 +562,13 @@
     function checkDocumentMime(mime)
     {
         return (   mime === 'image/jpg'
-        || mime === 'image/jpeg'
-        || mime === 'image/png'
-        || mime === 'image/bmp'
-        || mime === 'image/tiff'
-        || mime === 'application/pdf'
-        || mime === 'application/msword'
-        || mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+                || mime === 'image/jpeg'
+                || mime === 'image/png'
+                || mime === 'image/bmp'
+                || mime === 'image/tiff'
+                || mime === 'application/pdf'
+                || mime === 'application/msword'
+                || mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
     }
 
     function loadImagePreview(file, container)

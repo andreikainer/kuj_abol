@@ -1,5 +1,8 @@
 $(document).ready(function()
 {
+    // Store the user's current language to `locale`.
+    window.locale;
+    getLocale();
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -43,6 +46,10 @@ $(document).ready(function()
         }else{
             $(this).toggleClass('at', true).toggleClass('gb', false);
         }
+
+        // Set the global variable `locale` to the user's selected language.
+        getLocale();
+
     });
 
 
@@ -63,6 +70,8 @@ $(document).ready(function()
             .toggleClass('col-sm-push-6', true);
     }
 
+
+
 /*
  * changeRightBtnGroupAlignment
  * changes the grid layout components of right group of buttons in the header
@@ -73,7 +82,21 @@ $(document).ready(function()
     }
 
 
-
+    function getLocale()
+    {
+        $.ajax({
+            url : '/get-locale',
+            method : 'GET',
+            success : function(response)
+            {
+                window.locale = response;
+            },
+            error : function(response)
+            {
+                window.locale = 'de';
+            }
+        });
+    }
 
 
 

@@ -28,7 +28,7 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
 
-        Route::post(LaravelLocalization::transRoute('routes.temp-document'), 'AjaxController@tempDocument');
+        Route::get(LaravelLocalization::transRoute('routes.get-locale'), 'AjaxController@getLocale');
 
         Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
 
@@ -45,3 +45,4 @@ Route::group(
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED for example just German pages**/
 
 // Route::get('test', '<Controller>@<Method>');
+Route::post('temp-document', 'AjaxController@tempDocument');
