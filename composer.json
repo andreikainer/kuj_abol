@@ -8,6 +8,7 @@
 		"laravel/framework": "5.0.*",
 		"illuminate/html": "~5.0",
 		"doctrine/dbal": "~2.5",
+		"intervention/image": "~2.2",
 		"mcamara/laravel-localization": "~1.0",
         "guzzlehttp/guzzle": "~5.0"
 	},

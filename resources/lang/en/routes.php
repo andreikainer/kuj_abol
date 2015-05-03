@@ -10,8 +10,10 @@ return [
 	| This file is used to translate routes. Key => English
 	*/
 
-    'how-it-works'         => 'how-it-works',
-    'create-project'       => 'create-project',
-	'project'              => 'project',
-
+    'how-it-works'          => 'how-it-works',
+	'create-project'        => 'create-project',
+	'project'               => 'project',
+	'get-locale'            => 'get-locale',
+    'search-result'         => 'search-result',
+    'contact'               => 'contact',
 ];

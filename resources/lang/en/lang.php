@@ -11,6 +11,7 @@ return [
 	| key exist in both lang.php files. Put the english string straight in here.
 	*/
 
+
     /*
 	|--------------------------------------------------------------------------
 	| HEADER
@@ -23,9 +24,18 @@ return [
     'login'					=> 'Login',
 	'register'				=> 'Register',
 
+    'search-result'         => 'Search result',
+    'search'                => 'Search',
+    'search-for-a-project'  => 'Search for a project',
+
+    'our-mission'           => 'our mission',
+    'our-team'              => 'our team',
+    'tips-for-success'      => 'tips for success',
+    'our-sponsors'          => 'Our sponsors',
+
     /*
 	|--------------------------------------------------------------------------
-	| CAROUSEL
+	| HOME PAGE
 	|--------------------------------------------------------------------------
     */
 
@@ -44,6 +54,19 @@ return [
     'carousel-text-4'  =>   '<h1>What are we up to now?</h1>
                             <p>Stay up to date with our projects.</p>
                             <p><a class="button-transparent" href=":cta-link" type="button">OUR BLOG</a></p>',
+
+    'contribute-now'        => 'Contribute now',
+    'view-tips'             => 'View tips',
+    'view-our-sponsors'     => 'View our sponsors',
+    'read-a-blog'           => 'Read a blog',
+
+    'current-projects'      => 'current projects',
+    'successfully funded projects'  => 'successfully funded projects',
+    'finished'              => 'finished',
+    'view-more'             => 'View more',
+    'view-all'              => 'View all',
+    'read-more'             => 'Read more',
+    'details'               => 'Details',
 
     /*
    |--------------------------------------------------------------------------
@@ -88,7 +111,12 @@ return [
   |--------------------------------------------------------------------------
   */
 
-    'enter-email-here' => 'Enter your email',
-    'sign-up'   =>  'Sign Up',
+    'newsletter'            => 'Newsletter',
+    'sign-up'               => 'Sign up',
+    'site-map'              => 'Site Map',
+    'terms-and-conditions'  => 'Terms and conditions',
+    'contacts'              => 'Contacts',
+    'website-made-by'       => 'website made by',
+    'legal-stuff'           => 'Kinder- und Jugendförderungen is an initiative of the All for Kids Sponsoring Agency to support chronically ill, mentally or physically disabled children and their families.',
 
 ];

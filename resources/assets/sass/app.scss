@@ -92,10 +92,10 @@
 
     ul>li:nth-child(3) {
       @media(min-width: 768px) and (max-width: 991px) {
-        margin-left: 3rem;
+        margin-left: 5rem;
       }
       @media(min-width: 911px) and (max-width: 991px) {
-        margin-left: 4.5rem;
+        margin-left: 8rem;
       }
     }
     ul>li:nth-child(4) {
@@ -457,6 +457,7 @@ footer {
   font-family: $montserrat;
   font-size: 1.8rem;
   font-weight: 700;
+  text-transform: uppercase;
   color: $green;
 }
 
@@ -502,27 +503,43 @@ footer {
 /*------------------------------------------------------------------*/
   /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
-input[name=search_inputfield] {
-  @extend .no-outline;
-  @extend .form-input;
+//input[name=search_inputfield] {
+//  @extend .no-outline;
+//  @extend .form-input;
+//
+//  box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+//  z-index: 11;
+//}
 
-  box-shadow: inset 0 0.5rem 0 0 $bluegrey;
-  z-index: 11;
-}
-
-#search_module {
-    @media(max-width: 768px) {
-      .form-group {
-        padding: 0;
-      }
-    }
-}
-
-#search-for-this {
+.module-submit {
   font-family: $lato;
   font-size: 1.2rem;
 }
-#search-for-this:hover, #search-for-this:focus, #search-for-this:active {
+.module-submit:hover, .module-submit:focus, .module-submit:active {
   color: $bluegrey;
   border-color: $bluegrey;
+}
+
+#search_module {
+  height: auto;
+}
+#search-for-this {
+  margin-top: .2rem;
+}
+
+#help-page {
+  font-size: 1.1rem !important;
+
+//  .form-explanation a {
+//    text-decoration: underline;
+//  }
+
+  input:not([type=submit]), textarea {
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey !important;
+
+    &:hover, &:focus, &:active {
+      box-shadow: inset 0 0.5rem 0 0 $blue !important;
+    }
+  }
+
 }

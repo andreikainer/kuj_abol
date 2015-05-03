@@ -1,5 +1,8 @@
 $(document).ready(function()
 {
+    // Store the user's current language to `locale`.
+    window.locale;
+    getLocale();
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -42,6 +45,8 @@ $(document).ready(function()
             .toggleClass('col-sm-push-6', true);
     }
 
+
+
 /*
  * changeRightBtnGroupAlignment
  * changes the grid layout components of right group of buttons in the header
@@ -51,17 +56,63 @@ $(document).ready(function()
         $('.circles div div').toggleClass('alignme-center', false);
     }
 
-/*
- * closeSearchModule
- * hides the search module
- */
-    function closeSearchModule()
+
+    function getLocale()
     {
-        $('#search_module').toggleClass('hidden', true);
+        $.ajax({
+            url : '/get-locale',
+            method : 'GET',
+            success : function(response)
+            {
+                window.locale = response;
+            },
+            error : function(response)
+            {
+                window.locale = 'de';
+            }
+        });
     }
 
+/*-----Functions for modules ---------------------------------------*/
 
+/*
+ * closeModule
+ * hides the search module
+ */
+    function closeModule()
+    {
+        $('.module').slideUp(400);
+    }
 
+ /*
+  * slideModule
+  * @param btn; obj; button, that was pressed
+  * shows/hides the module
+  */
+    function slideModule(btn)
+    {
+        $(btn.attr('data-target')).slideToggle(400);
+    }
+
+// when user clicks somewhere outside search module, hide search module
+    $('html').on("click", function()
+    {
+        closeModule();
+    });
+// when user clicks Close Button, hide the module
+    $('.module i').on("click", function(e)
+    {
+        closeModule();
+    });
+// when clicked inside module, don't hide it
+    $('.module').on("click", function(e)
+    {
+        e.stopPropagation();
+        //$('input[name = search_inputfield]').on('input', function() {
+        //    console.log($(this).val());
+        //});
+    });
+/*------------------------------------------------------------------*/
 
 
 
@@ -72,28 +123,18 @@ $(document).ready(function()
     $('.magnifier').on("click", function(e)
     {
         e.stopPropagation();
-        $('#search_module').toggleClass('hidden');
+        slideModule($(this));
     });
-// when user clicks somewhere outside search module, hide search module
-    $('html').on("click", function()
-    {
-        closeSearchModule();
-    });
-// when user clicks Close Button, hide search module
-    $('#search_module i').on("click", function(e)
-    {
-        closeSearchModule();
-    });
-// when clicked inside search module, don't hide it
-    $('#search_module').on("click", function(e)
+
+/*------------------------------------------------------------------*/
+    /*-- HELP OPTION --*/
+/*------------------------------------------------------------------*/
+// when Question Button pressed, show/hide search module
+    $('.question').on("click", function(e)
     {
         e.stopPropagation();
-        $('input[name = search_inputfield]').on('input', function() {
-            console.log($(this).val());
-        });
+        slideModule($(this));
     });
-
-
 
 
 
@@ -105,16 +146,68 @@ $(document).ready(function()
  * check what land flag is displaying
  * toggle the flag on a press button event
  */
-    $('.language-toggle').on("click", function()
+    $('.language-toggle').on("click", function(e)
     {
+
+        //if(lang_changed === true)
+        //{
+        //    lang_changed = false;
+        //    return;
+        //}
+        //
+        //e.preventDefault();
+        //
+        //if($('.currLang').text() === 'de')
+        //{
+        //    $(this).attr('href', 'http://kuj.dev/en');
+        //    alert($(this).attr('href'));
+        //    lang_changed = true;
+        //}else{
+        //    $(this).attr('href', 'http://kuj.dev/de');
+        //    alert($(this).attr('href'));
+        //    lang_changed = true;
+        //}
+        //
+        //$(this).trigger("click");
+
+
         if($(this).hasClass('at'))
         {
             $(this).toggleClass('at', false).toggleClass('gb', true);
         }else{
             $(this).toggleClass('at', true).toggleClass('gb', false);
         }
-    });
 
+        // Set the global variable `locale` to the user's selected language.
+        getLocale();
+
+        //e.preventDefault();
+        ////console.log(window.location.href.substring(window.location.href.indexOf("/", window.location.href.indexOf("/", window.location.href.indexOf("/") +1))));
+        //
+        //var currUrl = window.location.href;
+        //currUrl = currUrl.split("/");
+        //console.log(currUrl[3]);
+        //
+        //if(currUrl[3] === 'de')
+        //{
+        //    currUrl[3] = 'en';
+        //    var newUrl = currUrl.join('/');
+        //
+        //    //$(this).toggleClass('at', false).toggleClass('gb', true);
+        //    //console.log(newUrl);
+        //    $(location).attr('href', newUrl);
+        //}
+
+        //if($(this).hasClass('at'))
+        //{
+        //    $(this).toggleClass('hidden', true);
+        //    console.log($('gb'));
+        //    $('.gb').toggleClass('hidden', false);
+        //}else{
+        //    $(this).toggleClass('hidden', false);
+        //    $('.gb').toggleClass('hidden', true);
+        //}
+    });
 
 
 
