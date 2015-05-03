@@ -1,4 +1,4 @@
-{!! Form::open(['class' => 'form-element form-radius-btm-only bt-none']) !!}
+{!! Form::open(['class' => 'form-element form-radius-btm-only bt-none', 'enctype' => 'multipart/form-data']) !!}
 
     <fieldset class="create-project-fieldset" data-section="0">
         <div class="col-md-12 col-sm-12">

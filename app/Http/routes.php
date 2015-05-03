@@ -13,6 +13,8 @@
 
 /** This group is used to Localize Routes to the right language **/
 
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -27,6 +29,7 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.create-project'), 'PagesController@createProject');
 
+        Route::get(LaravelLocalization::transRoute('routes.get-locale'), 'AjaxController@getLocale');
 
         Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
 
@@ -39,13 +42,15 @@ Route::group(
           'password' => 'Auth\PasswordController',
         ]);
 
-      /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
+        /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
-      //Route::get(LaravelLocalization::transRoute('routes.<key>'), '<Controller>@<Method>');
+        //Route::get(LaravelLocalization::transRoute('routes.<key>'), '<Controller>@<Method>');
     });
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED for example just German pages**/
 
 // Route::get('test', '<Controller>@<Method>');
+
+Route::post('temp-document', 'AjaxController@tempDocument');
 
 Route::post('search-results', 'HeaderController@index');

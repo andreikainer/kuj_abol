@@ -1,7 +1,12 @@
 $(document).ready(function()
 {
+<<<<<<< HEAD
 // store the user's current language to 'locale'
     //window.locale;
+=======
+    // Store the user's current language to `locale`.
+    window.locale;
+>>>>>>> master
     getLocale();
 
 /*------------------------------------------------------------------*/
@@ -45,6 +50,8 @@ $(document).ready(function()
             .toggleClass('col-sm-push-6', true);
     }
 
+
+
 /*
  * changeRightBtnGroupAlignment
  * changes the grid layout components of right group of buttons in the header
@@ -55,6 +62,21 @@ $(document).ready(function()
     }
 
 
+    function getLocale()
+    {
+        $.ajax({
+            url : '/get-locale',
+            method : 'GET',
+            success : function(response)
+            {
+                window.locale = response;
+            },
+            error : function(response)
+            {
+                window.locale = 'de';
+            }
+        });
+    }
 
 /*-----Functions for modules ---------------------------------------*/
 
@@ -158,8 +180,40 @@ function getLocale(response)
             getLocale('de');
         }
 
+<<<<<<< HEAD
     // set the global variable 'locale' to the user's selected language
         //getLocale();
+=======
+        // Set the global variable `locale` to the user's selected language.
+        getLocale();
+
+        //e.preventDefault();
+        ////console.log(window.location.href.substring(window.location.href.indexOf("/", window.location.href.indexOf("/", window.location.href.indexOf("/") +1))));
+        //
+        //var currUrl = window.location.href;
+        //currUrl = currUrl.split("/");
+        //console.log(currUrl[3]);
+        //
+        //if(currUrl[3] === 'de')
+        //{
+        //    currUrl[3] = 'en';
+        //    var newUrl = currUrl.join('/');
+        //
+        //    //$(this).toggleClass('at', false).toggleClass('gb', true);
+        //    //console.log(newUrl);
+        //    $(location).attr('href', newUrl);
+        //}
+
+        //if($(this).hasClass('at'))
+        //{
+        //    $(this).toggleClass('hidden', true);
+        //    console.log($('gb'));
+        //    $('.gb').toggleClass('hidden', false);
+        //}else{
+        //    $(this).toggleClass('hidden', false);
+        //    $('.gb').toggleClass('hidden', true);
+        //}
+>>>>>>> master
     });
 
 
@@ -171,6 +225,10 @@ function getLocale(response)
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 /*------------------------------------------------------------------*/
     /*-- CODE --*/
 /*------------------------------------------------------------------*/

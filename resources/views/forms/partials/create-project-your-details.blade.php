@@ -1,13 +1,13 @@
 <div class="row">
             <div class="col-md-12 col-sm-12 text-right">
-                <div class="form-button form-button-secondary text-center" data-button="save">Speichern Fortschritt</div>
+                <div class="form-button form-button-secondary text-center" data-button="save">{{ trans('create-project-form.save-progress') }}</div>
             </div>
         </div>
 
         <!-- Name of Child Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
-                {!! Form::label('child_name', 'Name of Child:', ['class' => 'form-label']) !!}
+                {!! Form::label('child_name', trans('create-project-form.child-name'), ['class' => 'form-label']) !!}
                 {!! Form::text('child_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
@@ -18,7 +18,7 @@
         <!-- Your First Name Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
-                {!! Form::label('first_name', 'Your First Name:', ['class' => 'form-label']) !!}
+                {!! Form::label('first_name', trans('create-project-form.first-name'), ['class' => 'form-label']) !!}
                 {!! Form::text('first_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
@@ -29,7 +29,7 @@
         <!-- Your Last Name Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
-                {!! Form::label('last_name', 'Your Last Name:', ['class' => 'form-label']) !!}
+                {!! Form::label('last_name', trans('create-project-form.last-name'), ['class' => 'form-label']) !!}
                 {!! Form::text('last_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
@@ -40,7 +40,7 @@
         <!-- Your Email Address Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
-                {!! Form::label('email', 'Your Email Address:', ['class' => 'form-label']) !!}
+                {!! Form::label('email', trans('create-project-form.email'), ['class' => 'form-label']) !!}
                 {!! Form::email('email', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
@@ -51,7 +51,7 @@
         <!-- Residential Address Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
-                {!! Form::label('address', 'Residential Address:', ['class' => 'form-label']) !!}
+                {!! Form::label('address', trans('create-project-form.address'), ['class' => 'form-label']) !!}
                 {!! Form::textarea('address', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
@@ -62,7 +62,7 @@
         <!-- Telephone Number Form Input -->
         <div class="row form-group mb-3em">
             <div class="col-md-8 col-sm-8">
-                {!! Form::label('tel_number', 'Telephone Number:', ['class' => 'form-label']) !!}
+                {!! Form::label('tel_number', trans('create-project-form.tel-number'), ['class' => 'form-label']) !!}
                 {!! Form::text('tel_number', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
             </div>
             <div class="col-md-4 col-sm-4">
@@ -72,9 +72,9 @@
 
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="form-button form-button-nav text-center" data-button="back">zurück</div>
+                <div class="form-button form-button-nav text-center" data-button="back">{{ trans('create-project-form.back') }}</div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                <div class="form-button form-button-nav text-center" data-button="next">nächster</div>
+                <div class="form-button form-button-nav text-center" data-button="next">{{ trans('create-project-form.next') }}</div>
             </div>
         </div>

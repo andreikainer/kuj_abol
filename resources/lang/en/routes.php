@@ -13,6 +13,7 @@ return [
     'how-it-works'          => 'how-it-works',
 	'create-project'        => 'create-project',
 	'project'               => 'project',
+	'get-locale'            => 'get-locale',
     'search-result'         => 'search-result',
     'contact'               => 'contact',
 ];
