@@ -1,6 +1,72 @@
 (function()
 {
-    // image gallery js
+    /*------------------------------------------------------------------*/
+    /*-- PROJECT GALLERY --*/
+    /*------------------------------------------------------------------*/
+
+    $('.project-gallery').slick(
+        {
+            dots: true,
+            accessibillity: true,
+            appendArrows: $('.arrows'),
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true,
+            arrows: true,
+            pauseOnHover: true,
+            pauseonDotsHover: true,
+            swipe: true
+        });
+
+    /*-- Changing img size according to the window size --*/
+    /*-- get all images --*/
+    var aImg = document.querySelectorAll('.project-gallery-item img');
+    var a;
+
+    for(a=0 ; a<aImg.length ; a++)
+    {
+        /*-- change the src path of each image of main carousel according to window size --*/
+        if(window.innerWidth < 768)
+        {
+
+            aImg[a].src = aImg[a].src.replace("medium", "small");
+
+        }else if(window.innerWidth >= 1400)
+        {
+            aImg[a].src = aImg[a].src.replace("medium", "large");
+
+        }
+    }
+
+    /*------------------------------------------------------------------*/
+    /*-- PROGRESS BAR --*/
+    /*------------------------------------------------------------------*/
+
+    var amountRaised = document.getElementById('amount_raised').dataset.amountRaised;
+
+    var minimumGoal = document.getElementById('minimum_goal').dataset.minimumGoal;
+
+    var percentage = Math.round(amountRaised/minimumGoal * 100);
+
+    //set the green width of the progress bar and display the %
+    if(percentage > 100){
+        document.getElementById('progress-bar').style.width = 100 + '%';
+    }else{
+        document.getElementById('progress-bar').style.width = percentage + '%';
+    }
+
+    document.getElementById('progress-bar').firstChild.innerHTML = percentage + '%';
+
+    var options = {
+    useEasing : true,
+    useGrouping : false,
+    suffix : '%'
+    };
+    var numAnim = new countUp("stat-count", 0, percentage, 0, 5, options);
+    numAnim.start();
+
 })();
 
 /*------------------------------------------------------------------*/
@@ -143,8 +209,4 @@
     });
 
     new GKCounter(document.id('countdown'));
-
-    /*------------------------------------------------------------------*/
-    /*-- PROGRESS BAR --*/
-    /*------------------------------------------------------------------*/
 

@@ -298,6 +298,9 @@
 <!-- Smooth scroll -->
     <script src="{{ asset('/js/smooth-scroll.js') }}"></script>
 
+<!-- CountUp -->
+    <script src="{{ asset('/js/countUp.min.js') }}"></script>
+
 <!-- MooTools -->
 <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>
 
