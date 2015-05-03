@@ -47,7 +47,7 @@ var FormValidation = {
     // Allow letters and numbers, must not begin with a space.
     checkAlphaNumeric : function(value)
     {
-        var regex = /^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/
+        var regex = /^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/;
         return regex.test(value);
     },
 
@@ -69,6 +69,20 @@ var FormValidation = {
     checkValidURL : function(value)
     {
         var regex = /^http\:\/\/[a-zA-ZÀ-ž0-9\-\.]+\.[a-zA-ZÀ-ž]{2,}(\/\S*)?$/;
+        return regex.test(value);
+    },
+
+    // Letters, spaces and punctuation signs only
+    checkValidTextarea : function(value)
+    {
+        var regex = /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/;
+        return regex.test(value);
+    },
+
+    // Letters and spaces only
+    checkLetters : function(value)
+    {
+        var regex = /^([a-zA-Z ])+$/;
         return regex.test(value);
     }
 };

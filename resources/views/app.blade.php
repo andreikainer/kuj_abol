@@ -66,9 +66,6 @@
 
 <!--================== Header =================================================-->
         <header>
-            {{--<div class="hidden setLang">{{ LaravelLocalization::setLocale('de') }}</div>--}}
-            {{--<div class="hidden currentLang">{{ LaravelLocalization::getCurrentLocale() }}</div>--}}
-
 
             <nav class="navbar navbar-default navbar-fixed-top white-bg"  data-scroll-header>
                 <div class="container-fluid">
@@ -86,7 +83,7 @@
 
                         <!-- help_btn -->
                             <a href="{{ action('ContactFormController@getContactForm') }}">
-                                <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-buttonhvr-push question">
+                                <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button question">
                                     <i class="fa fa-question"></i>
                                 </button>
                             </a>
@@ -109,7 +106,7 @@
                                 <div class="alignme-center clearfix">
 
                                 <!-- language_btn -->
-                                <div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
+                                {{--<div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>--}}
 								    {{--@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
 								        {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">--}}
 								        	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
@@ -181,27 +178,12 @@
 <!--**************************-->
     <!-- SEARCH MODULE -->
 <!--**************************-->
-        <div class="row module" id="search_module">
-            <div class="col-xs-12 col-sm-11 col-md-8 col-md-offset-2">
-                <div class="row visible-xs">
-                    <button type="button" class="navbar-toggle button-circle">
-                        <i class="fa fa-times" data-mobile="true"></i>
-                    </button>
-                </div>
-                @include('forms.search-form')
-            </div>
-            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
-        </div>
+       @include('modules.search-module')
 
 <!--**************************-->
     <!-- LOGIN MODULE -->
 <!--**************************-->
-        <div class="row module" id="login_module">
-            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
-                {{--@include('emails.help')--}}
-            </div>
-            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
-        </div>
+        @include('modules.login-module')
 
 
 
@@ -286,7 +268,7 @@
                         <p><i class="fa fa-home form-inline"></i> <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>
                                                                         2524 Teesdorf Austria
                                                             </a></p>
-                        <p><i class="fa fa-envelope"></i><a href="#">wilhelmine.bauer@sponsoring-agentur.at</a></p>
+                        <p><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm') }}">wilhelmine.bauer@sponsoring-agentur.at</a></p>
                         <p><i class="fa fa-phone"></i><a href="tel:+4366488299511">+43 664 8829 9511</a></p>
 
                         <br>

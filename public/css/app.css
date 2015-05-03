@@ -5781,7 +5781,7 @@ footer {
   font-size: 1.1rem !important; }
   #help-page .no-projects {
     margin-bottom: 2rem;
-    background-color: white; }
+    background-color: #d2d2d2; }
   #help-page input:not([type=submit]), #help-page textarea {
     box-shadow: inset 0 0.5rem 0 0 #6f798b !important; }
     #help-page input:not([type=submit]):hover, #help-page input:not([type=submit]):focus, #help-page input:not([type=submit]):active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active {
@@ -5790,6 +5790,9 @@ footer {
     padding-left: 2rem; }
   #help-page div div ul.form-error li {
     list-style-type: disc !important; }
+  #help-page form div.cpp-error {
+    margin-top: 0 !important;
+    margin-bottom: 1rem; }
 
 
 /*# sourceMappingURL=app.css.map */

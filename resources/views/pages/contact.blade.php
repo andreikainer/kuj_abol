@@ -31,3 +31,8 @@
             </div><!-- row ends -->
 
 @endsection
+
+@section('additional_js')
+    <script src="{{ asset('js/FormValidation.js') }}"></script>
+    <script src="{{ asset('js/contact-page/contact.js') }}"></script>
+@endsection
