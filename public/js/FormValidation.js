@@ -47,7 +47,7 @@ var FormValidation = {
     // Allow letters and numbers, must not begin with a space.
     checkAlphaNumeric : function(value)
     {
-        var regex = /^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/
+        var regex = /^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/;
         return regex.test(value);
     },
 

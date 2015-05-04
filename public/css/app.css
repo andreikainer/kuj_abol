@@ -4898,6 +4898,9 @@ label {
 .pad-zero {
   padding: 0 !important; }
 
+input[type="submit"], button[type="submit"] {
+  outline: none; }
+
 /*------------------------------------------------------------------*/
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
@@ -5255,6 +5258,9 @@ label {
   transition: background 0.3s ease; }
   .form-button-nav:hover {
     background: #6ab8e3; }
+
+.form-button-full-width {
+  width: 100%; }
 
 .image-upload-wrapper {
   position: relative !important; }

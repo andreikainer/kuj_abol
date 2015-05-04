@@ -23,7 +23,8 @@ class Project extends Model {
         'target_amount',
         'child_name',
         'slug',
-        'user_id'
+        'user_id',
+        'application_status'
     ];
 
 }

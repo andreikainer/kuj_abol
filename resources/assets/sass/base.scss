@@ -89,3 +89,7 @@ label {
 .pad-zero {
   padding: 0 !important;
 }
+
+input[type="submit"], button[type="submit"] {
+  outline: none;
+}

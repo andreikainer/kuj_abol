@@ -3,7 +3,10 @@
         <p>This is the summary page.</p>
     </div>
     <div class="col-md-4 col-sm-4">
-        {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button']) !!}
+        <div class="image-upload-wrapper">
+            <div class="image-loader"></div>
+            {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button form-button-full-width']) !!}
+        </div>
     </div>
 </div>
 
