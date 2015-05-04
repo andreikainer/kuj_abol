@@ -11,6 +11,16 @@
 }
 
 #project_statistics{
+
+  h3{
+    text-decoration: underline;
+  }
+
+  h4{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: $lato;
+  }
   @media(max-width: 767px) {
     height: 43em;
   }
@@ -24,7 +34,7 @@
   margin: 0.5em;
   width: 4.5em;
   height: 4.5em;
-  @media(min-width: 992px) and (max-width: 1999px) {
+  @media(min-width: 992px) and (max-width: 1199px) {
     margin: 0.2em;
   }
 }
@@ -39,12 +49,11 @@
 
 }
 #time strong {
-  font-size: 0.9rem;
   margin: 0.4em;
   text-transform: uppercase;
   width: 5.0em;
   display: inline-block;
-  @media(min-width: 992px) and (max-width: 1999px){
+  @media(min-width: 992px) and (max-width: 1199px){
     margin: 0.75em;
     font-size: 0.7rem;
   }
@@ -54,7 +63,7 @@
   font-size: 2.5rem;
   margin: 0.7em 0;
   font-weight: bold;
-  @media(min-width: 992px) and (max-width: 1999px){
+  @media(min-width: 992px) and (max-width: 1199px){
     font-size: 2rem;
   }
 }

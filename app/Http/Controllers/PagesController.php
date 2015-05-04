@@ -22,10 +22,10 @@ class PagesController extends Controller {
 
     public function viewProjects()
     {
-        Mail::queue('emails.test', [], function($message)
-        {
-            $message->to('andreikainer@gmail.com', 'Andrei Kainer')->subject('Welcome to KuJ Crowdfunding!');
-        });
+//        Mail::queue('emails.test', [], function($message)
+//        {
+//            $message->to('andreikainer@gmail.com', 'Andrei Kainer')->subject('This one was queued!');
+//        });
         return view('projectpage');
     }
 

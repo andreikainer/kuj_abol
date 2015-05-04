@@ -1,42 +1,76 @@
 @extends('app')
 
 @section('content')
+    <!-- Facebook JS import -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.3&appId=924969747560616";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <div class="container-fluid">
         <div class="row" role="main"> <!--Body content-->
+
+            <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-12 text-center"> <!-- project title beginn-->
                 <h2 class="heading">Rollstuhlrampe für Hansi</h2>
             </div> <!-- project title end-->
+            </div>
 
-            <div class="col-sm-12 col-md-8"> <!-- project images beginn-->
-                <img class="img-responsive center-block" src="{{ asset('/img/hansi.png') }}">
+            <div class="row">
+            <div class="col-sm-12 col-md-8 project-gallery"> <!-- project images beginn-->
+                <div class="project-gallery-item">
+                    <img class="img-responsive center-block" src="{{ asset('/img/rollstuhlrampe-fuer-hansi/medium/hansi1.jpg') }}">
+                </div>
+
+                <div class="project-gallery-item">
+                    <img class="img-responsive center-block" src="{{ asset('/img/rollstuhlrampe-fuer-hansi/medium/hansi2.jpg') }}">
+                </div>
+
+                <div class="project-gallery-item">
+                    <img class="img-responsive center-block" src="{{ asset('/img/rollstuhlrampe-fuer-hansi/medium/hansi3.jpg') }}">
+                </div>
+
+                <div class="project-gallery-item">
+                    <img class="img-responsive center-block" src="{{ asset('/img/rollstuhlrampe-fuer-hansi/medium/hansi4.jpg') }}">
+                </div>
+
             </div> <!-- project images end-->
 
             <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder">  <!-- statistics beginn-->
-                <h3>Total funds raised:</h3>
-                <h2><strong>&euro; 2359,53</strong></h2>
-                <h4>of &euro; 2000,-- minimum goal</h4>
+                <h3>{{ trans('lang.total-funds-raised') }}</h3>
+                <h2 id="amount_raised" data-amount-raised="2359.53"><strong>&euro; 2359,53</strong></h2>
+                <h4 id="minimum_goal" data-minimum-goal="2000"><strong>{{ trans('lang.of-minimum-goal', ['goal' => '2000.00']) }}</strong></h4>
+                <h3>{{ trans('lang.progress') }}</h3>
                 <div class="progress" style="height:3em">
-                    <div id="progress-bar" class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width:40%;"><span>40%</span>
+                    <div id="progress-bar" class="progress-bar prog-bar-green" role="progressbar";"><span id="stat-count"></span>
                     </div>
                 </div>
-                <h3>Project ends in:</h3>
-                <div id="countdown" data-date="27-05-2015" data-time="19:36" data-timezone="2" data-final="Abgeschloßen">
+                <h3>{{ trans('lang.project-ends-in') }}</h3>
+                <div id="countdown" data-date="27-05-2015" data-time="19:36" data-timezone="2" data-final="{{ trans('lang.completed') }}">
                     <div class="countdown-value"><span id="countdown-days">0</span></div>:
                     <div class="countdown-value"><span id="countdown-hours">0</span></div>:
                     <div class="countdown-value"><span id="countdown-minutes">0</span></div>:
                     <div class="countdown-value"><span id="countdown-seconds">0</span></div>
-                    <div id="time"><strong>Tage</strong><strong>Stunden</strong><strong>Minuten</strong><strong>Sekunden</strong></div>
+                    <div id="time">{!! trans('lang.time-to-goal') !!}</div>
                 </div>
-                <div class="btn button-main contribute">Fund this project</div>
+                <div class="btn button-main contribute">{{ trans('lang.fund-this-project') }}</div>
                 <div class="heading"></div>
                 <div id="facebook-share" class="btn pull-left">
-                    <img src="{{ asset('/img/facebook_teilen.svg') }}" alt="facebook-share" width="100%">
+                    {{--<div class="fb-share-button" data-href="https://kinderfoerderungen.at" data-layout="button_count" style="width:100%;"></div>--}}
+                    <a href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at"><img src="{{ asset('/img/facebook_teilen.svg') }}" alt="facebook-share" width="100%"></a>
                 </div>
                 <div id="favorite" class="btn pull-left">
                     <img src="{{ asset('/img/merken.svg') }}" alt="favorite-button" width="100%">
                 </div>
             </div> <!-- statistics end-->
+            </div>
 
+            <div class="row">
             <div class="col-sm-12 col-md-8 text-center l-font"> <!-- project description beginn-->
                 <h2>Rollstuhlrampe für Hansi</h2>
                 <p>Wie heute kurz telefonisch besprochen, ist der 9 jährige Hansi von
@@ -65,50 +99,31 @@
             </div> <!-- project description end-->
 
             <div id="contribution-packs" class="col-sm-12 col-md-4 text-center clearfix"> <!-- contribution packages beginn-->
-                <h2 class="heading">Support Options:</h2>
+                <h2 class="heading">{{ trans('lang.support-options') }}</h2>
                 <a href="#" role="button"><div class="pack1 padding-none pull-left"> <!-- contribution package 1-->
-                    <h3>Business-Building-Block <br>
-                        &euro; 150,00 + Tax each</h3>
-                    <h4>This is our special offer for businesses. Fund this project with one or more "Blocks" and receive this in return:</h4>
-                        <ul>
-                            <li class="list-item">Logo-Display on our website for 3 months</li>
-                            <li class="list-item">Linked to your own website for 3 months</li>
-                            <li class="list-item">On request: Transfer of Official Sponsor of KuJ Button</li>
-                            <li class="list-item">One time business listing in our Newsletter (2000 recipients)</li>
-                            <li class="list-item">Your contribution is 100% tax deductible</li>
-                            <li class="list-item">Official KuJ Sponsor Certificate</li>
-                        </ul>
+                        {!! trans('lang.business-building-block') !!}
                 </div></a>
                 <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 2-->
-                    <h3>Small-Building-Block  | &euro; 15,00</h3>
-                        <ul>
-                            <li class="list-item">{{ trans('lang.building-block-text1', ['euro' => '&euro; 15,00']) }}</li>
-                            <li class="list-item">{{ trans('lang.building-block-text2') }}</li>
-                            <li class="list-item">{{ trans('lang.building-block-text3') }}</li>
-                        </ul>
+                        {!! trans('lang.small-block', ['euro' => '15,00']) !!}
+                            {!! trans('lang.individual-building-block', ['euro' => '15,00']) !!}
                 </div></a>
                 <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 3-->
-                    <h3>Medium-Building-Block | &euro; 25,00</h3>
-                        <ul>
-                            <li class="list-item">{{ trans('lang.building-block-text1', ['euro' => '&euro; 25,00']) }}</li>
-                            <li class="list-item">{{ trans('lang.building-block-text2') }}</li>
-                            <li class="list-item">{{ trans('lang.building-block-text3') }}</li>
-                        </ul>
+                        {!! trans('lang.medium-block', ['euro' => '25,00']) !!}
+                            {!! trans('lang.individual-building-block', ['euro' => '25,00']) !!}
                 </div></a>
                     <a href="#" role="button"><div class="packs2-4 padding-none pull-left"> <!-- contribution package 4-->
-                    <h3>Large-Building-Block  | &euro; 50,00 or more</h3>
-                        <ul>
-                            <li class="list-item">{{ trans('lang.building-block-text1', ['euro' => '&euro; 50,00']) }}</li>
-                            <li class="list-item">{{ trans('lang.building-block-text2') }}</li>
-                            <li class="list-item">{{ trans('lang.building-block-text3') }}</li>
-                        </ul>
+                        {!! trans('lang.large-block', ['euro' => '50,00']) !!}
+                           {!! trans('lang.individual-building-block', ['euro' => '50,00']) !!}
                 </div></a>
             </div> <!-- contribution packages end-->
+            </div>
 
             <div class="col-sm-12" style="background:red;"> <!-- sponsors row beginn-->
                 Olga's Sponsors row
             </div> <!-- sponsors row end-->
-        </div> <!-- main content ends -->
-        {{---- MooTools -->--}}
-        {{--<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>--}}
-        {{--<script src="{{ asset('/js/main.js') }}"></script>--}}
+        </div> <!-- main content end -->
+@endsection
+
+@section('additional_js')
+<script src="{{ asset('js/view-project-page/view-project.js') }}"></script>
+@endsection

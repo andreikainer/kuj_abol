@@ -240,12 +240,12 @@
                     </div>
 
                     <div>
-                        <form class="form">
+                        <form class="form" action="http://88432.seu1.cleverreach.com/f/88432-163511/wcs/" method="post" target="_blank">
                             <div class="form-group">
                                 <label class="hidden">Newsletter</label>
-                                <input type="email" class="form-control" placeholder="Newsletter">
+                                <input type="email" class="form-control" placeholder="{{ trans('lang.newsletter') }}" id="text3390090" name="email">
                             </div>
-                            <button type="submit" class="btn btn-default button-sec" id="newsletter">Sign up</button>
+                            <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('lang.sign-up') }}</button>
                         </form>
                     </div>
                 </div>
@@ -316,6 +316,9 @@
 
 <!-- Smooth scroll -->
     <script src="{{ asset('/js/smooth-scroll.js') }}"></script>
+
+<!-- CountUp -->
+    <script src="{{ asset('/js/countUp.min.js') }}"></script>
 
 <!-- MooTools -->
 <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>

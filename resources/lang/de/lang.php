@@ -18,15 +18,24 @@ return array(
 	|--------------------------------------------------------------------------
     */
 
-	'how-it-works' 		=> 'wer wir sind',
-	'create-project' 	=> 'ansuchen einreichen',
+	'how-it-works' 		    => 'wer wir sind',
+	'create-project' 	    => 'ansuchen einreichen',
 	'contribute' 			=> 'fördern',
     'login'					=> 'Einloggen',
     'register'				=> 'Registrieren',
 
+    'search-result'         => '',
+    'search'                => 'Suchen',
+    'search-for-a-project'  => 'Förderungsprojekt suchen',
+
+    'our-mission'           => 'Unsere Philosphie',
+    'our-team'              => 'Unser Team',
+    'tips-for-success'      => '',
+    'our-sponsors'          => 'Sponsoren',
+
     /*
 	|--------------------------------------------------------------------------
-	| CAROUSEL
+	| HOME PAGE
 	|--------------------------------------------------------------------------
     */
 
@@ -46,34 +55,10 @@ return array(
                             <p>Bleiben Sie auf dem letzten Stand rund um unsere Förderungsprojekte.</p>
                             <p><a class="button-transparent" href=":cta-link" type="button">AKTUELLE NEUIGKEITEN</a></p>',
 
-    /*
-	|--------------------------------------------------------------------------
-	| PROJECT VIEW PAGE
-	|--------------------------------------------------------------------------
-    */
-
-
-    'building-block-text1' => 'Unterstützen Sie dieses Förderungsprojekt mit einem fixen Betrag von :euro',
-    'building-block-text2' => 'Die geförderte Familie bedankt sich bei Ihnen mit einem persönlichen Schreiben',
-    'building-block-text3' => 'Ihr Unterstützung wird ausschließlich für dieses Förderungsprojekt verwendet',
-
-
-	'how-it-works'          => 'Wer wir sind',
-	'create-project'        => 'Ansuchen einreichen',
-	'contribute'            => 'Fördern',
-
-	'login'				    => 'Einloggen',
-	'register'			    => 'Registrieren',
-
-
-    'search-result'         => '',
-    'search'                => 'Suchen',
-    'search-for-a-project'  => 'Förderungsprojekt suchen',
-
-    'our-mission'           => 'Unsere Philosphie',
-    'our-team'              => 'Unser Team',
-    'tips-for-success'      => '',
-    'our-sponsors'          => 'Sponsoren',
+    'contribute-now'        => 'Jetzt fördern',
+    'view-tips'             => '',
+    'view-our-sponsors'     => '',
+    'read-a-blog'           => '',
 
     'current-projects'      => 'Aktuelle Projekte',
     'successfully-funded-projects'  => 'Erfolgreich geförderte Projekte',
@@ -83,17 +68,55 @@ return array(
     'read-more'             => '',
     'details'               => '',
 
+    /*
+	|--------------------------------------------------------------------------
+	| PROJECT VIEW PAGE
+	|--------------------------------------------------------------------------
+    */
+
+    'total-funds-raised'     => 'Aktuelle Förderungssumme:',
+    'of-minimum-goal'        => 'von &euro; :goal minimum Ziel',
+    'project-ends-in'        => 'Förderungsprojekt endet in:',
+    'time-to-goal'           => '<strong>Tage</strong><strong>Stunden</strong><strong>Minuten</strong><strong>Sekunden</strong>',
+    'progress'               => 'Progress:',
+    'fund-this-project'      => 'Projekt Fördern',
+    'completed'              => 'Abgeschloßen',
+    'support-options'       =>  'Förderungsbausteine',
+
+    'business-building-block' => '<h3>Förderungs-Baustein "Business"<br> &euro; 150,00 + Ust pro Baustein</h3>
+                                 <h4>Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
+                                    <ul>
+                                        <li class="list-item">Firmenlogo Darstellung auf unserer Webseite für drei Monate</li>
+                                        <li class="list-item">Verlinkung zu Ihrer Firmen-Webseite</li>
+                                        <li class="list-item">Einmalige Nennung in unserem monatlichen Newsletter mit 2000 Empfängern</li>
+                                        <li class="list-item">Ihre Förderung ist zu 100% Steuerabzugsfähig</li>
+                                        <li class="list-item">Offizielle Kinder- und Jugendförderungen Sponsorenurkunde</li>
+                                        <li class="list-item">Auf Anfrage: Übertragung unseres "Offizieller Sponsor"- Button </li>
+                                    </ul>',
+
+    'individual-building-block' => '<ul>
+                                        <li class="list-item">Unterstützen Sie dieses Projekt mit einem fixen Betrag von &euro; :euro</li>
+                                        <li class="list-item">Sie erhalten ein persönliches Dankschreiben der Familie </li>
+                                        <li class="list-item">Ihr Beitrag wir ausschließlich für dieses Förderungsprojekt verwendet</li>
+                                    </ul>',
+
+    'small-block'               => '<h3>Kleiner Baustein  | &euro; :euro</h3>',
+    'medium-block'              => '<h3>Mittlerer Baustein  | &euro; :euro</h3>',
+    'large-block'               => '<h3>Großer Baustein  | &euro; :euro oder mehr</h3>',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | FOOTER
+    |--------------------------------------------------------------------------
+    */
+
     'newsletter'            => '',
     'sign-up'               => '',
     'site-map'              => 'Sitemap',
     'terms-and-conditions'  => 'Allgemeine Geschäftsbedingungen',
     'contacts'              => 'Contacts',
     'website-made-by'       => '',
+    'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der All for Kids Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich behinderten Kinder sowie deren Familie.',
 
-    'contribute-now'        => 'Jetzt fördern',
-    'view-tips'             => '',
-    'view-our-sponsors'     => '',
-    'read-a-blog'           => '',
-
-    'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der All for Kids Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich behinderten Kinder sowie deren Familie.'
 );

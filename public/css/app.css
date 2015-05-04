@@ -5367,6 +5367,12 @@ input[type="submit"], button[type="submit"] {
 .l-font {
   font-size: 1.2rem; }
 
+#project_statistics h3 {
+  text-decoration: underline; }
+#project_statistics h4 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'Lato', 'Open Sans', sans-serif; }
 @media (max-width: 767px) {
   #project_statistics {
     height: 43em; } }
@@ -5379,7 +5385,7 @@ input[type="submit"], button[type="submit"] {
   margin: 0.5em;
   width: 4.5em;
   height: 4.5em; }
-  @media (min-width: 992px) and (max-width: 1999px) {
+  @media (min-width: 992px) and (max-width: 1199px) {
     .countdown-value {
       margin: 0.2em; } }
 
@@ -5391,12 +5397,11 @@ input[type="submit"], button[type="submit"] {
   padding-top: 0.15em; }
 
 #time strong {
-  font-size: 0.9rem;
   margin: 0.4em;
   text-transform: uppercase;
   width: 5em;
   display: inline-block; }
-  @media (min-width: 992px) and (max-width: 1999px) {
+  @media (min-width: 992px) and (max-width: 1199px) {
     #time strong {
       margin: 0.75em;
       font-size: 0.7rem; } }
@@ -5405,7 +5410,7 @@ input[type="submit"], button[type="submit"] {
   font-size: 2.5rem;
   margin: 0.7em 0;
   font-weight: bold; }
-  @media (min-width: 992px) and (max-width: 1999px) {
+  @media (min-width: 992px) and (max-width: 1199px) {
     .contribute {
       font-size: 2rem; } }
 
@@ -5775,7 +5780,7 @@ footer {
 
 .prog-bar-green {
   background-color: #2ecc71 !important;
-  min-width: 5em; }
+  min-width: 2em; }
   .prog-bar-green span {
     font-size: 2em;
     line-height: 40px; }
