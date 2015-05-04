@@ -56,6 +56,7 @@
   }
   ul li>ul li.divider {
     height: 1px;
+    width: 100%;
   }
   ul li>ul li a, ul li>ul li a:link, ul li>ul li a:visited {
     color: $text;
@@ -187,8 +188,8 @@ hr {
   Daniel Thomas
 */
 //Default variables
-$flag-x: 2.3rem !default; //changed from 48px to correct the visual effect
-$flag-y: 2.3rem !default;
+$flag-x: 2.4rem !default; //changed from 48px to correct the visual effect
+$flag-y: 2.4rem !default;
 
 //Base
 .flag {
@@ -573,6 +574,7 @@ footer {
     border: none;
     font-size: .9rem;
     font-weight: 700;
+    line-height: 1.8rem;
   }
 
   div div ul.form-error {
@@ -585,5 +587,44 @@ footer {
   form div.cpp-error {
     margin-top: 0 !important;
     margin-bottom: 1rem;
+  }
+}
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- How It Works page styles --*/
+/*------------------------------------------------------------------*/
+#how-it-works {
+  font-size: 1.1rem;
+
+  .add-nav {
+    position: fixed;
+    top: 7em;
+  }
+
+  div h4 {
+    font-weight: 700 !important;
+    margin-top: 1.7rem !important;
+    margin-bottom: .1rem !important;
+  }
+
+  i {
+    margin-right: .4rem !important;
+  }
+  i.fa-check {
+    color: $green;
+    margin-right: 1rem !important;
+  }
+
+  .team-role {
+    color: $dgrey !important;
+    font-size: 1rem !important;
+  }
+  .team {
+    font-size: 1rem;
+    margin-bottom: .1rem;
   }
 }

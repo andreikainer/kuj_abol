@@ -46,7 +46,7 @@
 <!-- Current projects -->
             <div class="row">
 
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-2em">
                     <h2 class="heading" id="contribute">{{ trans('home-page.current-projects') }}</h2>
                 </div>
 
@@ -145,7 +145,7 @@
 <!-- Successful projects -->
             <div class="row">
 
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-2em">
                     <h2 class="heading">{{ trans('home-page.successfully-funded-projects') }}</h2>
                 </div>
 
@@ -228,7 +228,7 @@
 <!-- Sponsors' logos -->
             <div class="row">
 
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-2em">
                     <h2 class="heading">{{ trans('app.our-sponsors') }}</h2>
                 </div>
 

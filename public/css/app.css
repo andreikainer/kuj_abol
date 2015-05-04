@@ -4892,6 +4892,9 @@ label {
 .mt-2em {
   margin-top: 1.6rem; }
 
+.mb-1em {
+  margin-bottom: 1em; }
+
 .mb-0 {
   margin-bottom: 0 !important; }
 
@@ -5495,7 +5498,8 @@ label {
   #main_nav ul > li a:hover, #main_nav ul > li a:active {
     color: #4b4b4b; }
   #main_nav ul li > ul li.divider {
-    height: 1px; }
+    height: 1px;
+    width: 100%; }
   #main_nav ul li > ul li a, #main_nav ul li > ul li a:link, #main_nav ul li > ul li a:visited {
     color: #4b4b4b;
     font-size: 1em; }
@@ -5592,8 +5596,8 @@ hr {
   Daniel Thomas
 */
 .flag {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2.4rem;
+  height: 2.4rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -5846,7 +5850,8 @@ footer {
     background: none !important;
     border: none;
     font-size: .9rem;
-    font-weight: 700; }
+    font-weight: 700;
+    line-height: 1.8rem; }
   #help-page div div ul.form-error {
     padding-left: 2rem; }
   #help-page div div ul.form-error li {
@@ -5854,6 +5859,30 @@ footer {
   #help-page form div.cpp-error {
     margin-top: 0 !important;
     margin-bottom: 1rem; }
+
+/*------------------------------------------------------------------*/
+/*-- How It Works page styles --*/
+/*------------------------------------------------------------------*/
+#how-it-works {
+  font-size: 1.1rem; }
+  #how-it-works .add-nav {
+    position: fixed;
+    top: 7em; }
+  #how-it-works div h4 {
+    font-weight: 700 !important;
+    margin-top: 1.7rem !important;
+    margin-bottom: .1rem !important; }
+  #how-it-works i {
+    margin-right: .4rem !important; }
+  #how-it-works i.fa-check {
+    color: #2ecc71;
+    margin-right: 1rem !important; }
+  #how-it-works .team-role {
+    color: #d2d2d2 !important;
+    font-size: 1rem !important; }
+  #how-it-works .team {
+    font-size: 1rem;
+    margin-bottom: .1rem; }
 
 
 /*# sourceMappingURL=app.css.map */
