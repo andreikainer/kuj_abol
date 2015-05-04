@@ -27,4 +27,14 @@ class Project extends Model {
         'application_status'
     ];
 
+    public function documents()
+    {
+        return $this->hasMany('App\Document');
+    }
+
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
+
 }
