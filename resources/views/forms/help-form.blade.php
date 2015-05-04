@@ -14,7 +14,8 @@
               		'class'=>'form-input form-inline',
               		'placeholder'=>trans('contact-page.place-name'))) !!}
     </div>
-    <div class="form-error" data-error="name"> {{ $errors->first('name') }} </div>
+    <div class="form-error none" data-error="name"></div>
+    <div class="form-error">{{ $errors->first('name') }}</div>
 
     <div class="form-group">
     	{!! Form::label(null, trans('contact-page.email'), ['class' => 'form-label']) !!}
@@ -23,7 +24,8 @@
               		'class'=>'form-input',
               		'placeholder'=>trans('contact-page.place-email'))) !!}
     </div>
-    <div class="form-error" data-error="email"> {{$errors->first('email')}} </div>
+    <div class="form-error none" data-error="email"></div>
+    <div class="form-error">{{$errors->first('email')}}</div>
 
     <div class="form-group">
     	{!! Form::label(null, trans('contact-page.message-body'), ['class' => 'form-label']) !!}
@@ -32,7 +34,8 @@
               		'class'=>'form-input',
              		'placeholder'=>trans('contact-page.place-message-body'))) !!}
     </div>
-    <div class="form-error" data-error="message_body"> {{$errors->first('message_body')}} </div>
+    <div class="form-error none" data-error="message_body"></div>
+    <div class="form-error">{{$errors->first('message_body')}}</div>
 
     <div class="form-group clearfix">
     	{!! Form::submit('Send',
