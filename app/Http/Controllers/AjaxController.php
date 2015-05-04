@@ -18,7 +18,7 @@ class AjaxController extends Controller {
 
         $decoded_document = base64_decode($document_data);
 
-        $path = public_path('temp/'.strtotime('now').$filename);
+        $path = public_path('temp/'.strtotime('now').'_'.$filename);
 
         $new_document = fopen($path, "wb");
         fwrite($new_document, $decoded_document);

@@ -18,5 +18,6 @@ return [
     'search-result'        => 'suchergebnisse',
     'contact'              => 'kontakte',
     'sponsors'             => 'sponsoren',
-    'blog'                 => 'blog'
+    'blog'                 => 'blog',
+    'create-project/store' => 'create-project/store',
 ];

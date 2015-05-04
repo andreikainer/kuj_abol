@@ -30,8 +30,8 @@
                                 {{--<label for="doc_1_mand" class="image-upload-label form-input-disabled text-center">--}}
                                     <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
                                 </label>
-                                {!! Form::file('doc_1_mand', ['id' => 'doc_1_mand', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}
-                                {{--{!! Form::file('doc_1_mand', ['id' => 'doc_1_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}--}}
+                                {!! Form::file('doc_1_mand', ['id' => 'doc_1_mand', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {{--{!! Form::file('doc_1_mand', ['id' => 'doc_1_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}--}}
                             </div>
                         </div>
                     </div>
@@ -44,8 +44,8 @@
                                 {{--<label for="doc_2_mand" class="image-upload-label form-input-disabled text-center">--}}
                                     <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
                                 </label>
-                                {!! Form::file('doc_2_mand', ['id' => 'doc_2_mand', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}
-                                {{--{!! Form::file('doc_2_mand', ['id' => 'doc_2_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}--}}
+                                {!! Form::file('doc_2_mand', ['id' => 'doc_2_mand', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {{--{!! Form::file('doc_2_mand', ['id' => 'doc_2_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}--}}
                             </div>
                         </div>
                     </div>
@@ -70,8 +70,8 @@
                                 {{--<label for="doc_3" class="image-upload-label form-input-disabled text-center">--}}
                                     <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
                                 </label>
-                                {!! Form::file('doc_3', ['id' => 'doc_3', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}
-                                {{--{!! Form::file('doc_3', ['id' => 'doc_3', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}--}}
+                                {!! Form::file('doc_3', ['id' => 'doc_3', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {{--{!! Form::file('doc_3', ['id' => 'doc_3', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}--}}
                             </div>
                         </div>
                     </div>
@@ -84,8 +84,8 @@
                                 {{--<label for="doc_4" class="image-upload-label form-input-disabled text-center">--}}
                                     <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
                                 </label>
-                                {!! Form::file('doc_4', ['id' => 'doc_4', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}
-                                {{--{!! Form::file('doc_4', ['id' => 'doc_4', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}--}}
+                                {!! Form::file('doc_4', ['id' => 'doc_4', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {{--{!! Form::file('doc_4', ['id' => 'doc_4', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}--}}
                             </div>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
                                 {{--<label for="doc_5" class="image-upload-label form-input-disabled text-center">--}}
                                     <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
                                 </label>
-                                {!! Form::file('doc_5', ['id' => 'doc_5', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}
-                                {{--{!! Form::file('doc_5', ['id' => 'doc_5', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}--}}
+                                {!! Form::file('doc_5', ['id' => 'doc_5', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {{--{!! Form::file('doc_5', ['id' => 'doc_5', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}--}}
                             </div>
                         </div>
                     </div>
@@ -112,8 +112,8 @@
                                 {{--<label for="doc_6" class="image-upload-label form-input-disabled text-center">--}}
                                     <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
                                 </label>
-                                {!! Form::file('doc_6', ['id' => 'doc_6', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}
-                                {{--{!! Form::file('doc_6', ['id' => 'doc_6', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf,.doc,.docx']) !!}--}}
+                                {!! Form::file('doc_6', ['id' => 'doc_6', 'class' => 'image-upload-input', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {{--{!! Form::file('doc_6', ['id' => 'doc_6', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}--}}
                             </div>
                         </div>
                     </div>

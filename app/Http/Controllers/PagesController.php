@@ -20,11 +20,6 @@ class PagesController extends Controller {
         return view('pages.how-it-works');
     }
 
-    public function createProject()
-    {
-        return view('create-project.index');
-    }
-
     public function viewProjects()
     {
 //        Mail::queue('emails.test', [], function($message)

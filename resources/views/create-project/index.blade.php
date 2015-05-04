@@ -10,7 +10,7 @@
             <!-- Section Tabs -->
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <div class="error-box form-error">Error Box</div>
+                    <div class="error-box form-error"></div>
                 </div>
                 <div class="col-md-12 col-sm-12">
                     <div class="col-md-7 col-sm-7 col-xs-7 padding-none">

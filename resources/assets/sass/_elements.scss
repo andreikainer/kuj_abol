@@ -237,6 +237,7 @@
   border: 1px solid $dgrey;
   border-top: none;
   box-shadow: inset 0 0.5rem 0 0 $blue;
+  transition: box-shadow 0.3s ease;
 
   &:focus {
     outline: none !important;
