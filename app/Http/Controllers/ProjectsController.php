@@ -27,7 +27,9 @@ class ProjectsController extends Controller {
 
         $project = Project::create($projectDetails);
 
-        return $project;
+        $imageFolderPath = public_path("img/$project->slug");
+
+        return dd($imageFolderPath.'/medium/'.$request->file('main_img')->getClientOriginalName());
     }
 
 }
