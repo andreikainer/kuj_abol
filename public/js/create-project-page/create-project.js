@@ -409,7 +409,15 @@
             contentType : false,
             success : function(response)
             {
-                console.log(response);
+                if ( response.errors )
+                {
+                    console.log(response);
+                    console.log('we have errors');
+                }
+                else
+                {
+                    console.log('no errors');
+                }
             },
             error : function(response)
             {

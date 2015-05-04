@@ -37,4 +37,9 @@ class Project extends Model {
         return $this->hasMany('App\Image');
     }
 
+    public function mainImage()
+    {
+        return $this->images()->where('main_img', '=', '1');
+    }
+
 }

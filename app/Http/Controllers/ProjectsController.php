@@ -9,7 +9,12 @@ use Intervention\Image\Facades\Image;
 
 class ProjectsController extends Controller {
 
-	public function createProject()
+    /**
+     * Show the create-project page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function createProject()
     {
         return view('create-project.index');
     }
@@ -91,19 +96,22 @@ class ProjectsController extends Controller {
                 {
                     $constraint->upsize();
                     $constraint->aspectRatio();
-                })->limitColors(255)->save($imageFolderPath.'/large/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
+                })->limitColors(255)
+                    ->save($imageFolderPath.'/large/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
 
                 Image::make($image)->resize(970, 534, function($constraint)
                 {
                     $constraint->upsize();
                     $constraint->aspectRatio();
-                })->limitColors(255)->save($imageFolderPath.'/medium/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
+                })->limitColors(255)
+                    ->save($imageFolderPath.'/medium/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
 
                 Image::make($image)->resize(768, 430, function($constraint)
                 {
                     $constraint->upsize();
                     $constraint->aspectRatio();
-                })->limitColors(255)->save($imageFolderPath.'/small/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
+                })->limitColors(255)
+                    ->save($imageFolderPath.'/small/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
             }
         }
 
@@ -127,13 +135,10 @@ class ProjectsController extends Controller {
                         'main_img' => 1
                     ]);
                 }
-
             }
         }
 
-
-
-        return dd(array_shift($userImages));
+        return json_encode('the success html');
     }
 
 }

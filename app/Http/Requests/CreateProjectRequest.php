@@ -15,7 +15,7 @@ class CreateProjectRequest extends Request {
     {
         if ($this->ajax() || $this->wantsJson())
         {
-            return new JsonResponse($errors, 200);
+            return new JsonResponse(['errors' => $errors], 200);
         }
 
         return $this->redirector->to($this->getRedirectUrl())
