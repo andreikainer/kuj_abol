@@ -29,9 +29,9 @@ return [
                             <p class="hidden-xs">Promote you business by donating a project and we’ll place the logo of your company on our website.</p>
                             <p><a class="button-transparent" href=":cta-link" type="button">VIEW OUR SPONSORS</a></p>',
 
-    'carousel-text-4'  =>   '<h1>What are we up to now?</h1>
-                            <p class="hidden-xs">Stay up to date with our projects.</p>
-                            <p><a class="button-transparent" href=":cta-link" type="button">READ A BLOG</a></p>',
+    'carousel-text-4'  =>   '<h1>Together we can make it happen!</h1>
+                            <p class="hidden-xs">Help a family in need to gain relief in everyday life</p>
+                            <p><a class="button-transparent" href=":cta-link" type="button" data-scroll>CONTRIBUTE NOW</a></p>',
 
 
 /*
