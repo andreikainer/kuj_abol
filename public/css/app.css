@@ -5841,6 +5841,7 @@ footer {
     margin-bottom: 0 !important;
     margin-top: 15px; }
   #help-page form div.form-error {
+    display: none;
     padding: 0;
     background: none !important;
     border: none;
