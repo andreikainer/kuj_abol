@@ -1,12 +1,7 @@
 $(document).ready(function()
 {
-<<<<<<< HEAD
-// store the user's current language to 'locale'
-    //window.locale;
-=======
     // Store the user's current language to `locale`.
     window.locale;
->>>>>>> master
     getLocale();
 
 /*------------------------------------------------------------------*/
@@ -61,22 +56,6 @@ $(document).ready(function()
         $('.circles div div').toggleClass('alignme-center', false);
     }
 
-
-    function getLocale()
-    {
-        $.ajax({
-            url : '/get-locale',
-            method : 'GET',
-            success : function(response)
-            {
-                window.locale = response;
-            },
-            error : function(response)
-            {
-                window.locale = 'de';
-            }
-        });
-    }
 
 /*-----Functions for modules ---------------------------------------*/
 
@@ -170,65 +149,34 @@ function getLocale(response)
  */
     $('.language-toggle').on("click", function(e)
     {
+        //window.locale;
 
+        //if(window.locale === 'de')
+        //{
+        //    console.log('pipa');
+        //    window.locale = 'en';
+        //    //getLocale();
+        //}else{
+        //    console.log('pepa');
+        //    window.locale = 'de';
+        //    //getLocale();
+        //}
         if($(this).hasClass('at'))
         {
             $(this).toggleClass('at', false).toggleClass('gb', true);
             getLocale('en');
+            console.log (window.locale);
         }else{
             $(this).toggleClass('at', true).toggleClass('gb', false);
-            getLocale('de');
+            getLocale();
+            console.log (window.locale);
         }
 
-<<<<<<< HEAD
     // set the global variable 'locale' to the user's selected language
-        //getLocale();
-=======
-        // Set the global variable `locale` to the user's selected language.
-        getLocale();
+        //console.log (window.locale);
 
-        //e.preventDefault();
-        ////console.log(window.location.href.substring(window.location.href.indexOf("/", window.location.href.indexOf("/", window.location.href.indexOf("/") +1))));
-        //
-        //var currUrl = window.location.href;
-        //currUrl = currUrl.split("/");
-        //console.log(currUrl[3]);
-        //
-        //if(currUrl[3] === 'de')
-        //{
-        //    currUrl[3] = 'en';
-        //    var newUrl = currUrl.join('/');
-        //
-        //    //$(this).toggleClass('at', false).toggleClass('gb', true);
-        //    //console.log(newUrl);
-        //    $(location).attr('href', newUrl);
-        //}
-
-        //if($(this).hasClass('at'))
-        //{
-        //    $(this).toggleClass('hidden', true);
-        //    console.log($('gb'));
-        //    $('.gb').toggleClass('hidden', false);
-        //}else{
-        //    $(this).toggleClass('hidden', false);
-        //    $('.gb').toggleClass('hidden', true);
-        //}
->>>>>>> master
     });
 
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 /*------------------------------------------------------------------*/
     /*-- CODE --*/
 /*------------------------------------------------------------------*/

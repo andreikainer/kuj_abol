@@ -404,8 +404,8 @@ footer {
     text-shadow: 3px 2px 3px rgba(50, 50, 50, 1);
 
     @media (max-width: 768px) {
-      top: .1rem;
-      left: 1rem;
+      top: 0rem;
+      left: 0rem;
       padding: 1em;
       padding-top: 0;
       background-color: rgba(0, 0, 0, .5);
@@ -415,6 +415,8 @@ footer {
     }
 
     p:nth-child(3) {
+      margin-top: 3rem !important;
+
       @media(min-width: 768px) {
         margin-top: 6rem !important;
       }
@@ -552,11 +554,24 @@ footer {
   }
 
   input:not([type=submit]), textarea {
-    box-shadow: inset 0 0.5rem 0 0 $bluegrey !important;
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey;
 
     &:hover, &:focus, &:active {
-      box-shadow: inset 0 0.5rem 0 0 $blue !important;
+      box-shadow: inset 0 0.5rem 0 0 $blue;
     }
+  }
+
+  form div.form-group {
+    margin-bottom: 0 !important;
+    margin-top: 15px;
+  }
+
+  form div.form-error {
+    padding: 0;
+    background: none !important;
+    border: none;
+    font-size: .9rem;
+    font-weight: 700;
   }
 
   div div ul.form-error {

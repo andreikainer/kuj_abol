@@ -3,17 +3,33 @@
 
 /*-- Messages Object --*/
     var errorMessages = {
-        'required'  : 'This field is required.',
-        'email'     : 'Must be of a correct email format. And not begin with a space.',
-        'textArea'  : 'Letters and punctuation signs only.',
-        'letters'   : 'Letters and spaces only.',
-        'minLength' : function(limit)
-        {
-            return 'This field must contain at least '+limit+' characters';
+        'en' : {
+            'required'  : 'This field is required.',
+            'email'     : 'Must be of a correct email format. And not begin with a space.',
+            'textArea'  : 'Letters and punctuation signs only.',
+            'letters'   : 'Letters and spaces only.',
+            'minLength' : function(limit)
+            {
+                return 'This field must contain at least '+limit+' characters';
+            },
+            'maxLength' : function(limit)
+            {
+                return 'This field must not exceed '+limit+' characters';
+            }
         },
-        'maxLength' : function(limit)
-        {
-            return 'This field must not exceed '+limit+' characters';
+        'de' : {
+            'required'  : 'Dieses Feld ist erforderlich',
+            'email'     : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
+            'textArea'  : 'Dieses Feld darf nur Buchstaben enthalten.',
+            'letters'   : 'Dieses Feld darf nur Buchstaben und Leerzeichen enthalten.',
+            'minLength' : function(limit)
+            {
+                return 'Diese Feld muss mindestens '+limit+' Charaktere enthalten';
+            },
+            'maxLength' : function(limit)
+            {
+                return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+            }
         }
     };
 
@@ -29,6 +45,11 @@
         $('.form-error[data-error*="'+name+'"]').fadeOut();
     }
 
+    // to make the top-border of input field red color when there is an error
+    function redTopInput(input)
+    {
+        input.toggleClass('error-red-top', true);
+    }
 
 
 /*-- Publish Events --*/
@@ -54,11 +75,13 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
+            redTopInput(data);
             return false;
         }
         if (! FormValidation.checkLetters(data.value)) {
-            showErrorMessage(name, errorMessages.letters);
+            showErrorMessage(name, errorMessages[window.locale].letters);
+            redTopInput(data);
             return false;
         }
 
@@ -70,11 +93,13 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
+            redTopInput(data);
             return false;
         }
         if (! FormValidation.checkValidEmail(data.value)) {
-            showErrorMessage(name, errorMessages.email);
+            showErrorMessage(name, errorMessages[window.locale].email);
+            redTopInput(data);
             return false;
         }
 
@@ -86,19 +111,23 @@
         var name = data.getAttribute('name');
 
         if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages.required);
+            showErrorMessage(name, errorMessages[window.locale].required);
+            redTopInput(data);
             return false;
         }
         if (! FormValidation.checkMinLength(data.value, 5)) {
-            showErrorMessage(name, errorMessages.minLength(5));
+            showErrorMessage(name, errorMessages[window.locale].minLength(5));
+            redTopInput(data);
             return false;
         }
-        if (! FormValidation.checkMaxLength(data.value, 800)) {
-            showErrorMessage(name, errorMessages.maxLength(800));
+        if (! FormValidation.checkMaxLength(data.value, 700)) {
+            showErrorMessage(name, errorMessages[window.locale].maxLength(700));
+            redTopInput(data);
             return false;
         }
         if (! FormValidation.checkValidTextarea(data.value)) {
-            showErrorMessage(name, errorMessages.textArea);
+            showErrorMessage(name, errorMessages[window.locale].textArea);
+            redTopInput(data);
             return false;
         }
 

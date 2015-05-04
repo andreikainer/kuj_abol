@@ -30,7 +30,7 @@ class ContactFormController extends Controller {
                             $message->to('ladiez.os@gmail.com', 'Wilhemine Bauer');
                     });
     // store success feed back message in a session
-        Session::set('message_success', 'Thanks for contacting us! Our staff will be back to you in 24 hours.');
+        Session::set('message_success', trans('contact-page.thanks'));
 
         return view('pages.contact');
     }

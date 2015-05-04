@@ -1,47 +1,38 @@
-<!-- if there are validation errors, show them here -->
+<!-- if there are validation errors, show "Woops" message -->
     <div class="form-group">
-        {{--<ul>--}}
-            {{--<li class="form-error cpp-error" data-error="name"></li>--}}
-            {{--<li class="form-error cpp-error" data-error="email"></li>--}}
-            {{--<li class="form-error cpp-error" data-error="message_body"></li>--}}
-        {{--</ul>--}}
         @if($errors->any())
-	    	<ul class="form-error">
-	    		@foreach($errors->all() as $error)
-	    		    <li> {{ $error }} </li>
-	    		@endforeach
-	    	</ul>
+            <div class="form-error"><i class="fa fa-exclamation-circle"></i> {{ trans('contact-page.woops') }}</div>
         @endif
     </div>
 
 {!! Form::open(['action' => 'ContactFormController@postContactForm', 'method' => 'post']) !!}
 
     <div class="form-group">
-    	{!! Form::label(null, 'Name', ['class' => 'form-label form-inline']) !!}
+    	{!! Form::label(null, trans('contact-page.name'), ['class' => 'form-label form-inline']) !!}
    	    {!! Form::text('name', null,
         		array('required',
               		'class'=>'form-input form-inline',
-              		'placeholder'=>'Your name')) !!}
+              		'placeholder'=>trans('contact-page.place-name'))) !!}
     </div>
-    <div class="form-error cpp-error" data-error="name"></div>
+    <div class="form-error" data-error="name"> {{ $errors->first('name') }} </div>
 
     <div class="form-group">
-    	{!! Form::label(null, 'Email', ['class' => 'form-label']) !!}
+    	{!! Form::label(null, trans('contact-page.email'), ['class' => 'form-label']) !!}
     	{!! Form::text('email', null,
         		array('required',
               		'class'=>'form-input',
-              		'placeholder'=>'Your email')) !!}
+              		'placeholder'=>trans('contact-page.place-email'))) !!}
     </div>
-    <div class="form-error cpp-error" data-error="email"></div>
+    <div class="form-error" data-error="email"> {{$errors->first('email')}} </div>
 
     <div class="form-group">
-    	{!! Form::label(null, 'Message', ['class' => 'form-label']) !!}
+    	{!! Form::label(null, trans('contact-page.message-body'), ['class' => 'form-label']) !!}
     	{!! Form::textarea('message_body', null,
         		array('required',
               		'class'=>'form-input',
-             		'placeholder'=>'Your message')) !!}
+             		'placeholder'=>trans('contact-page.place-message-body'))) !!}
     </div>
-    <div class="form-error cpp-error" data-error="message_body"></div>
+    <div class="form-error" data-error="message_body"> {{$errors->first('message_body')}} </div>
 
     <div class="form-group clearfix">
     	{!! Form::submit('Send',

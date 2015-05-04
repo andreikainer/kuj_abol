@@ -4920,7 +4920,6 @@ label {
   height: auto;
   position: fixed;
   z-index: 1000;
-  margin-top: -.61em;
   padding: 1em;
   background-color: #ed5a4d; }
 
@@ -5122,6 +5121,9 @@ label {
 .form-radius-btm-only {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
+
+.error-red-top {
+  box-shadow: inset 0 0.5rem 0 0 #ed5a4d !important; }
 
 /*------------------------------------------------------------------*/
 /*-- PROJECT TILE --*/
@@ -5739,17 +5741,19 @@ footer {
     text-shadow: 3px 2px 3px #323232; }
     @media (max-width: 768px) {
       .jumbotron .jumbotron-text {
-        top: .1rem;
-        left: 1rem;
+        top: 0rem;
+        left: 0rem;
         padding: 1em;
         padding-top: 0;
         background-color: rgba(0, 0, 0, 0.5); } }
     @media (min-width: 1366px) {
       .jumbotron .jumbotron-text {
         left: 14rem; } }
-    @media (min-width: 768px) {
-      .jumbotron .jumbotron-text p:nth-child(3) {
-        margin-top: 6rem !important; } }
+    .jumbotron .jumbotron-text p:nth-child(3) {
+      margin-top: 3rem !important; }
+      @media (min-width: 768px) {
+        .jumbotron .jumbotron-text p:nth-child(3) {
+          margin-top: 6rem !important; } }
 
 .caption h3 {
   font-size: 1.8rem; }
@@ -5830,9 +5834,18 @@ footer {
     margin-bottom: 2rem;
     background-color: #d2d2d2; }
   #help-page input:not([type=submit]), #help-page textarea {
-    box-shadow: inset 0 0.5rem 0 0 #6f798b !important; }
+    box-shadow: inset 0 0.5rem 0 0 #6f798b; }
     #help-page input:not([type=submit]):hover, #help-page input:not([type=submit]):focus, #help-page input:not([type=submit]):active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active {
-      box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
+      box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
+  #help-page form div.form-group {
+    margin-bottom: 0 !important;
+    margin-top: 15px; }
+  #help-page form div.form-error {
+    padding: 0;
+    background: none !important;
+    border: none;
+    font-size: .9rem;
+    font-weight: 700; }
   #help-page div div ul.form-error {
     padding-left: 2rem; }
   #help-page div div ul.form-error li {
