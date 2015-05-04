@@ -82,22 +82,6 @@ $(document).ready(function()
     }
 
 
-    function getLocale()
-    {
-        $.ajax({
-            url : '/get-locale',
-            method : 'GET',
-            success : function(response)
-            {
-                window.locale = response;
-            },
-            error : function(response)
-            {
-                window.locale = 'de';
-            }
-        });
-    }
-
 /*-----Functions for modules ---------------------------------------*/
 
 /*
@@ -155,11 +139,11 @@ $(document).ready(function()
     /*-- HELP OPTION --*/
 /*------------------------------------------------------------------*/
 // when Question Button pressed, show/hide search module
-    $('.question').on("click", function(e)
-    {
-        e.stopPropagation();
-        slideModule($(this));
-    });
+//    $('.question').on("click", function(e)
+//    {
+//        e.stopPropagation();
+//        slideModule($(this));
+//    });
 
 
 
@@ -167,82 +151,56 @@ $(document).ready(function()
 /*------------------------------------------------------------------*/
   /*-- LANGUAGE CHANGE OPTION --*/
 /*------------------------------------------------------------------*/
+function getLocale(response)
+{
+    $.ajax({
+        url:        '/get-locale',
+        method:     'GET',
+        success:    function(response)
+        {
+            window.locale = response;
+        },
+        error:      function(response)
+        {
+            window.locale = 'de';
+        }
+    });
+}
+
+
 /*
  * check what land flag is displaying
  * toggle the flag on a press button event
  */
     $('.language-toggle').on("click", function(e)
     {
+        //window.locale;
 
-        //if(lang_changed === true)
+        //if(window.locale === 'de')
         //{
-        //    lang_changed = false;
-        //    return;
-        //}
-        //
-        //e.preventDefault();
-        //
-        //if($('.currLang').text() === 'de')
-        //{
-        //    $(this).attr('href', 'http://kuj.dev/en');
-        //    alert($(this).attr('href'));
-        //    lang_changed = true;
+        //    console.log('pipa');
+        //    window.locale = 'en';
+        //    //getLocale();
         //}else{
-        //    $(this).attr('href', 'http://kuj.dev/de');
-        //    alert($(this).attr('href'));
-        //    lang_changed = true;
+        //    console.log('pepa');
+        //    window.locale = 'de';
+        //    //getLocale();
         //}
-        //
-        //$(this).trigger("click");
-
-
         if($(this).hasClass('at'))
         {
             $(this).toggleClass('at', false).toggleClass('gb', true);
+            getLocale('en');
+            console.log (window.locale);
         }else{
             $(this).toggleClass('at', true).toggleClass('gb', false);
+            getLocale();
+            console.log (window.locale);
         }
 
-        // Set the global variable `locale` to the user's selected language.
-        getLocale();
+    // set the global variable 'locale' to the user's selected language
+        //console.log (window.locale);
 
-        //e.preventDefault();
-        ////console.log(window.location.href.substring(window.location.href.indexOf("/", window.location.href.indexOf("/", window.location.href.indexOf("/") +1))));
-        //
-        //var currUrl = window.location.href;
-        //currUrl = currUrl.split("/");
-        //console.log(currUrl[3]);
-        //
-        //if(currUrl[3] === 'de')
-        //{
-        //    currUrl[3] = 'en';
-        //    var newUrl = currUrl.join('/');
-        //
-        //    //$(this).toggleClass('at', false).toggleClass('gb', true);
-        //    //console.log(newUrl);
-        //    $(location).attr('href', newUrl);
-        //}
-
-        //if($(this).hasClass('at'))
-        //{
-        //    $(this).toggleClass('hidden', true);
-        //    console.log($('gb'));
-        //    $('.gb').toggleClass('hidden', false);
-        //}else{
-        //    $(this).toggleClass('hidden', false);
-        //    $('.gb').toggleClass('hidden', true);
-        //}
     });
-
-
-
-
-
-
-
-
-
-
 
 /*------------------------------------------------------------------*/
     /*-- CODE --*/

@@ -66,9 +66,6 @@
 
 <!--================== Header =================================================-->
         <header>
-            {{--<div class="hidden setLang">{{ LaravelLocalization::setLocale('de') }}</div>--}}
-            {{--<div class="hidden currentLang">{{ LaravelLocalization::getCurrentLocale() }}</div>--}}
-
 
             <nav class="navbar navbar-default navbar-fixed-top white-bg"  data-scroll-header>
                 <div class="container-fluid">
@@ -85,11 +82,11 @@
                             </button>
 
                         <!-- help_btn -->
-                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-buttonhvr-push question">
-                                <a href="{{ action('ContactFormController@getContactForm') }}">
+                            <a href="{{ action('ContactFormController@getContactForm') }}">
+                                <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button question">
                                     <i class="fa fa-question"></i>
-                                </a>
-                            </button>
+                                </button>
+                            </a>
 
            			    <!-- search_btn for mobile -->
                             <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier" data-target="#search_module">
@@ -109,23 +106,29 @@
                                 <div class="alignme-center clearfix">
 
                                 <!-- language_btn -->
-                                <div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
-								    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-								        <button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
-								        	<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-								        			{{{ $properties['native'] }}}
-								        	</a>
-								        </button>
-								    @endforeach
+                                {{--<div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>--}}
+								    {{--@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
+								        {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">--}}
+								        	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
+								        			{{--{{{ $properties['native'] }}}--}}
+								        	{{--</a>--}}
+								        {{--</button>--}}
+								    {{--@endforeach--}}
+								    <button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
+                                    	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
+                                    			{{--{{{ $properties['native'] }}}--}}
+                                    	{{--</a>--}}
+                                    </button>
+
 								    {{--<a href="http://kuj.dev/en" type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle"></a>--}}
 								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}
 
                                 <!-- help_btn -->
-                                    <button type="button" class="navbar-toggle button-circle hvr-push question">
-                                        <a href="{{ action('ContactFormController@getContactForm') }}">
+                                    <a href="{{ action('ContactFormController@getContactForm') }}">
+                                        <button type="button" class="navbar-toggle button-circle hvr-push question">
                                             <i class="fa fa-question"></i>
-                                        </a>
-                                    </button>
+                                        </button>
+                                    </a>
 
                                 <!-- search_btn -->
                                     <button type="button" role="search" class="navbar-toggle button-circle hvr-push magnif magnifier" data-target="#search_module">
@@ -134,8 +137,8 @@
                                 </div>
 
                                 <div class="alignme-center">
-                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('lang.login') }}</button>
-                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('lang.register') }}</button>
+                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('app.login') }}</button>
+                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>
                                 </div>
 
                             </div>
@@ -144,11 +147,11 @@
                		    <div class="col-sm-7 col-md-2 col-md-pull-2 col-lg-2 col-lg-pull-1 collapse navbar-collapse" id="main_nav" role="navigation">
                  	       <hr class="visible-sm">
                  	       <ul class="nav navbar-nav">
-                   	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('lang.login') }}</a></li>
-                                <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('lang.register') }}</a></li>
+                   	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('app.login') }}</a></li>
+                                <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
 
                    	        	<li class="dropdown">
-                            		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('lang.how-it-works') }}<span class="caret"></span></a>
+                            		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
                             		    <li><a href="{{ action('PagesController@howItWorks') }}">Tips For Success</a></li>
                             		    <li><a href="{{ action('PagesController@howItWorks') }}">FAQ</a></li>
@@ -158,8 +161,8 @@
                             			<li><a href="{{ action('PagesController@howItWorks') }}">Our Team</a></li>
                             		</ul>
                   	        	</li>
-                   	        	<li><a href="{{ action('ProjectsController@createProject') }}">{{ trans('lang.create-project') }}</a></li>
-                   	        	<li><a href="{{ action('PagesController@viewProjects') }}">{{ trans('lang.contribute') }}</a></li>
+                   	        	<li><a href="{{ action('PagesController@createProject') }}">{{ trans('app.create-project') }}</a></li>
+                   	        	<li><a href="{{ action('PagesController@viewProjects') }}">{{ trans('app.contribute') }}</a></li>
                  	        </ul>
                         </div>
 
@@ -175,27 +178,12 @@
 <!--**************************-->
     <!-- SEARCH MODULE -->
 <!--**************************-->
-        <div class="row module" id="search_module">
-            <div class="col-xs-12 col-sm-11 col-md-8 col-md-offset-2">
-                <div class="row visible-xs">
-                    <button type="button" class="navbar-toggle button-circle">
-                        <i class="fa fa-times" data-mobile="true"></i>
-                    </button>
-                </div>
-                @include('forms.search-form')
-            </div>
-            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
-        </div>
+       @include('modules.search-module')
 
 <!--**************************-->
     <!-- LOGIN MODULE -->
 <!--**************************-->
-        <div class="row module" id="login_module">
-            <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-8 col-md-offset-2">
-                {{--@include('emails.help')--}}
-            </div>
-            <i class="fa fa-times-circle fa-2x col-sm-1"></i>
-        </div>
+        @include('modules.login-module')
 
 
 
@@ -243,9 +231,9 @@
                         <form class="form" action="http://88432.seu1.cleverreach.com/f/88432-163511/wcs/" method="post" target="_blank">
                             <div class="form-group">
                                 <label class="hidden">Newsletter</label>
-                                <input type="email" class="form-control" placeholder="{{ trans('lang.newsletter') }}" id="text3390090" name="email">
+                                <input type="email" class="form-control" placeholder="{{ trans('app.newsletter') }}" id="text3390090" name="email">
                             </div>
-                            <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('lang.sign-up') }}</button>
+                            <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('app.sign-up') }}</button>
                         </form>
                     </div>
                 </div>
@@ -254,19 +242,19 @@
             <!-- Site Map -->
 	            <div class="col-xs-11 col-xs-push-1 col-sm-3 col-md-3 col-md-pull-12 col-lg-3">
 	                <div class="footer-text-content">
-	                    <h5>{{ trans('lang.site-map') }}</h5>
-	                    <a href="#">{{ trans('lang.how-it-works') }}</a>
-	                    <a href="#">{{ trans('lang.create-project') }}</a>
-	                    <a href="#">{{ trans('lang.contribute') }}</a>
+	                    <h5>{{ trans('app.site-map') }}</h5>
+	                    <a href="#">{{ trans('app.how-it-works') }}</a>
+	                    <a href="#">{{ trans('app.create-project') }}</a>
+	                    <a href="#">{{ trans('app.contribute') }}</a>
 
 	                    <br>
 
 	                    <a href="#">Blog</a>
-                        <a href="#">{{ trans('lang.our-sponsors') }}</a>
+                        <a href="#">{{ trans('app.our-sponsors') }}</a>
 
                         <br>
 
-                        <a href="#">{{ trans('lang.terms-and-conditions') }}</a>
+                        <a href="#">{{ trans('app.terms-and-conditions') }}</a>
                         <a href="#">Impressum</a>
 	                </div>
 	            </div>
@@ -275,18 +263,18 @@
             <!-- Contacts -->
                 <div class="col-xs-12 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
                     <div class="footer-text-content">
-                        <h5>{{ trans('lang.contacts') }}</h5>
+                        <h5>{{ trans('app.contacts') }}</h5>
 
                         <p><i class="fa fa-home form-inline"></i> <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>
                                                                         2524 Teesdorf Austria
                                                             </a></p>
-                        <p><i class="fa fa-envelope"></i><a href="#">wilhelmine.bauer@sponsoring-agentur.at</a></p>
+                        <p><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm') }}">wilhelmine.bauer@sponsoring-agentur.at</a></p>
                         <p><i class="fa fa-phone"></i><a href="tel:+4366488299511">+43 664 8829 9511</a></p>
 
                         <br>
 
                         <p class="no-bottom-margin">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
-                        <p>{{ trans('lang.website-made-by') }} <a href="#">ABOL</a></p>
+                        <p>{{ trans('app.website-made-by') }} <a href="#">ABOL</a></p>
                 	</div>
                 </div>
 

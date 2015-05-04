@@ -1,22 +1,19 @@
-@extends('app')
+<body>
 
-@section('content')
-    
+    <h2>Dear Wilhemine Baue</h2>
+    <p>you have received an email from</p>
 
-<!-- Main content -->
-        <div class="container-fluid" role="main">
-            <div class="row" id="help-page">
+    <p>
+        <strong>Name: </strong> {{ $name }}
+    </p>
 
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 mt-3em">
+    <p>
+        <strong>Email: </strong> {{ $email }}
+    </p>
 
-                    <div class="form-explanation">Have a question? Check out our <a href="{{ action('PagesController@createProject') }}" class="button-link">FAQ section</a>, or use the form provided below.
-                    <br><br>
-                    Our staff will be back to you in 24 hours.</div>
+    <p>
+        <strong>The enquiry: </strong><br>
+        {{ $message_body }}
+    </p>
 
-                    <!-- Contact form -->
-                        @include('forms.help-form')
-
-                </div>
-            </div><!-- row ends -->
-
-@endsection
+</body>

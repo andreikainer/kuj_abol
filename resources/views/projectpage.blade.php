@@ -13,16 +13,16 @@
     </script>
 
     <div class="container-fluid">
-        <div class="row" role="main"> <!--Body content-->
+        {{--<div class="row" role="main"> <!--Body content-->--}}
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-12 text-center"> <!-- project title beginn-->
                 <h2 class="heading">Rollstuhlrampe für Hansi</h2>
             </div> <!-- project title end-->
-            </div>
+        </div>
 
             <div class="row">
-            <div class="col-sm-12 col-md-8 project-gallery"> <!-- project images beginn-->
+            <div class="col-sm-12 col-md-7 col-md-offset-0 project-gallery"> <!-- project images beginn-->
                 <div class="project-gallery-item">
                     <img class="img-responsive center-block" src="{{ asset('/img/rollstuhlrampe-fuer-hansi/medium/hansi1.jpg') }}">
                 </div>
@@ -121,7 +121,7 @@
             <div class="col-sm-12" style="background:red;"> <!-- sponsors row beginn-->
                 Olga's Sponsors row
             </div> <!-- sponsors row end-->
-        </div> <!-- main content end -->
+        {{--</div> <!-- main content end -->--}}
 @endsection
 
 @section('additional_js')
