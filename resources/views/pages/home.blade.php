@@ -25,7 +25,7 @@
                     <img src="img/main-carousel/lg/three.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {!! trans('home-page.carousel-text-3', ['cta-link' => trans('routes.how-it-works)]) !!}
+                        {!! trans('home-page.carousel-text-3', ['cta-link' => trans('routes.how-it-works')]) !!}
                     </div>
                 </div>
 

@@ -6,7 +6,7 @@
 
         <!-- Short Description Form Input -->
         <div class="row form-group mb-3em">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         {!! Form::label('short_desc', trans('create-project-form.short-description'), ['class' => 'form-label']) !!}
@@ -18,14 +18,14 @@
                 {!! Form::textarea('short_desc', null, ['class' => 'form-input', 'placeholder' => trans('create-project-form.place-short-desc')]) !!}
                 {{--{!! Form::textarea('short_desc', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly', 'placeholder' => trans('create-project-form.place-short-desc')]) !!}--}}
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="form-error cpp-error" data-error="short_desc"></div>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-error cpp-error pad-zero" data-error="short_desc"></div>
             </div>
         </div> <!-- end short description -->
 
         <!-- Main Image Form Input -->
         <div class="row form-group mb-3em">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-12 col-sm-12">
                 <div class="form-label">{{ trans('create-project-form.main-image') }}</div>
                 <div class="image-upload-wrapper">
                     <img src="" alt="" class="image-upload-preview"/>
@@ -46,14 +46,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="form-error cpp-error" data-error="main_img"></div>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-error cpp-error pad-zero" data-error="main_img"></div>
             </div>
         </div> <!-- end main image -->
 
         <!-- Secondary Image Form Inputs -->
         <div class="row form-group mb-3em">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.secondary-images') }}</div>
                     <div class="col-md-4 col-sm-4">
@@ -100,32 +100,32 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="form-error cpp-error" data-error="img_2 img_3 img_4"></div>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-error cpp-error pad-zero" data-error="img_2 img_3 img_4"></div>
             </div>
         </div> <!-- end secondary images -->
 
         <!-- Full Description Form Input -->
         <div class="row form-group mb-3em">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-12 col-sm-12">
                 {!! Form::label('full_desc', trans('create-project-form.full-description'), ['class' => 'form-label']) !!}
                 {!! Form::textarea('full_desc', null, ['class' => 'form-input', 'placeholder' => trans('create-project-form.place-full-desc')]) !!}
                 {{--{!! Form::textarea('full_desc', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly', 'placeholder' => trans('create-project-form.place-full-desc')]) !!}--}}
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="form-error cpp-error" data-error="full_desc"></div>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-error cpp-error pad-zero" data-error="full_desc"></div>
             </div>
         </div> <!-- end full description -->
 
         <!-- Fundraise Amount Form Input -->
         <div class="row form-group mb-3em">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-12 col-sm-12">
                 {!! Form::label('target_amount', trans('create-project-form.fundraise-amount'), ['class' => 'form-label']) !!}
                 {!! Form::text('target_amount', null, ['class' => 'form-input', 'placeholder' => trans('create-project-form.place-fundraise-amt')]) !!}
                 {{--{!! Form::text('target_amount', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly', 'placeholder' => trans('create-project-form.place-fundraise-amt')]) !!}--}}
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="form-error cpp-error" data-error="target_amount"></div>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-error cpp-error pad-zero" data-error="target_amount"></div>
             </div>
         </div> <!-- end fundraise amount -->
 

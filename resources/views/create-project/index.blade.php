@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row" role="main">
         <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-            <h2 class="heading">{{ trans('lang.create-project')  }}</h2>
+            <h2 class="heading">{{ trans('app.create-project')  }}</h2>
         </div>
         <div class="col-md-8 col-sm-8 mt-3em">
             <!-- Section Tabs -->

@@ -449,7 +449,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -468,7 +468,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -482,7 +482,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -501,7 +501,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -520,7 +520,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -539,7 +539,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -558,7 +558,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -577,7 +577,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -591,7 +591,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -610,7 +610,7 @@
             return false;
         }
 
-        addSuccessClass(data);
+        removeFailClass(data);
         hideErrorMessage(name);
     });
 
@@ -647,9 +647,9 @@
         $(el).removeClass('form-input-correct').addClass('form-input-error');
     }
 
-    function addSuccessClass(el)
+    function removeFailClass(el)
     {
-        $(el).removeClass('form-input-error').addClass('form-input-correct');
+        $(el).removeClass('form-input-error');
     }
 
     function updateCharCount(length, limit, display)
