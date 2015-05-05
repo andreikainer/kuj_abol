@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <div class="container-fluid clearfix main_carousel">
                 <div class="main_carousel_item">
-                    <img src="img/main-carousel/lg/seven.jpg" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/seven.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         {!! trans('home-page.carousel-text-1', ['cta-link' => '#contribute']) !!}
@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                    <img src="img/main-carousel/lg/six.jpg" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/six.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         {!! trans('home-page.carousel-text-2', ['cta-link' => trans('routes.how-it-works')]) !!}
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                    <img src="img/main-carousel/lg/three.jpg" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/three.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         {!! trans('home-page.carousel-text-3', ['cta-link' => trans('routes.how-it-works')]) !!}
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                     <img src="img/main-carousel/lg/five.jpg" class="img-responsive" alt="image">
+                     <img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">
 
                      <div class="jumbotron-text">
                          {!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}
@@ -58,7 +58,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img srcset="img/main-carousel/xs/one.jpg" alt="???">
+                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -157,7 +157,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
-                                <img srcset="img/main-carousel/xs/one.jpg" alt="???">
+                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="???">
 
                                 <div class="caption">
                                     <h3>Project Name</h3>
@@ -241,52 +241,52 @@
 
                         <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
                             <div class="logo-name img-responsive text-center hidden">onhghjgjhg ghjgkgglglgl glhglglhglhe</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="one">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="one">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">two</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="two">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="two">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">three</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="three">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="three">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">four</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="four">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">four</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="four">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">four</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="four">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
                         </div>
 
                     </div>

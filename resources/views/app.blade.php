@@ -162,7 +162,7 @@
                             		</ul>
                   	        	</li>
                    	        	<li><a href="{{ action('ProjectsController@createProject') }}">{{ trans('app.create-project') }}</a></li>
-                   	        	<li><a href="{{ action('PagesController@viewProjects') }}">{{ trans('app.contribute') }}</a></li>
+                   	        	<li><a href="#">{{ trans('app.contribute') }}</a></li>
                  	        </ul>
                         </div>
 
