@@ -240,6 +240,7 @@
         var currSection = $(data).parents('fieldset').data('section');
         showSection(fieldsetCollection, currSection+1);
         makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection+1)+'"]'));
+        checkForErrors(currSection);
     });
 
     $.subscribe('back-button.click', function(event, data)
@@ -247,6 +248,7 @@
         var currSection = $(data).parents('fieldset').data('section');
         showSection(fieldsetCollection, currSection-1);
         makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection-1)+'"]'));
+        checkForErrors(currSection);
     });
 
     $.subscribe('short-description.keyup', function(event, data)
