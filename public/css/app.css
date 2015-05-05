@@ -4904,6 +4904,9 @@ label {
 input[type="submit"], button[type="submit"] {
   outline: none; }
 
+.mt-1em {
+  margin-top: 1rem; }
+
 /*------------------------------------------------------------------*/
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
@@ -5071,7 +5074,7 @@ input[type="submit"], button[type="submit"] {
 .form-label {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: #6f798b; }
 
 .form-input, .module input:not([type=submit]), .module textarea {
@@ -5089,8 +5092,8 @@ input[type="submit"], button[type="submit"] {
 
 .form-element {
   background: white;
-  padding-top: 1.65rem;
-  padding-bottom: 1.65rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border: 1px solid #d2d2d2;
   border-radius: 0.35rem; }
 
@@ -5218,7 +5221,7 @@ input[type="submit"], button[type="submit"] {
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
 /*------------------------------------------------------------------*/
 .create-project-fieldset {
-  padding: 1.65rem 0;
+  padding: 0;
   display: none; }
   .create-project-fieldset:first-of-type {
     display: inherit; }
@@ -5230,9 +5233,6 @@ input[type="submit"], button[type="submit"] {
   line-height: 1.8rem;
   background: none;
   border: none; }
-  @media all and (max-width: 768px) {
-    .cpp-error {
-      margin-top: 0.5rem; } }
 
 .error-box {
   margin-bottom: 2rem; }
@@ -5243,6 +5243,14 @@ input[type="submit"], button[type="submit"] {
     box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
   .form-input-error:focus {
     box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
+
+.form-group {
+  margin-top: 1rem;
+  margin-bottom: 0; }
+
+@media all and (max-width: 768px) {
+  .form-pair {
+    margin-top: 1rem; } }
 
 .form-button {
   padding: 0.65rem;
@@ -5337,7 +5345,7 @@ input[type="submit"], button[type="submit"] {
 
 .form-explanation {
   padding: 1.25rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   border: 1px solid #d2d2d2;
   color: #3fa3db; }
   .form-explanation p:first-of-type {

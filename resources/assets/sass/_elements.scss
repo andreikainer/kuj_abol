@@ -227,7 +227,7 @@
 .form-label {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: $bluegrey;
 }
 
@@ -251,8 +251,8 @@
 
 .form-element {
   background: $white;
-  padding-top: 1.65rem;
-  padding-bottom: 1.65rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border: 1px solid $dgrey;
   @include border-radius(0.35rem);
 }

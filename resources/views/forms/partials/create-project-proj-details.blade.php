@@ -5,7 +5,7 @@
         </div>
 
         <!-- Short Description Form Input -->
-        <div class="row form-group mb-3em">
+        <div class="row form-group">
             <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6">
@@ -24,7 +24,7 @@
         </div> <!-- end short description -->
 
         <!-- Main Image Form Input -->
-        <div class="row form-group mb-3em">
+        <div class="row form-group">
             <div class="col-md-12 col-sm-12">
                 <div class="form-label">{{ trans('create-project-form.main-image') }}</div>
                 <div class="image-upload-wrapper">
@@ -52,7 +52,7 @@
         </div> <!-- end main image -->
 
         <!-- Secondary Image Form Inputs -->
-        <div class="row form-group mb-3em">
+        <div class="row form-group">
             <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.secondary-images') }}</div>
@@ -67,6 +67,7 @@
                                 </label>
                                 {!! Form::file('img_2', ['id' => 'img_2', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
                                 {{--{!! Form::file('img_2', ['id' => 'img_2', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => 'image/*']) !!}--}}
+                                <div class="form-error cpp-error pad-zero" data-error="img_2"></div>
                             </div>
                         </div>
                     </div>
@@ -81,6 +82,7 @@
                                 </label>
                                 {!! Form::file('img_3', ['id' => 'img_3', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
                                 {{--{!! Form::file('img_3', ['id' => 'img_3', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => 'image/*']) !!}--}}
+                                <div class="form-error cpp-error pad-zero" data-error="img_3"></div>
                             </div>
                         </div>
                     </div>
@@ -95,18 +97,16 @@
                                 </label>
                                 {!! Form::file('img_4', ['id' => 'img_4', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
                                 {{--{!! Form::file('img_4', ['id' => 'img_4', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => 'image/*']) !!}--}}
+                                <div class="form-error cpp-error pad-zero" data-error="img_4"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-sm-12">
-                <div class="form-error cpp-error pad-zero" data-error="img_2 img_3 img_4"></div>
-            </div>
         </div> <!-- end secondary images -->
 
         <!-- Full Description Form Input -->
-        <div class="row form-group mb-3em">
+        <div class="row form-group">
             <div class="col-md-12 col-sm-12">
                 {!! Form::label('full_desc', trans('create-project-form.full-description'), ['class' => 'form-label']) !!}
                 {!! Form::textarea('full_desc', null, ['class' => 'form-input', 'placeholder' => trans('create-project-form.place-full-desc')]) !!}
@@ -118,7 +118,7 @@
         </div> <!-- end full description -->
 
         <!-- Fundraise Amount Form Input -->
-        <div class="row form-group mb-3em">
+        <div class="row form-group">
             <div class="col-md-12 col-sm-12">
                 {!! Form::label('target_amount', trans('create-project-form.fundraise-amount'), ['class' => 'form-label']) !!}
                 {!! Form::text('target_amount', null, ['class' => 'form-input', 'placeholder' => trans('create-project-form.place-fundraise-amt')]) !!}
@@ -129,7 +129,7 @@
             </div>
         </div> <!-- end fundraise amount -->
 
-        <div class="row">
+        <div class="row form-group">
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="form-button form-button-nav text-center" data-button="back">{{ trans('create-project-form.back') }}</div>
             </div>
