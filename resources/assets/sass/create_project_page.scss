@@ -21,6 +21,8 @@
 
 .error-box {
   margin-bottom: 2rem;
+  background: tint($orange, 60%) !important;
+  border: 1px dashed $orange !important;
 }
 
 .form-input-error {

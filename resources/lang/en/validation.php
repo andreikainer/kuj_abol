@@ -86,9 +86,97 @@ return [
 	*/
 
 	'custom' => [
-		'attribute-name' => [
-			'rule-name' => 'custom-message',
+		'project_name'  => [
+			'required'  => 'This field is required.',
+            'regex'     => 'Must contain letters and numbers only. And not begin with a space.',
+            'unique'    => 'This title has already been taken.'
 		],
+
+        'short_desc'    => [
+            'required'  => 'This field is required.',
+            'max'       => 'This field must not exceed :max characters.'
+        ],
+
+        'full_desc'     => [
+            'required'  => 'This field is required.'
+        ],
+
+        'target_amount' => [
+            'required'  => 'This field is required.',
+            'integer'   => 'Must contain numbers only. And not begin with a space.'
+        ],
+
+        'child_name'    => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must contain letters only. And not begin with a space.'
+        ],
+
+        'first_name'    => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must contain letters only. And not begin with a space.'
+        ],
+
+        'last_name'     => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must contain letters only. And not begin with a space.'
+        ],
+
+        'email'         => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must be of a correct email format. And not begin with a space.'
+        ],
+
+        'address'       => [
+            'required'  => 'This field is required.'
+        ],
+
+        'tel_number'    => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must be of a correct telephone number format. And not begin with a space.'
+        ],
+
+        'main_img'      => [
+            'required'  => 'A main image is required.',
+            'mimes'     => 'Please choose a valid image format.'
+        ],
+
+        'img_2'         => [
+            'mimes'     => 'Please choose a valid image format.'
+        ],
+
+        'img_3'         => [
+            'mimes'     => 'Please choose a valid image format.'
+        ],
+
+        'img_4'         => [
+            'mimes'     => 'Please choose a valid image format.'
+        ],
+
+        'doc_1_mand'    => [
+            'required'  => 'At least two documents of evidence are required.',
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+        ],
+
+        'doc_2_mand'    => [
+            'required'  => 'At least two documents of evidence are required.',
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+        ],
+
+        'doc_3'    => [
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+        ],
+
+        'doc_4'    => [
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+        ],
+
+        'doc_5'    => [
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+        ],
+
+        'doc_6'    => [
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+        ]
 	],
 
 	/*

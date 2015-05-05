@@ -86,9 +86,97 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'project_name'  => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'regex'     => 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
+            'unique'    => 'Dieser Titel ist bereits getan.'
         ],
+
+        'short_desc'    => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'max'       => 'Dieses Feld muss :max Zeichen nicht überschreiten.'
+        ],
+
+        'full_desc'     => [
+            'required'  => 'Dieses Feld ist erforderlich.'
+        ],
+
+        'target_amount' => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'integer'   => 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.'
+        ],
+
+        'child_name'    => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.'
+        ],
+
+        'first_name'    => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.'
+        ],
+
+        'last_name'     => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.'
+        ],
+
+        'email'         => [
+            'required'  => 'Dieses Feld ist erforderlich..',
+            'regex'     => 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.'
+        ],
+
+        'address'       => [
+            'required'  => 'Dieses Feld ist erforderlich.'
+        ],
+
+        'tel_number'    => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'regex'     => 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.'
+        ],
+
+        'main_img'      => [
+            'required'  => 'Ein Hauptbilderforderlich.',
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+        ],
+
+        'img_2'         => [
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+        ],
+
+        'img_3'         => [
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+        ],
+
+        'img_4'         => [
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+        ],
+
+        'doc_1_mand'    => [
+            'required'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+        ],
+
+        'doc_2_mand'    => [
+            'required'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+        ],
+
+        'doc_3'    => [
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+        ],
+
+        'doc_4'    => [
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+        ],
+
+        'doc_5'    => [
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+        ],
+
+        'doc_6'    => [
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+        ]
     ],
 
     /*

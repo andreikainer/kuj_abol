@@ -5241,7 +5241,9 @@ input[type="submit"], button[type="submit"] {
   border: none; }
 
 .error-box {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  background: #f7bdb7 !important;
+  border: 1px dashed #ed5a4d !important; }
 
 .form-input-error {
   box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }

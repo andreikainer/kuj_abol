@@ -32,7 +32,7 @@
             'alphaOnly' : 'Must contain letters only. And not begin with a space.',
             'email' : 'Must be of a correct email format. And not begin with a space.',
             'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
-            'image' : 'Please choose a valid image format',
+            'image' : 'Please choose a valid image format.',
             'document' : 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
             'maxLength' : function(limit)
             {
@@ -42,7 +42,7 @@
         },
         'de' : {
             'disabled' : 'Bitte nennen Sie Ihr Projekt, und klicken Sie auf "Projekt starten", um Form zu ermöglichen.',
-            'required' : 'Dieses Feld ist erforderlich',
+            'required' : 'Dieses Feld ist erforderlich.',
             'alphaNumeric' : 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
             'numOnly' : 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
             'alphaOnly' : 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.',
@@ -263,9 +263,11 @@
     $.subscribe('main-image.selected image-two.selected image-three.selected image-four.selected', function(event, data)
     {
         if (! checkImageMime(data.files[0].type)) {
+            addFailClass(data);
             showErrorMessage(data.id, errorMessages[window.locale].image);
             return false;
         }
+        removeFailClass(data);
         hideErrorMessage(data.id);
         var inputControls = $(data).parent('.image-upload-controls');
         var previewContainer = inputControls.siblings('.image-upload-preview');
@@ -313,9 +315,11 @@
     $.subscribe('document-one.selected document-two.selected document-three.selected document-four.selected document-five.selected document-six.selected', function(event, data)
     {
         if (! checkDocumentMime(data.files[0].type)) {
+            addFailClass(data);
             showErrorMessage(data.id, errorMessages[window.locale].document);
             return false;
         }
+        removeFailClass(data);
         hideErrorMessage(data.id);
 
         // Show the loading animation.
@@ -386,7 +390,7 @@
     // Summary Page.
     $.subscribe('summary-page.render', function()
     {
-        var summaryItems = $('fieldset.summary-group > p');
+        var summaryItems = $('fieldset.summary-group p');
         var summaryList = $('fieldset.summary-group ul.summary-list');
         var formData = $('form#create-project input, textarea')
                         .not('input[name="_token"]')
@@ -436,6 +440,7 @@
         {
             formData.append(field.name, field.value);
         });
+        // Make the submit request.
         $.ajax({
             url : $(form).attr('action'),
             method : 'POST',
@@ -448,8 +453,8 @@
             {
                 if ( response.errors )
                 {
-                    console.log(response);
-                    console.log('we have errors');
+                    loaderImage.fadeOut();
+                    $.publish('form-submit.fail', response);
                 }
                 else
                 {
@@ -461,6 +466,27 @@
                 console.log(response);
             }
         });
+    });
+
+    $.subscribe('form-submit.fail', function(event, data)
+    {
+        var formFields = $('form#create-project input, textarea');
+
+        // Locate each form field with an error.
+        // Add an error CSS class, and display its error message.
+        $.each(data.errors, function(name, message)
+        {
+            formFields.filter('#'+name).addClass('form-input-error');
+            showErrorMessage(name, message);
+        });
+        // Render the section tabs with an error CSS class.
+        // For those whose section contains errors.
+        $.each(tabCollection, function(index, value)
+        {
+            checkForErrors($(value).attr('data-section'));
+        });
+
+        displayErrorFlashMessage(data.message);
     });
 
 
@@ -689,6 +715,11 @@
     function hideErrorMessage(name)
     {
         $('.form-error[data-error*="'+name+'"]').fadeOut();
+    }
+
+    function displayErrorFlashMessage(message)
+    {
+        $('.error-box').html(message).fadeIn();
     }
 
     function addFailClass(el)
