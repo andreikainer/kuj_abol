@@ -69,6 +69,7 @@
     $('.form-section-tab').on('click', function()
     {
         $.publish('section-tab.click', this);
+        $.publish('section-check.errors', this);
     });
 
     $('.form-section-tab[data-section="4"]').on('click', function()
@@ -648,6 +649,18 @@
         hideErrorMessage(name);
     });
 
+    $.subscribe('section-check.errors', function(event, sectionTab)
+    {
+        var currentSectionNum = parseInt($(sectionTab).attr('data-section'));
+        $.each(tabCollection, function(index, value)
+        {
+            if (index !== currentSectionNum)
+            {
+                checkForErrors($(value).attr('data-section'));
+            }
+        });
+    });
+
 
 
     /**
@@ -724,6 +737,20 @@
     function createImageCloseButton(container)
     {
         return $('<span class="image-upload-close-button">X</span>').prependTo(container);
+    }
+
+    function checkForErrors(sectionNum)
+    {
+        var section = $('fieldset[data-section="'+sectionNum+'"]');
+        var sectionTab = $('.form-section-tab[data-section="'+sectionNum+'"]');
+
+        if (section.find('.form-input-error').length > 0)
+        {
+            sectionTab.addClass('form-section-tab-error');
+        }
+        else {
+            sectionTab.removeClass('form-section-tab-error');
+        }
     }
 
 

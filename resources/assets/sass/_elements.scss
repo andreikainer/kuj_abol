@@ -267,7 +267,7 @@
   border-right: 1px solid $dgrey;
   border-top-right-radius: 0.35rem;
   border-top-left-radius: 0.35rem;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 
   @media all and (max-width: 768px) {
     font-size: 0.7rem;

@@ -5113,7 +5113,7 @@ input[type="submit"], button[type="submit"] {
   border-right: 1px solid #d2d2d2;
   border-top-right-radius: 0.35rem;
   border-top-left-radius: 0.35rem;
-  transition: background 0.3s ease; }
+  transition: all 0.3s ease; }
   @media all and (max-width: 768px) {
     .form-section-tab {
       font-size: 0.7rem;
@@ -5249,6 +5249,9 @@ input[type="submit"], button[type="submit"] {
     box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
   .form-input-error:focus {
     box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
+
+.form-section-tab-error {
+  border-top: 4px solid #ed5a4d; }
 
 .form-group {
   margin-top: 1rem;
