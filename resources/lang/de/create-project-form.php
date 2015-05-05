@@ -45,6 +45,7 @@ return [
     'tel-number'            => 'Telefonnummer:',
     'main-documents'        => 'Dokumente Beweis:',
     'secondary-documents'   => 'zusätzliche Dokumente:',
+    'images-and-documents'  => 'Bilder & Dokumente:',
 
     /**
      * Form Field Placeholders

@@ -4910,6 +4910,9 @@ input[type="submit"], button[type="submit"] {
 .none {
   display: none; }
 
+.mt-0 {
+  margin-top: 0 !important; }
+
 /*------------------------------------------------------------------*/
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
@@ -5381,6 +5384,23 @@ input[type="submit"], button[type="submit"] {
 
 .character-count {
   display: none; }
+
+fieldset.summary-group {
+  display: block !important;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #d2d2d2; }
+  fieldset.summary-group legend {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+    padding: 0 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #6f798b;
+    border: none; }
+  fieldset.summary-group p {
+    margin-bottom: 0; }
 
 .dgrey {
   background: #d2d2d2; }

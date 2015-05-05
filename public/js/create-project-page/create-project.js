@@ -71,6 +71,11 @@
         $.publish('section-tab.click', this);
     });
 
+    $('.form-section-tab[data-section="4"]').on('click', function()
+    {
+        $.publish('summary-page.render');
+    });
+
     $('.form-input-disabled').on('click', function()
     {
         $.publish('disabled-input.click', this);
@@ -375,7 +380,34 @@
         });
     });
 
-    // Submit Event
+    // Summary Page.
+    $.subscribe('summary-page.render', function()
+    {
+        var summaryItems = $('fieldset.summary-group > p');
+        var summaryList = $('fieldset.summary-group ul.summary-list');
+        var formData = $('form#create-project input, textarea')
+                        .not('input[name="_token"]')
+                        .not('input[type="submit"]');
+        // Fill each text section of the summary page.
+        $.each(summaryItems, function(index, value)
+        {
+            var field = $(value).data('field');
+            if ( field === formData.filter('#'+field).attr('name') )
+            {
+                $(value).html(formData.filter('#'+field).val());
+            }
+        });
+        // Create a list of the files to upload.
+        $.each(files, function(index, file)
+        {
+            $.each(file, function(i, value)
+            {
+                summaryList.append('<li>'+value.name+'</li>');
+            });
+        });
+    });
+
+    // Submit Event.
     $.subscribe('form.submitted', function(event, form)
     {
         var loaderImage = $(form).find('input[type="submit"]').siblings('.image-loader');

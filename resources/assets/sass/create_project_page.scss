@@ -206,3 +206,25 @@
 .character-count {
   display: none;
 }
+
+fieldset.summary-group {
+  display: block !important;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid $dgrey;
+
+  legend {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+    padding: 0 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $bluegrey;
+    border: none;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
