@@ -397,6 +397,8 @@
                 $(value).html(formData.filter('#'+field).val());
             }
         });
+        // Clear the images & documents list items before looping.
+        summaryList.empty();
         // Create a list of the files to upload.
         $.each(files, function(index, file)
         {
