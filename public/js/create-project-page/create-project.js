@@ -440,6 +440,8 @@
         {
             formData.append(field.name, field.value);
         });
+        // Hide the flash error message, if showing.
+        hideErrorFlashMessage();
         // Make the submit request.
         $.ajax({
             url : $(form).attr('action'),
@@ -458,7 +460,8 @@
                 }
                 else
                 {
-                    console.log('no errors');
+                    loaderImage.fadeOut();
+                    $.publish('form-submit.success', $(form));
                 }
             },
             error : function(response)
@@ -487,6 +490,11 @@
         });
 
         displayErrorFlashMessage(data.message);
+    });
+
+    $.subscribe('form-submit.success', function(event, data)
+    {
+        alert('Project successfully saved.');
     });
 
 
@@ -720,6 +728,11 @@
     function displayErrorFlashMessage(message)
     {
         $('.error-box').html(message).fadeIn();
+    }
+
+    function hideErrorFlashMessage()
+    {
+        $('.error-box').fadeOut().html('');
     }
 
     function addFailClass(el)
