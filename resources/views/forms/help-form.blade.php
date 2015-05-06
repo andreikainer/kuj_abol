@@ -5,7 +5,7 @@
         @endif
     </div>
 
-{!! Form::open(['action' => 'ContactFormController@postContactForm', 'method' => 'post']) !!}
+{!! Form::open(['action' => array('ContactFormController@postContactForm', $address, $addressee), 'method' => 'post']) !!}
 
     <div class="form-group">
     	{!! Form::label(null, trans('contact-page.name'), ['class' => 'form-label form-inline']) !!}

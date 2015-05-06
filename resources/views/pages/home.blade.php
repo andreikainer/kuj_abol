@@ -46,7 +46,7 @@
 <!-- Current projects -->
             <div class="row">
 
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-2em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
                     <h2 class="heading" id="contribute">{{ trans('home-page.current-projects') }}</h2>
                 </div>
 
@@ -56,86 +56,29 @@
 
                 <div class="col-lg-10 col-lg-offset-1 mt-2em">
                     <div class="row">
+
+                    @foreach($projects as $project)
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
                                 <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="???">
 
                                 <div class="caption">
-                                    <h3>Project Name</h3>
-                                    <p>hakjlghlaghalkfdhglkahg</p>
+                                    <h3>{{ $project->project_name }}</h3>
+                                    <p>{{ $project->short_desc }}</p>
 
-                                    <p class="percentage text-right"></p>
+                                    <p class="percentage text-right">40%</p>
 
                                     <div class="progress">
                                         <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="2000" style="width: 5%;">
-                                            <span class="sr-only"></span>
-                                        </div>
-                                    </div>
-
-                                    <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="????">
-                                <div class="caption">
-                                    <h3>Project Name</h3>
-                                    <p>hakjlghlaghalkfdhglkahg</p>
-
-                                    <p class="percentage text-right">40%</p>
-
-                                    <div class="progress">
-                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
 
-                                    <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
+                                    <p><a href="{{ url('/projects', $project->slug) }}" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
-                                <div class="caption">
-                                    <h3>Project Name</h3>
-                                    <p>hakjlghlaghalkfdhglkahg</p>
-
-                                    <p class="percentage text-right">40%</p>
-
-                                    <div class="progress">
-                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-
-                                  <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="????">
-                                <div class="caption">
-                                    <h3>Project Name</h3>
-                                    <p>hakjlghlaghalkfdhglkahg</p>
-
-                                    <p class="percentage text-right">40%</p>
-
-                                    <div class="progress">
-                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-
-                                    <p><a href="#" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
-                                </div>
-                            </div>
-                        </div>
+                    @endforeach
 
                     </div> <!-- row ends -->
                 </div>
@@ -145,7 +88,7 @@
 <!-- Successful projects -->
             <div class="row">
 
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-2em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
                     <h2 class="heading">{{ trans('home-page.successfully-funded-projects') }}</h2>
                 </div>
 
@@ -155,13 +98,15 @@
 
                 <div class="col-lg-10 col-lg-offset-1 mt-2em">
                     <div class="row">
+
+                    @foreach($succ_projects as $project)
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
                                 <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="???">
 
                                 <div class="caption">
-                                    <h3>Project Name</h3>
-                                    <p>hakjlghlaghalkfdhglkahg</p>
+                                    <h3>{{ $project->project_name }}</h3>
+                                    <p>{{ $project->short_desc }}</p>
 
                                     <p class="percentage text-right">100%</p>
 
@@ -172,38 +117,17 @@
                                     </div>
 
                                     <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
-                                    <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
+                                    <p class="text-right mb-0"><a href="{{ url('/projects', $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
                                 </div>
                             </div>
                         </div>
-
+                    @endforeach
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
                                 <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
                                 <div class="caption">
                                     <h3>Project Name</h3>
-                                    <p>hakjlghlaghalkfdhglkahg</p>
-
-                                    <p class="percentage text-right">100%</p>
-
-                                    <div class="progress mb-0">
-                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                            <span class="sr-only">100% Complete (finished)</span>
-                                        </div>
-                                    </div>
-
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>FINISHED</p>
-                                    <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero success">
-                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
-                                <div class="caption">
-                                    <h3>Project Name</h3>
-                                    <p>hakjlghlaghalkfdhglkahg</p>
+                                    <p>kjlhkhjahadskfjhkjsdahf kjdsfhkldsjahflkadhsf adslhfjlkasjdhflkajshdfjdshf ljhkjhkjhsadlkfhpoqwhepowhef asdjhadopfbwefljwbf aksdjvbapbfpwfubwpifbwf ndvoafh[oiwhfwpoefkbflkds afjfj..</p>
 
                                     <p class="percentage text-right">100%</p>
 
@@ -228,7 +152,7 @@
 <!-- Sponsors' logos -->
             <div class="row">
 
-                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-2em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
                     <h2 class="heading">{{ trans('app.our-sponsors') }}</h2>
                 </div>
 

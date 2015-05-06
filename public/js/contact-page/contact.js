@@ -42,7 +42,8 @@
 
     function hideErrorMessage(name)
     {
-        $('.form-error[data-error*="'+name+'"]').fadeOut();
+        $('.form-error[data-error*="'+name+'"]').fadeOut().prev().toggleClass('error-red-top', false);
+        console.log('hey');
     }
 
     // to make the top-border of input field red color when there is an error
@@ -81,6 +82,11 @@
         }
         if (! FormValidation.checkLetters(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].letters);
+            redTopInput(data);
+            return false;
+        }
+        if (! FormValidation.checkMinLength(data.value, 3)) {
+            showErrorMessage(name, errorMessages[window.locale].minLength(3));
             redTopInput(data);
             return false;
         }

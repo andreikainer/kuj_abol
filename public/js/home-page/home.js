@@ -69,7 +69,6 @@
       pauseOnHover: true,
       pauseonDotsHover: true,
       swipe: true,
-      //respondTo: 'slider',
       responsive: [
                     {
                         breakpoint: 768,
