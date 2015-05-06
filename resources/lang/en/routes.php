@@ -19,5 +19,6 @@ return [
     'sponsors'             => 'sponsors',
     'blog'                 => 'blog',
     'create-project/store' => 'create-project/store',
+    'create-project/success' => 'create-project/success',
 
 ];

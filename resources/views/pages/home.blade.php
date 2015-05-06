@@ -122,7 +122,7 @@
                             </div>
                         </div>
                     @endforeach
-      
+
                     </div> <!-- row ends -->
                     <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
                 </div>

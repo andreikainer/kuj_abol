@@ -19,6 +19,11 @@ class ProjectsController extends Controller {
         return view('create-project.index');
     }
 
+    public function success()
+    {
+        return view('create-project.success');
+    }
+
     public function store(CreateProjectRequest $request)
     {
         $projectDetails = [
@@ -88,57 +93,72 @@ class ProjectsController extends Controller {
         }
 
         // Resize the images to our needs, and save them in their directories.
+        $count = 1;
         foreach($userImages as $key => $image)
         {
             if( ! is_null($image))
             {
+                $extension = explode('.', $image->getClientOriginalName());
+                $extension = $extension[count($extension)-1];
+                $filename = (strtolower(preg_replace('/[\s]+/', '_', $project->child_name).$count.'.'.$extension));
+
                 Image::make($image)->resize(1250, 700, function($constraint)
                 {
                     $constraint->upsize();
                     $constraint->aspectRatio();
                 })->limitColors(255)
-                    ->save($imageFolderPath.'/large/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
+                    ->save($imageFolderPath.'/large/'.$filename);
 
-                Image::make($image)->resize(970, 534, function($constraint)
+                Image::make($image)->resize(992, 600, function($constraint)
                 {
                     $constraint->upsize();
                     $constraint->aspectRatio();
                 })->limitColors(255)
-                    ->save($imageFolderPath.'/medium/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
+                    ->save($imageFolderPath.'/medium/'.$filename);
 
-                Image::make($image)->resize(768, 430, function($constraint)
+                Image::make($image)->resize(768, 500, function($constraint)
                 {
                     $constraint->upsize();
                     $constraint->aspectRatio();
                 })->limitColors(255)
-                    ->save($imageFolderPath.'/small/'.preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
+                    ->save($imageFolderPath.'/small/'.$filename);
+
+                $count++;
             }
         }
 
+
         // Create new Image instances.
+        $count = 1;
         foreach($userImages as $key => $image)
         {
             if( ! is_null($image))
             {
+                $extension = explode('.', $image->getClientOriginalName());
+                $extension = $extension[count($extension)-1];
+                $filename = (strtolower(preg_replace('/[\s]+/', '_', $project->child_name).$count.'.'.$extension));
+
                 if( $key != 'main_img')
                 {
                     \App\Image::create([
-                        'filename' => preg_replace('/[\s]+/', '_', $image->getClientOriginalName()),
+                        'filename' => $filename,
                         'project_id' => $project->id
                     ]);
                 }
                 else
                 {
                     \App\Image::create([
-                        'filename' => preg_replace('/[\s]+/', '_', $image->getClientOriginalName()),
+                        'filename' => $filename,
                         'project_id' => $project->id,
                         'main_img' => 1
                     ]);
                 }
+
+                $count++;
             }
         }
 
-        return json_encode('the success html');
+        return json_encode(['status' => 'success']);
     }
 
     public function show()

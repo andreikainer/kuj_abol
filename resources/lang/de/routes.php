@@ -20,4 +20,5 @@ return [
     'sponsors'             => 'sponsoren',
     'blog'                 => 'blog',
     'create-project/store' => 'create-project/store',
+    'create-project/success' => 'antrag-einreichen/erfolgreich',
 ];
