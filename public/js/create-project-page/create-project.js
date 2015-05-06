@@ -461,7 +461,7 @@
                 else
                 {
                     loaderImage.fadeOut();
-                    $.publish('form-submit.success', $(form));
+                    $.publish('form-submit.success');
                 }
             },
             error : function(response)
@@ -492,9 +492,9 @@
         displayErrorFlashMessage(data.message);
     });
 
-    $.subscribe('form-submit.success', function(event, data)
+    $.subscribe('form-submit.success', function()
     {
-        alert('Project successfully saved.');
+        window.location = 'http://kinderfoerderungen.at/create-project/success';
     });
 
 

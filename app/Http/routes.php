@@ -40,6 +40,8 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@getContactForm');
         Route::post(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@postContactForm');
 
+        Route::get(LaravelLocalization::transRoute('routes.create-project/success'), 'ProjectsController@success');
+
         Route::controllers([
 
           'auth' => 'Auth\AuthController',

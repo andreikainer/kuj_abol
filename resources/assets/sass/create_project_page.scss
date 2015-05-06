@@ -213,6 +213,10 @@
   display: none;
 }
 
+.summary-page-button {
+  margin-top: 0.5rem;
+}
+
 fieldset.summary-group {
   display: block !important;
   margin-top: 1rem;
@@ -233,4 +237,37 @@ fieldset.summary-group {
   p {
     margin-bottom: 0;
   }
+}
+
+.success-container {
+  @extend .form-element;
+
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  border-radius: 0;
+}
+
+.success-heading {
+  margin: 0 -15px 1rem -15px !important;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px darken($green, 15%);
+  color: $white;
+  background: $green;
+  box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+}
+
+.success-sub-heading {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: $bluegrey;
+}
+
+.success-page-link {
+  transition: color 0.3s ease;
 }

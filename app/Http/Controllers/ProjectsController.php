@@ -19,6 +19,11 @@ class ProjectsController extends Controller {
         return view('create-project.index');
     }
 
+    public function success()
+    {
+        return view('create-project.success');
+    }
+
     public function store(CreateProjectRequest $request)
     {
         $projectDetails = [
@@ -153,7 +158,7 @@ class ProjectsController extends Controller {
             }
         }
 
-        return json_encode('the success html');
+        return json_encode(['status' => 'success']);
     }
 
 }

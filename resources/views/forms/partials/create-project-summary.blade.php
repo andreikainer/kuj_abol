@@ -85,7 +85,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-sm-4">
+    <div class="col-md-4 col-sm-4 summary-page-button">
         <div class="image-upload-wrapper">
             <div class="image-loader"></div>
             {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button form-button-full-width']) !!}
