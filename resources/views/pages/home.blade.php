@@ -66,11 +66,11 @@
                                     <h3>{{ $project->project_name }}</h3>
                                     <p>{{ $project->short_desc }}</p>
 
-                                    <p class="percentage text-right">40%</p>
+                                    <p class="percentage text-right"></p>
 
                                     <div class="progress">
-                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="2000" style="width: 5%;">
-                                            <span class="sr-only">40% Complete (success)</span>
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="{{ $project->amount_raised }}" aria-valuemin="0" aria-valuemax="{{ $project->target_amount }}">
+                                            <span class="sr-only">In progress</span>
                                         </div>
                                     </div>
 
@@ -108,11 +108,11 @@
                                     <h3>{{ $project->project_name }}</h3>
                                     <p>{{ $project->short_desc }}</p>
 
-                                    <p class="percentage text-right">100%</p>
+                                    <p class="percentage succ text-right">100%</p>
 
                                     <div class="progress mb-0">
                                         <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="1000" aria-valuemin="0" aria-valuemax="100" style="width: 1000%">
-                                            <span class="sr-only">100% Complete (finished)</span>
+                                            <span class="sr-only">100% Completed</span>
                                         </div>
                                     </div>
 
