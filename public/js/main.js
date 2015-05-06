@@ -135,15 +135,6 @@ $(document).ready(function()
         slideModule($(this));
     });
 
-/*------------------------------------------------------------------*/
-    /*-- HELP OPTION --*/
-/*------------------------------------------------------------------*/
-// when Question Button pressed, show/hide search module
-//    $('.question').on("click", function(e)
-//    {
-//        e.stopPropagation();
-//        slideModule($(this));
-//    });
 
 
 

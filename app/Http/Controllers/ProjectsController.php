@@ -174,8 +174,23 @@ class ProjectsController extends Controller {
 
         $succ_projects = Project::where('succ_funded', 1)
                         ->paginate(3);
+                        //->toJson();
+//        $response = [
+//            'project_name' => $succ_projects->get()->toArray(),
+//            'pagination' => [
+//            'total'        => $succ_project->getTotal(),
+//            'per_page'     => $succ_project->getPerPage(),
+//            'current_page' => $succ_project->getCurrentPage(),
+//            'last_page'    => $succ_project->getLastPage(),
+//            'from'         => $succ_project->getFrom(),
+//            'to'           => $succ_project->getTo()
+//            ]
+//        ];
 
-        return view('pages.home', compact('projects', 'succ_projects'));
+       return view('pages.home', compact('projects', 'succ_projects'));
+        //return json_encode($succ_projects);
+        //$response = json_encode($succ_projects);
+        //return view('pages.home', compact('projects', 'response'));
     }
 
 }
