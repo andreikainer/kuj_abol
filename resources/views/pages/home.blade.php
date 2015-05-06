@@ -122,27 +122,7 @@
                             </div>
                         </div>
                     @endforeach
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail pad-zero success">
-                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="????">
-                                <div class="caption">
-                                    <h3>Project Name</h3>
-                                    <p>kjlhkhjahadskfjhkjsdahf kjdsfhkldsjahflkadhsf adslhfjlkasjdhflkajshdfjdshf ljhkjhkjhsadlkfhpoqwhepowhef asdjhadopfbwefljwbf aksdjvbapbfpwfubwpifbwf ndvoafh[oiwhfwpoefkbflkds afjfj..</p>
-
-                                    <p class="percentage text-right">100%</p>
-
-                                    <div class="progress mb-0">
-                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                            <span class="sr-only">100% Complete (finished)</span>
-                                        </div>
-                                    </div>
-
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>FINISHED</p>
-                                    <p class="text-right mb-0"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
-                                </div>
-                            </div>
-                        </div>
-
+      
                     </div> <!-- row ends -->
                     <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
                 </div>
