@@ -133,6 +133,11 @@ function getLocale(response)
     });
 }
 
+    var langBtnArray = Array.prototype.slice.call(document.querySelectorAll('.flag'));
+
+        langBtnArray[1].addClass('at');
+        langBtnArray[2].addClass('gb');
+
 
 /*
  * check what land flag is displaying
@@ -152,16 +157,16 @@ function getLocale(response)
         //    window.locale = 'de';
         //    //getLocale();
         //}
-        if($(this).hasClass('at'))
-        {
-            $(this).toggleClass('at', false).toggleClass('gb', true);
-            getLocale('en');
-            console.log (window.locale);
-        }else{
-            $(this).toggleClass('at', true).toggleClass('gb', false);
-            getLocale();
-            console.log (window.locale);
-        }
+        //if($(this).hasClass('at'))
+        //{
+        //    $(this).toggleClass('at', false).toggleClass('gb', true);
+        //    getLocale('en');
+        //    console.log (window.locale);
+        //}else{
+        //    $(this).toggleClass('at', true).toggleClass('gb', false);
+        //    getLocale();
+        //    console.log (window.locale);
+        //}
 
     // set the global variable 'locale' to the user's selected language
         //console.log (window.locale);

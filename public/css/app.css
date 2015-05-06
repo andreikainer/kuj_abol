@@ -5486,28 +5486,26 @@ fieldset.summary-group {
       font-size: 0.7rem; } }
 
 .contribute {
-  font-size: 2.5rem;
   margin: 0.7em 0;
-  font-weight: bold; }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .contribute {
-      font-size: 2rem; } }
+  background-color: white;
+  border: solid 3px #2ecc71 !important;
+  color: #2ecc71;
+  font-size: 1.2rem;
+  font-weight: 600; }
+  .contribute:hover {
+    background-color: white !important;
+    border-color: #25a25a !important;
+    color: #25a25a !important; }
 
 #facebook-share {
-  width: 40%;
-  margin: 0 5%; }
-  @media (min-width: 768px) and (max-width: 991px) {
-    #facebook-share {
-      width: 30%;
-      margin: 0 10%; } }
+  width: 100%; }
 
 #favorite {
-  width: 40%;
-  margin: 0 5%; }
-  @media (min-width: 768px) and (max-width: 991px) {
-    #favorite {
-      width: 30%;
-      margin: 0 10%; } }
+  width: 100%;
+  background-color: #ed5a4d !important;
+  border-color: #ed5a4d !important; }
+  #favorite:hover {
+    background-color: #ea3c2d !important; }
 
 #contribution-packs a {
   text-decoration: none; }
@@ -5867,7 +5865,7 @@ footer {
       height: 8rem !important; } }
   @media (min-width: 992px) {
     .caption p:first-of-type {
-      height: 11.4rem !important; } }
+      height: 11.1rem !important; } }
 
 /*------------------------------------------------------------------*/
 /*-- Project Tiles styles --*/

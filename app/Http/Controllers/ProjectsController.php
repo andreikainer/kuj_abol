@@ -193,4 +193,15 @@ class ProjectsController extends Controller {
         //return view('pages.home', compact('projects', 'response'));
     }
 
+
+    /*
+     * to show successfully funded projects' tiles on separate page
+     */
+    public function showMoreSuccProjects()
+    {
+        $succ_projects = Project::where('succ_funded', 1)
+                        ->paginate(12);
+
+        return view('pages.succ-projects', compact('succ_projects'));
+    }
 }
