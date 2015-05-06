@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProjectRequest;
 use App\Project;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class ProjectsController extends Controller {
@@ -16,7 +17,8 @@ class ProjectsController extends Controller {
      */
     public function createProject()
     {
-        return view('create-project.index');
+        $user = Auth::user();
+        return view('create-project.index', compact('user'));
     }
 
     public function success()
