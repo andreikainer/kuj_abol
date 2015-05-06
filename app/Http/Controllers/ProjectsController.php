@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProjectRequest;
 use App\Project;
 use Intervention\Image\Facades\Image;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProjectsController extends Controller {
 
@@ -161,16 +163,18 @@ class ProjectsController extends Controller {
         return json_encode(['status' => 'success']);
     }
 
+    /*
+     * to show project tiles on landing page
+     */
     public function show()
     {
         $projects = Project::all()
                     ->where('approved', 1)
                     ->where('succ_funded', 0);
 
-        $succ_projects = Project::all()
-                        ->where('succ_funded', 1);
+        $succ_projects = Project::where('succ_funded', 1)
+                        ->paginate(3);
 
-        //return $projects;
         return view('pages.home', compact('projects', 'succ_projects'));
     }
 
