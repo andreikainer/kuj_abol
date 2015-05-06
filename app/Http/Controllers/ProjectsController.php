@@ -163,4 +163,17 @@ class ProjectsController extends Controller {
         return json_encode(['status' => 'success']);
     }
 
+    public function show()
+    {
+        $projects = Project::all()
+                    ->where('approved', 1)
+                    ->where('succ_funded', 0);
+
+        $succ_projects = Project::all()
+                        ->where('succ_funded', 1);
+
+        //return $projects;
+        return view('pages.home', compact('projects', 'succ_projects'));
+    }
+
 }

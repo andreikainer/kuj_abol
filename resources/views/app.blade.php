@@ -94,7 +94,7 @@
                             </button>
 
                  	    <!-- logo -->
-           			    	<a href="{{ action('PagesController@index') }}" class="navbar-brand logo">
+           			    	<a href="{{ action('ProjectsController@show') }}" class="navbar-brand logo">
            			    	    <img src="{{ asset('/img/logo.svg') }}" alt="logo">
            			    	</a>
 
@@ -153,12 +153,12 @@
                    	        	<li class="dropdown">
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Tips For Success</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}">FAQ</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#tips_for_success">{{ trans('app.tips-for-success') }}</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#faq">FAQ</a></li>
                             		    <li role="presentation" class="divider"></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Our Sponsors</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}">Our Mission</a></li>
-                            			<li><a href="{{ action('PagesController@howItWorks') }}">Our Team</a></li>
+                            		    <li><a href="{{ action('PagesController@sponsors') }}">{{ trans('app.our-sponsors') }}</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#our_goal">{{ trans('app.our-mission') }}</a></li>
+                            			<li><a href="{{ action('PagesController@howItWorks') }}/#our_team">{{ trans('app.our-team') }}</a></li>
                             		</ul>
                   	        	</li>
                    	        	<li><a href="{{ action('ProjectsController@createProject') }}">{{ trans('app.create-project') }}</a></li>
@@ -235,7 +235,9 @@
                             </div>
                             <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('app.sign-up') }}</button>
                         </form>
+                        <p class="mt-2em">{{ trans('app.legal-stuff') }}</p>
                     </div>
+
                 </div>
 
 

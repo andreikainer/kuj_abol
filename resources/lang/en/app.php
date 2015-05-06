@@ -27,7 +27,7 @@ return [
     'search'                => 'Search',
     'search-for-a-project'  => 'Search for a project',
 
-    'our-mission'           => 'our mission',
+    'our-mission'           => 'our goals',
     'our-team'              => 'our team',
     'tips-for-success'      => 'tips for success',
     'our-sponsors'          => 'Our sponsors',
