@@ -9,7 +9,7 @@
                     <img src="img/main-carousel/lg/seven.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {{!! trans('lang.carousel-text-1', ['cta-link' => '#contribute']) !!}}
+                        {!! trans('lang.carousel-text-1', ['cta-link' => '#contribute']) !!}
                     </div>
                 </div>
 
@@ -17,7 +17,7 @@
                     <img src="img/main-carousel/lg/six.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {{!! trans('lang.carousel-text-2', ['cta-link' => '#']) !!}}
+                        {!! trans('lang.carousel-text-2', ['cta-link' => '#']) !!}
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@
                     <img src="img/main-carousel/lg/three.jpg" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {{!! trans('lang.carousel-text-3', ['cta-link' => '#']) !!}}
+                        {!! trans('lang.carousel-text-3', ['cta-link' => '#']) !!}
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@
                      <img src="img/main-carousel/lg/five.jpg" class="img-responsive" alt="image">
 
                      <div class="jumbotron-text">
-                         {{!! trans('lang.carousel-text-4', ['cta-link' => '#']) !!}}
+                         {!! trans('lang.carousel-text-4', ['cta-link' => '#']) !!}
                      </div>
                 </div>
             </div>
@@ -241,27 +241,27 @@
 
                         <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
                             <div class="logo-name img-responsive text-center hidden">onhghjgjhg ghjgkgglglgl glhglglhglhe</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="one">
+                            <img src="img/logos/sk-rapid-wien.png" class="img-responsive" alt="one">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">two</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="two">
+                            <img src="img/logos/chiesi.png" class="img-responsive" alt="two">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">three</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="three">
+                            <img src="img/logos/berger-schinken.png" class="img-responsive" alt="three">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">four</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="four">
+                            <img src="img/logos/mrva-gmbh.png" class="img-responsive" alt="four">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">
                             <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="img/logoplaceholder.jpg" class="img-responsive" alt="five">
+                            <img src="img/logos/praxis-am-tabor.png" class="img-responsive" alt="five">
                         </div>
 
                         <div class="col-xs-4 col-sm-4 col-md-2">

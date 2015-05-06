@@ -24,7 +24,7 @@
             <div class="row">
             <div class="col-sm-12 col-md-8 project-gallery"> <!-- project images beginn-->
                 <div class="project-gallery-item">
-                    <img class="img-responsive center-block" src="{{ asset('/img/rollstuhlrampe-fuer-hansi/medium/hansi1.jpg') }}">
+                    <img class="img-responsive center-block" src="{{ asset('img/ergotherapie-fuer-paul/medium/paul1.jpg') }}">
                 </div>
 
                 <div class="project-gallery-item">
@@ -47,7 +47,7 @@
                 <h4 id="minimum_goal" data-minimum-goal="2000"><strong>{{ trans('lang.of-minimum-goal', ['goal' => '2000.00']) }}</strong></h4>
                 <h3>{{ trans('lang.progress') }}</h3>
                 <div class="progress" style="height:3em">
-                    <div id="progress-bar" class="progress-bar prog-bar-green" role="progressbar";"><span id="stat-count"></span>
+                    <div id="progress-bar" class="progress-bar prog-bar-green" role="progressbar"><span id="stat-count"></span>
                     </div>
                 </div>
                 <h3>{{ trans('lang.project-ends-in') }}</h3>
