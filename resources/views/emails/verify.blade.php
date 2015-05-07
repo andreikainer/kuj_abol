@@ -4,7 +4,7 @@
 <p>{{ trans('register-page.line-3') }}</p>
 <p>{{ trans('register-page.line-4') }}</p>
 
-{{ URL::to(LaravelLocalization::transRoute('account/verify/').$user['confirmation_code']) }}<br/><br/>
+{{ URL::to(LaravelLocalization::transRoute('routes.account/verify/').$user['confirmation_code']) }}<br/><br/>
 
 <p>{{ trans('register-page.line-5') }}</p>
 <p>{{ trans('register-page.line-6') }}</p>
