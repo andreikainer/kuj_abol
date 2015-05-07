@@ -545,9 +545,14 @@ footer {
 
 .module-submit {
   font-family: $lato;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background-color: $bluegrey;
   border-color: $bluegrey;
+
+  @media(max-width: 1240px) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 .module-submit:hover, .module-submit:focus, .module-submit:active {
   color: $white;

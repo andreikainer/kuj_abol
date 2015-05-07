@@ -4953,13 +4953,13 @@ input[type="submit"], button[type="submit"] {
 /*-- main small CTA's buttons --*/
 .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main-big:link, .button-main:visited, .button-main-big:visited {
   background-color: #3fa3db;
-  color: white;
+  color: white !important;
   border-color: #3fa3db !important;
   font-family: 'Lato', 'Open Sans', sans-serif;
   letter-spacing: .06em; }
   .button-main:hover, .button-main-big:hover, .button-main-big:active, .button-main-big:link:active, .button-main-big:visited:active, .button-main:active, .button-main-big:active, .button-main:link:hover, .button-main-big:link:hover, .button-main-big:link:active, .button-main:link:active, .button-main-big:link:active, .button-main:visited:hover, .button-main-big:visited:hover, .button-main-big:visited:active, .button-main:visited:active, .button-main-big:visited:active {
     background-color: #207bad;
-    color: white; }
+    color: white !important; }
 
 /*-- main big CTA's buttons --*/
 .button-main-big, .button-main-big:link, .button-main-big:visited {
@@ -5954,9 +5954,13 @@ footer {
 /*------------------------------------------------------------------*/
 .module-submit {
   font-family: 'Lato', 'Open Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background-color: #6f798b;
   border-color: #6f798b; }
+  @media (max-width: 1240px) {
+    .module-submit {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important; } }
 
 .module-submit:hover, .module-submit:focus, .module-submit:active {
   color: white;

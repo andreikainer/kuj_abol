@@ -46,7 +46,7 @@
   @extend .no-outline;
 
   background-color: $blue;
-  color: $white;
+  color: $white !important;
   border-color: $blue !important;
 
   font-family: $lato;
@@ -54,7 +54,7 @@
 
   &:hover, &:active {
     background-color: darken($blue, 15%);
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -97,7 +97,6 @@
 /*-- LOG IN and REGISTER buttons --*/
 .button-user {
   @extend .no-outline;
-//  width: 6.4em; GOOD FOR ENG
   width: 7.2em;
 }
 
