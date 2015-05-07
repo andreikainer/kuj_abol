@@ -94,7 +94,7 @@
                             </button>
 
                  	    <!-- logo -->
-           			    	<a href="{{ action('ProjectsController@show') }}" class="navbar-brand logo">
+           			    	<a href="{{ action('ProjectsController@index') }}" class="navbar-brand logo">
            			    	    <img src="{{ asset('/img/logo.svg') }}" alt="logo">
            			    	</a>
 

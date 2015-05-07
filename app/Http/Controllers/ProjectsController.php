@@ -12,6 +12,73 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProjectsController extends Controller {
 
+    /*
+     * to show project tiles on landing page
+     */
+    public function index()
+    {
+        $projects = Project::all()
+            ->where('approved', 1)
+            ->where('succ_funded', 0);
+
+        $succ_projects = Project::where('succ_funded', 1)
+            ->paginate(3);
+        //->toJson();
+//        $response = [
+//            'project_name' => $succ_projects->get()->toArray(),
+//            'pagination' => [
+//            'total'        => $succ_project->getTotal(),
+//            'per_page'     => $succ_project->getPerPage(),
+//            'current_page' => $succ_project->getCurrentPage(),
+//            'last_page'    => $succ_project->getLastPage(),
+//            'from'         => $succ_project->getFrom(),
+//            'to'           => $succ_project->getTo()
+//            ]
+//        ];
+
+        return view('pages.home', compact('projects', 'succ_projects'));
+        //return json_encode($succ_projects);
+        //$response = json_encode($succ_projects);
+        //return view('pages.home', compact('projects', 'response'));
+    }
+
+
+    /*
+     * to show successfully funded projects' tiles on separate page
+     */
+    public function showMoreSuccProjects()
+    {
+        $succ_projects = Project::where('succ_funded', 1)
+            ->paginate(12);
+
+        return view('pages.succ-projects', compact('succ_projects'));
+    }
+
+    /**
+     * Show the Project view page.
+     *
+     * @return project_tbl data, date, amount
+     */
+    public function show($slug)
+    {
+        // fetch data according to slug
+        $project = Project::where('slug', $slug)->first();
+
+        // convert DB date into european date format
+        $finish_date = date("d-m-Y", strtotime($project->completed_on));
+
+        // convert DB amounts into european currency format
+        $amount_raised = number_format($project->amount_raised, 2, ',', '.');
+        $target_amount = number_format($project->target_amount, 2, ',', '.');
+
+        $galleryImages = \App\Image::where('project_id', $project->id)->get();
+
+        //return $galleryImages;
+        return view('pages.projectpage', compact('project', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages'));
+    }
+
+
+
     /**
      * Show the create-project page.
      *
@@ -165,45 +232,4 @@ class ProjectsController extends Controller {
         return json_encode(['status' => 'success']);
     }
 
-    /*
-     * to show project tiles on landing page
-     */
-    public function show()
-    {
-        $projects = Project::all()
-                    ->where('approved', 1)
-                    ->where('succ_funded', 0);
-
-        $succ_projects = Project::where('succ_funded', 1)
-                        ->paginate(3);
-                        //->toJson();
-//        $response = [
-//            'project_name' => $succ_projects->get()->toArray(),
-//            'pagination' => [
-//            'total'        => $succ_project->getTotal(),
-//            'per_page'     => $succ_project->getPerPage(),
-//            'current_page' => $succ_project->getCurrentPage(),
-//            'last_page'    => $succ_project->getLastPage(),
-//            'from'         => $succ_project->getFrom(),
-//            'to'           => $succ_project->getTo()
-//            ]
-//        ];
-
-       return view('pages.home', compact('projects', 'succ_projects'));
-        //return json_encode($succ_projects);
-        //$response = json_encode($succ_projects);
-        //return view('pages.home', compact('projects', 'response'));
-    }
-
-
-    /*
-     * to show successfully funded projects' tiles on separate page
-     */
-    public function showMoreSuccProjects()
-    {
-        $succ_projects = Project::where('succ_funded', 1)
-                        ->paginate(12);
-
-        return view('pages.succ-projects', compact('succ_projects'));
-    }
 }

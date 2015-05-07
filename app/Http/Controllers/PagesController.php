@@ -26,14 +26,4 @@ class PagesController extends Controller {
         return view('pages.sponsors');
     }
 
-
-    public function viewProjects()
-    {
-//        Mail::queue('emails.test', [], function($message)
-//        {
-//            $message->to('andreikainer@gmail.com', 'Andrei Kainer')->subject('This one was queued!');
-//        });
-        return view('projectpage');
-    }
-
 }

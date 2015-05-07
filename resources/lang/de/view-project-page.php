@@ -4,7 +4,7 @@ return [
 
   /*
   |--------------------------------------------------------------------------
-  | PROJECT VIEW PAGE - German
+  | PROJECT VIEW PAGE - GERMAN
   |--------------------------------------------------------------------------
   */
 
@@ -17,7 +17,7 @@ return [
   'completed'              => 'Abgeschloßen',
   'support-options'       =>  'Förderungsbausteine',
 
-  'business-building-block' => '<h3>Förderungs-Baustein "Business"<br> &euro; 150,00 + Ust pro Baustein</h3>
+  'business-building-block' => '<h3>"Business" Förderungs-Baustein<br> &euro; 150,00 + Ust pro Baustein</h3>
                                <h4>Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
                                   <ul>
                                       <li class="list-item">Firmenlogo Darstellung auf unserer Webseite für drei Monate</li>
@@ -34,8 +34,8 @@ return [
                                       <li class="list-item">Ihr Beitrag wir ausschließlich für dieses Förderungsprojekt verwendet</li>
                                   </ul>',
 
-  'small-block'               => '<h3>Kleiner Baustein  | &euro; :euro</h3>',
-  'medium-block'              => '<h3>Mittlerer Baustein  | &euro; :euro</h3>',
-  'large-block'               => '<h3>Großer Baustein  | &euro; :euro oder mehr</h3>',
+  'small-block'               => '<h3>Kleiner Förderungs-Baustein  | &euro; :euro</h3>',
+  'medium-block'              => '<h3>Mittlerer Förderungs-Baustein  | &euro; :euro</h3>',
+  'large-block'               => '<h3>Großer Förderungs-Baustein  | &euro; :euro oder mehr</h3>',
 
 ];
