@@ -28,6 +28,7 @@ return [
     'successful-projects'   => 'successful-projects',
     'current-projects'      => 'current-projects',
     'account/verify/'       => 'account/verify/',
+    'account/register'      => 'account/register',
 
 
 ];
