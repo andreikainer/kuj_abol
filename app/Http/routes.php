@@ -47,11 +47,17 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/success'), 'ProjectsController@success');
 
-        Route::controllers([
+//        Route::controllers([
+//
+//            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
+//            LaravelLocalization::transRoute('routes.password')  => 'Auth\PasswordController',
+//        ]);
 
-            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
-            LaravelLocalization::transRoute('routes.password')  => 'Auth\PasswordController',
-        ]);
+        Route::get(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@getRegister');
+
+        Route::post(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@postRegister');
+
+        Route::get(LaravelLocalization::transRoute('routes.account/verify/').'{conf_code}', 'Auth\AuthController@getVerify');
 
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
