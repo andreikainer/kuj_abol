@@ -29,6 +29,8 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
 
+        Route::get(LaravelLocalization::transRoute('routes.successful-projects'), 'ProjectsController@showMoreSuccProjects');
+
         Route::get(LaravelLocalization::transRoute('routes.create-project'), 'ProjectsController@createProject');
 
         Route::post(LaravelLocalization::transRoute('routes.create-project/store'), 'ProjectsController@store');
