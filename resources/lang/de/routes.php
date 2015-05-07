@@ -21,7 +21,10 @@ return [
     'blog'                 => 'blog',
     'create-project/store' => 'create-project/store',
     'create-project/success' => 'antrag-einreichen/erfolgreich',
+
     'account'               => 'benutzer',
     'password'              => 'passwort',
     'account/verify/'       => 'benutzer/prüfen/',
+    'successful-projects'  => 'erfolgreich-geförderte-projektets'
+
 ];

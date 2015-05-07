@@ -9,16 +9,23 @@ use Illuminate\Support\Facades\Mail;
 class PagesController extends Controller {
 
 /*-- Home Page --*/
-    public function index()
-    {
-        return view('pages.home');
-    }
+//    public function index()
+//    {
+//        return view('pages.home');
+//    }
 
 /*-- How It Works Page --*/
     public function howItWorks()
     {
         return view('pages.how-it-works');
     }
+
+/*-- Sponsors Page --*/
+    public function sponsors()
+    {
+        return view('pages.sponsors');
+    }
+
 
     public function viewProjects()
     {

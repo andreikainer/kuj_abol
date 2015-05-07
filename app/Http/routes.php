@@ -23,11 +23,13 @@ Route::group(
     function()
     {
 
-        Route::get('/', 'PagesController@index');
+        Route::get('/', 'ProjectsController@show');
 
 //        Route::get(LaravelLocalization::transRoute('routes./'), 'PagesController@index');
 
         Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
+
+        Route::get(LaravelLocalization::transRoute('routes.successful-projects'), 'ProjectsController@showMoreSuccProjects');
 
         Route::get(LaravelLocalization::transRoute('routes.create-project'), 'ProjectsController@createProject');
 
@@ -37,8 +39,10 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.how-it-works'), 'PagesController@howItWorks');
 
-        Route::get(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@getContactForm');
-        Route::post(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@postContactForm');
+        Route::get(LaravelLocalization::transRoute('routes.sponsors'), 'PagesController@sponsors');
+
+        Route::get(LaravelLocalization::transRoute('routes.contact/{address?}'), 'ContactFormController@getContactForm');
+        Route::post(LaravelLocalization::transRoute('routes.contact/{address?}'), 'ContactFormController@postContactForm');
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/success'), 'ProjectsController@success');
 

@@ -22,9 +22,9 @@
         </div>
 
             <div class="row">
-            <div class="col-sm-12 col-md-7 col-md-offset-0 project-gallery"> <!-- project images beginn-->
+            <div class="col-sm-12 col-md-8 col-md-offset-0 project-gallery"> <!-- project images beginn-->
                 <div class="project-gallery-item">
-                    <img class="img-responsive center-block" src="{{ asset('/img/rollstuhlrampe-fuer-hansi/medium/hansi1.jpg') }}">
+                    <img class="img-responsive center-block" src="{{ asset('img/ergotherapie-fuer-paul/medium/paul1.jpg') }}">
                 </div>
 
                 <div class="project-gallery-item">
@@ -42,30 +42,34 @@
             </div> <!-- project images end-->
 
             <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder">  <!-- statistics beginn-->
-                <h3>{{ trans('lang.total-funds-raised') }}</h3>
+                <h3>{{ trans('view-project-page.total-funds-raised') }}</h3>
                 <h2 id="amount_raised" data-amount-raised="2359.53"><strong>&euro; 2359,53</strong></h2>
-                <h4 id="minimum_goal" data-minimum-goal="2000"><strong>{{ trans('lang.of-minimum-goal', ['goal' => '2000.00']) }}</strong></h4>
-                <h3>{{ trans('lang.progress') }}</h3>
+                <h4 id="minimum_goal" data-minimum-goal="2000"><strong>{{ trans('view-project-page.of-minimum-goal', ['goal' => '2000.00']) }}</strong></h4>
+                <h3>{{ trans('view-project-page.progress') }}</h3>
                 <div class="progress" style="height:3em">
-                    <div id="progress-bar" class="progress-bar prog-bar-green" role="progressbar";"><span id="stat-count"></span>
+                    <div id="progress-bar" class="progress-bar prog-bar-green" role="progressbar"><span id="stat-count"></span>
                     </div>
                 </div>
-                <h3>{{ trans('lang.project-ends-in') }}</h3>
-                <div id="countdown" data-date="27-05-2015" data-time="19:36" data-timezone="2" data-final="{{ trans('lang.completed') }}">
+                <h3>{{ trans('view-project-page.project-ends-in') }}</h3>
+                <div id="countdown" data-date="27-05-2015" data-time="19:36" data-timezone="2" data-final="{{ trans('view-project-page.completed') }}">
                     <div class="countdown-value"><span id="countdown-days">0</span></div>:
                     <div class="countdown-value"><span id="countdown-hours">0</span></div>:
                     <div class="countdown-value"><span id="countdown-minutes">0</span></div>:
                     <div class="countdown-value"><span id="countdown-seconds">0</span></div>
-                    <div id="time">{!! trans('lang.time-to-goal') !!}</div>
+                    <div id="time">{!! trans('view-project-page.time-to-goal') !!}</div>
                 </div>
-                <div class="btn button-main contribute">{{ trans('lang.fund-this-project') }}</div>
-                <div class="heading"></div>
-                <div id="facebook-share" class="btn pull-left">
-                    {{--<div class="fb-share-button" data-href="https://kinderfoerderungen.at" data-layout="button_count" style="width:100%;"></div>--}}
-                    <a href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at"><img src="{{ asset('/img/facebook_teilen.svg') }}" alt="facebook-share" width="100%"></a>
+                <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
+                {{--<div class="heading"></div>--}}
+                <div class="btn">
+                   <a id="facebook-share" href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at" class="btn btn-primary button-main" role="button">
+                       <i class="fa fa-facebook"></i> Share on Facebook
+                   </a>
                 </div>
-                <div id="favorite" class="btn pull-left">
-                    <img src="{{ asset('/img/merken.svg') }}" alt="favorite-button" width="100%">
+                <div class="btn">
+                    {{--<img src="{{ asset('/img/merken.svg') }}" alt="favorite-button" width="100%">--}}
+                    <a id="favorite" href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at" class="btn btn-primary button-main" role="button">
+                        <i class="fa fa-star"></i> Add to Favourites
+                    </a>
                 </div>
             </div> <!-- statistics end-->
             </div>
@@ -99,21 +103,21 @@
             </div> <!-- project description end-->
 
             <div id="contribution-packs" class="col-sm-12 col-md-4 text-center clearfix"> <!-- contribution packages beginn-->
-                <h2 class="heading">{{ trans('lang.support-options') }}</h2>
+                <h2 class="heading">{{ trans('view-project-page.support-options') }}</h2>
                 <a href="#" role="button"><div class="pack1 padding-none pull-left"> <!-- contribution package 1-->
-                        {!! trans('lang.business-building-block') !!}
+                        {!! trans('view-project-page.business-building-block') !!}
                 </div></a>
                 <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 2-->
-                        {!! trans('lang.small-block', ['euro' => '15,00']) !!}
-                            {!! trans('lang.individual-building-block', ['euro' => '15,00']) !!}
+                        {!! trans('view-project-page.small-block', ['euro' => '15,00']) !!}
+                            {!! trans('view-project-page.individual-building-block', ['euro' => '15,00']) !!}
                 </div></a>
                 <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 3-->
-                        {!! trans('lang.medium-block', ['euro' => '25,00']) !!}
-                            {!! trans('lang.individual-building-block', ['euro' => '25,00']) !!}
+                        {!! trans('view-project-page.medium-block', ['euro' => '25,00']) !!}
+                            {!! trans('view-project-page.individual-building-block', ['euro' => '25,00']) !!}
                 </div></a>
                     <a href="#" role="button"><div class="packs2-4 padding-none pull-left"> <!-- contribution package 4-->
-                        {!! trans('lang.large-block', ['euro' => '50,00']) !!}
-                           {!! trans('lang.individual-building-block', ['euro' => '50,00']) !!}
+                        {!! trans('view-project-page.large-block', ['euro' => '50,00']) !!}
+                           {!! trans('view-project-page.individual-building-block', ['euro' => '50,00']) !!}
                 </div></a>
             </div> <!-- contribution packages end-->
             </div>
