@@ -123,7 +123,8 @@ return [
 
         'email'         => [
             'required'  => 'This field is required.',
-            'regex'     => 'Must be of a correct email format. And not begin with a space.'
+            'regex'     => 'Must be of a correct email format. And not begin with a space.',
+            'unique'    => 'This email address already has an account registered.'
         ],
 
         'address'       => [
@@ -176,7 +177,25 @@ return [
 
         'doc_6'    => [
             'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
-        ]
+        ],
+
+        'user_name' => [
+            'required'  => 'This field is required.',
+            'max'       => 'This field must not exceed :max characters.',
+            'unique'    => 'This username has already been taken.'
+        ],
+
+        'password'      => [
+            'required'  => 'This field is required.'
+        ],
+
+        'password_confirmation' => [
+            'required'  => 'This field is required.'
+        ],
+
+        'business_name' => [
+            'required_if'   => 'This field is required.'
+        ],
 	],
 
 	/*

@@ -4890,7 +4890,7 @@ label {
   margin-bottom: 6rem; }
 
 .mt-2em {
-  margin-top: 1.6rem; }
+  margin-top: 1.6rem !important; }
 
 .mb-1em {
   margin-bottom: 1em; }
@@ -5546,6 +5546,34 @@ fieldset.summary-group {
   margin-left: 1.5em; }
 
 /*------------------------------------------------------------------*/
+/*-- REGISTER PAGE SPECIFIC --*/
+/*------------------------------------------------------------------*/
+.register-container {
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
+
+.checkbox-wrapper {
+  padding: 1rem 0;
+  background: white;
+  border: 1px solid #d2d2d2;
+  border-radius: 0.35rem; }
+  .checkbox-wrapper label {
+    padding: 0 0.5rem;
+    margin-bottom: 0;
+    color: #3fa3db;
+    font-size: 1.1em;
+    font-weight: 600; }
+  .checkbox-wrapper input[type="checkbox"] {
+    width: 1.1em;
+    height: 1.1em; }
+
+.business-name-wrapper {
+  display: none; }
+
+.display-block {
+  display: block; }
+
+/*------------------------------------------------------------------*/
 /*-- Logo styles --*/
 /*------------------------------------------------------------------*/
 .logo {
@@ -6016,6 +6044,17 @@ footer {
 @media (min-width: 992px) {
   .xs-mt {
     margin-bottom: 2em; } }
+
+/*------------------------------------------------------------------*/
+/*-- Flash Message styles --*/
+/*------------------------------------------------------------------*/
+.flash-message {
+  padding: 1rem;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #3fa3db;
+  background: #cfe8f6;
+  border: 1px dashed #3fa3db; }
 
 
 /*# sourceMappingURL=app.css.map */

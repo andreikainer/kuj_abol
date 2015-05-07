@@ -53,6 +53,7 @@ Route::group(
             LaravelLocalization::transRoute('routes.password')  => 'Auth\PasswordController',
         ]);
 
+
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
         //Route::get(LaravelLocalization::transRoute('routes.<key>'), '<Controller>@<Method>');

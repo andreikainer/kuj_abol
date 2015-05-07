@@ -4,6 +4,7 @@
 @import 'elements';
 @import 'create_project_page';
 @import 'project_detail_page';
+@import 'register_page';
 
 /*------------------------------------------------------------------*/
   /*-- Logo styles --*/
@@ -685,4 +686,16 @@ footer {
   @media(min-width: 992px) {
     margin-bottom: 2em;
   }
+}
+
+/*------------------------------------------------------------------*/
+/*-- Flash Message styles --*/
+/*------------------------------------------------------------------*/
+.flash-message {
+  padding: 1rem;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: $blue;
+  background: tint($blue, 75%);
+  border: 1px dashed $blue;
 }
