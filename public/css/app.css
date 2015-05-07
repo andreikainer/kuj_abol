@@ -4917,7 +4917,7 @@ input[type="submit"], button[type="submit"] {
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
 /*-- to remove blue frame from links, buttons and input fields --*/
-.no-outline, .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main:visited, .button-main:hover, .button-main-big:hover, .button-main-big:active, .button-main:active, .button-sec, .button-sec:link, .button-sec:visited, .button-sec:hover, .button-sec:active, .button-user, .button-circle, .button-circle:link, .button-circle:visited, .button-link, .button-transparent, .button-transparent:link, .button-transparent:visited, .module input:not([type=submit]), .module textarea {
+.no-outline, .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main:visited, .button-sec, .button-sec:link, .button-sec:visited, .button-user, .button-circle, .button-circle:link, .button-circle:visited, .button-link, .button-transparent, .button-transparent:link, .button-transparent:visited, .module input:not([type=submit]), .module textarea {
   outline: none !important; }
 
 /*-- to give an elem white bg color --*/
@@ -4954,10 +4954,9 @@ input[type="submit"], button[type="submit"] {
   border-color: #3fa3db !important;
   font-family: 'Lato', 'Open Sans', sans-serif;
   letter-spacing: .06em; }
-
-.button-main:hover, .button-main-big:hover, .button-main-big:active, .button-main:active, .button-main-big:active {
-  background-color: #207bad;
-  color: white; }
+  .button-main:hover, .button-main-big:hover, .button-main-big:active, .button-main-big:link:active, .button-main-big:visited:active, .button-main:active, .button-main-big:active, .button-main:link:hover, .button-main-big:link:hover, .button-main-big:link:active, .button-main:link:active, .button-main-big:link:active, .button-main:visited:hover, .button-main-big:visited:hover, .button-main-big:visited:active, .button-main:visited:active, .button-main-big:visited:active {
+    background-color: #207bad;
+    color: white; }
 
 /*-- main big CTA's buttons --*/
 .button-main-big, .button-main-big:link, .button-main-big:visited {
@@ -4974,11 +4973,10 @@ input[type="submit"], button[type="submit"] {
   color: #4b4b4b;
   border-color: #d2d2d2;
   font-weight: 300; }
-
-.button-sec:hover, .button-sec:active {
-  color: white;
-  background-color: #b8b8b8;
-  border-color: #b8b8b8; }
+  .button-sec:hover, .button-sec:active, .button-sec:link:hover, .button-sec:link:active, .button-sec:visited:hover, .button-sec:visited:active {
+    color: white;
+    background-color: #b8b8b8;
+    border-color: #b8b8b8; }
 
 /*-- LOG IN and REGISTER buttons --*/
 .button-user {
@@ -5063,10 +5061,9 @@ input[type="submit"], button[type="submit"] {
   padding-right: 2rem;
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   color: white; }
-
-.button-transparent:hover, .button-transparent:focus, .button-transparent:active {
-  color: #e6e6e6;
-  text-decoration: none; }
+  .button-transparent:hover, .button-transparent:active, .button-transparent:link:hover, .button-transparent:link:active, .button-transparent:visited:hover, .button-transparent:visited:active {
+    color: #e6e6e6;
+    text-decoration: none; }
 
 /*------------------------------------------------------------------*/
 /*-- FORMS --*/
@@ -6005,7 +6002,7 @@ footer {
     border-top-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important; }
-    #how-it-works .sidemenu-item:hover {
+    #how-it-works .sidemenu-item:hover, #how-it-works .sidemenu-item:active {
       box-shadow: inset 0.5rem 0 0 0 #3fa3db !important; }
 
 @media (max-width: 991px) {

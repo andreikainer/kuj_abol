@@ -25,6 +25,7 @@ return [
     'account'               => 'benutzer',
     'password'              => 'passwort',
 
-    'successful-projects'  => 'erfolgreich-geförderte-projektets'
+    'successful-projects'  => 'erfolgreich-geförderte-projektets',
+    'current-projects'      => 'current-projects'
 
 ];

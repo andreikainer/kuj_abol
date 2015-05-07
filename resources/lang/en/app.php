@@ -27,10 +27,10 @@ return [
     'search'                => 'Search',
     'search-for-a-project'  => 'Search for a project',
 
-    'our-mission'           => 'our goals',
-    'our-team'              => 'our team',
-    'tips-for-success'      => 'tips for success',
-    'our-sponsors'          => 'Our sponsors',
+    'our-mission'           => 'Our Goals',
+    'our-team'              => 'Our Team',
+    'tips-for-success'      => 'Tips For Success',
+    'our-sponsors'          => 'Our Sponsors',
 
 
 /*
