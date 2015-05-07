@@ -2,6 +2,8 @@
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Session;
+use KuJ\CustomExceptions\InvalidConfirmationCodeException;
 
 class Handler extends ExceptionHandler {
 
@@ -36,6 +38,12 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
+        if ($e instanceof InvalidConfirmationCodeException)
+        {
+            Session::flash('flash_message', $e->getMessage());
+            return redirect('/');
+        }
+
 		return parent::render($request, $e);
 	}
 

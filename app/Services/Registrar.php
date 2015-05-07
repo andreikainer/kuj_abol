@@ -15,9 +15,13 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-			'name' => 'required|max:255',
-			'email' => 'required|email|max:255|unique:users',
-			'password' => 'required|confirmed|min:6',
+			'user_name' => 'required|max:255|unique:users_tbl',
+			'email'     => 'required|email|max:255|unique:users_tbl',
+			'password'  => 'required|confirmed|min:6',
+            'password_confirmation' => 'required',
+            'first_name' => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
+            'last_name'  => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
+            'business_name' => 'required_if:business_yes,1|max:255',
 		]);
 	}
 
@@ -29,10 +33,15 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+        $confirmation_code = str_random(30);
 		return User::create([
-			'name' => $data['name'],
+			'user_name' => $data['user_name'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
+            'first_name' => $data['first_name'],
+            'last_name'  => $data['last_name'],
+            'business_name' => ($data['business_name']) ? $data['business_name'] : NULL,
+            'confirmation_code' => $confirmation_code,
 		]);
 	}
 
