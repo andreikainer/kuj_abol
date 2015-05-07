@@ -66,10 +66,10 @@
 
                 <div class="row form-element text-center">
                     <div class="col-md-4 xs-mt">
-                       <h4>Andrei Kainer</h4>
+                       <h4>Bernhard Ehn</h4>
                        <p class="team-role">{!! trans('how-it-works-page.team-1') !!}</p>
                        <p class="team"><i class="fa fa-phone"></i><a href="tel:+436801412012"> +43 680 / 14 12 012</a></p>
-                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', ['address' => 'o.smirnova1986@gmail.com', 'addressee' => 'Andrei Kainer']) }}"> andrei@kinderfoerderungen.at</a></p>
+                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', ['address' => 'o.smirnova1986@gmail.com', 'addressee' => 'Bernhard Ehn']) }}"> bernhard@kinderfoerderungen.at</a></p>
                     </div>
                     <div class="col-md-4 xs-mt">
                        <h4>Wilhelmine Bauer</h4>

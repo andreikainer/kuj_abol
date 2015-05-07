@@ -23,7 +23,7 @@ Route::group(
     function()
     {
 
-        Route::get('/', 'ProjectsController@show');
+        Route::get('/', 'ProjectsController@index');
 
 //        Route::get(LaravelLocalization::transRoute('routes./'), 'PagesController@index');
 

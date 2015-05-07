@@ -63,7 +63,7 @@
       slidesToShow: 5,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 7000,
+      autoplaySpeed: 5000,
       infinite: true,
       dots: false,
       pauseOnHover: true,
@@ -73,8 +73,7 @@
                     {
                         breakpoint: 768,
                         settings: {
-                            slidesToShow: 1,
-                            variableWidth: false
+                            slidesToShow: 1
                         }
                     },
                     {
@@ -91,19 +90,19 @@
   var imgWidth    = $('.sponsors_carousel div img').css('width');
   var imgHeight   = $('.sponsors_carousel div img').css('height');
 
-  $('.sponsors_carousel div div').css('width', imgWidth);
-  $('.sponsors_carousel div div').css('height', imgHeight);
+  $('.logo-name').css('width', imgWidth);
+  $('.logo-name').css('height', imgHeight);
 
 
 /*-- To show sponsor's name on thumb hover --*/
-  $('.sponsors_carousel div img').on({
+  $('.form-element').parent().on({
       mouseenter: function()
       {
-          $(this).prev().toggleClass('hidden', false);
+          $(this).find('.logo-name').toggleClass('hidden', false);
       },
       mouseleave: function()
       {
-          $(this).prev().toggleClass('hidden', true);
+          $(this).find('.logo-name').toggleClass('hidden', true);
       }
   });
 

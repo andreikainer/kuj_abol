@@ -4913,6 +4913,9 @@ input[type="submit"], button[type="submit"] {
 .mt-0 {
   margin-top: 0 !important; }
 
+.m0auto {
+  margin: 0 auto; }
+
 /*------------------------------------------------------------------*/
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
@@ -5848,7 +5851,7 @@ footer {
 .caption h3 {
   font-size: 1.8rem;
   height: auto; }
-  @media (min-width: 786px) and (max-width: 991px) {
+  @media (min-width: 768px) and (max-width: 991px) {
     .caption h3 {
       height: 4.5rem !important; } }
   @media (min-width: 992px) {
@@ -5857,7 +5860,7 @@ footer {
 .caption p:first-of-type {
   font-size: 1.1rem;
   height: auto; }
-  @media (min-width: 786px) and (max-width: 991px) {
+  @media (min-width: 768px) and (max-width: 991px) {
     .caption p:first-of-type {
       height: 8rem !important; } }
   @media (min-width: 992px) {
@@ -5895,22 +5898,24 @@ footer {
 /*------------------------------------------------------------------*/
 /*-- Sponsors Carousel styles --*/
 /*------------------------------------------------------------------*/
-.sponsors_carousel {
-  /*-- to show the sponsor's name --*/ }
-  .sponsors_carousel .slick-prev, .sponsors_carousel .slick-next, .sponsors_carousel .slick-prev:before, .sponsors_carousel .slick-next:before {
-    display: block !important;
-    color: #6f798b !important; }
-  .sponsors_carousel div img {
-    min-width: 150px;
-    height: auto; }
-  .sponsors_carousel .logo-name {
-    display: block;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    padding: .5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    color: white; }
+.sponsors_carousel .slick-prev, .sponsors_carousel .slick-next, .sponsors_carousel .slick-prev:before, .sponsors_carousel .slick-next:before, #sponsors-page .slick-prev, #sponsors-page .slick-next, #sponsors-page .slick-prev:before, #sponsors-page .slick-next:before {
+  display: block !important;
+  color: #6f798b !important; }
+.sponsors_carousel div img, #sponsors-page div img {
+  min-width: 150px;
+  height: auto; }
+
+/*-- to show the sponsor's name --*/
+.logo-name {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  padding: .5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white; }
+  .logo-name .form-element, .logo-name .success-container {
+    cursor: pointer; }
 
 /*------------------------------------------------------------------*/
 /*-- Modules styles --*/
@@ -6002,7 +6007,7 @@ footer {
     border-top-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important; }
-    #how-it-works .sidemenu-item:hover, #how-it-works .sidemenu-item:active {
+    #how-it-works .sidemenu-item:hover, #how-it-works .sidemenu-item:active, #how-it-works .sidemenu-item:focus {
       box-shadow: inset 0.5rem 0 0 0 #3fa3db !important; }
 
 @media (max-width: 991px) {

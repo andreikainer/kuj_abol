@@ -24,7 +24,7 @@ return [
     'account'               => 'account',
     'password'              => 'password',
 
-    'successful-projects'   => 'successful-projects'
-    'current-projects'      => 'current-projects'
+    'successful-projects'   => 'successful-projects',
+    'current-projects'      => 'current-projects',
 
 ];

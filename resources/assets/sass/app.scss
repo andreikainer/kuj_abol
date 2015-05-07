@@ -433,7 +433,7 @@ footer {
   h3 {
     font-size: 1.8rem;
     height: auto;
-    @media(min-width: 786px) and (max-width: 991px) {
+    @media(min-width: 768px) and (max-width: 991px) {
       height: 4.5rem !important;
 
     }
@@ -444,7 +444,7 @@ footer {
   p:first-of-type {
     font-size: 1.1rem;
     height: auto;
-    @media(min-width: 786px) and (max-width: 991px) {
+    @media(min-width: 768px) and (max-width: 991px) {
       height: 8rem !important;
     }
     @media(min-width: 992px) {
@@ -498,7 +498,7 @@ footer {
 /*------------------------------------------------------------------*/
   /*-- Sponsors Carousel styles --*/
 /*------------------------------------------------------------------*/
-.sponsors_carousel {
+.sponsors_carousel, #sponsors-page {
   .slick-prev, .slick-next, .slick-prev:before, .slick-next:before {
     display: block !important;
     color: $bluegrey !important;
@@ -508,21 +508,24 @@ footer {
     min-width: 150px;
     height: auto;
   }
-
-/*-- to show the sponsor's name --*/
-  .logo-name {
-    display: block;
-    background-color: rgba(0, 0, 0, .7);
-    position: absolute;
-
-    padding: .5rem;
-
-    font-size: 1rem;
-    font-weight: 700;
-    color: $white;
-  }
 }
 
+/*-- to show the sponsor's name --*/
+.logo-name {
+  display: block;
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+
+  padding: .5rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: $white;
+
+  .form-element {
+    cursor: pointer;
+  }
+}
 
 
 

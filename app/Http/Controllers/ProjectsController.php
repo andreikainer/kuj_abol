@@ -9,8 +9,27 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use DB;
 
 class ProjectsController extends Controller {
+
+    /*
+      * to show project tiles on landing page
+      * to show sponsors' logos carousel
+      */
+    public function index()
+    {
+        $projects = Project::all()
+            ->where('approved', 1)
+            ->where('succ_funded', 0);
+
+        $succ_projects = Project::where('succ_funded', 1)
+            ->paginate(3);
+
+        $logos = DB::table('sponsors_tbl')->get();
+
+        return view('pages.home', compact('projects', 'succ_projects', 'logos'));
+    }
 
     /**
      * Show the create-project page.
@@ -163,47 +182,6 @@ class ProjectsController extends Controller {
         }
 
         return json_encode(['status' => 'success']);
-    }
-
-    /*
-     * to show project tiles on landing page
-     */
-    public function show()
-    {
-        $projects = Project::all()
-                    ->where('approved', 1)
-                    ->where('succ_funded', 0);
-
-        $succ_projects = Project::where('succ_funded', 1)
-                        ->paginate(3);
-                        //->toJson();
-//        $response = [
-//            'project_name' => $succ_projects->get()->toArray(),
-//            'pagination' => [
-//            'total'        => $succ_project->getTotal(),
-//            'per_page'     => $succ_project->getPerPage(),
-//            'current_page' => $succ_project->getCurrentPage(),
-//            'last_page'    => $succ_project->getLastPage(),
-//            'from'         => $succ_project->getFrom(),
-//            'to'           => $succ_project->getTo()
-//            ]
-//        ];
-
-        $logos = DB::table('users_tbl')
-		            ->join('pledges_tbl', function($join))
-		            {
-                        $join->on('users_tbl.id', '=', 'pledges_tbl.user_id')
-		            }
-		            ->where('users_tbl. business_name', '=', 'true')
-		            ->distinct()
-		            ->select('users_tbl.avatar', 'users. business_name')
-		            ->get();
-
-
-       return view('pages.home', compact('projects', 'succ_projects'));
-        //return json_encode($succ_projects);
-        //$response = json_encode($succ_projects);
-        //return view('pages.home', compact('projects', 'response'));
     }
 
     /*
