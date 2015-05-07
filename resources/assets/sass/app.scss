@@ -56,6 +56,7 @@
   }
   ul li>ul li.divider {
     height: 1px;
+    width: 100%;
   }
   ul li>ul li a, ul li>ul li a:link, ul li>ul li a:visited {
     color: $text;
@@ -187,8 +188,8 @@ hr {
   Daniel Thomas
 */
 //Default variables
-$flag-x: 2.3rem !default; //changed from 48px to correct the visual effect
-$flag-y: 2.3rem !default;
+$flag-x: 2.35rem !default; //changed from 48px to correct the visual effect
+$flag-y: 2.35rem !default;
 
 //Base
 .flag {
@@ -244,7 +245,10 @@ footer {
   }
 
   .socialmedia div:nth-child(2) {
-    width: 20rem;
+    width: auto;
+    @media(min-width: 768px) {
+      width: 19rem;
+    }
   }
 
   .socialmedia div:nth-child(3) {
@@ -275,6 +279,7 @@ footer {
 
   #newsletter {
     display: inline-block;
+    vertical-align: bottom;
     background-color: $dgrey;
   }
 
@@ -400,9 +405,12 @@ footer {
     position: absolute;
     top: 2rem;
     left: 5rem;
+
+    text-shadow: 3px 2px 3px rgba(50, 50, 50, 1);
+
     @media (max-width: 768px) {
-      top: .1rem;
-      left: 1rem;
+      top: 0rem;
+      left: 0rem;
       padding: 1em;
       padding-top: 0;
       background-color: rgba(0, 0, 0, .5);
@@ -410,20 +418,40 @@ footer {
     @media (min-width: 1366px) {
       left: 14rem;
     }
+
+    p:nth-child(3) {
+      margin-top: 3rem !important;
+
+      @media(min-width: 768px) {
+        margin-top: 6rem !important;
+      }
+    }
   }
 }
 
 .caption {
   h3 {
     font-size: 1.8rem;
+    height: auto;
+    @media(min-width: 786px) and (max-width: 991px) {
+      height: 4.5rem !important;
+
+    }
+    @media(min-width: 992px) {
+      height: 6rem !important;
+    }
   }
   p:first-of-type {
     font-size: 1.1rem;
+    height: auto;
+    @media(min-width: 786px) and (max-width: 991px) {
+      height: 8rem !important;
+    }
+    @media(min-width: 992px) {
+      height: 11.4rem !important;
+    }
   }
 }
-
-
-
 
 
 /*------------------------------------------------------------------*/
@@ -527,19 +555,109 @@ footer {
   margin-top: .2rem;
 }
 
+
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- Contact page styles --*/
+/*------------------------------------------------------------------*/
 #help-page {
   font-size: 1.1rem !important;
 
-//  .form-explanation a {
-//    text-decoration: underline;
-//  }
+  .no-projects {
+    margin-bottom: 2rem;
+  }
 
   input:not([type=submit]), textarea {
-    box-shadow: inset 0 0.5rem 0 0 $bluegrey !important;
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey;
 
     &:hover, &:focus, &:active {
-      box-shadow: inset 0 0.5rem 0 0 $blue !important;
+      box-shadow: inset 0 0.5rem 0 0 $blue;
     }
   }
 
+  form div.form-group {
+    margin-bottom: 0 !important;
+    margin-top: 15px;
+  }
+
+  form div.form-error {
+    padding: 0;
+    background: none !important;
+    border: none;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+  }
+
+  div div ul.form-error {
+    padding-left: 2rem;
+  }
+  div div ul.form-error li {
+    list-style-type: disc !important;
+  }
+
+  form div.cpp-error {
+    margin-top: 0 !important;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- How It Works page styles --*/
+/*------------------------------------------------------------------*/
+#how-it-works {
+  font-size: 1.1rem;
+
+  .add-nav {
+    position: fixed;
+    top: 7em;
+  }
+
+  .form-element {
+    margin-left: .65rem !important;
+    margin-right: .65rem !important;
+
+    @media(min-width: 768px) {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+  }
+  div h4 {
+    font-weight: 700 !important;
+    margin-top: 1.7rem !important;
+    margin-bottom: .1rem !important;
+  }
+
+  i {
+    margin-right: .4rem !important;
+  }
+  i.fa-check {
+    color: $green;
+    margin-right: 1rem !important;
+  }
+
+  .team-role {
+    color: $bluegrey !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+  }
+  .team {
+    font-size: 1rem;
+    margin-bottom: .1rem;
+  }
+}
+
+.xs-mt {
+  @media(max-width: 992px) {
+    margin-top: 2rem;
+  }
 }

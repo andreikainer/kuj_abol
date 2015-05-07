@@ -22,9 +22,9 @@ class ContactFormRequest extends Request {
 	public function rules()
 	{
         return [
-            'name'          => 'required|min:2',
+            'name'          => 'required|min:3',
             'email'         => 'required|email',
-            'message_body'  => 'required|min:5',
+            'message_body'  => 'required|min:5|mas:800',
         ];
 
     }

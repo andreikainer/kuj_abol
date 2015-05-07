@@ -1,49 +1,41 @@
-{!! Form::open(['method' => 'post']) !!}
+<!-- if there are validation errors, show "Woops" message -->
+    <div class="form-group">
+        @if($errors->any())
+            <div class="form-error"><i class="fa fa-exclamation-circle"></i> {{ trans('contact-page.woops') }}</div>
+        @endif
+    </div>
+
+{!! Form::open(['action' => array('ContactFormController@postContactForm', $address, $addressee), 'method' => 'post']) !!}
 
     <div class="form-group">
-    	{!! Form::label(null, 'Name', ['class' => 'form-label form-inline']) !!}
+    	{!! Form::label(null, trans('contact-page.name'), ['class' => 'form-label form-inline']) !!}
    	    {!! Form::text('name', null,
         		array('required',
               		'class'=>'form-input form-inline',
-              		'placeholder'=>'Your name')) !!}
+              		'placeholder'=>trans('contact-page.place-name'))) !!}
     </div>
+    <div class="form-error none" data-error="name"></div>
+    <div class="form-error">{{ $errors->first('name') }}</div>
 
     <div class="form-group">
-    	{!! Form::label(null, 'Email', ['class' => 'form-label']) !!}
+    	{!! Form::label(null, trans('contact-page.email'), ['class' => 'form-label']) !!}
     	{!! Form::text('email', null,
         		array('required',
               		'class'=>'form-input',
-              		'placeholder'=>'Your email')) !!}
+              		'placeholder'=>trans('contact-page.place-email'))) !!}
     </div>
+    <div class="form-error none" data-error="email"></div>
+    <div class="form-error">{{$errors->first('email')}}</div>
 
     <div class="form-group">
-    	{!! Form::label(null, 'Message', ['class' => 'form-label']) !!}
+    	{!! Form::label(null, trans('contact-page.message-body'), ['class' => 'form-label']) !!}
     	{!! Form::textarea('message_body', null,
         		array('required',
               		'class'=>'form-input',
-             		'placeholder'=>'Your message')) !!}
+             		'placeholder'=>trans('contact-page.place-message-body'))) !!}
     </div>
-
-<!-- if there are validation errors, show them here -->
-    <div class="form-group">
-        @if($errors->any())
-	    	<ul>
-	    		@foreach($errors->all() as $error)
-	    		    <li class=”form-error”> {{ $error }} </li>
-	    		@endforeach
-	    	</ul>
-        @endif
-    </div>
-
-<!-- to give the user a feedback in a success point, show the success message -->
-    <div class="form-group">
-        @if(Session::has('message'))
-        	<div class="alert alert-info">
-          		{{Session::get('message')}}
-        	</div>
-        @endif
-    </div>
-
+    <div class="form-error none" data-error="message_body"></div>
+    <div class="form-error">{{$errors->first('message_body')}}</div>
 
     <div class="form-group clearfix">
     	{!! Form::submit('Send',
