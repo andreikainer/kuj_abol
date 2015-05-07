@@ -138,7 +138,8 @@
 
                                 <div class="alignme-center">
                                     <button type="button" class="btn btn-xs button-main button-user">{{ trans('app.login') }}</button>
-                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>
+                                    <a href="{{ action('Auth\AuthController@getRegister') }}" type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</a>
+                                    {{--<button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>--}}
                                 </div>
 
                             </div>
@@ -190,7 +191,18 @@
 
 <!--================== Main Content =================================================-->
 
-
+                @if (Session::has('flash_message'))
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="alert flash-message text-center fade in">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    {{ Session::get('flash_message') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
 	            @yield('content')
 
 

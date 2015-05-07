@@ -23,4 +23,5 @@ return [
     'create-project/success' => 'antrag-einreichen/erfolgreich',
     'account'               => 'benutzer',
     'password'              => 'passwort',
+    'account/verify/'       => 'benutzer/prüfen/',
 ];

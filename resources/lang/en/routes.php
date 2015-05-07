@@ -22,5 +22,5 @@ return [
     'create-project/success' => 'create-project/success',
     'account'               => 'account',
     'password'              => 'password',
-
+    'account/verify/'       => 'account/verify/',
 ];
