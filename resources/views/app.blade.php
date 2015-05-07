@@ -106,19 +106,17 @@
                                 <div class="alignme-center clearfix">
 
                                 <!-- language_btn -->
-                                {{--<div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>--}}
-								    {{--@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
-								        {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">--}}
-								        	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
-								        			{{--{{{ $properties['native'] }}}--}}
-								        	{{--</a>--}}
-								        {{--</button>--}}
-								    {{--@endforeach--}}
-								    <button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">
+                                <div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
+								    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+								        <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+								            <button type="button" hidden class="navbar-toggle button-circle hvr-push flag language-toggle"></button>
+								        </a>
+								    @endforeach
+								    {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">--}}
                                     	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
                                     			{{--{{{ $properties['native'] }}}--}}
                                     	{{--</a>--}}
-                                    </button>
+                                    {{--</button>--}}
 
 								    {{--<a href="http://kuj.dev/en" type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle"></a>--}}
 								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}

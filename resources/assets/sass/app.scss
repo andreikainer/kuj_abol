@@ -448,7 +448,7 @@ footer {
       height: 8rem !important;
     }
     @media(min-width: 992px) {
-      height: 11.4rem !important;
+      height: 11.1rem !important;
     }
   }
 }
@@ -619,22 +619,25 @@ footer {
 
   .add-nav {
     position: fixed;
-    top: 7em;
+    top: 8rem;
   }
 
   .form-element {
     margin-left: .65rem !important;
     margin-right: .65rem !important;
 
-    @media(min-width: 768px) {
+    @media(min-width: 1200px) {
       padding-left: 3rem !important;
       padding-right: 3rem !important;
     }
   }
   div h4 {
     font-weight: 700 !important;
-    margin-top: 1.7rem !important;
     margin-bottom: .1rem !important;
+    margin-top: 1.6rem !important;
+    @media(max-width: 992px) {
+      margin-top: 2rem !important;
+    }
   }
 
   i {
@@ -645,19 +648,38 @@ footer {
     margin-right: 1rem !important;
   }
 
-  .team-role {
-    color: $bluegrey !important;
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-  }
   .team {
     font-size: 1rem;
     margin-bottom: .1rem;
   }
+  .team-role {
+    color: $bluegrey !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    @media(min-width: 992px) {
+      height: 3rem;
+    }
+  }
+
+  .sidemenu-item {
+    font-size: 1rem;
+    box-shadow: inset  0.5rem 0 0 0 $bluegrey !important;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+
+    &:hover {
+      box-shadow: inset  0.5rem 0 0 0 $blue !important;
+    }
+  }
 }
 
 .xs-mt {
-  @media(max-width: 992px) {
+  @media(max-width: 991px) {
     margin-top: 2rem;
+  }
+  @media(min-width: 992px) {
+    margin-bottom: 2em;
   }
 }

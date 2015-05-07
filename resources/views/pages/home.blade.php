@@ -60,7 +60,9 @@
                     @foreach($projects as $project)
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="???">
+                                <a href="{{ url('/projects', $project->slug) }}">
+                                    <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="{{ $project->child_name }}">
+                                </a>
 
                                 <div class="caption">
                                     <h3>{{ $project->project_name }}</h3>
@@ -102,7 +104,9 @@
                     @foreach($succ_projects as $project)
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
-                                <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="???">
+                                <a href="{{ url('/projects', $project->slug) }}">
+                                    <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="{{ $project->child_name }}">
+                                </a>
 
                                 <div class="caption">
                                     <h3>{{ $project->project_name }}</h3>
@@ -117,14 +121,17 @@
                                     </div>
 
                                     <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
-                                    <p class="text-right mb-0"><a href="{{ url('/projects', $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>Details</a></p>
+                                    <p class="text-right mb-0"><a href="{{ url('/projects', $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
                                 </div>
                             </div>
                         </div>
                     @endforeach
 
+
                     </div> <!-- row ends -->
-                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
+
+                    <div class="row"><p class="text-center"><a href="{{ action('ProjectsController@showMoreSuccProjects') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
+
                 </div>
             </div>
 
@@ -194,7 +201,7 @@
                         </div>
 
                     </div>
-                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View all</a></p></div>
+                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p></div>
                 </div>
 
             </div>

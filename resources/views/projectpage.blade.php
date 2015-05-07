@@ -22,7 +22,7 @@
         </div>
 
             <div class="row">
-            <div class="col-sm-12 col-md-7 col-md-offset-0 project-gallery"> <!-- project images beginn-->
+            <div class="col-sm-12 col-md-8 col-md-offset-0 project-gallery"> <!-- project images beginn-->
                 <div class="project-gallery-item">
                     <img class="img-responsive center-block" src="{{ asset('img/ergotherapie-fuer-paul/medium/paul1.jpg') }}">
                 </div>
@@ -58,14 +58,18 @@
                     <div class="countdown-value"><span id="countdown-seconds">0</span></div>
                     <div id="time">{!! trans('view-project-page.time-to-goal') !!}</div>
                 </div>
-                <div class="btn button-main contribute">{{ trans('view-project-page.fund-this-project') }}</div>
-                <div class="heading"></div>
-                <div id="facebook-share" class="btn pull-left">
-                    {{--<div class="fb-share-button" data-href="https://kinderfoerderungen.at" data-layout="button_count" style="width:100%;"></div>--}}
-                    <a href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at"><img src="{{ asset('/img/facebook_teilen.svg') }}" alt="facebook-share" width="100%"></a>
+                <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
+                {{--<div class="heading"></div>--}}
+                <div class="btn">
+                   <a id="facebook-share" href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at" class="btn btn-primary button-main" role="button">
+                       <i class="fa fa-facebook"></i> Share on Facebook
+                   </a>
                 </div>
-                <div id="favorite" class="btn pull-left">
-                    <img src="{{ asset('/img/merken.svg') }}" alt="favorite-button" width="100%">
+                <div class="btn">
+                    {{--<img src="{{ asset('/img/merken.svg') }}" alt="favorite-button" width="100%">--}}
+                    <a id="favorite" href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at" class="btn btn-primary button-main" role="button">
+                        <i class="fa fa-star"></i> Add to Favourites
+                    </a>
                 </div>
             </div> <!-- statistics end-->
             </div>

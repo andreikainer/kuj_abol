@@ -2,23 +2,15 @@
 
 @section('content')
 
-    <div class="container-fluid" role="main">
+    <div class="container-fluid" role="main" data-scroll-header>
 
         <div class="row" id="how-it-works">
-            <div class="hidden-xs hidden-sm col-md-2 add-nav">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Tips for success</a>
-                    <a href="#" class="list-group-item">FAQ</a>
-                    <a href="#" class="list-group-item">Our goals</a>
-                    <a href="#" class="list-group-item">Our team</a>
-                </div>
-            </div>
 
-            <div class="col-md-10 col-md-offset-2">
+            <div class="col-md-10">
 <!-- Tips for success -->
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
-                        <h2 class="heading" id="tips_for_success">{{ trans('how-it-works-page.tips-for-success') }}</h2>
+                        <h2 class="heading" id="tips_for_success">{{ trans('app.tips-for-success') }}</h2>
                     </div>
                 </div>
                 <div class="row form-element">
@@ -50,7 +42,7 @@
 <!-- Our goal -->
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
-                        <h2 class="heading" id="our_goal">{{ trans('how-it-works-page.our-goal') }}</h2>
+                        <h2 class="heading" id="our_goal">{{ trans('app.our-goal') }}</h2>
                     </div>
                 </div>
 
@@ -66,9 +58,9 @@
                 </div>
 
 <!-- Our team -->
-                <div class="row">
+                <div class="row mb-1em">
                     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
-                        <h2 class="heading" id="our_team">{{ trans('how-it-works-page.our-team') }}</h2>
+                        <h2 class="heading" id="our_team">{{ trans('app.our-team') }}</h2>
                     </div>
                 </div>
 
@@ -91,6 +83,15 @@
                        <p class="team"><i class="fa fa-phone"></i><a href="tel:+4366488299610"> +43 664 / 88 299 610</a></p>
                        <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', ['address' => 'o.smirnova1986@gmail.com', 'addressee' => 'Ingeborg Kubita']) }}"> ingeborg@kinderfoerderungen.at</a></p>
                     </div>
+                </div>
+            </div>
+
+            <div class="hidden-xs hidden-sm col-md-2 col-md-push-10 add-nav">
+                <div class="list-group">
+                    <a href="#tips_for_success" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-compass"></i> {{ trans('app.tips-for-success') }}</a>
+                    <a href="#faq" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-comments-o"></i>FAQ</a>
+                    <a href="#our_goal" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-life-ring"></i> {{ trans('app.our-mission') }}</a>
+                    <a href="#our_team" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-group"></i> {{ trans('app.our-team') }}</a>
                 </div>
             </div>
 
