@@ -4920,7 +4920,7 @@ input[type="submit"], button[type="submit"] {
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
 /*-- to remove blue frame from links, buttons and input fields --*/
-.no-outline, .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main:visited, .button-sec, .button-sec:link, .button-sec:visited, .button-user, .button-circle, .button-circle:link, .button-circle:visited, .button-link, .button-transparent, .button-transparent:link, .button-transparent:visited, .module input:not([type=submit]), .module textarea {
+.no-outline, .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main:visited, .button-sec, .button-sec:link, .button-sec:visited, .button-user, .button-circle, .button-circle:link, .button-circle:visited, .button-link, .button-transparent, .button-transparent:link, .button-transparent:visited, .module input:not([type=submit]):not([type=checkbox]), .module textarea {
   outline: none !important; }
 
 /*-- to give an elem white bg color --*/
@@ -5083,16 +5083,16 @@ input[type="submit"], button[type="submit"] {
   margin-bottom: 0.5rem;
   color: #6f798b; }
 
-.form-input, .module input:not([type=submit]), .module textarea {
+.form-input, .module input:not([type=submit]):not([type=checkbox]), .module textarea {
   width: 100%;
   padding: 1.15rem 0.65rem 0.65rem 0.65rem;
   border: 1px solid #d2d2d2;
   border-top: none;
   box-shadow: inset 0 0.5rem 0 0 #6f798b;
   transition: box-shadow 0.3s ease; }
-  .form-input:hover, .module input:hover:not([type=submit]), .module textarea:hover {
+  .form-input:hover, .module input:hover:not([type=submit]):not([type=checkbox]), .module textarea:hover {
     box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
-  .form-input:focus, .module input:focus:not([type=submit]), .module textarea:focus {
+  .form-input:focus, .module input:focus:not([type=submit]):not([type=checkbox]), .module textarea:focus {
     outline: none !important;
     box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
 
@@ -5172,13 +5172,16 @@ input[type="submit"], button[type="submit"] {
   padding: 1rem;
   position: fixed;
   z-index: 10;
-  width: 100%;
-  left: .95rem;
-  height: 100%;
+  width: 80%;
+  left: 11%;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #d2d2d2;
-  font-size: 1.1rem; }
+  font-size: 1rem !important;
+  border-bottom-left-radius: .35rem;
+  border-bottom-right-radius: .35rem;
+  border: solid 1px #6f798b;
+  border-top-color: #d2d2d2; }
   @media (max-width: 768px) {
     .module .form-group {
       padding: 0; } }
@@ -5189,15 +5192,16 @@ input[type="submit"], button[type="submit"] {
         display: block;
         background: white;
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
-        padding: 0;
-        margin-left: 2rem; }
+        height: .5em;
+        width: .8em;
+        padding: 0; }
         .module i::before {
           position: absolute;
-          bottom: -4px;
+          bottom: -.25em;
           color: #ed5a4d;
           cursor: pointer; } }
+    .module i form {
+      font-size: 1rem; }
   .module button.button-circle {
     background-color: #ed5a4d !important;
     margin-bottom: 1rem;
@@ -5207,7 +5211,7 @@ input[type="submit"], button[type="submit"] {
     background-color: #ed5a4d !important; }
     .module i[data-mobile=true]::before {
       color: white; }
-  .module input:not([type=submit]), .module textarea {
+  .module input:not([type=submit]):not([type=checkbox]), .module textarea {
     box-shadow: inset 0 0.5rem 0 0 #6f798b;
     z-index: 11; }
   .module h4 {
@@ -5950,17 +5954,27 @@ footer {
 /*------------------------------------------------------------------*/
 .module-submit {
   font-family: 'Lato', 'Open Sans', sans-serif;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  background-color: #6f798b;
+  border-color: #6f798b; }
 
 .module-submit:hover, .module-submit:focus, .module-submit:active {
-  color: #6f798b;
-  border-color: #6f798b; }
+  color: white;
+  border-color: white; }
 
 #search_module {
   height: auto; }
 
 #search-for-this {
-  margin-top: .2rem; }
+  margin-top: 1.2rem; }
+
+#log-me-in {
+  margin-left: 1rem; }
+
+#forgot-my-password {
+  margin-right: 1rem;
+  background-color: white !important;
+  color: #6f798b !important; }
 
 /*------------------------------------------------------------------*/
 /*-- Contact page styles --*/

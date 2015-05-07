@@ -10,6 +10,7 @@ return [
 	| This file is used to translate routes. Key => English
 	*/
 
+    '/'                    => '/',
     'how-it-works'          => 'how-it-works',
 	'create-project'        => 'create-project',
 	'project'               => 'project',
@@ -23,14 +24,10 @@ return [
     'create-project/success' => 'create-project/success',
     'account'               => 'account',
     'password'              => 'password',
-<<<<<<< HEAD
 
     'successful-projects'   => 'successful-projects',
     'current-projects'      => 'current-projects',
-=======
     'account/verify/'       => 'account/verify/',
-    'successful-projects'   => 'successful-projects',
-    'current-projects'      => 'current-projects'
->>>>>>> master
+
 
 ];

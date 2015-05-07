@@ -28,6 +28,16 @@ class ProjectsController extends Controller {
 
         $logos = DB::table('sponsors_tbl')->get();
 
+//        $logos = DB::table('users_tbl')
+//                ->join('pledgers_tbl', function($join)
+//                {
+//                    $join->on('user_tbl.id', '=', 'pledgers_tbl.user_id');
+//                })
+//                ->where('user_tbl.business_name', '=', 1)
+//                ->distinct()
+//                ->select('users_tbl.avatar', 'users_tbl.business_name')
+//                ->get();
+
         return view('pages.home', compact('projects', 'succ_projects', 'logos'));
     }
 

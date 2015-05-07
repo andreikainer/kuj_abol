@@ -46,19 +46,19 @@ class HeaderController extends Controller {
 			                // show first 20 results and paginate the rest
 			                	->paginate(20);
 
-                $posts_tbl->select('id')
-			                	->where('post_title', 'LIKE', '%' . $term . '%')
-			                	->orWhere('post_content', 'LIKE', '%' . $term . '%')
-			                // only search throughout published posts
-			                	->having('hidden', 0)
-			                // show the latests posts
-			                	->orderBy('created_at', 'desc')
-			                	->paginate(10);
+//                $posts_tbl->select('id')
+//			                	->where('post_title', 'LIKE', '%' . $term . '%')
+//			                	->orWhere('post_content', 'LIKE', '%' . $term . '%')
+//			                // only search throughout published posts
+//			                	->having('hidden', 0)
+//			                // show the latests posts
+//			                	->orderBy('created_at', 'desc')
+//			                	->paginate(10);
 		}
 
         // getting search results for projects and for blog’s posts
         $projects_results	= $projects_tbl->get();
-        $posts_results	    = $posts_tbl->get();
+        //$posts_results	    = $posts_tbl->get();
 
         // if there is some results => show them; if no results found => show “No results” message
         if($projects_results->count() > 0 || $posts_results->count() > 0)

@@ -546,17 +546,27 @@ footer {
 .module-submit {
   font-family: $lato;
   font-size: 1.2rem;
+  background-color: $bluegrey;
+  border-color: $bluegrey;
 }
 .module-submit:hover, .module-submit:focus, .module-submit:active {
-  color: $bluegrey;
-  border-color: $bluegrey;
+  color: $white;
+  border-color: $white;
 }
 
 #search_module {
   height: auto;
 }
 #search-for-this {
-  margin-top: .2rem;
+  margin-top: 1.2rem;
+}
+#log-me-in {
+  margin-left: 1rem;
+}
+#forgot-my-password {
+  margin-right: 1rem;
+  background-color: $white !important;
+  color: $bluegrey !important;
 }
 
 

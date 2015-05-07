@@ -20,7 +20,6 @@ class PagesController extends Controller {
     public function sponsors()
     {
         $logos = DB::table('sponsors_tbl')->get();
-
         return view('pages.sponsors', compact('logos'));
     }
 
