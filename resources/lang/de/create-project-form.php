@@ -70,4 +70,9 @@ return [
     'exp-evidence-3'        => 'Je mehr Beweise, die Sie einreichen, desto wahrscheinlicher ist das erfolgreiche Ergebnis der Anwendung.',
     'exp-document-label'    => 'mindestens 2 Dokumente obligatorisch',
     'exp-document-input'    => 'Klicken Sie hier um ein Dokument hochladen',
+
+    /**
+     * Messages
+     */
+    'validation-error'      => ' Sorry, enthält die Form einige Fehler.',
 ];

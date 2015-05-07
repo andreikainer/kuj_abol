@@ -17,7 +17,7 @@ class CreateProjectRequest extends Request {
         {
             return new JsonResponse([
                 'errors'    => $errors,
-                'message'   => '<i class="fa fa-exclamation-circle fa-lg"></i> Sorry, there are some errors in the form.'
+                'message'   => '<i class="fa fa-exclamation-circle fa-lg"></i>'.trans('create-project-form.validation-error')
             ], 200);
         }
 

@@ -21,14 +21,24 @@
         <div class="row form-group">
             <div class="col-md-6 col-sm-6">
                 {!! Form::label('first_name', trans('create-project-form.first-name'), ['class' => 'form-label']) !!}
+                @if($user == null)
                 {!! Form::text('first_name', null, ['class' => 'form-input']) !!}
                 {{--{!! Form::text('first_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @else
+                {!! Form::text('first_name', $user->first_name, ['class' => 'form-input']) !!}
+                {{--{!! Form::text('first_name', $user->first_name, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @endif
                 <div class="form-error cpp-error pad-zero" data-error="first_name"></div>
             </div>
             <div class="col-md-6 col-sm-6 form-pair">
                 {!! Form::label('last_name', trans('create-project-form.last-name'), ['class' => 'form-label']) !!}
+                @if($user == null)
                 {!! Form::text('last_name', null, ['class' => 'form-input']) !!}
                 {{--{!! Form::text('last_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @else
+                {!! Form::text('last_name', $user->last_name, ['class' => 'form-input']) !!}
+                {{--{!! Form::text('last_name', $user->last_name, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @endif
                 <div class="form-error cpp-error pad-zero" data-error="last_name"></div>
             </div>
         </div> <!-- end first name --> <!-- end last name -->
@@ -39,8 +49,13 @@
         <div class="row form-group">
             <div class="col-md-6 col-sm-6">
                 {!! Form::label('email', trans('create-project-form.email'), ['class' => 'form-label']) !!}
+                @if($user == null)
                 {!! Form::email('email', null, ['class' => 'form-input']) !!}
                 {{--{!! Form::email('email', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @else
+                {!! Form::email('email', $user->email, ['class' => 'form-input']) !!}
+                {{--{!! Form::email('email', $user->email, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @endif
                 <div class="form-error cpp-error pad-zero" data-error="email"></div>
             </div>
             <div class="col-md-6 col-sm-6 form-pair">

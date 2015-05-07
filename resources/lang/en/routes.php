@@ -16,11 +16,15 @@ return [
 	'get-locale'            => 'get-locale',
     'search-result'         => 'search-result',
     'contact'               => 'contact',
-    'sponsors'              => 'sponsors',
-    'blog'                  => 'blog',
-    'create-project/store'  => 'create-project/store',
-    'create-project/success'=> 'create-project/success',
-    'successful-projects'   => 'successful-projects',
+
+    'sponsors'             => 'sponsors',
+    'blog'                 => 'blog',
+    'create-project/store' => 'create-project/store',
+    'create-project/success' => 'create-project/success',
+    'account'               => 'account',
+    'password'              => 'password',
+
+    'successful-projects'   => 'successful-projects'
     'current-projects'      => 'current-projects'
 
 ];
