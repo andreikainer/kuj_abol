@@ -51,12 +51,11 @@
 
   font-family: $lato;
   letter-spacing: .06em;
-}
-.button-main:hover, .button-main:active {
-  @extend .no-outline;
 
-  background-color: darken($blue, 15%);
-  color: $white;
+  &:hover, &:active {
+    background-color: darken($blue, 15%);
+    color: $white;
+  }
 }
 
 /*-- main big CTA's buttons --*/
@@ -72,9 +71,10 @@
   {
     font-size: 1.1rem;
   }
-}
-.button-main-big:hover, .button-main-big:active {
-  @extend .button-main:hover;
+
+  &:hover, &:active {
+    @extend .button-main:hover;
+  }
 }
 
 /*-- secondary CTA's buttons --*/
@@ -86,13 +86,12 @@
   border-color: $dgrey;
 
   font-weight: 300;
-}
-.button-sec:hover, .button-sec:active {
-  @extend .no-outline;
 
-  color: $white;
-  background-color: darken($dgrey, 10%);
-  border-color: darken($dgrey, 10%);
+  &:hover, &:active {
+    color: $white;
+    background-color: darken($dgrey, 10%);
+    border-color: darken($dgrey, 10%);
+  }
 }
 
 /*-- LOG IN and REGISTER buttons --*/
@@ -204,10 +203,11 @@
 
   font-family: $montserrat;
   color: $white;
-}
-.button-transparent:hover, .button-transparent:focus, .button-transparent:active {
-  color: darken($white, 10%);
-  text-decoration: none;
+
+  &:hover, &:active {
+    color: darken($white, 10%);
+    text-decoration: none;
+  }
 }
 
 

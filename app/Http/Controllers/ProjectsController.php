@@ -187,12 +187,42 @@ class ProjectsController extends Controller {
 //            ]
 //        ];
 
+        $logos = DB::table('users')
+		            ->join('pledges', function($join))
+		            {
+                        $join->on('users.id', '=', 'pledges.user_id')
+		            }
+		            ->where('users. business_account', '=', 'true')
+		            ->distinct()
+		            ->select('users.avatar', 'users. business_name')
+		            ->get();
+
+
        return view('pages.home', compact('projects', 'succ_projects'));
         //return json_encode($succ_projects);
         //$response = json_encode($succ_projects);
         //return view('pages.home', compact('projects', 'response'));
     }
 
+    /*
+    * to show current projects' tiles on separate page
+    */
+    public function showMoreProjects()
+    {
+        $projects = Project::where('approved', 1)
+                            ->where('succ_funded', 0)
+                            ->paginate(12);
+
+//        foreach($projects as $project)
+//        {
+//
+//            $project_id = $project->id;
+//            $tile_img = DB::table('images_tbl')
+//                        ->where('project_id', $project_id)
+//                        ->where('main_img', 1);
+//        }
+        return view('pages.current-projects', compact('projects'));
+    }
 
     /*
      * to show successfully funded projects' tiles on separate page

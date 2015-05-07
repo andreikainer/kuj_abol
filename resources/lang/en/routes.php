@@ -20,6 +20,7 @@ return [
     'blog'                  => 'blog',
     'create-project/store'  => 'create-project/store',
     'create-project/success'=> 'create-project/success',
-    'successful-projects'   => 'successful-projects'
+    'successful-projects'   => 'successful-projects',
+    'current-projects'      => 'current-projects'
 
 ];
