@@ -23,7 +23,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
                                 <a href="{{ url('/projects', $project->slug) }}">
-                                    <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="{{ $project->child_name }}">
+                                    <img src="{{ asset('img/' . $project->project_name .'/small/' . $tile_img) }}" alt="{{ $project->child_name }}">
                                 </a>
 
                                 <div class="caption">

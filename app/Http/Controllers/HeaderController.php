@@ -4,12 +4,14 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Project;
 
 class HeaderController extends Controller {
 
-    protected $projects_tbl = 'projects';       // for getting results of appropriate projects
+    //protected $projects_tbl = 'projects_tbl';       // for getting results of appropriate projects DB::table('projects_tbl)
     protected $posts_tbl = 'posts';             // for getting results of appropriate blog posts
     protected $fillable = 'search_inputfield';  // user input
+   public $message = '';
 
     /**
 	 * Display a listing of the resource.
@@ -30,21 +32,19 @@ class HeaderController extends Controller {
 	    $search_terms	=	filter_var($user_input, FILTER_SANITIZE_STRING);
 
     // if user’s input passed filtering
-	    if($search_terms != false)
+	    if($search_terms !== false)
         {
-            foreach($search_terms as $term)
-            {
-                $projects_tbl->select('id')
-				                ->where('project_name', 'LIKE', '%' . $term . '%')
-				                ->orWhere('short_desc', 'LIKE', '%' . $term . '%')
-				                ->orWhere('full_desc', 'LIKE', '%' . $term . '%')
-
-			                // only search throughout published projects
-			                	->having('approved', 1)
-			                // show the project that was created most recently
-			                	->orderBy('created_at', 'desc')
-			                // show first 20 results and paginate the rest
-			                	->paginate(20);
+//            foreach($search_terms as $term)
+//            {
+                $projects_results = Project::where('project_name', 'LIKE', '%' . $search_terms . '%')
+                    ->orWhere('short_desc', 'LIKE', '%' . $search_terms . '%')
+                    ->orWhere('full_desc', 'LIKE', '%' . $search_terms . '%')
+                    // only search throughout published projects
+                    ->having('approved', 1)
+                    // show the project that was created most recently
+                    ->orderBy('created_at', 'desc')
+                    // show first 20 results and paginate the rest
+                    ->paginate(12);
 
 //                $posts_tbl->select('id')
 //			                	->where('post_title', 'LIKE', '%' . $term . '%')
@@ -54,24 +54,33 @@ class HeaderController extends Controller {
 //			                // show the latests posts
 //			                	->orderBy('created_at', 'desc')
 //			                	->paginate(10);
-		}
+//		    }
 
-        // getting search results for projects and for blog’s posts
-        $projects_results	= $projects_tbl->get();
-        //$posts_results	    = $posts_tbl->get();
+            // getting search results for projects and for blog’s posts
+            //$projects_results	= $result_from_project->get();
+            //$posts_results	    = $posts_tbl->get();
 
-        // if there is some results => show them; if no results found => show “No results” message
-        if($projects_results->count() > 0 || $posts_results->count() > 0)
-        {
-            return view('search.search_results', compact('projects_results', 'posts_results'));
-		}else{
-            return view('search.search_results')->with('message', '<h3>Sorry, no project found for' . $user_input  .'</h3>');
-		}
-// if user’s input didn’t pass filtering => show validation message
-    }else{
-        return view('search_results')->with('message', '<h3>Not valid input.</h3>');
-	}
-}
+            // if there is some results => show them; if no results found => show “No results” message
+            if($projects_results->count()>0)
+            {
+                return view('search.search_results', compact('projects_results'));
+		    }else{
+                //return view('search.search_results')->with('message', '<h3>Sorry, no project found for' . $user_input  .'</h3>');
+                return view('search.search_results', compact('message', '<h3>Sorry, no project found for' . $user_input  .'</h3>'));
+		    }
+
+    // if user’s input didn’t pass filtering => show validation message
+        }else{
+            $message = '<h3>Not valid input.</h3>';
+            return view('search.search_results', compact('message'));
+	    }
+    }
+
+
+
+
+
+
 
 	/**
 	 * Show the form for creating a new resource.

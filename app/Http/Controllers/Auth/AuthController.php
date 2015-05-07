@@ -125,17 +125,22 @@ class AuthController extends Controller {
      */
     public function postLogin(Request $request)
     {
+        // 1. create rules for user’s input
         $this->validate($request, [
-            'email' => 'required|email', 'password' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
+        // 2. run the validation with those rules
         $credentials = $request->only('email', 'password');
 
+        // 3. if user’s input passed validation
         if ($this->auth->attempt($credentials, $request->has('remember')))
         {
-            return redirect()->intended($this->redirectPath());
+            return redirect()->intended($this->redirectPath()); //return Redirect::back()->with('error_code', 5);
         }
 
+        // 4. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
         return redirect($this->loginPath())
             ->withInput($request->only('email', 'remember'))
             ->withErrors([
@@ -150,7 +155,7 @@ class AuthController extends Controller {
      */
     protected function getFailedLoginMessage()
     {
-        return 'These credentials do not match our records.';
+        return 'Woops! Incorrect email address or password. Please, try again.';
     }
 
     /**
