@@ -11,9 +11,11 @@ use Illuminate\Support\Facades\Session;
 
 class ContactFormController extends Controller {
 
-    public function getContactForm($address, $addressee)
+    public function getContactForm($array)
     {
         //return view('contact-form', compact('addressee'));
+        $address = $array[0];
+        $addressee = $array[1];
         return view('pages.contact', compact('address', 'addressee'));
     }
 

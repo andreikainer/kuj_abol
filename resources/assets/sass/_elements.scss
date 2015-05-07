@@ -46,7 +46,7 @@
   @extend .no-outline;
 
   background-color: $blue;
-  color: $white;
+  color: $white !important;
   border-color: $blue !important;
 
   font-family: $lato;
@@ -54,7 +54,7 @@
 
   &:hover, &:active {
     background-color: darken($blue, 15%);
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -97,7 +97,6 @@
 /*-- LOG IN and REGISTER buttons --*/
 .button-user {
   @extend .no-outline;
-//  width: 6.4em; GOOD FOR ENG
   width: 7.2em;
 }
 
@@ -351,17 +350,21 @@
   padding: 1rem;
   position: fixed;
   z-index: 10;
-  width: 100%;
-  left: .95rem;
+  width: 80%;
+  left: 11%;
 
-  height: 100%;
+//  height: 100%;
 
   overflow-y: auto;
   overflow-x: hidden;
 
   background-color: $dgrey;
 
-  font-size: 1.1rem;
+  font-size: 1rem !important;
+  border-bottom-left-radius: .35rem;
+  border-bottom-right-radius: .35rem;
+  border: solid 1px $bluegrey;
+  border-top-color: $dgrey;
 
   @media(max-width: 768px) {
     .form-group {
@@ -377,18 +380,22 @@
         display: block;
         background: $white;
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
+        height: .5em;
+        width: .8em;
         padding: 0;
-        margin-left: 2rem;
+//        margin-left: 2rem;
 
         &::before {
           position: absolute;
-          bottom: -4px;
+          bottom: -.25em;
           color: $orange;
           cursor: pointer;
         }
       }
+    }
+
+    form {
+      font-size: 1rem;
     }
   }
 
@@ -407,7 +414,7 @@
     }
   }
 
-  input:not([type=submit]), textarea {
+  input:not([type=submit]):not([type=checkbox]), textarea {
     @extend .no-outline;
     @extend .form-input;
 

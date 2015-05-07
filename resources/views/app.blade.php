@@ -94,7 +94,7 @@
                             </button>
 
                  	    <!-- logo -->
-           			    	<a href="{{ action('ProjectsController@show') }}" class="navbar-brand logo">
+           			    	<a href="{{ action('ProjectsController@index') }}" class="navbar-brand logo">
            			    	    <img src="{{ asset('/img/logo.svg') }}" alt="logo">
            			    	</a>
 
@@ -135,7 +135,7 @@
                                 </div>
 
                                 <div class="alignme-center">
-                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('app.login') }}</button>
+                                    <button type="button" class="btn btn-xs button-main button-user login" data-target="#login_module">{{ trans('app.login') }}</button>
                                     <a href="{{ action('Auth\AuthController@getRegister') }}" type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</a>
                                     {{--<button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>--}}
                                 </div>
@@ -147,7 +147,7 @@
                  	       <hr class="visible-sm">
                  	       <ul class="nav navbar-nav">
                    	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('app.login') }}</a></li>
-                                <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
+                                <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getRegister') }}"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
 
                    	        	<li class="dropdown">
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
@@ -182,7 +182,7 @@
 <!--**************************-->
     <!-- LOGIN MODULE -->
 <!--**************************-->
-        @include('modules.login-module')
+       @include('modules.login-module')
 
 
 

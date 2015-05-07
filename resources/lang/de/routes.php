@@ -21,6 +21,8 @@ return [
     'blog'                 => 'blog',
     'create-project/store' => 'create-project/store',
     'create-project/success' => 'antrag-einreichen/erfolgreich',
+    'successful-projects'  => 'erfolgreich-geförderte-projektets',
+    'current-projects'      => 'current-projects',
 
     'account'               => 'benutzer',
     'password'              => 'passwort',

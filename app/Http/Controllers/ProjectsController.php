@@ -9,8 +9,37 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use DB;
 
 class ProjectsController extends Controller {
+
+    /*
+      * to show project tiles on landing page
+      * to show sponsors' logos carousel
+      */
+    public function index()
+    {
+        $projects = Project::all()
+            ->where('approved', 1)
+            ->where('succ_funded', 0);
+
+        $succ_projects = Project::where('succ_funded', 1)
+            ->paginate(3);
+
+        $logos = DB::table('sponsors_tbl')->get();
+
+//        $logos = DB::table('users_tbl')
+//                ->join('pledgers_tbl', function($join)
+//                {
+//                    $join->on('user_tbl.id', '=', 'pledgers_tbl.user_id');
+//                })
+//                ->where('user_tbl.business_name', '=', 1)
+//                ->distinct()
+//                ->select('users_tbl.avatar', 'users_tbl.business_name')
+//                ->get();
+
+        return view('pages.home', compact('projects', 'succ_projects', 'logos'));
+    }
 
     /**
      * Show the create-project page.
@@ -166,47 +195,6 @@ class ProjectsController extends Controller {
     }
 
     /*
-     * to show project tiles on landing page
-     */
-    public function show()
-    {
-        $projects = Project::all()
-                    ->where('approved', 1)
-                    ->where('succ_funded', 0);
-
-        $succ_projects = Project::where('succ_funded', 1)
-                        ->paginate(3);
-                        //->toJson();
-//        $response = [
-//            'project_name' => $succ_projects->get()->toArray(),
-//            'pagination' => [
-//            'total'        => $succ_project->getTotal(),
-//            'per_page'     => $succ_project->getPerPage(),
-//            'current_page' => $succ_project->getCurrentPage(),
-//            'last_page'    => $succ_project->getLastPage(),
-//            'from'         => $succ_project->getFrom(),
-//            'to'           => $succ_project->getTo()
-//            ]
-//        ];
-
-        $logos = DB::table('users_tbl')
-		            ->join('pledges_tbl', function($join))
-		            {
-                        $join->on('users_tbl.id', '=', 'pledges_tbl.user_id')
-		            }
-		            ->where('users_tbl. business_name', '=', 'true')
-		            ->distinct()
-		            ->select('users_tbl.avatar', 'users. business_name')
-		            ->get();
-
-
-       return view('pages.home', compact('projects', 'succ_projects'));
-        //return json_encode($succ_projects);
-        //$response = json_encode($succ_projects);
-        //return view('pages.home', compact('projects', 'response'));
-    }
-
-    /*
     * to show current projects' tiles on separate page
     */
     public function showMoreProjects()
@@ -215,15 +203,23 @@ class ProjectsController extends Controller {
                             ->where('succ_funded', 0)
                             ->paginate(12);
 
+        //$images = DB::table('images_tbl')->where('main_img', 1)->get();
+
+        $tile_img = DB::table('images_tbl')
+                    ->where('main_img', '=', '1')
+                    ->join('projects_tbl', 'images_tbl.project_id', '=', 'projects_tbl.id')
+                    ->pluck('filename');
+
 //        foreach($projects as $project)
 //        {
-//
 //            $project_id = $project->id;
 //            $tile_img = DB::table('images_tbl')
 //                        ->where('project_id', $project_id)
-//                        ->where('main_img', 1);
+//                        ->where('main_img', 1)
+//                        ->list('filename');
 //        }
-        return view('pages.current-projects', compact('projects'));
+
+        return view('pages.current-projects', compact('projects', 'tile_img'));
     }
 
     /*
