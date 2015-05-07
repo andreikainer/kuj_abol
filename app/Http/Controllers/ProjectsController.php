@@ -189,14 +189,14 @@ class ProjectsController extends Controller {
 //            ]
 //        ];
 
-        $logos = DB::table('users')
-		            ->join('pledges', function($join))
+        $logos = DB::table('users_tbl')
+		            ->join('pledges_tbl', function($join))
 		            {
-                        $join->on('users.id', '=', 'pledges.user_id')
+                        $join->on('users_tbl.id', '=', 'pledges_tbl.user_id')
 		            }
-		            ->where('users. business_account', '=', 'true')
+		            ->where('users_tbl. business_name', '=', 'true')
 		            ->distinct()
-		            ->select('users.avatar', 'users. business_name')
+		            ->select('users_tbl.avatar', 'users. business_name')
 		            ->get();
 
 
