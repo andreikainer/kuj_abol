@@ -147,6 +147,11 @@
 
             <div class="row">
 
+            {{--@foreach($logos as $logo)--}}
+            	{{--{!! HTML::image('assets/img/avatars/' . $logo->avatar, $logo-> business_name . '\’s logo', array('class' => 'logo_thumb')) !!}--}}
+            {{--@endforeach--}}
+var_dump($logos->business_name);
+
                 <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
                     <div class="row sponsors_carousel">
 

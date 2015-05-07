@@ -24,8 +24,9 @@ return [
 
     'account'               => 'benutzer',
     'password'              => 'passwort',
-    'account/verify/'       => 'benutzer/prüfen/',
     'successful-projects'  => 'erfolgreich-geförderte-projektets',
+    'current-projects'      => 'current-projects',
+    'account/verify/'       => 'benutzer/prüfen/',
     'account/register'      => 'benutzer/registrieren',
 
 ];
