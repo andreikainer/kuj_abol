@@ -6,13 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-class PagesController extends Controller {
+use DB;
 
-/*-- Home Page --*/
-//    public function index()
-//    {
-//        return view('pages.home');
-//    }
+class PagesController extends Controller {
 
 /*-- How It Works Page --*/
     public function howItWorks()
@@ -23,7 +19,8 @@ class PagesController extends Controller {
 /*-- Sponsors Page --*/
     public function sponsors()
     {
-        return view('pages.sponsors');
+        $logos = DB::table('sponsors_tbl')->get();
+        return view('pages.sponsors', compact('logos'));
     }
 
 }

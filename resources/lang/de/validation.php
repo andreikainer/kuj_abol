@@ -123,7 +123,8 @@ return [
 
         'email'         => [
             'required'  => 'Dieses Feld ist erforderlich..',
-            'regex'     => 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.'
+            'regex'     => 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
+            'unique'    => 'Diese E-Mail -Adresse bereits ein Benutzer registriert.'
         ],
 
         'address'       => [
@@ -176,7 +177,25 @@ return [
 
         'doc_6'    => [
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
-        ]
+        ],
+
+        'user_name' => [
+            'required'  => 'Dieses Feld ist erforderlich.',
+            'max'       => 'Dieses Feld muss :max Zeichen nicht überschreiten.',
+            'unique'    => 'Dieser Benutzername ist bereits getan.'
+        ],
+
+        'password'      => [
+            'required'  => 'Dieses Feld ist erforderlich.'
+        ],
+
+        'password_confirmation' => [
+            'required'  => 'Dieses Feld ist erforderlich.'
+        ],
+
+        'business_name' => [
+            'required_if'   => 'Dieses Feld ist erforderlich.'
+        ],
     ],
 
     /*

@@ -136,6 +136,18 @@ $(document).ready(function()
     });
 
 
+/*------------------------------------------------------------------*/
+    /*-- LOGIN OPTION --*/
+/*------------------------------------------------------------------*/
+// when Login Button pressed, show/hide login module
+    $('.login').on("click", function(e)
+    {
+        e.stopPropagation();
+        slideModule($(this));
+    });
+
+
+
 
 
 

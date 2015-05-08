@@ -81,7 +81,7 @@ label {
 }
 
 .mt-2em {
-  margin-top: 1.6rem;
+  margin-top: 1.6rem !important;
 }
 .mb-1em {
   margin-bottom: 1em;
@@ -107,4 +107,8 @@ input[type="submit"], button[type="submit"] {
 
 .mt-0 {
   margin-top: 0 !important;
+}
+
+.m0auto {
+  margin: 0 auto;
 }

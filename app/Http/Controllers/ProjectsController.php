@@ -9,12 +9,14 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use DB;
 
 class ProjectsController extends Controller {
 
     /*
-     * to show project tiles on landing page
-     */
+      * to show project tiles on landing page
+      * to show sponsors' logos carousel
+      */
     public function index()
     {
         $projects = Project::all()
@@ -23,39 +25,24 @@ class ProjectsController extends Controller {
 
         $succ_projects = Project::where('succ_funded', 1)
             ->paginate(3);
-        //->toJson();
-//        $response = [
-//            'project_name' => $succ_projects->get()->toArray(),
-//            'pagination' => [
-//            'total'        => $succ_project->getTotal(),
-//            'per_page'     => $succ_project->getPerPage(),
-//            'current_page' => $succ_project->getCurrentPage(),
-//            'last_page'    => $succ_project->getLastPage(),
-//            'from'         => $succ_project->getFrom(),
-//            'to'           => $succ_project->getTo()
-//            ]
-//        ];
 
-        return view('pages.home', compact('projects', 'succ_projects'));
-        //return json_encode($succ_projects);
-        //$response = json_encode($succ_projects);
-        //return view('pages.home', compact('projects', 'response'));
-    }
+        $logos = DB::table('sponsors_tbl')->get();
 
+//        $logos = DB::table('users_tbl')
+//                ->join('pledgers_tbl', function($join)
+//                {
+//                    $join->on('user_tbl.id', '=', 'pledgers_tbl.user_id');
+//                })
+//                ->where('user_tbl.business_name', '=', 1)
+//                ->distinct()
+//                ->select('users_tbl.avatar', 'users_tbl.business_name')
+//                ->get();
 
-    /*
-     * to show successfully funded projects' tiles on separate page
-     */
-    public function showMoreSuccProjects()
-    {
-        $succ_projects = Project::where('succ_funded', 1)
-            ->paginate(12);
-
-        return view('pages.succ-projects', compact('succ_projects'));
+        return view('pages.home', compact('projects', 'succ_projects', 'logos'));
     }
 
     /**
-     * Show the Project view page.
+     * Show the Project view page. (BY ANDREI)
      *
      * @return project_tbl data, date, amount
      */
@@ -76,8 +63,6 @@ class ProjectsController extends Controller {
         //return $galleryImages;
         return view('pages.projectpage', compact('project', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages'));
     }
-
-
 
     /**
      * Show the create-project page.
@@ -232,4 +217,42 @@ class ProjectsController extends Controller {
         return json_encode(['status' => 'success']);
     }
 
+    /*
+    * to show current projects' tiles on separate page
+    */
+    public function showMoreProjects()
+    {
+        $projects = Project::where('approved', 1)
+            ->where('succ_funded', 0)
+            ->paginate(12);
+
+        //$images = DB::table('images_tbl')->where('main_img', 1)->get();
+
+        $tile_img = DB::table('images_tbl')
+            ->where('main_img', '=', '1')
+            ->join('projects_tbl', 'images_tbl.project_id', '=', 'projects_tbl.id')
+            ->pluck('filename');
+
+//        foreach($projects as $project)
+//        {
+//            $project_id = $project->id;
+//            $tile_img = DB::table('images_tbl')
+//                        ->where('project_id', $project_id)
+//                        ->where('main_img', 1)
+//                        ->list('filename');
+//        }
+
+        return view('pages.current-projects', compact('projects', 'tile_img'));
+    }
+
+    /*
+     * to show successfully funded projects' tiles on separate page
+     */
+    public function showMoreSuccProjects()
+    {
+        $succ_projects = Project::where('succ_funded', 1)
+            ->paginate(12);
+
+        return view('pages.succ-projects', compact('succ_projects'));
+    }
 }

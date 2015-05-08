@@ -25,10 +25,9 @@ Route::group(
 
         Route::get('/', 'ProjectsController@index');
 
-//        Route::get(LaravelLocalization::transRoute('routes./'), 'PagesController@index');
+        Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show');
 
-        Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show'); //
-
+        Route::get(LaravelLocalization::transRoute('routes.current-projects'), 'ProjectsController@showMoreProjects');
         Route::get(LaravelLocalization::transRoute('routes.successful-projects'), 'ProjectsController@showMoreSuccProjects');
 
         Route::get(LaravelLocalization::transRoute('routes.create-project'), 'ProjectsController@createProject');
@@ -52,6 +51,7 @@ Route::group(
             LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
             LaravelLocalization::transRoute('routes.password')  => 'Auth\PasswordController',
         ]);
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 

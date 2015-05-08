@@ -4,6 +4,7 @@
 @import 'elements';
 @import 'create_project_page';
 @import 'project_detail_page';
+@import 'register_page';
 
 /*------------------------------------------------------------------*/
   /*-- Logo styles --*/
@@ -433,7 +434,7 @@ footer {
   h3 {
     font-size: 1.8rem;
     height: auto;
-    @media(min-width: 786px) and (max-width: 991px) {
+    @media(min-width: 768px) and (max-width: 991px) {
       height: 4.5rem !important;
 
     }
@@ -444,7 +445,7 @@ footer {
   p:first-of-type {
     font-size: 1.1rem;
     height: auto;
-    @media(min-width: 786px) and (max-width: 991px) {
+    @media(min-width: 768px) and (max-width: 991px) {
       height: 8rem !important;
     }
     @media(min-width: 992px) {
@@ -498,7 +499,7 @@ footer {
 /*------------------------------------------------------------------*/
   /*-- Sponsors Carousel styles --*/
 /*------------------------------------------------------------------*/
-.sponsors_carousel {
+.sponsors_carousel, #sponsors-page {
   .slick-prev, .slick-next, .slick-prev:before, .slick-next:before {
     display: block !important;
     color: $bluegrey !important;
@@ -508,21 +509,24 @@ footer {
     min-width: 150px;
     height: auto;
   }
-
-/*-- to show the sponsor's name --*/
-  .logo-name {
-    display: block;
-    background-color: rgba(0, 0, 0, .7);
-    position: absolute;
-
-    padding: .5rem;
-
-    font-size: 1rem;
-    font-weight: 700;
-    color: $white;
-  }
 }
 
+/*-- to show the sponsor's name --*/
+.logo-name {
+  display: block;
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+
+  padding: .5rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: $white;
+
+  .form-element {
+    cursor: pointer;
+  }
+}
 
 
 
@@ -541,18 +545,33 @@ footer {
 
 .module-submit {
   font-family: $lato;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  background-color: $bluegrey;
+  border-color: $bluegrey;
+
+  @media(max-width: 1240px) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 .module-submit:hover, .module-submit:focus, .module-submit:active {
-  color: $bluegrey;
-  border-color: $bluegrey;
+  color: $white;
+  border-color: $white;
 }
 
 #search_module {
   height: auto;
 }
 #search-for-this {
-  margin-top: .2rem;
+  margin-top: 1.2rem;
+}
+#log-me-in {
+  margin-left: 1rem;
+}
+#forgot-my-password {
+  margin-right: 1rem;
+  background-color: $white !important;
+  color: $bluegrey !important;
 }
 
 
@@ -669,7 +688,7 @@ footer {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
 
-    &:hover {
+    &:hover, &:active, &:focus {
       box-shadow: inset  0.5rem 0 0 0 $blue !important;
     }
   }
@@ -682,4 +701,16 @@ footer {
   @media(min-width: 992px) {
     margin-bottom: 2em;
   }
+}
+
+/*------------------------------------------------------------------*/
+/*-- Flash Message styles --*/
+/*------------------------------------------------------------------*/
+.flash-message {
+  padding: 1rem;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: $blue;
+  background: tint($blue, 75%);
+  border: 1px dashed $blue;
 }

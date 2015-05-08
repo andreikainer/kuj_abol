@@ -77,6 +77,7 @@
                                     </div>
 
                                     <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
+
                                 </div>
                             </div>
                         </div>
@@ -122,6 +123,7 @@
 
                                     <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
                                     <p class="text-right mb-0"><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
+
                                 </div>
                             </div>
                         </div>
@@ -147,61 +149,25 @@
 
             <div class="row">
 
+
                 <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
                     <div class="row sponsors_carousel">
 
+                    @foreach($logos as $logo)
                         <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
-                            <div class="logo-name img-responsive text-center hidden">onhghjgjhg ghjgkgglglgl glhglglhglhe</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="one">
+                            <div class="logo-name img-responsive text-center hidden">{{$logo->business_name}}</div>
+                            <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}">
                         </div>
+                    @endforeach
 
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">two</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="two">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">three</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="three">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">four</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="four">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">four</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="four">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">four</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="four">
-                        </div>
-
-                        <div class="col-xs-4 col-sm-4 col-md-2">
-                            <div class="logo-name img-responsive text-center hidden">five</div>
-                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive" alt="five">
+                    <!--Hand-coded placeholder in order to prevent slick from collapsing-->
+                        <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
+                            <div class="logo-name img-responsive text-center hidden">Placeholder</div>
+                            <img src="{{ asset('img/logoplaceholder.jpg') }}" class="img-responsive form-element" alt="placeholder">
                         </div>
 
                     </div>
-                    <div class="row"><p class="text-center"><a href="#" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p></div>
+                    <div class="row"><p class="text-center"><a href="{{ action('PagesController@sponsors') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p></div>
                 </div>
 
             </div>

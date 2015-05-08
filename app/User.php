@@ -22,7 +22,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = [
+        'user_name',
+        'first_name',
+        'last_name',
+        'address',
+        'business_name',
+        'tel_number',
+        'avatar',
+        'email',
+        'password',
+        'active',
+        'confirmation_code',
+    ];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -30,5 +42,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Return the user, who matches the confirmation code.
+     *
+     * @param $query
+     * @param $confirmation_code
+     * @return mixed
+     */
+    public function scopeWhereConfirmationCode($query, $confirmation_code)
+    {
+        return $query->where('confirmation_code', '=', $confirmation_code)->first();
+    }
 
 }

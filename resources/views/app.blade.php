@@ -135,8 +135,9 @@
                                 </div>
 
                                 <div class="alignme-center">
-                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('app.login') }}</button>
-                                    <button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>
+                                    <button type="button" class="btn btn-xs button-main button-user login" data-target="#login_module">{{ trans('app.login') }}</button>
+                                    <a href="{{ action('Auth\AuthController@getRegister') }}" type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</a>
+                                    {{--<button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>--}}
                                 </div>
 
                             </div>
@@ -146,7 +147,7 @@
                  	       <hr class="visible-sm">
                  	       <ul class="nav navbar-nav">
                    	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('app.login') }}</a></li>
-                                <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
+                                <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getRegister') }}"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
 
                    	        	<li class="dropdown">
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
@@ -160,7 +161,7 @@
                             		</ul>
                   	        	</li>
                    	        	<li><a href="{{ action('ProjectsController@createProject') }}">{{ trans('app.create-project') }}</a></li>
-                   	        	<li><a href="#">{{ trans('app.contribute') }}</a></li>
+                   	        	<li><a href="{{ action('ProjectsController@showMoreProjects') }}">{{ trans('app.contribute') }}</a></li>
                  	        </ul>
                         </div>
 
@@ -181,14 +182,25 @@
 <!--**************************-->
     <!-- LOGIN MODULE -->
 <!--**************************-->
-        @include('modules.login-module')
+       @include('modules.login-module')
 
 
 
 
 <!--================== Main Content =================================================-->
 
-
+                @if (Session::has('flash_message'))
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="alert flash-message text-center fade in">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    {{ Session::get('flash_message') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
 	            @yield('content')
 
 
