@@ -25,5 +25,5 @@ return [
     'current-projects'      => 'current-projects',
     'account/verify'       => 'account/verify',
     'account/register'      => 'account/register',
-    
+
 ];

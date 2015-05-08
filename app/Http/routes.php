@@ -57,7 +57,9 @@ Route::group(
 
         Route::post(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@postRegister');
 
-        Route::get(LaravelLocalization::transRoute('routes.account/verify/').'{conf_code}', 'Auth\AuthController@getVerify');
+        Route::get(LaravelLocalization::transRoute('routes.account/verify'), 'Auth\AuthController@getVerify');
+
+        Route::get(LaravelLocalization::transRoute('routes.account/verify').'/{conf_code}', 'Auth\AuthController@getVerify');
 
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/

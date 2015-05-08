@@ -94,7 +94,7 @@ class AuthController extends Controller {
 
         $user = User::whereConfirmationCode($confirmation_code);
 
-        if (! $user)
+        if (is_null($user))
         {
             throw new InvalidConfirmationCodeException(trans('register-page.flash-3'));
         }
