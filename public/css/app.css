@@ -5447,9 +5447,6 @@ fieldset.summary-group {
 .boarder {
   border: 3px solid #d2d2d2; }
 
-.l-font {
-  font-size: 1.2rem; }
-
 #project_statistics h3 {
   text-decoration: underline; }
 #project_statistics h4 {
@@ -5511,6 +5508,10 @@ fieldset.summary-group {
   #favorite:hover {
     background-color: #ea3c2d !important; }
 
+.description {
+  font-size: 1.1rem;
+  margin-top: 2em; }
+
 #contribution-packs a {
   text-decoration: none; }
 
@@ -5548,6 +5549,22 @@ fieldset.summary-group {
   list-style: disc;
   text-align: left;
   margin-left: 1.5em; }
+
+.slick-prev {
+  left: 40px;
+  width: 40px;
+  height: 40px; }
+  .slick-prev:before {
+    font-size: 40px;
+    color: #3fa3db; }
+
+.slick-next {
+  right: 40px;
+  width: 40px;
+  height: 40px; }
+  .slick-next:before {
+    font-size: 40px;
+    color: #3fa3db; }
 
 /*------------------------------------------------------------------*/
 /*-- REGISTER PAGE SPECIFIC --*/

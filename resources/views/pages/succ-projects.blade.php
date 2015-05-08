@@ -22,7 +22,7 @@
                     @foreach($succ_projects as $project)
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero success">
-                                <a href="{{ url('/projects', $project->slug) }}">
+                                <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}">
                                     <img src="{{ asset('img/main-carousel/xs/three.jpg') }}" alt="{{ $project->child_name }}">
                                 </a>
 
@@ -39,7 +39,7 @@
                                     </div>
 
                                     <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
-                                    <p class="text-right mb-0"><a href="{{ url('/projects', $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
+                                    <p class="text-right mb-0"><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
                                 </div>
                             </div>
                         </div>

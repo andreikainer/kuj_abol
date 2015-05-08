@@ -6,9 +6,6 @@
   border: 3px solid $dgrey;
 }
 
-.l-font{
-  font-size: 1.2rem;
-}
 
 #project_statistics{
 
@@ -79,18 +76,10 @@
 }
 
 #facebook-share {
-//  width: 40%; OLGA
   width: 100%;
- // margin: 0 5%; OLGA
-//  @media(min-width: 768px) and (max-width: 991px) {
-//    width: 30%;
-//    margin: 0 10%;
-//  }
 }
 
 #favorite {
-//  width: 40%; OLGA
-//  margin: 0 5%; OLGA
   width: 100%;
 
   background-color: $orange !important;
@@ -99,11 +88,11 @@
   &:hover {
     background-color: darken($orange, 7%) !important;
   }
+}
 
-//  @media(min-width: 768px) and (max-width: 991px) {
-//    width: 30%;
-//    margin: 0 10%;
-//  }
+.description{
+  font-size: 1.1rem;
+  margin-top: 2em;
 }
 
 #contribution-packs a {
@@ -148,4 +137,29 @@
   list-style: disc;
   text-align: left;
   margin-left: 1.5em;
+}
+
+// prev and next button size and position
+.slick-prev {
+  left: 40px;
+  width: 40px;
+  height: 40px;
+
+
+  &:before {
+    font-size: 40px;
+    color: $blue;
+  }
+}
+
+.slick-next {
+  right: 40px;
+  width: 40px;
+  height: 40px;
+
+
+  &:before {
+    font-size: 40px;
+    color: $blue;
+  }
 }

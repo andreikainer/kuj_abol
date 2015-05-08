@@ -4,12 +4,15 @@
     /*-- PROJECT GALLERY --*/
     /*------------------------------------------------------------------*/
 
-    $('.project-gallery').slick(
+    if(window.innerWidth >= 768)
+    {
+      $('.project-gallery').slick(
         {
             dots: true,
             accessibillity: true,
-            appendArrows: $('.arrows'),
             infinite: true,
+            centerMode: true,
+            respondTo: 'slider',
             speed: 500,
             fade: true,
             cssEase: 'linear',
@@ -19,6 +22,26 @@
             pauseonDotsHover: true,
             swipe: true
         });
+    }else
+    {
+
+        $('.project-gallery').slick(
+            {
+                dots: false,
+                accessibillity: true,
+                infinite: true,
+                centerMode: true,
+                respondTo: 'window',
+                mobileFirst: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                arrows: true,
+                swipe: true
+            });
+      }
+
 
     /*-- Changing img size according to the window size --*/
     /*-- get all images --*/
@@ -27,7 +50,7 @@
 
     for(a=0 ; a<aImg.length ; a++)
     {
-        /*-- change the src path of each image of main carousel according to window size --*/
+        /*-- change the src path of each image in the project gallery according to window size --*/
         if(window.innerWidth < 768)
         {
 
@@ -64,9 +87,13 @@
     useGrouping : false,
     suffix : '%'
     };
+
+
     var numAnim = new countUp("stat-count", 0, percentage, 0, 5, options);
     numAnim.start();
 
+    //var anotherAnim = new countUp("amount_raised", 0, amountRaised, 0, 5, options);
+    //anotherAnim.start();
 })();
 
 /*------------------------------------------------------------------*/
@@ -205,8 +232,8 @@
         countingEnded: function() {
             // set the H3 element with the final text
             this.element.set('html', '<h2>' + this.finalText + '</h2>');
+            document.getElementById('time-text').setAttribute('hidden', true);
         }
     });
 
     new GKCounter(document.id('countdown'));
-
