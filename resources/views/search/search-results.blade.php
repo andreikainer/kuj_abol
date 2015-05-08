@@ -1,27 +1,28 @@
 @extends('app')
 
 @section('content')
+<!-- Main content -->
+        <div class="container-fluid" role="main">
 
-    @if($message->exists())
+<!-- Current projects -->
+            <div class="row">
 
-    	 <?php echo $message; ?>
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                    <h2 class="heading" id="contribute">Search results</h2>
+                </div>
+
+            </div>
+
+    @if($message !== '')
+
+    	 {{ $message }}
     @else
-
 
         <!-- search results for projects -->
         @foreach($projects_results as $result)
-            <?php
-        	    $id = $result->id;
-        	    echo $id . "<br>";
-        	?>
+            {{ $result->id }}
         @endforeach
 
-        {{--search results for blog’s posts--}}
-        {{--@foreach($posts_results as $result)--}}
-
-        	{{--$id = $result->id;--}}
-        	{{--echo 'Other results for you search: ' . $id . "<br>";--}}
-        {{--@endforeach--}}
 
     @endif
 

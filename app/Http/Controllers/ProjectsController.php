@@ -203,12 +203,12 @@ class ProjectsController extends Controller {
                             ->where('succ_funded', 0)
                             ->paginate(12);
 
-        //$images = DB::table('images_tbl')->where('main_img', 1)->get();
+        $images = DB::table('images_tbl')->where('main_img', 1)->pluck('filename');
 
-        $tile_img = DB::table('images_tbl')
-                    ->where('main_img', '=', '1')
-                    ->join('projects_tbl', 'images_tbl.project_id', '=', 'projects_tbl.id')
-                    ->pluck('filename');
+//        $tile_img = DB::table('images_tbl')
+//                    ->where('main_img', '=', '1')
+//                    ->join('projects_tbl', 'images_tbl.project_id', '=', 'projects_tbl.id')
+//                    ->pluck('filename');
 
 //        foreach($projects as $project)
 //        {
@@ -219,7 +219,7 @@ class ProjectsController extends Controller {
 //                        ->list('filename');
 //        }
 
-        return view('pages.current-projects', compact('projects', 'tile_img'));
+        return view('pages.current-projects', compact('projects', 'images'));
     }
 
     /*
