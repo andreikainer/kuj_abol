@@ -416,8 +416,11 @@ footer {
       padding-top: 0;
       background-color: rgba(0, 0, 0, .5);
     }
-    @media (min-width: 1366px) {
+    @media (min-width: 1366px) and (max-width: 1500px) {
       left: 14rem;
+    }
+    @media (min-width: 1501px) {
+      left: 30%;
     }
 
     p:nth-child(3) {
