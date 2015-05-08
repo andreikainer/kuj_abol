@@ -57,5 +57,5 @@
 @endsection
 
 @section('additional_js')
-    <script src="{{ asset('js/home-page/home.js') }}"></script>
+    <script src="{{ asset('js/progress-bar.js') }}"></script>
 @endsection

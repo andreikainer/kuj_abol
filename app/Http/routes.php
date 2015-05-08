@@ -64,4 +64,4 @@ Route::group(
 
 Route::post('temp-document', 'AjaxController@tempDocument');
 
-Route::post('search-results', 'HeaderController@index');
+Route::post('search-results', 'HeaderController@search');
