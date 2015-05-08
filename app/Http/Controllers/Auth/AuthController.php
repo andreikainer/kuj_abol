@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use KuJ\CustomExceptions\InvalidConfirmationCodeException;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class AuthController extends Controller {
 
@@ -94,7 +95,7 @@ class AuthController extends Controller {
 
         $user = User::whereConfirmationCode($confirmation_code);
 
-        if (is_null($user))
+        if (! $user instanceof User)
         {
             throw new InvalidConfirmationCodeException(trans('register-page.flash-3'));
         }
