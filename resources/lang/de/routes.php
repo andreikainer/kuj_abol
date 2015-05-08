@@ -28,5 +28,6 @@ return [
     'account/login'         => 'benutzer/login',
     'create-project/save'   => 'antrag-einreichen/sparen',
     'create-project/update' => 'create-project/update',
+    'create-project/edit'   => 'create-project/edit',
 
 ];

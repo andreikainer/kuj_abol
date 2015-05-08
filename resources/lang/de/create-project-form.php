@@ -75,4 +75,6 @@ return [
      * Messages
      */
     'validation-error'      => ' Sorry, enthält die Form einige Fehler.',
+    'project-complete'      => 'Anfrage kann nicht mehr bearbeitet werden.',
+    'save-success'          => 'Anfrage erfolgreich gespeichert.',
 ];

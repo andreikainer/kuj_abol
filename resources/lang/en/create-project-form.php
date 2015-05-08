@@ -75,4 +75,6 @@ return [
      * Messages
      */
     'validation-error'      => ' Sorry, there are some errors in the form.',
+    'project-complete'      => 'Project can no longer be edited.',
+    'save-success'          => 'Project successfully saved.',
 ];

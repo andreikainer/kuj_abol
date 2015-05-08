@@ -50,6 +50,8 @@ Route::group(
 
         Route::patch(LaravelLocalization::transRoute('routes.create-project/update').'/{slug}', 'ProjectsController@update');
 
+        Route::get(LaravelLocalization::transRoute('routes.create-project/edit').'/{slug}', 'ProjectsController@edit');
+
 //        Route::controllers([
 //
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',

@@ -7,10 +7,14 @@ use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\SaveProjectRequest;
 use App\Project;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Intervention\Image\Facades\Image;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use DB;
+use KuJ\CustomExceptions\ProjectCompletedException;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ProjectsController extends Controller {
 
@@ -206,8 +210,28 @@ class ProjectsController extends Controller {
 
         // Update user model.
 
+        return url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$project->slug);
+    }
+
+    /**
+     * Show the edit form, for a saved project.
+     *
+     * @param Project $project
+     * @throws ProjectCompletedException
+     * @return \Illuminate\View\View
+     */
+    public function edit(Project $project)
+    {
+        if( $project->application_status == 1)
+        {
+            throw new ProjectCompletedException(trans('create-project-form.project-complete'));
+        }
+
+        $project->load(['images', 'documents', 'mainImage']);
         $user = Auth::user();
-        return view('forms.create-project-update', compact('project', 'user'));
+
+        Session::flash('flash_message', trans('create-project-form.save-success'));
+        return view('create-project.edit', compact('project', 'user'));
     }
 
     public function update(CreateProjectRequest $request, Project $project)

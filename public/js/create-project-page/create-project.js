@@ -559,9 +559,10 @@
         });
     });
 
-    $.subscribe('form-save.success', function(event, data)
+    $.subscribe('form-save.success', function(event, url)
     {
-        // Replace the form with the returned model bound form.
+        // Redirect to the edit form, for the saved project.
+        window.location = url;
     });
 
 
