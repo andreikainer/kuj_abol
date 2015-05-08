@@ -14,7 +14,7 @@ return [
 	'create-project'        => 'create-project',
 	'project'               => 'project',
 	'get-locale'            => 'get-locale',
-    'search-result'         => 'search-result',
+    'search-results'         => 'search-result',
     'contact'               => 'contact',
     'sponsors'             => 'sponsors',
     'blog'                 => 'blog',

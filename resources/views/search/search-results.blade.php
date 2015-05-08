@@ -8,7 +8,7 @@
          <div class="row">
 
              <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
-                 <h2 class="heading" id="contribute">Search results</h2>
+                 <h2 class="heading" id="contribute">{{ trans('app.search-results') }}</h2>
              </div>
 
          </div>
@@ -17,12 +17,12 @@
 <!-- Search results for projects -->
          <div class="row">
 
-             <div class="col-xs-12 col-xs-offset-1 mt-2em">
-                 <div class="row">
+             <div class="col-lg-10 col-lg-offset-1 mt-2em">
+                 <div class="row-fluid">
 
                  @if($message !== '')
-                    <div class="col-xs-10 form-element text-center m0auto">
-                        <h4>Sorry, no project were found for <strong>"{{ $message }}"</strong></h4>
+                    <div class="col-xs-12 form-element text-center dependsOnWindowH">
+                        <h4>{!!  $message !!}</h4>
                     </div>
                  @else
 
@@ -67,4 +67,5 @@
 
 @section('additional_js')
     <script src="{{ asset('js/progress-bar.js') }}"></script>
+    <script src="{{ asset('js/search.js') }}"></script>
 @endsection

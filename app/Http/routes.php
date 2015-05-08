@@ -46,6 +46,8 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/success'), 'ProjectsController@success');
 
+        Route::post(LaravelLocalization::transRoute('routes.search-results'), 'SearchController@show');
+
         Route::controllers([
 
             LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
@@ -64,4 +66,3 @@ Route::group(
 
 Route::post('temp-document', 'AjaxController@tempDocument');
 
-Route::post('search-results', 'HeaderController@search');
