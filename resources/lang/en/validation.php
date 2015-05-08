@@ -108,7 +108,8 @@ return [
 
         'child_name'    => [
             'required'  => 'This field is required.',
-            'regex'     => 'Must contain letters only. And not begin with a space.'
+            'regex'     => 'Must contain letters only. And not begin with a space.',
+            'required_with' => 'This field is required.'
         ],
 
         'first_name'    => [

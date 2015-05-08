@@ -216,6 +216,13 @@
         $.publish('form.submitted', $(this));
     });
 
+    // Publish Save Event.
+    $('form#create-project .form-button[data-button="save"] > a').on('click', function(event)
+    {
+        event.preventDefault();
+        $.publish('form.save', this);
+    });
+
 
 
 
@@ -471,7 +478,7 @@
         });
     });
 
-    $.subscribe('form-submit.fail', function(event, data)
+    $.subscribe('form-submit.fail form-save.fail', function(event, data)
     {
         var formFields = $('form#create-project input, textarea');
 
@@ -495,6 +502,66 @@
     $.subscribe('form-submit.success', function()
     {
         window.location = 'http://kinderfoerderungen.at/create-project/success';
+    });
+
+
+    // Subscribe Save Event.
+    $.subscribe('form.save', function(event, data)
+    {
+        var loaderImage = $(data).siblings('.image-loader');
+        loaderImage.fadeIn();
+
+        // Create a new form data instance.
+        var formData = new FormData();
+        // Append the images and documents.
+        $.each(files, function(name, field)
+        {
+            $.each(field, function(i, file)
+            {
+                formData.append(name, file);
+            });
+        });
+        var textInput = $('form#create-project input, textarea')
+                        .not('input[name*="img"]')
+                        .not('input[name*="doc"]')
+                        .not('input[type="submit"]');
+        // Append the text input to the form data.
+        $.each(textInput, function(i, field)
+        {
+            formData.append(field.name, field.value);
+        });
+
+        $.ajax({
+            url : $(data).attr('href'),
+            method : 'POST',
+            data : formData,
+            cache : false,
+            processData : false,
+            contentType : false,
+            success : function(response)
+            {
+                if ( response.errors )
+                {
+                    loaderImage.fadeOut();
+                    $.publish('form-save.fail', response);
+                }
+                else
+                {
+                    loaderImage.fadeOut();
+
+                    $.publish('form-save.success', response);
+                }
+            },
+            error : function(response)
+            {
+                console.log(response);
+            }
+        });
+    });
+
+    $.subscribe('form-save.success', function(event, data)
+    {
+        // Replace the form with the returned model bound form.
     });
 
 

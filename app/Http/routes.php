@@ -46,6 +46,10 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/success'), 'ProjectsController@success');
 
+        Route::post(LaravelLocalization::transRoute('routes.create-project/save'), 'ProjectsController@save');
+
+        Route::patch(LaravelLocalization::transRoute('routes.create-project/update').'/{slug}', 'ProjectsController@update');
+
 //        Route::controllers([
 //
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
@@ -59,6 +63,10 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.account/verify'), 'Auth\AuthController@getVerify');
 
         Route::get(LaravelLocalization::transRoute('routes.account/verify').'/{conf_code}', 'Auth\AuthController@getVerify');
+
+        Route::get(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@getLogin');
+
+        Route::post(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@postLogin');
 
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/

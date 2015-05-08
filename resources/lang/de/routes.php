@@ -23,12 +23,10 @@ return [
     'create-project/success' => 'antrag-einreichen/erfolgreich',
     'successful-projects'  => 'erfolgreich-geförderte-projektets',
     'current-projects'      => 'current-projects',
-
-    'account'               => 'benutzer',
-    'password'              => 'passwort',
-    'successful-projects'  => 'erfolgreich-geförderte-projektets',
-    'current-projects'      => 'current-projects',
     'account/verify'       => 'benutzer/prüfen',
     'account/register'      => 'benutzer/registrieren',
+    'account/login'         => 'benutzer/login',
+    'create-project/save'   => 'antrag-einreichen/sparen',
+    'create-project/update' => 'create-project/update',
 
 ];

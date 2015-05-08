@@ -60,7 +60,7 @@
 
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-right mt-1em">
-                            <a href="{{ action('PagesController@index') }}" class="button-link success-page-link"><i class="fa fa-long-arrow-right"></i>{{ trans('create-project-success.link') }}</a>
+                            <a href="{{ action('ProjectsController@index') }}" class="button-link success-page-link"><i class="fa fa-long-arrow-right"></i>{{ trans('create-project-success.link') }}</a>
                         </div>
                     </div>
                 </div>

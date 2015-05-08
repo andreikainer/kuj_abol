@@ -108,7 +108,8 @@ return [
 
         'child_name'    => [
             'required'  => 'Dieses Feld ist erforderlich.',
-            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.'
+            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.',
+            'required_with' => 'Dieses Feld ist erforderlich.'
         ],
 
         'first_name'    => [

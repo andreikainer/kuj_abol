@@ -5280,12 +5280,18 @@ input[type="submit"], button[type="submit"] {
     background: #54d98c; }
 
 .form-button-secondary {
+  position: relative;
   display: inline-block;
   background: #6f798b;
   border: 1px solid #58606f;
   transition: background 0.3s ease; }
   .form-button-secondary:hover {
     background: #8b93a2; }
+  .form-button-secondary a {
+    color: white; }
+    .form-button-secondary a:hover, .form-button-secondary a:active, .form-button-secondary a:visited, .form-button-secondary a:focus {
+      color: white;
+      text-decoration: none !important; }
 
 .form-button-nav {
   display: inline-block;
@@ -5306,6 +5312,8 @@ input[type="submit"], button[type="submit"] {
 
 .image-loader {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background: url("../img/loader.gif") no-repeat center center;

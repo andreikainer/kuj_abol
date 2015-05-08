@@ -25,5 +25,8 @@ return [
     'current-projects'      => 'current-projects',
     'account/verify'       => 'account/verify',
     'account/register'      => 'account/register',
+    'account/login'         => 'account/login',
+    'create-project/save'   => 'create-project/save',
+    'create-project/update' => 'create-project/update',
 
 ];
