@@ -201,25 +201,9 @@ class ProjectsController extends Controller {
     {
         $projects = Project::where('approved', 1)
                             ->where('succ_funded', 0)
-                            ->paginate(12);
+                            ->paginate(6);
 
-        $images = DB::table('images_tbl')->where('main_img', 1)->pluck('filename');
-
-//        $tile_img = DB::table('images_tbl')
-//                    ->where('main_img', '=', '1')
-//                    ->join('projects_tbl', 'images_tbl.project_id', '=', 'projects_tbl.id')
-//                    ->pluck('filename');
-
-//        foreach($projects as $project)
-//        {
-//            $project_id = $project->id;
-//            $tile_img = DB::table('images_tbl')
-//                        ->where('project_id', $project_id)
-//                        ->where('main_img', 1)
-//                        ->list('filename');
-//        }
-
-        return view('pages.current-projects', compact('projects', 'images'));
+        return view('pages.current-projects', compact('projects'));
     }
 
     /*
@@ -228,7 +212,7 @@ class ProjectsController extends Controller {
     public function showMoreSuccProjects()
     {
         $succ_projects = Project::where('succ_funded', 1)
-                        ->paginate(12);
+                        ->paginate(6);
 
         return view('pages.succ-projects', compact('succ_projects'));
     }
