@@ -25,6 +25,7 @@ Route::group(
 
         Route::get('/', 'ProjectsController@index');
 
+
         Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show');
 
         Route::get(LaravelLocalization::transRoute('routes.current-projects'), 'ProjectsController@showMoreProjects');
@@ -46,6 +47,7 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/success'), 'ProjectsController@success');
 
+
 //        Route::controllers([
 //
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
@@ -57,6 +59,8 @@ Route::group(
         Route::post(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@postRegister');
 
         Route::get(LaravelLocalization::transRoute('routes.account/verify'), 'Auth\AuthController@getVerify');
+
+        Route::post(LaravelLocalization::transRoute('routes.search-results'), 'SearchController@show');
 
         Route::get(LaravelLocalization::transRoute('routes.account/verify').'/{conf_code}', 'Auth\AuthController@getVerify');
 
@@ -72,4 +76,3 @@ Route::group(
 
 Route::post('temp-document', 'AjaxController@tempDocument');
 
-Route::post('search-results', 'HeaderController@index');

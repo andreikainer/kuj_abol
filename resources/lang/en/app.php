@@ -47,5 +47,13 @@ return [
     'website-made-by'       => 'website made by',
     'legal-stuff'           => 'Kinder- und Jugendförderungen is an initiative of the All for Kids Sponsoring Agency to support chronically ill, mentally or physically disabled children and their families.',
 
+/*
+|--------------------------------------------------------------------------
+| SEARCH MODULE
+|--------------------------------------------------------------------------
+*/
+    'search-results'        => 'Search results',
+    'no-search-results'     => 'Sorry, no project were found for',
+    'search-invalid'        => '<p class="orange">Sorry, invalid input.</p>'
 
 ];
