@@ -48,6 +48,8 @@ Route::group(
 
         Route::post(LaravelLocalization::transRoute('routes.create-project/save'), 'ProjectsController@save');
 
+        Route::patch(LaravelLocalization::transRoute('routes.create-project/save'), 'ProjectsController@save');
+
         Route::patch(LaravelLocalization::transRoute('routes.create-project/update').'/{slug}', 'ProjectsController@update');
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/edit').'/{slug}', 'ProjectsController@edit');

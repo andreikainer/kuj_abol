@@ -27,6 +27,8 @@ return [
     'back'                  => 'zurück',
     'next'                  => 'nächster',
     'submit'                => 'Zur Genehmigung einreichen',
+    'continue'              => 'fortsetzen',
+    'delete'                => 'löschen',
 
     /**
      * Form Labels.

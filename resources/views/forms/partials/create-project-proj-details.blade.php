@@ -3,7 +3,9 @@
                 <div class="image-upload-wrapper">
                     <div class="form-button form-button-secondary text-center" data-button="save">
                         <div class="image-loader"></div>
-                        <a href="{{ LaravelLocalization::transRoute('routes.create-project/save') }}">{{ trans('create-project-form.save-progress') }}</a>
+                        <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/save')) }}">
+                            {{ trans('create-project-form.save-progress') }}
+                        </a>
                     </div>
                 </div>
             </div>

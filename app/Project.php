@@ -42,4 +42,14 @@ class Project extends Model {
         return $this->images()->where('main_img', '=', '1');
     }
 
+    public function secondaryImages()
+    {
+        return $this->images()->where('main_img', '=', '0');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
 }

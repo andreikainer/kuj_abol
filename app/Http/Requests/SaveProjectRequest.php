@@ -44,10 +44,10 @@ class SaveProjectRequest extends Request {
 	public function rules()
 	{
 		return [
-            'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/|unique:projects_tbl',
+            'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/',
             'short_desc'    => 'max:180',
             'target_amount' => 'integer',
-            'child_name'    => 'regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/|required_with:main_img,img_2,img_3,img_4',
+            'child_name'    => 'regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'first_name'    => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'last_name'     => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'email'         => 'required|regex:/[a-zA-ZÀ-ž0-9_\.\+-]+@[a-zA-ZÀ-ž0-9-]+\.[a-zA-ZÀ-ž0-9-\.]/',

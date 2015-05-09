@@ -4,10 +4,10 @@
 .create-project-fieldset {
   padding: 0;
   display: none;
+}
 
-  &:first-of-type {
-    display: inherit;
-  }
+.fieldset-active {
+  display: inherit;
 }
 
 .cpp-error {
@@ -201,6 +201,38 @@
   }
 }
 
+.project-links {
+  @extend .no-projects
+}
+
+.saved-project-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: $bluegrey;
+}
+
+.saved-project-continue {
+  @extend .form-button;
+  display: inline-block;
+  width: 100%;
+
+  &:visited, &:focus, &:active, &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.saved-project-delete {
+  @extend .saved-project-continue;
+  background: $bluegrey;
+  border: 1px solid darken($bluegrey, 10%);
+  border-radius: 0.35rem;
+
+  &:hover {
+    background: lighten($bluegrey, 10%);
+  }
+}
+
 .supporting-doc {
   margin-bottom: 2rem;
 
@@ -215,6 +247,14 @@
 
 .padding-none {
   padding: 0;
+}
+
+.display {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
 
 .text-right {

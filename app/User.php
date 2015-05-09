@@ -55,4 +55,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $query->where('confirmation_code', '=', $confirmation_code)->first();
     }
 
+    public function project()
+    {
+        return $this->hasOne('App\Project');
+    }
+
 }

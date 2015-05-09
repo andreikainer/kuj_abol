@@ -27,6 +27,8 @@ return [
     'back'                  => 'Back',
     'next'                  => 'Next',
     'submit'                => 'Submit for Approval',
+    'continue'              => 'Continue',
+    'delete'                => 'Delete',
 
     /**
      * Form Labels

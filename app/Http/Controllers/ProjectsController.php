@@ -94,10 +94,9 @@ class ProjectsController extends Controller {
      * Save a complete Project in our system.
      *
      * @param CreateProjectRequest $request
-     * @param null $projectName
      * @return string JSON response
      */
-    public function store(CreateProjectRequest $request, $projectName = null)
+    public function store(CreateProjectRequest $request)
     {
         $projectDetails = [
             'project_name'  => $request->get('project_name'),
@@ -141,11 +140,11 @@ class ProjectsController extends Controller {
         $this->moveDocumentsAndSaveToDB($userDocuments, $documentFolderPath, $project->id);
 
         // Resize the images to our needs, and save them in their directories.
-        $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath);
+        $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath, true);
 
 
         // Create new Image instances in the database.
-        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
+        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id, true);
 
         // Don't forget to email admin.
         // And update User model.
@@ -172,27 +171,29 @@ class ProjectsController extends Controller {
         ];
 
         $userDocuments = [
-            $request->file('doc_1_mand'),
-            $request->file('doc_2_mand'),
-            $request->file('doc_3'),
-            $request->file('doc_4'),
-            $request->file('doc_5'),
-            $request->file('doc_6')
+            ($request->file('doc_1_mand')) ? $request->file('doc_1_mand') : $request->get('doc1Mand'),
+            ($request->file('doc_2_mand')) ? $request->file('doc_2_mand') : $request->get('doc2Mand'),
+            ($request->file('doc_3')) ? $request->file('doc_3') : $request->get('doc3'),
+            ($request->file('doc_4')) ? $request->file('doc_4') : $request->get('doc4'),
+            ($request->file('doc_5')) ? $request->file('doc_5') : $request->get('doc5'),
+            ($request->file('doc_6')) ? $request->file('doc_6') : $request->get('doc6')
         ];
 
         $userImages = [
-            'main_img'  => $request->file('main_img'),
-            'img_2'     => $request->file('img_2'),
-            'img_3'     => $request->file('img_3'),
-            'img_4'     => $request->file('img_4')
+            'main_img'  => ($request->file('main_img')) ? $request->file('main_img') : $request->get('mainImage'),
+            'img_2'     => ($request->file('img_2')) ? $request->file('img_2') : $request->get('img2'),
+            'img_3'     => ($request->file('img_3')) ? $request->file('img_3') : $request->get('img3'),
+            'img_4'     => ($request->file('img_4')) ? $request->file('img_4') : $request->get('img4')
         ];
+
+        //dd($userImages);
 
         // Lets just start here.
         $project = Project::create($projectDetails);
 
         // Make the image and document directories.
         $imageFolderPath = public_path("img/$project->slug");
-        $documentFolderPath = app_path("documents/$project->slug");
+        $documentFolderPath = public_path("documents/$project->slug");
 
         $this->makeImageDirectories($imageFolderPath);
         $this->makeDocumentDirectory($documentFolderPath);
@@ -204,12 +205,12 @@ class ProjectsController extends Controller {
         // Resize the images to our needs, and save them in their directories.
         $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath);
 
-
         // Create new Image instances in the database.
         $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
 
         // Update user model.
 
+        Session::flash('flash_message', trans('create-project-form.save-success'));
         return url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$project->slug);
     }
 
@@ -227,10 +228,9 @@ class ProjectsController extends Controller {
             throw new ProjectCompletedException(trans('create-project-form.project-complete'));
         }
 
-        $project->load(['images', 'documents', 'mainImage']);
+        $project->load(['documents', 'mainImage', 'secondaryImages']);
         $user = Auth::user();
 
-        Session::flash('flash_message', trans('create-project-form.save-success'));
         return view('create-project.edit', compact('project', 'user'));
     }
 
@@ -306,17 +306,23 @@ class ProjectsController extends Controller {
      * @param $multiDimArr
      * @param $childName
      * @param $parentDirectoryPath
+     * @param bool $rename
      */
-    public function resizeImagesAndSaveToFolders($multiDimArr, $childName, $parentDirectoryPath)
+    public function resizeImagesAndSaveToFolders($multiDimArr, $childName, $parentDirectoryPath, $rename = false)
     {
         $count = 1;
         foreach($multiDimArr as $key => $image)
         {
             if( ! is_null($image))
             {
-                $extension = explode('.', $image->getClientOriginalName());
-                $extension = $extension[count($extension)-1];
-                $filename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
+                if($rename)
+                {
+                    $extension = explode('.', $image->getClientOriginalName());
+                    $extension = $extension[count($extension)-1];
+                    $filename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
+                }
+
+                $filename = strtolower(preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
 
                 Image::make($image)->resize(1250, 700, function($constraint)
                 {
@@ -352,17 +358,23 @@ class ProjectsController extends Controller {
      * @param $multiDimArr
      * @param $childName
      * @param $projectID
+     * @param bool $rename
      */
-    public function saveImageInstancesToDB($multiDimArr, $childName, $projectID)
+    public function saveImageInstancesToDB($multiDimArr, $childName, $projectID, $rename = false)
     {
         $count = 1;
         foreach($multiDimArr as $key => $image)
         {
             if( ! is_null($image))
             {
-                $extension = explode('.', $image->getClientOriginalName());
-                $extension = $extension[count($extension)-1];
-                $filename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
+                if($rename)
+                {
+                    $extension = explode('.', $image->getClientOriginalName());
+                    $extension = $extension[count($extension)-1];
+                    $filename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
+                }
+
+                $filename = strtolower(preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
 
                 if( $key != 'main_img')
                 {

@@ -14,8 +14,8 @@
                 </div>
                 <div class="col-md-12 col-sm-12">
                     <div class="col-md-7 col-sm-7 col-xs-7 padding-none">
-                        <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0">{{ trans('create-project-form.start') }}</div>
-                        <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab" data-section="1">{{ trans('create-project-form.project-details') }}</div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left" data-section="0">{{ trans('create-project-form.start') }}</div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-active" data-section="1">{{ trans('create-project-form.project-details') }}</div>
                         <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab" data-section="2">{{ trans('create-project-form.your-details') }}</div>
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-5 padding-none">
@@ -26,7 +26,7 @@
             </div> <!-- end section tabs -->
             <div class="row">
                 <div id="create-project-wrapper" class="col-md-12 col-sm-12">
-                    @include('forms.create-project-edit')
+                    @include('forms.edit-project')
                 </div>
             </div> <!-- end form -->
         </div>

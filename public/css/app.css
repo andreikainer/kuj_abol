@@ -5233,8 +5233,9 @@ input[type="submit"], button[type="submit"] {
 .create-project-fieldset {
   padding: 0;
   display: none; }
-  .create-project-fieldset:first-of-type {
-    display: inherit; }
+
+.fieldset-active {
+  display: inherit; }
 
 .cpp-error {
   display: none;
@@ -5267,7 +5268,7 @@ input[type="submit"], button[type="submit"] {
   .form-pair {
     margin-top: 1rem; } }
 
-.form-button {
+.form-button, .saved-project-continue, .saved-project-delete {
   padding: 0.65rem;
   font-weight: 500;
   color: white;
@@ -5276,7 +5277,7 @@ input[type="submit"], button[type="submit"] {
   border-radius: 0.35rem;
   cursor: pointer;
   transition: background 0.3s ease; }
-  .form-button:hover {
+  .form-button:hover, .saved-project-continue:hover, .saved-project-delete:hover {
     background: #54d98c; }
 
 .form-button-secondary {
@@ -5377,12 +5378,31 @@ input[type="submit"], button[type="submit"] {
 .form-input-disabled {
   cursor: not-allowed; }
 
-.no-projects {
+.no-projects, .project-links {
   padding: 1.25rem;
   border: 1px solid #d2d2d2;
   background: #f9f9f9; }
-  .no-projects p:first-of-type {
+  .no-projects p:first-of-type, .project-links p:first-of-type {
     margin-top: 10px; }
+
+.saved-project-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #6f798b; }
+
+.saved-project-continue, .saved-project-delete {
+  display: inline-block;
+  width: 100%; }
+  .saved-project-continue:visited, .saved-project-delete:visited, .saved-project-continue:focus, .saved-project-delete:focus, .saved-project-continue:active, .saved-project-delete:active, .saved-project-continue:hover, .saved-project-delete:hover {
+    text-decoration: none;
+    color: white; }
+
+.saved-project-delete {
+  background: #6f798b;
+  border: 1px solid #58606f;
+  border-radius: 0.35rem; }
+  .saved-project-delete:hover {
+    background: #8b93a2; }
 
 .supporting-doc {
   margin-bottom: 2rem; }
@@ -5395,6 +5415,12 @@ input[type="submit"], button[type="submit"] {
 
 .padding-none {
   padding: 0; }
+
+.display {
+  display: block; }
+
+.display-none {
+  display: none; }
 
 .text-right {
   text-align: right; }
@@ -6010,7 +6036,7 @@ footer {
 /*------------------------------------------------------------------*/
 #help-page {
   font-size: 1.1rem !important; }
-  #help-page .no-projects {
+  #help-page .no-projects, #help-page .project-links {
     margin-bottom: 2rem; }
   #help-page input:not([type=submit]), #help-page textarea {
     box-shadow: inset 0 0.5rem 0 0 #6f798b; }
