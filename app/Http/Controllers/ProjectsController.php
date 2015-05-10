@@ -154,14 +154,14 @@ class ProjectsController extends Controller {
 
         // Create new Document instances in the database.
         // Move the documents to their directory.
-        $this->moveDocumentsAndSaveToDB($userDocuments, $documentFolderPath, $project->id);
+        $this->moveDocumentsAndSaveToDB($userDocuments, $documentFolderPath, $project->id, $project->slug);
 
         // Resize the images to our needs, and save them in their directories.
-        $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath, true);
+        $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath, $project->slug);
 
 
         // Create new Image instances in the database.
-        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id, true);
+        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
 
         // Don't forget to email admin.
 
@@ -246,7 +246,7 @@ class ProjectsController extends Controller {
 
         // Create new Document instances in the database.
         // Move the documents to their directory.
-        $this->moveDocumentsAndSaveToDB($userDocuments, $documentFolderPath, $project->id);
+        $this->moveDocumentsAndSaveToDB($userDocuments, $documentFolderPath, $project->id, $originalProjectSlug);
 
         // Resize the images to our needs, and save them in their directories.
         $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath, $originalProjectSlug);
@@ -330,15 +330,29 @@ class ProjectsController extends Controller {
      * @param $singleDimArr
      * @param $directoryPath
      * @param $projectID
+     * @param $originalProjectSlug
      */
-    protected function moveDocumentsAndSaveToDB($singleDimArr, $directoryPath, $projectID)
+    protected function moveDocumentsAndSaveToDB($singleDimArr, $directoryPath, $projectID, $originalProjectSlug)
     {
         foreach($singleDimArr as $file)
         {
-            if( ! is_null($file) && $file instanceof UploadedFile )
+            if( ! is_null($file) )
             {
-                Document::create(['filename' => preg_replace('/[\s]+/', '_', $file->getClientOriginalName()), 'project_id' => $projectID]);
-                $file->move($directoryPath, preg_replace('/[\s]+/', '_', $file->getClientOriginalName()));
+                if($file instanceof UploadedFile)
+                {
+                    Document::create(['filename' => preg_replace('/[\s]+/', '_', $file->getClientOriginalName()), 'project_id' => $projectID]);
+                    $file->move($directoryPath, preg_replace('/[\s]+/', '_', $file->getClientOriginalName()));
+                }
+                else {
+                    // In the instance the user renames the project, move the saved documents to the new directory.
+                    $originalDirectory = public_path('documents/'.$originalProjectSlug);
+                    if(is_dir($originalDirectory))
+                    {
+                        $originalFile = file_get_contents($originalDirectory.'/'.$file);
+
+                        file_put_contents($directoryPath.'/'.$file, $originalFile);
+                    }
+                }
             }
         }
     }
@@ -350,6 +364,7 @@ class ProjectsController extends Controller {
      * @param $multiDimArr
      * @param $childName
      * @param $parentDirectoryPath
+     * @param $originalProjectSlug
      */
     protected function resizeImagesAndSaveToFolders($multiDimArr, $childName, $parentDirectoryPath, $originalProjectSlug)
     {
