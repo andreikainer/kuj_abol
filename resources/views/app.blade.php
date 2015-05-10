@@ -325,6 +325,7 @@
 
 <!-- ABOL js -->
 	<script src="{{ asset('/js/main.js') }}"></script>
+	<script src="{{ asset('/js/FormValidation.js') }}"></script>
 	@yield('additional_js') <!-- here you may put any additional js that is not necessary on the other pages -->
 
 </body>

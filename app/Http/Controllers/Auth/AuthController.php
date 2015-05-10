@@ -112,10 +112,10 @@ class AuthController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getLogin()
-    {
-        return view('account.login');
-    }
+//    public function getLogin()
+//    {
+//        return view('account.login');
+//    }
 
     /**
      * Handle a login request to the application.
@@ -127,25 +127,29 @@ class AuthController extends Controller {
     {
         // 1. create rules for user’s input
         $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required',
+            'username' => 'required',
+            'password' => 'required|min:6',
         ]);
 
         // 2. run the validation with those rules
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
-        // 3. if user’s input passed validation
-        if ($this->auth->attempt($credentials, $request->has('remember')))
+        if(Request::ajax())
         {
-            return redirect()->intended($this->redirectPath()); //return Redirect::back()->with('error_code', 5);
+            // 3. if user’s input passed validation
+            if ($this->auth->attempt($credentials, $request->has('remember')))
+            {
+                return 1;
+                //return redirect()->intended($this->redirectPath()); //return Redirect::back()->with('error_code', 5);
+            } else {
+            // 4. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
+            return redirect($this->loginPath())
+                ->withInput($request->only('username', 'remember'))
+                ->withErrors([
+                    'username' => $this->getFailedLoginMessage(),
+                ]);
+            }
         }
-
-        // 4. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
-        return redirect($this->loginPath())
-            ->withInput($request->only('email', 'remember'))
-            ->withErrors([
-                'email' => $this->getFailedLoginMessage(),
-            ]);
     }
 
     /**
@@ -155,7 +159,7 @@ class AuthController extends Controller {
      */
     protected function getFailedLoginMessage()
     {
-        return 'Woops! Incorrect email address or password. Please, try again.';
+        return trans('register-page.login-fail');
     }
 
     /**

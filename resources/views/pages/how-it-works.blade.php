@@ -14,9 +14,38 @@
                     </div>
                 </div>
                 <div class="row form-element">
-                    <div class="col-md-3 col-md-offset-1 xs-mt">Step 1</div>
-                    <div class="col-md-3 col-md-offset-1 xs-mt">Step 1</div>
-                    <div class="col-md-3 col-md-offset-1 xs-mt">Step 1</div>
+
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 xs-mt">
+                        <div class="text-center">
+                            <img class="mt-1em" src="{{ asset('/img/steps/step-1.svg') }}" alt="step-1">
+                        </div>
+                        <h4 class="text-center mb-1em">{{ trans('how-it-works-page.step-1h')}}</h4>
+                        <p class="indent">{{trans('how-it-works-page.step-1')}}</p>
+                    </div>
+
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 xs-mt">
+                        <div class="text-center">
+                            <img class="mt-1em" src="{{ asset('/img/steps/step-2.svg') }}" alt="step-2">
+                        </div>
+                        <h4 class="text-center mb-1em">{{trans('how-it-works-page.step-2h')}}</h4>
+                        <p class="indent">{{trans('how-it-works-page.step-2')}}</p>
+                    </div>
+
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 xs-mt">
+                        <div class="text-center">
+                            <img class="mt-1em" src="{{ asset('/img/steps/step-3.svg') }}" alt="step-3">
+                        </div>
+                        <h4 class="text-center mb-1em">{{trans('how-it-works-page.step-3h')}}</h4>
+                        <p class="indent">{{trans('how-it-works-page.step-3')}}</p>
+                    </div>
+
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 xs-mt">
+                        <div class="text-center">
+                            <img class="mt-1em" src="{{ asset('/img/steps/step-4.svg') }}" alt="step-4">
+                        </div>
+                        <h4 class="text-center mb-1em">{{trans('how-it-works-page.step-4h')}}</h4>
+                        <p class="indent">{{trans('how-it-works-page.step-4')}}</p>
+                    </div>
                 </div>
 
 <!-- FAQ -->
@@ -28,13 +57,13 @@
 
                 <div class="row form-element">
                     <div class="col-xs-12 text-left">
-                        <h4>Question</h4>
+                        <h4 class="mb-1em">Question</h4>
                         <p>Answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto atque consectetur deserunt esse excepturi laboriosam officia optio perspiciatis placeat reiciendis repellat repellendus saepe, sed sequi totam vitae voluptate voluptatibus.</p>
 
-                        <h4>Question</h4>
+                        <h4 class="mb-1em">Question</h4>
                         <p>Answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet aspernatur assumenda aut autem ea eveniet illo maxime, minima numquam obcaecati odit perferendis quae quaerat quo repudiandae sit temporibus voluptas!</p>
 
-                        <h4>Question</h4>
+                        <h4 class="mb-1em">Question</h4>
                         <p>Answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet deleniti excepturi facere fuga fugiat inventore maxime molestias, mollitia nihil perspiciatis quae quia rerum sed similique sit unde vero? Modi.</p>
                     </div>
                 </div>

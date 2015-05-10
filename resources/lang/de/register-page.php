@@ -23,6 +23,9 @@ return [
     'business?'     => 'Wollen Sie sich als Unternehmen anmelden?',
     'business-name' => 'Firmenwortlaut:',
     'submit'        => 'Benutzer registrieren',
+    'login'         => 'Log in',
+    'forgot-password' => 'Forgot password',
+    'login-fail'    => 'Woops! Incorrect email address or password. Please, try again.',
 
     /**
      * Verification Email.

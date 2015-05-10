@@ -4893,7 +4893,7 @@ label {
   margin-top: 1.6rem !important; }
 
 .mb-1em {
-  margin-bottom: 1em; }
+  margin-bottom: 1em !important; }
 
 .mb-0 {
   margin-bottom: 0 !important; }
@@ -4918,6 +4918,9 @@ input[type="submit"], button[type="submit"] {
 
 .orange {
   color: #ed5a4d !important; }
+
+.indent {
+  text-indent: 1rem; }
 
 /*------------------------------------------------------------------*/
 /*-- CLASSES --*/
@@ -5958,6 +5961,18 @@ footer {
 /*------------------------------------------------------------------*/
 /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
+.module .form-error {
+  padding: 0;
+  background: none !important;
+  border: none;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  padding-left: 1rem; }
+.module form div.cpp-error {
+  margin-top: 0 !important;
+  margin-bottom: 1rem; }
+
 .module-submit {
   font-family: 'Lato', 'Open Sans', sans-serif;
   font-size: 1.1rem;
@@ -5985,6 +6000,8 @@ footer {
   margin-right: 1rem;
   background-color: white !important;
   color: #6f798b !important; }
+  #forgot-my-password:hover {
+    border-color: #6f798b; }
 
 /*------------------------------------------------------------------*/
 /*-- Contact page styles --*/
@@ -6020,6 +6037,8 @@ footer {
 /*------------------------------------------------------------------*/
 #how-it-works {
   font-size: 1.1rem; }
+  #how-it-works img {
+    width: 110px; }
   #how-it-works .add-nav {
     position: fixed;
     top: 8rem; }
@@ -6032,7 +6051,7 @@ footer {
         padding-right: 3rem !important; } }
   #how-it-works div h4 {
     font-weight: 700 !important;
-    margin-bottom: .1rem !important;
+    margin-bottom: .1rem;
     margin-top: 1.6rem !important; }
     @media (max-width: 992px) {
       #how-it-works div h4 {

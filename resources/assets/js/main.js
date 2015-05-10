@@ -92,9 +92,6 @@ $(document).ready(function()
     $('.module').on("click", function(e)
     {
         e.stopPropagation();
-        //$('input[name = search_inputfield]').on('input', function() {
-        //    console.log($(this).val());
-        //});
     });
 /*------------------------------------------------------------------*/
 
@@ -121,8 +118,144 @@ $(document).ready(function()
         slideModule($(this));
     });
 
+    /**
+     * Send the CSRF token with every AJAX request.
+     */
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    /*-- Messages Object --*/
+    var errorMessages = {
+        'en' : {
+            'required'  : 'This field is required.',
+            'minLength' : function(limit)
+            {
+                return 'This field must contain at least '+limit+' characters';
+            }
+        },
+        'de' : {
+            'required'  : 'Dieses Feld ist erforderlich',
+            'minLength' : function(limit)
+            {
+                return 'Diese Feld muss mindestens '+limit+' Charaktere enthalten';
+            }
+        }
+    };
 
 
+    /*-- Functions --*/
+    function showErrorMessage(name, message)
+    {
+        $('.form-error[data-error="'+name+'"]').html(message).fadeIn();
+    }
+
+    function hideErrorMessage(name)
+    {
+        $('.form-error[data-error*="'+name+'"]').fadeOut();
+        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
+    }
+
+    // to make the top-border of input field red color when there is an error
+    function redTopInput(input)
+    {
+        input.toggleClass('error-red-top', true);
+        console.log('red');
+    }
+
+
+    /*-- Publish Events --*/
+    // Form Field blur events.
+    $('input[name="username"]').on('blur', function()
+    {
+        $.publish('username.blur', this);
+    });
+
+    $('input[name="password"]').on('blur', function()
+    {
+        $.publish('password.blur', this);
+    });
+
+    // Form Validation Events.
+    $.subscribe('username.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages[window.locale].required);
+            redTopInput(data);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('password.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (! FormValidation.checkNotEmpty(data.value)) {
+            showErrorMessage(name, errorMessages[window.locale].required);
+            redTopInput(data);
+            return false;
+        }
+        if (! FormValidation.checkMinLength(data.value, 6)) {
+            showErrorMessage(name, errorMessages[window.locale].minLength(6));
+            redTopInput(data);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $('form[data-remote]').on("submit", function(e)
+    {
+        var form 	= $(this);
+    // check for method, if not defined, use POST
+        var method	= form.find('input[name="_method"]').val() || 'POST';
+    // where to submit the form => get the current url
+        var url		= window.location.href;
+
+
+        $.ajax(
+            {
+                type:		method,
+                url:		url,
+                data:		form.serialize(),
+                dataType:	'json',
+            success: 	function(data)
+            {
+            // on success point give the user a feedback message on a popup modal
+                //giveFeedback(form);
+                console.log('data');
+            },
+            error:		function(data)
+            {
+                // get the errors response data
+                var errors = data.responseJSON;
+                console.log(errors);
+                // now render the errors with js
+                //var errorsHTML = '';
+                //$.each(errors, function(key, value)
+                //{
+                //    errorsHTML = '<li>' + value[0] + '</li>';
+                //});
+            // append those <li> to a <div class=”form_errors”></div> inside the form
+            $('.form_errors').html(errorsHTML);
+        }
+        }).done(function(data)
+        {
+            console.log('done');
+        }).fail(function(data)
+        {
+            console.log('fail');
+        });
+
+        e.preventDefault();
+        return false;
+    });
 
 
 

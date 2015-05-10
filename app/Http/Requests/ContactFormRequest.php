@@ -24,7 +24,7 @@ class ContactFormRequest extends Request {
         return [
             'name'          => 'required|min:3',
             'email'         => 'required|email',
-            'message_body'  => 'required|min:5|mas:800',
+            'message_body'  => 'required|min:5|max:800',
         ];
 
     }
