@@ -19,7 +19,7 @@ return [
     'team-2'        => 'Sponsorenbetreuung',
 
     'step-1h'       => 'Schritt 1: Ansuchen einreichen',
-    'step-2h'       => 'Schritt 2: Förderungen einholen',
+    'step-2h'       => 'Schritt 2: Weiter sagen',
     'step-3h'       => 'Schritt 3: Auszahlung',
     'step-4h'       => 'Schritt 4: Sagen Sie Danke',
 

@@ -5999,7 +5999,8 @@ footer {
 #forgot-my-password {
   margin-right: 1rem;
   background-color: white !important;
-  color: #6f798b !important; }
+  color: #6f798b !important;
+  font-family: 'Lato', 'Open Sans', sans-serif; }
   #forgot-my-password:hover {
     border-color: #6f798b; }
 

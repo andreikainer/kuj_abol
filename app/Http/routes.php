@@ -26,7 +26,7 @@ Route::group(
         Route::get('/', 'ProjectsController@index');
 
 
-        Route::get(LaravelLocalization::transRoute('routes.project'), 'PagesController@viewProjects');
+        Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}', 'PagesController@viewProjects');
 
         Route::get(LaravelLocalization::transRoute('routes.current-projects'), 'ProjectsController@showMoreProjects');
         Route::get(LaravelLocalization::transRoute('routes.successful-projects'), 'ProjectsController@showMoreSuccProjects');

@@ -187,7 +187,6 @@ $(document).ready(function()
     function redTopInput(input)
     {
         input.toggleClass('error-red-top', true);
-        console.log('red');
     }
 
 
@@ -237,6 +236,7 @@ $(document).ready(function()
 
     $('form[data-remote]').on("submit", function(e)
     {
+        console.log('posted');
         var form 	= $(this);
     // check for method, if not defined, use POST
         var method	= form.find('input[name="_method"]').val() || 'POST';
@@ -248,19 +248,23 @@ $(document).ready(function()
             {
                 type:		method,
                 url:		url,
-                data:		form.serialize(),
+                data:		{
+                      '_token': $( this ).find( 'input[name=_token]' ).val(),
+                    'username': $( this ).find( 'input[name=username]' ).val(),
+                    'password': $( this ).find( 'input[name=password]' ).val()
+                },
                 dataType:	'json',
-            success: 	function(data)
+            success: 	function(response)
             {
             // on success point give the user a feedback message on a popup modal
                 //giveFeedback(form);
                 console.log('data');
             },
-            error:		function(data)
+            error:		function(response)
             {
                 // get the errors response data
-                var errors = data.responseJSON;
-                console.log(errors);
+                //var errors = response;
+                console.log(response);
                 // now render the errors with js
                 //var errorsHTML = '';
                 //$.each(errors, function(key, value)
@@ -268,12 +272,12 @@ $(document).ready(function()
                 //    errorsHTML = '<li>' + value[0] + '</li>';
                 //});
             // append those <li> to a <div class=”form_errors”></div> inside the form
-            $('.form_errors').html(errorsHTML);
+            //$('.form_errors').html(errorsHTML);
         }
-        }).done(function(data)
+        }).done(function(response)
         {
             console.log('done');
-        }).fail(function(data)
+        }).fail(function(response)
         {
             console.log('fail');
         });

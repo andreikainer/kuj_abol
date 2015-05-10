@@ -238,7 +238,7 @@
                     </div>
 
                     <div>
-                        <form class="form" action="http://88432.seu1.cleverreach.com/f/88432-163511/wcs/" method="post" target="_blank">
+                        <form class="form" action="#" method="post" target="_blank">
                             <div class="form-group">
                                 <label class="hidden">Newsletter</label>
                                 <input type="email" class="form-control" placeholder="{{ trans('app.newsletter') }}" id="text3390090" name="email">
