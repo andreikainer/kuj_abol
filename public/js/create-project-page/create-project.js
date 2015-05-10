@@ -579,7 +579,7 @@
     $.subscribe('form-save.success', function(event, url)
     {
         // Redirect to the edit form, for the saved project.
-        //window.location = url;
+        window.location = url;
     });
 
 

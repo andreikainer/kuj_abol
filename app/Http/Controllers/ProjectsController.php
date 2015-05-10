@@ -15,6 +15,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use DB;
 use KuJ\CustomExceptions\ProjectCompletedException;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ProjectsController extends Controller {
 
@@ -109,6 +110,14 @@ class ProjectsController extends Controller {
             'user_id'       => Auth::user()->id
         ];
 
+        $userDetails = [
+            'first_name'    => $request->get('first_name'),
+            'last_name'     => $request->get('last_name'),
+            'email'         => $request->get('email'),
+            'tel_number'    => $request->get('tel_number'),
+            'address'       => $request->get('address')
+        ];
+
         $userDocuments = [
             $request->file('doc_1_mand'),
             $request->file('doc_2_mand'),
@@ -128,9 +137,17 @@ class ProjectsController extends Controller {
         // Create the new Project.
         $project = Project::create($projectDetails);
 
+        // Update user model.
+        $user = Auth::user();
+        foreach($userDetails as $attribute => $value)
+        {
+            $user->$attribute = $value;
+        }
+        $user->save();
+
         // Make the image and document directories.
         $imageFolderPath = public_path("img/$project->slug");
-        $documentFolderPath = app_path("documents/$project->slug");
+        $documentFolderPath = public_path("documents/$project->slug");
 
         $this->makeImageDirectories($imageFolderPath);
         $this->makeDocumentDirectory($documentFolderPath);
@@ -147,7 +164,6 @@ class ProjectsController extends Controller {
         $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id, true);
 
         // Don't forget to email admin.
-        // And update User model.
 
         return json_encode(['status' => 'success']);
     }
@@ -170,6 +186,14 @@ class ProjectsController extends Controller {
             'user_id'       => Auth::user()->id
         ];
 
+        $userDetails = [
+            'first_name'    => $request->get('first_name'),
+            'last_name'     => $request->get('last_name'),
+            'email'         => $request->get('email'),
+            'tel_number'    => $request->get('tel_number'),
+            'address'       => $request->get('address')
+        ];
+
         $userDocuments = [
             ($request->file('doc_1_mand')) ? $request->file('doc_1_mand') : $request->get('doc1Mand'),
             ($request->file('doc_2_mand')) ? $request->file('doc_2_mand') : $request->get('doc2Mand'),
@@ -186,10 +210,32 @@ class ProjectsController extends Controller {
             'img_4'     => ($request->file('img_4')) ? $request->file('img_4') : $request->get('img4')
         ];
 
-        //dd($userImages);
 
-        // Lets just start here.
-        $project = Project::create($projectDetails);
+        // Find the Project which belongs to the user, or create a new one.
+        $projectID = (Auth::user()->project) ? Auth::user()->project->id : null;
+        $project = Project::findOrNew($projectID);
+
+        // Store the original project slug,
+        // for the saved images, in case of user edit.
+        $originalProjectSlug = $project->slug;
+
+        // Update or fill the Project attributes.
+        foreach($projectDetails as $attribute => $value)
+        {
+            $project->$attribute = $value;
+        }
+        // Save the changes to the Project.
+        $project->save();
+
+
+        // Update user model.
+        $user = Auth::user();
+        foreach($userDetails as $attribute => $value)
+        {
+            $user->$attribute = $value;
+        }
+        $user->save();
+
 
         // Make the image and document directories.
         $imageFolderPath = public_path("img/$project->slug");
@@ -203,12 +249,10 @@ class ProjectsController extends Controller {
         $this->moveDocumentsAndSaveToDB($userDocuments, $documentFolderPath, $project->id);
 
         // Resize the images to our needs, and save them in their directories.
-        $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath);
+        $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath, $originalProjectSlug);
 
         // Create new Image instances in the database.
         $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
-
-        // Update user model.
 
         Session::flash('flash_message', trans('create-project-form.save-success'));
         return url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$project->slug);
@@ -245,7 +289,7 @@ class ProjectsController extends Controller {
      *
      * @param $path
      */
-    public function makeImageDirectories($path)
+    protected function makeImageDirectories($path)
     {
         if(! is_dir($path))
         {
@@ -271,7 +315,7 @@ class ProjectsController extends Controller {
      *
      * @param $path
      */
-    public function makeDocumentDirectory($path)
+    protected function makeDocumentDirectory($path)
     {
         if(! is_dir($path))
         {
@@ -287,11 +331,11 @@ class ProjectsController extends Controller {
      * @param $directoryPath
      * @param $projectID
      */
-    public function moveDocumentsAndSaveToDB($singleDimArr, $directoryPath, $projectID)
+    protected function moveDocumentsAndSaveToDB($singleDimArr, $directoryPath, $projectID)
     {
         foreach($singleDimArr as $file)
         {
-            if( ! is_null($file))
+            if( ! is_null($file) && $file instanceof UploadedFile )
             {
                 Document::create(['filename' => preg_replace('/[\s]+/', '_', $file->getClientOriginalName()), 'project_id' => $projectID]);
                 $file->move($directoryPath, preg_replace('/[\s]+/', '_', $file->getClientOriginalName()));
@@ -306,47 +350,68 @@ class ProjectsController extends Controller {
      * @param $multiDimArr
      * @param $childName
      * @param $parentDirectoryPath
-     * @param bool $rename
      */
-    public function resizeImagesAndSaveToFolders($multiDimArr, $childName, $parentDirectoryPath, $rename = false)
+    protected function resizeImagesAndSaveToFolders($multiDimArr, $childName, $parentDirectoryPath, $originalProjectSlug)
     {
         $count = 1;
         foreach($multiDimArr as $key => $image)
         {
-            if( ! is_null($image))
+            if( ! is_null($image) )
             {
-                if($rename)
+                // If $image is not an instance of a file, it is the hidden field value sent,
+                // with a saved image preview.
+                if( $image instanceof UploadedFile )
                 {
                     $extension = explode('.', $image->getClientOriginalName());
                     $extension = $extension[count($extension)-1];
                     $filename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
+
+                    Image::make($image)->resize(1250, 700, function($constraint)
+                    {
+                        $constraint->upsize();
+                        $constraint->aspectRatio();
+                    })->limitColors(255)
+                        ->save($parentDirectoryPath.'/large/'.$filename);
+
+                    Image::make($image)->resize(992, 600, function($constraint)
+                    {
+                        $constraint->upsize();
+                        $constraint->aspectRatio();
+                    })->limitColors(255)
+                        ->save($parentDirectoryPath.'/medium/'.$filename);
+
+                    Image::make($image)->resize(768, 500, function($constraint)
+                    {
+                        $constraint->upsize();
+                        $constraint->aspectRatio();
+                    })->limitColors(255)
+                        ->save($parentDirectoryPath.'/small/'.$filename);
                 }
-
-                $filename = strtolower(preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
-
-                Image::make($image)->resize(1250, 700, function($constraint)
+                else
                 {
-                    $constraint->upsize();
-                    $constraint->aspectRatio();
-                })->limitColors(255)
-                    ->save($parentDirectoryPath.'/large/'.$filename);
+                    // In the instance the user renames the project, move the already saved files to
+                    // a new directory named by the new project name.
+                    $originalFilename = $image;
+                    $originalDirectory = public_path('img/'.$originalProjectSlug);
+                    $extension = explode('.', $originalFilename);
+                    $extension = $extension[count($extension)-1];
+                    $newFilename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
 
-                Image::make($image)->resize(992, 600, function($constraint)
-                {
-                    $constraint->upsize();
-                    $constraint->aspectRatio();
-                })->limitColors(255)
-                    ->save($parentDirectoryPath.'/medium/'.$filename);
+                    if(is_dir($originalDirectory))
+                    {
+                        $smallImage = file_get_contents($originalDirectory.'/small/'.$originalFilename);
+                        file_put_contents($parentDirectoryPath.'/small/'.$newFilename, $smallImage);
 
-                Image::make($image)->resize(768, 500, function($constraint)
-                {
-                    $constraint->upsize();
-                    $constraint->aspectRatio();
-                })->limitColors(255)
-                    ->save($parentDirectoryPath.'/small/'.$filename);
+                        $mediumImage = file_get_contents($originalDirectory.'/medium/'.$originalFilename);
+                        file_put_contents($parentDirectoryPath.'/medium/'.$newFilename, $mediumImage);
 
-                $count++;
+                        $largeImage = file_get_contents($originalDirectory.'/large/'.$originalFilename);
+                        file_put_contents($parentDirectoryPath.'/large/'.$newFilename, $largeImage);
+                    }
+                }
             }
+
+            $count++;
         }
     }
 
@@ -358,42 +423,78 @@ class ProjectsController extends Controller {
      * @param $multiDimArr
      * @param $childName
      * @param $projectID
-     * @param bool $rename
      */
-    public function saveImageInstancesToDB($multiDimArr, $childName, $projectID, $rename = false)
+    protected function saveImageInstancesToDB($multiDimArr, $childName, $projectID)
     {
         $count = 1;
         foreach($multiDimArr as $key => $image)
         {
             if( ! is_null($image))
             {
-                if($rename)
+                // If $image is not an instance of a file, it is the hidden field value sent,
+                // with a saved image preview.
+                if($image instanceof UploadedFile)
                 {
                     $extension = explode('.', $image->getClientOriginalName());
                     $extension = $extension[count($extension)-1];
+                    // Name images by child's name.
                     $filename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
-                }
-
-                $filename = strtolower(preg_replace('/[\s]+/', '_', $image->getClientOriginalName()));
-
-                if( $key != 'main_img')
-                {
-                    \App\Image::create([
-                        'filename' => $filename,
-                        'project_id' => $projectID
-                    ]);
                 }
                 else
                 {
-                    \App\Image::create([
-                        'filename' => $filename,
-                        'project_id' => $projectID,
-                        'main_img' => 1
-                    ]);
+                    $extension = explode('.', $image);
+                    $extension = $extension[count($extension)-1];
+                    // Name images by current value of child's name.
+                    $filename = (strtolower(preg_replace('/[\s]+/', '_', $childName).$count.'.'.$extension));
                 }
 
-                $count++;
+                if( $key != 'main_img')
+                {
+                    // Protect against the instance where, the user alters the child name field.
+                    $image = \App\Image::where('filename', 'LIKE', '%'.$count.'%')
+                        ->where('project_id', '=', $projectID)
+                        ->get()
+                        ->first();
+                    if (is_null($image))
+                    {
+                        \App\Image::create([
+                            'filename'      => $filename,
+                            'project_id'    => $projectID
+                        ]);
+                    }
+                    else
+                    {
+                        $image->filename = $filename;
+                        $image->project_id = $projectID;
+                        $image->save();
+                    }
+                }
+                else
+                {
+                    // Protect against the instance where, the user alters the child name field.
+                    $image = \App\Image::where('filename', 'LIKE', '%'.$count.'%')
+                        ->where('project_id', '=', $projectID)
+                        ->get()
+                        ->first();
+                    if (is_null($image))
+                    {
+                        \App\Image::create([
+                            'filename'      => $filename,
+                            'project_id'    => $projectID,
+                            'main_img'      => '1'
+                        ]);
+                    }
+                    else
+                    {
+                        $image->filename = $filename;
+                        $image->project_id = $projectID;
+                        $image->main_img = '1';
+                        $image->save();
+                    }
+                }
             }
+
+            $count++;
         }
     }
 
