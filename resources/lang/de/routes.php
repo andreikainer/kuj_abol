@@ -24,7 +24,8 @@ return [
     'current-projects'      => 'current-projects',
     'account/verify'       => 'benutzer/prüfen',
     'account/register'      => 'benutzer/registrieren',
-    'account/login'         => 'benutzer/login',
+    'account/login'         => 'benutzer/einloggen',
+
     'create-project/save'   => 'antrag-einreichen/sparen',
     'create-project/update' => 'antrag-einreichen/update',
     'create-project/edit'   => 'antrag-einreichen/edit',

@@ -126,27 +126,48 @@ class AuthController extends Controller {
      */
     public function postLogin(Request $request)
     {
-        // 1. create rules for user’s input
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        // 2. run the validation with those rules
-        $credentials = $request->only('email', 'password');
-
-        // 3. if user’s input passed validation
-        if ($this->auth->attempt($credentials, $request->has('remember')))
-        {
-            return redirect()->intended($this->redirectPath()); //return Redirect::back()->with('error_code', 5);
+        //1. check if its our form
+        if ( Session::token() !== Input::get( '_token' ) ) {
+            return Response::json( array(
+                'msg' => 'Unauthorized attempt to log in.'
+            ) );
         }
 
-        // 4. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
-        return redirect($this->loginPath())
-            ->withInput($request->only('email', 'remember'))
-            ->withErrors([
-                'email' => $this->getFailedLoginMessage(),
-            ]);
+        // 2. create rules for user’s input
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required|min:6',
+        ]);
+
+        // 3. run the validation with those rules
+        $credentials = $request->only('username', 'password');
+
+        if(Request::ajax())
+        {
+            $user_data = array(
+                'username' => Input::get('username'),
+                'password' => Input::get('password'),
+            );
+//            print_r($data);
+            // 3. if user’s input passed validation
+            if (Auth::attempt($user_data))
+            {
+                $response = array(
+                    'status' => 'success',
+                    'msg' => 'Setting created successfully',
+                );
+
+                return Response::json( $response );
+                //return redirect()->intended($this->redirectPath()); //return Redirect::back()->with('error_code', 5);
+            } else {
+            // 4. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
+            return redirect($this->loginPath())
+                ->withInput($request->only('username', 'remember'))
+                ->withErrors([
+                    'username' => $this->getFailedLoginMessage(),
+                ]);
+            }
+        }
     }
 
     /**
@@ -156,7 +177,7 @@ class AuthController extends Controller {
      */
     protected function getFailedLoginMessage()
     {
-        return 'Woops! Incorrect email address or password. Please, try again.';
+        return trans('register-page.login-fail');
     }
 
     /**
