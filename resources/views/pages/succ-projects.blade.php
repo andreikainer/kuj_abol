@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
 
-                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
+                                    <p class="finished-green text-center mb-0">{{ trans('home-page.finished') }}</p>
                                     <p class="text-right mb-0"><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
                                 </div>
                             </div>

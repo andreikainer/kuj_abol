@@ -34,7 +34,7 @@ class SearchController extends Controller {
             if ( count($projects_results)>0 ) {
                 return view('search.search-results', compact('projects_results', 'message'));
             } else {
-                $message = trans('app.no-search-results') . ' <strong>' . $search_terms . '</strong>';
+                $message = trans('app.no-search-results') . ' <strong>"' . $search_terms . '"</strong>';
                 return view('search.search-results', compact('projects_results', 'message'));
             }
         }

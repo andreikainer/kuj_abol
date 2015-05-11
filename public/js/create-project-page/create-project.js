@@ -476,7 +476,7 @@
             dataType : 'json',
             processData : false,
             contentType : false,
-            success : function(response)
+            success : function(json)
             {
                 if ( response.errors )
                 {

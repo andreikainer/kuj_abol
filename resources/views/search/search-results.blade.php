@@ -30,7 +30,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
                                 <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}">
-                                    <img src="{{ asset('img/logoplaceholder.jpg') }}" alt="{{ $project->child_name }}">
+                                    <img src="{!! asset('img/' . $project->slug .'/small/' . $project->mainImage[0]->filename) !!}" alt="{{ $project->child_name }}">
                                 </a>
 
                                 <div class="caption">

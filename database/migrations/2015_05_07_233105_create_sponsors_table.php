@@ -20,6 +20,7 @@ class CreateSponsorsTable extends Migration {
             $table->boolean('top_sponsor')->default(0);
             $table->string('business_name');
             $table->string('logo');
+            $table->string('url')->nullable();
 			$table->timestamps();
 
             $table->foreign('user_id')
