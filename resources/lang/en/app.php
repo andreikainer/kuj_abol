@@ -21,7 +21,8 @@ return [
     'create-project' 	    => 'Create Project',
     'contribute' 		    => 'Contribute',
 
-    'login'				    => 'Login',
+    'login'				    => 'Log in',
+    'logout'                => 'Log out',
     'register'			    => 'Register',
 
     'search'                => 'Search',

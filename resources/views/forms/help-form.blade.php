@@ -1,7 +1,7 @@
 <!-- if there are validation errors, show "Woops" message -->
     <div class="form-group">
         @if($errors->any())
-            <div class="form-error"><i class="fa fa-exclamation-circle"></i> {{ trans('contact-page.woops') }}</div>
+            <div class="form-error top-error"><i class="fa fa-exclamation-circle"></i> {{ trans('contact-page.woops') }}</div>
         @endif
     </div>
 

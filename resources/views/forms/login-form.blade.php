@@ -1,45 +1,49 @@
 <!-- if there are validation errors, show "Woops" message -->
     <div class="form-group">
         @if($errors->any())
-            <div class="form-error"><i class="fa fa-exclamation-circle"></i> {{ trans('contact-page.woops') }}</div>
+            <div class="form-error top-error"><i class="fa fa-exclamation-circle"></i> {{ trans('login-page.login-fail') }}</div>
         @endif
     </div>
 {!! Form::open(['action' => 'Auth\AuthController@postLogin', 'class' => 'row', 'method' => 'post']) !!}
 
 <!-- Username Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
-    	{!! Form::label(null, trans('register-page.username'), ['class' => 'form-label form-inline']) !!}
-        {!! Form::text('username', null,
+    	{!! Form::label(null, trans('login-page.username'), ['class' => 'form-label form-inline']) !!}
+        {!! Form::text('user_name', null,
         		array('required',
-              		'class'=>'form-input form-inline')) !!}
+              		'class'=>'form-input form-inline',
+              		'placeholder'=>trans('login-page.place-username'))) !!}
     </div>
     <div class="form-error none" data-error="username"></div>
 <!-- end username input -->
 
 <!-- Password Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
-    	{!! Form::label(null, trans('register-page.password'), ['class' => 'form-label form-inline']) !!}
-        {!! Form::password('password', null,
+    	{!! Form::label(null, trans('login-page.password'), ['class' => 'form-label form-inline']) !!}
+        {!! Form::password('password',
                 array('required',
-                    'class'=>'form-input form-inline')) !!}
+                    'class'=>'form-input form-inline',
+                    'placeholder'=>trans('login-page.place-password'))) !!}
     </div>
     <div class="form-error none" data-error="password"></div>
 <!-- end password input -->
 
 <!-- Remember Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
-    		<div class="checkbox">
-    			<label>
-    				<input type="checkbox" name="remember"> {{trans('register-page.remember-me')}}
-    			</label>
-    		</div>
+        {!! Form::label(null, trans('login-page.remember-me')) !!}
+        {!! Form::checkbox('remember', null) !!}
+    		{{--<div class="checkbox">--}}
+    			{{--<label>--}}
+    				{{--<input type="checkbox" name="remember"> {{trans('login-page.remember-me')}}--}}
+    			{{--</label>--}}
+    		{{--</div>--}}
     </div>
 <!-- end remember input -->
 
 <!-- Submit buttons -->
     {{--<div class="row">--}}
-        {!! Form::submit(trans('register-page.login'), ['class' => 'col-xs-12 col-sm-5 pull-left btn login-submit button-main mt-1em text-center', 'id' => 'log-me-in']) !!}
-        <a href="{{ url('/password/email') }}" id="forgot-my-password" class="col-xs-12 col-sm-5 pull-right btn login-submit mt-1em text-center">{{ trans('register-page.forgot-password') }}</a>
+        {!! Form::submit(trans('login-page.login'), ['class' => 'col-xs-12 col-sm-5 pull-left btn login-submit button-main mt-1em text-center', 'id' => 'log-me-in']) !!}
+        <a href="{{ url('/password/email') }}" id="forgot-my-password" class="col-xs-12 col-sm-5 pull-right btn login-submit mt-1em text-center">{{ trans('login-page.forgot-password') }}</a>
 
     <!--</div>-->
 <!-- end submit buttons -->

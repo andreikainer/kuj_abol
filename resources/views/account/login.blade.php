@@ -9,17 +9,17 @@
 
                     {{--<div class="no-projects">{!! trans('contact-page.pre-form', ['cta-link' => trans('routes.how-it-works')]) !!}</div>--}}
 
-               <!-- to give the user a feedback in a success point, show the success message -->
+               <!-- to give the user a feedback in a success logout point, show the success message -->
                     <div class="form-group">
-                        @if(Session::has('message_success'))
+                        @if(Session::has('message_logout'))
                         	<div class="image-upload-label text-center">
-                          		{{ Session::get('message_success') }}
-                          		{{ Session::flash('message_success', trans('login-page.thanks')) }}
+                          		{{ Session::get('message_logout') }}
+                          		{{ Session::flash('message_logout', trans('login-page.logout')) }}
                         	</div>
                         @endif
                     </div>
 
-               <!-- Contact form -->
+               <!-- Login form -->
                         @include('forms.login-form')
 
 
@@ -85,5 +85,5 @@
 
 @section('additional_js')
     <script src="{{ asset('/js/FormValidation.js') }}"></script>
-    <script src="{{ asset('/js/FormValidation.js') }}"></script>
+    <script src="{{ asset('/js/login-page/login.js') }}"></script>
 @endsection

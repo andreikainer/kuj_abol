@@ -75,8 +75,11 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.account/verify').'/{conf_code}', 'Auth\AuthController@getVerify');
 
         Route::get(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@getLogin');
-
         Route::post(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@postLogin');
+
+        Route::get(LaravelLocalization::transRoute('routes.logout'), 'Auth\AuthController@getLogout');
+
+        Route::any(LaravelLocalization::transRoute('routes.account/dashboard'), 'Auth\AuthController@dash');
 
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
@@ -89,4 +92,7 @@ Route::group(
 // Route::get('test', '<Controller>@<Method>');
 
 Route::post('temp-document', 'AjaxController@tempDocument');
+
+//Route::get('dashboard', 'Auth\AuthController@dash');
+//Route::get('logout', 'Auth\AuthController@getLogout');
 

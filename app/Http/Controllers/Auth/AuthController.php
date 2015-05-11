@@ -13,6 +13,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class AuthController extends Controller {
 
+    protected $redirectTo = '/dashboard';
 	/*
 	|--------------------------------------------------------------------------
 	| Registration & Login Controller
@@ -126,48 +127,56 @@ class AuthController extends Controller {
      */
     public function postLogin(Request $request)
     {
-        //1. check if its our form
-        if ( Session::token() !== Input::get( '_token' ) ) {
-            return Response::json( array(
-                'msg' => 'Unauthorized attempt to log in.'
-            ) );
-        }
-
-        // 2. create rules for user’s input
+        // 1. create rules for user’s input
         $this->validate($request, [
-            'username' => 'required',
+            'user_name' => 'required',
             'password' => 'required|min:6',
         ]);
 
-        // 3. run the validation with those rules
-        $credentials = $request->only('username', 'password');
+        // 2. run the validation with those rules
+        $credentials = $request->only('user_name', 'password');
 
-        if(Request::ajax())
+        //$username = Input::get('user_name');
+        //$password = Input::get('$password');
+        $remember = \Input::get('remember');
+        //return $remember;
+
+
+        // 3a. if user’s input passed validation
+        if (\Auth::attempt($credentials, $remember))
         {
-            $user_data = array(
-                'username' => Input::get('username'),
-                'password' => Input::get('password'),
-            );
-//            print_r($data);
-            // 3. if user’s input passed validation
-            if (Auth::attempt($user_data))
+            // 4. check if the user has been baned
+            $activness = \Auth::user()->active;
+            if($activness == 1)
             {
-                $response = array(
-                    'status' => 'success',
-                    'msg' => 'Setting created successfully',
-                );
+                // 5. store success feed back message in a session
+                //Session::set('message_login', trans('login-page.login-success'));
+                Session::flash('flash_message', trans('login-page.login-success'));
+                Session::set('username', \Auth::user()->user_name);
 
-                return Response::json( $response );
-                //return redirect()->intended($this->redirectPath()); //return Redirect::back()->with('error_code', 5);
-            } else {
-            // 4. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
-            return redirect($this->loginPath())
-                ->withInput($request->only('username', 'remember'))
-                ->withErrors([
-                    'username' => $this->getFailedLoginMessage(),
-                ]);
+                //return trans('routes.account/dashboard');
+                return redirect(trans('routes.account/dashboard'));
+
+                // 6. redirect the user to the dashboard page
+                //return redirect()->intended(trans('routes.account/dashboard'));
+            }else{
+                // 5. if the user has been baned, store feed back message in a session
+                Session::flash('flash_message', trans('login-page.baned-user'));
+                // 6. logout banned user
+                $this->auth->logout();
+                // 7. redirect back to login form
+                return redirect()->back();
             }
+
+        } else {
+        // 3b. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
+        return redirect($this->loginPath())
+            ->withInput($request->only('user_name', 'remember'))
+            ->withErrors([
+                'user_name' => $this->getFailedLoginMessage(),
+            ]);
         }
+
     }
 
     /**
@@ -177,7 +186,7 @@ class AuthController extends Controller {
      */
     protected function getFailedLoginMessage()
     {
-        return trans('register-page.login-fail');
+        return trans('login-page.login-fail');
     }
 
     /**
@@ -189,7 +198,13 @@ class AuthController extends Controller {
     {
         $this->auth->logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+        // store success feed back message in a session
+        //Session::set('message_logout', trans('login-page.logout'));
+        Session::flash('flash_message', trans('login-page.logout'));
+        // clear user_id key session
+        Session::forget('username');
+
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : trans('routes.account/login'));
     }
 
     /**
@@ -204,7 +219,7 @@ class AuthController extends Controller {
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : trans('routes.account/dashboard');
     }
 
     /**
@@ -214,7 +229,12 @@ class AuthController extends Controller {
      */
     public function loginPath()
     {
-        return property_exists($this, 'loginPath') ? $this->loginPath : '/account/login';
+        return property_exists($this, 'loginPath') ? $this->loginPath : trans('routes.account/login');
+    }
+
+    public function dash()
+    {
+        return view('account.user-dashboard');
     }
 
 }
