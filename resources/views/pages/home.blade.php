@@ -76,8 +76,7 @@
                                         </div>
                                     </div>
 
-                                    <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
-                                </div>
+                                    <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">{{trans('home-page.read-more')}}</a></p>                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -157,6 +156,10 @@
                                     <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}"></a>
                             </div>
                             @endforeach
+                    </div>
+
+                    <div class="row">
+                        <p class="text-center"><a href="{{ action('PagesController@sponsors') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p>
                     </div>
 
                 </div>
