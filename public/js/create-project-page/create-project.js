@@ -517,8 +517,9 @@
             // Prepare the file data to upload.
             var formData = new FormData();
 
-            formData.append('element', data.id)
-            formData.append('file', files[$(data).attr('name')][0]);
+            formData.append('name', $(data).attr('name'));
+            formData.append('element', data.id);
+            formData.append($(data).attr('name'), files[$(data).attr('name')][0]);
 
             // Call the AJAX request, passing along the file info.
             $.publish('document-submit.ajax', formData);
@@ -536,6 +537,19 @@
                 contentType : false,
                 success : function(response)
                 {
+                    if( response.errors )
+                    {
+                        var loaderImage = $('input[name="'+response.element+'"]').siblings('.image-loader');
+                        loaderImage.fadeOut();
+                        $.publish('temp-document.fail', response);
+                        return false;
+                    }
+
+                    // Remove the error feedback.
+                    $('.form-section-tab[data-section="3"]').removeClass('form-section-tab-error');
+                    hideErrorMessage(response.element);
+                    hideErrorFlashMessage();
+
                     $.publish('temp-document.success', response);
                 },
                 error : function(response)
@@ -735,7 +749,7 @@
             });
         });
 
-        $.subscribe('form-submit.fail form-save.fail project-start.fail', function(event, data)
+        $.subscribe('form-submit.fail form-save.fail project-start.fail temp-document.fail', function(event, data)
         {
             var formFields = $('form#create-project input, textarea');
 

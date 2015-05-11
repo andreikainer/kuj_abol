@@ -140,45 +140,55 @@ return [
 
         'main_img'      => [
             'required_without'  => 'A main image is required.',
-            'mimes'     => 'Please choose a valid image format.'
+            'mimes'     => 'Please choose a valid image format.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'img_2'         => [
-            'mimes'     => 'Please choose a valid image format.'
+            'mimes'     => 'Please choose a valid image format.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'img_3'         => [
-            'mimes'     => 'Please choose a valid image format.'
+            'mimes'     => 'Please choose a valid image format.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'img_4'         => [
-            'mimes'     => 'Please choose a valid image format.'
+            'mimes'     => 'Please choose a valid image format.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'doc_1_mand'    => [
             'required_without'  => 'At least two documents of evidence are required.',
-            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'doc_2_mand'    => [
             'required_without'  => 'At least two documents of evidence are required.',
-            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'doc_3'    => [
-            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'doc_4'    => [
-            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'doc_5'    => [
-            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'doc_6'    => [
-            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
+            'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+            'max'      => 'Must not exceed 20MB in size.'
         ],
 
         'user_name' => [
