@@ -58,10 +58,8 @@ class ProjectsController extends Controller {
     public function show($slug)
     {
         // fetch data according to slug
-        $project = Project::where('slug', $slug)->first();
+        $project = $slug;
         $logos = DB::table('sponsors_tbl')->get();
-
-        return $project;
 
         // convert DB date into european date format
         $finish_date = date("d-m-Y", strtotime($project->completed_on));
@@ -72,7 +70,7 @@ class ProjectsController extends Controller {
 
         $galleryImages = \App\Image::where('project_id', $project->id)->get();
 
-        //return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages'));
+        return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages'));
     }
 
     /**
