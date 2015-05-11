@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\SaveProjectRequest;
 use App\Project;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 use Intervention\Image\Facades\Image;
@@ -163,7 +165,12 @@ class ProjectsController extends Controller {
         // Create new Image instances in the database.
         $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
 
-        // Don't forget to email admin.
+        // Mail the administrator, of a newly submitted project
+        $project = Auth::user()->project;
+        Mail::queue('emails.project-submit', ['project' => $project], function($message)
+        {
+            $message->to('wilhelmine@kinderfoerderungen.at', 'Wilhelmine Bauer')->subject(trans('create-project-form.email-subject'));
+        });
 
         return json_encode(['status' => 'success']);
     }
@@ -278,9 +285,113 @@ class ProjectsController extends Controller {
         return view('create-project.edit', compact('project', 'user'));
     }
 
+    /**
+     * Submit a completed, previously saved project.
+     *
+     * @param CreateProjectRequest $request
+     * @param Project $project
+     * @return string
+     */
     public function update(CreateProjectRequest $request, Project $project)
     {
-        //
+        $projectDetails = [
+            'project_name'  => $request->get('project_name'),
+            'short_desc'    => $request->get('short_desc'),
+            'full_desc'     => $request->get('full_desc'),
+            'target_amount' => $request->get('target_amount'),
+            'child_name'    => $request->get('child_name'),
+            'slug'          => strtolower(preg_replace('/[\s-]+/', '-', $request->get('project_name'))),
+            'application_status' => '1',
+            'user_id'       => Auth::user()->id
+        ];
+
+        $userDetails = [
+            'first_name'    => $request->get('first_name'),
+            'last_name'     => $request->get('last_name'),
+            'email'         => $request->get('email'),
+            'tel_number'    => $request->get('tel_number'),
+            'address'       => $request->get('address')
+        ];
+
+        $userDocuments = [
+            ($request->file('doc_1_mand')) ? $request->file('doc_1_mand') : $request->get('doc1Mand'),
+            ($request->file('doc_2_mand')) ? $request->file('doc_2_mand') : $request->get('doc2Mand'),
+            ($request->file('doc_3')) ? $request->file('doc_3') : $request->get('doc3'),
+            ($request->file('doc_4')) ? $request->file('doc_4') : $request->get('doc4'),
+            ($request->file('doc_5')) ? $request->file('doc_5') : $request->get('doc5'),
+            ($request->file('doc_6')) ? $request->file('doc_6') : $request->get('doc6')
+        ];
+
+        $userImages = [
+            'main_img'  => ($request->file('main_img')) ? $request->file('main_img') : $request->get('mainImage'),
+            'img_2'     => ($request->file('img_2')) ? $request->file('img_2') : $request->get('img2'),
+            'img_3'     => ($request->file('img_3')) ? $request->file('img_3') : $request->get('img3'),
+            'img_4'     => ($request->file('img_4')) ? $request->file('img_4') : $request->get('img4')
+        ];
+
+        // Store the original project slug,
+        // for the saved images, in case of user edit.
+        $originalProjectSlug = $project->slug;
+
+        // Update or fill the Project attributes.
+        foreach($projectDetails as $attribute => $value)
+        {
+            $project->$attribute = $value;
+        }
+        // Save the changes to the Project.
+        $project->save();
+
+        // Update user model.
+        $user = Auth::user();
+        foreach($userDetails as $attribute => $value)
+        {
+            $user->$attribute = $value;
+        }
+        $user->save();
+
+        // Make the image and document directories.
+        $imageFolderPath = public_path("img/$project->slug");
+        $documentFolderPath = public_path("documents/$project->slug");
+
+        $this->makeImageDirectories($imageFolderPath);
+        $this->makeDocumentDirectory($documentFolderPath);
+
+        // Create new Document instances in the database.
+        // Move the documents to their directory.
+        $this->moveDocumentsAndSaveToDB($userDocuments, $documentFolderPath, $project->id, $originalProjectSlug);
+
+        // Resize the images to our needs, and save them in their directories.
+        $this->resizeImagesAndSaveToFolders($userImages, $project->child_name, $imageFolderPath, $originalProjectSlug);
+
+        // Create new Image instances in the database.
+        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
+
+        // Mail the administrator, of a newly submitted project.
+        $project = Auth::user()->project;
+        Mail::queue('emails.project-submit', ['project' => $project], function($message)
+        {
+//            $message->to('wilhelmine@kinderfoerderungen.at', 'Wilhelmine Bauer')->subject(trans('create-project-form.email-subject'));
+            $message->to('brad_milburn@hotmail.com', 'Brad Milburn')->subject(trans('create-project-form.email-subject'));
+        });
+
+        return json_encode(['status' => 'success']);
+    }
+
+    /**
+     * Delete the project entirely.
+     *
+     * @param Project $project
+     * @throws \Exception
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function delete(Project $project)
+    {
+        $project->images->delete();
+        $project->documents->delete();
+        $project->delete();
+
+        Session::flash('flash_message', trans('create-project.delete-success'));
+        return redirect('create-project');
     }
 
     /**

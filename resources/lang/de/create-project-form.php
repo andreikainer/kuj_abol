@@ -79,4 +79,10 @@ return [
     'validation-error'      => ' Sorry, enthält die Form einige Fehler.',
     'project-complete'      => 'Anfrage kann nicht mehr bearbeitet werden.',
     'save-success'          => 'Anfrage erfolgreich gespeichert.',
+    'delete-success'        => 'Anfrage erfolgreich entfernt.',
+
+    /**
+     * Email
+     */
+    'email-subject'         => 'Neue Anfrage eingereicht',
 ];

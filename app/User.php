@@ -60,4 +60,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasOne('App\Project');
     }
 
+    public function incompleteProject()
+    {
+        return $this->project()->where('application_status', '=', '0');
+    }
+
 }

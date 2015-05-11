@@ -103,7 +103,8 @@ return [
 
         'target_amount' => [
             'required'  => 'This field is required.',
-            'integer'   => 'Must contain numbers only. And not begin with a space.'
+            'integer'   => 'Must contain numbers only. And not begin with a space.',
+            'min'       => 'The amount to fundraise, must be at least &euro;500'
         ],
 
         'child_name'    => [

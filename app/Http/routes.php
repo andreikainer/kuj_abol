@@ -54,6 +54,8 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/edit').'/{slug}', 'ProjectsController@edit');
 
+        Route::delete(LaravelLocalization::transRoute('routes.create-project/delete').'/{slug}', 'ProjectsController@delete');
+
 //        Route::controllers([
 //
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',

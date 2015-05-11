@@ -5281,6 +5281,7 @@ input[type="submit"], button[type="submit"] {
     background: #54d98c; }
 
 .form-button-secondary {
+  padding: 0;
   position: relative;
   display: inline-block;
   background: #6f798b;
@@ -5289,7 +5290,11 @@ input[type="submit"], button[type="submit"] {
   .form-button-secondary:hover {
     background: #8b93a2; }
   .form-button-secondary a {
-    color: white; }
+    color: white;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0.65rem; }
     .form-button-secondary a:hover, .form-button-secondary a:active, .form-button-secondary a:visited, .form-button-secondary a:focus {
       color: white;
       text-decoration: none !important; }

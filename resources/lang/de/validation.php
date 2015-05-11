@@ -103,7 +103,8 @@ return [
 
         'target_amount' => [
             'required'  => 'Dieses Feld ist erforderlich.',
-            'integer'   => 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.'
+            'integer'   => 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
+            'min'       => 'Der Betrag, der Fundraising muss 500 &euro;'
         ],
 
         'child_name'    => [

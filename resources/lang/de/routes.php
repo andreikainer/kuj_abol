@@ -27,7 +27,8 @@ return [
     'account/register'      => 'benutzer/registrieren',
     'account/login'         => 'benutzer/login',
     'create-project/save'   => 'antrag-einreichen/sparen',
-    'create-project/update' => 'create-project/update',
-    'create-project/edit'   => 'create-project/edit',
+    'create-project/update' => 'antrag-einreichen/update',
+    'create-project/edit'   => 'antrag-einreichen/edit',
+    'create-project/delete' => 'antrag-einreichen/delete',
 
 ];
