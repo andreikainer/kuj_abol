@@ -136,15 +136,16 @@
 
                                 <div class="alignme-center">
 
+                                <!-- if there is a logged in user in the session, change the buttons to LOGOUT and USERNAME -->
                                     @if(Session::has('username'))
                                         <a href="{{ action('Auth\AuthController@getLogout') }}" type="button" class="btn btn-xs button-main button-user" id="logout">{{ trans('app.logout') }}</a>
                                         <a href="{{ action('Auth\AuthController@dash') }}" type="button" class="btn btn-xs button-main button-user" id="username-btn">{{ ucfirst(Session::get('username')) }}</a>
                                     @else
+                                <!-- if there is no logged in user in the session, change the buttons to LOGIN and REGISTER -->
                                         <a href="{{ action('Auth\AuthController@getLogin') }}" type="button" class="btn btn-xs button-main button-user login">{{ trans('app.login') }}</a>
                                         <a href="{{ action('Auth\AuthController@getRegister') }}" type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</a>
                                     @endif
-                                    {{--<a href="{{ action('Auth\AuthController@getLogout') }}" type="button" class="btn btn-xs button-main button-user">log out</a>--}}
-                                    {{--<button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>--}}
+
                                 </div>
 
                             </div>

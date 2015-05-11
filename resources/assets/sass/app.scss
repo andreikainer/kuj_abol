@@ -619,11 +619,13 @@ footer {
 
 /*-- Login page buttons -*/
   #log-me-in {
-    margin-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 1em !important;
   }
   #forgot-my-password {
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     background-color: $bluegrey !important;
     color: $white !important;
     font-family: $lato;

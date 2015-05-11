@@ -30,8 +30,8 @@
 
 <!-- Remember Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
-        {!! Form::label(null, trans('login-page.remember-me')) !!}
         {!! Form::checkbox('remember', null) !!}
+        {!! Form::label(null, trans('login-page.remember-me')) !!}
     		{{--<div class="checkbox">--}}
     			{{--<label>--}}
     				{{--<input type="checkbox" name="remember"> {{trans('login-page.remember-me')}}--}}
@@ -41,10 +41,11 @@
 <!-- end remember input -->
 
 <!-- Submit buttons -->
-    {{--<div class="row">--}}
-        {!! Form::submit(trans('login-page.login'), ['class' => 'col-xs-12 col-sm-5 pull-left btn login-submit button-main mt-1em text-center', 'id' => 'log-me-in']) !!}
-        <a href="{{ url('/password/email') }}" id="forgot-my-password" class="col-xs-12 col-sm-5 pull-right btn login-submit mt-1em text-center">{{ trans('login-page.forgot-password') }}</a>
-
-    <!--</div>-->
+<div class="col-xs-12 col-sm-12">
+    <div class="row-fluid clearfix">
+        {!! Form::submit(trans('login-page.login'), ['class' => 'col-xs-12 col-sm-6 col-md-5 pull-left btn login-submit button-main mt-1em text-center', 'id' => 'log-me-in']) !!}
+        <a href="{{ url('/password/email') }}" id="forgot-my-password" class="col-xs-12 col-sm-6 col-md-5 pull-right btn login-submit mt-1em text-center">{{ trans('login-page.forgot-password') }}</a>
+    </div>
+</div>
 <!-- end submit buttons -->
 {!! Form::close() !!}

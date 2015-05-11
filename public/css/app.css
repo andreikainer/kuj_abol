@@ -6078,10 +6078,12 @@ footer {
     margin-top: 0 !important;
     margin-bottom: 1rem; }
   #help-page #log-me-in, #login-page #log-me-in {
-    margin-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 1em !important; }
   #help-page #forgot-my-password, #login-page #forgot-my-password {
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     background-color: #6f798b !important;
     color: white !important;
     font-family: 'Lato', 'Open Sans', sans-serif;
