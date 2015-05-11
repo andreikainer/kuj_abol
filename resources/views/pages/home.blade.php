@@ -61,11 +61,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
                                 <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}">
-<<<<<<< HEAD
-                                    <img src="{{ asset('img/main-carousel/xs/one.jpg') }}" alt="{{ $project->child_name }}">
-=======
                                     <img src="{!! asset('img/' . $project->slug .'/small/' . $project->mainImage[0]->filename) !!}" alt="{{ $project->child_name }}">
->>>>>>> olgasmirnova
                                 </a>
 
                                 <div class="caption">
@@ -81,10 +77,6 @@
                                     </div>
 
                                     <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
-<<<<<<< HEAD
-
-=======
->>>>>>> olgasmirnova
                                 </div>
                             </div>
                         </div>
@@ -130,10 +122,6 @@
 
                                     <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
                                     <p class="text-right mb-0"><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
-<<<<<<< HEAD
-
-=======
->>>>>>> olgasmirnova
                                 </div>
                             </div>
                         </div>
