@@ -31,7 +31,7 @@
             </div> <!-- project images end-->
 
             <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder">  <!-- statistics beginn-->
-                <h3>{{ trans('view-project-page.total-funds-raised') }}</h3>
+                <h3 id="funds_text" data-funds-text="{{ trans('view-project-page.funds-text') }}">{{ trans('view-project-page.total-funds-raised') }}</h3>
                 <h2 id="amount_raised" data-amount-raised="{{ $project->amount_raised }}"><strong>&euro; {{ $amount_raised }}</strong></h2>
                 <h4 id="minimum_goal" data-minimum-goal="{{ $project->target_amount }}"><strong>{{ trans('view-project-page.of-minimum-goal', ['goal' => $target_amount]) }}</strong></h4>
                 <h3>{{ trans('view-project-page.progress') }}</h3>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <h3 id="time-text">{{ trans('view-project-page.project-ends-in') }}</h3>
-                <div id="countdown" data-date="{{ $finish_date }}" data-time="18:00" data-timezone="2" data-final="{{ trans('view-project-page.completed') }}">
+                <div id="countdown" data-date="{{ $finish_date }}" data-time="18:00" data-timezone="2" data-final="{!! trans('view-project-page.completed') !!}">
                     <div class="countdown-value"><span id="countdown-days">0</span></div>:
                     <div class="countdown-value"><span id="countdown-hours">0</span></div>:
                     <div class="countdown-value"><span id="countdown-minutes">0</span></div>:
@@ -48,7 +48,6 @@
                     <div id="time">{!! trans('view-project-page.time-to-goal') !!}</div>
                 </div>
                 <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
-                {{--<div class="heading"></div>--}}
                 <div class="btn">
                    <a id="facebook-share" href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at" class="btn btn-primary button-main" role="button">
                        <i class="fa fa-facebook"></i> Share on Facebook
@@ -64,7 +63,7 @@
             </div>
 
             <div class="row">
-            <div class="col-sm-12 col-md-6 col-md-offset-1 text-justify description"> <!-- project description beginn-->
+            <div class="col-sm-12 col-md-6 col-md-offset-1 text-justify description form-element"> <!-- project description beginn-->
                 <p>{{ $project->full_desc }}</p>
             </div> <!-- project description end-->
 
@@ -88,10 +87,32 @@
             </div> <!-- contribution packages end-->
             </div>
 
-            <div class="col-sm-12" style="background:red;"> <!-- sponsors row beginn-->
-                Olga's Sponsors row
-            </div> <!-- sponsors row end-->
-        {{--</div> <!-- main content end -->--}}
+        <!-- Sponsors' logos -->
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+                <h2 class="heading">{{ trans('app.our-sponsors') }}</h2>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
+                <div class="row sponsors_carousel">
+
+                    @foreach($logos as $logo)
+                        <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
+                            <a href="{{ $logo->url }}"><div class="logo-name img-responsive text-center hidden">{{$logo->business_name}}</div>
+                            <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}"></a>
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+
+        </div>
 @endsection
 
 @section('additional_js')

@@ -8,7 +8,8 @@ return [
   |--------------------------------------------------------------------------
   */
 
-  'total-funds-raised'     => 'Total funds raised:',
+  'total-funds-raised'     => 'Current funds raised:',
+  'funds-text'             => 'Total funds raised:',
   'of-minimum-goal'        => 'of &euro; :goal minimum goal',
   'project-ends-in'        => 'Project ends in:',
   'time-to-goal'           => '<strong>Days</strong><strong>Hours</strong><strong>Minutes</strong><strong>Seconds</strong>',
