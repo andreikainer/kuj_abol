@@ -6015,32 +6015,23 @@ footer {
     cursor: pointer; }
 
 /*------------------------------------------------------------------*/
+/*-- Login Page styles --*/
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
 /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
-#login-page .form-error {
-  padding: 0;
-  background: none !important;
-  border: none;
-  font-size: .9rem;
-  font-weight: 700;
-  line-height: 1.8rem;
-  padding-left: 1rem; }
-#login-page form div.cpp-error {
-  margin-top: 0 !important;
-  margin-bottom: 1rem; }
-#login-page .login-submit {
+.module .module-submit {
   font-family: 'Lato', 'Open Sans', sans-serif;
   font-size: 1.1rem;
   background-color: #6f798b;
   border-color: #6f798b; }
   @media (max-width: 1240px) {
-    #login-page .login-submit {
+    .module .module-submit {
       padding-left: 1rem !important;
       padding-right: 1rem !important; } }
-
-.module-submit:hover, .module-submit:focus, .module-submit:active {
+.module .module-submit:hover, .module .module-submit:focus, .module .module-submit:active {
   color: white;
-  border-color: white; }
+  border-color: #f9f9f9; }
 
 #search_module {
   height: auto; }
@@ -6048,45 +6039,46 @@ footer {
 #search-for-this {
   margin-top: 1.2rem; }
 
-#log-me-in {
-  margin-left: 1rem; }
-
-#forgot-my-password {
-  margin-right: 1rem;
-  background-color: white !important;
-  color: #6f798b !important;
-  font-family: 'Lato', 'Open Sans', sans-serif; }
-  #forgot-my-password:hover {
-    border-color: #6f798b; }
-
 /*------------------------------------------------------------------*/
-/*-- Contact page styles --*/
+/*-- Contact page, Login page styles --*/
 /*------------------------------------------------------------------*/
-#help-page {
-  font-size: 1.1rem !important; }
-  #help-page .no-projects, #help-page .project-links {
+#help-page, #login-page {
+  font-size: 1.1rem !important;
+  /*-- Login page buttons -*/ }
+  #help-page .no-projects, #help-page .project-links, #login-page .no-projects, #login-page .project-links {
     margin-bottom: 2rem; }
-  #help-page input:not([type=submit]), #help-page textarea {
+  #help-page input:not([type=submit]):not([type=checkbox]), #help-page input[type=password], #help-page textarea, #login-page input:not([type=submit]):not([type=checkbox]), #login-page input[type=password], #login-page textarea {
     box-shadow: inset 0 0.5rem 0 0 #6f798b; }
-    #help-page input:not([type=submit]):hover, #help-page input:not([type=submit]):focus, #help-page input:not([type=submit]):active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active {
+    #help-page input:not([type=submit]):not([type=checkbox]):hover, #help-page input:not([type=submit]):not([type=checkbox]):focus, #help-page input:not([type=submit]):not([type=checkbox]):active, #help-page input[type=password]:hover, #help-page input[type=password]:focus, #help-page input[type=password]:active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active, #login-page input:not([type=submit]):not([type=checkbox]):hover, #login-page input:not([type=submit]):not([type=checkbox]):focus, #login-page input:not([type=submit]):not([type=checkbox]):active, #login-page input[type=password]:hover, #login-page input[type=password]:focus, #login-page input[type=password]:active, #login-page textarea:hover, #login-page textarea:focus, #login-page textarea:active {
       box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
-  #help-page form div.form-group {
+  #help-page form div.form-group, #login-page form div.form-group {
     margin-bottom: 0 !important;
     margin-top: 15px; }
-  #help-page form div.form-error {
+  #help-page form div.form-error, #login-page form div.form-error {
     padding: 0;
     background: none !important;
     border: none;
     font-size: .9rem;
     font-weight: 700;
     line-height: 1.8rem; }
-  #help-page div div ul.form-error {
+  #help-page div div ul.form-error, #login-page div div ul.form-error {
     padding-left: 2rem; }
-  #help-page div div ul.form-error li {
+  #help-page div div ul.form-error li, #login-page div div ul.form-error li {
     list-style-type: disc !important; }
-  #help-page form div.cpp-error {
+  #help-page form div.cpp-error, #login-page form div.cpp-error {
     margin-top: 0 !important;
     margin-bottom: 1rem; }
+  #help-page #log-me-in, #login-page #log-me-in {
+    margin-left: 1rem;
+    font-size: 1.1em !important; }
+  #help-page #forgot-my-password, #login-page #forgot-my-password {
+    margin-right: 1rem;
+    background-color: #6f798b !important;
+    color: white !important;
+    font-family: 'Lato', 'Open Sans', sans-serif;
+    font-size: 1.1em !important; }
+    #help-page #forgot-my-password:hover, #login-page #forgot-my-password:hover {
+      background-color: #58606f !important; }
 
 /*------------------------------------------------------------------*/
 /*-- How It Works page styles --*/

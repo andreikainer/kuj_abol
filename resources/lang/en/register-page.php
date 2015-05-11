@@ -26,6 +26,7 @@ return [
     'login'         => 'Log in',
     'forgot-password' => 'Forgot password',
     'login-fail'    => 'Woops! Incorrect email address or password. Please, try again.',
+    'remember-me'   => 'Remember me',
 
     /**
      * Verification Email.

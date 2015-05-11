@@ -536,24 +536,47 @@ footer {
 
 
 /*------------------------------------------------------------------*/
-  /*-- Modules styles --*/
+  /*-- Login Page styles --*/
 /*------------------------------------------------------------------*/
 #login-page {
-  .form-error {
-    padding: 0;
-    background: none !important;
-    border: none;
-    font-size: .9rem;
-    font-weight: 700;
-    line-height: 1.8rem;
-    padding-left: 1rem;
-  }
-  form div.cpp-error {
-    margin-top: 0 !important;
-    margin-bottom: 1rem;
-  }
+//  .form-error {
+//    padding: 0;
+//    background: none !important;
+//    border: none;
+//    font-size: .9rem;
+//    font-weight: 700;
+//    line-height: 1.8rem;
+//    padding-left: 1rem;
+//  }
+//  form div.cpp-error {
+//    margin-top: 0 !important;
+//    margin-bottom: 1rem;
+//  }
+//
+//  .login-submit {
+//    font-family: $lato;
+//    font-size: 1.1rem;
+////    background-color: $blue;
+////    border-color: $blue;
+//
+//    @media(max-width: 1240px) {
+//      padding-left: 1rem !important;
+//      padding-right: 1rem !important;
+//    }
+//  }
 
-  .login-submit {
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- Modules styles --*/
+/*------------------------------------------------------------------*/
+.module {
+  .module-submit {
     font-family: $lato;
     font-size: 1.1rem;
     background-color: $bluegrey;
@@ -564,32 +587,18 @@ footer {
       padding-right: 1rem !important;
     }
   }
-
+  .module-submit:hover, .module-submit:focus, .module-submit:active {
+    color: $white;
+    border-color: $lgrey;
+  }
 }
-
-.module-submit:hover, .module-submit:focus, .module-submit:active {
-  color: $white;
-  border-color: $white;
-}
-
 #search_module {
   height: auto;
 }
 #search-for-this {
   margin-top: 1.2rem;
 }
-#log-me-in {
-  margin-left: 1rem;
-}
-#forgot-my-password {
-  margin-right: 1rem;
-  background-color: $white !important;
-  color: $bluegrey !important;
-  font-family: $lato;
-  &:hover {
-    border-color: $bluegrey;
-  }
-}
+
 
 
 
@@ -599,16 +608,16 @@ footer {
 
 
 /*------------------------------------------------------------------*/
-  /*-- Contact page styles --*/
+  /*-- Contact page, Login page styles --*/
 /*------------------------------------------------------------------*/
-#help-page {
+#help-page, #login-page {
   font-size: 1.1rem !important;
 
   .no-projects {
     margin-bottom: 2rem;
   }
 
-  input:not([type=submit]), textarea {
+  input:not([type=submit]):not([type=checkbox]), input[type=password], textarea {
     box-shadow: inset 0 0.5rem 0 0 $bluegrey;
 
     &:hover, &:focus, &:active {
@@ -640,6 +649,22 @@ footer {
   form div.cpp-error {
     margin-top: 0 !important;
     margin-bottom: 1rem;
+  }
+
+/*-- Login page buttons -*/
+  #log-me-in {
+    margin-left: 1rem;
+    font-size: 1em !important;
+  }
+  #forgot-my-password {
+    margin-right: 1rem;
+    background-color: $bluegrey !important;
+    color: $white !important;
+    font-family: $lato;
+    font-size: 1em !important;
+    &:hover {
+      background-color: darken($bluegrey, 10%) !important;
+    }
   }
 }
 
