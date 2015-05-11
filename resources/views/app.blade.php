@@ -135,7 +135,7 @@
                                 </div>
 
                                 <div class="alignme-center">
-                                    <button type="button" class="btn btn-xs button-main button-user login" data-target="#login_module">{{ trans('app.login') }}</button>
+                                    <a href="{{ action('Auth\AuthController@getLogin') }}" type="button" class="btn btn-xs button-main button-user login">{{ trans('app.login') }}</a>
                                     <a href="{{ action('Auth\AuthController@getRegister') }}" type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</a>
                                     {{--<button type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</button>--}}
                                 </div>
@@ -178,12 +178,6 @@
     <!-- SEARCH MODULE -->
 <!--**************************-->
        @include('modules.search-module')
-
-<!--**************************-->
-    <!-- LOGIN MODULE -->
-<!--**************************-->
-       @include('modules.login-module')
-
 
 
 

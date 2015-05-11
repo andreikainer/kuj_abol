@@ -5961,7 +5961,7 @@ footer {
 /*------------------------------------------------------------------*/
 /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
-.module .form-error {
+#login-page .form-error {
   padding: 0;
   background: none !important;
   border: none;
@@ -5969,17 +5969,16 @@ footer {
   font-weight: 700;
   line-height: 1.8rem;
   padding-left: 1rem; }
-.module form div.cpp-error {
+#login-page form div.cpp-error {
   margin-top: 0 !important;
   margin-bottom: 1rem; }
-
-.module-submit {
+#login-page .login-submit {
   font-family: 'Lato', 'Open Sans', sans-serif;
   font-size: 1.1rem;
   background-color: #6f798b;
   border-color: #6f798b; }
   @media (max-width: 1240px) {
-    .module-submit {
+    #login-page .login-submit {
       padding-left: 1rem !important;
       padding-right: 1rem !important; } }
 

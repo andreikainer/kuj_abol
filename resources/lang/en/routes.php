@@ -27,6 +27,7 @@ return [
     'password'              => 'password',
     'account/verify/'       => 'account/verify/',
     'account/register'      => 'account/register',
+    'account/login'         => 'account/login',
 
 
 ];

@@ -112,10 +112,10 @@ class AuthController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-//    public function getLogin()
-//    {
-//        return view('account.login');
-//    }
+    public function getLogin()
+    {
+        return view('account.login');
+    }
 
     /**
      * Handle a login request to the application.

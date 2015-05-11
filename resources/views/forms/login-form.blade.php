@@ -38,8 +38,8 @@
 
 <!-- Submit buttons -->
     {{--<div class="row">--}}
-        {!! Form::submit(trans('register-page.login'), ['class' => 'col-xs-12 col-sm-5 pull-left button-transparent module-submit mt-1em', 'id' => 'log-me-in']) !!}
-        <a href="{{ url('/password/email') }}" id="forgot-my-password" class="col-xs-12 col-sm-5 pull-right button-transparent module-submit mt-1em">{{ trans('register-page.forgot-password') }}</a>
+        {!! Form::submit(trans('register-page.login'), ['class' => 'col-xs-12 col-sm-5 pull-left button-transparent login-submit mt-1em', 'id' => 'log-me-in']) !!}
+        <a href="{{ url('/password/email') }}" id="forgot-my-password" class="col-xs-12 col-sm-5 pull-right button-transparent login-submit mt-1em">{{ trans('register-page.forgot-password') }}</a>
 
     <!--</div>-->
 <!-- end submit buttons -->
