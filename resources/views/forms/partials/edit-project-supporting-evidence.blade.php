@@ -36,7 +36,7 @@
 
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="{{ 'doc_'.(1+$i).'_mand' }}" class="image-upload-label text-center">
@@ -86,7 +86,7 @@
 
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="{{ 'doc_'.(1+$i) }}" class="image-upload-label text-center">
@@ -132,7 +132,7 @@
                         <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.main-documents') }} <span class="label-desc">{{ trans('create-project-form.exp-document-label') }}</span></div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_1_mand" class="image-upload-label text-center">
@@ -145,7 +145,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_2_mand" class="image-upload-label text-center">
@@ -167,7 +167,7 @@
                         <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.secondary-documents') }}</div>
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_3" class="image-upload-label text-center">
@@ -180,7 +180,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_4" class="image-upload-label text-center">
@@ -193,7 +193,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_5" class="image-upload-label text-center">
@@ -206,7 +206,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <iframe src="" frameborder="0" class="image-upload-preview"></iframe>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_6" class="image-upload-label text-center">

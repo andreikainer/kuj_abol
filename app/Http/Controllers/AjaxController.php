@@ -10,21 +10,15 @@ class AjaxController extends Controller {
 	public function tempDocument(Request $request)
     {
         $inputElement = $request->get('element');
-        $filename = $request->get('filename');
-        $document = $request->get('data');
+        $file = $request->file('file');
 
-        $data_index = strpos($document, 'base64')+7;
-        $document_data = substr($document, $data_index, strlen($document));
+        $filename = strtotime('now').'_'.$file->getClientOriginalName();
 
-        $decoded_document = base64_decode($document_data);
+        $file->move(public_path('temp'), $filename);
 
-        $path = public_path('temp/'.strtotime('now').'_'.$filename);
+        $publicPath = public_path('temp/'.$filename);
 
-        $new_document = fopen($path, "wb");
-        fwrite($new_document, $decoded_document);
-        fclose($new_document);
-
-        return json_encode(['element' => $inputElement, 'path' => $path]);
+        return json_encode(['element' => $inputElement, 'path' => $publicPath]);
     }
 
     public function getLocale(Request $request)

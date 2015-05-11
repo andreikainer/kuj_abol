@@ -58,6 +58,10 @@ Route::group(
 
         Route::delete(LaravelLocalization::transRoute('routes.create-project/delete').'/{slug}', 'ProjectsController@delete');
 
+        Route::post(LaravelLocalization::transRoute('routes.create-project/start'), 'ProjectsController@start');
+
+        Route::post(LaravelLocalization::transRoute('routes.temp-document'), 'AjaxController@tempDocument');
+
 //        Route::controllers([
 //
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
@@ -87,6 +91,4 @@ Route::group(
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED for example just German pages**/
 
 // Route::get('test', '<Controller>@<Method>');
-
-Route::post('temp-document', 'AjaxController@tempDocument');
 

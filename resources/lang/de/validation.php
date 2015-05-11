@@ -139,7 +139,7 @@ return [
         ],
 
         'main_img'      => [
-            'required'  => 'Ein Hauptbilderforderlich.',
+            'required_without'  => 'Ein Hauptbilderforderlich.',
             'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
         ],
 
@@ -156,12 +156,12 @@ return [
         ],
 
         'doc_1_mand'    => [
-            'required'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'required_without'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
         ],
 
         'doc_2_mand'    => [
-            'required'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'required_without'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
         ],
 

@@ -1,5 +1,7 @@
 <?php
 
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 return [
 
     /*
@@ -80,6 +82,7 @@ return [
     'project-complete'      => 'Project can no longer be edited.',
     'save-success'          => 'Project successfully saved.',
     'delete-success'        => 'Project successfully removed.',
+    'login'                 => ' Please <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Login</a> or <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Register</a> to Start a Project.',
 
     /**
      * Email

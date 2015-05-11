@@ -139,7 +139,7 @@ return [
         ],
 
         'main_img'      => [
-            'required'  => 'A main image is required.',
+            'required_without'  => 'A main image is required.',
             'mimes'     => 'Please choose a valid image format.'
         ],
 
@@ -156,12 +156,12 @@ return [
         ],
 
         'doc_1_mand'    => [
-            'required'  => 'At least two documents of evidence are required.',
+            'required_without'  => 'At least two documents of evidence are required.',
             'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
         ],
 
         'doc_2_mand'    => [
-            'required'  => 'At least two documents of evidence are required.',
+            'required_without'  => 'At least two documents of evidence are required.',
             'mimes'     => 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.'
         ],
 

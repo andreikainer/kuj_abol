@@ -243,7 +243,7 @@ $(document).ready(function()
 function getLocale(response)
 {
     $.ajax({
-        url:        '/get-locale',
+        url:        'http://kinderfoerderungen.at/get-locale',
         method:     'GET',
         success:    function(response)
         {

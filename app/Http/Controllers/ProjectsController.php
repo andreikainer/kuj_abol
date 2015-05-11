@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\SaveProjectRequest;
+use App\Http\Requests\StartProjectRequest;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -58,10 +59,8 @@ class ProjectsController extends Controller {
     public function show($slug)
     {
         // fetch data according to slug
-        $project = Project::where('slug', $slug)->first();
+        $project = $slug;
         $logos = DB::table('sponsors_tbl')->get();
-
-        return $project;
 
         // convert DB date into european date format
         $finish_date = date("d-m-Y", strtotime($project->completed_on));
@@ -72,7 +71,7 @@ class ProjectsController extends Controller {
 
         $galleryImages = \App\Image::where('project_id', $project->id)->get();
 
-        //return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages'));
+        return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages'));
     }
 
     /**
@@ -94,6 +93,16 @@ class ProjectsController extends Controller {
     public function success()
     {
         return view('create-project.success');
+    }
+
+    public function start(StartProjectRequest $request)
+    {
+        if( is_null(Auth::user()))
+        {
+            return json_encode([
+                'login' => '<i class="fa fa-exclamation-circle fa-lg"></i>'.trans('create-project-form.login')
+            ]);
+        }
     }
 
     /**

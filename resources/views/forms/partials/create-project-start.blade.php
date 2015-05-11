@@ -18,7 +18,10 @@
                 <div class="form-error cpp-error pad-zero" data-error="project_name"></div>
             </div>
             <div class="col-md-4 col-sm-4">
-                <div class="form-button text-center" data-button="start">{{ trans('create-project-form.start-project') }}</div>
+                <div class="image-loader"></div>
+                <div class="form-button text-center" data-button="start" data-url="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/start')) }}">
+                    {{ trans('create-project-form.start-project') }}
+                </div>
             </div>
         </div>
     </div>

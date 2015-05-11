@@ -30,5 +30,7 @@ return [
     'create-project/update' => 'antrag-einreichen/update',
     'create-project/edit'   => 'antrag-einreichen/edit',
     'create-project/delete' => 'antrag-einreichen/delete',
+    'create-project/start'  => 'antrag-einreichen/start',
+    'temp-document'         => 'temp-document',
 
 ];

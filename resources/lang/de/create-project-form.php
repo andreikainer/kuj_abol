@@ -80,6 +80,8 @@ return [
     'project-complete'      => 'Anfrage kann nicht mehr bearbeitet werden.',
     'save-success'          => 'Anfrage erfolgreich gespeichert.',
     'delete-success'        => 'Anfrage erfolgreich entfernt.',
+    'login'                 => ' Bitte <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Einloggen</a> or <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Registrieren</a> um eine Anfrage starten.',
+
 
     /**
      * Email

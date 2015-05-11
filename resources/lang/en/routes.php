@@ -30,5 +30,7 @@ return [
     'create-project/update' => 'create-project/update',
     'create-project/edit'   => 'create-project/edit',
     'create-project/delete' => 'create-project/delete',
+    'create-project/start'  => 'create-project/start',
+    'temp-document'         => 'temp-document',
 
 ];
