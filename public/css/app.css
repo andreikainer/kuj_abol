@@ -4916,6 +4916,9 @@ input[type="submit"], button[type="submit"] {
 .m0auto {
   margin: 0 auto; }
 
+.orange {
+  color: #ed5a4d !important; }
+
 /*------------------------------------------------------------------*/
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
@@ -5927,9 +5930,12 @@ footer {
         padding: 1em;
         padding-top: 0;
         background-color: rgba(0, 0, 0, 0.5); } }
-    @media (min-width: 1366px) {
+    @media (min-width: 1366px) and (max-width: 1500px) {
       .jumbotron .jumbotron-text {
         left: 14rem; } }
+    @media (min-width: 1501px) {
+      .jumbotron .jumbotron-text {
+        left: 30%; } }
     .jumbotron .jumbotron-text p:nth-child(3) {
       margin-top: 3rem !important; }
       @media (min-width: 768px) {

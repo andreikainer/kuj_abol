@@ -42,8 +42,9 @@
 
     function hideErrorMessage(name)
     {
-        $('.form-error[data-error*="'+name+'"]').fadeOut().prev().toggleClass('error-red-top', false);
-        $('.form-error[data-error*="'+name+'"]').prev().toggleClass('error-red-top', false);
+        $('.form-error[data-error*="'+name+'"]').fadeOut();
+        console.log('pipa');
+        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
     }
 
     // to make the top-border of input field red color when there is an error

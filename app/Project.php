@@ -1,8 +1,11 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Project extends Model {
+
+    use SearchableTrait;
 
     /**
      * The database table used by the model.
@@ -25,6 +28,14 @@ class Project extends Model {
         'slug',
         'user_id',
         'application_status'
+    ];
+
+    protected $searchable = [
+        'columns' => [
+            'project_name'  => 10,
+            'short_desc'    => 10,
+            'full_desc'     => 10,
+        ]
     ];
 
     public function documents()

@@ -22,8 +22,8 @@
                     @foreach($projects as $project)
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
-                                <a href="{{ url('/projects', $project->slug) }}">
-                                    <img src="{{ asset('img/' . $project->project_name .'/small/' . $tile_img) }}" alt="{{ $project->child_name }}">
+                                <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}">
+                                    <img src="{!! asset('img/' . $project->slug .'/small/' . $project->mainImage[0]->filename) !!}" alt="{{ $project->child_name }}">
                                 </a>
 
                                 <div class="caption">
@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
 
-                                    <p><a href="{{ url('/projects', $project->slug) }}" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
+                                    <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
                                 </div>
                             </div>
                         </div>
@@ -57,5 +57,5 @@
 @endsection
 
 @section('additional_js')
-    <script src="{{ asset('js/home-page/home.js') }}"></script>
+    <script src="{{ asset('js/progress-bar.js') }}"></script>
 @endsection
