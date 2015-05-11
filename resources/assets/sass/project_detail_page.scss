@@ -57,17 +57,16 @@
 }
 
 .contribute {
-//  font-size: 2.5rem; OLGA
   margin: 0.7em 0;
-  background-color: $white;
-  border: solid 3px $green !important;
+  background-color: $blue;
+  //border: solid 3px $green !important;
   color: $green;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
+  height: 2em;
   &:hover {
-    background-color: $white !important;
+    background-color: darken($blue, 10%) !important;
     border-color: darken($green, 10%) !important;
-    color: darken($green, 10%) !important;
   }
 //  font-weight: bold; OLGA
   @media(min-width: 992px) and (max-width: 1199px){
@@ -77,6 +76,7 @@
 
 #facebook-share {
   width: 100%;
+  background: $bluegrey;
 }
 
 #favorite {
@@ -139,27 +139,27 @@
   margin-left: 1.5em;
 }
 
-// prev and next button size and position
-.slick-prev {
-  left: 40px;
-  width: 40px;
-  height: 40px;
+.project-gallery {
+  // prev and next button size and position
+  .slick-prev {
+    left: 40px;
+    width: 40px;
+    height: 40px;
 
-
-  &:before {
-    font-size: 40px;
-    color: $blue;
+    &:before {
+      font-size: 40px;
+      color: $blue;
+    }
   }
-}
 
-.slick-next {
-  right: 40px;
-  width: 40px;
-  height: 40px;
+  .slick-next {
+    right: 40px;
+    width: 40px;
+    height: 40px;
 
-
-  &:before {
-    font-size: 40px;
-    color: $blue;
+    &:before {
+      font-size: 40px;
+      color: $blue;
+    }
   }
 }

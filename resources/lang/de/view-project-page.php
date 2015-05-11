@@ -9,12 +9,13 @@ return [
   */
 
   'total-funds-raised'     => 'Aktuelle Förderungssumme:',
+  'funds-text'             => 'Förderungssumme:',
   'of-minimum-goal'        => 'von &euro; :goal minimum Ziel',
   'project-ends-in'        => 'Förderungsprojekt endet in:',
   'time-to-goal'           => '<strong>Tage</strong><strong>Stunden</strong><strong>Minuten</strong><strong>Sekunden</strong>',
   'progress'               => 'Progress:',
   'fund-this-project'      => 'Projekt Fördern',
-  'completed'              => 'Abgeschloßen',
+  'completed'              => 'Abgeschlossen',
   'support-options'       =>  'Förderungsbausteine',
 
   'business-building-block' => '<h3>"Business" Förderungs-Baustein<br> &euro; 150,00 + Ust pro Baustein</h3>

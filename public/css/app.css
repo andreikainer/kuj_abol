@@ -5533,18 +5533,18 @@ fieldset.summary-group {
 
 .contribute {
   margin: 0.7em 0;
-  background-color: white;
-  border: solid 3px #2ecc71 !important;
+  background-color: #3fa3db;
   color: #2ecc71;
-  font-size: 1.2rem;
-  font-weight: 600; }
+  font-size: 1.6rem;
+  font-weight: 600;
+  height: 2em; }
   .contribute:hover {
-    background-color: white !important;
-    border-color: #25a25a !important;
-    color: #25a25a !important; }
+    background-color: #248ac3 !important;
+    border-color: #25a25a !important; }
 
 #facebook-share {
-  width: 100%; }
+  width: 100%;
+  background: #6f798b; }
 
 #favorite {
   width: 100%;
@@ -5595,19 +5595,18 @@ fieldset.summary-group {
   text-align: left;
   margin-left: 1.5em; }
 
-.slick-prev {
+.project-gallery .slick-prev {
   left: 40px;
   width: 40px;
   height: 40px; }
-  .slick-prev:before {
+  .project-gallery .slick-prev:before {
     font-size: 40px;
     color: #3fa3db; }
-
-.slick-next {
+.project-gallery .slick-next {
   right: 40px;
   width: 40px;
   height: 40px; }
-  .slick-next:before {
+  .project-gallery .slick-next:before {
     font-size: 40px;
     color: #3fa3db; }
 

@@ -77,6 +77,7 @@
                                     </div>
 
                                     <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">{{trans('home-page.read-more')}}</a></p>
+
                                 </div>
                             </div>
                         </div>
