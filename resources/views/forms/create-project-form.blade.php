@@ -1,6 +1,6 @@
-{!! Form::open(['action' => 'ProjectsController@store', 'files' => true, 'id' => 'create-project', 'class' => 'form-element form-radius-btm-only bt-none']) !!}
+{!! Form::open(['action' => 'ProjectsController@store', 'method' => 'POST', 'files' => true, 'id' => 'create-project', 'class' => 'form-element form-radius-btm-only bt-none']) !!}
 
-    <fieldset class="create-project-fieldset" data-section="0">
+    <fieldset class="create-project-fieldset fieldset-active" data-section="0">
         <div class="col-md-12 col-sm-12">
             @include('forms.partials.create-project-start')
         </div>

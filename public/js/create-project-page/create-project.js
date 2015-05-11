@@ -157,6 +157,16 @@
         files[this.name] = event.target.files;
     });
 
+    if($('span.image-upload-close-button'))
+    {
+        $('span.image-upload-close-button').on('click', function()
+        {
+            $.publish('document-preview.close', this);
+            $.publish('image-preview.close', this);
+        });
+    }
+
+
 
     // Form Field blur events.
     $('input[name="project_name"]').on('blur', function()
@@ -214,6 +224,13 @@
     {
         event.preventDefault();
         $.publish('form.submitted', $(this));
+    });
+
+    // Publish Save Event.
+    $('form#create-project .form-button[data-button="save"] > a').on('click', function(event)
+    {
+        event.preventDefault();
+        $.publish('form.save', this);
     });
 
 
@@ -295,20 +312,19 @@
                 var closeButton = createImageCloseButton(previewContainer.parent());
                 $(closeButton).on('click', function()
                 {
-                    // Remove the value of the file input (this enables the change event to fire again).
-                    data.value = '';
-                    // Remove the close button from the DOM.
-                    $(this).remove();
-                    // Fade out the image preview, fade in the form control. Rinse and Repeat!
-                    previewContainer.fadeOut('slow')
-                    .wait(700)
-                    .then(function()
-                    {
-                        inputControls.fadeIn('slow');
-                    });
+                    $.publish('image-preview.close', this);
                 });
             });
         });
+    });
+
+    // Close the image preview, and bring the input controls into view.
+    $.subscribe('image-preview.close', function(event, button)
+    {
+        // Remove any trace of a saved image, if the user decides to replace it.
+        $(button).siblings('input[type="hidden"]').remove();
+        // Close the image preview.
+        closeFilePreview(button);
     });
 
     // Document Preview.
@@ -342,8 +358,8 @@
 
     $.subscribe('document-submit.ajax', function(event, data)
     {
-        // Make AJAX request to PHP script, POST up the received 'obj'
-        ajaxRequest('/temp-document', data, 'temp-document.success', 'temp-document.fail');
+        // Make AJAX request to PHP script, POST up the received data from event.
+        ajaxRequest('http://kinderfoerderungen.at/temp-document', data, 'temp-document.success', 'temp-document.fail');
     });
 
     $.subscribe('temp-document.success', function(event, data)
@@ -357,7 +373,8 @@
         .then(function()
         {
             inputControls.fadeOut('slow');
-            previewContainer.attr('src', '../'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+            var src = previewContainer.attr('src');
+            previewContainer.attr('src', src+'/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
         })
         .wait(700)
         .then(function()
@@ -372,20 +389,22 @@
             var closeButton = createImageCloseButton(previewContainer.parent());
             $(closeButton).on('click', function()
             {
-                // Remove the value of the file input (this enables the change event to fire again).
-                $('#'+data.element).val('');
-                // Remove the close button from the DOM.
-                $(this).remove();
-                // Fade out the image preview, fade in the form control. Rinse and Repeat!
-                previewContainer.fadeOut('slow')
-                .wait(700)
-                .then(function()
-                {
-                    inputControls.fadeIn('slow');
-                });
+                $.publish('document-preview.close', this);
             });
         });
     });
+
+    // Close the document preview, and bring the input controls into view.
+    $.subscribe('document-preview.close', function(event, button)
+    {
+        $(button).siblings('input[type="hidden"]').remove();
+        $(button).siblings('iframe').attr('src', 'http://kinderfoerderungen.at');
+        closeFilePreview(button);
+    });
+
+
+
+
 
     // Summary Page.
     $.subscribe('summary-page.render', function()
@@ -414,6 +433,13 @@
                 summaryList.append('<li>'+value.name+'</li>');
             });
         });
+        var savedFiles = $('input[type="hidden"]')
+            .not('input[name="_token"]')
+            .not('input[name="_method"]');
+        $.each(savedFiles, function(i, value)
+        {
+            summaryList.append('<li>'+value.value+'</li>');
+        });
     });
 
     // Submit Event.
@@ -432,8 +458,7 @@
             });
         });
         var textInput = $('form#create-project input, textarea')
-                        .not('input[name*="img"]')
-                        .not('input[name*="doc"]')
+                        .not('input[type="file"]')
                         .not('input[type="submit"]');
         // Append the text input to the form data.
         $.each(textInput, function(i, field)
@@ -451,7 +476,7 @@
             dataType : 'json',
             processData : false,
             contentType : false,
-            success : function(response)
+            success : function(json)
             {
                 if ( response.errors )
                 {
@@ -471,7 +496,7 @@
         });
     });
 
-    $.subscribe('form-submit.fail', function(event, data)
+    $.subscribe('form-submit.fail form-save.fail', function(event, data)
     {
         var formFields = $('form#create-project input, textarea');
 
@@ -495,6 +520,66 @@
     $.subscribe('form-submit.success', function()
     {
         window.location = 'http://kinderfoerderungen.at/create-project/success';
+    });
+
+
+    // Subscribe Save Event.
+    $.subscribe('form.save', function(event, data)
+    {
+        var loaderImage = $(data).siblings('.image-loader');
+        loaderImage.fadeIn();
+
+        // Create a new form data instance.
+        var formData = new FormData();
+        // Append the images and documents.
+        $.each(files, function(name, field)
+        {
+            $.each(field, function(i, file)
+            {
+                formData.append(name, file);
+            });
+        });
+        var textInput = $('form#create-project input, textarea')
+                        .not('input[type="file"]')
+                        .not('input[type="submit"]');
+        // Append the text input to the form data.
+        $.each(textInput, function(i, field)
+        {
+            formData.append(field.name, field.value);
+        });
+
+        $.ajax({
+            url : $(data).attr('href'),
+            method : 'POST',
+            data : formData,
+            cache : false,
+            processData : false,
+            contentType : false,
+            success : function(response)
+            {
+                if ( response.errors )
+                {
+                    loaderImage.fadeOut();
+                    $.publish('form-save.fail', response);
+                }
+                else
+                {
+                    loaderImage.fadeOut();
+
+                    $.publish('form-save.success', response);
+                }
+            },
+            error : function(response)
+            {
+                console.log(response);
+            }
+        });
+    });
+
+    $.subscribe('form-save.success', function(event, url)
+    {
+        // Redirect to the edit form, for the saved project.
+        window.location = url;
     });
 
 
@@ -778,6 +863,25 @@
             container.attr('src', e.target.result);
         }
         reader.readAsDataURL(file);
+    }
+
+    function closeFilePreview(button)
+    {
+        var image = $(button).siblings('.image-upload-preview');
+        var inputControls = $(button).siblings('.image-upload-controls');
+        var inputField = inputControls.find('input');
+
+        // Remove the value of the file input (this enables the change event to fire again).
+        inputField.val('');
+        // Remove the close button from the DOM.
+        $(button).remove();
+        // Fade out the image preview, fade in the form control. Rinse and Repeat!
+        image.fadeOut('slow')
+            .wait(700)
+            .then(function()
+            {
+                inputControls.fadeIn('slow');
+            });
     }
 
     function createImageCloseButton(container)

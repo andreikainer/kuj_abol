@@ -23,6 +23,9 @@ return [
     'business?'     => 'Are you registering a business account?',
     'business-name' => 'Business Name:',
     'submit'        => 'Create Account',
+    'login'         => 'Log in',
+    'forgot-password' => 'Forgot password',
+    'login-fail'    => 'Woops! Incorrect email address or password. Please, try again.',
 
     /**
      * Verification Email.

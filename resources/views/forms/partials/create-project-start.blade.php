@@ -34,10 +34,34 @@
                 </div>
             </div>
             <div class="col-md-12 col-sm-12">
+                @if(! isset($user) || is_null($user->incompleteProject))
                 <div class="no-projects">
                     <p>{{ trans('create-project-form.exp-no-recent-project-1') }}</p>
                     <p>{{ trans('create-project-form.exp-no-recent-project-2') }}</p>
                 </div>
+                @else
+                <div class="project-links">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <p class="saved-project-title">{{ $user->incompleteProject->project_name }}</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$user->incompleteProject->slug) }}" class="saved-project-continue text-center">
+                                        <i class="fa fa-edit fa-lg"></i> {{ trans('create-project-form.continue') }}
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/delete').'/'.$user->incompleteProject->slug) }}" class="saved-project-delete text-center">
+                                        <i class="fa fa-trash fa-lg"></i> {{ trans('create-project-form.delete') }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
             </div>
         </div>
     </div>

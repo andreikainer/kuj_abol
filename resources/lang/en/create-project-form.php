@@ -27,6 +27,8 @@ return [
     'back'                  => 'Back',
     'next'                  => 'Next',
     'submit'                => 'Submit for Approval',
+    'continue'              => 'Continue',
+    'delete'                => 'Delete',
 
     /**
      * Form Labels
@@ -75,4 +77,12 @@ return [
      * Messages
      */
     'validation-error'      => ' Sorry, there are some errors in the form.',
+    'project-complete'      => 'Project can no longer be edited.',
+    'save-success'          => 'Project successfully saved.',
+    'delete-success'        => 'Project successfully removed.',
+
+    /**
+     * Email
+     */
+    'email-subject'         => 'New Project Submitted',
 ];

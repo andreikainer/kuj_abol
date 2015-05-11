@@ -84,7 +84,7 @@ label {
   margin-top: 1.6rem !important;
 }
 .mb-1em {
-  margin-bottom: 1em;
+  margin-bottom: 1em !important;
 }
 .mb-0 {
   margin-bottom: 0 !important;
@@ -111,4 +111,11 @@ input[type="submit"], button[type="submit"] {
 
 .m0auto {
   margin: 0 auto;
+}
+
+.orange {
+  color: $orange !important;
+}
+.indent {
+  text-indent: 1rem;
 }

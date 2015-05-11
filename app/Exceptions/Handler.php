@@ -4,6 +4,8 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Support\Facades\Session;
 use KuJ\CustomExceptions\InvalidConfirmationCodeException;
+use KuJ\CustomExceptions\ProjectCompletedException;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class Handler extends ExceptionHandler {
 
@@ -42,6 +44,12 @@ class Handler extends ExceptionHandler {
         {
             Session::flash('flash_message', $e->getMessage());
             return redirect('/');
+        }
+
+        if ($e instanceof ProjectCompletedException)
+        {
+            Session::flash('flash_message', $e->getMessage());
+            return redirect(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project'));
         }
 
 		return parent::render($request, $e);

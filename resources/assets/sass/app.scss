@@ -416,8 +416,11 @@ footer {
       padding-top: 0;
       background-color: rgba(0, 0, 0, .5);
     }
-    @media (min-width: 1366px) {
+    @media (min-width: 1366px) and (max-width: 1500px) {
       left: 14rem;
+    }
+    @media (min-width: 1501px) {
+      left: 30%;
     }
 
     p:nth-child(3) {
@@ -535,25 +538,35 @@ footer {
 /*------------------------------------------------------------------*/
   /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
-//input[name=search_inputfield] {
-//  @extend .no-outline;
-//  @extend .form-input;
-//
-//  box-shadow: inset 0 0.5rem 0 0 $bluegrey;
-//  z-index: 11;
-//}
-
-.module-submit {
-  font-family: $lato;
-  font-size: 1.1rem;
-  background-color: $bluegrey;
-  border-color: $bluegrey;
-
-  @media(max-width: 1240px) {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+#login-page {
+  .form-error {
+    padding: 0;
+    background: none !important;
+    border: none;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    padding-left: 1rem;
   }
+  form div.cpp-error {
+    margin-top: 0 !important;
+    margin-bottom: 1rem;
+  }
+
+  .login-submit {
+    font-family: $lato;
+    font-size: 1.1rem;
+    background-color: $bluegrey;
+    border-color: $bluegrey;
+
+    @media(max-width: 1240px) {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  }
+
 }
+
 .module-submit:hover, .module-submit:focus, .module-submit:active {
   color: $white;
   border-color: $white;
@@ -572,6 +585,10 @@ footer {
   margin-right: 1rem;
   background-color: $white !important;
   color: $bluegrey !important;
+  font-family: $lato;
+  &:hover {
+    border-color: $bluegrey;
+  }
 }
 
 
@@ -635,7 +652,9 @@ footer {
 /*------------------------------------------------------------------*/
 #how-it-works {
   font-size: 1.1rem;
-
+  img {
+    width: 110px;
+  }
   .add-nav {
     position: fixed;
     top: 8rem;
@@ -652,7 +671,7 @@ footer {
   }
   div h4 {
     font-weight: 700 !important;
-    margin-bottom: .1rem !important;
+    margin-bottom: .1rem;
     margin-top: 1.6rem !important;
     @media(max-width: 992px) {
       margin-top: 2rem !important;

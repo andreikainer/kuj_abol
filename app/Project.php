@@ -1,8 +1,11 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Project extends Model {
+
+    use SearchableTrait;
 
     /**
      * The database table used by the model.
@@ -27,6 +30,14 @@ class Project extends Model {
         'application_status'
     ];
 
+    protected $searchable = [
+        'columns' => [
+            'project_name'  => 10,
+            'short_desc'    => 10,
+            'full_desc'     => 10,
+        ]
+    ];
+
     public function documents()
     {
         return $this->hasMany('App\Document');
@@ -40,6 +51,16 @@ class Project extends Model {
     public function mainImage()
     {
         return $this->images()->where('main_img', '=', '1');
+    }
+
+    public function secondaryImages()
+    {
+        return $this->images()->where('main_img', '=', '0');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 
 }

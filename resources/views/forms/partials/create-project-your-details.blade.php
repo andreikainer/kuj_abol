@@ -1,6 +1,13 @@
 <div class="row">
             <div class="col-md-12 col-sm-12 text-right">
-                <div class="form-button form-button-secondary text-center" data-button="save">{{ trans('create-project-form.save-progress') }}</div>
+                <div class="image-upload-wrapper">
+                    <div class="form-button form-button-secondary text-center" data-button="save">
+                        <div class="image-loader"></div>
+                        <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/save')) }}">
+                            {{ trans('create-project-form.save-progress') }}
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -60,8 +67,13 @@
             </div>
             <div class="col-md-6 col-sm-6 form-pair">
                 {!! Form::label('tel_number', trans('create-project-form.tel-number'), ['class' => 'form-label']) !!}
+                @if($user == null)
                 {!! Form::text('tel_number', null, ['class' => 'form-input']) !!}
                 {{--{!! Form::text('tel_number', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @else
+                {!! Form::text('tel_number', $user->tel_number, ['class' => 'form-input']) !!}
+                {{--{!! Form::text('tel_number', $user->tel_number, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @endif
                 <div class="form-error cpp-error pad-zero" data-error="tel_number"></div>
             </div>
         </div> <!-- end email address --> <!-- end telephone number -->
@@ -70,8 +82,13 @@
         <div class="row form-group">
             <div class="col-md-12 col-sm-12">
                 {!! Form::label('address', trans('create-project-form.address'), ['class' => 'form-label']) !!}
+                @if($user == null)
                 {!! Form::textarea('address', null, ['class' => 'form-input']) !!}
                 {{--{!! Form::textarea('address', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @else
+                {!! Form::textarea('address', $user->address, ['class' => 'form-input']) !!}
+                {{--{!! Form::textarea('address', $user->address, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                @endif
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="form-error cpp-error pad-zero" data-error="address"></div>

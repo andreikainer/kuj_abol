@@ -1,7 +1,9 @@
 <?php namespace App\Providers;
 
+use App\Project;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider {
 
@@ -22,7 +24,10 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function boot(Router $router)
 	{
-		//
+		Route::bind('slug', function($value)
+        {
+            return Project::where('slug', '=', $value)->first();
+        });
 		
 		parent::boot($router);
 	}

@@ -10,12 +10,11 @@ return [
 	| This keys are used to translate routes. key => german
 	*/
 
-    '/'                    => '/',
     'how-it-works'         => 'wer-wir-sind',
 	'create-project'       => 'ansuchen-einreichen',
 	'project'              => 'foerderungsprojekt',
     'get-locale'           => 'get-locale',
-    'search-result'        => 'suchergebnisse',
+    'search-results'        => 'suchergebnisse',
     'contact'              => 'kontakte',
     'sponsors'             => 'sponsoren',
     'blog'                 => 'blog',
@@ -23,12 +22,13 @@ return [
     'create-project/success' => 'antrag-einreichen/erfolgreich',
     'successful-projects'  => 'erfolgreich-geförderte-projektets',
     'current-projects'      => 'current-projects',
-
-    'account'               => 'benutzer',
-    'password'              => 'passwort',
-    'successful-projects'  => 'erfolgreich-geförderte-projektets',
-    'current-projects'      => 'current-projects',
     'account/verify'       => 'benutzer/prüfen',
     'account/register'      => 'benutzer/registrieren',
+    'account/login'         => 'benutzer/einloggen',
+
+    'create-project/save'   => 'antrag-einreichen/sparen',
+    'create-project/update' => 'antrag-einreichen/update',
+    'create-project/edit'   => 'antrag-einreichen/edit',
+    'create-project/delete' => 'antrag-einreichen/delete',
 
 ];
