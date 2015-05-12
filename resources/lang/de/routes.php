@@ -27,6 +27,7 @@ return [
     'account/login'         => 'benutzer/einloggen',
     'logout'         => 'logout',
     'account/dashboard'     =>  'account/dashboard',
+    'account/reset'         => 'account/reset',
 
     'create-project/save'   => 'antrag-einreichen/sparen',
     'create-project/update' => 'antrag-einreichen/update',

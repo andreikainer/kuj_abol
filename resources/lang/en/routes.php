@@ -25,8 +25,9 @@ return [
     'account/verify'       => 'account/verify',
     'account/register'      => 'account/register',
     'account/login'         => 'account/login',
-    'logout'         => 'logout',
+    'logout'                => 'logout',
     'account/dashboard'     =>  'account/dashboard',
+    'account/reset'         => 'account/reset',
 
     'create-project/save'   => 'create-project/save',
     'create-project/update' => 'create-project/update',

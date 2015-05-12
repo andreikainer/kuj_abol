@@ -1,6 +1,6 @@
 <body>
 
-    <h2>Dear Wilhemine Baue</h2>
+    <h2>Dear {{ $data['toWhom'] }}</h2>
     <p>you have received an email from</p>
 
     <p>

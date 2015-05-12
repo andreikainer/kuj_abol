@@ -44,7 +44,7 @@
 <div class="col-xs-12 col-sm-12">
     <div class="row-fluid clearfix">
         {!! Form::submit(trans('login-page.login'), ['class' => 'col-xs-12 col-sm-6 col-md-5 pull-left btn login-submit button-main mt-1em text-center', 'id' => 'log-me-in']) !!}
-        <a href="{{ url('/password/email') }}" id="forgot-my-password" class="col-xs-12 col-sm-6 col-md-5 pull-right btn login-submit mt-1em text-center">{{ trans('login-page.forgot-password') }}</a>
+        <a href="{{ action('Auth\PasswordController@getEmail') }}" id="forgot-my-password" class="col-xs-12 col-sm-6 col-md-5 pull-right btn login-submit mt-1em text-center">{{ trans('login-page.forgot-password') }}</a>
     </div>
 </div>
 <!-- end submit buttons -->

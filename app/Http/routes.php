@@ -42,9 +42,10 @@ Route::group(
 
         Route::get(LaravelLocalization::transRoute('routes.sponsors'), 'PagesController@sponsors');
 
-        Route::get(LaravelLocalization::transRoute('routes.contact/{address?}'), 'ContactFormController@getContactForm');
-
-        Route::post(LaravelLocalization::transRoute('routes.contact/{address?}'), 'ContactFormController@postContactForm');
+    /*-- Contact Page --*/
+        Route::get(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@getContactForm');
+        Route::post(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@postContactForm');
+    /*------------------*/
 
         Route::get(LaravelLocalization::transRoute('routes.create-project/success'), 'ProjectsController@success');
 
@@ -80,6 +81,8 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.logout'), 'Auth\AuthController@getLogout');
 
         Route::any(LaravelLocalization::transRoute('routes.account/dashboard'), 'Auth\AuthController@dash');
+
+        Route::get(LaravelLocalization::transRoute('routes.account/reset'), 'Auth\PasswordController@getEmail');
 
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/

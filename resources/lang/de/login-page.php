@@ -17,19 +17,26 @@ return [
     'username'      => 'Benutzername:',
     'password'      => 'Passwort:',
     'remember-me'   => 'Erinnere dich an mich',
+    'email'         => 'Email',
 
     /**
      * Buttons.
      */
     'login'             => 'Einloggen',
     'forgot-password'   => 'Passwort vergessen',
+    'send'              => 'Send password reset link',
 
     /**
      * Placeholders.
      */
     'place-username'    => 'Ihr Benutzername',
     'place-password'    => 'Ihr Passwort',
+    'place-email'        =>'Your email',
 
+    /**
+     * Top text box.
+     */
+    'reset'        => 'Please, send the password reset request. You\'ll receive the link to your email address.',
 
     /**
      * Messages.

@@ -6053,42 +6053,42 @@ footer {
 /*------------------------------------------------------------------*/
 /*-- Contact page, Login page styles --*/
 /*------------------------------------------------------------------*/
-#help-page, #login-page {
+#help-page, #login-page, #send-reset-link-page {
   font-size: 1.1rem !important;
   /*-- Login page buttons -*/ }
-  #help-page .no-projects, #help-page .project-links, #login-page .no-projects, #login-page .project-links {
+  #help-page .no-projects, #help-page .project-links, #login-page .no-projects, #login-page .project-links, #send-reset-link-page .no-projects, #send-reset-link-page .project-links {
     margin-bottom: 2rem; }
-  #help-page input:not([type=submit]):not([type=checkbox]), #help-page input[type=password], #help-page textarea, #login-page input:not([type=submit]):not([type=checkbox]), #login-page input[type=password], #login-page textarea {
+  #help-page input:not([type=submit]):not([type=checkbox]), #help-page input[type=password], #help-page textarea, #login-page input:not([type=submit]):not([type=checkbox]), #login-page input[type=password], #login-page textarea, #send-reset-link-page input:not([type=submit]):not([type=checkbox]), #send-reset-link-page input[type=password], #send-reset-link-page textarea {
     box-shadow: inset 0 0.5rem 0 0 #6f798b; }
-    #help-page input:not([type=submit]):not([type=checkbox]):hover, #help-page input:not([type=submit]):not([type=checkbox]):focus, #help-page input:not([type=submit]):not([type=checkbox]):active, #help-page input[type=password]:hover, #help-page input[type=password]:focus, #help-page input[type=password]:active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active, #login-page input:not([type=submit]):not([type=checkbox]):hover, #login-page input:not([type=submit]):not([type=checkbox]):focus, #login-page input:not([type=submit]):not([type=checkbox]):active, #login-page input[type=password]:hover, #login-page input[type=password]:focus, #login-page input[type=password]:active, #login-page textarea:hover, #login-page textarea:focus, #login-page textarea:active {
+    #help-page input:not([type=submit]):not([type=checkbox]):hover, #help-page input:not([type=submit]):not([type=checkbox]):focus, #help-page input:not([type=submit]):not([type=checkbox]):active, #help-page input[type=password]:hover, #help-page input[type=password]:focus, #help-page input[type=password]:active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active, #login-page input:not([type=submit]):not([type=checkbox]):hover, #login-page input:not([type=submit]):not([type=checkbox]):focus, #login-page input:not([type=submit]):not([type=checkbox]):active, #login-page input[type=password]:hover, #login-page input[type=password]:focus, #login-page input[type=password]:active, #login-page textarea:hover, #login-page textarea:focus, #login-page textarea:active, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):hover, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):focus, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):active, #send-reset-link-page input[type=password]:hover, #send-reset-link-page input[type=password]:focus, #send-reset-link-page input[type=password]:active, #send-reset-link-page textarea:hover, #send-reset-link-page textarea:focus, #send-reset-link-page textarea:active {
       box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
-  #help-page .form-group, #login-page .form-group {
+  #help-page .form-group, #login-page .form-group, #send-reset-link-page .form-group {
     margin-bottom: 0 !important;
     margin-top: .925em; }
-  #help-page .form-error, #login-page .form-error {
+  #help-page .form-error, #login-page .form-error, #send-reset-link-page .form-error {
     padding: 0;
     background: none;
     border: none;
     font-size: .9rem;
     font-weight: 700;
     line-height: 1.8rem; }
-  #help-page .form-error li, #login-page .form-error li {
+  #help-page .form-error li, #login-page .form-error li, #send-reset-link-page .form-error li {
     list-style-type: disc !important; }
-  #help-page .cpp-error, #login-page .cpp-error {
+  #help-page .cpp-error, #login-page .cpp-error, #send-reset-link-page .cpp-error {
     margin-top: 0 !important;
     margin-bottom: 1rem; }
-  #help-page #log-me-in, #login-page #log-me-in {
+  #help-page #log-me-in, #login-page #log-me-in, #send-reset-link-page #log-me-in {
     margin-left: 0;
     margin-right: 0;
     font-size: 1em !important; }
-  #help-page #forgot-my-password, #login-page #forgot-my-password {
+  #help-page #forgot-my-password, #login-page #forgot-my-password, #send-reset-link-page #forgot-my-password {
     margin-left: 0;
     margin-right: 0;
     background-color: #6f798b !important;
     color: white !important;
     font-family: 'Lato', 'Open Sans', sans-serif;
     font-size: 1em !important; }
-    #help-page #forgot-my-password:hover, #login-page #forgot-my-password:hover {
+    #help-page #forgot-my-password:hover, #login-page #forgot-my-password:hover, #send-reset-link-page #forgot-my-password:hover {
       background-color: #58606f !important; }
 
 #login-page .form-error {

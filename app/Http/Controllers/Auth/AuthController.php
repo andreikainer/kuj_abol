@@ -158,7 +158,7 @@ class AuthController extends Controller {
                 return redirect(trans('routes.account/dashboard'));
 
                 // 6. redirect the user to the dashboard page
-                //return redirect()->intended(trans('routes.account/dashboard'));
+                //return redirect()->intended(trans('routes.contact'));
             }else{
                 // 5. if the user has been baned, store feed back message in a session
                 Session::flash('flash_message', trans('login-page.baned-user'));
@@ -201,7 +201,7 @@ class AuthController extends Controller {
         // store success feed back message in a session
         //Session::set('message_logout', trans('login-page.logout'));
         Session::flash('flash_message', trans('login-page.logout'));
-        // clear user_id key session
+        // clear user_id key in session
         Session::forget('username');
 
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : trans('routes.account/login'));
@@ -234,7 +234,11 @@ class AuthController extends Controller {
 
     public function dash()
     {
-        return view('account.user-dashboard');
+        if (\Auth::check())
+        {
+            return 'pipa';
+        }
+        return 'pipa';
     }
 
 }
