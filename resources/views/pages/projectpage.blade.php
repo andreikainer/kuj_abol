@@ -2,15 +2,6 @@
 
 @section('content')
     <!-- Facebook JS import -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.3&appId=924969747560616";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
 
     <div class="container-fluid">
         {{--<div class="row" role="main"> <!--Body content-->--}}
@@ -31,7 +22,7 @@
             </div> <!-- project images end-->
 
             <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder">  <!-- statistics beginn-->
-                <h3 id="funds_text" data-funds-text="{{ trans('view-project-page.funds-text') }}">{{ trans('view-project-page.total-funds-raised') }}</h3>
+                <h3 id="funds_text" data-funds-text="{{ trans('view-project-page.funs-text') }}">{{ trans('view-project-page.total-funds-raised') }}</h3>
                 <h2 id="amount_raised" data-amount-raised="{{ $project->amount_raised }}"><strong>&euro; {{ $amount_raised }}</strong></h2>
                 <h4 id="minimum_goal" data-minimum-goal="{{ $project->target_amount }}"><strong>{{ trans('view-project-page.of-minimum-goal', ['goal' => $target_amount]) }}</strong></h4>
                 <h3>{{ trans('view-project-page.progress') }}</h3>
@@ -49,15 +40,14 @@
                 </div>
                 <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
                 <div class="btn">
-                   <a id="facebook-share" href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at" class="btn btn-primary button-main" role="button">
+                   <div id="facebook-share" class="btn btn-primary button-main" role="button">
                        <i class="fa fa-facebook"></i> Share on Facebook
-                   </a>
+                   </div>
                 </div>
                 <div class="btn">
-                    {{--<img src="{{ asset('/img/merken.svg') }}" alt="favorite-button" width="100%">--}}
-                    <a id="favorite" href="https://www.facebook.com/dialog/share?app_id=924969747560616&display=iframe&href=http://kinderfoerderungen.at&redirect_uri=http://kinderfoerderungen.at" class="btn btn-primary button-main" role="button">
+                    <div id="favorite" class="btn btn-primary button-main" role="button">
                         <i class="fa fa-star"></i> Add to Favourites
-                    </a>
+                    </div>
                 </div>
             </div> <!-- statistics end-->
             </div>

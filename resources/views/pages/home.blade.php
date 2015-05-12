@@ -155,8 +155,9 @@
                                 <a href="{{ $logo->url }}"><div class="logo-name img-responsive text-center hidden">{{$logo->business_name}}</div>
                                     <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}"></a>
                             </div>
-                            @endforeach
+                        @endforeach
                     </div>
+                <div class="row"><p class="text-center"><a href="{{ action('PagesController@sponsors') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p></div>
 
                     <div class="row">
                         <p class="text-center"><a href="{{ action('PagesController@sponsors') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p>
