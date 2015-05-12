@@ -35,7 +35,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="form-label">{{ trans('create-project-form.main-image') }}</div>
                 <div class="image-upload-wrapper">
-                    <img src="" alt="" class="image-upload-preview"/>
+                    <img src="" alt="" class="image-upload-preview img-responsive"/>
                     <div class="image-upload-controls">
                         <div class="image-loader"></div>
                         <label for="main_img" class="image-upload-label text-center">
@@ -65,7 +65,7 @@
                     <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.secondary-images') }}</div>
                     <div class="col-md-4 col-sm-4">
                         <div class="image-upload-wrapper">
-                            <img src="" alt="" class="image-upload-preview"/>
+                            <img src="" alt="" class="image-upload-preview img-responsive"/>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="img_2" class="image-upload-label text-center">
@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="image-upload-wrapper">
-                            <img src="" alt="" class="image-upload-preview"/>
+                            <img src="" alt="" class="image-upload-preview img-responsive"/>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="img_3" class="image-upload-label text-center">
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="image-upload-wrapper">
-                            <img src="" alt="" class="image-upload-preview"/>
+                            <img src="" alt="" class="image-upload-preview img-responsive"/>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="img_4" class="image-upload-label text-center">

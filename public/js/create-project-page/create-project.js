@@ -584,6 +584,7 @@
             var data = JSON.parse(data);
             var inputControls = $('#'+data.element).parent('.image-upload-controls');
             var previewContainer = inputControls.siblings('.image-upload-preview');
+            var iframe = previewContainer.children('iframe');
             var loaderImage = $('#'+data.element).siblings('.image-loader');
 
             // Fade out the loading animation, file input. Set the src of the iframe.
@@ -592,8 +593,8 @@
                 {
                     inputControls.fadeOut('slow');
                     //var src = previewContainer.attr('src');
-                    //previewContainer.attr('src', src+'/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
-                    previewContainer.attr('src', 'http://kinderfoerderungen.at/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+                    //iframe.attr('src', src+'/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+                    iframe.attr('src', 'http://kinderfoerderungen.at/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
                 })
                 .wait(700)
                 .then(function()
@@ -617,8 +618,8 @@
         $.subscribe('document-preview.close', function(event, button)
         {
             $(button).siblings('input[type="hidden"]').remove();
-            //$(button).siblings('iframe').attr('src', 'http://kinderfoerderungen.at');
-            $(button).siblings('iframe').attr('src', '');
+            //$(button).siblings('.image-upload-preview').children('iframe').attr('src', 'http://kinderfoerderungen.at');
+            $(button).siblings('.image-upload-preview').children('iframe').attr('src', '');
             closeFilePreview(button);
         });
 
