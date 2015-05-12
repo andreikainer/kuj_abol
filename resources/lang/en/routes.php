@@ -26,8 +26,10 @@ return [
     'account/register'      => 'account/register',
     'account/login'         => 'account/login',
     'logout'                => 'logout',
-    'account'     => 'account',
+    'account'               => 'account',
     'account/reset'         => 'account/reset',
+    'password/email'        => 'password/email',
+    'password/reset'        => 'password/reset',
 
     'create-project/save'   => 'create-project/save',
     'create-project/update' => 'create-project/update',

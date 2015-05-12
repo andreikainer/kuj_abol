@@ -217,7 +217,7 @@ class AuthController extends Controller {
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : trans('routes.account/login');
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
     }
 
     /**

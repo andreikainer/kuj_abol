@@ -1,11 +1,11 @@
 <!-- if there are validation errors, show "Woops" message -->
     <div class="form-group">
         @if($errors->any())
-            <div class="form-error top-error"><i class="fa fa-exclamation-circle"></i> {{ trans('login-page.login-fail') }}</div>
+            <div class="form-error top-error"><i class="fa fa-exclamation-circle"></i> {{ trans('login-page.email-fail') }}</div>
         @endif
     </div>
 
-{!! Form::open(['url' => '/password/email', 'class' => 'row', 'method' => 'post']) !!}
+{!! Form::open(['action' => 'Auth\PasswordController@postEmail', 'class' => 'row', 'method' => 'post']) !!}
 
 <!-- Email Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
@@ -23,8 +23,7 @@
     <div class="form-group col-xs-12 clearfix">
     	{!! Form::submit(trans('login-page.send'),
       		array('class'=>'btn btn-primary button-main-big mt-1em',
-      		      'id' => 'send-reset',
-      		      'action' => 'Auth\PasswordController@postEmail')) !!}
+      		      'id' => 'send-reset')) !!}
     </div>
 <!-- end submit button -->
 

@@ -28,6 +28,8 @@ return [
     'logout'               => 'logout',
     'account'    => 'account',
     'account/reset'        => 'account/reset',
+    'password/email'        => 'password/email',
+    'password/reset'        => 'password/reset',
 
     'create-project/save'  => 'antrag-einreichen/sparen',
     'create-project/update'=> 'antrag-einreichen/update',

@@ -32,11 +32,6 @@
     <div class="col-xs-12 col-sm-12 form-group">
         {!! Form::checkbox('remember', null) !!}
         {!! Form::label(null, trans('login-page.remember-me')) !!}
-    		{{--<div class="checkbox">--}}
-    			{{--<label>--}}
-    				{{--<input type="checkbox" name="remember"> {{trans('login-page.remember-me')}}--}}
-    			{{--</label>--}}
-    		{{--</div>--}}
     </div>
 <!-- end remember input -->
 

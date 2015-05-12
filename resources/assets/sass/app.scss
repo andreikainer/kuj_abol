@@ -578,9 +578,9 @@ footer {
 
 
 /*------------------------------------------------------------------*/
-  /*-- Contact page, Login page styles --*/
+  /*-- Contact page, Login page, Send-Reset-Link page, Password-Reset page styles --*/
 /*------------------------------------------------------------------*/
-#help-page, #login-page, #send-reset-link-page {
+#help-page, #login-page, #send-reset-link-page, #password-reset-page {
   font-size: 1.1rem !important;
 
   .no-projects {
@@ -725,7 +725,7 @@ footer {
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
-  position: absolute;
+//  position: absolute;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
