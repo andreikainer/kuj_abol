@@ -10,7 +10,7 @@
 <!-- Email Form Input -->
     <div class="form-group">
     	{!! Form::label(null, trans('login-page.email'), ['class' => 'form-label form-inline']) !!}
-   	    {!! Form::text('email', old('email'),
+   	    {!! Form::text('email', Input::old('email'),
         		array('required',
               		'class'=>'form-input form-inline')) !!}
     </div>
@@ -21,7 +21,7 @@
 <!-- Password Form Input -->
     <div class="form-group">
     	{!! Form::label(null, trans('login-page.password'), ['class' => 'form-label']) !!}
-    	{!! Form::password('password', null,
+    	{!! Form::password('password',
         		array('required',
               		'class'=>'form-input')) !!}
     </div>
@@ -31,8 +31,8 @@
 
 <!-- Password_confirmation Form Input -->
     <div class="form-group">
-    	{!! Form::label(null, trans('contact-page.message-body'), ['class' => 'form-label']) !!}
-    	{!! Form::password('password_confirmation', null,
+    	{!! Form::label(null, trans('login-page.password-confirmation'), ['class' => 'form-label']) !!}
+    	{!! Form::password('password_confirmation',
         		array('required',
               		'class'=>'form-input')) !!}
     </div>

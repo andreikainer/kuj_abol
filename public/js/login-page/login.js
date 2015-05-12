@@ -43,12 +43,12 @@
 
     /*-- Publish Events --*/
     // Form Field blur events.
-    $('input[name="username"]').on('blur', function()
+    $('#login-page input[name="username"]').on('blur', function()
     {
         $.publish('username.blur', this);
     });
 
-    $('input[name="password"]').on('blur', function()
+    $('#login-page input[name="password"]').on('blur', function()
     {
         $.publish('password.blur', this);
     });

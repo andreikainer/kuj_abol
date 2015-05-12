@@ -42,17 +42,17 @@
 
     /*-- Publish Events --*/
     // Form Field blur events.
-    $('form#register-page input[name="email"]').on('blur', function()
+    $('#password-reset-page input[name="email"]').on('blur', function()
     {
         $.publish('email.blur', this);
     });
 
-    $('form#register-page input[name="password"]').on('blur', function()
+    $('#password-reset-page input[name="password"]').on('blur', function()
     {
         $.publish('password.blur', this);
     });
 
-    $('form#register-page input[name="password_confirmation"]').on('blur', function()
+    $('#password-reset-page input[name="password_confirmation"]').on('blur', function()
     {
         $.publish('password-confirmation.blur', this);
     });
