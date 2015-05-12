@@ -81,6 +81,8 @@ return [
     'save-success'          => 'Anfrage erfolgreich gespeichert.',
     'delete-success'        => 'Anfrage erfolgreich entfernt.',
     'login'                 => ' Bitte <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Einloggen</a> or <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Registrieren</a> um eine Anfrage starten.',
+    'incomplete'            => ' Sie haben derzeit einen unvollständigen Antrag gespeichert. Bitte fahren Sie mit der gespeicherten anfordern , oder zu löschen.',
+    'live-project'          => ' Sie haben momentan ein Förderungsprojekt live auf unserer Webseite. Sie können erst nach Ablauf wieder einen Antrag stellen.',
 
 
     /**

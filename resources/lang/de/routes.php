@@ -25,6 +25,7 @@ return [
     'account/verify'       => 'benutzer/prüfen',
     'account/register'      => 'benutzer/registrieren',
     'account/login'         => 'benutzer/einloggen',
+    'account/logout'        => 'benutzer/abmelden',
 
     'create-project/save'   => 'antrag-einreichen/sparen',
     'create-project/update' => 'antrag-einreichen/update',

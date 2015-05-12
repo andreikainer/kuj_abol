@@ -55,14 +55,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $query->where('confirmation_code', '=', $confirmation_code)->first();
     }
 
-    public function project()
+    public function projects()
     {
-        return $this->hasOne('App\Project');
+        return $this->hasMany('App\Project');
     }
 
     public function incompleteProject()
     {
-        return $this->project()->where('application_status', '=', '0');
+        return $this->projects()->where('application_status', '=', '0');
+    }
+
+    public function currentLiveProject()
+    {
+        return $this->projects()
+            ->where('live', '=', '1')
+            ->where('application_status', '=', '1')
+            ->where('approved', '=', '1');
     }
 
 }

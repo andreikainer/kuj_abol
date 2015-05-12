@@ -17,6 +17,9 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use DB;
 use KuJ\CustomExceptions\ProjectCompletedException;
+use KuJ\CustomExceptions\UserHasCurrentLiveProjectException;
+use KuJ\CustomExceptions\UserHasIncompleteProjectException;
+use KuJ\CustomExceptions\UserRequiresAuthenticationException;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
@@ -99,10 +102,20 @@ class ProjectsController extends Controller {
     {
         if( is_null(Auth::user()))
         {
-            return json_encode([
-                'login' => '<i class="fa fa-exclamation-circle fa-lg"></i>'.trans('create-project-form.login')
-            ]);
+            throw new UserRequiresAuthenticationException;
         }
+
+        if(! is_null(Auth::user()->incompleteProject->first()) )
+        {
+            throw new UserHasIncompleteProjectException;
+        }
+
+        if(! is_null(Auth::user()->currentLiveProject->first()) )
+        {
+            throw new UserHasCurrentLiveProjectException;
+        }
+
+        return json_encode(['success' => 'success']);
     }
 
     /**
@@ -231,7 +244,8 @@ class ProjectsController extends Controller {
 
 
         // Find the Project which belongs to the user, or create a new one.
-        $projectID = (Auth::user()->project) ? Auth::user()->project->id : null;
+        $projectID = (! is_null(Auth::user()->incompleteProject->first())) ? Auth::user()->incompleteProject->first()->id : null;
+
         $project = Project::findOrNew($projectID);
 
         // Store the original project slug,

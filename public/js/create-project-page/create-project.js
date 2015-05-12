@@ -94,7 +94,7 @@
             $.publish('section-check.errors', this);
         });
 
-        $('.form-input-disabled').on('click', function()
+        $('.form-input-disabled').on('click.disabled', function()
         {
             $.publish('disabled-input.click', this);
         });
@@ -120,7 +120,7 @@
         $.subscribe('section-tab.click', function(event, data)
         {
             showSection(fieldsetCollection, $(data).data('section'));
-            makeTabActive(tabCollection, data);
+            makeTabActive(tabCollection, $(data).data('section'));
         });
 
         $.subscribe('disabled-input.click', function(event, data)
@@ -169,47 +169,47 @@
             $.publish('project-name.blur', this);
         });
 
-        $('textarea[name="short_desc"]:not(.form-input-disabled)').on('blur', function()
+        $('textarea[name="short_desc"]').on('blur', function()
         {
             $.publish('short-description.blur', this);
         });
 
-        $('textarea[name="full_desc"]:not(.form-input-disabled)').on('blur', function()
+        $('textarea[name="full_desc"]').on('blur', function()
         {
             $.publish('full-description.blur', this);
         });
 
-        $('input[name="target_amount"]:not(.form-input-disabled)').on('blur', function()
+        $('input[name="target_amount"]').on('blur', function()
         {
             $.publish('target-amount.blur', this);
         });
 
-        $('input[name="child_name"]:not(.form-input-disabled)').on('blur', function()
+        $('input[name="child_name"]').on('blur', function()
         {
             $.publish('child-name.blur', this);
         });
 
-        $('input[name="first_name"]:not(.form-input-disabled)').on('blur', function()
+        $('input[name="first_name"]').on('blur', function()
         {
             $.publish('first-name.blur', this);
         });
 
-        $('input[name="last_name"]:not(.form-input-disabled)').on('blur', function()
+        $('input[name="last_name"]').on('blur', function()
         {
             $.publish('last-name.blur', this);
         });
 
-        $('input[name="email"]:not(.form-input-disabled)').on('blur', function()
+        $('input[name="email"]').on('blur', function()
         {
             $.publish('email.blur', this);
         });
 
-        $('textarea[name="address"]:not(.form-input-disabled)').on('blur', function()
+        $('textarea[name="address"]').on('blur', function()
         {
             $.publish('address.blur', this);
         });
 
-        $('input[name="tel_number"]:not(.form-input-disabled)').on('blur', function()
+        $('input[name="tel_number"]').on('blur', function()
         {
             $.publish('tel-number.blur', this);
         });
@@ -880,7 +880,10 @@
                 dataType : 'json',
                 success : function(response)
                 {
+                    // Stop the Ajax animation.
                     loaderImage.fadeOut();
+
+                    // Render validation errors.
                     if( response.errors )
                     {
                         $.publish('project-start.fail', response);
@@ -890,13 +893,32 @@
                     // Remove the error feedback.
                     $('.form-section-tab[data-section="0"]').removeClass('form-section-tab-error');
 
+                    // Render authentication errors.
                     if( response.login )
                     {
                         displayErrorFlashMessage(response.login);
                         return false;
                     }
 
-                    $.publish('project-start.success', response);
+                    // Render incomplete project errors.
+                    if( response.incomplete )
+                    {
+                        displayErrorFlashMessage(response.incomplete);
+                        return false;
+                    }
+
+                    // Render current live project error.
+                    if( response.liveProject )
+                    {
+                        displayErrorFlashMessage(response.liveProject);
+                        return false;
+                    }
+
+                    // Publish the event of success.
+                    if( response.success )
+                    {
+                        $.publish('project-start.success', response);
+                    }
                 },
                 error : function(response)
                 {
@@ -908,8 +930,34 @@
 
         $.subscribe('project-start.success', function(event, data)
         {
+            var formFields = $('form#create-project input, textarea');
+            var fileLabels = $('label.form-input-disabled');
+
             hideErrorFlashMessage();
-            console.log(data);
+
+            // Remove the disabled state, of form fields.
+            // Clear any previous error messages.
+            $.each(formFields, function(index, element)
+            {
+                $(element).removeAttr('disabled')
+                    .removeAttr('readonly')
+                    .off('click.disabled')
+                    .removeClass('form-input-disabled');
+                hideErrorMessage($(element).attr('name'));
+                removeFailClass(element);
+            });
+
+            $.each(fileLabels, function(index, element)
+            {
+                $(element).off('click.disabled')
+                    .removeClass('form-input-disabled');
+            });
+
+            makeTabActive(tabCollection, 1);
+            showSection(fieldsetCollection, 1);
+
+
+
         });
 
     /*
@@ -926,10 +974,10 @@
             collection.eq(i).fadeIn()
         }
 
-        function makeTabActive(collection, el)
+        function makeTabActive(collection, i)
         {
             collection.removeClass('form-section-tab-active');
-            $(el).addClass('form-section-tab-active');
+            collection.eq(i).addClass('form-section-tab-active');
         }
 
         function showErrorMessage(name, message)
