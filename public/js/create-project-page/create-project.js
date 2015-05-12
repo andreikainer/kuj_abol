@@ -49,6 +49,10 @@
                 {
                     return 'This field must not exceed '+limit+' characters';
                 },
+                'maxSize' : function(limit)
+                {
+                    return 'File size must not exceed '+limit+'MB.'
+                },
                 'charRemaining' : 'characters remaining'
             },
             'de' : {
@@ -64,6 +68,10 @@
                 'maxLength' : function(limit)
                 {
                     return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+                },
+                'maxSize' : function(limit)
+                {
+                    return 'Dateigröße darf '+limit+'MB nicht überschreiten.'
                 },
                 'charRemaining' : 'noch freie Zeichen'
             }
@@ -437,6 +445,12 @@
                 showErrorMessage(data.id, errorMessages[window.locale].image);
                 return false;
             }
+            if(! checkFileSize(data.files[0].size, 20))
+            {
+                addFailClass(data);
+                showErrorMessage(data.id, errorMessages[window.locale].maxSize(20));
+                return false;
+            }
             removeFailClass(data);
             hideErrorMessage(data.id);
             var inputControls = $(data).parent('.image-upload-controls');
@@ -505,6 +519,12 @@
             if (! checkDocumentMime(data.files[0].type)) {
                 addFailClass(data);
                 showErrorMessage(data.id, errorMessages[window.locale].document);
+                return false;
+            }
+            if (! checkFileSize(data.files[0].size, 20))
+            {
+                addFailClass(data);
+                showErrorMessage(data.id, errorMessages[window.locale].maxSize(20));
                 return false;
             }
             removeFailClass(data);
@@ -964,6 +984,19 @@
                     || mime === 'image/tiff'
                     || mime === 'application/pdf'
             );
+        }
+
+        /**
+         * Check the filesize against a limit (in MB)
+         *
+         * @param value
+         * @param limit
+         * @returns {boolean}
+         */
+        function checkFileSize(value, limit)
+        {
+            var value = value/1000000;
+            return (value <= limit);
         }
 
         function loadImagePreview(file, container)

@@ -67,7 +67,7 @@ return [
     'exp-no-recent-project-2' => 'Now is a great time to start a new one!',
     'exp-main-image-1'      => 'Choose an image from your computer.',
     'exp-main-image-2'      => 'This will be the main display photo for your project, <br/> So make it a good one!',
-    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 50MB file limit. <br/> Minimum size 768 x 1024 pixels',
+    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB file limit. <br/> Minimum size 768 x 1024 pixels',
     'exp-secondary-image'   => 'Click to upload an image',
     'exp-evidence-1'        => 'We require supporting evidence of your child\'s ailment.',
     'exp-evidence-2'        => 'A written letter from your medical practitioner or hospital, stating the condition of your child\'s ailment. <br/> A document supporting evidence of your financial situation, including child care allowance.',

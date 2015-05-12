@@ -65,7 +65,7 @@ return [
     'exp-no-recent-project-2' => 'Jetzt ist eine gute Zeit, um eine neue zu starten !',
     'exp-main-image-1'      => 'Wählen Sie ein Bild von Ihrem Computer.',
     'exp-main-image-2'      => 'Das wird die Hauptanzeige Foto für Ihr Projekt, <br/> so machen es gut!',
-    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 50MB Dateigrenze. <br/> Mindestgröße 768 x 1024 Pixel',
+    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB Dateigrenze. <br/> Mindestgröße 768 x 1024 Pixel',
     'exp-secondary-image'   => 'Klicken Sie, um ein Bild hochzuladen.',
     'exp-evidence-1'        => 'Wir benötigen Beweise für Ihr Kind die Krankheit.',
     'exp-evidence-2'        => 'Eine schriftliche Brief von Ihrem Arzt oder Krankenhaus, die besagt, den Zustand Ihres Kindes Krankheit. <br/> Ein Dokument, Nachweise über Ihre finanzielle Situation, einschließlich Kinderbetreuungsgeld.',
