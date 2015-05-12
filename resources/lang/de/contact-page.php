@@ -17,11 +17,11 @@ return [
     'thanks'            => 'Vielen Dank für Ihre Anfrage. Wir bemühen uns Ihr Anliegen Innerhalb von 24 Stunden zu bearbeiten.',
 
 /*-- Call to Actions --*/
-    'send'              => 'Send',
+    'send'              => 'Senden',
 
 /*-- Form Labels --*/
     'name'              => 'Name:',
-    'email'             => 'Email:',
+    'email'             => 'E-mail:',
     'message-body'      => 'Nachricht:',
 
 /*-- Form Field Placeholders --*/

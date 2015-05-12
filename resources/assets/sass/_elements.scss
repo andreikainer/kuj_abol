@@ -216,6 +216,12 @@
 /*------------------------------------------------------------------*/
   /*-- FORMS --*/
 /*------------------------------------------------------------------*/
+.top-error {
+  background: tint($orange, 60%) !important;
+  border: 1px dashed $orange !important;
+  padding: 0.65rem !important;
+}
+
 .form-error {
   padding: 0.65rem;
   color: $orange;

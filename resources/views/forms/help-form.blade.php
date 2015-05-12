@@ -1,11 +1,11 @@
 <!-- if there are validation errors, show "Woops" message -->
     <div class="form-group">
         @if($errors->any())
-            <div class="form-error"><i class="fa fa-exclamation-circle"></i> {{ trans('contact-page.woops') }}</div>
+            <div class="form-error top-error"><i class="fa fa-exclamation-circle"></i> {{ trans('contact-page.woops') }}</div>
         @endif
     </div>
 
-{!! Form::open(['action' => array('ContactFormController@postContactForm', $address, $addressee), 'method' => 'post']) !!}
+{!! Form::open(['action' => 'ContactFormController@postContactForm', 'method' => 'post']) !!}
 <!-- Name Form Input -->
     <div class="form-group">
     	{!! Form::label(null, trans('contact-page.name'), ['class' => 'form-label form-inline']) !!}

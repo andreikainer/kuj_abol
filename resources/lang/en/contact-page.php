@@ -13,7 +13,7 @@ return [
 /*-- Pre-form message --*/
     'pre-form'          => '<p>Have a question? Check out our <a href=":cta-link" class="button-link">FAQ section</a>, or use the form provided below.</p>
                             <p>Our staff will be back to you in 24 hours.</p>',
-    'woops'             => 'Sorry, there are some errors in the form.',
+    'woops'             => 'Woops! There is an error in your input. Please try again.',
     'thanks'            => 'Thanks for contacting us! Our staff will be back to you in 24 hours.',
 
 /*-- Call to Actions --*/

@@ -1,23 +1,17 @@
 (function()
 {
-/*------------------------------------------------------------------*/
+    /*------------------------------------------------------------------*/
     /*-- LOGIN OPTION --*/
-/*------------------------------------------------------------------*/
-/*-- Messages Object --*/
+    /*------------------------------------------------------------------*/
+    /*-- Messages Object --*/
     var errorMessages = {
         'en' : {
             'required'  : 'This field is required.',
-            'minLength' : function(limit)
-            {
-                return 'This field must contain at least '+limit+' characters';
-            }
+            'email'     : 'Must be of a correct email format. And not begin with a space.'
         },
         'de' : {
             'required'  : 'Dieses Feld ist erforderlich',
-            'minLength' : function(limit)
-            {
-                return 'Diese Feld muss mindestens '+limit+' Charaktere enthalten';
-            }
+            'email'     : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.'
         }
     };
 
@@ -43,18 +37,14 @@
 
     /*-- Publish Events --*/
     // Form Field blur events.
-    $('#login-page input[name="username"]').on('blur', function()
+    $('input[name="email"]').on('blur', function()
     {
-        $.publish('username.blur', this);
+        $.publish('email.blur', this);
     });
 
-    $('#login-page input[name="password"]').on('blur', function()
-    {
-        $.publish('password.blur', this);
-    });
 
     // Form Validation Events.
-    $.subscribe('username.blur', function(event, data)
+    $.subscribe('email.blur', function(event, data)
     {
         var name = data.getAttribute('name');
 
@@ -63,21 +53,8 @@
             redTopInput(data);
             return false;
         }
-
-        hideErrorMessage(name);
-    });
-
-    $.subscribe('password.blur', function(event, data)
-    {
-        var name = data.getAttribute('name');
-
-        if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages[window.locale].required);
-            redTopInput(data);
-            return false;
-        }
-        if (! FormValidation.checkMinLength(data.value, 6)) {
-            showErrorMessage(name, errorMessages[window.locale].minLength(6));
+        if (! FormValidation.checkValidEmail(data.value)) {
+            showErrorMessage(name, errorMessages[window.locale].email);
             redTopInput(data);
             return false;
         }

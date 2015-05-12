@@ -19,9 +19,6 @@
   img {
     width: 150px;
 
-//    @media(device-width: 320px) {
-//      width: 120px;
-//    }
     @media(max-width: 320px) {
       width: 120px;
     }
@@ -147,6 +144,20 @@ hr {
   margin-bottom: 0;
 }
 
+
+/*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
+#logout {
+  width: 30%;
+}
+#username-btn {
+  width: 68%;
+  background-color: $orange;
+  border-color: $orange !important;
+
+  &:hover {
+    background-color: darken($orange, 5%);
+  }
+}
 /*------------------------------------------------------------------*/
   /*-- Group of circle buttons --*/
 /*------------------------------------------------------------------*/
@@ -164,10 +175,7 @@ hr {
     padding-left: 0;
   }
 }
-/*-- Search btn --*/
-//.magnifier {
-//  margin-left: 3.7em;
-//}
+
 /*-- Humburger btn --*/
 .mobile-circle-button {
   margin-bottom: .9em;
@@ -534,44 +542,6 @@ footer {
 
 
 
-
-/*------------------------------------------------------------------*/
-  /*-- Login Page styles --*/
-/*------------------------------------------------------------------*/
-#login-page {
-//  .form-error {
-//    padding: 0;
-//    background: none !important;
-//    border: none;
-//    font-size: .9rem;
-//    font-weight: 700;
-//    line-height: 1.8rem;
-//    padding-left: 1rem;
-//  }
-//  form div.cpp-error {
-//    margin-top: 0 !important;
-//    margin-bottom: 1rem;
-//  }
-//
-//  .login-submit {
-//    font-family: $lato;
-//    font-size: 1.1rem;
-////    background-color: $blue;
-////    border-color: $blue;
-//
-//    @media(max-width: 1240px) {
-//      padding-left: 1rem !important;
-//      padding-right: 1rem !important;
-//    }
-//  }
-
-}
-
-
-
-
-
-
 /*------------------------------------------------------------------*/
   /*-- Modules styles --*/
 /*------------------------------------------------------------------*/
@@ -608,9 +578,9 @@ footer {
 
 
 /*------------------------------------------------------------------*/
-  /*-- Contact page, Login page styles --*/
+  /*-- Contact page, Login page, Send-Reset-Link page, Password-Reset page styles --*/
 /*------------------------------------------------------------------*/
-#help-page, #login-page {
+#help-page, #login-page, #send-reset-link-page, #password-reset-page {
   font-size: 1.1rem !important;
 
   .no-projects {
@@ -625,39 +595,37 @@ footer {
     }
   }
 
-  form div.form-group {
+  .form-group {
     margin-bottom: 0 !important;
-    margin-top: 15px;
+    margin-top: .925em;
   }
 
-  form div.form-error {
+  .form-error {
     padding: 0;
-    background: none !important;
+    background: none;
     border: none;
     font-size: .9rem;
     font-weight: 700;
     line-height: 1.8rem;
   }
-
-  div div ul.form-error {
-    padding-left: 2rem;
-  }
-  div div ul.form-error li {
+  .form-error li {
     list-style-type: disc !important;
   }
 
-  form div.cpp-error {
+  .cpp-error {
     margin-top: 0 !important;
     margin-bottom: 1rem;
   }
 
 /*-- Login page buttons -*/
   #log-me-in {
-    margin-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 1em !important;
   }
   #forgot-my-password {
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     background-color: $bluegrey !important;
     color: $white !important;
     font-family: $lato;
@@ -665,6 +633,12 @@ footer {
     &:hover {
       background-color: darken($bluegrey, 10%) !important;
     }
+  }
+}
+
+#login-page, #send-reset-link-page {
+  .form-error {
+    padding-left: 1rem;
   }
 }
 
@@ -751,6 +725,8 @@ footer {
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
+//  position: absolute;
+  z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
   font-weight: 700;
