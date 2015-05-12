@@ -82,3 +82,8 @@
 		{{--</div>--}}
 	{{--</div>--}}
 @endsection
+
+@section('additional_js')
+    <script src="{{ asset('/js/FormValidation.js') }}"></script>
+    <script src="{{ asset('/js/FormValidation.js') }}"></script>
+@endsection
