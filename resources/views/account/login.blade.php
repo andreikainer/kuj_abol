@@ -7,16 +7,6 @@
 
                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 mt-2em form-element">
 
-               <!-- to give the user a feedback in a success logout point, show the success message -->
-                    <div class="form-group">
-                        @if(Session::has('message_logout'))
-                        	<div class="image-upload-label text-center">
-                          		{{ Session::get('message_logout') }}
-                          		{{ Session::flash('message_logout', trans('login-page.logout')) }}
-                        	</div>
-                        @endif
-                    </div>
-
                <!-- Login form -->
                         @include('forms.login-form')
 

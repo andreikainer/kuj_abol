@@ -11,36 +11,37 @@ use Illuminate\Support\Facades\Session;
 use KuJ\CustomExceptions\InvalidConfirmationCodeException;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
+
 class AuthController extends Controller {
 
-    protected $redirectTo = '/dashboard';
-	/*
-	|--------------------------------------------------------------------------
-	| Registration & Login Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller handles the registration of new users, as well as the
-	| authentication of existing users. By default, this controller uses
-	| a simple trait to add these behaviors. Why don't you explore it?
-	|
-	*/
+    //protected $redirectPath = trans('account');
+    /*
+    |--------------------------------------------------------------------------
+    | Registration & Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the registration of new users, as well as the
+    | authentication of existing users. By default, this controller uses
+    | a simple trait to add these behaviors. Why don't you explore it?
+    |
+    */
 
-	use AuthenticatesAndRegistersUsers;
+    use AuthenticatesAndRegistersUsers;
 
-	/**
-	 * Create a new authentication controller instance.
-	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
-	 * @return void
-	 */
-	public function __construct(Guard $auth, Registrar $registrar)
-	{
-		$this->auth = $auth;
-		$this->registrar = $registrar;
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @param  \Illuminate\Contracts\Auth\Guard  $auth
+     * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
+     * @return void
+     */
+    public function __construct(Guard $auth, Registrar $registrar)
+    {
+        $this->auth = $auth;
+        $this->registrar = $registrar;
 
-		$this->middleware('guest', ['except' => 'getLogout']);
-	}
+        $this->middleware('guest', ['except' => 'getLogout']);
+    }
 
     /**
      * Show the application registration form.
@@ -135,30 +136,27 @@ class AuthController extends Controller {
 
         // 2. run the validation with those rules
         $credentials = $request->only('user_name', 'password');
-
-        //$username = Input::get('user_name');
-        //$password = Input::get('$password');
-        $remember = \Input::get('remember');
-        //return $remember;
-
-
+        //$url = \Request::url();
         // 3a. if user’s input passed validation
-        if (\Auth::attempt($credentials, $remember))
+        if ($this->auth->attempt($credentials, $request->has('remember')))
         {
             // 4. check if the user has been baned
-            $activness = \Auth::user()->active;
-            if($activness == 1)
+            //$activness = \Auth::user()->active;
+            if($this->auth->user()->active == 1)
             {
-                // 5. store success feed back message in a session
-                //Session::set('message_login', trans('login-page.login-success'));
-                Session::flash('flash_message', trans('login-page.login-success'));
-                Session::set('username', \Auth::user()->user_name);
+                $username = $this->auth->user()->user_name;
 
-                //return trans('routes.account/dashboard');
-                return redirect(trans('routes.account/dashboard'));
+                // 5. store success feed back message in a session
+                Session::flash('flash_message', trans('login-page.login-success'));
+                Session::set('username', $username);
 
                 // 6. redirect the user to the dashboard page
-                //return redirect()->intended(trans('routes.contact'));
+                //return $username;
+                //return redirect()->intended($this->redirectPath());
+                //return redirect()->intended($url);
+                //return redirect()->intended()->action('Auth\AuthController@dash', ['username' => $username]);
+                // redirect()->action('Auth\AuthController@dash', ['username' => $username]);
+                return redirect()->back();
             }else{
                 // 5. if the user has been baned, store feed back message in a session
                 Session::flash('flash_message', trans('login-page.baned-user'));
@@ -169,12 +167,12 @@ class AuthController extends Controller {
             }
 
         } else {
-        // 3b. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
-        return redirect($this->loginPath())
-            ->withInput($request->only('user_name', 'remember'))
-            ->withErrors([
-                'user_name' => $this->getFailedLoginMessage(),
-            ]);
+            // 3b. if user’s input didn’t pass validation, show the login form again, this time with pre-filled email input field and with error message
+            return redirect($this->loginPath())
+                ->withInput($request->only('user_name', 'remember'))
+                ->withErrors([
+                    'user_name' => $this->getFailedLoginMessage(),
+                ]);
         }
 
     }
@@ -199,8 +197,8 @@ class AuthController extends Controller {
         $this->auth->logout();
 
         // store success feed back message in a session
-        //Session::set('message_logout', trans('login-page.logout'));
         Session::flash('flash_message', trans('login-page.logout'));
+
         // clear user_id key in session
         Session::forget('username');
 
@@ -219,7 +217,7 @@ class AuthController extends Controller {
             return $this->redirectPath;
         }
 
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : trans('routes.account/dashboard');
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : trans('routes.account/login');
     }
 
     /**
@@ -232,13 +230,13 @@ class AuthController extends Controller {
         return property_exists($this, 'loginPath') ? $this->loginPath : trans('routes.account/login');
     }
 
-    public function dash()
+    public function dash($username)
     {
-        if (\Auth::check())
-        {
-            return 'pipa';
-        }
-        return 'pipa';
+//        if (\Auth::check())
+//        {
+//            return 'pipa';
+//        }
+        return $username;
     }
 
 }

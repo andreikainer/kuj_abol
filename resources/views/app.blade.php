@@ -139,7 +139,7 @@
                                 <!-- if there is a logged in user in the session, change the buttons to LOGOUT and USERNAME -->
                                     @if(Session::has('username'))
                                         <a href="{{ action('Auth\AuthController@getLogout') }}" type="button" class="btn btn-xs button-main button-user" id="logout">{{ trans('app.logout') }}</a>
-                                        <a href="{{ action('Auth\AuthController@dash') }}" type="button" class="btn btn-xs button-main button-user" id="username-btn">{{ ucfirst(Session::get('username')) }}</a>
+                                        <a href="{{ action('Auth\AuthController@dash', Session::has('username')) }}" type="button" class="btn btn-xs button-main button-user" id="username-btn">{{ ucfirst(Session::get('username')) }}</a>
                                     @else
                                 <!-- if there is no logged in user in the session, change the buttons to LOGIN and REGISTER -->
                                         <a href="{{ action('Auth\AuthController@getLogin') }}" type="button" class="btn btn-xs button-main button-user login">{{ trans('app.login') }}</a>
@@ -194,7 +194,7 @@
                 @if (Session::has('flash_message'))
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-12 col-sm-12">
+                            <div class="col-md-6 col-md-offset-3 col-sm-12">
                                 <div class="alert flash-message text-center fade in center-block">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
                                     {{ Session::get('flash_message') }}

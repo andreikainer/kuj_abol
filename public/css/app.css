@@ -6091,7 +6091,7 @@ footer {
     #help-page #forgot-my-password:hover, #login-page #forgot-my-password:hover, #send-reset-link-page #forgot-my-password:hover {
       background-color: #58606f !important; }
 
-#login-page .form-error {
+#login-page .form-error, #send-reset-link-page .form-error {
   padding-left: 1rem; }
 
 /*------------------------------------------------------------------*/
