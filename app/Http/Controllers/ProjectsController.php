@@ -29,10 +29,11 @@ class ProjectsController extends Controller {
     {
         $projects = Project::all()
             ->where('approved', 1)
-            ->where('succ_funded', 0);
+            ->where('succ_funded', 0)
+            ->sortByDesc('completed_on');
 
         $succ_projects = Project::where('succ_funded', 1)
-            ->paginate(3);
+            ->sortBy('created_at')->paginate(3);
 
         $logos = DB::table('sponsors_tbl')->get();
 

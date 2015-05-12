@@ -78,6 +78,8 @@ Route::group(
 
         Route::post(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@postLogin');
 
+        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
