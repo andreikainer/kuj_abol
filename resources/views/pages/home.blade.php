@@ -76,7 +76,8 @@
                                         </div>
                                     </div>
 
-                                    <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">Mehr zu diesen Förderungsprojekt</a></p>
+                                    <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">{{trans('home-page.read-more')}}</a></p>
+
                                 </div>
                             </div>
                         </div>
@@ -130,7 +131,11 @@
 
                     </div> <!-- row ends -->
 
-                    <div class="row"><p class="text-center"><a href="{{ action('ProjectsController@showMoreSuccProjects') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>View more</a></p></div>
+                    <div class="row">
+                        <p class="text-center">
+                            <a href="{{ action('ProjectsController@showMoreSuccProjects') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-more') }}</a>
+                        </p>
+                    </div>
 
                 </div>
             </div>
@@ -150,16 +155,17 @@
 
                 <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
                     <div class="row sponsors_carousel">
-
                         @foreach($logos as $logo)
                             <div class="col-xs-4 col-sm-4 col-md-2 img-responsive">
-                                <a href="{{ $logo->url }}"><div class="logo-name img-responsive text-center hidden">{{$logo->business_name}}</div>
-                                    <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}"></a>
+                                <a href="{{ $logo->url }}">
+                                    <div class="logo-name img-responsive text-center hidden">{{$logo->business_name}}</div>
+                                    <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}">
+                                </a>
                             </div>
                         @endforeach
                     </div>
-                <div class="row"><p class="text-center"><a href="{{ action('PagesController@sponsors') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p></div>
 
+                    <div class="row"><p class="text-center"><a href="{{ action('PagesController@sponsors') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-all') }}</a></p></div>
                 </div>
 
             </div>

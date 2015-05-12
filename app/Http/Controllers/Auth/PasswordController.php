@@ -35,4 +35,11 @@ class PasswordController extends Controller {
 		$this->middleware('guest');
 	}
 
+//    public function show()
+//    {
+//        return view('account.reset');
+//    }
+
+
+
 }

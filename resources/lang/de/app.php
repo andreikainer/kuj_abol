@@ -22,6 +22,7 @@ return array(
     'create-project' 	    => 'Asuchen einreichen',
     'contribute' 			=> 'Fördern',
     'login'					=> 'Einloggen',
+    'logout'                => 'Abmelden',
     'register'				=> 'Registrieren',
 
     'search'                => 'Suchen',
