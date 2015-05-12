@@ -33,7 +33,7 @@ class ProjectsController extends Controller {
             ->sortByDesc('completed_on');
 
         $succ_projects = Project::where('succ_funded', 1)
-            ->sortBy('created_at')->paginate(3);
+            ->paginate(3);
 
         $logos = DB::table('sponsors_tbl')->get();
 

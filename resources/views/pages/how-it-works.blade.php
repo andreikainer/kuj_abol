@@ -98,19 +98,19 @@
                        <h4>Bernhard Ehn</h4>
                        <p class="team-role">{!! trans('how-it-works-page.team-1') !!}</p>
                        <p class="team"><i class="fa fa-phone"></i><a href="tel:+436801412012"> +43 680 / 14 12 012</a></p>
-                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', ['address' => 'o.smirnova1986@gmail.com', 'addressee' => 'Bernhard Ehn']) }}"> bernhard@kinderfoerderungen.at</a></p>
+                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', array('address' => 'bernhard@kinderfoerderungen.at', 'addressee' => 'Bernhard Ehn')) }}"> bernhard@kinderfoerderungen.at</a></p>
                     </div>
                     <div class="col-md-4 xs-mt">
                        <h4>Wilhelmine Bauer</h4>
                        <p class="team-role">{!! trans('how-it-works-page.team-2') !!}</p>
                        <p class="team"><i class="fa fa-phone"></i><a href="tel:+4366488299611"> +43 664 / 88 299 611</a></p>
-                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', ['address' => 'ladiez.os@gmail.com', 'addressee' => 'Wilhelmine Bauer']) }}"> wilhelmine@kinderfoerderungen.at</a></p>
+                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', array('address' => 'wilhelmine@kinderfoerderungen.at', 'addressee' => 'Wilhelmine Bauer')) }}"> wilhelmine@kinderfoerderungen.at</a></p>
                     </div>
                     <div class="col-md-4 xs-mt">
                        <h4>Ingeborg Kubita</h4>
                        <p class="team-role">{!! trans('how-it-works-page.team-2') !!}</p>
                        <p class="team"><i class="fa fa-phone"></i><a href="tel:+4366488299610"> +43 664 / 88 299 610</a></p>
-                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', ['address' => 'o.smirnova1986@gmail.com', 'addressee' => 'Ingeborg Kubita']) }}"> ingeborg@kinderfoerderungen.at</a></p>
+                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', array('address' => 'ingeborg@kinderfoerderungen.at', 'addressee' => 'Ingeborg Kubita')) }}"> ingeborg@kinderfoerderungen.at</a></p>
                     </div>
                 </div>
             </div>
