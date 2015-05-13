@@ -1,7 +1,7 @@
 <div class="row">
             <div class="col-md-12 col-sm-12 text-right">
                 <div class="image-upload-wrapper">
-                    <div class="form-button form-button-secondary text-center" data-button="save">
+                    <div class="form-button form-button-secondary text-center form-save-button-disabled" data-button="save">
                         <div class="image-loader"></div>
                         <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/save')) }}">
                             {{ trans('create-project-form.save-progress') }}

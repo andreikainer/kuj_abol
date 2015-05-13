@@ -7,6 +7,7 @@ use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\SaveProjectRequest;
 use App\Http\Requests\StartProjectRequest;
 use App\Project;
+use App\Pledge;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -17,8 +18,11 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use DB;
 use KuJ\CustomExceptions\ProjectCompletedException;
+use KuJ\CustomExceptions\ProjectNameAlreadyTakenException;
+use KuJ\CustomExceptions\UserAlreadyHasSubmittedProjectException;
 use KuJ\CustomExceptions\UserHasCurrentLiveProjectException;
 use KuJ\CustomExceptions\UserHasIncompleteProjectException;
+use KuJ\CustomExceptions\UserNotOwnerOfProjectException;
 use KuJ\CustomExceptions\UserRequiresAuthenticationException;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -33,7 +37,8 @@ class ProjectsController extends Controller {
     {
         $projects = Project::all()
             ->where('approved', 1)
-            ->where('succ_funded', 0);
+            ->where('succ_funded', 0)
+            ->sortByDesc('completed_on');
 
         $succ_projects = Project::where('succ_funded', 1)
             ->paginate(3);
@@ -98,9 +103,19 @@ class ProjectsController extends Controller {
         return view('create-project.success');
     }
 
+    /**
+     * Attempt to start a new project.
+     *
+     * @param StartProjectRequest $request
+     * @return string
+     * @throws UserAlreadyHasSubmittedProjectException
+     * @throws UserHasCurrentLiveProjectException
+     * @throws UserHasIncompleteProjectException
+     * @throws UserRequiresAuthenticationException
+     */
     public function start(StartProjectRequest $request)
     {
-        if( is_null(Auth::user()))
+        if(is_null(Auth::user()))
         {
             throw new UserRequiresAuthenticationException;
         }
@@ -108,6 +123,11 @@ class ProjectsController extends Controller {
         if(! is_null(Auth::user()->incompleteProject->first()) )
         {
             throw new UserHasIncompleteProjectException;
+        }
+
+        if(! is_null(Auth::user()->submittedProject->first()))
+        {
+            throw new UserAlreadyHasSubmittedProjectException;
         }
 
         if(! is_null(Auth::user()->currentLiveProject->first()) )
@@ -205,9 +225,16 @@ class ProjectsController extends Controller {
      *
      * @param SaveProjectRequest $request
      * @return string
+     * @throws ProjectNameAlreadyTakenException
      */
     public function save(SaveProjectRequest $request)
     {
+        $existingProject = Project::where('project_name', '=', $request->get('project_name'))->first();
+        if(! is_null($existingProject) && $existingProject->user_id != Auth::user()->id)
+        {
+            throw new ProjectNameAlreadyTakenException;
+        }
+
         $projectDetails = [
             'project_name'  => $request->get('project_name'),
             'short_desc'    => $request->get('short_desc'),
@@ -288,19 +315,31 @@ class ProjectsController extends Controller {
         $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
 
         Session::flash('flash_message', trans('create-project-form.save-success'));
-        return url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$project->slug);
+        return json_encode(['url' => url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$project->slug)]);
     }
 
     /**
      * Show the edit form, for a saved project.
      *
      * @param Project $project
+     * @throws UserRequiresAuthenticationException
+     * @throws UserNotOwnerOfProjectException
      * @throws ProjectCompletedException
      * @return \Illuminate\View\View
      */
     public function edit(Project $project)
     {
-        if( $project->application_status == 1)
+        if( is_null(Auth::user()) )
+        {
+            throw new UserRequiresAuthenticationException(trans('create-project-form.not-authenticated'));
+        }
+
+        if( $project->user_id != Auth::user()->id )
+        {
+            throw new UserNotOwnerOfProjectException(trans('create-project-form.not-owner'));
+        }
+
+        if( $project->application_status == 1 )
         {
             throw new ProjectCompletedException(trans('create-project-form.project-complete'));
         }
@@ -316,10 +355,17 @@ class ProjectsController extends Controller {
      *
      * @param CreateProjectRequest $request
      * @param Project $project
+     * @throws ProjectNameAlreadyTakenException
      * @return string
      */
     public function update(CreateProjectRequest $request, Project $project)
     {
+        $existingProject = Project::where('project_name', '=', $request->get('project_name'))->first();
+        if(! is_null($existingProject) && $existingProject->user_id != Auth::user()->id)
+        {
+            throw new ProjectNameAlreadyTakenException;
+        }
+
         $projectDetails = [
             'project_name'  => $request->get('project_name'),
             'short_desc'    => $request->get('short_desc'),
@@ -396,8 +442,7 @@ class ProjectsController extends Controller {
         $project = Auth::user()->project;
         Mail::queue('emails.project-submit', ['project' => $project], function($message)
         {
-//            $message->to('wilhelmine@kinderfoerderungen.at', 'Wilhelmine Bauer')->subject(trans('create-project-form.email-subject'));
-            $message->to('brad_milburn@hotmail.com', 'Brad Milburn')->subject(trans('create-project-form.email-subject'));
+            $message->to('wilhelmine@kinderfoerderungen.at', 'Wilhelmine Bauer')->subject(trans('create-project-form.email-subject'));
         });
 
         return json_encode(['status' => 'success']);
@@ -412,11 +457,22 @@ class ProjectsController extends Controller {
      */
     public function delete(Project $project)
     {
-        $project->images->delete();
-        $project->documents->delete();
+        // Delete the projects images.
+        foreach($project->images as $image)
+        {
+            $image->delete();
+        }
+
+        // Delete the projects documents.
+        foreach($project->documents as $document)
+        {
+            $document->delete();
+        }
+
+        // Delete the project.
         $project->delete();
 
-        Session::flash('flash_message', trans('create-project.delete-success'));
+        Session::flash('flash_message', trans('create-project-form.delete-success'));
         return redirect('create-project');
     }
 

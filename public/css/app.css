@@ -5241,6 +5241,38 @@ input[type="submit"], button[type="submit"] {
 /*------------------------------------------------------------------*/
 /*-- CREATE PROJECT PAGE SPECIFIC --*/
 /*------------------------------------------------------------------*/
+/*
+ +--------------------------------------------------------------------
+ |
+ |  GENERAL STYLES
+ |
+ +--------------------------------------------------------------------
+*/
+.bt-none {
+  border-top: none; }
+
+.padding-none {
+  padding: 0; }
+
+.display {
+  display: block; }
+
+.display-none {
+  display: none; }
+
+.text-right {
+  text-align: right; }
+
+.character-count {
+  display: none; }
+
+/*
+ +--------------------------------------------------------------------
+ |
+ |  FIELD SET STYLES
+ |
+ +--------------------------------------------------------------------
+*/
 .create-project-fieldset {
   padding: 0;
   display: none; }
@@ -5248,29 +5280,13 @@ input[type="submit"], button[type="submit"] {
 .fieldset-active {
   display: inherit; }
 
-.cpp-error {
-  display: none;
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1.8rem;
-  background: none;
-  border: none; }
-
-.error-box {
-  margin-bottom: 2rem;
-  background: #f7bdb7 !important;
-  border: 1px dashed #ed5a4d !important; }
-
-.form-input-error {
-  box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
-  .form-input-error:hover {
-    box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
-  .form-input-error:focus {
-    box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
-
-.form-section-tab-error {
-  border-top: 4px solid #ed5a4d; }
-
+/*
++--------------------------------------------------------------------
+|
+|  FORM ELEMENT STYLES
+|
++--------------------------------------------------------------------
+*/
 .form-group {
   margin-top: 1rem;
   margin-bottom: 0; }
@@ -5279,6 +5295,60 @@ input[type="submit"], button[type="submit"] {
   .form-pair {
     margin-top: 1rem; } }
 
+.label-desc {
+  font-size: 1rem;
+  font-weight: normal; }
+
+fieldset.summary-group {
+  display: block !important;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #d2d2d2; }
+  fieldset.summary-group legend {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+    padding: 0 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #6f798b;
+    border: none; }
+  fieldset.summary-group p {
+    margin-bottom: 0; }
+
+.no-projects, .project-links {
+  padding: 1.25rem;
+  border: 1px solid #d2d2d2;
+  background: #f9f9f9; }
+  .no-projects p:first-of-type, .project-links p:first-of-type {
+    margin-top: 10px; }
+
+.saved-project-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #6f798b; }
+
+.supporting-doc {
+  margin-bottom: 2rem; }
+  @media all and (max-width: 768px) {
+    .supporting-doc {
+      margin-bottom: 20px; } }
+
+.form-explanation {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d2d2d2;
+  color: #3fa3db; }
+  .form-explanation p:first-of-type {
+    margin-top: 10px; }
+
+/*
++--------------------------------------------------------------------
+|
+|  FORM BUTTON STYLES
+|
++--------------------------------------------------------------------
+*/
 .form-button, .saved-project-continue, .saved-project-delete {
   padding: 0.65rem;
   font-weight: 500;
@@ -5321,6 +5391,40 @@ input[type="submit"], button[type="submit"] {
 .form-button-full-width {
   width: 100%; }
 
+.form-save-button-disabled {
+  background: #d2d2d2;
+  border-color: #d2d2d2; }
+  .form-save-button-disabled:hover {
+    background: #d2d2d2; }
+
+.saved-project-continue, .saved-project-delete {
+  display: inline-block;
+  width: 100%; }
+  .saved-project-continue:visited, .saved-project-delete:visited, .saved-project-continue:focus, .saved-project-delete:focus, .saved-project-continue:active, .saved-project-delete:active, .saved-project-continue:hover, .saved-project-delete:hover {
+    text-decoration: none;
+    color: white; }
+
+.saved-project-delete {
+  background: #6f798b;
+  border: 1px solid #58606f;
+  border-radius: 0.35rem; }
+  .saved-project-delete:hover {
+    background: #8b93a2; }
+
+.summary-page-button {
+  margin-top: 0.5rem; }
+
+@media all and (max-width: 768px) {
+  .form-button[data-button="start"], [data-button="start"].saved-project-continue, [data-button="start"].saved-project-delete {
+    margin-top: 1rem; } }
+
+/*
++--------------------------------------------------------------------
+|
+|  FILE UPLOAD STYLES
+|
++--------------------------------------------------------------------
+*/
 .image-upload-wrapper {
   position: relative !important; }
   @media all and (max-width: 768px) {
@@ -5380,91 +5484,77 @@ input[type="submit"], button[type="submit"] {
   .image-upload-close-button:hover {
     background: #8b93a2; }
 
-.label-desc {
-  font-size: 1rem;
-  font-weight: normal; }
+/*
++--------------------------------------------------------------------
+|
+|  ERROR MESSAGE STYLES
+|
++--------------------------------------------------------------------
+*/
+.cpp-error {
+  display: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  background: none;
+  border: none; }
 
-.form-explanation {
-  padding: 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid #d2d2d2;
-  color: #3fa3db; }
-  .form-explanation p:first-of-type {
-    margin-top: 10px; }
+.error-box {
+  margin-bottom: 2rem;
+  background: #f7bdb7 !important;
+  border: 1px dashed #ed5a4d !important; }
+
+.form-input-error {
+  box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
+  .form-input-error:hover {
+    box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
+  .form-input-error:focus {
+    box-shadow: inset 0 0.5rem 0 0 #ed5a4d; }
+
+.form-section-tab-error {
+  border-top: 4px solid #ed5a4d; }
 
 .form-input-disabled {
   cursor: not-allowed; }
 
-.no-projects, .project-links {
-  padding: 1.25rem;
-  border: 1px solid #d2d2d2;
-  background: #f9f9f9; }
-  .no-projects p:first-of-type, .project-links p:first-of-type {
-    margin-top: 10px; }
+/*
++--------------------------------------------------------------------
+|
+|  SIDE BAR STYLES
+|
++--------------------------------------------------------------------
+*/
+.aside-padding {
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
-.saved-project-title {
-  font-size: 1.1em;
-  font-weight: 700;
-  color: #6f798b; }
+.tips-heading {
+  margin-bottom: 0;
+  color: #3fa3db !important;
+  font-size: 1.2em;
+  font-weight: 700; }
+  .tips-heading span {
+    display: inline-block; }
 
-.saved-project-continue, .saved-project-delete {
-  display: inline-block;
-  width: 100%; }
-  .saved-project-continue:visited, .saved-project-delete:visited, .saved-project-continue:focus, .saved-project-delete:focus, .saved-project-continue:active, .saved-project-delete:active, .saved-project-continue:hover, .saved-project-delete:hover {
-    text-decoration: none;
-    color: white; }
+a.tip-title {
+  font-size: 1em;
+  font-weight: 500;
+  color: #3fa3db; }
+  a.tip-title:hover, a.tip-title:active, a.tip-title:visited, a.tip-title:focus {
+    text-decoration: none !important; }
 
-.saved-project-delete {
-  background: #6f798b;
-  border: 1px solid #58606f;
-  border-radius: 0.35rem; }
-  .saved-project-delete:hover {
-    background: #8b93a2; }
+.tip-explanation p {
+  margin-top: 0.75em;
+  line-height: 1.65em;
+  margin-bottom: 0; }
 
-.supporting-doc {
-  margin-bottom: 2rem; }
-  @media all and (max-width: 768px) {
-    .supporting-doc {
-      margin-bottom: 20px; } }
-
-.bt-none {
-  border-top: none; }
-
-.padding-none {
-  padding: 0; }
-
-.display {
-  display: block; }
-
-.display-none {
-  display: none; }
-
-.text-right {
-  text-align: right; }
-
-.character-count {
-  display: none; }
-
-.summary-page-button {
-  margin-top: 0.5rem; }
-
-fieldset.summary-group {
-  display: block !important;
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid #d2d2d2; }
-  fieldset.summary-group legend {
-    display: inline-block;
-    width: auto;
-    margin-bottom: 0;
-    padding: 0 0.25rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #6f798b;
-    border: none; }
-  fieldset.summary-group p {
-    margin-bottom: 0; }
-
+/*
++--------------------------------------------------------------------
+|
+|  SUCCESS PAGE STYLES
+|
++--------------------------------------------------------------------
+*/
 .success-container {
   margin-top: 2rem;
   margin-bottom: 1rem;

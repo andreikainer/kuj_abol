@@ -14,7 +14,7 @@
 
     <fieldset class="create-project-fieldset" data-section="2">
         <div class="col-md-12 col-sm-12">
-            @include('forms.partials.create-project-your-details')
+            @include('forms.partials.edit-project-your-details')
         </div>
     </fieldset>
 

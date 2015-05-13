@@ -696,7 +696,7 @@
         });
 
         // Save Event.
-        $('form#create-project .form-button[data-button="save"] > a').on('click', function(event)
+        $('form#create-project .form-button[data-button="save"] > a').on('click.save', function(event)
         {
             event.preventDefault();
             $.publish('form.save', this);
@@ -707,6 +707,13 @@
         {
             var projectTitle = $('input[name="project_name"]');
             $.publish('project.start', projectTitle);
+        });
+
+        // Delete Project Event.
+        $('form#create-project .saved-project-delete').on('click', function(event)
+        {
+            event.preventDefault();
+            $.publish('project.delete', this);
         });
 
         /**
@@ -752,20 +759,27 @@
                 contentType : false,
                 success : function(response)
                 {
+                    loaderImage.fadeOut();
+
                     if ( response.errors )
                     {
-                        loaderImage.fadeOut();
                         $.publish('form-submit.fail', response);
+                        return false;
                     }
-                    else
+
+                    if ( response.duplicateName )
                     {
-                        loaderImage.fadeOut();
-                        $.publish('form-submit.success');
+                        displayErrorFlashMessage(response.duplicateName);
+                        return false;
                     }
+
+                    hideErrorFlashMessage();
+                    $.publish('form-submit.success');
                 },
                 error : function(response)
                 {
-                    console.log(response);
+                    loaderImage.fadeOut();
+                    displayErrorFlashMessage(' An unexpected error occurred.');
                 }
             });
         });
@@ -803,6 +817,11 @@
          */
         $.subscribe('form.save', function(event, data)
         {
+            if($(data).parent().hasClass('form-save-button-disabled'))
+            {
+                return false;
+            }
+
             var loaderImage = $(data).siblings('.image-loader');
             loaderImage.fadeIn();
 
@@ -829,36 +848,43 @@
                 url : $(data).attr('href'),
                 method : 'POST',
                 data : formData,
+                dataType: 'json',
                 cache : false,
                 processData : false,
                 contentType : false,
                 success : function(response)
                 {
+                    loaderImage.fadeOut();
+
+                    // Render validation errors.
                     if ( response.errors )
                     {
-                        loaderImage.fadeOut();
                         $.publish('form-save.fail', response);
+                        return false;
                     }
-                    else
-                    {
-                        loaderImage.fadeOut();
 
-                        $.publish('form-save.success', response);
+                    // Render duplicate name errors.
+                    if ( response.duplicateName )
+                    {
+                        displayErrorFlashMessage(response.duplicateName);
+                        return false;
                     }
+
+                    hideErrorFlashMessage();
+                    $.publish('form-save.success', response);
                 },
                 error : function(response)
                 {
-                    // Need to change to error message
-                    // Unexpected error...
-                    console.log(response);
+                    loaderImage.fadeOut();
+                    displayErrorFlashMessage(' An unexpected error occurred.');
                 }
             });
         });
 
-        $.subscribe('form-save.success', function(event, url)
+        $.subscribe('form-save.success', function(event, response)
         {
             // Redirect to the edit form, for the saved project.
-            window.location = url;
+            window.location = response.url;
         });
 
         /**
@@ -870,7 +896,6 @@
         {
             var startButton = $('form#create-project .form-button[data-button="start"]');
             var loaderImage = startButton.siblings('.image-loader');
-            var name = data.getAttribute('name');
             loaderImage.fadeIn();
 
             $.ajax({
@@ -907,6 +932,13 @@
                         return false;
                     }
 
+                    // Render pending project error.
+                    if( response.pendingProject )
+                    {
+                        displayErrorFlashMessage(response.pendingProject);
+                        return false;
+                    }
+
                     // Render current live project error.
                     if( response.liveProject )
                     {
@@ -923,6 +955,7 @@
                 error : function(response)
                 {
                     loaderImage.fadeOut();
+                    displayErrorFlashMessage(' An unexpected error occurred.');
                     console.log(response);
                 }
             });
@@ -932,6 +965,7 @@
         {
             var formFields = $('form#create-project input, textarea');
             var fileLabels = $('label.form-input-disabled');
+            var saveButtons = $('.form-save-button-disabled');
 
             hideErrorFlashMessage();
 
@@ -953,11 +987,28 @@
                     .removeClass('form-input-disabled');
             });
 
+            // Enable the save buttons.
+            saveButtons.removeClass('form-save-button-disabled');
+
+            // Move user to the next section.
             makeTabActive(tabCollection, 1);
             showSection(fieldsetCollection, 1);
 
+        });
 
+        /**
+         * -------------------------
+         * DELETE PROJECT
+         * -------------------------
+         */
+        $.subscribe('project.delete', function(event, data)
+        {
+            // If on the edit page, remove the PATCH method.
+            $('form#create-project input[value="PATCH"]').remove();
 
+            $('form#create-project').prepend('<input name="_method" type="hidden" value="DELETE">')
+                .attr('action', $(data).attr('href'))
+                .trigger('submit.delete');
         });
 
     /*

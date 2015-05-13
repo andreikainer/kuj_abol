@@ -60,9 +60,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Project');
     }
 
+    public function pledge()
+    {
+        return $this->hasMany('App\Pledge');
+    }
+
     public function incompleteProject()
     {
         return $this->projects()->where('application_status', '=', '0');
+    }
+
+    public function submittedProject()
+    {
+        return $this->projects()
+            ->where('application_status', '=', '1')
+            ->where('live', '=', '0')
+            ->where('approved', '=', '0');
     }
 
     public function currentLiveProject()
