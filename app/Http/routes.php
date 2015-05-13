@@ -93,7 +93,7 @@ Route::group(
         //Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
 
 
-        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserCMSController@index');
+        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@index');
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
