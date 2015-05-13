@@ -37,7 +37,7 @@
                     @if(count($project->mainImage))
                         @foreach($project->mainImage as $image)
                             <span class="image-upload-close-button">X</span>
-                            <img src="{{ asset('img/'.$project->slug.'/medium/'.$image->filename) }}" alt="{{ $project->slug }}" class="image-upload-preview display"/>
+                            <img src="{{ asset('img/'.$project->slug.'/medium/'.$image->filename) }}" alt="{{ $project->slug }}" class="image-upload-preview img-responsive display"/>
                             <input type="hidden" name="mainImage" value="{{ $image->filename }}"/>
                             <div class="image-upload-controls display-none">
                                  <div class="image-loader"></div>
@@ -54,7 +54,7 @@
                             </div>
                         @endforeach
                     @else
-                    <img src="" alt="" class="image-upload-preview"/>
+                    <img src="" alt="" class="image-upload-preview img-responsive"/>
                     <div class="image-upload-controls">
                         <div class="image-loader"></div>
                         <label for="main_img" class="image-upload-label text-center">
@@ -86,7 +86,7 @@
                             <div class="col-md-4 col-sm-4">
                                 <div class="image-upload-wrapper">
                                     <span class="image-upload-close-button">X</span>
-                                    <img src="{{ asset('img/'.$project->slug.'/medium/'.$project->secondaryImages[$i]->filename) }}" alt="{{ $project->slug }}" class="image-upload-preview display"/>
+                                    <img src="{{ asset('img/'.$project->slug.'/medium/'.$project->secondaryImages[$i]->filename) }}" alt="{{ $project->slug }}" class="image-upload-preview img-responsive display"/>
                                     <input type="hidden" name="{{ 'img'.(2+$i) }}" value="{{ $project->secondaryImages[$i]->filename }}"/>
                                     <div class="image-upload-controls display-none">
                                         <div class="image-loader"></div>
@@ -103,7 +103,7 @@
                             @for($i = 0; $i < (3-count($project->secondaryImages)); $i++)
                                 <div class="col-md-4 col-sm-4">
                                     <div class="image-upload-wrapper">
-                                        <img src="" alt="" class="image-upload-preview"/>
+                                        <img src="" alt="" class="image-upload-preview img-responsive"/>
                                         <div class="image-upload-controls">
                                             <div class="image-loader"></div>
                                             <label for="{{ 'img_'.((count($project->secondaryImages)+2)+$i) }}" class="image-upload-label text-center">
@@ -119,7 +119,7 @@
                     @else
                         <div class="col-md-4 col-sm-4">
                             <div class="image-upload-wrapper">
-                                <img src="" alt="" class="image-upload-preview"/>
+                                <img src="" alt="" class="image-upload-preview img-responsive"/>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="img_2" class="image-upload-label text-center">
@@ -132,7 +132,7 @@
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <div class="image-upload-wrapper">
-                                <img src="" alt="" class="image-upload-preview"/>
+                                <img src="" alt="" class="image-upload-preview img-responsive"/>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="img_3" class="image-upload-label text-center">
@@ -145,7 +145,7 @@
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <div class="image-upload-wrapper">
-                                <img src="" alt="" class="image-upload-preview"/>
+                                <img src="" alt="" class="image-upload-preview img-responsive"/>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="img_4" class="image-upload-label text-center">

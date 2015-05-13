@@ -1,5 +1,7 @@
 <?php
 
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 return [
 
     /*
@@ -65,7 +67,7 @@ return [
     'exp-no-recent-project-2' => 'Now is a great time to start a new one!',
     'exp-main-image-1'      => 'Choose an image from your computer.',
     'exp-main-image-2'      => 'This will be the main display photo for your project, <br/> So make it a good one!',
-    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 50MB file limit. <br/> Minimum size 768 x 1024 pixels',
+    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB file limit. <br/> Minimum size 768 x 1024 pixels',
     'exp-secondary-image'   => 'Click to upload an image',
     'exp-evidence-1'        => 'We require supporting evidence of your child\'s ailment.',
     'exp-evidence-2'        => 'A written letter from your medical practitioner or hospital, stating the condition of your child\'s ailment. <br/> A document supporting evidence of your financial situation, including child care allowance.',
@@ -80,6 +82,9 @@ return [
     'project-complete'      => 'Project can no longer be edited.',
     'save-success'          => 'Project successfully saved.',
     'delete-success'        => 'Project successfully removed.',
+    'login'                 => ' Please <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Login</a> or <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Register</a> to Start a Project.',
+    'incomplete'            => ' You currently have an incomplete project saved. Please continue with the saved project, or delete it.',
+    'live-project'          => ' You currently have a live project on our website. We will welcome another submission once it has successfully ended.',
 
     /**
      * Email

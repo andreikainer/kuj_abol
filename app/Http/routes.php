@@ -56,6 +56,10 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.create-project/edit').'/{slug}', 'ProjectsController@edit');
         Route::delete(LaravelLocalization::transRoute('routes.create-project/delete').'/{slug}', 'ProjectsController@delete');
 
+        Route::post(LaravelLocalization::transRoute('routes.create-project/start'), 'ProjectsController@start');
+
+        Route::post(LaravelLocalization::transRoute('routes.temp-document'), 'AjaxController@tempDocument');
+
 //        Route::controllers([
 //
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
@@ -88,9 +92,9 @@ Route::group(
         //Route::any(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
         //Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
 
+
         Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserCMSController@index');
 
-//
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
         //Route::get(LaravelLocalization::transRoute('routes.<key>'), '<Controller>@<Method>');
@@ -100,9 +104,5 @@ Route::group(
 
 // Route::get('test', '<Controller>@<Method>');
 
-Route::post('temp-document', 'AjaxController@tempDocument');
-
-
 //Route::get('dashboard', 'Auth\AuthController@dash');
 //Route::get('logout', 'Auth\AuthController@getLogout');
-

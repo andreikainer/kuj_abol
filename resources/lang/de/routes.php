@@ -30,10 +30,11 @@ return [
     'account/reset'        => 'account/reset',
     'password/email'        => 'password/email',
     'password/reset'        => 'password/reset',
-
-    'create-project/save'  => 'antrag-einreichen/sparen',
-    'create-project/update'=> 'antrag-einreichen/update',
-    'create-project/edit'  => 'antrag-einreichen/edit',
-    'create-project/delete'=> 'antrag-einreichen/delete',
+    'create-project/save'   => 'antrag-einreichen/sparen',
+    'create-project/update' => 'antrag-einreichen/update',
+    'create-project/edit'   => 'antrag-einreichen/edit',
+    'create-project/delete' => 'antrag-einreichen/delete',
+    'create-project/start'  => 'antrag-einreichen/start',
+    'temp-document'         => 'temp-document',
 
 ];
