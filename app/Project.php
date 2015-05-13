@@ -60,7 +60,11 @@ class Project extends Model {
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->hasMany('App\User');
     }
 
+    public function pledger()
+    {
+        return $this->hasMany('App\Pledger');
+    }
 }

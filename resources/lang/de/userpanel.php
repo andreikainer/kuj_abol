@@ -13,4 +13,5 @@ return [
     'my-favourites'           => 'Meine Favoriten',
     'my-projects'             => 'Meine Förderprojekte',
     'my-details'              => 'Meine Details',
+    'view-project'            => 'Zum Projekt',
 ];

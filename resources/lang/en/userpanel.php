@@ -13,5 +13,6 @@ return [
     'my-favourites'           => 'My favourites',
     'my-projects'             => 'My Projects',
     'my-details'              => 'My Details',
+    'view-project'            => 'View Project',
 
 ];

@@ -3,9 +3,13 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Project;
+use App\Pledger;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class UserpanelController extends Controller {
@@ -48,16 +52,17 @@ class UserpanelController extends Controller {
 	 */
 	public function show($username)
 	{
-		//try
-        //{
-            $user = User::where('user_name', $username)->firstOrFail();
-            //dd($user->toArray());
-        //}
+		try
+        {
+            $user = User::with('pledge', 'project')->where('user_name', $username)->firstOrFail();
+            //$main_img = \App\Image::where('project_id', $user->project->id)->first();
+            //return $user->project->id;
+        }
 
-//        catch(ModelNotFoundException $e)
-//        {
-//            return redirect( trans('routes.account/login')
-//        }
+        catch(ModelNotFoundException $e)
+        {
+            return Redirect::home();
+        }
 
         return view('userpanel.index', compact('user'));
 	}

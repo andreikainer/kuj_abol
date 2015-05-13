@@ -34,7 +34,9 @@
         <div class="hidden-xs hidden-sm col-md-3 mt-3em">
             <img class="img-responsive center-block" src="{{ asset('img/avatars/'.$user->avatar) }}" alt="{{ $user->user_name }}" />
             <h3 class="text-center"> {{ $user->first_name }} {{ $user->last_name }}</h3>
-            <h4 class="text-center">Member since: {{ $user->created_at }}</h4>
+            @if($user->business_name == !null)
+            <h4 class="text-center"> {{ $user->business_name }} </h4>
+            @endif
             <div class="list-group">
                 <a href="#tips_for_success" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-compass"></i> {{ trans('userpanel.my-contributions') }}</a>
                 <a href="#faq" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-comments-o"></i> {{ trans('userpanel.my-favourites') }}</a>

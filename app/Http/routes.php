@@ -23,7 +23,7 @@ Route::group(
     function()
     {
     /*-- Landing Page --*/
-        Route::get('/', 'ProjectsController@index');
+        Route::get('/',['as' => 'home', 'uses' => 'ProjectsController@index']);
 
 
         Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show');
@@ -61,7 +61,7 @@ Route::group(
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
 //            LaravelLocalization::transRoute('routes.password')  => 'Auth\PasswordController',
 //        ]);
-
+        /*-- Registration --*/
         Route::get(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@getRegister');
 
         Route::post(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@postRegister');
@@ -77,12 +77,12 @@ Route::group(
         Route::post(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@postLogin');
 
 
-        //Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
+        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
 
     /*-- LogOut Page --*/
         Route::get(LaravelLocalization::transRoute('routes.logout'), 'Auth\AuthController@getLogout');
 
-       Route::any(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
+       //Route::any(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
 
         Route::get(LaravelLocalization::transRoute('routes.account/reset'), 'Auth\PasswordController@getEmail');
 
