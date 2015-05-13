@@ -23,7 +23,7 @@ Route::group(
     function()
     {
     /*-- Landing Page --*/
-        Route::get('/', 'ProjectsController@index');
+        Route::get('/',['as' => 'home', 'uses' => 'ProjectsController@index']);
 
 
         Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show');
@@ -65,7 +65,7 @@ Route::group(
 //            LaravelLocalization::transRoute('routes.account')   => 'Auth\AuthController',
 //            LaravelLocalization::transRoute('routes.password')  => 'Auth\PasswordController',
 //        ]);
-
+        /*-- Registration --*/
         Route::get(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@getRegister');
 
         Route::post(LaravelLocalization::transRoute('routes.account/register'), 'Auth\AuthController@postRegister');
@@ -80,17 +80,25 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@getLogin');
         Route::post(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@postLogin');
 
+
+        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
+
     /*-- LogOut Page --*/
         Route::get(LaravelLocalization::transRoute('routes.logout'), 'Auth\AuthController@getLogout');
 
+
+       //Route::any(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
+
     /*-- Password reset Page --*/
+
         Route::get(LaravelLocalization::transRoute('routes.account/reset'), 'Auth\PasswordController@getEmail');
         Route::post(LaravelLocalization::transRoute('routes.password/email'), 'Auth\PasswordController@postEmail');
         Route::get(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@getReset');
         Route::post(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@postReset');
 
         //Route::any(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
-        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
+        //Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 

@@ -7,6 +7,7 @@ use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\SaveProjectRequest;
 use App\Http\Requests\StartProjectRequest;
 use App\Project;
+use App\Pledge;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -36,7 +37,8 @@ class ProjectsController extends Controller {
     {
         $projects = Project::all()
             ->where('approved', 1)
-            ->where('succ_funded', 0);
+            ->where('succ_funded', 0)
+            ->sortByDesc('completed_on');
 
         $succ_projects = Project::where('succ_funded', 1)
             ->paginate(3);

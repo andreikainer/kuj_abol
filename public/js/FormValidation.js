@@ -13,6 +13,7 @@
  |
  */
 
+
 var FormValidation = {
 
     checkNotEmpty: function(value)
@@ -85,4 +86,5 @@ var FormValidation = {
         var regex = /^([a-zA-Z ])+$/;
         return regex.test(value);
     }
+
 };

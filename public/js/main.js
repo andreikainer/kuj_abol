@@ -23,6 +23,19 @@
     };
 
 }(jQuery));
+/*-- Functions for FormValidation --*/
+    function showErrorMessage(name, message)
+    {
+        $('.form-error[data-error="'+name+'"]').html(message).fadeIn();
+        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', true);
+    }
+
+    function hideErrorMessage(name)
+    {
+        $('.form-error[data-error*="'+name+'"]').fadeOut();
+        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
+    }
+
 $(document).ready(function()
 {
     // Store the user's current language to `locale`.
@@ -207,6 +220,7 @@ function getLocale(response)
 
 /*-- To fade out flash-message after delay --*/
     $('.flash-message').fadeIn(600).delay(3000).fadeOut(300);
+
 });
 /* ========================================================================
  * Bootstrap: alert.js v3.3.2

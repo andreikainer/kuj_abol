@@ -13,7 +13,7 @@
         </div>
 
             <div class="row">
-            <div class="col-sm-12 col-md-8 col-md-offset-0 project-gallery"> <!-- project images beginn-->
+            <div class="col-sm-12 col-md-8 col-md-offset-0 project-gallery mt-3em"> <!-- project images beginn-->
                 @foreach($galleryImages as $image)
                 <div class="project-gallery-item">
                     <img class="img-responsive center-block" src="{{ asset('img/'.$project->slug.'/medium/'.$image->filename) }}" alt="{{ $project->child_name }}">
@@ -21,7 +21,7 @@
                 @endforeach
             </div> <!-- project images end-->
 
-            <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder">  <!-- statistics beginn-->
+            <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder mt-3em">  <!-- statistics beginn-->
                 <h3 id="funds_text" data-funds-text="{{ trans('view-project-page.funs-text') }}">{{ trans('view-project-page.total-funds-raised') }}</h3>
                 <h2 id="amount_raised" data-amount-raised="{{ $project->amount_raised }}"><strong>&euro; {{ $amount_raised }}</strong></h2>
                 <h4 id="minimum_goal" data-minimum-goal="{{ $project->target_amount }}"><strong>{{ trans('view-project-page.of-minimum-goal', ['goal' => $target_amount]) }}</strong></h4>

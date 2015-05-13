@@ -721,6 +721,29 @@ footer {
   }
 }
 
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Account page styles --*/
+/*------------------------------------------------------------------*/
+.account {
+  font-size: 1.1rem;
+
+  .form-section-tab {
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top: none;
+
+    &:hover, &:active {
+      box-shadow: inset 0 0.5rem 0 0 $blue;
+    }
+  }
+}
+
 /*------------------------------------------------------------------*/
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/

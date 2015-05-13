@@ -232,11 +232,9 @@ class AuthController extends Controller {
 
     public function dash($username)
     {
-//        if (\Auth::check())
-//        {
-//            return 'pipa';
-//        }
-        return $username;
+        $user = User::where('user_name', $username)->firstOrFail();
+
+        return view('userpanel.index');
     }
 
 }
