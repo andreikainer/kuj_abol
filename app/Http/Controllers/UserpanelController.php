@@ -54,9 +54,9 @@ class UserpanelController extends Controller {
 	{
 		try
         {
-            $user = User::with('pledge', 'project')->where('user_name', $username)->firstOrFail();
+            $user = User::with('projects')->where('user_name', $username)->firstOrFail();
             //$main_img = \App\Image::where('project_id', $user->project->id)->first();
-            //return $user->project->id;
+            //return $main_img;
         }
 
         catch(ModelNotFoundException $e)

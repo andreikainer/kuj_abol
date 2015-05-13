@@ -15,8 +15,7 @@
         <div class="row form-group">
             <div class="col-md-12 col-sm-12">
                 {!! Form::label('child_name', trans('create-project-form.child-name'), ['class' => 'form-label']) !!}
-                {!! Form::text('child_name', null, ['class' => 'form-input']) !!}
-                {{--{!! Form::text('child_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::text('child_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="form-error cpp-error pad-zero" data-error="child_name"></div>
@@ -29,22 +28,18 @@
             <div class="col-md-6 col-sm-6">
                 {!! Form::label('first_name', trans('create-project-form.first-name'), ['class' => 'form-label']) !!}
                 @if($user == null)
-                {!! Form::text('first_name', null, ['class' => 'form-input']) !!}
-                {{--{!! Form::text('first_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::text('first_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @else
-                {!! Form::text('first_name', $user->first_name, ['class' => 'form-input']) !!}
-                {{--{!! Form::text('first_name', $user->first_name, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::text('first_name', $user->first_name, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @endif
                 <div class="form-error cpp-error pad-zero" data-error="first_name"></div>
             </div>
             <div class="col-md-6 col-sm-6 form-pair">
                 {!! Form::label('last_name', trans('create-project-form.last-name'), ['class' => 'form-label']) !!}
                 @if($user == null)
-                {!! Form::text('last_name', null, ['class' => 'form-input']) !!}
-                {{--{!! Form::text('last_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::text('last_name', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @else
-                {!! Form::text('last_name', $user->last_name, ['class' => 'form-input']) !!}
-                {{--{!! Form::text('last_name', $user->last_name, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::text('last_name', $user->last_name, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @endif
                 <div class="form-error cpp-error pad-zero" data-error="last_name"></div>
             </div>
@@ -57,22 +52,18 @@
             <div class="col-md-6 col-sm-6">
                 {!! Form::label('email', trans('create-project-form.email'), ['class' => 'form-label']) !!}
                 @if($user == null)
-                {!! Form::email('email', null, ['class' => 'form-input']) !!}
-                {{--{!! Form::email('email', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::email('email', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @else
-                {!! Form::email('email', $user->email, ['class' => 'form-input']) !!}
-                {{--{!! Form::email('email', $user->email, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::email('email', $user->email, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @endif
                 <div class="form-error cpp-error pad-zero" data-error="email"></div>
             </div>
             <div class="col-md-6 col-sm-6 form-pair">
                 {!! Form::label('tel_number', trans('create-project-form.tel-number'), ['class' => 'form-label']) !!}
                 @if($user == null)
-                {!! Form::text('tel_number', null, ['class' => 'form-input']) !!}
-                {{--{!! Form::text('tel_number', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::text('tel_number', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @else
-                {!! Form::text('tel_number', $user->tel_number, ['class' => 'form-input']) !!}
-                {{--{!! Form::text('tel_number', $user->tel_number, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::text('tel_number', $user->tel_number, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @endif
                 <div class="form-error cpp-error pad-zero" data-error="tel_number"></div>
             </div>
@@ -83,11 +74,9 @@
             <div class="col-md-12 col-sm-12">
                 {!! Form::label('address', trans('create-project-form.address'), ['class' => 'form-label']) !!}
                 @if($user == null)
-                {!! Form::textarea('address', null, ['class' => 'form-input']) !!}
-                {{--{!! Form::textarea('address', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::textarea('address', null, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @else
-                {!! Form::textarea('address', $user->address, ['class' => 'form-input']) !!}
-                {{--{!! Form::textarea('address', $user->address, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}--}}
+                {!! Form::textarea('address', $user->address, ['class' => 'form-input form-input-disabled', 'readonly' => 'readonly']) !!}
                 @endif
             </div>
             <div class="col-md-12 col-sm-12">

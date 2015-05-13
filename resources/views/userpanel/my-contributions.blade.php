@@ -13,7 +13,7 @@
         </thead>
     </tr>
     <tbody>
-    @foreach($user->project as $key => $pr)
+    @foreach($user->projects as $key => $pr)
     <tr>
         <td><img src="{{ asset('img/ergotherapie-fuer-jonathan/small/jonathan1.jpg') }}" width="170" /></td>
         <td>{{ $pr->project_name }}</td>

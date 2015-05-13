@@ -3,30 +3,38 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\AjaxTempDocumentRequest;
 use Illuminate\Http\Request;
 
 class AjaxController extends Controller {
 
-	public function tempDocument(Request $request)
+    /**
+     * Upload a user's document, for preview.
+     *
+     * @param AjaxTempDocumentRequest $request
+     * @return string
+     */
+    public function tempDocument(AjaxTempDocumentRequest $request)
     {
         $inputElement = $request->get('element');
-        $filename = $request->get('filename');
-        $document = $request->get('data');
+        $elementName = $request->get('name');
+        $file = $request->file($elementName);
 
-        $data_index = strpos($document, 'base64')+7;
-        $document_data = substr($document, $data_index, strlen($document));
+        $filename = strtotime('now').'_'.$file->getClientOriginalName();
 
-        $decoded_document = base64_decode($document_data);
+        $file->move(public_path('temp'), $filename);
 
-        $path = public_path('temp/'.strtotime('now').'_'.$filename);
+        $publicPath = public_path('temp/'.$filename);
 
-        $new_document = fopen($path, "wb");
-        fwrite($new_document, $decoded_document);
-        fclose($new_document);
-
-        return json_encode(['element' => $inputElement, 'path' => $path]);
+        return json_encode(['element' => $inputElement, 'path' => $publicPath]);
     }
 
+    /**
+     * Get the current locale prefix of the route.
+     *
+     * @param Request $request
+     * @return mixed
+     */
     public function getLocale(Request $request)
     {
         $locale = explode('/', $request->server('HTTP_REFERER'));

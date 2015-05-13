@@ -16,6 +16,7 @@ return [
      */
     'username'      => 'Username:',
     'password'      => 'Password:',
+    'password-confirmation'      => 'Password Confirm:',
     'remember-me'   => 'Remember me',
     'email'         => 'Email',
 
@@ -25,6 +26,7 @@ return [
     'login'             => 'Log in',
     'forgot-password'   => 'Forgot password',
     'send'              => 'Send password reset link',
+    'reset-password'    => 'Reset password',
 
     /**
      * Placeholders.
@@ -44,6 +46,8 @@ return [
     'login-fail'    => 'Woops! Incorrect email address or password. Please, try again.',
     'login-success' => 'You have been successfully logged in.',
     'logout'        => 'You have been logged out.',
-    'baned-user'    => 'Your account was deactivated.'
+    'baned-user'    => 'Your account was deactivated.',
+    'email-fail'    => 'Woops! There is an error in your input. Please try again.',
+    'email-success' => 'We sent you the password recovery link. Please check your email.'
 
 ];

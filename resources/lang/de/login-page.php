@@ -16,6 +16,7 @@ return [
      */
     'username'      => 'Benutzername:',
     'password'      => 'Passwort:',
+    'password-confirmation'      => 'Password Confirm:',
     'remember-me'   => 'Erinnere dich an mich',
     'email'         => 'Email',
 
@@ -25,6 +26,7 @@ return [
     'login'             => 'Einloggen',
     'forgot-password'   => 'Passwort vergessen',
     'send'              => 'Send password reset link',
+    'reset-password'    => 'Reset password',
 
     /**
      * Placeholders.
@@ -44,6 +46,8 @@ return [
     'login-fail'    => 'Email oder passwort nicht korrket. Bitte versuche es nochmal.',
     'login-success' => 'Sie haben sich erfolgreich eingeloggt.',
     'logout'        => 'Sie haben sich abgemeldet',
-    'baned-user'    => 'Deine Registrierung wurde deaktiviert.'
+    'baned-user'    => 'Deine Registrierung wurde deaktiviert.',
+    'email-fail'         => 'Woops! There is an error in your input. Please try again.',
+    'email-success' => 'We sent you the password recovery link. Please check your email.'
 
 ];

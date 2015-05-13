@@ -28,11 +28,13 @@ return [
     'account'               => 'benutzer',
     'logout'               => 'logout',
     'account/reset'        => 'benutzer/reset',
-
-
     'create-project/save'  => 'antrag-einreichen/speichern',
     'create-project/update'=> 'antrag-einreichen/updaten',
     'create-project/edit'  => 'antrag-einreichen/bearbeiten',
     'create-project/delete'=> 'antrag-einreichen/loeschen',
+    'password/email'        => 'passwort/email',
+    'password/reset'        => 'passwort/reset',
+    'create-project/start'  => 'antrag-einreichen/start',
+    'temp-document'         => 'temp-document',
 
 ];

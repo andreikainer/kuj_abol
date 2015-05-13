@@ -14,7 +14,7 @@
               		'class'=>'form-input form-inline',
               		'placeholder'=>trans('login-page.place-username'))) !!}
     </div>
-    <div class="form-error none" data-error="username"></div>
+    <div class="form-error none" data-error="user_name"></div>
 <!-- end username input -->
 
 <!-- Password Form Input -->
@@ -32,11 +32,6 @@
     <div class="col-xs-12 col-sm-12 form-group">
         {!! Form::checkbox('remember', null) !!}
         {!! Form::label(null, trans('login-page.remember-me')) !!}
-    		{{--<div class="checkbox">--}}
-    			{{--<label>--}}
-    				{{--<input type="checkbox" name="remember"> {{trans('login-page.remember-me')}}--}}
-    			{{--</label>--}}
-    		{{--</div>--}}
     </div>
 <!-- end remember input -->
 

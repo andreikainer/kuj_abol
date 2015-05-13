@@ -139,46 +139,56 @@ return [
         ],
 
         'main_img'      => [
-            'required'  => 'Ein Hauptbilderforderlich.',
-            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+            'required_without'  => 'Ein Hauptbilderforderlich.',
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'img_2'         => [
-            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'img_3'         => [
-            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'img_4'         => [
-            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.'
+            'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'doc_1_mand'    => [
-            'required'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
-            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+            'required_without'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'doc_2_mand'    => [
-            'required'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
-            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+            'required_without'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'doc_3'    => [
-            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'doc_4'    => [
-            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'doc_5'    => [
-            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'doc_6'    => [
-            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.'
+            'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'max'      => 'Darf 20MB in Größe überschreiten.'
         ],
 
         'user_name' => [

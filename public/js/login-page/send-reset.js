@@ -16,25 +16,6 @@
     };
 
 
-    /*-- Functions --*/
-    function showErrorMessage(name, message)
-    {
-        $('.form-error[data-error="'+name+'"]').html(message).fadeIn();
-    }
-
-    function hideErrorMessage(name)
-    {
-        $('.form-error[data-error*="'+name+'"]').fadeOut();
-        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
-    }
-
-    // to make the top-border of input field red color when there is an error
-    function redTopInput(input)
-    {
-        input.toggleClass('error-red-top', true);
-    }
-
-
     /*-- Publish Events --*/
     // Form Field blur events.
     $('input[name="email"]').on('blur', function()
@@ -50,12 +31,12 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkValidEmail(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].email);
-            redTopInput(data);
+
             return false;
         }
 

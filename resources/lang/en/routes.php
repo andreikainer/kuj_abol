@@ -28,11 +28,13 @@ return [
     'logout'                => 'logout',
     'account'               => 'account',
     'account/reset'         => 'account/reset',
-
-
+    'password/email'        => 'password/email',
+    'password/reset'        => 'password/reset',
     'create-project/save'   => 'create-project/save',
     'create-project/update' => 'create-project/update',
     'create-project/edit'   => 'create-project/edit',
     'create-project/delete' => 'create-project/delete',
+    'create-project/start'  => 'create-project/start',
+    'temp-document'         => 'temp-document',
 
 ];

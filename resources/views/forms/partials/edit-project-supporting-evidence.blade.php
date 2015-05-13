@@ -36,7 +36,9 @@
 
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="{{ 'doc_'.(1+$i).'_mand' }}" class="image-upload-label text-center">
@@ -53,7 +55,9 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
                                 <span class="image-upload-close-button">X</span>
-                                <iframe src="{{ 'http://kinderfoerderungen.at/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="image-upload-preview display"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview display">
+                                    <iframe src="{{ 'http://kinderfoerderungen.at/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <input type="hidden" name="{{ 'doc'.(1+$i).'Mand' }}" value="{{ $project->documents[$i]->filename }}"/>
                                 <div class="image-upload-controls display-none">
                                     <div class="image-loader"></div>
@@ -86,7 +90,9 @@
 
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="{{ 'doc_'.(1+$i) }}" class="image-upload-label text-center">
@@ -103,7 +109,9 @@
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
                                 <span class="image-upload-close-button">X</span>
-                                <iframe src="{{ 'http://kinderfoerderungen.at/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="image-upload-preview display"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview display">
+                                    <iframe src="{{ 'http://kinderfoerderungen.at/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <input type="hidden" name="{{ 'doc'.(1+$i) }}" value="{{ $project->documents[$i]->filename }}"/>
                                 <div class="image-upload-controls display-none">
                                     <div class="image-loader"></div>
@@ -132,7 +140,9 @@
                         <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.main-documents') }} <span class="label-desc">{{ trans('create-project-form.exp-document-label') }}</span></div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_1_mand" class="image-upload-label text-center">
@@ -145,7 +155,9 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_2_mand" class="image-upload-label text-center">
@@ -167,7 +179,9 @@
                         <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.secondary-documents') }}</div>
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_3" class="image-upload-label text-center">
@@ -180,7 +194,9 @@
                         </div>
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_4" class="image-upload-label text-center">
@@ -193,7 +209,9 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_5" class="image-upload-label text-center">
@@ -206,7 +224,9 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
-                                <iframe src="http://kinderfoerderungen.at" frameborder="0" class="image-upload-preview"></iframe>
+                                <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
+                                    <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
                                     <label for="doc_6" class="image-upload-label text-center">

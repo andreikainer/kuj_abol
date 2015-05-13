@@ -63,8 +63,4 @@ class Project extends Model {
         return $this->hasMany('App\User');
     }
 
-    public function pledger()
-    {
-        return $this->hasMany('App\Pledger');
-    }
 }
