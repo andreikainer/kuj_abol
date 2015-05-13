@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User CMS page Translations ENGLISH
+    | User CMS page Translations GERMAN
     |--------------------------------------------------------------------------
     |
     | Language translation keys for the registration process.

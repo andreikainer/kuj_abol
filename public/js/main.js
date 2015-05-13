@@ -23,18 +23,18 @@
     };
 
 }(jQuery));
-/*-- Functions --*/
-function showErrorMessage(name, message)
-{
-    $('.form-error[data-error="'+name+'"]').html(message).fadeIn();
-    $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', true);
-}
+/*-- Functions for FormValidation --*/
+    function showErrorMessage(name, message)
+    {
+        $('.form-error[data-error="'+name+'"]').html(message).fadeIn();
+        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', true);
+    }
 
-function hideErrorMessage(name)
-{
-    $('.form-error[data-error*="'+name+'"]').fadeOut();
-    $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
-}
+    function hideErrorMessage(name)
+    {
+        $('.form-error[data-error*="'+name+'"]').fadeOut();
+        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
+    }
 
 $(document).ready(function()
 {
