@@ -108,6 +108,15 @@
   width: 100%;
 }
 
+.form-save-button-disabled {
+  background: $dgrey;
+  border-color: $dgrey;
+
+  &:hover {
+    background: $dgrey;
+  }
+}
+
 .image-upload-wrapper {
   position: relative !important;
 

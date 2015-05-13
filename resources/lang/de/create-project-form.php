@@ -83,6 +83,10 @@ return [
     'login'                 => ' Bitte <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Einloggen</a> or <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Registrieren</a> um eine Anfrage starten.',
     'incomplete'            => ' Sie haben derzeit einen unvollständigen Antrag gespeichert. Bitte fahren Sie mit der gespeicherten anfordern , oder zu löschen.',
     'live-project'          => ' Sie haben momentan ein Förderungsprojekt live auf unserer Webseite. Sie können erst nach Ablauf wieder einen Antrag stellen.',
+    'duplicate-name'        => ' Sorry, you cannot rename your project to that title. As another user has taken it for use.',
+    'pending-project'       => ' You currently have a project submitted for approval. We will welcome another submission once it has successfully ended.',
+    'not-owner'             => 'Sorry, you are not the owner of this project.',
+    'not-authenticated'     => 'Please login to continue to page.',
 
 
     /**

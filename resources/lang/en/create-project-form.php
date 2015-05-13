@@ -85,6 +85,10 @@ return [
     'login'                 => ' Please <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Login</a> or <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Register</a> to Start a Project.',
     'incomplete'            => ' You currently have an incomplete project saved. Please continue with the saved project, or delete it.',
     'live-project'          => ' You currently have a live project on our website. We will welcome another submission once it has successfully ended.',
+    'duplicate-name'        => ' Sorry, you cannot rename your project to that title. As another user has taken it for use.',
+    'pending-project'       => ' You currently have a project submitted for approval. We will welcome another submission once it has successfully ended.',
+    'not-owner'             => 'Sorry, you are not the owner of this project.',
+    'not-authenticated'     => 'Please login to continue to page.',
 
     /**
      * Email

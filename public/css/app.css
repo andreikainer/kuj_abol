@@ -5321,6 +5321,12 @@ input[type="submit"], button[type="submit"] {
 .form-button-full-width {
   width: 100%; }
 
+.form-save-button-disabled {
+  background: #d2d2d2;
+  border-color: #d2d2d2; }
+  .form-save-button-disabled:hover {
+    background: #d2d2d2; }
+
 .image-upload-wrapper {
   position: relative !important; }
   @media all and (max-width: 768px) {
