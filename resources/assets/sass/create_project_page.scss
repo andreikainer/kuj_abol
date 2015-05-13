@@ -387,6 +387,10 @@
       margin-top: 0.75em;
       line-height: 1.65em;
 
+      &:first-of-type {
+        margin-top: 0;
+      }
+
       &:last-of-type {}
       margin-bottom: 0;
     }

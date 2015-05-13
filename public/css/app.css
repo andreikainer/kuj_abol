@@ -5547,6 +5547,8 @@ a.tip-title {
   margin-top: 0.75em;
   line-height: 1.65em;
   margin-bottom: 0; }
+  .tip-explanation p:first-of-type {
+    margin-top: 0; }
 
 /*
 +--------------------------------------------------------------------
