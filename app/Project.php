@@ -63,4 +63,9 @@ class Project extends Model {
         return $this->hasMany('App\User');
     }
 
+    protected function setTargetAmountAttribute($value)
+    {
+        $this->attributes['target_amount'] = preg_replace('/[,]/', '', $value);
+    }
+
 }

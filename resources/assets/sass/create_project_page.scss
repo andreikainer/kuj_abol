@@ -18,7 +18,7 @@
   }
 
   .display {
-    display: block;
+    display: block !important;
   }
 
   .display-none {
@@ -31,6 +31,16 @@
 
   .character-count {
     display: none;
+  }
+
+  .terms-and-conditions {
+    margin-top: 1rem;
+    font-weight: 500;
+
+    a {
+      color: $blue;
+      font-weight: 700;
+    }
   }
 /*
  +--------------------------------------------------------------------
@@ -226,11 +236,9 @@
 
   .summary-page-button {
     margin-top: 0.5rem;
-  }
 
-  .form-button[data-button="start"]{
     @media all and (max-width: 768px) {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
     }
   }
 /*

@@ -90,6 +90,9 @@
             <div class="image-loader"></div>
             {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button form-button-full-width']) !!}
         </div>
+        <p class="terms-and-conditions">
+            {{ trans('create-project-form.terms-cond-1') }}<a href="{{ asset('documents/terms-and-conditions.pdf') }}">{{ trans('create-project-form.terms-cond-2') }}</a>
+        </p>
     </div>
 </div>
 
