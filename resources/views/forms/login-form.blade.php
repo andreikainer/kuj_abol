@@ -14,7 +14,7 @@
               		'class'=>'form-input form-inline',
               		'placeholder'=>trans('login-page.place-username'))) !!}
     </div>
-    <div class="form-error none" data-error="username"></div>
+    <div class="form-error none" data-error="user_name"></div>
 <!-- end username input -->
 
 <!-- Password Form Input -->

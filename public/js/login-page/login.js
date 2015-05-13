@@ -22,28 +22,9 @@
     };
 
 
-    /*-- Functions --*/
-    function showErrorMessage(name, message)
-    {
-        $('.form-error[data-error="'+name+'"]').html(message).fadeIn();
-    }
-
-    function hideErrorMessage(name)
-    {
-        $('.form-error[data-error*="'+name+'"]').fadeOut();
-        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
-    }
-
-    // to make the top-border of input field red color when there is an error
-    function redTopInput(input)
-    {
-        input.toggleClass('error-red-top', true);
-    }
-
-
     /*-- Publish Events --*/
     // Form Field blur events.
-    $('#login-page input[name="username"]').on('blur', function()
+    $('#login-page input[name="user_name"]').on('blur', function()
     {
         $.publish('username.blur', this);
     });
@@ -60,7 +41,7 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
-            redTopInput(data);
+
             return false;
         }
 
@@ -73,12 +54,12 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkMinLength(data.value, 6)) {
             showErrorMessage(name, errorMessages[window.locale].minLength(6));
-            redTopInput(data);
+
             return false;
         }
 

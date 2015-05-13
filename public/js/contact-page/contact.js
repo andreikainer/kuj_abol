@@ -34,25 +34,6 @@
     };
 
 
-/*-- Functions --*/
-    function showErrorMessage(name, message)
-    {
-        $('.form-error[data-error="'+name+'"]').html(message).fadeIn();
-    }
-
-    function hideErrorMessage(name)
-    {
-        $('.form-error[data-error*="'+name+'"]').fadeOut();
-        $('.form-error[data-error*="'+name+'"]').prev().find('input').toggleClass('error-red-top', false);
-    }
-
-    // to make the top-border of input field red color when there is an error
-    function redTopInput(input)
-    {
-        input.toggleClass('error-red-top', true);
-    }
-
-
 /*-- Publish Events --*/
   // Form Field blur events.
     $('input[name="name"]').on('blur', function()
@@ -77,17 +58,17 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkLetters(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].letters);
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkMinLength(data.value, 3)) {
             showErrorMessage(name, errorMessages[window.locale].minLength(3));
-            redTopInput(data);
+
             return false;
         }
 
@@ -100,12 +81,12 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkValidEmail(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].email);
-            redTopInput(data);
+
             return false;
         }
 
@@ -118,22 +99,22 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkMinLength(data.value, 5)) {
             showErrorMessage(name, errorMessages[window.locale].minLength(5));
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkMaxLength(data.value, 700)) {
             showErrorMessage(name, errorMessages[window.locale].maxLength(700));
-            redTopInput(data);
+
             return false;
         }
         if (! FormValidation.checkValidTextarea(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].textArea);
-            redTopInput(data);
+
             return false;
         }
 

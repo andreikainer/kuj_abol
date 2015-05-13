@@ -86,9 +86,11 @@ Route::group(
         Route::post(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@postReset');
 
         //Route::any(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
-        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
+        //Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'Auth\AuthController@dash');
 
+        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserCMSController@index');
 
+//
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
         //Route::get(LaravelLocalization::transRoute('routes.<key>'), '<Controller>@<Method>');
