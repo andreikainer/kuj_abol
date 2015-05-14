@@ -1,3 +1,8 @@
+var fieldsetCollection = $('fieldset');
+var tabCollection = $('.form-section-tab');
+var files = {};
+
+
 function showSection(collection, i)
 {
     collection.fadeOut();
