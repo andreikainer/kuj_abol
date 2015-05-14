@@ -64,7 +64,7 @@
 
 @section('additional_js')
 
-    <script src="{{ asset('js/userpanel/userpanel.js') }}"></script>
+    <script src="{{ asset('js/userpanel-page/userpanel.js') }}"></script>
 
     <script src="{{ asset('js/FormValidation.js') }}"></script>
     {{--<script src="{{ asset('js/userpanel-page/userpanel.js') }}"></script>--}}

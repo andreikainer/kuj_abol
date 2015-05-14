@@ -80,9 +80,6 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@getLogin');
         Route::post(LaravelLocalization::transRoute('routes.account/login'), 'Auth\AuthController@postLogin');
 
-
-        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
-
     /*-- LogOut Page --*/
         Route::get(LaravelLocalization::transRoute('routes.logout'), 'Auth\AuthController@getLogout');
 
@@ -93,6 +90,8 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@getReset');
         Route::post(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@postReset');
 
+    /*-- Userpanel Page --*/
+        Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
@@ -103,5 +102,3 @@ Route::group(
 
 // Route::get('test', '<Controller>@<Method>');
 
-//Route::get('dashboard', 'Auth\AuthController@dash');
-//Route::get('logout', 'Auth\AuthController@getLogout');

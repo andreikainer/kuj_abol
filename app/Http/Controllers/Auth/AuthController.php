@@ -15,7 +15,6 @@ use URL;
 
 class AuthController extends Controller {
 
-    //protected $redirectPath = trans('account');
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -196,6 +195,7 @@ class AuthController extends Controller {
      */
     public function getLogout()
     {
+        $redirectAfterLogout = (trans('routes.account/login'));
         $this->auth->logout();
 
         // store success feed back message in a session
@@ -204,7 +204,7 @@ class AuthController extends Controller {
         // clear user_id key in session
         Session::forget('username');
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : trans('routes.account/login'));
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : (trans('routes.account/login')));
     }
 
     /**
@@ -230,13 +230,6 @@ class AuthController extends Controller {
     public function loginPath()
     {
         return property_exists($this, 'loginPath') ? $this->loginPath : trans('routes.account/login');
-    }
-
-    public function dash($username)
-    {
-        $user = User::where('user_name', $username)->firstOrFail();
-
-        return view('userpanel.index');
     }
 
 }
