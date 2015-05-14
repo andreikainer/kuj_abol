@@ -15,4 +15,10 @@ return [
     'my-details'              => 'My Details',
     'view-project'            => 'View Project',
 
+    /**
+     * Buttons.
+     */
+    'save-changes'      => 'Save changes',
+    'delete-account'    => 'Delete my account',
+
 ];

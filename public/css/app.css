@@ -5856,10 +5856,10 @@ hr {
 
 /*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
 #logout {
-  width: 30%; }
+  width: 38%; }
 
 #username-btn {
-  width: 68%;
+  width: 60%;
   background-color: #ed5a4d;
   border-color: #ed5a4d !important; }
   #username-btn:hover {
@@ -6244,15 +6244,6 @@ footer {
     @media (min-width: 992px) {
       #how-it-works .team-role {
         height: 3rem; } }
-  #how-it-works .sidemenu-item {
-    font-size: 1rem;
-    box-shadow: inset 0.5rem 0 0 0 #6f798b !important;
-    border-top-right-radius: 0 !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important; }
-    #how-it-works .sidemenu-item:hover, #how-it-works .sidemenu-item:active, #how-it-works .sidemenu-item:focus {
-      box-shadow: inset 0.5rem 0 0 0 #3fa3db !important; }
 
 @media (max-width: 991px) {
   .xs-mt {
@@ -6260,6 +6251,16 @@ footer {
 @media (min-width: 992px) {
   .xs-mt {
     margin-bottom: 2em; } }
+
+#how-it-works .sidemenu-item, .account .sidemenu-item {
+  font-size: 1rem;
+  box-shadow: inset 0.5rem 0 0 0 #6f798b !important;
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important; }
+  #how-it-works .sidemenu-item:hover, #how-it-works .sidemenu-item:active, #how-it-works .sidemenu-item:focus, .account .sidemenu-item:hover, .account .sidemenu-item:active, .account .sidemenu-item:focus {
+    box-shadow: inset 0.5rem 0 0 0 #3fa3db !important; }
 
 /*------------------------------------------------------------------*/
 /*-- Account page styles --*/
@@ -6273,6 +6274,12 @@ footer {
     border-top: none; }
     .account .form-section-tab:hover, .account .form-section-tab:active {
       box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
+
+#userpanel-wrapper {
+  background-color: white;
+  border: 1px solid #d2d2d2;
+  border-top: none;
+  padding: 0.35em 0.625em 0.75em; }
 
 /*------------------------------------------------------------------*/
 /*-- Flash Message styles --*/
