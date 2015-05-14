@@ -195,7 +195,6 @@ class AuthController extends Controller {
      */
     public function getLogout()
     {
-        $redirectAfterLogout = (trans('routes.account/login'));
         $this->auth->logout();
 
         // store success feed back message in a session

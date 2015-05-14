@@ -8,15 +8,18 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Project;
 use App\Pledger;
-
+use App\Http\Requests\UserDetailsRequest;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Redirect;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Auth\Registrar;
+use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Auth\AuthController;
 
 class UserpanelController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -88,9 +91,33 @@ class UserpanelController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update($id)
+    public function update(UserDetailsRequest $request)
     {
-        //
+        $userDetails = [
+            'user_name'     => $request->get('user_name'),
+            'email'         => $request->get('email'),
+            'first_name'    => $request->get('first_name'),
+            'last_name'     => $request->get('last_name'),
+            'business_name' => $request->get('business_name'),
+            'tel_number'    => $request->get('tel_number'),
+            'address'       => $request->get('address')
+        ];
+
+        $userImages = [
+            'avatar'  => $request->file('avatar'),
+        ];
+
+        // Update user info in DB
+        $user = \Auth::user();
+        foreach($userDetails as $attribute => $value)
+        {
+            $user->$attribute = $value;
+        }
+        $user->save();
+
+        //$imageFolderPath = public_path("img/avatars/$user");
+        Session::flash('flash_message', trans('userpanel.form-change-success'));
+        return redirect()->back();
     }
 
     /**
@@ -109,5 +136,16 @@ class UserpanelController extends Controller
         return 'this is it';
     }
 
+    public function delete($id)
+    {
+        Session::flash('flash_message', trans('userpanel.form-delete-success'));
+
+       // $me = User::with('projects')->were('id', $id);
+
+        //$username = $user->user_name;
+        return $me;
+
+        //return redirect('logout');
+    }
 
 }
