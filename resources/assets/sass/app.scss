@@ -579,9 +579,9 @@ footer {
 
 
 /*------------------------------------------------------------------*/
-  /*-- Contact page, Login page, Send-Reset-Link page, Password-Reset page styles --*/
+  /*-- Contact page, Login page, Send-Reset-Link page, Password-Reset, Account page styles --*/
 /*------------------------------------------------------------------*/
-#help-page, #login-page, #send-reset-link-page, #password-reset-page {
+#help-page, #login-page, #send-reset-link-page, #password-reset-page, .account {
   font-size: 1.1rem !important;
 
   .no-projects {
@@ -743,6 +743,10 @@ footer {
       box-shadow: inset 0 0.5rem 0 0 $blue;
     }
   }
+
+  .pad {
+    padding-left: 1em;
+  }
 }
 
 #userpanel-wrapper {
@@ -752,11 +756,16 @@ footer {
   padding: 0.35em 0.625em 0.75em;
 }
 
+.avatar {
+  width: 250px;
+  height: 160px;
+}
+
 /*------------------------------------------------------------------*/
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
-  position: absolute;
+//  position: absolute;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;

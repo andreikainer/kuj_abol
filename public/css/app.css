@@ -6169,44 +6169,44 @@ footer {
   margin-top: 1.2rem; }
 
 /*------------------------------------------------------------------*/
-/*-- Contact page, Login page, Send-Reset-Link page, Password-Reset page styles --*/
+/*-- Contact page, Login page, Send-Reset-Link page, Password-Reset, Account page styles --*/
 /*------------------------------------------------------------------*/
-#help-page, #login-page, #send-reset-link-page, #password-reset-page {
+#help-page, #login-page, #send-reset-link-page, #password-reset-page, .account {
   font-size: 1.1rem !important;
   /*-- Login page buttons -*/ }
-  #help-page .no-projects, #help-page .project-links, #login-page .no-projects, #login-page .project-links, #send-reset-link-page .no-projects, #send-reset-link-page .project-links, #password-reset-page .no-projects, #password-reset-page .project-links {
+  #help-page .no-projects, #help-page .project-links, #login-page .no-projects, #login-page .project-links, #send-reset-link-page .no-projects, #send-reset-link-page .project-links, #password-reset-page .no-projects, #password-reset-page .project-links, .account .no-projects, .account .project-links {
     margin-bottom: 2rem; }
-  #help-page input:not([type=submit]):not([type=checkbox]), #help-page input[type=password], #help-page textarea, #login-page input:not([type=submit]):not([type=checkbox]), #login-page input[type=password], #login-page textarea, #send-reset-link-page input:not([type=submit]):not([type=checkbox]), #send-reset-link-page input[type=password], #send-reset-link-page textarea, #password-reset-page input:not([type=submit]):not([type=checkbox]), #password-reset-page input[type=password], #password-reset-page textarea {
+  #help-page input:not([type=submit]):not([type=checkbox]), #help-page input[type=password], #help-page textarea, #login-page input:not([type=submit]):not([type=checkbox]), #login-page input[type=password], #login-page textarea, #send-reset-link-page input:not([type=submit]):not([type=checkbox]), #send-reset-link-page input[type=password], #send-reset-link-page textarea, #password-reset-page input:not([type=submit]):not([type=checkbox]), #password-reset-page input[type=password], #password-reset-page textarea, .account input:not([type=submit]):not([type=checkbox]), .account input[type=password], .account textarea {
     box-shadow: inset 0 0.5rem 0 0 #6f798b; }
-    #help-page input:not([type=submit]):not([type=checkbox]):hover, #help-page input:not([type=submit]):not([type=checkbox]):focus, #help-page input:not([type=submit]):not([type=checkbox]):active, #help-page input[type=password]:hover, #help-page input[type=password]:focus, #help-page input[type=password]:active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active, #login-page input:not([type=submit]):not([type=checkbox]):hover, #login-page input:not([type=submit]):not([type=checkbox]):focus, #login-page input:not([type=submit]):not([type=checkbox]):active, #login-page input[type=password]:hover, #login-page input[type=password]:focus, #login-page input[type=password]:active, #login-page textarea:hover, #login-page textarea:focus, #login-page textarea:active, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):hover, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):focus, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):active, #send-reset-link-page input[type=password]:hover, #send-reset-link-page input[type=password]:focus, #send-reset-link-page input[type=password]:active, #send-reset-link-page textarea:hover, #send-reset-link-page textarea:focus, #send-reset-link-page textarea:active, #password-reset-page input:not([type=submit]):not([type=checkbox]):hover, #password-reset-page input:not([type=submit]):not([type=checkbox]):focus, #password-reset-page input:not([type=submit]):not([type=checkbox]):active, #password-reset-page input[type=password]:hover, #password-reset-page input[type=password]:focus, #password-reset-page input[type=password]:active, #password-reset-page textarea:hover, #password-reset-page textarea:focus, #password-reset-page textarea:active {
+    #help-page input:not([type=submit]):not([type=checkbox]):hover, #help-page input:not([type=submit]):not([type=checkbox]):focus, #help-page input:not([type=submit]):not([type=checkbox]):active, #help-page input[type=password]:hover, #help-page input[type=password]:focus, #help-page input[type=password]:active, #help-page textarea:hover, #help-page textarea:focus, #help-page textarea:active, #login-page input:not([type=submit]):not([type=checkbox]):hover, #login-page input:not([type=submit]):not([type=checkbox]):focus, #login-page input:not([type=submit]):not([type=checkbox]):active, #login-page input[type=password]:hover, #login-page input[type=password]:focus, #login-page input[type=password]:active, #login-page textarea:hover, #login-page textarea:focus, #login-page textarea:active, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):hover, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):focus, #send-reset-link-page input:not([type=submit]):not([type=checkbox]):active, #send-reset-link-page input[type=password]:hover, #send-reset-link-page input[type=password]:focus, #send-reset-link-page input[type=password]:active, #send-reset-link-page textarea:hover, #send-reset-link-page textarea:focus, #send-reset-link-page textarea:active, #password-reset-page input:not([type=submit]):not([type=checkbox]):hover, #password-reset-page input:not([type=submit]):not([type=checkbox]):focus, #password-reset-page input:not([type=submit]):not([type=checkbox]):active, #password-reset-page input[type=password]:hover, #password-reset-page input[type=password]:focus, #password-reset-page input[type=password]:active, #password-reset-page textarea:hover, #password-reset-page textarea:focus, #password-reset-page textarea:active, .account input:not([type=submit]):not([type=checkbox]):hover, .account input:not([type=submit]):not([type=checkbox]):focus, .account input:not([type=submit]):not([type=checkbox]):active, .account input[type=password]:hover, .account input[type=password]:focus, .account input[type=password]:active, .account textarea:hover, .account textarea:focus, .account textarea:active {
       box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
-  #help-page .form-group, #login-page .form-group, #send-reset-link-page .form-group, #password-reset-page .form-group {
+  #help-page .form-group, #login-page .form-group, #send-reset-link-page .form-group, #password-reset-page .form-group, .account .form-group {
     margin-bottom: 0 !important;
     margin-top: .925em; }
-  #help-page .form-error, #login-page .form-error, #send-reset-link-page .form-error, #password-reset-page .form-error {
+  #help-page .form-error, #login-page .form-error, #send-reset-link-page .form-error, #password-reset-page .form-error, .account .form-error {
     padding: 0;
     background: none;
     border: none;
     font-size: .9rem;
     font-weight: 700;
     line-height: 1.8rem; }
-  #help-page .form-error li, #login-page .form-error li, #send-reset-link-page .form-error li, #password-reset-page .form-error li {
+  #help-page .form-error li, #login-page .form-error li, #send-reset-link-page .form-error li, #password-reset-page .form-error li, .account .form-error li {
     list-style-type: disc !important; }
-  #help-page .cpp-error, #login-page .cpp-error, #send-reset-link-page .cpp-error, #password-reset-page .cpp-error {
+  #help-page .cpp-error, #login-page .cpp-error, #send-reset-link-page .cpp-error, #password-reset-page .cpp-error, .account .cpp-error {
     margin-top: 0 !important;
     margin-bottom: 1rem; }
-  #help-page #log-me-in, #login-page #log-me-in, #send-reset-link-page #log-me-in, #password-reset-page #log-me-in {
+  #help-page #log-me-in, #login-page #log-me-in, #send-reset-link-page #log-me-in, #password-reset-page #log-me-in, .account #log-me-in {
     margin-left: 0;
     margin-right: 0;
     font-size: 1em !important; }
-  #help-page #forgot-my-password, #login-page #forgot-my-password, #send-reset-link-page #forgot-my-password, #password-reset-page #forgot-my-password {
+  #help-page #forgot-my-password, #login-page #forgot-my-password, #send-reset-link-page #forgot-my-password, #password-reset-page #forgot-my-password, .account #forgot-my-password {
     margin-left: 0;
     margin-right: 0;
     background-color: #6f798b !important;
     color: white !important;
     font-family: 'Lato', 'Open Sans', sans-serif;
     font-size: 1em !important; }
-    #help-page #forgot-my-password:hover, #login-page #forgot-my-password:hover, #send-reset-link-page #forgot-my-password:hover, #password-reset-page #forgot-my-password:hover {
+    #help-page #forgot-my-password:hover, #login-page #forgot-my-password:hover, #send-reset-link-page #forgot-my-password:hover, #password-reset-page #forgot-my-password:hover, .account #forgot-my-password:hover {
       background-color: #58606f !important; }
 
 #login-page .form-error, #send-reset-link-page .form-error {
@@ -6281,6 +6281,8 @@ footer {
     border-top: none; }
     .account .form-section-tab:hover, .account .form-section-tab:active {
       box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
+  .account .pad {
+    padding-left: 1em; }
 
 #userpanel-wrapper {
   background-color: white;
@@ -6288,11 +6290,14 @@ footer {
   border-top: none;
   padding: 0.35em 0.625em 0.75em; }
 
+.avatar {
+  width: 250px;
+  height: 160px; }
+
 /*------------------------------------------------------------------*/
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
-  position: absolute;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;

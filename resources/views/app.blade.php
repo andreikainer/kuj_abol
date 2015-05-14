@@ -155,7 +155,7 @@
                		    <div class="col-sm-7 col-md-2 col-md-pull-2 col-lg-2 col-lg-pull-1 collapse navbar-collapse" id="main_nav" role="navigation">
                  	       <hr class="visible-sm">
                  	       <ul class="nav navbar-nav">
-                   	        	<li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-sign-in"></i>  {{ trans('app.login') }}</a></li>
+                   	        	<li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getLogin') }}"><i class="fa fa-sign-in"></i>  {{ trans('app.login') }}</a></li>
                                 <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getRegister') }}"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
 
                    	        	<li class="dropdown">

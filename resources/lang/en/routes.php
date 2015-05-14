@@ -28,6 +28,7 @@ return [
     'logout'                => 'logout',
     'account'               => 'account',
     'account/reset'         => 'account/reset',
+    'account/delete'        => 'account/delete',
     'password/email'        => 'password/email',
     'password/reset'        => 'password/reset',
     'create-project/save'   => 'create-project/save',
