@@ -24,7 +24,7 @@
             <!-- end tabs -->
 
             <!-- Panel content -->
-                <div class="row-fluid bt-none">
+                <div class="row-fluid bt-none clearfix">
                     <div id="userpanel-wrapper" class="col-sm-12">
 
                         @include('userpanel.tabs-overview')
@@ -37,7 +37,7 @@
 
             <!-- Side menu -->
             <div class="hidden-xs hidden-sm col-md-3 mt-3em">
-                <img class="img-responsive center-block" src="@if($user->avatar === null )
+                <img class="img-responsive center-block avatar" src="@if($user->avatar === null )
                         {{ asset('img/avatars/avatar-placeholder.svg') }}"
                     @else
                         {{ asset('img/avatars/'.$user->avatar) }}"
