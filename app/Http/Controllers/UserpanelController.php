@@ -17,7 +17,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Auth\AuthController;
 
-class UserpanelController extends Auth\AuthController
+class UserpanelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -133,21 +133,16 @@ class UserpanelController extends Auth\AuthController
         return 'this is it';
     }
 
-    public function delete($user)
+    public function delete($id)
     {
         Session::flash('flash_message', trans('userpanel.form-delete-success'));
 
-        $userqwe = \Auth::user();
+       // $me = User::with('projects')->were('id', $id);
 
-        return $userqwe->active;
+        //$username = $user->user_name;
+        return $me;
 
-
-        //return \Auth::user();
-        //$user->active = 0;
-        //return $id;
-        //$user->logout();
-        //\Auth::logout();
-        //return view('account/login');
+        //return redirect('logout');
     }
 
 }
