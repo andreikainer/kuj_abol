@@ -63,10 +63,10 @@
 @endsection
 
 @section('additional_js')
-<<<<<<< HEAD
+
     <script src="{{ asset('js/userpanel/userpanel.js') }}"></script>
-=======
+
     <script src="{{ asset('js/FormValidation.js') }}"></script>
-    <script src="{{ asset('js/userpanel-page/userpanel.js') }}"></script>
->>>>>>> olgasmirnova
+    {{--<script src="{{ asset('js/userpanel-page/userpanel.js') }}"></script>--}}
+
 @endsection
