@@ -52,10 +52,10 @@ var FormValidation = {
         return regex.test(value);
     },
 
-    // Allow + sign, and round brackets. Must not begin with a space.
+    // Allow + sign, round brackets, and /. Must not begin with a space.
     checkValidPhone : function(value)
     {
-        var regex = /^[+()0-9]+([\s+()0-9]+)*$/;
+        var regex = /^[+()\/0-9]+([\s+()\/0-9]+)*$/;
         return regex.test(value);
     },
 
@@ -84,6 +84,13 @@ var FormValidation = {
     checkLetters : function(value)
     {
         var regex = /^([a-zA-Z ])+$/;
+        return regex.test(value);
+    },
+
+    // Allow , . and numbers only. Must not begin with a space.
+    checkValidCurrency : function(value)
+    {
+        var regex = /^[0-9]+([\s0-9,.]+)*$/;
         return regex.test(value);
     }
 

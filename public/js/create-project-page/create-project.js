@@ -45,6 +45,7 @@
                 'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
                 'image' : 'Please choose a valid image format.',
                 'document' : 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+                'currency' : 'Must only contain numbers, commas and periods. And not begin with a space.',
                 'maxLength' : function(limit)
                 {
                     return 'This field must not exceed '+limit+' characters';
@@ -65,6 +66,7 @@
                 'phone' : 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.',
                 'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
                 'document' : 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+                'currency' : 'Muss nur Zahlen, Kommas und Punkte. Und nicht mit einem Leerzeichen beginnen.',
                 'maxLength' : function(limit)
                 {
                     return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
@@ -278,8 +280,8 @@
                 addFailClass(data);
                 return false;
             }
-            if (! FormValidation.checkNumOnly(data.value)) {
-                showErrorMessage(name, errorMessages[window.locale].numOnly);
+            if (! FormValidation.checkValidCurrency(data.value)) {
+                showErrorMessage(name, errorMessages[window.locale].currency);
                 addFailClass(data);
                 return false;
             }

@@ -90,7 +90,31 @@
             <div class="image-loader"></div>
             {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button form-button-full-width']) !!}
         </div>
+        <p class="terms-and-conditions">
+            {{ trans('create-project-form.terms-cond-1') }}<a href="#termsCondModal" data-toggle="modal" data-target="#termsCondModal">{{ trans('create-project-form.terms-cond-2') }}</a>
+        </p>
     </div>
+</div>
+
+<div class="row">
+    <div class="modal fade" id="termsCondModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" tabindex="1">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalLabel">{{ trans('create-project-form.terms-cond-2') }}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="responsive-embed responsive-embed-16by9">
+                        <object class="responsive-embed-item" data="{{ asset('documents/terms-and-conditions.pdf') }}" type="application/pdf"></object>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('create-project-form.terms-cond-3') }}</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </div>
 
 <div class="row form-group">

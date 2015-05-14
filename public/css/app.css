@@ -5255,7 +5255,7 @@ input[type="submit"], button[type="submit"] {
   padding: 0; }
 
 .display {
-  display: block; }
+  display: block !important; }
 
 .display-none {
   display: none; }
@@ -5265,6 +5265,25 @@ input[type="submit"], button[type="submit"] {
 
 .character-count {
   display: none; }
+
+.terms-and-conditions {
+  margin-top: 1rem;
+  font-weight: 500; }
+  .terms-and-conditions a {
+    color: #3fa3db;
+    font-weight: 700; }
+
+.modal-backdrop {
+  z-index: 1030 !important; }
+
+.modal-body {
+  min-height: 400px !important; }
+
+.modal-body > .responsive-embed {
+  min-height: 400px !important; }
+  .modal-body > .responsive-embed object {
+    width: 100% !important;
+    min-height: 400px !important; }
 
 /*
  +--------------------------------------------------------------------
@@ -5413,10 +5432,9 @@ fieldset.summary-group {
 
 .summary-page-button {
   margin-top: 0.5rem; }
-
-@media all and (max-width: 768px) {
-  .form-button[data-button="start"], [data-button="start"].saved-project-continue, [data-button="start"].saved-project-delete {
-    margin-top: 1rem; } }
+  @media all and (max-width: 768px) {
+    .summary-page-button {
+      margin-top: 1.25rem; } }
 
 /*
 +--------------------------------------------------------------------
@@ -5547,6 +5565,8 @@ a.tip-title {
   margin-top: 0.75em;
   line-height: 1.65em;
   margin-bottom: 0; }
+  .tip-explanation p:first-of-type {
+    margin-top: 0; }
 
 /*
 +--------------------------------------------------------------------
