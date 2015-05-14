@@ -29,6 +29,9 @@ return [
     'submit'                => 'Zur Genehmigung einreichen',
     'continue'              => 'fortsetzen',
     'delete'                => 'löschen',
+    'terms-cond-1'          => 'By submitting your project, you agree to our ',
+    'terms-cond-2'          => 'Terms and Conditons',
+    'terms-cond-3'          => 'Close',
 
     /**
      * Form Labels.
