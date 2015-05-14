@@ -5759,7 +5759,7 @@ a.tip-title {
     display: table-cell; } }
 
 .userpanel-section {
-  border-top: none; }
+  border: none; }
 
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/
@@ -6292,6 +6292,7 @@ footer {
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
+  position: absolute;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
