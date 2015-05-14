@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Pledge;
 use Illuminate\Http\Request;
 use App\User;
 use App\Project;
@@ -68,7 +69,9 @@ class UserpanelController extends Controller
             return Redirect::home();
         }
 
-        return view('userpanel.index', compact('user'));
+        $contributions = Pledge::where('user_id', '=', $user->id)->get();
+
+        return view('userpanel.index', compact('user', 'contributions'));
     }
 
     /**
