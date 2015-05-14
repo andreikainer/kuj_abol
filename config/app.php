@@ -138,6 +138,7 @@ return [
         'Illuminate\Html\HtmlServiceProvider',
 		'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
         'Intervention\Image\ImageServiceProvider',
+        'Jenssegers\Date\DateServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -199,5 +200,6 @@ return [
         'Form'      => 'Illuminate\Html\FormFacade',
 		'LaravelLocalization'   => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
         'Image'     => 'Intervention\Image\Facades\Image',
+        'Date'      => 'Jenssegers\Date\Facades\Date',
     ],
 ];
