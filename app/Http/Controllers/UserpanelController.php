@@ -135,14 +135,12 @@ class UserpanelController extends Controller
 
     public function delete($id)
     {
-        Session::flash('flash_message', trans('userpanel.form-delete-success'));
+        Session::put('deleted', trans('userpanel.form-delete-success'));
 
-       // $me = User::with('projects')->were('id', $id);
-
-        //$username = $user->user_name;
-        return $me;
-
-        //return redirect('logout');
+        $user = User::find($id);
+        $user->active = 0;
+        $user->save();
+        return redirect('logout');
     }
 
 }

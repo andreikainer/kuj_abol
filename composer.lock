@@ -831,16 +831,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "6626d7624ac0895137a38c123943afedd0827efc"
+                "reference": "79f0a35da7d4f75bb85d9c04513dd5929e21f75e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/6626d7624ac0895137a38c123943afedd0827efc",
-                "reference": "6626d7624ac0895137a38c123943afedd0827efc",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/79f0a35da7d4f75bb85d9c04513dd5929e21f75e",
+                "reference": "79f0a35da7d4f75bb85d9c04513dd5929e21f75e",
                 "shasum": ""
             },
             "require": {
@@ -883,7 +883,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2015-04-24 14:50:48"
+            "time": "2015-05-09 16:06:30"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -1073,16 +1073,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "5.0.30",
+            "version": "v5.0.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c7ffbf1fd4895ac4cdac551265d635d995346d97"
+                "reference": "db0a7400465df159ba8c6eaa954f97f50bc19687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c7ffbf1fd4895ac4cdac551265d635d995346d97",
-                "reference": "c7ffbf1fd4895ac4cdac551265d635d995346d97",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/db0a7400465df159ba8c6eaa954f97f50bc19687",
+                "reference": "db0a7400465df159ba8c6eaa954f97f50bc19687",
                 "shasum": ""
             },
             "require": {
@@ -1195,7 +1195,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-05-08 19:11:13"
+            "time": "2015-05-11 22:15:00"
         },
         {
             "name": "league/flysystem",
@@ -1494,16 +1494,16 @@
         },
         {
             "name": "nicolaslopezj/searchable",
-            "version": "1.5.5",
+            "version": "1.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolaslopezj/searchable.git",
-                "reference": "d7267ebb42e64b55debfdb7db5f71f14936de4bf"
+                "reference": "edaae6225162bb194b1ead9fc93697a7dc0c9a3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/d7267ebb42e64b55debfdb7db5f71f14936de4bf",
-                "reference": "d7267ebb42e64b55debfdb7db5f71f14936de4bf",
+                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/edaae6225162bb194b1ead9fc93697a7dc0c9a3b",
+                "reference": "edaae6225162bb194b1ead9fc93697a7dc0c9a3b",
                 "shasum": ""
             },
             "require": {
@@ -1535,7 +1535,7 @@
                 "search",
                 "searchable"
             ],
-            "time": "2015-05-08 18:33:53"
+            "time": "2015-05-12 23:03:07"
         },
         {
             "name": "nikic/php-parser",

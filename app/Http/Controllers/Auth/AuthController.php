@@ -198,7 +198,12 @@ class AuthController extends Controller {
         $this->auth->logout();
 
         // store success feed back message in a session
-        Session::flash('flash_message', trans('login-page.logout'));
+        if(Session::has('deleted'))
+        {
+            Session::flash('flash_message', Session::get('deleted'));
+        }else{
+            Session::flash('flash_message', trans('login-page.logout'));
+        }
 
         // clear user_id key in session
         Session::forget('username');
