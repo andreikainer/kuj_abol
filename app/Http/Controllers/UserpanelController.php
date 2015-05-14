@@ -10,7 +10,6 @@ use App\Pledger;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -55,11 +54,13 @@ class UserpanelController extends Controller
      */
     public function show($username)
     {
-        try {
+        try
+        {
             $user = User::with('projects')->where('user_name', $username)->firstOrFail();
-            //$main_img = \App\Image::where('project_id', $user->project->id)->first();
-            //return $main_img;
-        } catch (ModelNotFoundException $e) {
+        }
+
+        catch (ModelNotFoundException $e)
+        {
             return Redirect::home();
         }
 
