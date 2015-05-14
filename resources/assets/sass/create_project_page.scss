@@ -42,6 +42,23 @@
       font-weight: 700;
     }
   }
+
+  .modal-backdrop {
+    z-index: 1030 !important;
+  }
+
+  .modal-body {
+    min-height: 400px !important;
+  }
+
+  .modal-body > .responsive-embed {
+    min-height: 400px !important;
+
+    object {
+      width: 100% !important;
+      min-height: 400px !important;
+    }
+  }
 /*
  +--------------------------------------------------------------------
  |
