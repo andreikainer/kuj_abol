@@ -49,7 +49,8 @@ class UserpanelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param $username
+     * @internal param int $id
      * @return Response
      */
     public function show($username)
