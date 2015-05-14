@@ -1,3 +1,15 @@
 @-moz-document url-prefix() {
   fieldset { display: table-cell; }
 }
+
+.userpanel-section {
+  @extend .form-element;
+  @extend .form-radius-btm-only;
+  @extend .create-project-fieldset;
+
+  border-top: none;
+}
+
+.userpanel-active {
+  @extend .fieldset-active;
+}

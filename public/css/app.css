@@ -5107,7 +5107,7 @@ input[type="submit"], button[type="submit"] {
     outline: none !important;
     box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
 
-.form-element, .success-container {
+.form-element, .success-container, .userpanel-section {
   background: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -5148,7 +5148,7 @@ input[type="submit"], button[type="submit"] {
   .form-section-tab-active:hover {
     background: white; }
 
-.form-radius-btm-only {
+.form-radius-btm-only, .userpanel-section {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
@@ -5292,11 +5292,11 @@ input[type="submit"], button[type="submit"] {
  |
  +--------------------------------------------------------------------
 */
-.create-project-fieldset {
+.create-project-fieldset, .userpanel-section {
   padding: 0;
   display: none; }
 
-.fieldset-active {
+.fieldset-active, .userpanel-active {
   display: inherit; }
 
 /*
@@ -5754,6 +5754,13 @@ a.tip-title {
 .display-block {
   display: block; }
 
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell; } }
+
+.userpanel-section {
+  border-top: none; }
+
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/
 /*------------------------------------------------------------------*/
@@ -6136,7 +6143,7 @@ footer {
   font-size: 1rem;
   font-weight: 700;
   color: white; }
-  .logo-name .form-element, .logo-name .success-container {
+  .logo-name .form-element, .logo-name .success-container, .logo-name .userpanel-section {
     cursor: pointer; }
 
 /*------------------------------------------------------------------*/
@@ -6215,11 +6222,11 @@ footer {
   #how-it-works .add-nav {
     position: fixed;
     top: 8rem; }
-  #how-it-works .form-element, #how-it-works .success-container {
+  #how-it-works .form-element, #how-it-works .success-container, #how-it-works .userpanel-section {
     margin-left: .65rem !important;
     margin-right: .65rem !important; }
     @media (min-width: 1200px) {
-      #how-it-works .form-element, #how-it-works .success-container {
+      #how-it-works .form-element, #how-it-works .success-container, #how-it-works .userpanel-section {
         padding-left: 3rem !important;
         padding-right: 3rem !important; } }
   #how-it-works div h4 {
