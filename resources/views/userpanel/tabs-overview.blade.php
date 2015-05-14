@@ -8,7 +8,7 @@
 
 <div class="userpanel-section" data-section="1">
     <div class="row">
-        <div class="col-md-12 col-sm-12">
+        <div>
             @include('userpanel.my-favourites')
         </div>
     </div>

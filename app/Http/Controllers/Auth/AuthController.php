@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use KuJ\CustomExceptions\InvalidConfirmationCodeException;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use URL;
 
 
 class AuthController extends Controller {
 
-    //protected $redirectPath = trans('account');
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -117,6 +117,9 @@ class AuthController extends Controller {
      */
     public function getLogin()
     {
+        // store the url of the prev page in a session
+        Session::put('curr-url', URL::previous());
+
         return view('account.login');
     }
 
@@ -136,12 +139,11 @@ class AuthController extends Controller {
 
         // 2. run the validation with those rules
         $credentials = $request->only('user_name', 'password');
-        //$url = \Request::url();
+
         // 3a. if user’s input passed validation
         if ($this->auth->attempt($credentials, $request->has('remember')))
         {
             // 4. check if the user has been baned
-            //$activness = \Auth::user()->active;
             if($this->auth->user()->active == 1)
             {
                 $username = $this->auth->user()->user_name;
@@ -150,13 +152,12 @@ class AuthController extends Controller {
                 Session::flash('flash_message', trans('login-page.login-success'));
                 Session::set('username', $username);
 
-                // 6. redirect the user to the dashboard page
-                //return $username;
-                //return redirect()->intended($this->redirectPath());
-                //return redirect()->intended($url);
-                //return redirect()->intended()->action('Auth\AuthController@dash', ['username' => $username]);
-                // redirect()->action('Auth\AuthController@dash', ['username' => $username]);
-                return redirect()->back();
+                // 6. redirect the user to the prev page
+                return redirect(Session::get('curr-url'));
+
+                // 7. clean up the session
+                \Session::forget('curr-url');
+
             }else{
                 // 5. if the user has been baned, store feed back message in a session
                 Session::flash('flash_message', trans('login-page.baned-user'));
@@ -194,6 +195,7 @@ class AuthController extends Controller {
      */
     public function getLogout()
     {
+        $redirectAfterLogout = (trans('routes.account/login'));
         $this->auth->logout();
 
         // store success feed back message in a session
@@ -202,7 +204,7 @@ class AuthController extends Controller {
         // clear user_id key in session
         Session::forget('username');
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : trans('routes.account/login'));
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : LaravelLocalization::getCurrentLocale().'/'.(trans('routes.account/login')));
     }
 
     /**
@@ -228,13 +230,6 @@ class AuthController extends Controller {
     public function loginPath()
     {
         return property_exists($this, 'loginPath') ? $this->loginPath : trans('routes.account/login');
-    }
-
-    public function dash($username)
-    {
-        $user = User::where('user_name', $username)->firstOrFail();
-
-        return view('userpanel.index');
     }
 
 }
