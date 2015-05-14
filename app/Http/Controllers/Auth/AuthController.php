@@ -202,7 +202,7 @@ class AuthController extends Controller {
         // clear user_id key in session
         Session::forget('username');
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : trans('routes.account/login'));
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : LaravelLocalization::getCurrentLocale().'/'.(trans('routes.account/login')));
     }
 
     /**
