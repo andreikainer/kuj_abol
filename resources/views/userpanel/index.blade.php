@@ -55,5 +55,5 @@
 @endsection
 
 @section('additional_js')
-    <script src="{{ asset('js/create-project-page/create-project.js') }}"></script>
+    <script src="{{ asset('js/userpanel/userpanel.js') }}"></script>
 @endsection

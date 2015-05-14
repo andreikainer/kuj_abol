@@ -41,13 +41,13 @@
                 <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
                 <div class="btn">
                    <div id="facebook-share" class="btn btn-primary button-main" role="button">
-                       <i class="fa fa-facebook"></i> Share on Facebook
+                       <i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}
                    </div>
                 </div>
                 <div class="btn">
-                    <div id="favorite" class="btn btn-primary button-main" role="button">
-                        <i class="fa fa-star"></i> Add to Favourites
-                    </div>
+                    <a href="#"><div id="favorite" class="btn btn-primary button-main" role="button">
+                        <i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}
+                    </div></a>
                 </div>
             </div> <!-- statistics end-->
             </div>

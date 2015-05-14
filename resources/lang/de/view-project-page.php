@@ -16,7 +16,9 @@ return [
   'progress'               => 'Progress:',
   'fund-this-project'      => 'Projekt Fördern',
   'completed'              => 'Abgeschlossen',
-  'support-options'       =>  'Förderungsbausteine',
+  'support-options'        => 'Förderungsbausteine',
+  'share-on-facebook'      => 'Auf Facebook Teilen',
+  'add-to-favourites'      => 'Zu meinen Favoriten',
 
   'business-building-block' => '<h3>"Business" Förderungs-Baustein<br> &euro; 150,00 + Ust pro Baustein</h3>
                                <h4>Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
