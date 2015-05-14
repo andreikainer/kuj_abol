@@ -55,21 +55,41 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $query->where('confirmation_code', '=', $confirmation_code)->first();
     }
 
+    /**
+     * Get the projects that belong to the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function projects()
     {
         return $this->hasMany('App\Project');
     }
 
+    /**
+     * Get the pledges a user has made.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function pledge()
     {
         return $this->hasMany('App\Pledge');
     }
 
+    /**
+     * Get the projects that the user has saved.
+     *
+     * @return mixed
+     */
     public function incompleteProject()
     {
         return $this->projects()->where('application_status', '=', '0');
     }
 
+    /**
+     * Get the projects that the user has submitted for approval.
+     *
+     * @return mixed
+     */
     public function submittedProject()
     {
         return $this->projects()
@@ -78,6 +98,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             ->where('approved', '=', '0');
     }
 
+    /**
+     * Get the projects the user has currently live on the site.
+     *
+     * @return mixed
+     */
     public function currentLiveProject()
     {
         return $this->projects()
