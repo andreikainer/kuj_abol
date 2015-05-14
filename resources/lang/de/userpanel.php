@@ -14,4 +14,11 @@ return [
     'my-projects'             => 'Meine Förderprojekte',
     'my-details'              => 'Meine Details',
     'view-project'            => 'Zum Projekt',
+
+
+    /**
+     * Buttons.
+     */
+    'save-changes'      => 'Save changes',
+    'delete-account'    => 'Delete my account',
 ];
