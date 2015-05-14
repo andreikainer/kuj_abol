@@ -16,7 +16,7 @@
         pauseOnHover: true,
         pauseonDotsHover: true,
         swipe: true,
-        centerMode: true,
+        //centerMode: true,
         respondTo: 'slider'
   });
 

@@ -148,10 +148,10 @@ hr {
 
 /*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
 #logout {
-  width: 30%;
+  width: 38%;
 }
 #username-btn {
-  width: 68%;
+  width: 60%;
   background-color: $orange;
   border-color: $orange !important;
 
@@ -698,7 +698,18 @@ footer {
       height: 3rem;
     }
   }
+}
 
+.xs-mt {
+  @media(max-width: 991px) {
+    margin-top: 2rem;
+  }
+  @media(min-width: 992px) {
+    margin-bottom: 2em;
+  }
+}
+
+#how-it-works, .account {
   .sidemenu-item {
     font-size: 1rem;
     box-shadow: inset  0.5rem 0 0 0 $bluegrey !important;
@@ -712,17 +723,6 @@ footer {
     }
   }
 }
-
-.xs-mt {
-  @media(max-width: 991px) {
-    margin-top: 2rem;
-  }
-  @media(min-width: 992px) {
-    margin-bottom: 2em;
-  }
-}
-
-
 
 
 
@@ -745,11 +745,18 @@ footer {
   }
 }
 
+#userpanel-wrapper {
+  background-color: $white;
+  border: 1px solid $dgrey;
+  border-top: none;
+  padding: 0.35em 0.625em 0.75em;
+}
+
 /*------------------------------------------------------------------*/
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
-//  position: absolute;
+  position: absolute;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
