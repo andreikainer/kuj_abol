@@ -2,31 +2,50 @@
 <h3 class="text-center">{{ trans('userpanel.my-contributions') }}</h3>
 
 <table class="table table-striped table-hover table-responsive mt-3em">
-    <tr>
-        <thead>
-        <th></th>
-        <th>Project Title</th>
-        <th>Contribution Date</th>
-        <th>Amount</th>
-        <th>Status</th>
-        <th></th>
-        </thead>
-    </tr>
+    <thead>
+        <tr>
+            <th class="col-md-2 col-sm-2 col-xs-2"></th>
+            <th class="col-md-2 col-sm-3 col-xs-3">{{ trans('my-contributions.th-1') }}</th>
+            <th class="col-md-2 col-sm-2 col-xs-2">{{ trans('my-contributions.th-2') }}</th>
+            <th class="col-md-2 col-sm-1 col-xs-1 text-right table-currency">{{ trans('my-contributions.th-3') }}</th>
+            <th class="col-md-1 col-sm-2 col-xs-2">{{ trans('my-contributions.th-4') }}</th>
+            <th class="col-md-1 col-sm-2 col-xs-2"></th>
+        </tr>
+    </thead>
     <tbody>
-    @foreach($user->projects as $key => $pr)
-    <tr>
-        <td><img src="{{ asset('img/ergotherapie-fuer-jonathan/small/jonathan1.jpg') }}" width="170" /></td>
-        <td>{{ $pr->project_name }}</td>
-        <td>{{ $pr->completed_on }}</td>
-        <td>60</td>
-        <td>
-            @if($pr->succ_funded == 1)
-                OK
-            @endif
-        </td>
-        <td><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $pr->slug) }}" class="btn btn_sec">{{ trans('userpanel.view-project') }}</a></td>
-    </tr>
-    @endforeach
+    @if(! is_null($contributions))
+        @foreach($contributions as $pledge)
+            <tr>
+                @foreach($pledge->project->mainImage as $image)
+                    <td class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="{{ asset('img/'.$pledge->project->slug.'/small/'.$image->filename) }}" alt="{{ $pledge->project->slug }}" class="img-responsive"/>
+                    </td>
+                @endforeach
+                    <td class="col-md-3 col-sm-3 col-xs-3">
+                        {{ $pledge->project->project_name }}
+                    </td>
+                    <td class="col-md-3 col-sm-2 col-xs-2">
+                        {{ $pledge->created_at }}
+                    </td>
+                    <td class="col-md-1 col-sm-1 col-xs-1 text-right table-currency">
+                        {{ '&euro; '.$pledge->amount }}
+                    </td>
+                    <td class="col-md-2 col-sm-2 col-xs-2">
+                        @if($pledge->project->succ_funded == 1)
+                            <p class="finished-td mb-0">{{ trans('home-page.finished') }}</p>
+                        @else
+                            <p class="ongoing-td mb-0">{{ trans('my-contributions.ongoing') }}</p>
+                        @endif
+                    </td>
+                    <td class="col-md-2 col-sm-2 col-xs-2">
+                        @if($pledge->project->succ_funded == 1)
+                            <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project').'/'.$pledge->project->slug) }}" class="btn btn_sec-td">{{ trans('userpanel.view-project') }}</a>
+                        @else
+                            <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project').'/'.$pledge->project->slug) }}" class="btn button-main contribute-td">{{ trans('my-contributions.contribute') }}</a>
+                        @endif
+                    </td>
+            </tr>
+        @endforeach
+    @endif
     </tbody>
-
 </table>
