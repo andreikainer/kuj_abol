@@ -115,7 +115,18 @@ class UserpanelController extends Controller
         }
         $user->save();
 
-        //$imageFolderPath = public_path("img/avatars/$user");
+
+        // Make the image and document directories.
+        $imageFolderPath = public_path("img/avatars");
+        $this->makeImageDirectories($imageFolderPath);
+
+        // Resize the images to our needs, and save them in their directories.
+        $this->resizeImagesAndSaveToFolders($userImages, $user->user_name, $imageFolderPath, null);
+
+
+        // Create new Image instances in the database.
+        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
+
         Session::flash('flash_message', trans('userpanel.form-change-success'));
         return redirect()->back();
     }

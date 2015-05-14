@@ -52,7 +52,7 @@
                                 <br>
                                 <i class="fa fa-upload"></i><p>{{trans('userpanel.avatar-upload')}}</p>
                     </label>
-                    {!! Form::file('main_img', ['id' => 'main_img', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
+                    {!! Form::file('avatar', ['id' => 'avatar', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
                 </div>
                 <!-- end avatar input -->
             </div>
@@ -69,7 +69,6 @@
             <div class="form-error none" data-error="first_name"></div>
             <div class="form-error">{{ $errors->first('first_name') }}</div>
         </div>
-
         <!-- end firstname input -->
 
         <!-- Lastname Form Input -->
