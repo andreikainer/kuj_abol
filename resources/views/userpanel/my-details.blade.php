@@ -35,7 +35,6 @@
                 <div class="form-error pad">{{ $errors->first('email') }}</div>
                 <!-- end email input -->
 
-                 <a href="{{ action('Auth\PasswordController@getEmail') }}" id="forgot-my-password" class="col-xs-10 col-xs-offset-1 btn login-submit mt-1em text-center">{{ trans('login-page.forgot-password') }}</a>
             </div>
         </div>
 

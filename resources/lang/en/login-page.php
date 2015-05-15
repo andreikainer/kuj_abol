@@ -33,7 +33,7 @@ return [
      */
     'place-username'    => 'Your username',
     'place-password'    => 'Your password',
-    'place-email'       =>'Your email',
+    'place-email'       => 'Your email',
 
     /**
      * Top text box.
@@ -43,11 +43,12 @@ return [
     /**
      * Messages.
      */
-    'login-fail'    => 'Woops! Incorrect email address or password. Please, try again.',
+    'login-fail'    => 'Woops! Incorrect username or password. Please, try again.',
     'login-success' => 'You have been successfully logged in.',
     'logout'        => 'You have been logged out.',
     'baned-user'    => 'Your account was deactivated.',
     'email-fail'    => 'Woops! There is an error in your input. Please try again.',
-    'email-success' => 'We sent you the password recovery link. Please check your email.'
+    'email-success' => 'We sent you the password recovery link. Please check your email.',
+    'email-subject' => 'Your Password Reset Link',
 
 ];

@@ -40,6 +40,15 @@
     <div class="form-error">{{$errors->first('password_confirmation')}}</div>
 <!-- end password_confirmation input -->
 
+<!-- Token Form Input -->
+    <div class="form-group hidden">
+    	{!! Form::label(null, trans('login-page.password-confirmation'), ['class' => 'form-label']) !!}
+    	{!! Form::text('token', $token,
+        		array('required')) !!}
+    </div>
+<!-- end token input -->
+
+
 <!-- Submit button -->
     <div class="form-group clearfix">
     	{!! Form::submit(trans('login-page.reset-password'),

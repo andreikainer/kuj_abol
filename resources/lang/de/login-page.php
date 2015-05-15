@@ -48,6 +48,7 @@ return [
     'logout'        => 'Sie haben sich abgemeldet',
     'baned-user'    => 'Deine Registrierung wurde deaktiviert.',
     'email-fail'         => 'Woops! There is an error in your input. Please try again.',
-    'email-success' => 'We sent you the password recovery link. Please check your email.'
+    'email-success' => 'We sent you the password recovery link. Please check your email.',
+    'email-subject' => 'Your Password Reset Link',
 
 ];

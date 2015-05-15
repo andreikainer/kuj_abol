@@ -1,8 +1,14 @@
 var panelCollection = $('div.userpanel-section');
 var tabCollection = $('.form-section-tab');
 
-
+// tabs click events
 $('.form-section-tab').on('click', function()
+{
+    $.publish('section-tab.click', this);
+});
+
+// side menu click events
+$('.sidemenu-item').on('click', function()
 {
     $.publish('section-tab.click', this);
 });
