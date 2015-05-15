@@ -34,6 +34,8 @@
                 <div class="form-error none pad" data-error="email"></div>
                 <div class="form-error pad">{{ $errors->first('email') }}</div>
                 <!-- end email input -->
+
+                 <a href="{{ action('Auth\PasswordController@getEmail') }}" id="forgot-my-password" class="col-xs-10 col-xs-offset-1 btn login-submit mt-1em text-center">{{ trans('login-page.forgot-password') }}</a>
             </div>
         </div>
 
@@ -42,17 +44,25 @@
             <div class="row">
                 <!-- Avatar Form Input -->
                 <div class="col-xs-12 mt-2em">
-                    <label for="main_img" class="image-upload-label text-center">
-                        <img class="img-responsive center-block avatar" src="@if($user->avatar === null )
-                                {{ asset('img/avatars/avatar-placeholder.svg') }}"
-                            @else
-                                {{ asset('img/avatars/'.$user->avatar) }}"
-                            @endif
-                                alt="{{ $user->user_name }}" />
-                                <br>
-                                <i class="fa fa-upload"></i><p>{{trans('userpanel.avatar-upload')}}</p>
-                    </label>
-                    {!! Form::file('avatar', ['id' => 'avatar', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
+                    <div class="image-upload-wrapper">
+                        <img src="" alt="" class="image-upload-preview img-responsive"/>
+                        <div class="image-upload-controls">
+                            <div class="image-loader"></div>
+                            <label for="avatar" class="image-upload-label text-center">
+                                <img class="img-responsive center-block avatar" src="@if($user->avatar === null )
+                                        {{ asset('img/avatars/avatar-placeholder.svg') }}"
+                                    @else
+                                        {{ asset('img/avatars/'.$user->avatar) }}"
+                                    @endif
+                                        alt="{{ $user->user_name }}" />
+                                        <br>
+                                        <i class="fa fa-upload"></i><p>{{trans('userpanel.avatar-upload')}}</p>
+                            </label>
+                            {!! Form::file('avatar', ['id' => 'avatar', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
+                             <div class="form-error none pad" data-error="avatar"></div>
+                             <div class="form-error pad">{{ $errors->first('avatar') }}</div>
+                        </div>
+                    </div>
                 </div>
                 <!-- end avatar input -->
             </div>

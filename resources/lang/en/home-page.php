@@ -27,7 +27,7 @@ return [
 
     'carousel-text-3'  =>   '<h1>A big THANK YOU to our sponsors!</h1>
                             <p class="hidden-xs">Promote you business by donating a project and we’ll place the logo of your company on our website.</p>
-                            <p><a class="button-transparent" href=":cta-link" type="button">VIEW OUR SPONSORS</a></p>',
+                            <p><a class="button-transparent" href=":cta-link" type="button">VIEW SPONSORS</a></p>',
 
     'carousel-text-4'  =>   '<h1>Together we can make it happen!</h1>
                             <p class="hidden-xs">Help a family in need to gain relief in everyday life</p>

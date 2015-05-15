@@ -194,6 +194,6 @@ function getLocale(response)
     }
 
 /*-- To fade out flash-message after delay --*/
-    $('.flash-message').fadeIn(600).delay(3000).fadeOut(300);
+   // $('.flash-message').fadeIn(600).delay(3000).fadeOut(300);
 
 });

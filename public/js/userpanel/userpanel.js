@@ -39,10 +39,10 @@ function makeTabActive(collection, i)
             'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
             'numOnly' : 'Must contain numbers only. And not begin with a space.',
             'image' : 'Please choose a valid image format.',
-            'minLength' : function(limit)
+            'maxSize' : function(limit)
             {
-                return 'This field must contain at least '+limit+' characters';
-            }
+                return 'File size must not exceed '+limit+'MB.'
+            },
         },
         'de' : {
             'required'  : 'Dieses Feld ist erforderlich',
@@ -51,13 +51,53 @@ function makeTabActive(collection, i)
             'phone' : 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.',
             'numOnly' : 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
             'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
-            'minLength' : function(limit)
+            'maxSize' : function(limit)
             {
-                return 'Diese Feld muss mindestens '+limit+' Charaktere enthalten';
-            }
+                return 'Dateigröße darf '+limit+'MB nicht überschreiten.'
+            },
         }
     };
 
+
+    /*-- Functions --*/
+    function checkImageMime(mime)
+    {
+        return (   mime === 'image/jpg'
+        || mime === 'image/jpeg'
+        || mime === 'image/png'
+        || mime === 'image/bmp'
+        || mime === 'image/tiff');
+    }
+
+    /**
+     * Check the filesize against a limit (in MB)
+     *
+     * @param value
+     * @param limit
+     * @returns {boolean}
+     */
+    function checkFileSize(value, limit)
+    {
+        var value = value/1000000;
+        return (value <= limit);
+    }
+
+
+    function loadImagePreview(file, container)
+    {
+        var reader = new FileReader();
+        reader.onload = function(e)
+        {
+            container.attr('src', e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+
+
+    function createImageCloseButton(container)
+    {
+        return $('<span class="image-upload-close-button">X</span>').prependTo(container);
+    }
 
     /*-- Publish Events --*/
     // Form Field blur events.
@@ -194,6 +234,94 @@ function makeTabActive(collection, i)
         }
 
         hideErrorMessage(name);
+    });
+
+    /*
+     +----------------------------------------------------------------------------------------------------
+     |
+     |  IMAGE PREVIEW
+     |
+     +----------------------------------------------------------------------------------------------------
+     */
+
+    /**
+     * PUBLISH EVENTS
+     */
+    $('input[name="avatar"]').on('change', function(event)
+    {
+        console.log('pressed');
+        $.publish('image.selected', this);
+
+    });
+
+    if($('span.image-upload-close-button'))
+    {
+        $('span.image-upload-close-button').on('click', function()
+        {
+            $.publish('document-preview.close', this);
+            $.publish('image-preview.close', this);
+        });
+    }
+
+    /**
+     * SUBSCRIBE
+     */
+    $.subscribe('image.selected', function(event, data)
+    {
+        if (! checkImageMime(data.files[0].type)) {
+
+            showErrorMessage(data.id, errorMessages[window.locale].image);
+            return false;
+        }
+        if(! checkFileSize(data.files[0].size, 20))
+        {
+
+            showErrorMessage(data.id, errorMessages[window.locale].maxSize(20));
+            return false;
+        }
+
+        hideErrorMessage(data.id);
+
+        var inputControls = $(data).parent('.image-upload-controls');
+        var previewContainer = inputControls.siblings('.image-upload-preview');
+        var loaderImage = $(data).siblings('.image-loader');
+        console.log(loaderImage);
+
+        // Show the loading animation.
+        //loaderImage.fadeIn('slow')
+        //    .wait(1000)
+        //    .fadeOut()
+        //    .then(function()
+        //    {
+        //        // Fade out the file input, and load the selected image.
+        //        inputControls.fadeOut('slow');
+        //        loadImagePreview(data.files[0], previewContainer);
+        //    })
+        //    .wait(700)
+        //    .then(function()
+        //    {
+        //        // Fade the selected image into view.
+        //        $(previewContainer).fadeIn('slow')
+        //            .wait(700)
+        //            .then(function()
+        //            {
+        //                // Create a close button, and attach a click event to it.
+        //                var closeButton = createImageCloseButton(previewContainer.parent());
+        //                $(closeButton).on('click', function()
+        //                {
+        //                    $.publish('image-preview.close', this);
+        //                });
+        //            });
+        //    });
+    });
+
+    // Close the image preview, and bring the input controls into view.
+    $.subscribe('image-preview.close', function(event, button)
+    {
+        // Remove any trace of a saved image, if the user decides to replace it.
+        $(button).siblings('input[type="hidden"]').remove();
+        // Close the image preview.
+        closeFilePreview(button);
     });
 
 })();

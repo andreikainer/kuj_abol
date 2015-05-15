@@ -103,9 +103,7 @@ class UserpanelController extends Controller
             'address'       => $request->get('address')
         ];
 
-        $userImages = [
-            'avatar'  => $request->file('avatar'),
-        ];
+        $avatar = $request->file('avatar');
 
         // Update user info in DB
         $user = \Auth::user();
@@ -118,17 +116,40 @@ class UserpanelController extends Controller
 
         // Make the image and document directories.
         $imageFolderPath = public_path("img/avatars");
-        $this->makeImageDirectories($imageFolderPath);
 
         // Resize the images to our needs, and save them in their directories.
-        $this->resizeImagesAndSaveToFolders($userImages, $user->user_name, $imageFolderPath, null);
+        $this->resizeAvatarAndSave($avatar, $user->user_name, $imageFolderPath);
 
 
         // Create new Image instances in the database.
-        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
+        //$this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
 
         Session::flash('flash_message', trans('userpanel.form-change-success'));
         return redirect()->back();
+    }
+
+    /**
+     * Resize and rename the images to our formats.
+     * Move them to their respective directories.
+     *
+     * @param $multiDimArr
+     * @param $childName
+     * @param $parentDirectoryPath
+     * @param $originalProjectSlug
+     */
+    protected function resizeAvatarAndSave($image, $userName, $avatarPath)
+    {
+        $extension = explode('.', $image);
+        $extension = $extension[count($extension)-1];
+        $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+        return $filename;
+
+//        \Image::make($image)->resize(250, 160, function($constraint)
+//        {
+//            $constraint->upsize();
+//            $constraint->aspectRatio();
+//        })->limitColors(255)
+//                ->save($avatarPath);
     }
 
     /**
