@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Favourite;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -22,6 +23,16 @@ use Intervention\Image\Facades\Image;
 
 class UserpanelController extends Controller
 {
+    /** Only allow auth user to access
+     *
+     */
+    public function __construct()
+    {
+
+        $this->middleware('auth', ['only' => ['show', 'edit']]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,9 +58,9 @@ class UserpanelController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store($id)
     {
-        //
+        return $id;
     }
 
     /**
@@ -73,11 +84,17 @@ class UserpanelController extends Controller
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
+
+        $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
+
+        return view('userpanel.index', compact('user', 'contributions', 'favourites'));
+
         if($user->id === 1)
         {
             return view('adminpanel.index', compact('user'));
         }
         return view('userpanel.index', compact('user', 'contributions'));
+
     }
 
     /**
@@ -193,10 +210,6 @@ class UserpanelController extends Controller
         //
     }
 
-    public function favourite()
-    {
-        return 'this is it';
-    }
 
     public function delete($id)
     {

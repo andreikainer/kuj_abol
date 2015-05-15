@@ -99,6 +99,16 @@ class Project extends Model {
     }
 
     /**
+     * Get the favourites made to this project.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function favourites()
+    {
+        return $this->hasManyThrough('App\Favourite', 'favorite_tbl');
+    }
+
+    /**
      * Format the target amount, before entering into DB.
      *
      * @param $value
