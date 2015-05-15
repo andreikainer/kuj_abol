@@ -20,6 +20,16 @@ use App\Http\Controllers\Auth\AuthController;
 
 class UserpanelController extends Controller
 {
+    /** Only allow auth user to access
+     *
+     */
+    public function __construct()
+    {
+
+        $this->middleware('auth', ['only' => ['show', 'edit']]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
