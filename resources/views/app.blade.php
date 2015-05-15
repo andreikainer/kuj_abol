@@ -155,8 +155,17 @@
                		    <div class="col-sm-7 col-md-2 col-md-pull-2 col-lg-2 col-lg-pull-1 collapse navbar-collapse" id="main_nav" role="navigation">
                  	       <hr class="visible-sm">
                  	       <ul class="nav navbar-nav">
-                   	        	<li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getLogin') }}"><i class="fa fa-sign-in"></i>  {{ trans('app.login') }}</a></li>
-                                <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getRegister') }}"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
+
+                                <!-- if there is a logged in user in the session, change the buttons to LOGOUT and USERNAME -->
+                                    @if(Session::has('username'))
+                                        <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getLogout') }}"><i class="fa fa-sign-in"></i>{{ trans('app.logout') }}</a></li>
+                                        <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('UserpanelController@show', Session::get('username')) }}"><i class="fa fa-user"></i>{{ ucfirst(Session::get('username')) }}</a></li>
+
+                                    @else
+                                <!-- if there is no logged in user in the session, change the buttons to LOGIN and REGISTER -->
+                                        <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getLogin') }}"><i class="fa fa-sign-in"></i>  {{ trans('app.login') }}</a></li>
+                                        <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getRegister') }}"><i class="fa fa-user"></i>  {{ trans('app.register') }}</a></li>
+                                    @endif
 
                    	        	<li class="dropdown">
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>

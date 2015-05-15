@@ -18,6 +18,8 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Auth\AuthController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Intervention\Image\Facades\Image;
 
 class UserpanelController extends Controller
 {
@@ -82,9 +84,17 @@ class UserpanelController extends Controller
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
+
         $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
-        //dd($favourites);
+
         return view('userpanel.index', compact('user', 'contributions', 'favourites'));
+
+        if($user->id === 1)
+        {
+            return view('adminpanel.index', compact('user'));
+        }
+        return view('userpanel.index', compact('user', 'contributions'));
+
     }
 
     /**
@@ -113,11 +123,8 @@ class UserpanelController extends Controller
             'last_name'     => $request->get('last_name'),
             'business_name' => $request->get('business_name'),
             'tel_number'    => $request->get('tel_number'),
-            'address'       => $request->get('address')
-        ];
-
-        $userImages = [
-            'avatar'  => $request->file('avatar'),
+            'address'       => $request->get('address'),
+            //'avatar'        => $request->file('avatar')
         ];
 
         // Update user info in DB
@@ -128,20 +135,68 @@ class UserpanelController extends Controller
         }
         $user->save();
 
+        $avatar = $request->file('avatar');
 
-        // Make the image and document directories.
-        $imageFolderPath = public_path("img/avatars");
-        $this->makeImageDirectories($imageFolderPath);
+        if($avatar !== null)
+        {
+            // Make the image and document directories.
+            $imageFolderPath = public_path("img/avatars");
 
-        // Resize the images to our needs, and save them in their directories.
-        $this->resizeImagesAndSaveToFolders($userImages, $user->user_name, $imageFolderPath, null);
+            // Resize the images to our needs, and save them in their directories.
+            $this->resizeAvatarAndSave($avatar, $user->user_name, $imageFolderPath);
 
+            // Create new Image instances in the database.
+            $this->saveImageToDB($avatar, $user->user_name);
 
-        // Create new Image instances in the database.
-        $this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
-
-        Session::flash('flash_message', trans('userpanel.form-change-success'));
+            Session::flash('flash_message', trans('userpanel.form-change-success'));
+        }
         return redirect()->back();
+    }
+
+    protected function saveImageToDB($avatar, $userName)
+    {
+
+        // If $image is not an instance of a file, it is the hidden field value sent,
+        // with a saved image preview.
+        if($avatar instanceof UploadedFile)
+        {
+            $extension = explode('.', $avatar->getClientOriginalName());
+            $extension = $extension[count($extension)-1];
+            // Name images by user's name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+        }
+        else
+        {
+            $extension = explode('.', $avatar->getClientOriginalName());
+            $extension = $extension[count($extension)-1];
+            // Name images by user's name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+        }
+
+        $user = \Auth::user();
+        $user->avatar = $filename;
+        $user->save();
+    }
+
+    /**
+     * Resize and rename the images to our formats.
+     * Move them to their respective directories.
+     *
+     * @param $avatar
+     * @param $userName
+     * @param $avatarPath
+     */
+    protected function resizeAvatarAndSave($avatar, $userName, $avatarPath)
+    {
+        $extension = explode('.', $avatar->getClientOriginalName());
+        $extension = $extension[count($extension) - 1];
+        $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName) . '.' . $extension));
+
+        Image::make($avatar)->resize(250, 160, function ($constraint) {
+            $constraint->upsize();
+            $constraint->aspectRatio();
+        })->limitColors(255)
+            ->save($avatarPath.'/'.$filename);
     }
 
     /**
@@ -155,15 +210,6 @@ class UserpanelController extends Controller
         //
     }
 
-//    public function favourite($favouritedProjectId)
-//    {
-//
-//        //$user = User::with('projects')->where('user_name', $username)->firstOrFail();
-//        //$project = Favourite::with('projects')->where('project_id', $favouritedProjectId)->get();
-//
-//        $favourite = Favourite::with('project')->all;
-//        return redirect()->back();
-//    }
 
     public function delete($id)
     {

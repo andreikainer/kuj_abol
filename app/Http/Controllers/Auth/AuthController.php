@@ -201,6 +201,7 @@ class AuthController extends Controller {
         if(Session::has('deleted'))
         {
             Session::flash('flash_message', Session::get('deleted'));
+            Session::forget('deleted');
         }else{
             Session::flash('flash_message', trans('login-page.logout'));
         }

@@ -49,7 +49,7 @@
       }else if($(window).innerWidth() >= 1200)
       {
           aImg[a].src = 'img/main-carousel/xlg/' + imgName + '.jpg';
-      }else if(window.devicePixelRatio >= 2)
+      }else if(window.devicePixelRatio >= 3)
       {
           aImg[a].src = 'img/main-carousel/retina/' + imgName + '.jpg';
       }

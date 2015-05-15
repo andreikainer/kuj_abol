@@ -11,12 +11,6 @@
                     <div class="no-projects">{{ trans('login-page.reset') }}</div>
 
 
-					@if (session('status'))
-						<div class="alert alert-success">
-							{{ session('status') }}
-						</div>
-					@endif
-
 			        <!-- Send a reset link form -->
                          @include('forms.send-reset-link-form')
                </div>

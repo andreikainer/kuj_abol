@@ -173,46 +173,73 @@
 
         $('textarea[name="short_desc"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('short-description.blur', this);
         });
 
         $('textarea[name="full_desc"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('full-description.blur', this);
         });
 
         $('input[name="target_amount"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('target-amount.blur', this);
         });
 
         $('input[name="child_name"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('child-name.blur', this);
         });
 
         $('input[name="first_name"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('first-name.blur', this);
         });
 
         $('input[name="last_name"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('last-name.blur', this);
         });
 
         $('input[name="email"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('email.blur', this);
         });
 
         $('textarea[name="address"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('address.blur', this);
         });
 
         $('input[name="tel_number"]').on('blur', function()
         {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
             $.publish('tel-number.blur', this);
         });
 

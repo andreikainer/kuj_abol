@@ -10,10 +10,9 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="col-sm-3 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0">{{ trans('userpanel.my-contributions') }}</div>
-                        <div class="col-sm-3 text-center form-section-tab" data-section="1">{{ trans('userpanel.my-favourites') }}</div>
-                        <div class="col-sm-3 text-center form-section-tab" data-section="2">{{ trans('userpanel.my-projects') }}</div>
-                        <div class="col-sm-3 text-center form-section-tab" data-section="3">{{ trans('userpanel.my-details') }}</div>
+                        <div class="col-sm-4 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0">{{ trans('adminpanel.project-approve') }}</div>
+                        <div class="col-sm-4 text-center form-section-tab" data-section="1">{{ trans('adminpanel.user-management') }}</div>
+                        <div class="col-sm-4 text-center form-section-tab" data-section="2">{{ trans('adminpanel.sponsors-management') }}</div>
                     </div>
                 </div>
             <!-- end tabs -->
@@ -22,7 +21,7 @@
                 <div class="row-fluid bt-none clearfix">
                     <div id="userpanel-wrapper" class="col-sm-12">
 
-                        @include('userpanel.tabs-overview')
+                        @include('adminpanel.tabs-overview')
 
                     </div>
                 </div> <!-- end panel content -->
@@ -39,14 +38,10 @@
                     @endif
                         alt="{{ $user->user_name }}" />
                 <h3 class="text-center"> {{ $user->first_name }} {{ $user->last_name }}</h3>
-                @if($user->business_name == !null)
-                <h4 class="text-center"> {{ $user->business_name }} </h4>
-                @endif
                 <div class="list-group add-nav">
-                    <a href="#" data-section="0" class="list-group-item sidemenu-item"><i class="fa fa-cubes"></i> {{ trans('userpanel.my-contributions') }}</a>
-                    <a href="#" data-section="1" class="list-group-item sidemenu-item"><i class="fa fa-star"></i> {{ trans('userpanel.my-favourites') }}</a>
-                    <a href="#" data-section="2" class="list-group-item sidemenu-item"><i class="fa fa-line-chart"></i> {{ trans('userpanel.my-projects') }}</a>
-                    <a href="#" data-section="3" class="list-group-item sidemenu-item"><i class="fa fa-user"></i> {{ trans('userpanel.my-details') }}</a>
+                    <a href="#" data-section="0" class="list-group-item sidemenu-item"><i class="fa fa-check-circle"></i> {{ trans('adminpanel.project-approve') }}</a>
+                    <a href="#" data-section="1" class="list-group-item sidemenu-item"><i class="fa fa-users"></i> {{ trans('adminpanel.user-management') }}</a>
+                    <a href="#" data-section="2" class="list-group-item sidemenu-item"><i class="fa fa-cube"></i> {{ trans('adminpanel.sponsors-management') }}</a>
                 </div>
             </div>
         </div>

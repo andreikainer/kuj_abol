@@ -1,8 +1,14 @@
 var panelCollection = $('div.userpanel-section');
 var tabCollection = $('.form-section-tab');
 
-
+// tabs click events
 $('.form-section-tab').on('click', function()
+{
+    $.publish('section-tab.click', this);
+});
+
+// side menu click events
+$('.sidemenu-item').on('click', function()
 {
     $.publish('section-tab.click', this);
 });
@@ -30,7 +36,7 @@ function makeTabActive(collection, i)
     /*------------------------------------------------------------------*/
     /*-- CHANGE DETAILS OPTION --*/
     /*------------------------------------------------------------------*/
-    /*-- Messages Object --*/
+/*-- Messages Object --*/
     var errorMessages = {
         'en' : {
             'required'  : 'This field is required.',
@@ -39,10 +45,10 @@ function makeTabActive(collection, i)
             'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
             'numOnly' : 'Must contain numbers only. And not begin with a space.',
             'image' : 'Please choose a valid image format.',
-            'minLength' : function(limit)
+            'maxSize' : function(limit)
             {
-                return 'This field must contain at least '+limit+' characters';
-            }
+                return 'File size must not exceed '+limit+'MB.'
+            },
         },
         'de' : {
             'required'  : 'Dieses Feld ist erforderlich',
@@ -51,15 +57,46 @@ function makeTabActive(collection, i)
             'phone' : 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.',
             'numOnly' : 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
             'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
-            'minLength' : function(limit)
+            'maxSize' : function(limit)
             {
-                return 'Diese Feld muss mindestens '+limit+' Charaktere enthalten';
-            }
+                return 'Dateigröße darf '+limit+'MB nicht überschreiten.'
+            },
         }
     };
 
 
-    /*-- Publish Events --*/
+/*-- Functions --*/
+
+    /**
+     * Validate an image's mime type against a 'white-list'
+     *
+     * @param mime
+     * @returns {boolean}
+     */
+    function checkImageMime(mime)
+    {
+        return (   mime === 'image/jpg'
+        || mime === 'image/jpeg'
+        || mime === 'image/png'
+        || mime === 'image/bmp'
+        || mime === 'image/tiff');
+    }
+
+    /**
+     * Check the filesize against a limit (in MB)
+     *
+     * @param value
+     * @param limit
+     * @returns {boolean}
+     */
+    function checkFileSize(value, limit)
+    {
+        var value = value/1000000;
+        return (value <= limit);
+    }
+
+
+/*-- Publish Events --*/
     // Form Field blur events.
     $('.account input[name="user_name"]').on('blur', function()
     {
@@ -194,6 +231,43 @@ function makeTabActive(collection, i)
         }
 
         hideErrorMessage(name);
+    });
+
+    /*
+     +----------------------------------------------------------------------------------------------------
+     |
+     |  IMAGE PREVIEW
+     |
+     +----------------------------------------------------------------------------------------------------
+     */
+
+    /**
+     * PUBLISH EVENTS
+     */
+    $('input[name="avatar"]').on('change', function(event)
+    {
+        $.publish('image.selected', this);
+
+    });
+
+
+    /**
+     * SUBSCRIBE
+     */
+    $.subscribe('image.selected', function(event, data)
+    {
+        if (!checkImageMime(data.files[0].type)) {
+
+            showErrorMessage(data.id, errorMessages[window.locale].image);
+            return false;
+        }
+        if (!checkFileSize(data.files[0].size, 20)) {
+
+            showErrorMessage(data.id, errorMessages[window.locale].maxSize(20));
+            return false;
+        }
+
+        hideErrorMessage(data.id);
     });
 
 })();
