@@ -7,7 +7,7 @@
     @endif
 </div>
 
-{!! Form::open(['action' => 'UserpanelController@update', 'class' => 'row', 'method' => 'post']) !!}
+{!! Form::open(['action' => 'UserpanelController@update', 'class' => 'row', 'method' => 'post', 'files' => 'true']) !!}
 
 <div class="col-xs-12">
     <div class="row">
@@ -55,7 +55,7 @@
                                     @endif
                                         alt="{{ $user->user_name }}" />
                                         <br>
-                                        <i class="fa fa-upload"></i><p>{{trans('userpanel.avatar-upload')}}</p>
+                                        <i class="fa fa-upload"></i><p class="image-upload-label-heading">{{trans('userpanel.avatar-upload')}}</p>
                             </label>
                             {!! Form::file('avatar', ['id' => 'avatar', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
                              <div class="form-error none pad" data-error="avatar"></div>
