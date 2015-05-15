@@ -45,7 +45,12 @@
                    </div>
                 </div>
                 <div class="btn">
-                    <a href="#"><div id="favorite" class="btn btn-primary button-main" role="button">
+                    @if(Session::has('username'))
+                        <a href="{{ action('UserpanelController@show') }}">
+                    @else
+                        <a href="{{ url('UserpanelController@favourite') }}">
+                    @endif
+                        <div id="favorite" class="btn btn-primary button-main" role="button">
                         <i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}
                     </div></a>
                 </div>

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Favourite;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -55,9 +56,9 @@ class UserpanelController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store($id)
     {
-        //
+        return $id;
     }
 
     /**
@@ -81,7 +82,9 @@ class UserpanelController extends Controller
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
-        return view('userpanel.index', compact('user', 'contributions'));
+        $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
+        //dd($favourites);
+        return view('userpanel.index', compact('user', 'contributions', 'favourites'));
     }
 
     /**
@@ -152,10 +155,15 @@ class UserpanelController extends Controller
         //
     }
 
-    public function favourite()
-    {
-        return 'this is it';
-    }
+//    public function favourite($favouritedProjectId)
+//    {
+//
+//        //$user = User::with('projects')->where('user_name', $username)->firstOrFail();
+//        //$project = Favourite::with('projects')->where('project_id', $favouritedProjectId)->get();
+//
+//        $favourite = Favourite::with('project')->all;
+//        return redirect()->back();
+//    }
 
     public function delete($id)
     {

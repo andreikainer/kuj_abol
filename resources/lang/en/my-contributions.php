@@ -11,10 +11,11 @@ return [
     | Language translation keys for the my contributions section.
     */
 
-    'th-1'          => 'Project Title',
-    'th-2'          => 'Contribution Date',
-    'th-3'          => 'Amount',
-    'th-4'          => 'Status',
+    'project-title'          => 'Project Title',
+    'contribution-date'      => 'Contribution Date',
+    'amount'                 => 'Amount',
+    'status'                 => 'Status',
+    'unfavourite'            => 'Unfavourite',
 
     'ongoing'       => 'ON-GOING',
     'contribute'    => 'Contribute',

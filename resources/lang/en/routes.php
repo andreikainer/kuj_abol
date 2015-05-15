@@ -37,5 +37,6 @@ return [
     'create-project/delete' => 'create-project/delete',
     'create-project/start'  => 'create-project/start',
     'temp-document'         => 'temp-document',
+    'favourite'             => 'favourite',
 
 ];

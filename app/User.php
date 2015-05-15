@@ -76,6 +76,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
+     * Get the favourites a user has made.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function favourite()
+    {
+        return $this->hasMany('App\Favourite');
+    }
+
+    /**
      * Get the projects that the user has saved.
      *
      * @return mixed
