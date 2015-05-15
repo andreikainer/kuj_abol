@@ -26,6 +26,7 @@ return [
     'account/register'      => 'benutzer/registrieren',
     'account/login'         => 'benutzer/einloggen',
     'account'               => 'benutzer',
+    'account/delete'        => 'account/delete',
     'logout'               => 'logout',
     'account/reset'        => 'benutzer/reset',
     'create-project/save'  => 'antrag-einreichen/speichern',

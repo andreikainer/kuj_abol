@@ -111,7 +111,7 @@
             $.publish('back-button.click', this);
         });
 
-        $('textarea[name="short_desc"]:not(.form-input-disabled)').on('keyup', function()
+        $('textarea[name="short_desc"]').on('keyup', function()
         {
             $.publish('short-description.keyup', this);
         });
@@ -135,7 +135,7 @@
         {
             var currSection = $(data).parents('fieldset').data('section');
             showSection(fieldsetCollection, currSection+1);
-            makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection+1)+'"]'));
+            makeTabActive(tabCollection, currSection+1);
             checkForErrors(currSection);
         });
 
@@ -143,7 +143,7 @@
         {
             var currSection = $(data).parents('fieldset').data('section');
             showSection(fieldsetCollection, currSection-1);
-            makeTabActive(tabCollection, $('.form-section-tab[data-section="'+(currSection-1)+'"]'));
+            makeTabActive(tabCollection, currSection-1);
             checkForErrors(currSection);
         });
 
@@ -1021,53 +1021,107 @@
      +----------------------------------------------------------------------------------------------------
      */
 
+        /**
+         * Bring a form fieldset into view.
+         *
+         * @param collection
+         * @param i
+         */
         function showSection(collection, i)
         {
             collection.fadeOut();
             collection.eq(i).fadeIn()
         }
 
+        /**
+         * Add styles to a section tab, a visual cue to the current section.
+         *
+         * @param collection
+         * @param i
+         */
         function makeTabActive(collection, i)
         {
             collection.removeClass('form-section-tab-active');
             collection.eq(i).addClass('form-section-tab-active');
         }
 
+        /**
+         * Display the form input's error message.
+         *
+         * @param name
+         * @param message
+         */
         function showErrorMessage(name, message)
         {
             $('.form-error[data-error*="'+name+'"]').html(message).fadeIn();
         }
 
+        /**
+         * Hide the form input's error message.
+         *
+         * @param name
+         */
         function hideErrorMessage(name)
         {
             $('.form-error[data-error*="'+name+'"]').fadeOut();
         }
 
+        /**
+         * Bring the error message at the head of form into view.
+         *
+         * @param message
+         */
         function displayErrorFlashMessage(message)
         {
             $('.error-box').html(message).fadeIn();
         }
 
+        /**
+         * Hide the error message at the head of form.
+         */
         function hideErrorFlashMessage()
         {
             $('.error-box').fadeOut().html('');
         }
 
+        /**
+         * Add the error styles to the form input.
+         *
+         * @param el
+         */
         function addFailClass(el)
         {
             $(el).removeClass('form-input-correct').addClass('form-input-error');
         }
 
+        /**
+         * Remove the error styles from the form input.
+         *
+         * @param el
+         */
         function removeFailClass(el)
         {
             $(el).removeClass('form-input-error');
         }
 
+        /**
+         * Display the amount of characters left allowed for entry.
+         *
+         * @param length
+         * @param limit
+         * @param display
+         */
         function updateCharCount(length, limit, display)
         {
             $(display).html(errorMessages[window.locale].charRemaining+' '+(limit-length)).fadeIn();
         }
 
+        /**
+         * Validate an image's mime type against a 'white-list'
+         *
+         * @param mime
+         * @returns {boolean}
+         */
         function checkImageMime(mime)
         {
             return (   mime === 'image/jpg'
@@ -1077,6 +1131,12 @@
                     || mime === 'image/tiff');
         }
 
+        /**
+         * Validate a document's mime type against a 'white-list'
+         *
+         * @param mime
+         * @returns {boolean}
+         */
         function checkDocumentMime(mime)
         {
             return (   mime === 'image/jpg'
@@ -1101,6 +1161,13 @@
             return (value <= limit);
         }
 
+        /**
+         * Run the user's selected image through the FileReader object.
+         * Set the src of the preview image element.
+         *
+         * @param file
+         * @param container
+         */
         function loadImagePreview(file, container)
         {
             var reader = new FileReader();
@@ -1111,6 +1178,12 @@
             reader.readAsDataURL(file);
         }
 
+        /**
+         * Remove the preview image from display.
+         * Bring the input controls back into view.
+         *
+         * @param button
+         */
         function closeFilePreview(button)
         {
             var image = $(button).siblings('.image-upload-preview');
@@ -1130,11 +1203,23 @@
                 });
         }
 
+        /**
+         * Prepend a close button to the preview image.
+         *
+         * @param container
+         * @returns {*|jQuery}
+         */
         function createImageCloseButton(container)
         {
             return $('<span class="image-upload-close-button">X</span>').prependTo(container);
         }
 
+        /**
+         * Check for any validation errors, whilst moving to a new fieldset.
+         * Render the section tab with feedback, if errors are present.
+         *
+         * @param sectionNum
+         */
         function checkForErrors(sectionNum)
         {
             var section = $('fieldset[data-section="'+sectionNum+'"]');
