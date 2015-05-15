@@ -71,7 +71,7 @@ class UserpanelController extends Controller
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
-        if($user->id === 2)
+        if($user->id === 1)
         {
             return view('adminpanel.index', compact('user'));
         }

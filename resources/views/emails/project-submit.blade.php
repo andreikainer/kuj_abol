@@ -1,9 +1,11 @@
-<h1>New Application Submitted</h1><br/><br/>
+<body>
+    <h1>{{ trans('project-submit-email.admin-title') }}</h1><br/>
 
-<p>Hi KuJ Team,</p>
+    <p>{{ trans('project-submit-email.admin-line-1') }}</p>
 
-<p>You have a new application pending for approval.</p>
+    <p>{{ trans('project-submit-email.admin-line-2') }}</p>
 
-<p>Click the link below, to view:</p>
+    <p>{{ trans('project-submit-email.admin-line-3') }}</p>
 
-{{ URL::to(LaravelLocalization::getCurrentLocale().'/'.$project['slug']) }}
+    {{ URL::to(LaravelLocalization::getCurrentLocale().'/'.$project['slug']) }}
+</body>

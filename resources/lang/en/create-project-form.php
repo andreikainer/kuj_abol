@@ -94,11 +94,6 @@ return [
     'not-authenticated'     => 'Please login to continue to page.',
 
     /**
-     * Email
-     */
-    'email-subject'         => 'New Project Submitted',
-
-    /**
      * Tips for Successful Campaign
      */
     'tips-heading'          => 'Helpful tips for creating a successful campaign',
