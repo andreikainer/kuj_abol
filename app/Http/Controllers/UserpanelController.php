@@ -33,7 +33,7 @@ class UserpanelController extends Controller
     {
 
         $this->middleware('auth');
-        //$this->middleware('checkRoute:route');
+        $this->middleware('checkRoute');
 
     }
 
