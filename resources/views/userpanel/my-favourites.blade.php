@@ -2,12 +2,11 @@
 <h3 class="text-center">{{ trans('userpanel.my-favourites') }}</h3>
 
 
-@if(is_null($favourites))
+@if($favourites->isEmpty())
     </br>
     <h4 class="text-center">You don't have any favoured projects. <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">See all current projects</a> </h4>
-@endif
 
-@if(! is_null($favourites))
+@else
 <table class="table table-striped table-hover table-responsive mt-3em">
     <thead>
     <tr>
@@ -39,7 +38,7 @@
             </td>
 
             <td class="col-md-3 col-sm-3 col-xs-3">
-                <a href="{{ action('UserpanelController@show', Session::get('username')) }}" type="button" class="btn btn-xs button-main button-user" id="username-btn">{{ trans('my-contributions.unfavourite') }}</a>
+                <a href="{{ action('UserpanelController@removeFavourite', $favourite->project->id) }}" type="button" class="btn btn-xs button-main button-user" id="username-btn">{{ trans('my-contributions.unfavourite') }}</a>
             </td>
 
             <td class="col-md-2 col-sm-2 col-xs-2">

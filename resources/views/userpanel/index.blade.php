@@ -43,10 +43,10 @@
                 <h4 class="text-center"> {{ $user->business_name }} </h4>
                 @endif
                 <div class="list-group add-nav">
-                    <a href="#" data-section="0" class="list-group-item sidemenu-item"><i class="fa fa-cubes"></i> {{ trans('userpanel.my-contributions') }}</a>
-                    <a href="#" data-section="1" class="list-group-item sidemenu-item"><i class="fa fa-star"></i> {{ trans('userpanel.my-favourites') }}</a>
-                    <a href="#" data-section="2" class="list-group-item sidemenu-item"><i class="fa fa-line-chart"></i> {{ trans('userpanel.my-projects') }}</a>
-                    <a href="#" data-section="3" class="list-group-item sidemenu-item"><i class="fa fa-user"></i> {{ trans('userpanel.my-details') }}</a>
+                    <a href="" data-section="0" class="list-group-item sidemenu-item"><i class="fa fa-cubes"></i> {{ trans('userpanel.my-contributions') }}</a>
+                    <a href="" data-section="1" class="list-group-item sidemenu-item"><i class="fa fa-star"></i> {{ trans('userpanel.my-favourites') }}</a>
+                    <a href="" data-section="2" class="list-group-item sidemenu-item"><i class="fa fa-line-chart"></i> {{ trans('userpanel.my-projects') }}</a>
+                    <a href="" data-section="3" class="list-group-item sidemenu-item"><i class="fa fa-user"></i> {{ trans('userpanel.my-details') }}</a>
                 </div>
             </div>
         </div>

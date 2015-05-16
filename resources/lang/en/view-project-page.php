@@ -16,9 +16,14 @@ return [
   'progress'               => 'Progress:',
   'fund-this-project'      => 'Fund this Project',
   'completed'              => 'Completed',
-  'support-options'       =>  'Support Options',
+  'support-options'        =>  'Support Options',
   'share-on-facebook'      => 'Share on Facebook',
   'add-to-favourites'      => 'Add to Favourites',
+  'unfavourite'            => 'Unfavourite',
+  'close'                  => 'Close',
+  'login'                  => 'Login',
+  'login-message'          => 'Please log in or register to favourite this project',
+
 
   'business-building-block' => '<h3>"Business" Building-block<br> &euro; 150,00 + Ust each</h3>
                                <h4>Our special offer for Businesses of all kind. Fund this project and receive in return:</h4>

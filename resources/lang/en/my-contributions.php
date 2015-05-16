@@ -8,7 +8,7 @@ return [
     | Create Project Form Translations ENGLISH
     |--------------------------------------------------------------------------
     |
-    | Language translation keys for the my contributions section.
+    | Language translation keys for entire User panel.
     */
 
     'project-title'          => 'Project Title',
@@ -16,8 +16,12 @@ return [
     'amount'                 => 'Amount',
     'status'                 => 'Status',
     'unfavourite'            => 'Unfavourite',
+    'application-status'    =>  'Application Status',
+    'project-status'        =>  'Project Status',
 
     'ongoing'       => 'ON-GOING',
     'contribute'    => 'Contribute',
+    'approved'      => 'approved',
+    'pending'       => 'pending',
 
 ];

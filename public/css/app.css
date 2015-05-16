@@ -5732,6 +5732,20 @@ a.tip-title {
     font-size: 40px;
     color: #3fa3db; }
 
+#closing-btn {
+  background-color: #ed5a4d;
+  border-color: #ed5a4d !important; }
+
+#closing-btn:hover {
+  background-color: #eb4536; }
+
+.modal-sm {
+  font-size: 1.2rem;
+  height: 3em; }
+
+.modal-body {
+  min-height: 0 !important; }
+
 /*------------------------------------------------------------------*/
 /*-- REGISTER PAGE SPECIFIC --*/
 /*------------------------------------------------------------------*/

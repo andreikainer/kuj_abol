@@ -40,22 +40,38 @@
                 </div>
                 <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
                 <div class="btn">
-                   <div id="facebook-share" class="btn btn-primary button-main" role="button">
-                       <i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}
-                   </div>
+                    <div id="facebook-share" class="btn btn-primary button-main fb-share" role="button"><i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}</div><div id="fb-root"></div>
                 </div>
                 <div class="btn">
-                    @if(Session::has('username'))
-                        <a href="{{ action('UserpanelController@show') }}">
+                    @if(Session::has('username') && $favourites !== $project->id)
+                        <a href="{{ action('UserpanelController@addFavourite', $project->id) }}">
+                            <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}</div>
+                        </a>
+                    @elseif(Session::has('username') && $favourites == $project->id )
+                        <a href="{{ action('UserpanelController@removeFavourite', $project->id) }}">
+                            <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.unfavourite') }}</div>
+                        </a>
                     @else
-                        <a href="{{ url('UserpanelController@favourite') }}">
+                        <div id="favorite" class="btn btn-primary button-main" role="button" data-toggle="modal" data-target=".modal-message"><i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}</div>
                     @endif
-                        <div id="favorite" class="btn btn-primary button-main" role="button">
-                        <i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}
-                    </div></a>
                 </div>
             </div> <!-- statistics end-->
             </div>
+        <!-- Modal -->
+        <div class="modal fade modal-message" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p>{{ trans('view-project-page.login-message') }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="closing-btn" type="button" class="btn button-main button-user" data-dismiss="modal">{{ trans('view-project-page.close') }}</button>
+                        <a href="{{ action('Auth\AuthController@getLogin') }}"><button type="button" class="btn button-main button-user login">{{ trans('view-project-page.login') }}</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <div class="row">
             <div class="col-sm-12 col-md-6 col-md-offset-1 text-justify description form-element"> <!-- project description beginn-->
@@ -112,4 +128,21 @@
 
 @section('additional_js')
 <script src="{{ asset('js/view-project-page/view-project.js') }}"></script>
+
+<!--Facebook Share Modal-->
+<script>
+    $(document).ready(function() {
+        $('.fb-share').click(function() {
+            FB.ui({
+                method: 'feed',
+                name: '{{ $project->project_name }}',
+                link: '{{ Request::url() }}',
+                picture: '',
+                caption: 'Initiative Kinder- und Jugendf&ouml;rderungen',
+                description: '{{ $project->short_desc }}',
+                ref: '{{ $project->child_name}}'
+            });
+        });
+    });
+</script>
 @endsection

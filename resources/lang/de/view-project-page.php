@@ -19,6 +19,10 @@ return [
   'support-options'        => 'Förderungsbausteine',
   'share-on-facebook'      => 'Auf Facebook Teilen',
   'add-to-favourites'      => 'Zu meinen Favoriten',
+  'unfavourite'            => 'Favorit entfernen',
+  'close'                  => 'Schließen',
+  'login'                  => 'Einloggen',
+  'login-message'          => 'Bitte loggen Sie sich ein oder registrieren um dieses Förderungsprojekt zu favorisieren',
 
   'business-building-block' => '<h3>"Business" Förderungs-Baustein<br> &euro; 150,00 + Ust pro Baustein</h3>
                                <h4>Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>

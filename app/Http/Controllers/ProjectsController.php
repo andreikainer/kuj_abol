@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Document;
+use App\Favourite;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProjectRequest;
@@ -70,6 +71,9 @@ class ProjectsController extends Controller {
         $project = $slug;
         $logos = DB::table('sponsors_tbl')->get();
 
+        // find the Users Favourites and catch them
+        $favourites = Favourite::where('user_id', Session::get('userId'))->pluck('project_id');
+
         // convert DB date into european date format
         $finish_date = date("d-m-Y", strtotime($project->completed_on));
 
@@ -79,7 +83,7 @@ class ProjectsController extends Controller {
 
         $galleryImages = \App\Image::where('project_id', $project->id)->get();
 
-        return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages'));
+        return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages', 'favourites'));
     }
 
     /**

@@ -37,6 +37,7 @@ return [
     'password/reset'        => 'passwort/reset',
     'create-project/start'  => 'antrag-einreichen/start',
     'temp-document'         => 'temp-document',
-    'favourite'             => 'favouriten',
+    'favourite/add'         => 'favoriten/hinzufuegen',
+    'favourite/remove'      => 'favoriten/entfernen',
 
 ];

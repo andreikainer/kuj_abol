@@ -12,7 +12,9 @@ use App\Pledger;
 use App\Http\Requests\UserDetailsRequest;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
@@ -26,10 +28,12 @@ class UserpanelController extends Controller
     /** Only allow auth user to access
      *
      */
+
     public function __construct()
     {
 
-        $this->middleware('auth', ['only' => ['show', 'edit']]);
+        $this->middleware('auth');
+        //$this->middleware('checkRoute:route');
 
     }
 
@@ -54,13 +58,33 @@ class UserpanelController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new favourite to DB.
      *
      * @return Response
      */
-    public function store($id)
+    public function addFavourite($projectId)
     {
-        return $id;
+        $userId = Session::get('userId');
+
+        $favourite = new Favourite;
+        $favourite->user_id = $userId;
+        $favourite->project_id = $projectId;
+        $favourite->save();
+
+        return redirect()->back();
+    }
+
+    /**
+     * Store a Favourite.
+     *
+     * @return Response
+     */
+    public function removeFavourite($projectId)
+    {
+        $favourite = Favourite::where('project_id', $projectId);
+        $favourite->delete();
+
+        return redirect()->back();
     }
 
     /**
@@ -74,7 +98,7 @@ class UserpanelController extends Controller
     {
         try
         {
-            $user = User::with('projects')->where('user_name', $username)->firstOrFail();
+            $user = Auth::user()->with('projects')->where('user_name', $username)->firstOrFail();
         }
 
         catch (ModelNotFoundException $e)
@@ -84,16 +108,14 @@ class UserpanelController extends Controller
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
-
         $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
 
-        return view('userpanel.index', compact('user', 'contributions', 'favourites'));
-
-        if($user->id === 1)
+        if($user->id === 2)
         {
             return view('adminpanel.index', compact('user'));
         }
-        return view('userpanel.index', compact('user', 'contributions'));
+
+        return view('userpanel.index', compact('user', 'contributions', 'favourites'));
 
     }
 
