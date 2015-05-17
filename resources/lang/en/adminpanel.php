@@ -12,30 +12,26 @@ return [
     'sponsors-management'       => 'Sponsors management',
     'project-approve'           => 'Project approve',
 
-//
-//    /**
-//     * Form labels.
-//     */
-//    'username'      => '*Username:',
-//    'email'         => '*Email:',
-//    'f-name'        => '*First Name:',
-//    'l-name'        => '*Last Name:',
-//    'b-name'        => 'Company Name:',
-//    'address'       => 'Address:',
-//    'phone'         => 'Phone number:',
+
+    /**
+    * User management.
+    */
+    'user-avatar'   => 'Avatar:',
+    'username'      => 'Username:',
+    'status'        => 'Status:',
+    'change'        => 'Change status',
+
 
     /**
      * Buttons.
      */
-    'save-changes'      => 'Save changes',
-    'delete-account'    => 'Delete my account',
+    'toggle'        => 'Toggle',
+    'active'        => 'Active',
+    'banned'        => 'Banned',
+
 
     /**
      * Messages.
      */
-    'form-error'      => 'Woops! There is an error in your input. Please try again.',
-    'form-change-success' => 'Changes were saved successfully.',
-    'form-delete-success' => 'Your account were deleted successfully.',
-    'avatar-upload'     => 'To upload new avatar,  click this image.'
 
 ];

@@ -1,4 +1,4 @@
-it @extends('app')
+@extends('app')
 
 @section('content')
 
@@ -31,7 +31,7 @@ it @extends('app')
 
             <!-- Side menu -->
             <div class="hidden-xs hidden-sm col-md-3 mt-3em">
-                <img class="img-responsive center-block avatar" src="@if($user->avatar === null )
+                <img class="img-responsive img-rounded center-block avatar" src="@if($user->avatar === null )
                         {{ asset('img/avatars/avatar-placeholder.svg') }}"
                     @else
                         {{ asset('img/avatars/'.$user->avatar) }}"
@@ -39,7 +39,7 @@ it @extends('app')
                         alt="{{ $user->user_name }}" />
                 <h3 class="text-center"> {{ $user->first_name }} {{ $user->last_name }}</h3>
                 <div class="list-group add-nav">
-                    <a href="#" data-section="0" class="list-group-item sidemenu-item"><i class="fa fa-check-circle"></i> {{ trans('adminpanel.project-approve') }}</a>
+                    <a href="#" data-section="0" class="list-group-item sidemenu-item"><i class="fa fa-check"></i> {{ trans('adminpanel.project-approve') }}</a>
                     <a href="#" data-section="1" class="list-group-item sidemenu-item"><i class="fa fa-users"></i> {{ trans('adminpanel.user-management') }}</a>
                     <a href="#" data-section="2" class="list-group-item sidemenu-item"><i class="fa fa-cube"></i> {{ trans('adminpanel.sponsors-management') }}</a>
                 </div>

@@ -39,4 +39,6 @@ return [
     'temp-document'         => 'temp-document',
     'favourite/add'         => 'favoriten/add',
     'favourite/remove'      => 'favoriten/remove',
+    'toggle'                => 'toggle',
+    'abol'                  => 'abol',
 ];

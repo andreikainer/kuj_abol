@@ -5781,13 +5781,16 @@ a.tip-title {
 .userpanel-section {
   border: none; }
 
-.finished-td, .ongoing-td {
+.finished-td, .ongoing-td, .banned-td {
   padding: 0;
   font-size: 1em !important;
   line-height: 1em !important; }
 
 .ongoing-td {
   color: #3fa3db !important; }
+
+.banned-td {
+  color: #ed5a4d !important; }
 
 .contribute-td {
   margin: 0;
@@ -5800,6 +5803,9 @@ a.tip-title {
   padding: 0 !important;
   font-weight: 700 !important;
   vertical-align: top !important; }
+
+.adminpanel-useravatar {
+  width: 90px !important; }
 
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/
@@ -5814,7 +5820,8 @@ a.tip-title {
     width: 150px; }
     @media (max-width: 320px) {
       .logo img {
-        width: 120px; } }
+        width: 100px;
+        margin-top: .65rem; } }
     @media (min-width: 768px) {
       .logo img {
         width: 212px;
@@ -5939,6 +5946,9 @@ hr {
 .circles > div div:nth-child(2) {
   margin-top: .6em; }
 
+.question i {
+  margin-left: .2rem; }
+
 /*------------------------------------------------------------------*/
 /*-- Flags for language button --*/
 /*------------------------------------------------------------------*/
@@ -5977,11 +5987,13 @@ footer {
   footer div {
     margin-top: 1rem;
     margin-bottom: 1em; }
-  footer .socialmedia button {
-    margin: 0 auto;
-    background-color: #3fa3db; }
   footer .socialmedia a {
+    margin: 0 auto;
     display: inline-block; }
+  footer .socialmedia a i {
+    margin-left: .2rem; }
+  footer #facebook, footer #twitter, footer #googleplus, footer #youtube {
+    background-color: #3fa3db; }
   footer .socialmedia {
     margin-top: 2rem; }
   footer .socialmedia > div {
@@ -5995,21 +6007,34 @@ footer {
   footer .socialmedia div:nth-child(3) {
     width: 100%; }
   footer .socialmedia form {
-    width: 21.6rem;
     margin: 0 auto; }
+    @media (max-width: 400px) {
+      footer .socialmedia form {
+        width: 100%; } }
+    @media (min-width: 401px) and (max-width: 768px) {
+      footer .socialmedia form {
+        width: 86%; } }
+    @media (min-width: 769px) and (max-width: 991px) {
+      footer .socialmedia form {
+        width: 100%; } }
+    @media (min-width: 922px) {
+      footer .socialmedia form {
+        width: 80%; } }
   footer .socialmedia form div:first-of-type {
     display: inline-block;
-    width: 16rem;
     margin-top: .9rem;
     vertical-align: middle; }
     @media (min-width: 768px) and (max-width: 991px) {
       footer .socialmedia form div:first-of-type {
         width: 11rem; } }
   footer .socialmedia input {
-    width: 16rem; }
+    width: 13rem; }
     @media (min-width: 768px) and (max-width: 991px) {
       footer .socialmedia input {
         width: 11rem; } }
+    @media (min-width: 992px) {
+      footer .socialmedia input {
+        width: 10rem; } }
   footer #newsletter {
     display: inline-block;
     vertical-align: bottom;
@@ -6157,7 +6182,7 @@ footer {
     line-height: 40px; }
 
 /*-- Finished + check styles --*/
-.finished-green, .finished-td, .ongoing-td {
+.finished-green, .finished-td, .ongoing-td, .banned-td {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
@@ -6338,6 +6363,7 @@ footer {
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
+  position: absolute;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
@@ -6345,6 +6371,66 @@ footer {
   color: #3fa3db;
   background: #cfe8f6;
   border: 1px dashed #3fa3db; }
+
+/*------------------------------------------------------------------*/
+/*-- Abol page styles --*/
+/*------------------------------------------------------------------*/
+#abol {
+  background-color: #3c3c4a;
+  color: white;
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  font-size: 1.2rem; }
+  #abol .abol-logo {
+    margin-left: 1.9rem;
+    margin-right: 1rem; }
+    @media (max-width: 768px) {
+      #abol .abol-logo {
+        width: 90px;
+        margin-right: .2rem;
+        margin-left: .4rem; } }
+  #abol .main-link {
+    color: white;
+    border-top: solid 2px #f66458;
+    border-bottom: solid 2px #f66458;
+    font-weight: 700;
+    transition: all 0.3s ease; }
+    #abol .main-link:hover {
+      color: #f66458;
+      text-decoration: none; }
+  #abol .abol-team {
+    width: 250px;
+    height: 250px;
+    border: solid 3px #3c3c4a;
+    transition: all 0.5s ease; }
+    #abol .abol-team:hover {
+      border: solid 3px #f66458; }
+  #abol h2 {
+    font-family: 'Lato', 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0; }
+  #abol .sec-link {
+    display: block;
+    color: #788c96;
+    font-weight: 700;
+    transition: all 0.3s ease; }
+    #abol .sec-link:hover {
+      color: #55656d;
+      text-decoration: none; }
+    #abol .sec-link i {
+      margin-right: .5rem;
+      color: #f66458;
+      transition: all 0.3s ease; }
+      #abol .sec-link i:hover {
+        color: #f2210f; }
+  #abol .mt-5em {
+    margin-top: 5rem; }
+  #abol .copywrite {
+    font-size: .6rem; }
+
+.tpad-zero {
+  padding-top: 0 !important; }
 
 
 /*# sourceMappingURL=app.css.map */
