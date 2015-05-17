@@ -2,12 +2,12 @@
 <h3 class="text-center">{{ trans('userpanel.my-favourites') }}</h3>
 
 
-@if(is_null($favourites))
+@if($favourites == false)
     </br>
     <h4 class="text-center">You don't have any favoured projects. <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">See all current projects</a> </h4>
 @endif
 
-@if(! is_null($favourites))
+@if($favourites == true )
 <table class="table table-striped table-hover table-responsive mt-3em">
     <thead>
     <tr>

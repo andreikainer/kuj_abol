@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Auth\AuthController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Intervention\Image\Facades\Image;
+use DB;
 
 class UserpanelController extends Controller
 {
@@ -83,17 +84,18 @@ class UserpanelController extends Controller
         }
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
-
-
         $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
 
-        return view('userpanel.index', compact('user', 'contributions', 'favourites'));
-
-        if($user->id === 1)
+        // check if its admin
+        if($user->id === 2)
         {
-            return view('adminpanel.index', compact('user'));
+            // if it's admin, redirect to admin cms
+            //$allUsers = DB::table('users_tbl')->pluck('user_name');
+            $allUsers = User::all();
+            return view('adminpanel.index', compact('user', 'allUsers'));
         }
-        return view('userpanel.index', compact('user', 'contributions'));
+        // if it's a regular user, redirect to user's dashboard
+        return view('userpanel.index', compact('user', 'contributions', 'favourites'));
 
     }
 
@@ -105,7 +107,18 @@ class UserpanelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $thisUser = User::where('id', $id);
+
+        // check the status of this user and change it accordingly
+        if($thisUser->pluck('active') === 1)
+        {
+            $thisUser->update(['active' => 0]);
+        }elseif($thisUser->pluck('active') === 0)
+        {
+            $thisUser->update(['active' => 1]);
+        }
+
+        return redirect()->back();
     }
 
     /**

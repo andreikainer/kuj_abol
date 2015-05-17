@@ -5767,13 +5767,16 @@ a.tip-title {
 .userpanel-section {
   border: none; }
 
-.finished-td, .ongoing-td {
+.finished-td, .ongoing-td, .banned-td {
   padding: 0;
   font-size: 1em !important;
   line-height: 1em !important; }
 
 .ongoing-td {
   color: #3fa3db !important; }
+
+.banned-td {
+  color: #ed5a4d !important; }
 
 .contribute-td {
   margin: 0;
@@ -5786,6 +5789,9 @@ a.tip-title {
   padding: 0 !important;
   font-weight: 700 !important;
   vertical-align: top !important; }
+
+.adminpanel-useravatar {
+  width: 100px !important; }
 
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/
@@ -6143,7 +6149,7 @@ footer {
     line-height: 40px; }
 
 /*-- Finished + check styles --*/
-.finished-green, .finished-td, .ongoing-td {
+.finished-green, .finished-td, .ongoing-td, .banned-td {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
@@ -6324,6 +6330,7 @@ footer {
 /*-- Flash Message styles --*/
 /*------------------------------------------------------------------*/
 .flash-message {
+  position: absolute;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;

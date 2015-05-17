@@ -38,5 +38,6 @@ return [
     'create-project/start'  => 'antrag-einreichen/start',
     'temp-document'         => 'temp-document',
     'favourite'             => 'favouriten',
+    'toggle'                => 'toggle',
 
 ];

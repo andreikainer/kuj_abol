@@ -38,5 +38,6 @@ return [
     'create-project/start'  => 'create-project/start',
     'temp-document'         => 'temp-document',
     'favourite'             => 'favourite',
+    'toggle'                => 'toggle',
 
 ];

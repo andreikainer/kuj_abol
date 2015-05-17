@@ -134,7 +134,7 @@ class AuthController extends Controller {
         // 1. create rules for user’s input
         $this->validate($request, [
             'user_name' => 'required',
-            'password' => 'required|min:6',
+            'password' => 'required',
         ]);
 
         // 2. run the validation with those rules
