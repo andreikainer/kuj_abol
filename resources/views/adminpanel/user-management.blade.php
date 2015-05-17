@@ -8,12 +8,12 @@
     <table class="table table-striped table-hover mt-3em">
         <thead>
             <tr>
-                {{--<th class="col-md-2 col-sm-2 col-xs-2"></th>--}}
-                <th class="col-md-4 col-sm-3 col-xs-3">{{ trans('adminpanel.user-avatar') }}</th>
-                <th class="col-md-4 col-sm-2 col-xs-2">{{ trans('adminpanel.username') }}</th>
-                <th class="col-md-2 col-sm-2 col-xs-2">{{ trans('adminpanel.status') }}</th>
-                <th class="col-md-4 col-sm-1 col-xs-1">{{ trans('adminpanel.change') }}</th>
-                {{--<th class="col-md-1 col-sm-2 col-xs-2"></th>--}}
+
+                <th class="col-md-3 col-sm-4 hidden-xs">{{ trans('adminpanel.user-avatar') }}</th>
+                <th class="col-md-4 col-sm-4 col-xs-4">{{ trans('adminpanel.username') }}</th>
+                <th class="col-md-3 col-sm-4 col-xs-4">{{ trans('adminpanel.status') }}</th>
+                <th class="col-md-4 col-sm-4 col-xs-4">{{ trans('adminpanel.change') }}</th>
+
             </tr>
         </thead>
         <tbody>
@@ -21,7 +21,7 @@
             @foreach($allUsers as $oneUser)
                     <tr>
 
-                        <td class="col-md-2 col-sm-2 col-xs-2">
+                        <td class="col-md-3 col-sm-2 hidden-xs">
                             <img src="@if($oneUser->avatar !== null)
                                 {{ asset('img/avatars/'. $oneUser->avatar) }}
                                 @else
@@ -29,11 +29,11 @@
                                 @endif" alt="{{ asset($oneUser->user_name) }}" class="img-responsive img-rounded adminpanel-useravatar"/>
                         </td>
 
-                        <td class="col-md-2 col-sm-2 col-xs-2">
+                        <td class="col-md-3 col-sm-2 col-xs-3">
                             <p>{{ $oneUser->user_name }}</p>
                         </td>
 
-                        <td class="col-md-2 col-sm-2 col-xs-2">
+                        <td class="col-md-3 col-sm-2 col-xs-3">
                             @if($oneUser->active === 1)
                                 <p class="finished-td mb-0">{{ trans('adminpanel.active') }}</p>
                             @else
@@ -41,7 +41,7 @@
                             @endif
                         </td>
 
-                        <td class="col-md-3 col-sm-3 col-xs-3">
+                        <td class="col-md-3 col-sm-2 col-xs-3">
                             <a href="{{ action('UserpanelController@edit', $oneUser->id) }}" type="button" class="btn btn-xs button-main button-user">{{ trans('adminpanel.toggle') }}</a>
                         </td>
 

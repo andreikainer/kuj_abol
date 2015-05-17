@@ -1,4 +1,8 @@
-<h3 class="text-center">{{ trans('userpanel.my-projects') }}</h3>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center">
+        <h2 class="heading">{{ trans('userpanel.my-projects') }}</h2>
+    </div>
+</div>
 
 @if($user->projects->isEmpty())
     </br>

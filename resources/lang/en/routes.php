@@ -37,12 +37,8 @@ return [
     'create-project/delete' => 'create-project/delete',
     'create-project/start'  => 'create-project/start',
     'temp-document'         => 'temp-document',
-<<<<<<< HEAD
     'favourite/add'         => 'favoriten/add',
     'favourite/remove'      => 'favoriten/remove',
-=======
-    'favourite'             => 'favourite',
     'toggle'                => 'toggle',
 
->>>>>>> olgasmirnova
 ];
