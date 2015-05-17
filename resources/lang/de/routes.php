@@ -40,5 +40,6 @@ return [
     'favourite/add'         => 'favoriten/hinzufuegen',
     'favourite/remove'      => 'favoriten/entfernen',
     'toggle'                => 'toggle',
+    'abol'                  => 'abol',
 
 ];
