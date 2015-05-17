@@ -108,27 +108,19 @@ class UserpanelController extends Controller
         }
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
-<<<<<<< HEAD
 
-        $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
-
-=======
         $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
 
         // check if its admin
->>>>>>> olgasmirnova
+
         if($user->id === 2)
         {
-            // if it's admin, redirect to admin cms
-            //$allUsers = DB::table('users_tbl')->pluck('user_name');
-            $allUsers = User::all();
+            // if it's admin, redirect to admin cms with all users but admin
+            $allUsers = User::whereNotIn('id', [2])->get();
             return view('adminpanel.index', compact('user', 'allUsers'));
         }
-<<<<<<< HEAD
 
-=======
         // if it's a regular user, redirect to user's dashboard
->>>>>>> olgasmirnova
         return view('userpanel.index', compact('user', 'contributions', 'favourites'));
 
     }

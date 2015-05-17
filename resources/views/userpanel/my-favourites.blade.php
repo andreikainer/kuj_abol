@@ -1,20 +1,15 @@
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center">
+        <h2 class="heading">{{ trans('userpanel.my-favourites') }}</h2>
+    </div>
+</div>
 
-<h3 class="text-center">{{ trans('userpanel.my-favourites') }}</h3>
 
-
-<<<<<<< HEAD
 @if($favourites->isEmpty())
-=======
-@if($favourites == false)
->>>>>>> olgasmirnova
     </br>
     <h4 class="text-center">You don't have any favoured projects. <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">See all current projects</a> </h4>
 
-<<<<<<< HEAD
 @else
-=======
-@if($favourites == true )
->>>>>>> olgasmirnova
 <table class="table table-striped table-hover table-responsive mt-3em">
     <thead>
     <tr>

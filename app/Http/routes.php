@@ -94,16 +94,11 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
         Route::post(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@update');
         Route::get(LaravelLocalization::transRoute('routes.account/delete').'/{username}', 'UserpanelController@delete');
-<<<<<<< HEAD
+
         Route::get(LaravelLocalization::transRoute('routes.favourite/add').'/{id}', 'UserpanelController@addFavourite');
         Route::get(LaravelLocalization::transRoute('routes.favourite/remove').'/{id}', 'UserpanelController@removeFavourite');
-
-
-
-=======
-        Route::post(LaravelLocalization::transRoute('routes.favourite').'/{id}', 'UserpanelController@favourite');
         Route::get(LaravelLocalization::transRoute('routes.toggle').'/{id}', 'UserpanelController@edit');
->>>>>>> olgasmirnova
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 
