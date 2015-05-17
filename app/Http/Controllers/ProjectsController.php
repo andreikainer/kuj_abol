@@ -220,7 +220,7 @@ class ProjectsController extends Controller {
         // Mail the user, of a successful project submission.
         Mail::queue('emails.project-submit-user', ['project' => $project, 'user' => $user], function($message) use ($user)
         {
-            $message->to($user->email, $user->first_name.' '.$user->last_name)->subject('project-submit-email.user-title');
+            $message->to($user->email, $user->first_name.' '.$user->last_name)->subject(trans('project-submit-email.user-title'));
         });
 
         return json_encode(['status' => 'success']);
@@ -454,7 +454,7 @@ class ProjectsController extends Controller {
         // Mail the user, of a successful project submission.
         Mail::queue('emails.project-submit-user', ['project' => $project, 'user' => $user], function($message) use ($user)
         {
-            $message->to($user->email, $user->first_name.' '.$user->last_name)->subject('project-submit-email.user-title');
+            $message->to($user->email, $user->first_name.' '.$user->last_name)->subject(trans('project-submit-email.user-title'));
         });
 
         return json_encode(['status' => 'success']);
