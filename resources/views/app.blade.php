@@ -65,7 +65,7 @@
 
 
 <!--================== Header =================================================-->
-        <header>
+        <header class="clearfix">
 
             <nav class="navbar navbar-default navbar-fixed-top white-bg"  data-scroll-header>
                 <div class="container-fluid">
@@ -82,14 +82,14 @@
                             </button>
 
                         <!-- help_btn -->
-                            <a href="{{ action('ContactFormController@getContactForm') }}">
-                                <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button question">
+                            <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle visible-xs button-circle mobile-circle-button question">
+                                {{--<button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button question">--}}
                                     <i class="fa fa-question"></i>
-                                </button>
+                                {{--</button>--}}
                             </a>
 
            			    <!-- search_btn for mobile -->
-                            <button type="button" role="search" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier" data-target="#search_module">
+                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button magnif magnifier" data-target="#search_module">
                                 <i class="fa fa-search"></i>
                             </button>
 
@@ -108,8 +108,8 @@
                                 <!-- language_btn -->
                                 <div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
 								    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-								        <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-								            <button type="button" hidden class="navbar-toggle button-circle hvr-push flag language-toggle"></button>
+								        <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}" class="navbar-toggle button-circle hvr-push flag language-toggle">
+								            {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag language-toggle"></button>--}}
 								        </a>
 								    @endforeach
 								    {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">--}}
@@ -122,14 +122,14 @@
 								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}
 
                                 <!-- help_btn -->
-                                    <a href="{{ action('ContactFormController@getContactForm') }}">
-                                        <button type="button" class="navbar-toggle button-circle hvr-push question">
+                                    <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle button-circle hvr-push question">
+                                        {{--<button type="button" class="navbar-toggle button-circle hvr-push question">--}}
                                             <i class="fa fa-question"></i>
-                                        </button>
+                                        {{--</button>--}}
                                     </a>
 
                                 <!-- search_btn -->
-                                    <button type="button" role="search" class="navbar-toggle button-circle hvr-push magnif magnifier" data-target="#search_module">
+                                    <button class="navbar-toggle button-circle hvr-push magnif magnifier" data-target="#search_module">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
@@ -138,13 +138,13 @@
 
                                 <!-- if there is a logged in user in the session, change the buttons to LOGOUT and USERNAME -->
                                     @if(Session::has('username'))
-                                        <a href="{{ action('Auth\AuthController@getLogout') }}" type="button" class="btn btn-xs button-main button-user" id="logout">{{ trans('app.logout') }}</a>
-                                        <a href="{{ action('UserpanelController@show', Session::get('username')) }}" type="button" class="btn btn-xs button-main button-user" id="username-btn">{{ ucfirst(Session::get('username')) }}</a>
+                                        <a href="{{ action('Auth\AuthController@getLogout') }}" class="btn btn-xs button-main button-user" id="logout">{{ trans('app.logout') }}</a>
+                                        <a href="{{ action('UserpanelController@show', Session::get('username')) }}" class="btn btn-xs button-main button-user" id="username-btn">{{ ucfirst(Session::get('username')) }}</a>
 
                                     @else
                                 <!-- if there is no logged in user in the session, change the buttons to LOGIN and REGISTER -->
-                                        <a href="{{ action('Auth\AuthController@getLogin') }}" type="button" class="btn btn-xs button-main button-user login">{{ trans('app.login') }}</a>
-                                        <a href="{{ action('Auth\AuthController@getRegister') }}" type="button" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</a>
+                                        <a href="{{ action('Auth\AuthController@getLogin') }}" class="btn btn-xs button-main button-user login">{{ trans('app.login') }}</a>
+                                        <a href="{{ action('Auth\AuthController@getRegister') }}" class="btn btn-xs button-main button-user">{{ trans('app.register') }}</a>
                                     @endif
 
                                 </div>
@@ -218,34 +218,34 @@
 
 
 <!--================== Footer =================================================-->
-	        <footer role="complementary" class="row">
+	        <footer class="row">
 
             <!-- Social Media Buttons -->
 	            <div class="col-xs-12 col-sm-4 col-md-4 col-md-push-4 col-lg-4 block socialmedia">
 	                <div>
 	                <!-- facebook_btn -->
-                        <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle button-circle hvr-push" id="facebook">
+                        <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="facebook">
+                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="facebook">--}}
                                 <i class="fa fa-facebook"></i>
-                            </button>
+                            {{--</button>--}}
                         </a>
                     <!-- twitter_btn -->
-                        <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle button-circle hvr-push" id="twitter">
+                        <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="twitter">
+                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="twitter">--}}
                                 <i class="fa fa-twitter"></i>
-                            </button>
+                            {{--</button>--}}
                         </a>
                     <!-- youtube_btn -->
-                        <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle button-circle hvr-push" id="youtube">
+                        <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="youtube">
+                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="youtube">--}}
                                 <i class="fa fa-youtube-play"></i>
-                            </button>
+                            {{--</button>--}}
                         </a>
                     <!-- googleplus_btn -->
-                        <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center">
-                            <button type="button" class="navbar-toggle button-circle hvr-push" id="googleplus">
+                        <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="googleplus">
+                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="googleplus">--}}
                                 <i class="fa fa-google-plus"></i>
-                            </button>
+                            {{--</button>--}}
                         </a>
                     </div>
 
@@ -267,14 +267,14 @@
 	            <div class="col-xs-11 col-xs-push-1 col-sm-3 col-md-3 col-md-pull-12 col-lg-3">
 	                <div class="footer-text-content">
 	                    <h5>{{ trans('app.site-map') }}</h5>
-	                    <a href="#">{{ trans('app.how-it-works') }}</a>
-	                    <a href="#">{{ trans('app.create-project') }}</a>
-	                    <a href="#">{{ trans('app.contribute') }}</a>
+	                    <a href="{{ trans('routes.how-it-works') }}">{{ trans('app.how-it-works') }}</a>
+	                    <a href="{{ action('ProjectsController@createProject') }}">{{ trans('app.create-project') }}</a>
+	                    <a href="{{ action('ProjectsController@showMoreProjects') }}">{{ trans('app.contribute') }}</a>
 
 	                    <br>
 
 	                    <a href="#">Blog</a>
-                        <a href="#">{{ trans('app.our-sponsors') }}</a>
+                        <a href="{{ trans('routes.sponsors') }}">{{ trans('app.our-sponsors') }}</a>
 
                         <br>
 
@@ -285,7 +285,7 @@
 
 
             <!-- Contacts -->
-                <div class="col-xs-12 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
+                <div class="col-xs-10 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
                     <div class="footer-text-content">
                         <h5>{{ trans('app.contacts') }}</h5>
 
@@ -298,7 +298,7 @@
                         <br>
 
                         <p class="no-bottom-margin">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
-                        <p>{{ trans('app.website-made-by') }} <a href="#">ABOL</a></p>
+                        <p>{{ trans('app.website-made-by') }} <a href="{{ action('PagesController@abol') }}">ABOL</a></p>
                 	</div>
                 </div>
 

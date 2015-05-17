@@ -8,15 +8,20 @@ return [
     | Create Project Form Translations ENGLISH
     |--------------------------------------------------------------------------
     |
-    | Language translation keys for the my contributions section.
+    | Language translation keys for entire User panel.
     */
 
-    'th-1'          => 'Project Title',
-    'th-2'          => 'Contribution Date',
-    'th-3'          => 'Amount',
-    'th-4'          => 'Status',
+    'project-title'          => 'Project Title',
+    'contribution-date'      => 'Contribution Date',
+    'amount'                 => 'Amount',
+    'status'                 => 'Status',
+    'unfavourite'            => 'Unfavourite',
+    'application-status'    =>  'Application Status',
+    'project-status'        =>  'Project Status',
 
     'ongoing'       => 'ON-GOING',
     'contribute'    => 'Contribute',
+    'approved'      => 'approved',
+    'pending'       => 'pending',
 
 ];

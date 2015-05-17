@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Favourite;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -11,15 +12,32 @@ use App\Pledger;
 use App\Http\Requests\UserDetailsRequest;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Auth\AuthController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Intervention\Image\Facades\Image;
+use DB;
 
 class UserpanelController extends Controller
 {
+    /** Only allow auth user to access
+     *
+     */
+
+    public function __construct()
+    {
+
+        $this->middleware('auth');          //check if the user is authorized
+        $this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);   // check if the user is authorized for this route
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,13 +59,33 @@ class UserpanelController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new favourite to DB.
      *
      * @return Response
      */
-    public function store()
+    public function addFavourite($projectId)
     {
-        //
+        $userId = Session::get('userId');
+
+        $favourite = new Favourite;
+        $favourite->user_id = $userId;
+        $favourite->project_id = $projectId;
+        $favourite->save();
+
+        return redirect()->back();
+    }
+
+    /**
+     * Store a Favourite.
+     *
+     * @return Response
+     */
+    public function removeFavourite($projectId)
+    {
+        $favourite = Favourite::where('project_id', $projectId);
+        $favourite->delete();
+
+        return redirect()->back();
     }
 
     /**
@@ -61,7 +99,7 @@ class UserpanelController extends Controller
     {
         try
         {
-            $user = User::with('projects')->where('user_name', $username)->firstOrFail();
+            $user = Auth::user()->with('projects')->where('user_name', $username)->firstOrFail();
         }
 
         catch (ModelNotFoundException $e)
@@ -71,11 +109,20 @@ class UserpanelController extends Controller
 
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
-        if($user->id === 1)
+        $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
+
+        // check if its admin
+
+        if($user->id === 2)
         {
-            return view('adminpanel.index', compact('user'));
+            // if it's admin, redirect to admin cms with all users but admin
+            $allUsers = User::whereNotIn('id', [2])->get();
+            return view('adminpanel.index', compact('user', 'allUsers'));
         }
-        return view('userpanel.index', compact('user', 'contributions'));
+
+        // if it's a regular user, redirect to user's dashboard
+        return view('userpanel.index', compact('user', 'contributions', 'favourites'));
+
     }
 
     /**
@@ -86,7 +133,18 @@ class UserpanelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $thisUser = User::where('id', $id);
+
+        // check the status of this user and change it accordingly
+        if($thisUser->pluck('active') === 1)
+        {
+            $thisUser->update(['active' => 0]);
+        }elseif($thisUser->pluck('active') === 0)
+        {
+            $thisUser->update(['active' => 1]);
+        }
+
+        return redirect()->back();
     }
 
     /**
@@ -104,10 +162,9 @@ class UserpanelController extends Controller
             'last_name'     => $request->get('last_name'),
             'business_name' => $request->get('business_name'),
             'tel_number'    => $request->get('tel_number'),
-            'address'       => $request->get('address')
+            'address'       => $request->get('address'),
+            //'avatar'        => $request->file('avatar')
         ];
-
-        $avatar = $request->file('avatar');
 
         // Update user info in DB
         $user = \Auth::user();
@@ -117,43 +174,68 @@ class UserpanelController extends Controller
         }
         $user->save();
 
+        $avatar = $request->file('avatar');
 
-        // Make the image and document directories.
-        $imageFolderPath = public_path("img/avatars");
+        if($avatar !== null)
+        {
+            // Make the image and document directories.
+            $imageFolderPath = public_path("img/avatars");
 
-        // Resize the images to our needs, and save them in their directories.
-        $this->resizeAvatarAndSave($avatar, $user->user_name, $imageFolderPath);
+            // Resize the images to our needs, and save them in their directories.
+            $this->resizeAvatarAndSave($avatar, $user->user_name, $imageFolderPath);
 
+            // Create new Image instances in the database.
+            $this->saveImageToDB($avatar, $user->user_name);
 
-        // Create new Image instances in the database.
-        //$this->saveImageInstancesToDB($userImages, $project->child_name, $project->id);
-
-        Session::flash('flash_message', trans('userpanel.form-change-success'));
+            Session::flash('flash_message', trans('userpanel.form-change-success'));
+        }
         return redirect()->back();
+    }
+
+    protected function saveImageToDB($avatar, $userName)
+    {
+
+        // If $image is not an instance of a file, it is the hidden field value sent,
+        // with a saved image preview.
+        if($avatar instanceof UploadedFile)
+        {
+            $extension = explode('.', $avatar->getClientOriginalName());
+            $extension = $extension[count($extension)-1];
+            // Name images by user's name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+        }
+        else
+        {
+            $extension = explode('.', $avatar->getClientOriginalName());
+            $extension = $extension[count($extension)-1];
+            // Name images by user's name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+        }
+
+        $user = \Auth::user();
+        $user->avatar = $filename;
+        $user->save();
     }
 
     /**
      * Resize and rename the images to our formats.
      * Move them to their respective directories.
      *
-     * @param $multiDimArr
-     * @param $childName
-     * @param $parentDirectoryPath
-     * @param $originalProjectSlug
+     * @param $avatar
+     * @param $userName
+     * @param $avatarPath
      */
-    protected function resizeAvatarAndSave($image, $userName, $avatarPath)
+    protected function resizeAvatarAndSave($avatar, $userName, $avatarPath)
     {
-        $extension = explode('.', $image);
-        $extension = $extension[count($extension)-1];
-        $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
-        return $filename;
+        $extension = explode('.', $avatar->getClientOriginalName());
+        $extension = $extension[count($extension) - 1];
+        $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName) . '.' . $extension));
 
-//        \Image::make($image)->resize(250, 160, function($constraint)
-//        {
-//            $constraint->upsize();
-//            $constraint->aspectRatio();
-//        })->limitColors(255)
-//                ->save($avatarPath);
+        Image::make($avatar)->resize(250, 160, function ($constraint) {
+            $constraint->upsize();
+            $constraint->aspectRatio();
+        })->limitColors(255)
+            ->save($avatarPath.'/'.$filename);
     }
 
     /**
@@ -167,10 +249,6 @@ class UserpanelController extends Controller
         //
     }
 
-    public function favourite()
-    {
-        return 'this is it';
-    }
 
     public function delete($id)
     {

@@ -15,7 +15,7 @@
   @extend .fieldset-active;
 }
 
-.finished-td, .ongoing-td {
+.finished-td, .ongoing-td, .banned-td {
   @extend .finished-green;
 
   padding: 0;
@@ -25,6 +25,10 @@
 
 .ongoing-td {
   color: $blue !important;
+}
+
+.banned-td {
+  color: $orange !important;
 }
 
 .contribute-td {
@@ -47,4 +51,8 @@
 
 .no-contributions {
   padding: 3rem;
+}
+
+.adminpanel-useravatar {
+  width: 90px !important;
 }

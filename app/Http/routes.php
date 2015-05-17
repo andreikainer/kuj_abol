@@ -25,6 +25,8 @@ Route::group(
     /*-- Landing Page --*/
         Route::get('/',['as' => 'home', 'uses' => 'ProjectsController@index']);
 
+    /*-- Landing Page --*/
+        Route::get(LaravelLocalization::transRoute('routes.abol'),  'PagesController@abol');
 
         Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show');
 
@@ -94,6 +96,11 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
         Route::post(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@update');
         Route::get(LaravelLocalization::transRoute('routes.account/delete').'/{username}', 'UserpanelController@delete');
+
+        Route::get(LaravelLocalization::transRoute('routes.favourite/add').'/{id}', 'UserpanelController@addFavourite');
+        Route::get(LaravelLocalization::transRoute('routes.favourite/remove').'/{id}', 'UserpanelController@removeFavourite');
+        Route::get(LaravelLocalization::transRoute('routes.toggle').'/{id}', 'UserpanelController@edit');
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 

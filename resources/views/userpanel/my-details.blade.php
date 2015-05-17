@@ -1,4 +1,8 @@
-<h3 class="text-center">{{ trans('userpanel.my-details') }}</h3>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center">
+        <h2 class="heading">{{ trans('userpanel.my-details') }}</h2>
+    </div>
+</div>
 
 <!-- if there are validation errors, show "Woops" message -->
 <div class="form-group">
@@ -7,7 +11,7 @@
     @endif
 </div>
 
-{!! Form::open(['action' => 'UserpanelController@update', 'class' => 'row', 'method' => 'post']) !!}
+{!! Form::open(['action' => 'UserpanelController@update', 'class' => 'row', 'method' => 'post', 'files' => 'true']) !!}
 
 <div class="col-xs-12">
     <div class="row">
@@ -55,7 +59,7 @@
                                     @endif
                                         alt="{{ $user->user_name }}" />
                                         <br>
-                                        <i class="fa fa-upload"></i><p>{{trans('userpanel.avatar-upload')}}</p>
+                                        <i class="fa fa-upload"></i><p class="image-upload-label-heading">{{trans('userpanel.avatar-upload')}}</p>
                             </label>
                             {!! Form::file('avatar', ['id' => 'avatar', 'class' => 'image-upload-input', 'accept' => 'image/*']) !!}
                              <div class="form-error none pad" data-error="avatar"></div>

@@ -19,19 +19,19 @@ return [
 
     'carousel-text-1'  =>   '<h1>Together we can make it happen!</h1>
                             <p class="hidden-xs">Help a family in need to gain relief in everyday life</p>
-                            <p><a class="button-transparent" href=":cta-link" type="button" data-scroll>CONTRIBUTE NOW</a></p>',
+                            <p><a class="button-transparent" href=":cta-link" data-scroll>CONTRIBUTE NOW</a></p>',
 
     'carousel-text-2'  =>   '<h1>Apply for financial support!</h1>
                             <p class="hidden-xs">You have a disabled child in your family? We can help.</p>
-                            <p><a class="button-transparent" href=":cta-link" type="button">VIEW TIPS</a></p>',
+                            <p><a class="button-transparent" href=":cta-link">VIEW TIPS</a></p>',
 
     'carousel-text-3'  =>   '<h1>A big THANK YOU to our sponsors!</h1>
                             <p class="hidden-xs">Promote you business by donating a project and we’ll place the logo of your company on our website.</p>
-                            <p><a class="button-transparent" href=":cta-link" type="button">VIEW SPONSORS</a></p>',
+                            <p><a class="button-transparent" href=":cta-link" data-scroll>VIEW SPONSORS</a></p>',
 
     'carousel-text-4'  =>   '<h1>Together we can make it happen!</h1>
                             <p class="hidden-xs">Help a family in need to gain relief in everyday life</p>
-                            <p><a class="button-transparent" href=":cta-link" type="button" data-scroll>CONTRIBUTE NOW</a></p>',
+                            <p><a class="button-transparent" href=":cta-link" data-scroll>CONTRIBUTE NOW</a></p>',
 
 
 /*

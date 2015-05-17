@@ -36,7 +36,7 @@ function makeTabActive(collection, i)
     /*------------------------------------------------------------------*/
     /*-- CHANGE DETAILS OPTION --*/
     /*------------------------------------------------------------------*/
-    /*-- Messages Object --*/
+/*-- Messages Object --*/
     var errorMessages = {
         'en' : {
             'required'  : 'This field is required.',
@@ -65,7 +65,14 @@ function makeTabActive(collection, i)
     };
 
 
-    /*-- Functions --*/
+/*-- Functions --*/
+
+    /**
+     * Validate an image's mime type against a 'white-list'
+     *
+     * @param mime
+     * @returns {boolean}
+     */
     function checkImageMime(mime)
     {
         return (   mime === 'image/jpg'
@@ -89,23 +96,7 @@ function makeTabActive(collection, i)
     }
 
 
-    function loadImagePreview(file, container)
-    {
-        var reader = new FileReader();
-        reader.onload = function(e)
-        {
-            container.attr('src', e.target.result);
-        };
-        reader.readAsDataURL(file);
-    }
-
-
-    function createImageCloseButton(container)
-    {
-        return $('<span class="image-upload-close-button">X</span>').prependTo(container);
-    }
-
-    /*-- Publish Events --*/
+/*-- Publish Events --*/
     // Form Field blur events.
     $('.account input[name="user_name"]').on('blur', function()
     {
@@ -255,79 +246,28 @@ function makeTabActive(collection, i)
      */
     $('input[name="avatar"]').on('change', function(event)
     {
-        console.log('pressed');
         $.publish('image.selected', this);
 
     });
 
-    if($('span.image-upload-close-button'))
-    {
-        $('span.image-upload-close-button').on('click', function()
-        {
-            $.publish('document-preview.close', this);
-            $.publish('image-preview.close', this);
-        });
-    }
 
     /**
      * SUBSCRIBE
      */
     $.subscribe('image.selected', function(event, data)
     {
-        if (! checkImageMime(data.files[0].type)) {
+        if (!checkImageMime(data.files[0].type)) {
 
             showErrorMessage(data.id, errorMessages[window.locale].image);
             return false;
         }
-        if(! checkFileSize(data.files[0].size, 20))
-        {
+        if (!checkFileSize(data.files[0].size, 20)) {
 
             showErrorMessage(data.id, errorMessages[window.locale].maxSize(20));
             return false;
         }
 
         hideErrorMessage(data.id);
-
-        var inputControls = $(data).parent('.image-upload-controls');
-        var previewContainer = inputControls.siblings('.image-upload-preview');
-        var loaderImage = $(data).siblings('.image-loader');
-        console.log(loaderImage);
-
-        // Show the loading animation.
-        //loaderImage.fadeIn('slow')
-        //    .wait(1000)
-        //    .fadeOut()
-        //    .then(function()
-        //    {
-        //        // Fade out the file input, and load the selected image.
-        //        inputControls.fadeOut('slow');
-        //        loadImagePreview(data.files[0], previewContainer);
-        //    })
-        //    .wait(700)
-        //    .then(function()
-        //    {
-        //        // Fade the selected image into view.
-        //        $(previewContainer).fadeIn('slow')
-        //            .wait(700)
-        //            .then(function()
-        //            {
-        //                // Create a close button, and attach a click event to it.
-        //                var closeButton = createImageCloseButton(previewContainer.parent());
-        //                $(closeButton).on('click', function()
-        //                {
-        //                    $.publish('image-preview.close', this);
-        //                });
-        //            });
-        //    });
-    });
-
-    // Close the image preview, and bring the input controls into view.
-    $.subscribe('image-preview.close', function(event, button)
-    {
-        // Remove any trace of a saved image, if the user decides to replace it.
-        $(button).siblings('input[type="hidden"]').remove();
-        // Close the image preview.
-        closeFilePreview(button);
     });
 
 })();

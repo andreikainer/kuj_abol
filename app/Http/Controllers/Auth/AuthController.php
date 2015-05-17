@@ -134,7 +134,7 @@ class AuthController extends Controller {
         // 1. create rules for user’s input
         $this->validate($request, [
             'user_name' => 'required',
-            'password' => 'required|min:6',
+            'password' => 'required',
         ]);
 
         // 2. run the validation with those rules
@@ -147,10 +147,12 @@ class AuthController extends Controller {
             if($this->auth->user()->active == 1)
             {
                 $username = $this->auth->user()->user_name;
+                $userId = $this->auth->user()->id;
 
                 // 5. store success feed back message in a session
                 Session::flash('flash_message', trans('login-page.login-success'));
                 Session::set('username', $username);
+                Session::set('userId', $userId);
 
                 // 6. redirect the user to the prev page
                 return redirect(Session::get('curr-url'));
@@ -201,6 +203,7 @@ class AuthController extends Controller {
         if(Session::has('deleted'))
         {
             Session::flash('flash_message', Session::get('deleted'));
+            Session::forget('deleted');
         }else{
             Session::flash('flash_message', trans('login-page.logout'));
         }

@@ -16,12 +16,8 @@
         pauseOnHover: true,
         pauseonDotsHover: true,
         swipe: true,
-        //centerMode: true,
         respondTo: 'slider'
   });
-
-    //$slickSlider.find(".slick-slide").height("auto");
-    //$slickSlider.slickSetOption(null, null, true);
 
 /*-- Changing img size according to the window size --*/
   /*-- get all images of the main carousel --*/
