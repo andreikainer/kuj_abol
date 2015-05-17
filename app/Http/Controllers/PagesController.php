@@ -23,4 +23,10 @@ class PagesController extends Controller {
         return view('pages.sponsors', compact('logos'));
     }
 
+/*-- ABOL Page --*/
+    public function abol()
+    {
+        return view('pages.abol');
+    }
+
 }

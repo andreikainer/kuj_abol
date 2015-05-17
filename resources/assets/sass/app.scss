@@ -21,7 +21,8 @@
     width: 150px;
 
     @media(max-width: 320px) {
-      width: 120px;
+      width: 100px;
+      margin-top: .65rem;
     }
     @media (min-width: 768px) {
       width: 212px;
@@ -190,6 +191,11 @@ hr {
   margin-top: .6em;
 }
 
+.question i {
+  margin-left: .2rem;
+}
+
+
 /*------------------------------------------------------------------*/
   /*-- Flags for language button --*/
 /*------------------------------------------------------------------*/
@@ -236,13 +242,17 @@ footer {
     margin-bottom: 1em;
   }
 
-  .socialmedia button {
+  .socialmedia a {
     margin: 0 auto;
-    background-color: $blue;
+    display: inline-block;
   }
 
-  .socialmedia a {
-    display: inline-block;
+  .socialmedia a i {
+    margin-left: .2rem;
+  }
+
+  #facebook, #twitter, #googleplus, #youtube {
+    background-color: $blue;
   }
 
   .socialmedia {
@@ -266,13 +276,23 @@ footer {
   }
 
   .socialmedia form {
-    width: 21.6rem;
     margin: 0 auto;
+    @media(max-width: 400px) {
+      width: 100%;
+    }
+    @media(min-width: 401px) and (max-width: 768px) {
+      width: 86%;
+    }
+    @media(min-width: 769px) and (max-width: 991px) {
+      width: 100%;
+    }
+    @media(min-width: 922px) {
+      width: 80%;
+    }
   }
 
   .socialmedia form div:first-of-type {
     display: inline-block;
-    width: 16rem;
     margin-top: .9rem;
     vertical-align: middle;
     @media(min-width: 768px) and (max-width: 991px) {
@@ -281,9 +301,12 @@ footer {
   }
 
   .socialmedia input {
-    width: 16rem;
+    width: 13rem;
     @media(min-width: 768px) and (max-width: 991px) {
       width: 11rem;
+    }
+    @media(min-width: 992px) {
+      width: 10rem;
     }
   }
 
@@ -774,3 +797,92 @@ footer {
   background: tint($blue, 75%);
   border: 1px dashed $blue;
 }
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- Abol page styles --*/
+/*------------------------------------------------------------------*/
+#abol {
+  background-color: rgb(60,60,74);
+  color: white;
+  font-family: $lato;
+  font-size: 1.2rem;
+
+  .abol-logo {
+    @media(max-width: 768px) {
+      width: 90px;
+      margin-right: .2rem;
+      margin-left: .4rem;
+    }
+    margin-left: 1.9rem;
+    margin-right: 1rem;
+  }
+
+  .main-link {
+    color: white;
+    border-top: solid 2px rgb(246,100,88);
+    border-bottom: solid 2px rgb(246,100,88);
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: rgb(246,100,88);
+      text-decoration: none;
+    }
+  }
+
+  .abol-team {
+    width: 250px;
+    height: 250px;
+    border: solid 3px rgb(60,60,74);
+    transition: all 0.5s ease;
+    &:hover {
+      border: solid 3px rgb(246,100,88);
+    }
+  }
+
+  h2 {
+    font-family: $lato;
+    color: white;
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+  .sec-link {
+    display: block;
+    color: rgb(120, 140, 150);
+    font-weight: 700;
+    transition: all 0.3s ease;
+    &:hover {
+      color: darken(rgb(120, 140, 150), 15%);
+      text-decoration: none;
+    }
+
+    i {
+      margin-right: .5rem;
+      color: rgb(246,100,88);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: darken(rgb(246,100,88), 15%);
+      }
+    }
+  }
+
+  .mt-5em {
+    margin-top: 5rem;
+  }
+
+  .copywrite {
+    font-size: .6rem;
+  }
+}
+
+.tpad-zero {
+  padding-top: 0 !important;
+}
+//.bm-8em {
+//  font-size: .6rem;
+//  margin-bottom: 8rem;
+//}
