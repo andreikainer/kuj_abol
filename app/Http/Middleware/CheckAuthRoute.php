@@ -11,13 +11,22 @@ class CheckAuthRoute {
 	 * @param  \Closure  $next
 	 * @return mixed
 	 */
-	public function handle($request, Closure $next, $route)
+	public function handle($request, Closure $next)
 	{
-//		$user = $request->user();
-//
-//        if
+        // get the current user
+        $username = $request->user()->user_name;
 
-        dd($route);
+        // get the route he is trying to access
+        $url = $request->url();
+        $urlRequest = substr($url, strrpos($url, '/') + 1);
+
+        // check if he is allowed to access
+        if($username !== $urlRequest)
+        {
+            return redirect()->home();
+        }
+
+        return $next($request);
 	}
 
 }

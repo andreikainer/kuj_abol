@@ -33,8 +33,8 @@ class UserpanelController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth');
-        //$this->middleware('checkRoute:route');
+        $this->middleware('auth');          //check if the user is authorized
+        $this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);  a  // check if the user is authorized for this route
 
     }
 
