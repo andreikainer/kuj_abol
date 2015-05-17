@@ -32,7 +32,7 @@
 
             <!-- Side menu -->
             <div class="hidden-xs hidden-sm col-md-3 mt-3em">
-                <img class="img-responsive center-block avatar" src="@if($user->avatar === null )
+                <img class="img-responsive img-rounded center-block avatar" src="@if($user->avatar === null )
                         {{ asset('img/avatars/avatar-placeholder.svg') }}"
                     @else
                         {{ asset('img/avatars/'.$user->avatar) }}"
