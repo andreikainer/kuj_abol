@@ -33,7 +33,7 @@
                 </td>
 
                 <td>
-                    {!! Form::text('url', 'http://', array('required', 'class'=>'form-input form-inline')) !!}
+                    {!! Form::text('url', 'http://', array('class'=>'form-input form-inline')) !!}
                     {{ $errors->first('url') }}
                 </td>
 
