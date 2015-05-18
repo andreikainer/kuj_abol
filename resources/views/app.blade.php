@@ -238,8 +238,9 @@
                     </div>
 
                     <div>
-                        <form class="form" action="#" method="post">
+                        <form class="form" action="{{ action('ContactFormController@postNewsletter') }}" method="post">
                             <div class="form-group">
+                                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                                 <label class="hidden">Newsletter</label>
                                 <input type="email" class="form-control" placeholder="{{ trans('app.newsletter') }}" name="email">
                             </div>

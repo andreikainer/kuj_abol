@@ -41,4 +41,5 @@ return [
     'favourite/remove'      => 'favoriten/remove',
     'toggle'                => 'toggle',
     'abol'                  => 'abol',
+    'newsletter'            => 'newsletter',
 ];

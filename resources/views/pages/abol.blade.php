@@ -67,9 +67,9 @@
 
             <div class="row">
 
-                <div class="col-xs-12 mt-2em">
+                <div class="col-xs-12 mt-3em">
                     <div class="text-center">
-                        <a href="#" data-scroll class="main-link">WORKS</a>
+                        <a href="#works" data-scroll class="main-link">WORKS</a>
                         <a href="{{ action('PagesController@abol') }}">
                             <img src="{{ asset('/img/abol.svg') }}" alt="logo" class="abol-logo">
                         </a>
@@ -82,6 +82,7 @@
  <!--================== Main Content =================================================-->
             <div class="row mt-5em" id="contacts">
 
+        <!-- Contact page -->
                 <div class="col-xs-12 col-sm-4 mt-3em">
                     <div class="text-center">
                         <a href="http://andreikainer.com">
@@ -117,7 +118,25 @@
 
             </div>
 
-            <div class="row">
+
+        <!-- Works page -->
+            <div class="row mt-5em" id="works">
+
+                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 mt-3em thumbnail abol-thumbnail">
+                      <a href="http://kinderfoerderungen.at" class="text-center">
+                          <img src="{{ asset('/img/logo.svg') }}" alt="Kinder-und Jugenfönderungen" class="text-centerimg-responsive">
+                      </a>
+                      <div class="caption">
+                        <h2>Kinder-und Jugenfönderungen</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur inventore laborum molestias odit optio quam quas quidem sapiente sed totam veniam, vero voluptas? Eos laborum magnam quia totam voluptates!</p>
+                        <a href="http://kinderfoerderungen.at" class="sec-link text-center"><i class="fa fa-hand-o-right"></i>Have a look on Web</a>
+                        <a href="https://github.com" class="sec-link text-center"><i class="fa fa-github"></i>Check this on GitHub</a>
+                      </div>
+                    </div>
+
+            </div>
+
+            <div class="row" id="footer">
                 <p class="text-center mt-3em copywrite">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
             </div>
         </div><!-- container ends -->

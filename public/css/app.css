@@ -6369,6 +6369,7 @@ footer {
 /*------------------------------------------------------------------*/
 .flash-message {
   position: absolute;
+  left: 10%;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
@@ -6398,8 +6399,9 @@ footer {
     border-top: solid 2px #f66458;
     border-bottom: solid 2px #f66458;
     font-weight: 700;
-    transition: all 0.3s ease; }
-    #abol .main-link:hover {
+    transition: all 0.3s ease;
+    text-decoration: none; }
+    #abol .main-link:hover, #abol .main-link:active, #abol .main-link:focus {
       color: #f66458;
       text-decoration: none; }
   #abol .abol-team {
@@ -6419,7 +6421,7 @@ footer {
     display: block;
     color: #788c96;
     font-weight: 700;
-    transition: all 0.3s ease; }
+    transition: all 0.5s ease; }
     #abol .sec-link:hover {
       color: #f66458;
       text-decoration: none; }
@@ -6429,8 +6431,31 @@ footer {
       transition: all 0.3s ease; }
   #abol .mt-5em {
     margin-top: 5rem; }
-  #abol .copywrite {
-    font-size: .6rem; }
+  #abol #works {
+    background-color: white;
+    padding: 5rem; }
+    #abol #works h2 {
+      color: #f66458;
+      padding-top: 1.5rem;
+      padding-bottom: .6rem; }
+    #abol #works p {
+      color: white; }
+    #abol #works img {
+      margin-top: 1rem; }
+    #abol #works .abol-thumbnail {
+      border: solid 2px #3c3c4a !important;
+      transition: all 0.3s ease; }
+      #abol #works .abol-thumbnail:hover, #abol #works .abol-thumbnail:active, #abol #works .abol-thumbnail:focus {
+        border: solid 2px #f66458 !important; }
+    #abol #works .caption {
+      background-color: #3c3c4a; }
+    #abol #works .caption, #abol #works .abol-thumbnail {
+      padding-top: 0 !important; }
+  #abol #footer {
+    background-color: white; }
+    #abol #footer .copywrite {
+      font-size: .6rem;
+      color: #3c3c4a; }
 
 .tpad-zero {
   padding-top: 0 !important; }
