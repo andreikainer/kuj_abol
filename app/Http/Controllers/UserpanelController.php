@@ -117,7 +117,13 @@ class UserpanelController extends Controller
         {
             // if it's admin, redirect to admin cms with all users but admin
             $allUsers = User::whereNotIn('id', [2])->get();
-            return view('adminpanel.index', compact('user', 'allUsers'));
+
+            // Retrieve all projects pending approval.
+            $pendingProjects = Project::where('approved', '=', '0')
+                ->where('application_status', '=', '1')
+                ->where('live', '=', '0')->get();
+
+            return view('adminpanel.index', compact('user', 'allUsers', 'pendingProjects'));
         }
 
         // if it's a regular user, redirect to user's dashboard

@@ -101,6 +101,10 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.favourite/remove').'/{id}', 'UserpanelController@removeFavourite');
         Route::get(LaravelLocalization::transRoute('routes.toggle').'/{id}', 'UserpanelController@edit');
 
+        Route::get(LaravelLocalization::transRoute('routes.admin/edit-project').'/{slug}', 'AdminController@getEditProject');
+        Route::patch(LaravelLocalization::transRoute('routes.admin/edit-project').'/{slug}', 'AdminController@patchEditProject');
+        Route::get(LaravelLocalization::transRoute('routes.admin/approve-project').'/{slug}', 'AdminController@getApproveProject');
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 

@@ -5,7 +5,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Create Project Form Translations GERMAN
+    | User Panel Translations GERMAN
     |--------------------------------------------------------------------------
     |
     | Language translation keys for entire User panel.

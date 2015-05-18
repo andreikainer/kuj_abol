@@ -10,10 +10,10 @@
             <thead>
                 <tr>
                     <th class="col-md-2 col-sm-2 col-xs-2"></th>
-                    <th class="col-md-2 col-sm-3 col-xs-3">{{ trans('my-contributions.th-1') }}</th>
-                    <th class="col-md-2 col-sm-2 col-xs-2">{{ trans('my-contributions.th-2') }}</th>
-                    <th class="col-md-2 col-sm-1 col-xs-1">{{ trans('my-contributions.th-3') }}</th>
-                    <th class="col-md-1 col-sm-2 col-xs-2">{{ trans('my-contributions.th-4') }}</th>
+                    <th class="col-md-2 col-sm-3 col-xs-3">{{ trans('my-contributions.project-title') }}</th>
+                    <th class="col-md-2 col-sm-2 col-xs-2">{{ trans('my-contributions.contribution-date') }}</th>
+                    <th class="col-md-2 col-sm-1 col-xs-1">{{ trans('my-contributions.amount') }}</th>
+                    <th class="col-md-1 col-sm-2 col-xs-2">{{ trans('my-contributions.status') }}</th>
                     <th class="col-md-1 col-sm-2 col-xs-2"></th>
                 </tr>
             </thead>
