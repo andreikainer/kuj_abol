@@ -13,6 +13,7 @@
 
 .userpanel-active {
   @extend .fieldset-active;
+  @extend .form-section-tab-active;
 }
 
 .finished-td, .ongoing-td, .banned-td {

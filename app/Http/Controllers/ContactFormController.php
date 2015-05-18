@@ -51,7 +51,7 @@ class ContactFormController extends Controller {
                             'data'          => $data
                         ], function($message) use ($data)
                         {
-                            $message->to($data['toWhere'], $data['toWhom']);
+                            $message->to($data['toWhere'], $data['toWhom'])->subject(trans('contact-page.question'));
                     });
 
         // 3. store success feed back message in a session
@@ -59,5 +59,37 @@ class ContactFormController extends Controller {
 
         // 4redirect back to the contact form
         return view('pages.contact');
+    }
+
+    public function postNewsletter(Request $request)
+    {
+        // 1. filter user's input
+        $user_input = $request->input('email');
+        $user_email = filter_var($user_input, FILTER_VALIDATE_EMAIL);
+
+        // 2. send email to the user
+        Mail::send('emails.newsletter',
+            [
+                'email' => $request->get('email')
+            ], function($message) use ($user_email)
+            {
+                $message->to($user_email)->subject(trans('contact-page.newsletter-success'));
+            });
+
+        // 3. send email to the admin
+        Mail::send('emails.new-newsletter-user',
+            [
+                'email'      => $request->get('email'),
+                'user_email' => $user_email
+            ], function($message) use ($user_email)
+            {
+                $message->to('ladiez.os@gmail.com', $user_email)->subject(trans('contact-page.new-newsletter-user'));
+            });
+
+        // 4. store success feed back message in a session
+        Session::flash('flash_message', trans('contact-page.flash'));
+
+        // 5. redirect back to the contact form
+        return redirect()->back();
     }
 }

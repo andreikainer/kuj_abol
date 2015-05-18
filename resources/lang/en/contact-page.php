@@ -29,4 +29,12 @@ return [
     'place-email'       => 'Your email',
     'place-message-body'=> 'Your message',
 
+/*-- Email subjects --*/
+    'new-newsletter-user' => 'New newsletter sign up',
+    'newsletter-success'  => 'Newsletter sign up',
+    'question'            => 'Question from a user',
+
+/*-- Flash message --*/
+    'flash'             => 'Please, check your email.',
+
 ];

@@ -92,7 +92,7 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@getReset');
         Route::post(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@postReset');
 
-    /*-- Userpanel Page --*/
+    /*-- Userpanel, Adminpanel Pages --*/
         Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
         Route::post(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@update');
         Route::get(LaravelLocalization::transRoute('routes.account/delete').'/{username}', 'UserpanelController@delete');
@@ -111,6 +111,9 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.sponsor/remove').'/{id}', 'AdminController@removeSponsor');
         Route::get(LaravelLocalization::transRoute('routes.sponsor/relist').'/{id}', 'AdminController@relistSponsor');
         Route::post(LaravelLocalization::transRoute('routes.sponsor/add'), 'AdminController@addSponsor');
+
+    /*-- Newsletter sign up --*/
+        Route::post(LaravelLocalization::transRoute('routes.newsletter'), 'ContactFormController@postNewsletter');
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 

@@ -44,6 +44,9 @@ return [
     'sponsor/relist'        => 'sponsor/relist',
     'sponsor/add'           => 'sponsor/add',
     'abol'                  => 'abol',
+
+    'newsletter'            => 'newsletter',
+
     'admin'                 => 'admin',
     'admin/edit-project' => 'admin/edit-project',
     'admin/approve-project' => 'admin/approve-project',

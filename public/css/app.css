@@ -5143,12 +5143,12 @@ input[type="submit"], button[type="submit"] {
 .form-section-tab-border-left {
   border-left: 1px solid #d2d2d2; }
 
-.form-section-tab-active {
+.form-section-tab-active, .userpanel-active {
   background: white;
   border-top: 4px solid #3fa3db;
   border-bottom: 1px solid white;
   color: #3fa3db; }
-  .form-section-tab-active:hover {
+  .form-section-tab-active:hover, .userpanel-active:hover {
     background: white; }
 
 .form-radius-btm-only, .userpanel-section {
@@ -5158,6 +5158,9 @@ input[type="submit"], button[type="submit"] {
 .error-red-top {
   -webkit-appearance: none !important;
   box-shadow: inset 0 0.5rem 0 0 #ed5a4d !important; }
+
+.active-sidemenu-item {
+  box-shadow: inset 0.5rem 0 0 0 #3fa3db; }
 
 /*------------------------------------------------------------------*/
 /*-- PROJECT TILE --*/
@@ -6368,10 +6371,12 @@ footer {
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
     border-top: none; }
-    .account .form-section-tab:hover, .account .form-section-tab:active {
-      box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
+    .account .form-section-tab:hover, .account .form-section-tab:active, .account .form-section-tab:focus {
+      box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
   .account .pad {
     padding-left: 1em; }
+  .account .form-section-tab-active:not(.userpanel-active), .account .userpanel-active:not(.userpanel-active) {
+    box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
 
 #userpanel-wrapper {
   background-color: white;
@@ -6388,6 +6393,7 @@ footer {
 /*------------------------------------------------------------------*/
 .flash-message {
   position: absolute;
+  left: 10%;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
@@ -6417,8 +6423,9 @@ footer {
     border-top: solid 2px #f66458;
     border-bottom: solid 2px #f66458;
     font-weight: 700;
-    transition: all 0.3s ease; }
-    #abol .main-link:hover {
+    transition: all 0.3s ease;
+    text-decoration: none; }
+    #abol .main-link:hover, #abol .main-link:active, #abol .main-link:focus {
       color: #f66458;
       text-decoration: none; }
   #abol .abol-team {
@@ -6438,20 +6445,41 @@ footer {
     display: block;
     color: #788c96;
     font-weight: 700;
-    transition: all 0.3s ease; }
+    transition: all 0.5s ease; }
     #abol .sec-link:hover {
-      color: #55656d;
+      color: #f66458;
       text-decoration: none; }
     #abol .sec-link i {
       margin-right: .5rem;
       color: #f66458;
       transition: all 0.3s ease; }
-      #abol .sec-link i:hover {
-        color: #f2210f; }
   #abol .mt-5em {
     margin-top: 5rem; }
-  #abol .copywrite {
-    font-size: .6rem; }
+  #abol #works {
+    background-color: white;
+    padding: 5rem; }
+    #abol #works h2 {
+      color: #f66458;
+      padding-top: 1.5rem;
+      padding-bottom: .6rem; }
+    #abol #works p {
+      color: white; }
+    #abol #works img {
+      margin-top: 1rem; }
+    #abol #works .abol-thumbnail {
+      border: solid 2px #3c3c4a !important;
+      transition: all 0.3s ease; }
+      #abol #works .abol-thumbnail:hover, #abol #works .abol-thumbnail:active, #abol #works .abol-thumbnail:focus {
+        border: solid 2px #f66458 !important; }
+    #abol #works .caption {
+      background-color: #3c3c4a; }
+    #abol #works .caption, #abol #works .abol-thumbnail {
+      padding-top: 0 !important; }
+  #abol #footer {
+    background-color: white; }
+    #abol #footer .copywrite {
+      font-size: .6rem;
+      color: #3c3c4a; }
 
 .tpad-zero {
   padding-top: 0 !important; }

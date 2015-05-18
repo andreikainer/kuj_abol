@@ -762,13 +762,17 @@ footer {
     border-top-left-radius: 0 !important;
     border-top: none;
 
-    &:hover, &:active {
-      box-shadow: inset 0 0.5rem 0 0 $blue;
+    &:hover, &:active, &:focus {
+      box-shadow: inset 0 0.5rem 0 0 $blue !important;
     }
   }
 
   .pad {
     padding-left: 1em;
+  }
+
+  .form-section-tab-active:not(.userpanel-active) {
+      box-shadow: inset 0 0.5rem 0 0 $blue !important;
   }
 }
 
@@ -789,6 +793,7 @@ footer {
 /*------------------------------------------------------------------*/
 .flash-message {
   position: absolute;
+  left: 10%;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
@@ -825,8 +830,9 @@ footer {
     border-bottom: solid 2px rgb(246,100,88);
     font-weight: 700;
     transition: all 0.3s ease;
+    text-decoration: none;
 
-    &:hover {
+    &:hover, &:active, &:focus {
       color: rgb(246,100,88);
       text-decoration: none;
     }
@@ -853,9 +859,9 @@ footer {
     display: block;
     color: rgb(120, 140, 150);
     font-weight: 700;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     &:hover {
-      color: darken(rgb(120, 140, 150), 15%);
+      color: rgb(246,100,88);
       text-decoration: none;
     }
 
@@ -863,10 +869,6 @@ footer {
       margin-right: .5rem;
       color: rgb(246,100,88);
       transition: all 0.3s ease;
-
-      &:hover {
-        color: darken(rgb(246,100,88), 15%);
-      }
     }
   }
 
@@ -874,15 +876,48 @@ footer {
     margin-top: 5rem;
   }
 
-  .copywrite {
-    font-size: .6rem;
+  #works {
+    background-color: white;
+    padding: 5rem;
+
+    h2 {
+      color: rgb(246,100,88);
+      padding-top: 1.5rem;
+      padding-bottom: .6rem;
+    }
+    p {
+      color: white;
+    }
+    img {
+      margin-top: 1rem;
+    }
+
+    .abol-thumbnail {
+      border: solid 2px rgb(60,60,74) !important;
+      transition: all 0.3s ease;
+
+      &:hover, &:active, &:focus {
+        border: solid 2px rgb(246,100,88) !important;
+      }
+    }
+    .caption {
+      background-color: rgb(60,60,74);
+    }
+    .caption, .abol-thumbnail {
+      padding-top: 0 !important;
+    }
+  }
+
+  #footer {
+    background-color: white;
+
+    .copywrite {
+      font-size: .6rem;
+      color: rgb(60,60,74);
+    }
   }
 }
 
 .tpad-zero {
   padding-top: 0 !important;
 }
-//.bm-8em {
-//  font-size: .6rem;
-//  margin-bottom: 8rem;
-//}

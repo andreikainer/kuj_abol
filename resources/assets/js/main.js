@@ -192,8 +192,4 @@ function getLocale(response)
     {
         changeRightBtnGroupAlignment();
     }
-
-/*-- To fade out flash-message after delay --*/
-   // $('.flash-message').fadeIn(600).delay(3000).fadeOut(300);
-
 });

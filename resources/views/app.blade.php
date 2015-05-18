@@ -83,9 +83,7 @@
 
                         <!-- help_btn -->
                             <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle visible-xs button-circle mobile-circle-button question">
-                                {{--<button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button question">--}}
                                     <i class="fa fa-question"></i>
-                                {{--</button>--}}
                             </a>
 
            			    <!-- search_btn for mobile -->
@@ -123,9 +121,7 @@
 
                                 <!-- help_btn -->
                                     <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle button-circle hvr-push question">
-                                        {{--<button type="button" class="navbar-toggle button-circle hvr-push question">--}}
                                             <i class="fa fa-question"></i>
-                                        {{--</button>--}}
                                     </a>
 
                                 <!-- search_btn -->
@@ -225,35 +221,28 @@
 	                <div>
 	                <!-- facebook_btn -->
                         <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="facebook">
-                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="facebook">--}}
                                 <i class="fa fa-facebook"></i>
-                            {{--</button>--}}
                         </a>
                     <!-- twitter_btn -->
                         <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="twitter">
-                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="twitter">--}}
                                 <i class="fa fa-twitter"></i>
-                            {{--</button>--}}
                         </a>
                     <!-- youtube_btn -->
                         <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="youtube">
-                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="youtube">--}}
                                 <i class="fa fa-youtube-play"></i>
-                            {{--</button>--}}
                         </a>
                     <!-- googleplus_btn -->
                         <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="googleplus">
-                            {{--<button type="button" class="navbar-toggle button-circle hvr-push" id="googleplus">--}}
                                 <i class="fa fa-google-plus"></i>
-                            {{--</button>--}}
                         </a>
                     </div>
 
                     <div>
-                        <form class="form" action="#" method="post" target="_blank">
+                        <form class="form" action="{{ action('ContactFormController@postNewsletter') }}" method="post">
                             <div class="form-group">
+                                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                                 <label class="hidden">Newsletter</label>
-                                <input type="email" class="form-control" placeholder="{{ trans('app.newsletter') }}" id="text3390090" name="email">
+                                <input type="email" class="form-control" placeholder="{{ trans('app.newsletter') }}" name="email">
                             </div>
                             <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('app.sign-up') }}</button>
                         </form>
