@@ -46,5 +46,6 @@ return [
     /**
      * Messages.
      */
+    'approved-message' => 'The project was approved'
 
 ];
