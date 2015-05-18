@@ -105,6 +105,12 @@ class UserpanelController extends Controller
             return Redirect::home();
         }
 
+        // Take the Administrator to the admin panel.
+        if($user->id == '2')
+        {
+            return redirect('admin');
+        }
+
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
         $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
