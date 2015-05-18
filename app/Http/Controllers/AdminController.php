@@ -5,7 +5,9 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\AdminEditProjectRequest;
 use App\Project;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller {
 
@@ -15,6 +17,33 @@ class AdminController extends Controller {
     public function __construct()
     {
         $this->middleware('checkAdmin');
+    }
+
+    /**
+     * Show the Administrator panel.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function index()
+    {
+        try
+        {
+            $user = Auth::user()->with('projects')->where('id', '=', '2')->firstOrFail();
+        }
+        catch (ModelNotFoundException $e)
+        {
+            return Redirect::home();
+        }
+
+        // if it's admin, redirect to admin cms with all users but admin
+        $allUsers = User::whereNotIn('id', [2])->get();
+
+        // Retrieve all projects pending approval.
+        $pendingProjects = Project::where('approved', '=', '0')
+            ->where('application_status', '=', '1')
+            ->where('live', '=', '0')->get();
+
+        return view('adminpanel.index', compact('user', 'allUsers', 'pendingProjects'));
     }
 
     /**
@@ -41,6 +70,10 @@ class AdminController extends Controller {
         // Approve the project, and make it live.
         $project->approved = '1';
         $project->live = '1';
+
+        $project->save();
+
+        dd($project);
     }
 
     public function getApproveProject(Request $request, Project $project)

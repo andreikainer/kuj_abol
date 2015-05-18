@@ -109,21 +109,6 @@ class UserpanelController extends Controller
 
         $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
 
-        // check if its admin
-
-        if($user->id === 2)
-        {
-            // if it's admin, redirect to admin cms with all users but admin
-            $allUsers = User::whereNotIn('id', [2])->get();
-
-            // Retrieve all projects pending approval.
-            $pendingProjects = Project::where('approved', '=', '0')
-                ->where('application_status', '=', '1')
-                ->where('live', '=', '0')->get();
-
-            return view('adminpanel.index', compact('user', 'allUsers', 'pendingProjects'));
-        }
-
         // if it's a regular user, redirect to user's dashboard
         return view('userpanel.index', compact('user', 'contributions', 'favourites'));
 
