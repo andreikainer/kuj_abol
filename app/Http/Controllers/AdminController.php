@@ -12,9 +12,7 @@ use App\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Validation\Validator;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Intervention\Image\Facades\Image;
@@ -48,13 +46,14 @@ class AdminController extends Controller {
 
         // if it's admin, redirect to admin cms with all users but admin
         $allUsers = User::whereNotIn('id', [2])->get();
+        $allSponsors = Sponsor::all();
 
         // Retrieve all projects pending approval.
         $pendingProjects = Project::where('approved', '=', '0')
             ->where('application_status', '=', '1')
             ->where('live', '=', '0')->get();
 
-        return view('adminpanel.index', compact('user', 'allUsers', 'pendingProjects'));
+        return view('adminpanel.index', compact('user', 'allUsers', 'pendingProjects', 'allSponsors'));
     }
 
     /**
@@ -226,10 +225,13 @@ class AdminController extends Controller {
 
     public function addSponsor(SponsorDetailsRequest $request)
     {
-        // Save the new Sponsor in the DB
+
+        // Save the new Sponsor Logo in the DB
         $sponsor = new Sponsor;
+        $sponsor->user_id = 1;
         $sponsor->business_name = $request->get('business_name');
         $sponsor->url           = $request->get('url');
+        $sponsor->online_since  = date('Y-m-d');
         $sponsor->save();
 
         $logo = $request->file('logo');
@@ -240,54 +242,53 @@ class AdminController extends Controller {
             $logoFolderPath = public_path("img/logos");
 
             // Resize the images to our needs, and save them in their directories.
-            $this->resizeLogoAndSave($logo, $user->business_name, $logoFolderPath);
+            $this->resizeLogoAndSave($logo, $sponsor->business_name, $logoFolderPath);
 
             // Create new Image instances in the database.
-            $this->saveImageToDB($logo, $sponsor->business_name);
+            $this->saveImageToDB($logo, $sponsor->business_name, $sponsor);
 
-            Session::flash('flash_message', trans('userpanel.form-change-success'));
+            Session::flash('flash_message', trans('userpanel.logo-upload-success'));
         }
         return redirect()->back();
     }
 
-    protected function saveImageToDB($avatar, $userName)
+    protected function saveImageToDB($logo, $businessName, $sponsor)
     {
 
-        // If $image is not an instance of a file, it is the hidden field value sent,
+        // If $logo is not an instance of a file, it is the hidden field value sent,
         // with a saved image preview.
         if($logo instanceof UploadedFile)
         {
             $extension = explode('.', $logo->getClientOriginalName());
             $extension = $extension[count($extension)-1];
-            // Name images by user's name.
-            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+            // Name images by business's name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $businessName).'.'.$extension));
         }
         else
         {
             $extension = explode('.', $logo->getClientOriginalName());
             $extension = $extension[count($extension)-1];
-            // Name images by user's name.
-            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+            // Name images by business name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $businessName).'.'.$extension));
         }
 
-        $sponsor = new Sponsor;
         $sponsor->logo = $filename;
         $sponsor->save();
     }
 
     /**
-     * Resize and rename the images to our formats.
+     * Resize and rename the logos to our formats.
      * Move them to their respective directories.
      *
-     * @param $avatar
-     * @param $userName
-     * @param $avatarPath
+     * @param $logo
+     * @param $businessName
+     * @param $logoPath
      */
-    protected function resizeLogoAndSave($logo, $userName, $logoPath)
+    protected function resizeLogoAndSave($logo, $businessName, $logoPath)
     {
         $extension = explode('.', $logo->getClientOriginalName());
         $extension = $extension[count($extension) - 1];
-        $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName) . '.' . $extension));
+        $filename = (strtolower(preg_replace('/[\s]+/', '_', $businessName) . '.' . $extension));
 
         Image::make($logo)->resize(250, 160, function ($constraint) {
             $constraint->upsize();
@@ -295,6 +296,5 @@ class AdminController extends Controller {
         })->limitColors(255)
             ->save($logoPath.'/'.$filename);
     }
-}
 
 }

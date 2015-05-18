@@ -23,15 +23,18 @@
             {!! Form::open(['action' => 'AdminController@addSponsor', 'class' => 'row', 'method' => 'post', 'files' => 'true']) !!}
             <tr>
                 <td>
-                    {!! Form::file('logo', ['class' => 'admin-logo-upload', 'accept' => 'image/*']) !!}
+                    {!! Form::file('logo', ['class' => 'admin-logo-upload form-input', 'accept' => 'image/*']) !!}
+                    {{ $errors->first('logo') }}
                 </td>
 
                 <td>
                     {!! Form::text('business_name', '', array('required', 'class'=>'form-input form-inline')) !!}
+                    {{ $errors->first('business_name') }}
                 </td>
 
                 <td>
                     {!! Form::text('url', 'http://', array('required', 'class'=>'form-input form-inline')) !!}
+                    {{ $errors->first('url') }}
                 </td>
 
                 <td>

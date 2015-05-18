@@ -24,7 +24,7 @@ class SponsorDetailsRequest extends Request {
         return [
             'business_name' => 'regex:/^[A-Za-z0-9\-! ,\'\"\/@\.:\(\)]+$/',
             'logo'          => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',
-            'url'           => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/',
+            'url'           => 'regex:/^[A-Za-z0-9\-! ,\'\"\/@\.:\(\)]+$/',
         ];
 	}
 

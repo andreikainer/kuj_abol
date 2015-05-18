@@ -39,6 +39,7 @@ return [
     'form-error'      => 'Woops! There is an error in your input. Please try again.',
     'form-change-success' => 'Changes were saved successfully.',
     'form-delete-success' => 'Your account were deleted successfully.',
-    'avatar-upload'     => 'To upload new avatar,  click this image.'
+    'avatar-upload'     => 'To upload new avatar,  click this image.',
+    'logo-upload-success' => 'Logo upload successful',
 
 ];
