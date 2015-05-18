@@ -5143,12 +5143,12 @@ input[type="submit"], button[type="submit"] {
 .form-section-tab-border-left {
   border-left: 1px solid #d2d2d2; }
 
-.form-section-tab-active {
+.form-section-tab-active, .userpanel-active {
   background: white;
   border-top: 4px solid #3fa3db;
   border-bottom: 1px solid white;
   color: #3fa3db; }
-  .form-section-tab-active:hover {
+  .form-section-tab-active:hover, .userpanel-active:hover {
     background: white; }
 
 .form-radius-btm-only, .userpanel-section {
@@ -5158,6 +5158,9 @@ input[type="submit"], button[type="submit"] {
 .error-red-top {
   -webkit-appearance: none !important;
   box-shadow: inset 0 0.5rem 0 0 #ed5a4d !important; }
+
+.active-sidemenu-item {
+  box-shadow: inset 0.5rem 0 0 0 #3fa3db; }
 
 /*------------------------------------------------------------------*/
 /*-- PROJECT TILE --*/
@@ -6344,10 +6347,12 @@ footer {
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
     border-top: none; }
-    .account .form-section-tab:hover, .account .form-section-tab:active {
-      box-shadow: inset 0 0.5rem 0 0 #3fa3db; }
+    .account .form-section-tab:hover, .account .form-section-tab:active, .account .form-section-tab:focus {
+      box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
   .account .pad {
     padding-left: 1em; }
+  .account .form-section-tab-active:not(.userpanel-active), .account .userpanel-active:not(.userpanel-active) {
+    box-shadow: inset 0 0.5rem 0 0 #3fa3db !important; }
 
 #userpanel-wrapper {
   background-color: white;
@@ -6416,14 +6421,12 @@ footer {
     font-weight: 700;
     transition: all 0.3s ease; }
     #abol .sec-link:hover {
-      color: #55656d;
+      color: #f66458;
       text-decoration: none; }
     #abol .sec-link i {
       margin-right: .5rem;
       color: #f66458;
       transition: all 0.3s ease; }
-      #abol .sec-link i:hover {
-        color: #f2210f; }
   #abol .mt-5em {
     margin-top: 5rem; }
   #abol .copywrite {

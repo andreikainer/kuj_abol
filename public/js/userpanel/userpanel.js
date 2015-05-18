@@ -1,5 +1,6 @@
 var panelCollection = $('div.userpanel-section');
 var tabCollection = $('.form-section-tab');
+var sideCollection = $('.sidemenu-item');
 
 // tabs click events
 $('.form-section-tab').on('click', function()
@@ -17,7 +18,13 @@ $.subscribe('section-tab.click', function(event, data)
 {
     showSection(panelCollection, $(data).data('section'));
     makeTabActive(tabCollection, $(data).data('section'));
+    makeSidemenuItemActive(sideCollection, $(data));
 });
+
+function makeSidemenuItemActive(collection)
+{
+    collection.toggleClass('.active-sidemenu-item', true);
+}
 
 function showSection(collection, i)
 {
@@ -233,14 +240,7 @@ function makeTabActive(collection, i)
         hideErrorMessage(name);
     });
 
-    /*
-     +----------------------------------------------------------------------------------------------------
-     |
-     |  IMAGE PREVIEW
-     |
-     +----------------------------------------------------------------------------------------------------
-     */
-
+ /*-- Image input --*/
     /**
      * PUBLISH EVENTS
      */
