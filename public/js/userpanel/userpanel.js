@@ -277,3 +277,15 @@ function makeTabActive(collection, i)
     });
 
 })();
+
+// show - hide logo upload form
+document.getElementById('add-logo').addEventListener('click', function()
+{
+    if(document.getElementById("admin-logo-form").style.display = "none")
+    { console.log('yes');
+        document.getElementById('admin-logo-form').style.display = "block";
+    }else(document.getElementById('admin-logo-form').style.display = "block")
+    {
+        document.getElementById('admin-logo-form').style.display = "none";
+    }
+});

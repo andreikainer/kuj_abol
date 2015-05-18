@@ -2,14 +2,22 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Requests\AdminEditProjectRequest;
+use App\Http\Requests\SponsorDetailsRequest;
 use App\Project;
 use App\User;
 use Carbon\Carbon;
+use App\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Validator;
+
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Intervention\Image\Facades\Image;
+
 
 class AdminController extends Controller {
 
@@ -39,13 +47,14 @@ class AdminController extends Controller {
 
         // if it's admin, redirect to admin cms with all users but admin
         $allUsers = User::whereNotIn('id', [2])->get();
+        $allSponsors = Sponsor::all();
 
         // Retrieve all projects pending approval.
         $pendingProjects = Project::where('approved', '=', '0')
             ->where('application_status', '=', '1')
             ->where('live', '=', '0')->get();
 
-        return view('adminpanel.index', compact('user', 'allUsers', 'pendingProjects'));
+        return view('adminpanel.index', compact('user', 'allUsers', 'pendingProjects', 'allSponsors'));
     }
 
     /**
@@ -200,6 +209,105 @@ class AdminController extends Controller {
         {
             mkdir($path);
         }
+    }
+
+    /* remove the Sponsor - make inactive
+     *
+     */
+    public function removeSponsor($sponsorId)
+    {
+        $sponsor = Sponsor::where('id', $sponsorId)->update(['active' => 0]);
+
+        return redirect()->back();
+
+    }
+
+    /* relist the Sponsor - make aktive again
+     *
+     */
+    public function relistSponsor($sponsorId)
+    {
+        $sponsor = Sponsor::where('id', $sponsorId)->update(['active' => 1]);
+
+        return redirect()->back();
+    }
+
+    /* Add a new Sponsor with Logo
+     *
+     */
+
+    public function addSponsor(SponsorDetailsRequest $request)
+    {
+
+        // Save the new Sponsor Logo in the DB
+        $sponsor = new Sponsor;
+        $sponsor->user_id = 1;
+        $sponsor->business_name = $request->get('business_name');
+        $sponsor->url           = $request->get('url');
+        $sponsor->online_since  = date('Y-m-d');
+        $sponsor->save();
+
+        $logo = $request->file('logo');
+
+        if($logo !== null)
+        {
+            // Make the image and document directories.
+            $logoFolderPath = public_path("img/logos");
+
+            // Resize the images to our needs, and save them in their directories.
+            $this->resizeLogoAndSave($logo, $sponsor->business_name, $logoFolderPath);
+
+            // Create new Image instances in the database.
+            $this->saveImageToDB($logo, $sponsor->business_name, $sponsor);
+
+            Session::flash('flash_message', trans('userpanel.logo-upload-success'));
+        }
+        return redirect()->back();
+    }
+
+    protected function saveImageToDB($logo, $businessName, $sponsor)
+    {
+
+        // If $logo is not an instance of a file, it is the hidden field value sent,
+        // with a saved image preview.
+        if($logo instanceof UploadedFile)
+        {
+            $extension = explode('.', $logo->getClientOriginalName());
+            $extension = $extension[count($extension)-1];
+            // Name images by business's name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $businessName).'.'.$extension));
+        }
+        else
+        {
+            $extension = explode('.', $logo->getClientOriginalName());
+            $extension = $extension[count($extension)-1];
+            // Name images by business name.
+            $filename = (strtolower(preg_replace('/[\s]+/', '_', $businessName).'.'.$extension));
+        }
+
+        $sponsor->logo = $filename;
+        $sponsor->save();
+    }
+
+    /**
+     * Resize and rename the logos to our formats.
+     * Move them to their respective directories.
+     *
+     * @param $logo
+     * @param $businessName
+     * @param $logoPath
+     */
+    protected function resizeLogoAndSave($logo, $businessName, $logoPath)
+    {
+        $extension = explode('.', $logo->getClientOriginalName());
+        $extension = $extension[count($extension) - 1];
+        $filename = (strtolower(preg_replace('/[\s]+/', '_', $businessName) . '.' . $extension));
+
+        Image::make($logo)->resize(250, 160, function ($constraint) {
+            $constraint->upsize();
+            $constraint->aspectRatio();
+        })->limitColors(255)
+            ->save($logoPath.'/'.$filename);
     }
 
 }

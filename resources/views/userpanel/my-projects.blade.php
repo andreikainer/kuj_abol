@@ -49,7 +49,9 @@
                 </td>
 
                 <td class="col-md-2 col-sm-2 col-xs-2">
+                    @if($submittedproject->approved == 1)
                     <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project').'/'.$submittedproject->slug) }}" class="btn btn_sec-td">{{ trans('userpanel.view-project') }}</a>
+                    @endif
                 </td>
             </tr>
         @endforeach

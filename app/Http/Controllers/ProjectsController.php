@@ -9,6 +9,7 @@ use App\Http\Requests\SaveProjectRequest;
 use App\Http\Requests\StartProjectRequest;
 use App\Project;
 use App\Pledge;
+use App\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -17,7 +18,6 @@ use Illuminate\Support\Facades\URL;
 use Intervention\Image\Facades\Image;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
-use DB;
 use KuJ\CustomExceptions\ProjectCompletedException;
 use KuJ\CustomExceptions\ProjectNameAlreadyTakenException;
 use KuJ\CustomExceptions\UserAlreadyHasSubmittedProjectException;
@@ -44,18 +44,7 @@ class ProjectsController extends Controller {
         $succ_projects = Project::where('succ_funded', 1)
             ->paginate(3);
 
-        $logos = DB::table('sponsors_tbl')->get();
-
-
-//        $logos = DB::table('users_tbl')
-//                ->join('pledgers_tbl', function($join)
-//                {
-//                    $join->on('user_tbl.id', '=', 'pledgers_tbl.user_id');
-//                })
-//                ->where('user_tbl.business_name', '=', 1)
-//                ->distinct()
-//                ->select('users_tbl.avatar', 'users_tbl.business_name')
-//                ->get();
+        $logos = Sponsor::all()->where('active', 1);
 
         return view('pages.home', compact('projects', 'succ_projects', 'logos'));
     }
@@ -69,7 +58,7 @@ class ProjectsController extends Controller {
     {
         // fetch data according to slug
         $project = $slug;
-        $logos = DB::table('sponsors_tbl')->get();
+        $logos = Sponsor::all()->where('active', 1);
 
         // find the Users Favourites and catch them
         $favourites = Favourite::all()->where('user_id', Session::get('userId'))->where('project_id', $project->id);

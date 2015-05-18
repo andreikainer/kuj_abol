@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-use DB;
+use App\Sponsor;
 
 class PagesController extends Controller {
 
@@ -19,7 +19,7 @@ class PagesController extends Controller {
 /*-- Sponsors Page --*/
     public function sponsors()
     {
-        $logos = DB::table('sponsors_tbl')->get();
+        $logos = Sponsor::all()->where('active', 1);
         return view('pages.sponsors', compact('logos'));
     }
 

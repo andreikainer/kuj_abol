@@ -28,7 +28,7 @@ Route::group(
     /*-- Landing Page --*/
         Route::get(LaravelLocalization::transRoute('routes.abol'),  'PagesController@abol');
 
-        Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show');
+        Route::get('project/{slug}',  'ProjectsController@show');
 
         Route::get(LaravelLocalization::transRoute('routes.current-projects'), 'ProjectsController@showMoreProjects');
         Route::get(LaravelLocalization::transRoute('routes.successful-projects'), 'ProjectsController@showMoreSuccProjects');
@@ -101,11 +101,16 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.favourite/remove').'/{id}', 'UserpanelController@removeFavourite');
         Route::get(LaravelLocalization::transRoute('routes.toggle').'/{id}', 'UserpanelController@edit');
 
+
+    /*-- Adminpanel Page --*/
         Route::get(LaravelLocalization::transRoute('routes.admin'), 'AdminController@index');
         Route::get(LaravelLocalization::transRoute('routes.admin/edit-project').'/{slug}', 'AdminController@getEditProject');
         Route::patch(LaravelLocalization::transRoute('routes.admin/edit-project').'/{slug}', 'AdminController@patchEditProject');
         Route::get(LaravelLocalization::transRoute('routes.admin/approve-project').'/{slug}', 'AdminController@getApproveProject');
 
+        Route::get(LaravelLocalization::transRoute('routes.sponsor/remove').'/{id}', 'AdminController@removeSponsor');
+        Route::get(LaravelLocalization::transRoute('routes.sponsor/relist').'/{id}', 'AdminController@relistSponsor');
+        Route::post(LaravelLocalization::transRoute('routes.sponsor/add'), 'AdminController@addSponsor');
 
     /*-- Newsletter sign up --*/
         Route::post(LaravelLocalization::transRoute('routes.newsletter'), 'ContactFormController@postNewsletter');

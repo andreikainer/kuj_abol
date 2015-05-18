@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Project;
 use App\Pledger;
+use App\Sponsor;
 use App\Http\Requests\UserDetailsRequest;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -22,7 +23,6 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Auth\AuthController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Intervention\Image\Facades\Image;
-use DB;
 
 class UserpanelController extends Controller
 {
