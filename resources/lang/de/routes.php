@@ -44,5 +44,8 @@ return [
     'sponsor/relist'        => 'sponsor/wiedereinstellen',
     'sponsor/add'           => 'sponsor/hinzufuegen',
     'abol'                  => 'abol',
+    'admin'                 => 'admin',
+    'admin/edit-project' => 'admin/edit-project',
+    'admin/approve-project' => 'admin/approve-project',
 
 ];

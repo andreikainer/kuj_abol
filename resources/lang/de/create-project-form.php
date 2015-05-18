@@ -91,12 +91,6 @@ return [
     'not-owner'             => 'Sorry, you are not the owner of this project.',
     'not-authenticated'     => 'Please login to continue to page.',
 
-
-    /**
-     * Email
-     */
-    'email-subject'         => 'Neue Anfrage eingereicht',
-
     /**
      * Tips for Successful Campaign
      */
