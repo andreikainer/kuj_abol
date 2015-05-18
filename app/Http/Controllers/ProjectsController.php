@@ -72,7 +72,8 @@ class ProjectsController extends Controller {
         $logos = DB::table('sponsors_tbl')->get();
 
         // find the Users Favourites and catch them
-        $favourites = Favourite::where('user_id', Session::get('userId'))->pluck('project_id');
+        $favourites = Favourite::all()->where('user_id', Session::get('userId'))->where('project_id', $project->id);
+        //dd($favourites);
 
         // convert DB date into european date format
         $finish_date = date("d-m-Y", strtotime($project->completed_on));
