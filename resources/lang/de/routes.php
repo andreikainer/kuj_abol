@@ -40,6 +40,9 @@ return [
     'favourite/add'         => 'favoriten/hinzufuegen',
     'favourite/remove'      => 'favoriten/entfernen',
     'toggle'                => 'toggle',
+    'sponsor/remove'        => 'sponsor/entfernen',
+    'sponsor/relist'        => 'sponsor/wiedereinstellen',
+    'sponsor/add'           => 'sponsor/hinzufuegen',
     'abol'                  => 'abol',
 
 ];

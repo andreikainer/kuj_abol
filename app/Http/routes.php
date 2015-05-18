@@ -101,6 +101,12 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.favourite/remove').'/{id}', 'UserpanelController@removeFavourite');
         Route::get(LaravelLocalization::transRoute('routes.toggle').'/{id}', 'UserpanelController@edit');
 
+    /*-- Adminpanel Page --*/
+        Route::get(LaravelLocalization::transRoute('routes.sponsor/remove').'/{id}', 'AdminpanelController@removeSponsor');
+        Route::get(LaravelLocalization::transRoute('routes.sponsor/relist').'/{id}', 'AdminpanelController@relistSponsor');
+        Route::post(LaravelLocalization::transRoute('routes.sponsor/add'), 'AdminpanelController@addSponsor');
+
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 

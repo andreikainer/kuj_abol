@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Project;
 use App\Pledger;
+use App\Sponsor;
 use App\Http\Requests\UserDetailsRequest;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -22,7 +23,6 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Auth\AuthController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Intervention\Image\Facades\Image;
-use DB;
 
 class UserpanelController extends Controller
 {
@@ -33,7 +33,7 @@ class UserpanelController extends Controller
     public function __construct()
     {
         $this->middleware('auth');          //check if the user is authorized
-        $this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);    // check if the user is authorized for the routes except Favourites
+        //$this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);    // check if the user is authorized for the routes except Favourites
     }
 
     /**
@@ -111,11 +111,12 @@ class UserpanelController extends Controller
 
         // check if its admin
 
-        if($user->id === 2)
+        if($user->id === 6)
         {
             // if it's admin, redirect to admin cms with all users but admin
             $allUsers = User::whereNotIn('id', [2])->get();
-            return view('adminpanel.index', compact('user', 'allUsers'));
+            $allSponsors = Sponsor::all();
+            return view('adminpanel.index', compact('user', 'allUsers', 'allSponsors'));
         }
 
         // if it's a regular user, redirect to user's dashboard

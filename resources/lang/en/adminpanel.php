@@ -12,6 +12,15 @@ return [
     'sponsors-management'       => 'Sponsors management',
     'project-approve'           => 'Project approve',
 
+    /**
+     * Sponsors management.
+     */
+    'business-name'             => 'Business Name',
+    'online-since'              => 'Online Since',
+    'remove'                    => 'remove',
+    'add-logo'                  => 'Add Logo',
+    'view'                      => 'view',
+    'relist'                    => 'relist',
 
     /**
     * User management.

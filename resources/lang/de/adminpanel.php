@@ -13,6 +13,16 @@ return [
     'project-approve'           => 'Project approve',
 
     /**
+     * Sponsors management.
+     */
+    'business-name'             => 'Firmenname',
+    'online-since'              => 'Online seit',
+    'remove'                    => 'entfernen',
+    'add-logo'                  => 'Logo hinzufügen',
+    'view'                      => 'ansehen',
+    'relist'                    => 'wiedereinstellen',
+
+    /**
      * User management.
      */
     'user-avatar'   => 'Avatar:',
