@@ -201,7 +201,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3 col-sm-12">
-                                <div class="alert flash-message text-center fade in center-block">
+                                <div class="alert flash-message text-center fade in">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
                                     {{ Session::get('flash_message') }}
                                 </div>
