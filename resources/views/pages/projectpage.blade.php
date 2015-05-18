@@ -43,11 +43,11 @@
                     <div id="facebook-share" class="btn btn-primary button-main fb-share" role="button"><i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}</div><div id="fb-root"></div>
                 </div>
                 <div class="btn">
-                    @if(Session::has('username') && $favourites !== $project->id)
+                    @if(Session::has('username') && $favourites->isEmpty() )
                         <a href="{{ action('UserpanelController@addFavourite', $project->id) }}">
                             <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}</div>
                         </a>
-                    @elseif(Session::has('username') && $favourites == $project->id )
+                    @elseif(Session::has('username') && !empty($favourites->all())  )
                         <a href="{{ action('UserpanelController@removeFavourite', $project->id) }}">
                             <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.unfavourite') }}</div>
                         </a>

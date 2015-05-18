@@ -41,6 +41,11 @@ return [
     'favourite/remove'      => 'favoriten/entfernen',
     'toggle'                => 'toggle',
     'abol'                  => 'abol',
+
     'newsletter'            => 'newsletter',
 
+    'admin'                 => 'admin',
+    'admin/edit-project' => 'admin/edit-project',
+    'admin/approve-project' => 'admin/approve-project',
+    
 ];

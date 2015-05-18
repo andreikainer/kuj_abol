@@ -32,10 +32,8 @@ class UserpanelController extends Controller
 
     public function __construct()
     {
-
         $this->middleware('auth');          //check if the user is authorized
-        $this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);   // check if the user is authorized for this route
-
+        $this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);    // check if the user is authorized for the routes except Favourites
     }
 
     /**
@@ -110,15 +108,6 @@ class UserpanelController extends Controller
         $contributions = Pledge::where('user_id', '=', $user->id)->get();
 
         $favourites = Favourite::with('project')->where('user_id', '=', $user->id)->get();
-
-        // check if its admin
-
-        if($user->id === 2)
-        {
-            // if it's admin, redirect to admin cms with all users but admin
-            $allUsers = User::whereNotIn('id', [2])->get();
-            return view('adminpanel.index', compact('user', 'allUsers'));
-        }
 
         // if it's a regular user, redirect to user's dashboard
         return view('userpanel.index', compact('user', 'contributions', 'favourites'));

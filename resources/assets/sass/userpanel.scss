@@ -50,6 +50,50 @@
   vertical-align: top !important;
 }
 
+.no-contributions {
+  padding: 3rem;
+}
+
 .adminpanel-useravatar {
   width: 90px !important;
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image: none !important;
+}
+
+.image-modal-control {
+  color: $blue !important;
+}
+
+.admin-preview-element {
+  @extend .form-input;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+
+  border-top: 1px solid $dgrey;
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+.project-owner-details {
+  @extend .admin-preview-element;
+
+  cursor: default;
+
+  p {
+      i {
+        width: 1em;
+        margin-right: 0.5em;
+        color: $bluegrey;
+      }
+  }
+
+  .col-md-12:last-of-type, .col-sm-12:last-of-type {
+      p {
+        margin-bottom: 0;
+      }
+  }
 }
