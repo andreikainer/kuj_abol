@@ -154,7 +154,7 @@ $(document).ready(function()
 function getLocale(response)
 {
     $.ajax({
-        url:        '/set-locale',
+        url:        '/get-locale',
         method:     'GET',
         success:    function(response)
         {
@@ -169,25 +169,19 @@ function getLocale(response)
     });
 }
 
-    //var langBtnArray = Array.prototype.slice.call(document.querySelectorAll('.flag'));
-    //
-    //    langBtnArray[1].addClass('at');
-    //    langBtnArray[2].addClass('gb');
+    var langBtnArray = Array.prototype.slice.call(document.querySelectorAll('.flag'));
+
+        langBtnArray[1].addClass('at');
+        langBtnArray[2].addClass('gb');
 
 
 /*
  * check what land flag is displaying
  * toggle the flag on a press button event
  */
-<<<<<<< HEAD
-    //$('.language-toggle').on("click", function(e)
-    //{
-        //window.locale;
-=======
     $('.language-toggle').on("click", function(e)
     {
         $locale = window.locale;
->>>>>>> olgasmirnova
 
         if($locale === 'de')
         {
@@ -203,22 +197,8 @@ function getLocale(response)
             //window.locale = 'de';
             //getLocale();
         }
-        //
-        //if($(this).hasClass('at'))
-        //{
-        //    $(this).toggleClass('at', false).toggleClass('gb', true);
-        //    getLocale('en');
-        //    console.log (window.locale);
-        //}else{
-        //    $(this).toggleClass('at', true).toggleClass('gb', false);
-        //    getLocale();
-        //    console.log (window.locale);
-        //}
 
-    // set the global variable 'locale' to the user's selected language
-        //console.log (window.locale);
-    //
-    //});
+    });
 
 /*------------------------------------------------------------------*/
     /*-- CODE --*/

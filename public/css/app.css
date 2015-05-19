@@ -6049,7 +6049,7 @@ footer {
         width: 100%; } }
     @media (min-width: 922px) {
       footer .socialmedia form {
-        width: 80%; } }
+        width: 83%; } }
   footer .socialmedia form div:first-of-type {
     display: inline-block;
     margin-top: .9rem;
@@ -6408,14 +6408,9 @@ footer {
 /*------------------------------------------------------------------*/
 .flash-message {
   position: absolute;
-<<<<<<< HEAD
   left: 0;
   width: 100%;
-=======
-  left: 15%;
-  min-width: 20rem;
->>>>>>> olgasmirnova
-  z-index: 20;
+  z-index: 100;
   padding: 1rem;
   font-size: 1.1em;
   font-weight: 700;
