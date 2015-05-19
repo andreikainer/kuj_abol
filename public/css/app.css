@@ -6358,6 +6358,8 @@ footer {
     @media (min-width: 992px) {
       #how-it-works .team-role {
         height: 3rem; } }
+  #how-it-works .tips {
+    line-height: inherit !important; }
 
 @media (max-width: 991px) {
   .xs-mt {
@@ -6501,6 +6503,19 @@ footer {
     #abol #footer .copywrite {
       font-size: .6rem;
       color: #3c3c4a; }
+  #abol .scrollToTop {
+    text-align: center;
+    position: fixed;
+    top: 8em;
+    left: 2em;
+    border: solid 2px #f66458;
+    background-color: #f66458;
+    display: block;
+    color: white;
+    padding: .3rem; }
+    #abol .scrollToTop:hover {
+      border-color: white;
+      text-decoration: none; }
 
 .tpad-zero {
   padding-top: 0 !important; }

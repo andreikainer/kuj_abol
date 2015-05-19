@@ -743,6 +743,10 @@ footer {
       height: 3rem;
     }
   }
+
+  .tips {
+    line-height: inherit !important;
+  }
 }
 
 .xs-mt {
@@ -945,6 +949,24 @@ footer {
       color: rgb(60,60,74);
     }
   }
+
+  .scrollToTop {
+    text-align: center;
+    position: fixed;
+    top: 8em;
+    left: 2em;
+    border: solid 2px rgb(246,100,88);
+    background-color: rgb(246,100,88);
+    display: block;
+    color: white;
+    padding: .3rem;
+
+    &:hover {
+      border-color: white;
+      text-decoration: none;
+    }
+  }
+
 }
 
 .tpad-zero {

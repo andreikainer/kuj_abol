@@ -65,8 +65,8 @@
                                     </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body tip-explanation">
-                                        <p>{{ trans('create-project-form.tip-1-1') }}</p>
+                                    <div class="panel-body tip-explanation text-left">
+                                        <p class="tips">{{ trans('create-project-form.tip-1-1') }}</p>
                                     </div>
                                 </div>
                             </div> <!-- end tip -->
@@ -79,9 +79,9 @@
                                     </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
-                                    <div class="panel-body tip-explanation">
-                                        <p>{{ trans('create-project-form.tip-2-1') }}</p>
-                                        <p>{{ trans('create-project-form.tip-2-2') }}</p>
+                                    <div class="panel-body tip-explanation text-left">
+                                        <p class="tips">{{ trans('create-project-form.tip-2-1') }}</p>
+                                        <p class="tips">{{ trans('create-project-form.tip-2-2') }}</p>
                                     </div>
                                 </div>
                             </div> <!-- end tip -->
@@ -94,12 +94,12 @@
                                     </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
-                                    <div class="panel-body tip-explanation">
-                                        <p>{{ trans('create-project-form.tip-3-1') }}</p>
-                                        <p>
+                                    <div class="panel-body tip-explanation text-left">
+                                        <p class="tips">{{ trans('create-project-form.tip-3-1') }}</p>
+                                        <p class="tips">
                                             {{ trans('create-project-form.tip-3-2') }}
                                         </p>
-                                        <p>{{ trans('create-project-form.tip-3-3') }}</p>
+                                        <p class="tips">{{ trans('create-project-form.tip-3-3') }}</p>
                                     </div>
                                 </div>
                             </div> <!-- end tip -->
@@ -112,12 +112,12 @@
                                     </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingFour">
-                                    <div class="panel-body tip-explanation">
-                                        <p>{{ trans('create-project-form.tip-4-1') }}</p>
-                                        <p>
+                                    <div class="panel-body tip-explanation text-left">
+                                        <p class="tips">{{ trans('create-project-form.tip-4-1') }}</p>
+                                        <p class="tips">
                                             {{ trans('create-project-form.tip-4-2') }}
                                         </p>
-                                        <p>
+                                        <p class="tips">
                                             {{ trans('create-project-form.tip-4-3') }}
                                         </p>
                                     </div>
@@ -132,12 +132,12 @@
                                     </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapseFive" role="tabpanel" aria-labelledby="headingFive">
-                                    <div class="panel-body tip-explanation">
-                                        <p>{{ trans('create-project-form.tip-5-1') }}</p>
-                                        <p>
+                                    <div class="panel-body tip-explanation text-left">
+                                        <p class="tips">{{ trans('create-project-form.tip-5-1') }}</p>
+                                        <p class="tips">
                                             {{ trans('create-project-form.tip-5-2') }}
                                         </p>
-                                        <p>
+                                        <p class="tips">
                                             {{ trans('create-project-form.tip-5-3') }}
                                         </p>
                                     </div>

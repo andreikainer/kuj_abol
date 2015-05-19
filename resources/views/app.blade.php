@@ -258,7 +258,7 @@
 
                         <br>
 
-                        <a href="#">{{ trans('app.terms-and-conditions') }}</a>
+                        <a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('app.terms-and-conditions') }}</a>
                         <a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">Impressum</a>
 	                </div>
 	            </div>
