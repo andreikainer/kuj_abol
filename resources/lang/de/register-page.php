@@ -43,5 +43,6 @@ return [
     'flash-3'   => 'Account already verified.',
     'flash-4'   => 'Account successfully verified. Continue to login.',
 
-
+    'terms-cond-1' => 'By registering an account, you agree to our ',
+    'terms-cond-2' => 'Terms and Conditions'
 ];

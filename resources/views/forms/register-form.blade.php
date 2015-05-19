@@ -116,5 +116,13 @@
                 {!! Form::submit(trans('register-page.submit'), ['action' => 'Auth\AuthController@postRegister', 'class' => 'form-button form-button-full-width']) !!}
             </div>
         </div>
+
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12">
+                <p class="terms-and-conditions">
+                    {{ trans('register-page.terms-cond-1') }}<a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('register-page.terms-cond-2') }}</a>
+                </p>
+            </div>
+        </div>
     </div>
 {!! Form::close() !!}
