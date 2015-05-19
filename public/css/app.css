@@ -6314,6 +6314,12 @@ footer {
   #how-it-works .add-nav {
     position: fixed;
     top: 8rem; }
+  #how-it-works .m-2em {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4b4b4b; }
   #how-it-works .form-element, #how-it-works .success-container, #how-it-works .userpanel-section {
     margin-left: .65rem !important;
     margin-right: .65rem !important; }
