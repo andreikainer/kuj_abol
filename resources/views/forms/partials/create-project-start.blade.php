@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="image-loader"></div>
-                <div class="form-button text-center" data-button="start" data-url="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/start')) }}">
+                <div class="form-button text-center project-start-button" data-button="start" data-url="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/start')) }}">
                     {{ trans('create-project-form.start-project') }}
                 </div>
             </div>
@@ -46,17 +46,17 @@
                     @foreach($user->incompleteProject as $project)
                     <div class="project-links">
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6 col-sm-12">
                                 <p class="saved-project-title">{{ $project->project_name }}</p>
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6 col-sm-12">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 project-start-button">
                                         <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$project->slug) }}" class="saved-project-continue text-center">
                                             <i class="fa fa-edit fa-lg"></i> {{ trans('create-project-form.continue') }}
                                         </a>
                                     </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 project-start-button">
                                         <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/delete').'/'.$project->slug) }}" class="saved-project-delete text-center">
                                             <i class="fa fa-trash fa-lg"></i> {{ trans('create-project-form.delete') }}
                                         </a>
