@@ -73,8 +73,9 @@ return [
     'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB file limit. <br/> Minimum size 768 x 1024 pixels',
     'exp-secondary-image'   => 'Click to upload an image',
     'exp-evidence-1'        => 'We require supporting evidence of your child\'s ailment.',
-    'exp-evidence-2'        => 'A written letter from your medical practitioner or hospital, stating the condition of your child\'s ailment. <br/> A document supporting evidence of your financial situation, including child care allowance.',
-    'exp-evidence-3'        => 'The more evidence you submit, the more likely the successful outcome of your application.',
+    'exp-evidence-2'        => 'A written letter from your medical practitioner or hospital, stating the condition of your child\'s ailment.',
+    'exp-evidence-3'        => 'A document supporting evidence of your financial situation, including child care allowance.',
+    'exp-evidence-4'        => 'The more evidence you submit, the more likely the successful outcome of your application.',
     'exp-document-label'    => 'minimum of 2 documents mandatory',
     'exp-document-input'    => 'Click to upload a document',
 

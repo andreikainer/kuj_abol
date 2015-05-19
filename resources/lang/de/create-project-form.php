@@ -71,8 +71,9 @@ return [
     'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB Dateigrenze. <br/> Mindestgröße 768 x 1024 Pixel',
     'exp-secondary-image'   => 'Klicken Sie, um ein Bild hochzuladen.',
     'exp-evidence-1'        => 'Wir benötigen Beweise für Ihr Kind die Krankheit.',
-    'exp-evidence-2'        => 'Eine schriftliche Brief von Ihrem Arzt oder Krankenhaus, die besagt, den Zustand Ihres Kindes Krankheit. <br/> Ein Dokument, Nachweise über Ihre finanzielle Situation, einschließlich Kinderbetreuungsgeld.',
-    'exp-evidence-3'        => 'Je mehr Beweise, die Sie einreichen, desto wahrscheinlicher ist das erfolgreiche Ergebnis der Anwendung.',
+    'exp-evidence-2'        => 'Eine schriftliche Brief von Ihrem Arzt oder Krankenhaus, die besagt, den Zustand Ihres Kindes Krankheit.',
+    'exp-evidence-3'        => 'Ein Dokument, Nachweise über Ihre finanzielle Situation, einschließlich Kinderbetreuungsgeld.',
+    'exp-evidence-4'        => 'Je mehr Beweise, die Sie einreichen, desto wahrscheinlicher ist das erfolgreiche Ergebnis der Anwendung.',
     'exp-document-label'    => 'mindestens 2 Dokumente obligatorisch',
     'exp-document-input'    => 'Klicken Sie hier um ein Dokument hochladen',
 
