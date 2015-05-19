@@ -16,6 +16,7 @@
         pauseOnHover: true,
         pauseonDotsHover: true,
         swipe: true,
+        centerMode: true,
         respondTo: 'slider'
   });
 
@@ -107,6 +108,5 @@
           $(this).find('.logo-name').toggleClass('hidden', true);
       }
   });
-
 
 })();

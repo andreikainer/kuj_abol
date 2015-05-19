@@ -18,6 +18,10 @@ html {
 
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   padding-top: 4.09rem;
   background-color: $lgrey;

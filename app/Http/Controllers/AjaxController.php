@@ -41,5 +41,4 @@ class AjaxController extends Controller {
         return $locale[3];
     }
 
-
 }
