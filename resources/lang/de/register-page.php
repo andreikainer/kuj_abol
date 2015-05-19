@@ -20,7 +20,7 @@ return [
     'conf-password' => 'Passwort bestätigen:',
     'first-name'    => 'Vorname:',
     'last-name'     => 'Nachname:',
-    'business?'     => 'Wollen Sie sich als Unternehmen anmelden?',
+    'business?'     => 'Als Unternehmen anmelden?',
     'business-name' => 'Firmenwortlaut:',
     'submit'        => 'Benutzer registrieren',
 

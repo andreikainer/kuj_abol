@@ -5766,7 +5766,8 @@ a.tip-title {
 /*------------------------------------------------------------------*/
 .register-container {
   margin-top: 2rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-size: 1.0125rem; }
 
 .checkbox-wrapper {
   padding: 1rem 0;
@@ -5777,8 +5778,10 @@ a.tip-title {
     padding: 0 0.5rem;
     margin-bottom: 0;
     color: #3fa3db;
-    font-size: 1.1em;
     font-weight: 600; }
+    @media all and (max-width: 767px) {
+      .checkbox-wrapper label {
+        font-size: 0.75rem; } }
   .checkbox-wrapper input[type="checkbox"] {
     width: 1.1em;
     height: 1.1em; }

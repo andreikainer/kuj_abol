@@ -4,6 +4,7 @@
 .register-container {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  font-size: 1.0125rem;
 }
 
 .checkbox-wrapper {
@@ -16,8 +17,11 @@
     padding: 0 0.5rem;
     margin-bottom: 0;
     color: $blue;
-    font-size: 1.1em;
     font-weight: 600;
+
+    @media all and (max-width: 767px) {
+      font-size: 0.75rem;
+    }
   }
 
   input[type="checkbox"] {
