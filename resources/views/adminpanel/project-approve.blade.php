@@ -45,7 +45,7 @@
     </div>
 
     @foreach($pendingProjects as $project)
-        <div class="row">
+        {{--<div class="row">--}}
             <div class="modal fade" id="{{ $project->slug }}" tabindex="-1" role="dialog" aria-labelledby="{{ $project->slug.'-label' }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content" tabindex="1">
@@ -82,7 +82,7 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-        </div>
+        {{--</div>--}}
     @endforeach
 @else
     <div class="col-md-12 col-sm-12 text-center no-contributions">
