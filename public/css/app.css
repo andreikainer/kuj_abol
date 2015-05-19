@@ -6408,13 +6408,8 @@ footer {
 /*------------------------------------------------------------------*/
 .flash-message {
   position: absolute;
-<<<<<<< HEAD
   left: 0;
   width: 100%;
-=======
-  left: 15%;
-  min-width: 20rem;
->>>>>>> olgasmirnova
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
