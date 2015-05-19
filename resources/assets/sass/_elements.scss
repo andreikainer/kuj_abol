@@ -284,11 +284,6 @@
   border-top-left-radius: 0.35rem;
   transition: all 0.3s ease;
 
-  @media all and (max-width: 767px) {
-    font-size: 0.7rem;
-    line-height: 2rem;
-  }
-
   &:hover {
     cursor: pointer;
     background: tint($dgrey, 92%);

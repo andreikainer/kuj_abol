@@ -5129,10 +5129,6 @@ input[type="submit"], button[type="submit"] {
   border-top-right-radius: 0.35rem;
   border-top-left-radius: 0.35rem;
   transition: all 0.3s ease; }
-  @media all and (max-width: 767px) {
-    .form-section-tab {
-      font-size: 0.7rem;
-      line-height: 2rem; } }
   .form-section-tab:hover {
     cursor: pointer;
     background: #fbfbfb; }
@@ -5281,9 +5277,6 @@ input[type="submit"], button[type="submit"] {
 @media all and (max-width: 767px) {
   .project-start-button {
     margin-top: 1.5rem; } }
-
-.mobile-section-tab {
-  font-size: 1.0125rem; }
 
 .fa-no-margin {
   margin-right: 0; }

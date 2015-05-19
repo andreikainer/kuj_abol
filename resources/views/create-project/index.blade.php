@@ -25,13 +25,13 @@
                 </div>
                 <div class="col-sm-12 col-xs-12 visible-sm visible-xs">
                     <div class="col-sm-7 col-xs-7 padding-none">
-                        <div class="col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left form-section-tab-active mobile-section-tab" data-section="0"><i class="fa fa-play fa-lg"></i></div>
-                        <div class="col-sm-4 col-xs-4 text-center form-section-tab mobile-section-tab" data-section="1"><i class="fa fa-edit fa-lg"></i></div>
-                        <div class="col-sm-4 col-xs-4 text-center form-section-tab mobile-section-tab" data-section="2"><i class="fa fa-user fa-lg"></i></div>
+                        <div class="col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0"><i class="fa fa-play fa-lg"></i></div>
+                        <div class="col-sm-4 col-xs-4 text-center form-section-tab" data-section="1"><i class="fa fa-edit fa-lg"></i></div>
+                        <div class="col-sm-4 col-xs-4 text-center form-section-tab" data-section="2"><i class="fa fa-user fa-lg"></i></div>
                     </div>
                     <div class="col-sm-5 col-xs-5 padding-none">
-                        <div class="col-sm-6 col-xs-6 text-center form-section-tab mobile-section-tab" data-section="3"><i class="fa fa-file"></i></div>
-                        <div class="col-sm-6 col-xs-6 text-center form-section-tab mobile-section-tab" data-section="4"><i class="fa fa-check fa-lg fa-no-margin"></i></div>
+                        <div class="col-sm-6 col-xs-6 text-center form-section-tab" data-section="3"><i class="fa fa-file"></i></div>
+                        <div class="col-sm-6 col-xs-6 text-center form-section-tab" data-section="4"><i class="fa fa-check fa-lg fa-no-margin"></i></div>
                     </div>
                 </div>
             </div> <!-- end section tabs -->
