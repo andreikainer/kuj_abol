@@ -5817,6 +5817,9 @@ a.tip-title {
 .image-modal-control {
   color: #3fa3db !important; }
 
+#view-edit-project {
+  font-size: 1.0125rem; }
+
 .admin-preview-element, .project-owner-details {
   box-shadow: none !important;
   border-top: 1px solid #d2d2d2;

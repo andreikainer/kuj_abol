@@ -1,9 +1,9 @@
 @extends('app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" id="view-edit-project">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 form-element mt-1em">
+            <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2 form-element mt-1em">
                 <div class="row mb-3em">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-label">{{ trans('adminpanel.project-owner') }}</div>
@@ -133,7 +133,7 @@
                 {!! Form::close() !!}
             </div>
         </div>
-    </div>
+
 @endsection
 
 @section('additional_js')
