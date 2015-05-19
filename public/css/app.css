@@ -4844,6 +4844,9 @@ html {
   html input[disabled] {
     cursor: not-allowed; }
 
+html, body {
+  overflow-x: hidden; }
+
 body {
   padding-top: 4.09rem;
   background-color: #f9f9f9;
@@ -5821,7 +5824,7 @@ a.tip-title {
       padding-top: .43em; } }
   .logo img {
     width: 150px; }
-    @media (max-width: 320px) {
+    @media (max-width: 767px) {
       .logo img {
         width: 100px;
         margin-top: .65rem; } }
@@ -6099,6 +6102,8 @@ footer {
     display: inline-block;
     line-height: auto;
     vertical-align: top; }
+  footer #newsletter-signup input {
+    box-shadow: none !important; }
 
 /*------------------------------------------------------------------*/
 /*-- Jumbotron styles --*/
@@ -6131,14 +6136,18 @@ footer {
         top: 0rem;
         left: 0rem;
         padding: 1em;
-        padding-top: 0;
-        background-color: rgba(0, 0, 0, 0.5); } }
+        padding-top: 0; }
+        .jumbotron .jumbotron-text h1 {
+          font-size: 1.8rem; }
+        .jumbotron .jumbotron-text p a {
+          font-size: 1rem;
+          background-color: #4b4b4b; } }
     @media (min-width: 1366px) and (max-width: 1500px) {
       .jumbotron .jumbotron-text {
         left: 14rem; } }
     @media (min-width: 1501px) {
       .jumbotron .jumbotron-text {
-        left: 30%; } }
+        left: 15%; } }
     .jumbotron .jumbotron-text p:nth-child(3) {
       margin-top: 3rem !important; }
       @media (min-width: 768px) {
@@ -6369,7 +6378,8 @@ footer {
 /*------------------------------------------------------------------*/
 .flash-message {
   position: absolute;
-  left: 10%;
+  left: 15%;
+  min-width: 20rem;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
@@ -6432,14 +6442,19 @@ footer {
   #abol .mt-5em {
     margin-top: 5rem; }
   #abol #works {
-    background-color: white;
-    padding: 5rem; }
+    background-color: white; }
     #abol #works h2 {
       color: #f66458;
       padding-top: 1.5rem;
       padding-bottom: .6rem; }
+      @media (max-width: 767px) {
+        #abol #works h2 {
+          font-size: 140%; } }
     #abol #works p {
       color: white; }
+      @media (max-width: 767px) {
+        #abol #works p {
+          font-size: 80%; } }
     #abol #works img {
       margin-top: 1rem; }
     #abol #works .abol-thumbnail {

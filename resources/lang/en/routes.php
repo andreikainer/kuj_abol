@@ -42,4 +42,5 @@ return [
     'toggle'                => 'toggle',
     'abol'                  => 'abol',
     'newsletter'            => 'newsletter',
+
 ];

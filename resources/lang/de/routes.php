@@ -43,4 +43,5 @@ return [
     'abol'                  => 'abol',
     'newsletter'            => 'newsletter',
 
+
 ];
