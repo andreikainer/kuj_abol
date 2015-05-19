@@ -91,7 +91,7 @@
         /**
          * PUBLISH EVENTS
          */
-        if(window.innerWidth <= 763 )
+        if(window.innerWidth <= 991 )
         {
             $('.mobile-section-tab').on('click', function()
             {
