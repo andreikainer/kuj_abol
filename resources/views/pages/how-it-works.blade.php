@@ -147,7 +147,7 @@
                     </div>
                 </div>
 
-<!-- FAQ -->
+<!-- FAQ accordion -->
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
                         <h2 class="heading" id="faq">FAQ</h2>
@@ -157,7 +157,7 @@
 
                     <div class="panel-group" id="faqAccordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingOne">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         {{ trans('faq.qu1') }}
@@ -171,7 +171,7 @@
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingTwo">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingTwo">
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         {{ trans('faq.qu2') }}
@@ -185,7 +185,7 @@
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingThree">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingThree">
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         {{ trans('faq.qu3') }}
@@ -199,198 +199,198 @@
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingFour">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         {{ trans('faq.qu4') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingFour">
                                 <div class="panel-body">
                                     {!! trans('faq.an4') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingFive">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseFive" aria-expanded="false" aria-controls="collapseFive">
                                         {{ trans('faq.qu5') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingFive">
                                 <div class="panel-body">
                                     {!! trans('faq.an5') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingSix">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseSix" aria-expanded="false" aria-controls="collapseSix">
                                         {{ trans('faq.qu6') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingSix">
                                 <div class="panel-body">
                                     {!! trans('faq.an6') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingSeven">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                         {{ trans('faq.qu7') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingSeven">
                                 <div class="panel-body">
                                     {!! trans('faq.an7') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingEight">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseEight" aria-expanded="false" aria-controls="collapseEight">
                                         {{ trans('faq.qu8') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingEight">
                                 <div class="panel-body">
                                     {!! trans('faq.an8') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingNine">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseNine" aria-expanded="false" aria-controls="collapseNine">
                                         {{ trans('faq.qu9') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingNine">
                                 <div class="panel-body">
                                     {!! trans('faq.an9') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingTen">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseTen" aria-expanded="false" aria-controls="collapseTen">
                                         {{ trans('faq.qu10') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingTen">
                                 <div class="panel-body">
                                     {!! trans('faq.an10') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingEleven">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseEleven" aria-expanded="false" aria-controls="collapseEleven">
                                         {{ trans('faq.qu11') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingEleven">
                                 <div class="panel-body">
                                     {!! trans('faq.an11') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingTwelve">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        {{ trans('faq.qu11') }}
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
-                                <div class="panel-body">
-                                    {!! trans('faq.an11') !!}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
                                         {{ trans('faq.qu12') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingTwelve">
                                 <div class="panel-body">
                                     {!! trans('faq.an12') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingThirteen">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
                                         {{ trans('faq.qu13') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingThirteen">
                                 <div class="panel-body">
                                     {!! trans('faq.an13') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingFourteen">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
                                         {{ trans('faq.qu14') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingFourteen">
                                 <div class="panel-body">
                                     {!! trans('faq.an14') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingFifteen">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
                                         {{ trans('faq.qu15') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseFifteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingFifteen">
                                 <div class="panel-body">
                                     {!! trans('faq.an15') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingSixteen">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
                                         {{ trans('faq.qu16') }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="faqCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingOne">
+                            <div id="faqCollapseSixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingSixteen">
                                 <div class="panel-body">
                                     {!! trans('faq.an16') !!}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingSeventeen">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                                        {{ trans('faq.qu17') }}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="faqCollapseSeventeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeadingSeventeen">
+                                <div class="panel-body">
+                                    {!! trans('faq.an17') !!}
                                 </div>
                             </div>
                         </div>

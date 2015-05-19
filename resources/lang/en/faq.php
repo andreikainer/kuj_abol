@@ -29,6 +29,7 @@ return [
     'qu14' => 'What happens with my saved data when I unregister? ',
     'qu15' => 'How much does it cost to appoint a project?',
     'qu16' => 'Which documents to I have to provide to back my circumstance?',
+    'qu17' => 'How much money got paid out so far?',
 
     /*
      * ANSWERS
@@ -68,6 +69,8 @@ return [
     'an13' => 'Lorem Ipsum',
     'an14' => 'Lorem Ipsum',
     'an15' => 'Lorem Ipsum',
+    'an16' => 'Lorem Ipsum',
+    'an17' => 'Lorem Ipsum',
 
 ];
 

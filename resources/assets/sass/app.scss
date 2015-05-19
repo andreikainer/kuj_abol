@@ -717,7 +717,7 @@ footer {
   div h4 {
     font-weight: 700 !important;
     margin-bottom: .1rem;
-    margin-top: 1.6rem !important;
+    margin-top: 1.6rem;
     @media(max-width: 992px) {
       margin-top: 2rem !important;
     }
@@ -765,6 +765,29 @@ footer {
 
     &:hover, &:active, &:focus {
       box-shadow: inset  0.5rem 0 0 0 $blue !important;
+    }
+  }
+  .faq {
+
+    @extend .sidemenu-item;
+
+
+    &:hover, &:active, &:focus {
+      color: $blue;
+      background: $dgrey;
+      cursor: pointer;
+      box-shadow: inset  0.5rem 0 0 0 $blue !important;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      vertical-align: middle;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      box-shadow: none !important;
+      a {
+        text-decoration: none !important;
+      }
     }
   }
 }

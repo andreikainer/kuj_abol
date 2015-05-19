@@ -28,6 +28,8 @@ return [
     'qu13' => '',
     'qu14' => '',
     'qu15' => '',
+    'qu16' => '',
+    'qu17' => '',
 
     /*
      * ANSWERS
@@ -43,9 +45,11 @@ return [
     'an9' => '',
     'an10' => '',
     'an11' => '',
-    'an12' => '',
-    'an13' => '',
-    'an14' => '',
-    'an15' => '',
+    'an12' => 'Lorem Ipsum',
+    'an13' => 'Lorem Ipsum',
+    'an14' => 'Lorem Ipsum',
+    'an15' => 'Lorem Ipsum',
+    'an16' => 'Lorem Ipsum',
+    'an17' => 'Lorem Ipsum',
 
 ];

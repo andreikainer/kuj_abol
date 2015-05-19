@@ -6339,7 +6339,7 @@ footer {
   #how-it-works div h4 {
     font-weight: 700 !important;
     margin-bottom: .1rem;
-    margin-top: 1.6rem !important; }
+    margin-top: 1.6rem; }
     @media (max-width: 992px) {
       #how-it-works div h4 {
         margin-top: 2rem !important; } }
@@ -6366,15 +6366,28 @@ footer {
   .xs-mt {
     margin-bottom: 2em; } }
 
-#how-it-works .sidemenu-item, .account .sidemenu-item {
+#how-it-works .sidemenu-item, #how-it-works .faq, .account .sidemenu-item, .account #how-it-works .faq, #how-it-works .account .faq, .account .faq {
   font-size: 1rem;
   box-shadow: inset 0.5rem 0 0 0 #6f798b !important;
   border-top-right-radius: 0 !important;
   border-top-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important; }
-  #how-it-works .sidemenu-item:hover, #how-it-works .sidemenu-item:active, #how-it-works .sidemenu-item:focus, .account .sidemenu-item:hover, .account .sidemenu-item:active, .account .sidemenu-item:focus {
+  #how-it-works .sidemenu-item:hover, #how-it-works .faq:hover, #how-it-works .sidemenu-item:active, #how-it-works .faq:active, #how-it-works .sidemenu-item:focus, #how-it-works .faq:focus, .account .sidemenu-item:hover, .account #how-it-works .faq:hover, #how-it-works .account .faq:hover, .account .faq:hover, .account .sidemenu-item:active, .account #how-it-works .faq:active, #how-it-works .account .faq:active, .account .faq:active, .account .sidemenu-item:focus, .account #how-it-works .faq:focus, #how-it-works .account .faq:focus, .account .faq:focus {
     box-shadow: inset 0.5rem 0 0 0 #3fa3db !important; }
+#how-it-works .faq:hover, #how-it-works .faq:active, #how-it-works .faq:focus, .account .faq:hover, .account .faq:active, .account .faq:focus {
+  color: #3fa3db;
+  background: #d2d2d2;
+  cursor: pointer;
+  box-shadow: inset 0.5rem 0 0 0 #3fa3db !important; }
+#how-it-works .faq h4, .account .faq h4 {
+  font-size: 1.1rem;
+  vertical-align: middle;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: none !important; }
+  #how-it-works .faq h4 a, .account .faq h4 a {
+    text-decoration: none !important; }
 
 /*------------------------------------------------------------------*/
 /*-- Account page styles --*/
