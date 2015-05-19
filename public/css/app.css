@@ -5343,10 +5343,17 @@ fieldset.summary-group {
   font-size: 1.1em;
   font-weight: 700;
   color: #6f798b; }
+  @media all and (max-width: 991px) {
+    .saved-project-title {
+      margin-top: 0;
+      margin-bottom: 1.5rem; } }
+  @media all and (max-width: 767px) {
+    .saved-project-title {
+      margin: 0; } }
 
 .supporting-doc {
   margin-bottom: 2rem; }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 767px) {
     .supporting-doc {
       margin-bottom: 20px; } }
 

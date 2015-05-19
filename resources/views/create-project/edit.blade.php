@@ -45,7 +45,7 @@
             <aside class="form-element aside-padding">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <p class="tips-heading">{{ trans('create-project-form.tips-heading') }} <span><img class="img-responsive" src="{{ asset('img/lightbulb.png') }}" alt="lightbulb image"/></span></p>
+                        <p class="tips-heading">{{ trans('create-project-form.tips-heading') }}</p>
                     </div>
                 </div>
                 <div class="row mt-2em">

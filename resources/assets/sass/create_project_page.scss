@@ -132,12 +132,21 @@
     font-size: 1.1em;
     font-weight: 700;
     color: $bluegrey;
+
+    @media all and (max-width: 991px) {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    @media all and (max-width: 767px) {
+      margin: 0;
+    }
   }
 
   .supporting-doc {
     margin-bottom: 2rem;
 
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 767px) {
       margin-bottom: 20px;
     }
   }

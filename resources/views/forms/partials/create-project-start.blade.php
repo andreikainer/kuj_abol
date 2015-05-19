@@ -46,10 +46,10 @@
                     @foreach($user->incompleteProject as $project)
                     <div class="project-links">
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6 col-sm-12">
                                 <p class="saved-project-title">{{ $project->project_name }}</p>
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6 col-sm-12">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-xs-12 project-start-button">
                                         <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.create-project/edit').'/'.$project->slug) }}" class="saved-project-continue text-center">
