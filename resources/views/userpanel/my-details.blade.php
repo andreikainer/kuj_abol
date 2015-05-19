@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row clearfix">
     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center">
         <h2 class="heading">{{ trans('userpanel.my-details') }}</h2>
     </div>
@@ -13,7 +13,7 @@
 
 {!! Form::open(['action' => 'UserpanelController@update', 'class' => 'row', 'method' => 'post', 'files' => 'true']) !!}
 
-<div class="col-xs-12">
+<div class="col-xs-12 clearfix">
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="row">

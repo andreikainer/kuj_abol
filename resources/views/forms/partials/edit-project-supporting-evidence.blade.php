@@ -16,10 +16,13 @@
                 {{ trans('create-project-form.exp-evidence-1') }}
             </p>
             <p>
-                {!! trans('create-project-form.exp-evidence-2') !!}
+                {{ trans('create-project-form.exp-evidence-2') }}
             </p>
             <p>
                 {{ trans('create-project-form.exp-evidence-3') }}
+            </p>
+            <p>
+                {{ trans('create-project-form.exp-evidence-4') }}
             </p>
         </div> <!-- end evidence explanation -->
 

@@ -7,7 +7,7 @@
 
             <div class="row">
                 <div class="col-xs-12 col-md-9 mt-3em">
-                    <!-- Tabs -->
+                <!-- Tabs -->
 
                     <div class="row">
                         <div class="col-sm-12">
@@ -21,7 +21,7 @@
 
                 <!-- Panel content -->
                     <div class="row-fluid bt-none clearfix">
-                        <div id="userpanel-wrapper" class="col-sm-12">
+                        <div id="userpanel-wrapper" class="col-sm-12 clearfix">
 
                             @include('userpanel.tabs-overview')
 

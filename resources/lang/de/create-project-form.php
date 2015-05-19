@@ -70,11 +70,12 @@ return [
     'exp-main-image-2'      => 'Das wird das Hauptphoto für Ihr Projekt, <br/> Bitte wählen Sie eines in guter Qualität',
     'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB maximum. <br/> Mindestgröße 768 x 1024 Pixel',
     'exp-secondary-image'   => 'Klicken Sie, um ein Bild hochzuladen.',
-    'exp-evidence-1'        => 'Wir benötigen Beilagen die den gesundheitlichen Status Ihres Kindes bestättigen .',
-    'exp-evidence-2'        => 'Eine schriftliche Brief Bestättigung von Ihrem zuständigen Arzt oder Krankenhaus, die den Zustand Ihres Kindes beschreibt. <br/> Mindestens eine Beilage die Ihren finanziellen Satus belegt. z.B. erhöhte Familienbeihilfe.',
-    'exp-evidence-3'        => 'Je mehr Beilagen Sie einreichen, desto wahrscheinlicher wird Ihr Antrag genehmigt.',
-    'exp-document-label'    => 'mindestens 2 Beilagen sind verpflichtend',
-    'exp-document-input'    => 'Klicken Sie hier um eine Beilage hochzuladen',
+    'exp-evidence-1'        => 'Wir benötigen Beweise für Ihr Kind die Krankheit.',
+    'exp-evidence-2'        => 'Eine schriftliche Brief von Ihrem Arzt oder Krankenhaus, die besagt, den Zustand Ihres Kindes Krankheit.',
+    'exp-evidence-3'        => 'Ein Dokument, Nachweise über Ihre finanzielle Situation, einschließlich Kinderbetreuungsgeld.',
+    'exp-evidence-4'        => 'Je mehr Beweise, die Sie einreichen, desto wahrscheinlicher ist das erfolgreiche Ergebnis der Anwendung.',
+    'exp-document-label'    => 'mindestens 2 Dokumente obligatorisch',
+    'exp-document-input'    => 'Klicken Sie hier um ein Dokument hochladen',
 
     /**
      * Messages

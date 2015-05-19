@@ -78,7 +78,6 @@
            			    	</button>
 
                         <!-- language_btn for mobile -->
-
                         @if(LaravelLocalization::getCurrentLocale() == 'de')
                             <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></button></a>
                         @else(LaravelLocalization::getCurrentLocale() == 'en')
@@ -259,8 +258,8 @@
 
                         <br>
 
-                        <a href="#">{{ trans('app.terms-and-conditions') }}</a>
-                        <a href="#">Impressum</a>
+                        <a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('app.terms-and-conditions') }}</a>
+                        <a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">Impressum</a>
 	                </div>
 	            </div>
 

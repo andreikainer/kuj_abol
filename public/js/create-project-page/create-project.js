@@ -122,7 +122,7 @@
         $.subscribe('section-tab.click', function(event, data)
         {
             showSection(fieldsetCollection, $(data).data('section'));
-            makeTabActive(tabCollection, $(data).data('section'));
+            makeTabActive(tabCollection, tabCollection.index(data));
         });
 
         $.subscribe('disabled-input.click', function(event, data)
