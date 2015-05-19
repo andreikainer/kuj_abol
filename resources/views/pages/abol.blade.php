@@ -12,7 +12,7 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 		<title>Abol</title>
-		<link rel="icon" type="image/png" href="{{ asset('/img/abol.jpg') }}">
+		<link rel="icon" type="image/png" href="{{ asset('/img/abol/abol.jpg') }}">
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -71,7 +71,7 @@
                     <div class="text-center">
                         <a href="#works" data-scroll class="main-link">WORKS</a>
                         <a href="{{ action('PagesController@abol') }}">
-                            <img src="{{ asset('/img/abol.svg') }}" alt="logo" class="abol-logo">
+                            <img src="{{ asset('/img/abol/abol.svg') }}" alt="logo" class="abol-logo">
                         </a>
                         <a href="#contacts" data-scroll class="main-link">CONTACTS</a>
                     </div>
@@ -86,7 +86,7 @@
                 <div class="col-xs-12 col-sm-4 mt-3em">
                     <div class="text-center">
                         <a href="http://andreikainer.com">
-                            <img src="{{ asset('/img/abol-member.jpg') }}" alt="logo" class="img-circle abol-team">
+                            <img src="{{ asset('/img/abol/andrei_kainer.jpg') }}" alt="Andrei Kainer" class="img-circle abol-team">
                         </a>
                         <h2>Andrei Kainer</h2>
                         <a href="http://andreikainer.com" class="sec-link"><i class="fa fa-hand-o-right"></i>Meet me on Web</a>
@@ -97,10 +97,10 @@
                 <div class="col-xs-12 col-sm-4 mt-3em">
                     <div class="text-center">
                         <a href="https://github.com/bradmilburn">
-                            <img src="{{ asset('/img/abol-member.jpg') }}" alt="logo" class="img-circle abol-team">
+                            <img src="{{ asset('/img/abol/brad_milburn.jpg') }}" alt="Brad Milburn" class="img-circle abol-team">
                         </a>
                         <h2>Brad Milburn</h2>
-                        <a href="http://github.com/bradmilburn" class="sec-link"><i class="fa fa-hand-o-right"></i>Meet me on Web</a>
+                        <a href="http://bradmilburn.me" class="sec-link"><i class="fa fa-hand-o-right"></i>Meet me on Web</a>
                         <a href="https://github.com/bradmilburn" class="sec-link"><i class="fa fa-github"></i>Check my works on GitHub</a>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                 <div class="col-xs-12 col-sm-4 mt-3em">
                     <div class="text-center">
                         <a href="http://olgasmirnova.co.nz">
-                            <img src="{{ asset('/img/abol-member.jpg') }}" alt="logo" class="img-circle abol-team">
+                            <img src="{{ asset('/img/abol/olga_smirnova.jpg') }}" alt="Olga Smirnova" class="img-circle abol-team">
                         </a>
                         <h2>Olga Smirnova</h2>
                         <a href="http://olgasmirnova.co.nz" class="sec-link"><i class="fa fa-hand-o-right"></i>Meet me on Web</a>
@@ -120,19 +120,19 @@
 
 
         <!-- Works page -->
-            <div class="row mt-5em" id="works">
+            <div class="row mt-5em clearfix" id="works">
 
-                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 mt-3em thumbnail abol-thumbnail">
-                      <a href="http://kinderfoerderungen.at" class="text-center">
-                          <img src="{{ asset('/img/logo.svg') }}" alt="Kinder-und Jugenfönderungen" class="text-centerimg-responsive">
-                      </a>
-                      <div class="caption">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 mt-3em thumbnail abol-thumbnail">
+                    <a href="http://kinderfoerderungen.at" class="text-center">
+                        <img src="{{ asset('/img/logo.svg') }}" alt="Kinder-und Jugenfönderungen" class="text-centerimg-responsive">
+                    </a>
+                    <div class="caption">
                         <h2>Kinder-und Jugenfönderungen</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur inventore laborum molestias odit optio quam quas quidem sapiente sed totam veniam, vero voluptas? Eos laborum magnam quia totam voluptates!</p>
                         <a href="http://kinderfoerderungen.at" class="sec-link text-center"><i class="fa fa-hand-o-right"></i>Have a look on Web</a>
-                        <a href="https://github.com" class="sec-link text-center"><i class="fa fa-github"></i>Check this on GitHub</a>
-                      </div>
+                        {{--<a href="https://github.com" class="sec-link text-center"><i class="fa fa-github"></i>Check this on GitHub</a>--}}
                     </div>
+                </div>
 
             </div>
 
@@ -140,9 +140,6 @@
                 <p class="text-center mt-3em copywrite">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
             </div>
         </div><!-- container ends -->
-
-
-
 
 
 

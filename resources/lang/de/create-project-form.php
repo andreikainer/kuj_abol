@@ -22,53 +22,53 @@ return [
     /**
      * Call to Actions.
      */
-    'start-project'         => 'Projekt starten',
-    'save-progress'         => 'Speichern Fortschritt',
+    'start-project'         => 'Ansuchen beginnen',
+    'save-progress'         => 'Fortschritt speichern',
     'back'                  => 'zurück',
-    'next'                  => 'nächster',
-    'submit'                => 'Zur Genehmigung einreichen',
+    'next'                  => 'weiter',
+    'submit'                => 'Antrag einreichen',
     'continue'              => 'fortsetzen',
     'delete'                => 'löschen',
-    'terms-cond-1'          => 'By submitting your project, you agree to our ',
-    'terms-cond-2'          => 'Terms and Conditons',
-    'terms-cond-3'          => 'Close',
+    'terms-cond-1'          => 'Mit Einreichung dieses Formulars bestättigen Sie unsere ',
+    'terms-cond-2'          => 'Allgemeinen Geschäftsbedingungen',
+    'terms-cond-3'          => 'Schließen',
 
     /**
      * Form Labels.
      */
     'project-title'         => 'Projekttitel:',
     'short-description'     => 'Kurzbeschreibung:',
-    'main-image'            => 'Hauptaufnahme:',
-    'secondary-images'      => 'Sekundär Bilder:',
+    'main-image'            => 'Hauptphoto:',
+    'secondary-images'      => 'Mehr Bilder:',
     'full-description'      => 'Ausführliche Beschreibung:',
-    'fundraise-amount'      => 'Fundraising Menge:',
+    'fundraise-amount'      => 'Gewünschter Förderungsbetrag:',
     'child-name'            => 'Name des Kindes:',
     'first-name'            => 'Ihr Vorname:',
     'last-name'             => 'Ihr Nachname:',
     'email'                 => 'Ihre E-Mail Adresse:',
-    'address'               => 'Wohnadresse:',
+    'address'               => 'Wohnanschrift:',
     'tel-number'            => 'Telefonnummer:',
-    'main-documents'        => 'Dokumente Beweis:',
-    'secondary-documents'   => 'zusätzliche Dokumente:',
-    'images-and-documents'  => 'Bilder & Dokumente:',
+    'main-documents'        => 'Antragsbeilagen:',
+    'secondary-documents'   => 'Zusätzliche Beilagen:',
+    'images-and-documents'  => 'Bilder & Beilagen:',
 
     /**
      * Form Field Placeholders
      */
-    'place-short-desc'      => 'Eine kurze Beschreibung von Ihrem Projekt. In 180 Zeichen oder weniger.',
-    'place-full-desc'       => 'Die vollständige Beschreibung des Projekts. Hier können Sie Ihre Geschichte erzählen.',
-    'place-fundraise-amt'   => 'Der Betrag, den Sie möchten, Fundraising. Minimum &#8364;500',
+    'place-short-desc'      => 'Eine kurze Beschreibung Ihrer Situation. In 180 Zeichen oder weniger.',
+    'place-full-desc'       => 'Die detailierte Beschreibung. Hier können Sie Ihre Situation im Detail beschreiben.',
+    'place-fundraise-amt'   => 'Den Förderungsbetrag den Sie benötigen. Minimum &#8364;500',
 
     /**
      * Explanations
      */
-    'exp-project-title'     => 'Bitte nennen Sie Ihr Projekt , klicken Sie auf Starten Projekt zu beginnen.',
-    'exp-recent-project'    => 'Project Sie vor kurzem begonnen haben.',
-    'exp-no-recent-project-1' => 'Großartig! Es befinden sich keine unvollständigen Projekte mit weiter.',
-    'exp-no-recent-project-2' => 'Jetzt ist eine gute Zeit, um eine neue zu starten !',
+    'exp-project-title'     => 'Bitte benennen Sie Ihr Projekt , klicken Sie anschließend auf Ansuchen beginnen.',
+    'exp-recent-project'    => 'Gespeicherte Anträge.',
+    'exp-no-recent-project-1' => 'Großartig! Sie haben kein unvollständiges Ansuchen.',
+    'exp-no-recent-project-2' => 'Sie können nun ein neues Ansuchen einreichen',
     'exp-main-image-1'      => 'Wählen Sie ein Bild von Ihrem Computer.',
-    'exp-main-image-2'      => 'Das wird die Hauptanzeige Foto für Ihr Projekt, <br/> so machen es gut!',
-    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB Dateigrenze. <br/> Mindestgröße 768 x 1024 Pixel',
+    'exp-main-image-2'      => 'Das wird das Hauptphoto für Ihr Projekt, <br/> Bitte wählen Sie eines in guter Qualität',
+    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB maximum. <br/> Mindestgröße 768 x 1024 Pixel',
     'exp-secondary-image'   => 'Klicken Sie, um ein Bild hochzuladen.',
     'exp-evidence-1'        => 'Wir benötigen Beweise für Ihr Kind die Krankheit.',
     'exp-evidence-2'        => 'Eine schriftliche Brief von Ihrem Arzt oder Krankenhaus, die besagt, den Zustand Ihres Kindes Krankheit.',
@@ -80,17 +80,17 @@ return [
     /**
      * Messages
      */
-    'validation-error'      => ' Sorry, enthält die Form einige Fehler.',
-    'project-complete'      => 'Anfrage kann nicht mehr bearbeitet werden.',
-    'save-success'          => 'Anfrage erfolgreich gespeichert.',
-    'delete-success'        => 'Anfrage erfolgreich entfernt.',
-    'login'                 => ' Bitte <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Einloggen</a> or <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Registrieren</a> um eine Anfrage starten.',
-    'incomplete'            => ' Sie haben derzeit einen unvollständigen Antrag gespeichert. Bitte fahren Sie mit der gespeicherten anfordern , oder zu löschen.',
+    'validation-error'      => ' Leider enthält Ihr Formular Fehler.',
+    'project-complete'      => 'Antrag kann nicht mehr bearbeitet werden.',
+    'save-success'          => 'Antrag erfolgreich gespeichert.',
+    'delete-success'        => 'Antrag erfolgreich entfernt.',
+    'login'                 => ' Bitte <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Einloggen</a> oder <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Registrieren</a> um einen Antrag zu beginnen.',
+    'incomplete'            => ' Sie haben derzeit einen unvollständigen Antrag gespeichert. Bitte fahren Sie mit dem gespeicherten Antrag fort, oder löschen Sie diesen.',
     'live-project'          => ' Sie haben momentan ein Förderungsprojekt live auf unserer Webseite. Sie können erst nach Ablauf wieder einen Antrag stellen.',
-    'duplicate-name'        => ' Sorry, you cannot rename your project to that title. As another user has taken it for use.',
-    'pending-project'       => ' You currently have a project submitted for approval. We will welcome another submission once it has successfully ended.',
-    'not-owner'             => 'Sorry, you are not the owner of this project.',
-    'not-authenticated'     => 'Please login to continue to page.',
+    'duplicate-name'        => ' Leider können Sie das Förderungsprojekt nicht mit diesen Titel benennen das es schon vergeben ist',
+    'pending-project'       => ' Sie haben bereits einen Antrag in Bearbeitung.',
+    'not-owner'             => 'Sie haben keinen Zugriff auf dieses Förderungsprojekt',
+    'not-authenticated'     => 'Bitte Einloggen um fortzufahren',
 
     /**
      * Tips for Successful Campaign

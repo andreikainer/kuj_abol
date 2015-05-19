@@ -25,10 +25,10 @@ Route::group(
     /*-- Landing Page --*/
         Route::get('/',['as' => 'home', 'uses' => 'ProjectsController@index']);
 
-    /*-- Landing Page --*/
+    /*-- ABOL Page --*/
         Route::get(LaravelLocalization::transRoute('routes.abol'),  'PagesController@abol');
 
-        Route::get('project/{slug}',  'ProjectsController@show');
+        Route::get(LaravelLocalization::transRoute('routes.project').'/{slug}',  'ProjectsController@show');
 
         Route::get(LaravelLocalization::transRoute('routes.current-projects'), 'ProjectsController@showMoreProjects');
         Route::get(LaravelLocalization::transRoute('routes.successful-projects'), 'ProjectsController@showMoreSuccProjects');

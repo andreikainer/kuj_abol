@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <div class="container-fluid clearfix main_carousel">
                 <div class="main_carousel_item">
-                    <img src="{{ asset('img/main-carousel/lg/seven.jpg') }}" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/one.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         {!! trans('home-page.carousel-text-1', ['cta-link' => '#contribute']) !!}
@@ -29,13 +29,13 @@
                     </div>
                 </div>
 
-                <div class="main_carousel_item">
-                     <img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">
+                {{--<div class="main_carousel_item">--}}
+                     {{--<img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">--}}
 
-                     <div class="jumbotron-text">
-                         {!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}
-                     </div>
-                </div>
+                     {{--<div class="jumbotron-text">--}}
+                         {{--{!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}--}}
+                     {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
 
@@ -61,7 +61,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail pad-zero tile">
                                 <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}">
-                                    <img src="{!! asset('img/' . $project->slug .'/small/' . $project->mainImage[0]->filename) !!}" alt="{{ $project->child_name }}">
+                                    <img src="{!! asset('img/' . $project->slug .'/small/' . $project->mainImage[0]->filename) !!}" alt="{{ $project->child_name }}" class="img-responsive">
                                 </a>
 
                                 <div class="caption">
@@ -152,7 +152,6 @@
 
             <div class="row">
 
-
                 <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1 mt-2em">
                     <div class="row sponsors_carousel">
                         @foreach($logos as $logo)
@@ -168,6 +167,7 @@
                 </div>
 
             </div>
+
 
 @endsection
 

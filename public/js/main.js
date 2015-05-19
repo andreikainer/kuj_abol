@@ -40,7 +40,7 @@ $(document).ready(function()
 {
     // Store the user's current language to `locale`.
     window.locale;
-    getLocale();
+    //getLocale();
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -159,10 +159,12 @@ function getLocale(response)
         success:    function(response)
         {
             window.locale = response;
+            console.log(window.locale);
         },
         error:      function(response)
         {
             window.locale = 'de';
+            console.log(window.locale);
         }
     });
 }
@@ -179,31 +181,22 @@ function getLocale(response)
  */
     $('.language-toggle').on("click", function(e)
     {
-        //window.locale;
+        $locale = window.locale;
 
-        //if(window.locale === 'de')
-        //{
-        //    console.log('pipa');
-        //    window.locale = 'en';
-        //    //getLocale();
-        //}else{
-        //    console.log('pepa');
-        //    window.locale = 'de';
-        //    //getLocale();
-        //}
-        //if($(this).hasClass('at'))
-        //{
-        //    $(this).toggleClass('at', false).toggleClass('gb', true);
-        //    getLocale('en');
-        //    console.log (window.locale);
-        //}else{
-        //    $(this).toggleClass('at', true).toggleClass('gb', false);
-        //    getLocale();
-        //    console.log (window.locale);
-        //}
-
-    // set the global variable 'locale' to the user's selected language
-        //console.log (window.locale);
+        if($locale === 'de')
+        {
+            //console.log('de');
+            $new_locale = 'en';
+            getLocale($new_locale);
+            //window.locale = 'en';
+            //getLocale();
+        }else{
+            //console.log('en');
+            $new_locale = 'de';
+            getLocale($new_locale);
+            //window.locale = 'de';
+            //getLocale();
+        }
 
     });
 
