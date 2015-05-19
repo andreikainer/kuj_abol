@@ -79,9 +79,9 @@
 
                         <!-- language_btn for mobile -->
                         @if(LaravelLocalization::getCurrentLocale() == 'de')
-                            <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></button></a>
+                            <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></a>
                         @else(LaravelLocalization::getCurrentLocale() == 'en')
-                            <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag at language-toggle"></button></a>
+                            <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle visible-xs button-circle mobile-circle-button flag at language-toggle"></a>
                         @endif
 
                         <!-- help_btn -->

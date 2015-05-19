@@ -6,20 +6,20 @@
 
 
 @if($favourites->isEmpty())
-    </br>
-    <h4 class="text-center">You don't have any favoured projects. <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">See all current projects</a> </h4>
+    <br>
+    <h4 class="text-center no-contributions">You don't have any favoured projects. <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">See all current projects</a> </h4>
 
 @else
 <div class="table-responsive">
     <table class="table table-striped table-hover mt-3em">
         <thead>
-        <tr>
-            <th></th>
-            <th class="col-md-2 col-sm-3 col-xs-3">{{ trans('my-contributions.project-title') }}</th>
-            <th class="col-md-2 col-sm-2 col-xs-2">{{ trans('my-contributions.status') }}</th>
-            <th class="col-md-2 col-sm-1 col-xs-1"></th>
-            <th class="col-md-1 col-sm-2 col-xs-2"></th>
-        </tr>
+            <tr>
+                <th></th>
+                <th class="col-md-2 col-sm-3 col-xs-3">{{ trans('my-contributions.project-title') }}</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">{{ trans('my-contributions.status') }}</th>
+                <th class="col-md-2 col-sm-1 col-xs-1"></th>
+                <th class="col-md-1 col-sm-2 col-xs-2"></th>
+            </tr>
         </thead>
         <tbody>
         @foreach($favourites as $key => $favourite)
@@ -56,5 +56,5 @@
         @endforeach
         </tbody>
     </table>
-@endif
 </div>
+@endif

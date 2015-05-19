@@ -5,8 +5,8 @@
 </div>
 
 @if($user->projects->isEmpty())
-    </br>
-    <h4 class="text-center">You do not have any Projects.</h4>
+    <br>
+    <h4 class="text-center no-contributions">You do not have any Projects.</h4>
 @else
 
 

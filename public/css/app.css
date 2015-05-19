@@ -6015,6 +6015,9 @@ footer {
   margin-top: 1rem;
   background-color: #6f798b;
   /*-- to adjust the position of three footer's blocks --*/ }
+  @media (max-width: 992px) {
+    footer {
+      position: fixed; } }
   footer div {
     margin-top: 1rem;
     margin-bottom: 1em; }
@@ -6413,11 +6416,7 @@ footer {
   position: absolute;
   left: 0;
   width: 100%;
-<<<<<<< HEAD
-  z-index: 20;
-=======
   z-index: 100;
->>>>>>> olgasmirnova
   padding: 1rem;
   font-size: 1.1em;
   font-weight: 700;
