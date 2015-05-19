@@ -78,8 +78,12 @@
            			    	</button>
 
                         <!-- language_btn for mobile -->
-                            <button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle">
-                            </button>
+
+                        @if(LaravelLocalization::getCurrentLocale() == 'de')
+                            <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></button></a>
+                        @else(LaravelLocalization::getCurrentLocale() == 'en')
+                            <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag at language-toggle"></button></a>
+                        @endif
 
                         <!-- help_btn -->
                             <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle visible-xs button-circle mobile-circle-button question">
@@ -104,25 +108,13 @@
                                 <div class="alignme-center clearfix">
 
                                 <!-- language_btn -->
-                                <div class="hidden currLang">{{ LaravelLocalization::getCurrentLocale() }}</div>
-								    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-								        <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}" class="navbar-toggle button-circle hvr-push flag language-toggle">
-								            {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag language-toggle"></button>--}}
-								        </a>
-								    @endforeach
-								    {{--<button type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle">--}}
-                                    	{{--<a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
-                                    			{{--{{{ $properties['native'] }}}--}}
-                                    	{{--</a>--}}
-                                    {{--</button>--}}
-
-								    {{--<a href="http://kuj.dev/en" type="button" hidden class="navbar-toggle button-circle hvr-push flag gb language-toggle"></a>--}}
-								    {{--<a href="http://kuj.dev/de" type="button" hidden class="navbar-toggle button-circle hvr-push flag at language-toggle hidden"></a>--}}
+                                <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag at"></button></a>
+                                <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag gb"></button></a>
 
                                 <!-- help_btn -->
-                                    <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle button-circle hvr-push question">
-                                            <i class="fa fa-question"></i>
-                                    </a>
+                                <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle button-circle hvr-push question">
+                                        <i class="fa fa-question"></i>
+                                </a>
 
                                 <!-- search_btn -->
                                     <button class="navbar-toggle button-circle hvr-push magnif magnifier" data-target="#search_module">

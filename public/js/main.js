@@ -167,18 +167,18 @@ function getLocale(response)
     });
 }
 
-    var langBtnArray = Array.prototype.slice.call(document.querySelectorAll('.flag'));
-
-        langBtnArray[1].addClass('at');
-        langBtnArray[2].addClass('gb');
+    //var langBtnArray = Array.prototype.slice.call(document.querySelectorAll('.flag'));
+    //
+    //    langBtnArray[1].addClass('at');
+    //    langBtnArray[2].addClass('gb');
 
 
 /*
  * check what land flag is displaying
  * toggle the flag on a press button event
  */
-    $('.language-toggle').on("click", function(e)
-    {
+    //$('.language-toggle').on("click", function(e)
+    //{
         //window.locale;
 
         //if(window.locale === 'de')
@@ -204,8 +204,8 @@ function getLocale(response)
 
     // set the global variable 'locale' to the user's selected language
         //console.log (window.locale);
-
-    });
+    //
+    //});
 
 /*------------------------------------------------------------------*/
     /*-- CODE --*/
