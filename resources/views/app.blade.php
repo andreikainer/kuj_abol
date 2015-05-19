@@ -6,12 +6,12 @@
 
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="descripion" content="????"> <!-- recomended 160 chrs, will be shown on search engine result pages -->
+		<meta name="descripion" content="Crowdfunding für den guten Zweck. Helfen Sie einer Familie aus Österreich und ermöglichen Sie somit Erleichterung im Alltag">
 		<!-- <meta name="robots" content="noindex, nofollow" /> -->
 		<meta charset="utf-8" />
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
 
-		<title>Kinder-und Jugenfönderungen</title>
+		<title>Initiative Kinder-und Jugenförderungen</title>
 		<link rel="icon" type="image/png" href="{{ asset('/img/logo_tab.png') }}">
 
     <!-- Slick carousel -->

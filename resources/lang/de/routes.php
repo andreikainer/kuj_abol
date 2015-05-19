@@ -23,8 +23,8 @@ return [
     'successful-projects'  => 'erfolgreich-gefoerderte-projekte',
     'current-projects'     => 'current-projects',
     'account/verify'       => 'account/verify',         //****
-    'account/register'      => 'benutzer/registrieren',
-    'account/login'         => 'benutzer/einloggen',
+    'account/register'      => 'account/register',      //****
+    'account/login'         => 'account/login',         //****
     'account'               => 'account',               //****
     'account/delete'        => 'account/delete',        //****
     'logout'               => 'logout',                 //****

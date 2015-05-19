@@ -18,7 +18,7 @@ return array(
 */
 
     'carousel-text-1'  =>   '<h1>Gemeinsam machen wir es möglich!</h1>
-                            <p class="hidden-xs">Helfen Sie einer Familie um Erleichterung im Alltag zu ermöglichen.</p>
+                            <p class="hidden-xs">Helfen Sie einer Familie und ermöglichen Sie Erleichterung im Alltag</p>
                             <p><a class="button-transparent" href=":cta-link" data-scroll>JETZT MITHELFEN</a></p>',
 
     'carousel-text-2'  =>   '<h1>Finanziellen Beistand leisten!</h1>
