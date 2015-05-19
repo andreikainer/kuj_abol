@@ -6393,7 +6393,8 @@ footer {
 /*------------------------------------------------------------------*/
 .flash-message {
   position: absolute;
-  left: 10%;
+  left: 0;
+  width: 100%;
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
