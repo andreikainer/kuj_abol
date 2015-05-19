@@ -5120,6 +5120,7 @@ input[type="submit"], button[type="submit"] {
 .form-section-tab {
   padding: 0.65rem 0 0.7rem 0;
   line-height: 2.25rem;
+  font-size: 1.0125rem;
   font-weight: 500;
   background: #ededed;
   border-top: 4px solid #6f798b;
@@ -5128,14 +5129,10 @@ input[type="submit"], button[type="submit"] {
   border-top-right-radius: 0.35rem;
   border-top-left-radius: 0.35rem;
   transition: all 0.3s ease; }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 767px) {
     .form-section-tab {
       font-size: 0.7rem;
       line-height: 2rem; } }
-  @media all and (max-width: 500px) {
-    .form-section-tab {
-      font-size: 0.5rem;
-      line-height: 1.75rem; } }
   .form-section-tab:hover {
     cursor: pointer;
     background: #fbfbfb; }
@@ -5275,22 +5272,21 @@ input[type="submit"], button[type="submit"] {
 
 .terms-and-conditions {
   margin-top: 1rem;
+  font-size: 1.0125rem;
   font-weight: 500; }
   .terms-and-conditions a {
     color: #3fa3db;
     font-weight: 700; }
 
-.modal-backdrop {
-  z-index: 1030 !important; }
+@media all and (max-width: 767px) {
+  .project-start-button {
+    margin-top: 1.5rem; } }
 
-.modal-body {
-  min-height: 400px !important; }
+.mobile-section-tab {
+  font-size: 1.0125rem; }
 
-.modal-body > .responsive-embed {
-  min-height: 400px !important; }
-  .modal-body > .responsive-embed object {
-    width: 100% !important;
-    min-height: 400px !important; }
+.fa-no-margin {
+  margin-right: 0; }
 
 /*
  +--------------------------------------------------------------------
@@ -5301,6 +5297,7 @@ input[type="submit"], button[type="submit"] {
 */
 .create-project-fieldset, .userpanel-section {
   padding: 0;
+  font-size: 1.0125rem;
   display: none; }
 
 .fieldset-active, .userpanel-active {
@@ -5322,7 +5319,7 @@ input[type="submit"], button[type="submit"] {
     margin-top: 1rem; } }
 
 .label-desc {
-  font-size: 1rem;
+  font-size: 1.0125rem;
   font-weight: normal; }
 
 fieldset.summary-group {
@@ -5335,7 +5332,7 @@ fieldset.summary-group {
     width: auto;
     margin-bottom: 0;
     padding: 0 0.25rem;
-    font-size: 0.9rem;
+    font-size: 1.0125rem;
     font-weight: 700;
     color: #6f798b;
     border: none; }
@@ -5526,6 +5523,7 @@ fieldset.summary-group {
 
 .error-box {
   margin-bottom: 2rem;
+  font-size: 1.0125rem;
   background: #f7bdb7 !important;
   border: 1px dashed #ed5a4d !important; }
 
@@ -5558,13 +5556,12 @@ fieldset.summary-group {
 .tips-heading {
   margin-bottom: 0;
   color: #3fa3db !important;
-  font-size: 1.2em;
-  font-weight: 700; }
-  .tips-heading span {
-    display: inline-block; }
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center; }
 
 a.tip-title {
-  font-size: 1em;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #3fa3db; }
   a.tip-title:hover, a.tip-title:active, a.tip-title:visited, a.tip-title:focus {
@@ -5572,6 +5569,7 @@ a.tip-title {
 
 .tip-explanation p {
   margin-top: 0.75em;
+  font-size: 1.0125rem;
   line-height: 1.65em;
   margin-bottom: 0; }
   .tip-explanation p:first-of-type {

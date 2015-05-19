@@ -12,7 +12,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="cpp-error error-box form-error"></div>
                 </div>
-                <div class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12 hidden-xs">
                     <div class="col-md-7 col-sm-7 col-xs-7 padding-none">
                         <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-border-left" data-section="0">{{ trans('create-project-form.start') }}</div>
                         <div class="col-md-4 col-sm-4 col-xs-4 text-center form-section-tab form-section-tab-active" data-section="1">{{ trans('create-project-form.project-details') }}</div>
@@ -21,6 +21,17 @@
                     <div class="col-md-5 col-sm-5 col-xs-5 padding-none">
                         <div class="col-md-6 col-sm-6 col-xs-6 text-center form-section-tab" data-section="3">{{ trans('create-project-form.supporting-evidence') }}</div>
                         <div class="col-md-6 col-sm-6 col-xs-6 text-center form-section-tab" data-section="4">{{ trans('create-project-form.summary') }}</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 visible-xs">
+                    <div class="col-xs-7 padding-none">
+                        <div class="col-xs-4 text-center form-section-tab form-section-tab-border-left mobile-section-tab" data-section="0"><i class="fa fa-play fa-lg"></i></div>
+                        <div class="col-xs-4 text-center form-section-tab mobile-section-tab form-section-tab-active" data-section="1"><i class="fa fa-edit fa-lg"></i></div>
+                        <div class="col-xs-4 text-center form-section-tab mobile-section-tab" data-section="2"><i class="fa fa-user fa-lg"></i></div>
+                    </div>
+                    <div class="col-xs-5 padding-none">
+                        <div class="col-xs-6 text-center form-section-tab mobile-section-tab" data-section="3"><i class="fa fa-file"></i></div>
+                        <div class="col-xs-6 text-center form-section-tab mobile-section-tab" data-section="4"><i class="fa fa-check fa-lg fa-no-margin"></i></div>
                     </div>
                 </div>
             </div> <!-- end section tabs -->

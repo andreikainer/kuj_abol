@@ -25,6 +25,7 @@
      */
         var fieldsetCollection = $('fieldset');
         var tabCollection = $('.form-section-tab');
+        var mobileTabCollection = $('.mobile-section-tab');
         var files = {};
 
     /*
@@ -90,11 +91,22 @@
         /**
          * PUBLISH EVENTS
          */
-        $('.form-section-tab').on('click', function()
+        if(window.innerWidth <= 763 )
         {
-            $.publish('section-tab.click', this);
-            $.publish('section-check.errors', this);
-        });
+            $('.mobile-section-tab').on('click', function()
+            {
+                $.publish('mobile-section-tab.click', this);
+                $.publish('section-check.errors', this);
+            });
+        }
+        else
+        {
+            $('.form-section-tab').on('click', function()
+            {
+                $.publish('section-tab.click', this);
+                $.publish('section-check.errors', this);
+            });
+        }
 
         $('.form-input-disabled').on('click.disabled', function()
         {
@@ -123,6 +135,12 @@
         {
             showSection(fieldsetCollection, $(data).data('section'));
             makeTabActive(tabCollection, $(data).data('section'));
+        });
+
+        $.subscribe('mobile-section-tab.click', function(event, data)
+        {
+            showSection(fieldsetCollection, $(data).data('section'));
+            makeTabActive(mobileTabCollection, $(data).data('section'));
         });
 
         $.subscribe('disabled-input.click', function(event, data)
