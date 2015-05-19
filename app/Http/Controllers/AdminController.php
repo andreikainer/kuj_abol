@@ -8,6 +8,7 @@ use App\Http\Requests\AdminEditProjectRequest;
 use App\Http\Requests\SponsorDetailsRequest;
 use App\Project;
 use App\User;
+use Carbon\Carbon;
 use App\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -90,6 +91,12 @@ class AdminController extends Controller {
         $project->approved = '1';
         $project->live = '1';
 
+        // Set the time for project to end.
+        $date = Carbon::now();
+        $date->day = $date->day + 60;
+
+        $project->completed_on = $date->toDateString();
+
         $project->save();
 
         // If the Administrator renames the project, we need new directories.
@@ -149,6 +156,12 @@ class AdminController extends Controller {
         // Approve the project.
         $project->approved = '1';
         $project->live = '1';
+
+        // Set the time for project to end.
+        $date = Carbon::now();
+        $date->day = $date->day + 60;
+
+        $project->completed_on = $date->toDateString();
 
         $project->save();
 
