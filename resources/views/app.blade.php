@@ -122,7 +122,7 @@
                                     </button>
                                 </div>
 
-                                <div class="alignme-center">
+                                <div>
 
                                 <!-- if there is a logged in user in the session, change the buttons to LOGOUT and USERNAME -->
                                     @if(Session::has('username'))
@@ -210,7 +210,7 @@
 
             <!-- Social Media Buttons -->
 	            <div class="col-xs-12 col-sm-4 col-md-4 col-md-push-4 col-lg-4 block socialmedia">
-	                <div>
+	                <div class="clearfix">
 	                <!-- facebook_btn -->
                         <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="facebook">
                                 <i class="fa fa-facebook"></i>
@@ -230,7 +230,7 @@
                     </div>
 
                     <div>
-                        <form class="form" action="{{ action('ContactFormController@postNewsletter') }}" method="post">
+                        <form class="form" action="{{ action('ContactFormController@postNewsletter') }}" method="post" id="newsletter-signup">
                             <div class="form-group">
                                 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                                 <label class="hidden">Newsletter</label>
@@ -254,7 +254,7 @@
 
 	                    <br>
 
-	                    <a href="#">Blog</a>
+	                    {{--<a href="#">Blog</a>--}}
                         <a href="{{ trans('routes.sponsors') }}">{{ trans('app.our-sponsors') }}</a>
 
                         <br>
@@ -286,8 +286,6 @@
 
 	        </footer> <!-- footer ends -->
         </div> <!-- container ends -->
-
-
 
 
 

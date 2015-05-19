@@ -20,7 +20,7 @@
   img {
     width: 150px;
 
-    @media(max-width: 320px) {
+    @media(max-width: 767px) {
       width: 100px;
       margin-top: .65rem;
     }
@@ -397,6 +397,12 @@ footer {
     line-height: auto;
     vertical-align: top;
   }
+
+  #newsletter-signup {
+    input {
+      box-shadow: none !important;
+    }
+  }
 }
 
 
@@ -446,13 +452,20 @@ footer {
       left: 0rem;
       padding: 1em;
       padding-top: 0;
-      background-color: rgba(0, 0, 0, .5);
+
+      h1 {
+        font-size: 1.8rem;
+      }
+      p a {
+        font-size: 1rem;
+        background-color: $text;
+      }
     }
     @media (min-width: 1366px) and (max-width: 1500px) {
       left: 14rem;
     }
     @media (min-width: 1501px) {
-      left: 30%;
+      left: 15%;
     }
 
     p:nth-child(3) {
@@ -804,6 +817,7 @@ footer {
   position: absolute;
   left: 0;
   width: 100%;
+
   z-index: 20;
   padding: 1rem;
   font-size: 1.1em;
@@ -888,15 +902,20 @@ footer {
 
   #works {
     background-color: white;
-    padding: 5rem;
 
     h2 {
       color: rgb(246,100,88);
       padding-top: 1.5rem;
       padding-bottom: .6rem;
+      @media(max-width: 767px) {
+        font-size: 140%;
+      }
     }
     p {
       color: white;
+      @media(max-width: 767px) {
+        font-size: 80%;
+      }
     }
     img {
       margin-top: 1rem;
