@@ -1,5 +1,14 @@
 <div class="row">
-    <div class="col-md-8 col-sm-8">
+    <div class="col-md-4 col-sm-12 col-md-push-8 summary-page-button">
+        <div class="image-upload-wrapper">
+            <div class="image-loader"></div>
+            {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button form-button-full-width']) !!}
+        </div>
+        <p class="terms-and-conditions">
+            {{ trans('create-project-form.terms-cond-1') }}<a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('create-project-form.terms-cond-2') }}</a>
+        </p>
+    </div>
+    <div class="col-md-8 col-sm-12 col-md-pull-4">
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <fieldset class="summary-group mt-0">
@@ -84,15 +93,6 @@
                 </fieldset>
             </div>
         </div>
-    </div>
-    <div class="col-md-4 col-sm-4 summary-page-button">
-        <div class="image-upload-wrapper">
-            <div class="image-loader"></div>
-            {!! Form::submit(trans('create-project-form.submit'), ['class' => 'form-button form-button-full-width']) !!}
-        </div>
-        <p class="terms-and-conditions">
-            {{ trans('create-project-form.terms-cond-1') }}<a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('create-project-form.terms-cond-2') }}</a>
-        </p>
     </div>
 </div>
 

@@ -5429,9 +5429,9 @@ fieldset.summary-group {
 
 .summary-page-button {
   margin-top: 0.5rem; }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 991px) {
     .summary-page-button {
-      margin-top: 1.25rem; } }
+      margin-bottom: 2.5rem; } }
 
 /*
 +--------------------------------------------------------------------
