@@ -7,7 +7,7 @@
         <div class="row" id="how-it-works">
 
             <div class="col-md-10">
-<!-- Tips for success -->
+<!-- Tips for success grafics-->
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
                         <h2 class="heading" id="tips_for_success">{{ trans('app.tips-for-success') }}</h2>
@@ -47,26 +47,24 @@
                         <p class="indent">{{trans('how-it-works-page.step-4')}}</p>
                     </div>
                 </div>
-
-<!-- Tips for success -->
-
+<!-- Tips for success accordion -->
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <p class="tips-heading text-center">{{ trans('create-project-form.tips-heading') }}</p>
+                        <p class="tips-heading text-center mt-2em">{{ trans('create-project-form.tips-heading') }} </p>
                     </div>
                 </div>
                 <div class="row mt-2em">
                     <div class="col-md-12 col-sm-12">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel-group text-center" id="accordion" role="tablist" aria-multiselectable="false">
                             <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingOne">
+                                <div class="panel-heading " role="tab" id="headingOne">
                                     <h4 class="panel-title">
-                                        <a href="#collapseOne" class="tip-title" data-toggle="collapse" data-parent="#accordian" aria-expanded="true" aria-controls="collapseOne">
+                                        <a href="#collapseOne" class="tip-title" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne">
                                             {{ trans('create-project-form.tip-1-title') }}
                                         </a>
                                     </h4>
                                 </div>
-                                <div class="panel-collapse collapse in" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-collapse collapse" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="panel-body tip-explanation">
                                         <p>{{ trans('create-project-form.tip-1-1') }}</p>
                                     </div>
@@ -75,7 +73,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingTwo">
                                     <h4 class="panel-title">
-                                        <a href="#collapseTwo" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordian" aria-expanded="false" aria-controls="collapseTwo">
+                                        <a href="#collapseTwo" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="collapseTwo">
                                             {{ trans('create-project-form.tip-2-title') }}
                                         </a>
                                     </h4>
@@ -90,7 +88,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingThree">
                                     <h4 class="panel-title">
-                                        <a href="#collapseThree" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordian" aria-expanded="false" aria-controls="collapseThree">
+                                        <a href="#collapseThree" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="collapseThree">
                                             {{ trans('create-project-form.tip-3-title') }}
                                         </a>
                                     </h4>
@@ -108,7 +106,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingFour">
                                     <h4 class="panel-title">
-                                        <a href="#collapseFour" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordian" aria-expanded="false" aria-controls="collapseFour">
+                                        <a href="#collapseFour" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="collapseFour">
                                             {{ trans('create-project-form.tip-4-title') }}
                                         </a>
                                     </h4>
@@ -128,7 +126,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingFive">
                                     <h4 class="panel-title">
-                                        <a href="#collapseFive" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordian" aria-expanded="false" aria-controls="collapseFive">
+                                        <a href="#collapseFive" class="collapsed tip-title" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="collapseFive">
                                             {{ trans('create-project-form.tip-5-title') }}
                                         </a>
                                     </h4>
