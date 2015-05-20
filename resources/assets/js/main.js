@@ -16,6 +16,7 @@ $(document).ready(function()
     // Store the user's current language to `locale`.
     window.locale;
 
+
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
 /*------------------------------------------------------------------*/
@@ -26,6 +27,21 @@ $(document).ready(function()
     {
         $('#operamini').show();
     }
+
+
+
+
+/*------------------------------------------------------------------*/
+    /*-- GET RID OF WHITE SPACE AFTER FOOTER FOR PAGES WITH NOT MUCH CONTENT --*/
+/*------------------------------------------------------------------*/
+    var body_height = $('.content').height();
+    var window_height = $(window).height();
+
+    if (body_height < window_height) {
+
+        $('.content').css('height', window_height-230);
+    }
+
 
 
 
@@ -118,8 +134,6 @@ $(document).ready(function()
         e.stopPropagation();
         slideModule($(this));
     });
-
-
 
 
 /*------------------------------------------------------------------*/

@@ -4,7 +4,7 @@
 
     <div class="container-fluid" role="main" data-scroll-header>
 
-        <div class="row" id="how-it-works">
+        <div class="row content" id="how-it-works">
 
             <div class="col-md-10">
 <!-- Tips for success grafics-->
@@ -456,8 +456,4 @@
 
         </div>
 
-@endsection
-
-@section('additional_js')
-    {{--<script src="{{ asset('js/home-page/home.js') }}"></script>--}}
 @endsection

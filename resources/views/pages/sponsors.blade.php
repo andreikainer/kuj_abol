@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="row sponsors">
+        <div class="row sponsors content">
              <div class="col-sm-10 col-sm-offset-1 mt-2em">
                 <div class="row">
 

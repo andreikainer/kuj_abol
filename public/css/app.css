@@ -6036,10 +6036,13 @@ footer {
   margin-top: 1rem;
   background-color: #6f798b;
   /*-- to adjust the position of three footer's blocks --*/ }
+<<<<<<< HEAD
   @media (max-width: 992px) {
     footer {
       position: fixed !important;
       bottom: 0; } }
+=======
+>>>>>>> olgasmirnova
   footer div {
     margin-top: 1rem;
     margin-bottom: 1em; }
