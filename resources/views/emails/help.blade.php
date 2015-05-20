@@ -1,18 +1,18 @@
 <body>
 
-    <h2>Dear {{ $data['toWhom'] }}</h2>
+    <h2>{{ trans('emails.dear') }}Dear {{ $data['toWhom'] }}</h2>
     <p>you have received an email from</p>
 
     <p>
-        <strong>Name: </strong> {{ $name }}
+        <strong>{{ trans('emails.name') }} </strong> {{ $name }}
     </p>
 
     <p>
-        <strong>Email: </strong> {{ $email }}
+        <strong>{{ trans('emails.email') }} </strong> {{ $email }}
     </p>
 
     <p>
-        <strong>The enquiry: </strong><br>
+        <strong>{{ trans('emails.enquiry') }} </strong><br>
         {{ $message_body }}
     </p>
 

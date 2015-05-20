@@ -7,7 +7,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="descripion" content="Crowdfunding für den guten Zweck. Helfen Sie einer Familie aus Österreich und ermöglichen Sie somit Erleichterung im Alltag">
-		<!-- <meta name="robots" content="noindex, nofollow" /> -->
+
 		<meta charset="utf-8" />
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -79,9 +79,9 @@
 
                         <!-- language_btn for mobile -->
                         @if(LaravelLocalization::getCurrentLocale() == 'de')
-                            <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></button></a>
+                            <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></a>
                         @else(LaravelLocalization::getCurrentLocale() == 'en')
-                            <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag at language-toggle"></button></a>
+                            <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle visible-xs button-circle mobile-circle-button flag at language-toggle"></a>
                         @endif
 
                         <!-- help_btn -->

@@ -64,7 +64,7 @@
 
 <!--================== Header =================================================-->
         <div class="container-fluid" id="abol">
-        <a data-scroll href="#abol" class="scrollToTop hidden"><i class="fa fa-arrow-up"></i> Back to top</a>
+        <a data-scroll href="#abol" class="scrollToTop hidden-xs hidden"><i class="fa fa-arrow-up"></i> Back to top</a>
 
             <div class="row">
 
