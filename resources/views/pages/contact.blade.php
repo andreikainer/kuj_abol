@@ -5,7 +5,7 @@
 
 <!-- Main content -->
         <div class="container-fluid" role="main">
-            <div class="row" id="help-page">
+            <div class="row content" id="help-page">
 
                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 mt-2em form-element">
 

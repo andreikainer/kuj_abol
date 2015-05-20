@@ -12,7 +12,7 @@
             </div> <!-- project title end-->
         </div>
 
-            <div class="row">
+            <div class="row content">
             <div class="col-sm-12 col-md-8 col-md-offset-0 project-gallery mt-3em"> <!-- project images beginn-->
                 @foreach($galleryImages as $image)
                 <div class="project-gallery-item">

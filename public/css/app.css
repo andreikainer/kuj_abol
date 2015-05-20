@@ -6015,9 +6015,6 @@ footer {
   margin-top: 1rem;
   background-color: #6f798b;
   /*-- to adjust the position of three footer's blocks --*/ }
-  @media (max-width: 992px) {
-    footer {
-      position: fixed; } }
   footer div {
     margin-top: 1rem;
     margin-bottom: 1em; }
