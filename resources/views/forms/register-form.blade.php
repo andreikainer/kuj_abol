@@ -1,4 +1,4 @@
-{!! Form::open(['id' => 'register-page']) !!}
+{!! Form::open(['action' => 'Auth\AuthController@postRegister', 'id' => 'register-page']) !!}
     <div class="col-md-12 col-sm-12">
         <!-- Username Form Input -->
         <div class="row form-group">
@@ -113,7 +113,7 @@
 
         <div class="row form-group">
             <div class="col-md-12 col-sm-12">
-                {!! Form::submit(trans('register-page.submit'), ['action' => 'Auth\AuthController@postRegister', 'class' => 'form-button form-button-full-width']) !!}
+                {!! Form::submit(trans('register-page.submit'), ['class' => 'form-button form-button-full-width']) !!}
             </div>
         </div>
 

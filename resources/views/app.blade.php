@@ -79,9 +79,9 @@
 
                         <!-- language_btn for mobile -->
                         @if(LaravelLocalization::getCurrentLocale() == 'de')
-                            <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></button></a>
+                            <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle visible-xs button-circle mobile-circle-button flag gb language-toggle"></a>
                         @else(LaravelLocalization::getCurrentLocale() == 'en')
-                            <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}"><button type="button" class="navbar-toggle visible-xs button-circle mobile-circle-button flag at language-toggle"></button></a>
+                            <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle visible-xs button-circle mobile-circle-button flag at language-toggle"></a>
                         @endif
 
                         <!-- help_btn -->
@@ -107,8 +107,8 @@
                                 <div class="alignme-center clearfix">
 
                                 <!-- language_btn -->
-                                <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag at"></button></a>
-                                <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag gb"></button></a>
+                                <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag at"></a>
+                                <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag gb"></a>
 
                                 <!-- help_btn -->
                                 <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle button-circle hvr-push question">
@@ -232,7 +232,7 @@
                         <form class="form" action="{{ action('ContactFormController@postNewsletter') }}" method="post" id="newsletter-signup">
                             <div class="form-group">
                                 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                                <label class="hidden">Newsletter</label>
+                                <label for="email" class="hidden">Newsletter</label>
                                 <input type="email" class="form-control" placeholder="{{ trans('app.newsletter') }}" name="email">
                             </div>
                             <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('app.sign-up') }}</button>

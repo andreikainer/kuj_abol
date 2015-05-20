@@ -18,7 +18,7 @@ return [
     'start'                 => 'Start',
     'project-details'       => 'Project Details',
     'your-details'          => 'Your Details',
-    'supporting-evidence'   => 'Supporting Evidence',
+    'supporting-evidence'   => 'Supporting Docs',
     'summary'               => 'Summary',
 
     /**

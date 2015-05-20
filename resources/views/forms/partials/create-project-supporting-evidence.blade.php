@@ -34,14 +34,14 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                <iframe src="#" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="doc_1_mand" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</span>
                                 </label>
-                                {!! Form::file('doc_1_mand', ['id' => 'doc_1_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {!! Form::file('doc_1_mand', ['id' => 'doc_1_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg , .jpeg , .png , .bmp , .tiff , .pdf']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="doc_1_mand"></div>
                             </div>
                         </div>
@@ -49,14 +49,14 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                <iframe src="#" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="doc_2_mand" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</span>
                                 </label>
-                                {!! Form::file('doc_2_mand', ['id' => 'doc_2_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {!! Form::file('doc_2_mand', ['id' => 'doc_2_mand', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg , .jpeg , .png , .bmp , .tiff , .pdf']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="doc_2_mand"></div>
                             </div>
                         </div>
@@ -73,14 +73,14 @@
                     <div class="col-md-6 col-sm-6 supporting-doc">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                <iframe src="#" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="doc_3" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</span>
                                 </label>
-                                {!! Form::file('doc_3', ['id' => 'doc_3', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {!! Form::file('doc_3', ['id' => 'doc_3', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg , .jpeg , .png , .bmp , .tiff , .pdf']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="doc_3"></div>
                             </div>
                         </div>
@@ -88,14 +88,14 @@
                     <div class="col-md-6 col-sm-6 supporting-doc">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                <iframe src="#" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="doc_4" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</span>
                                 </label>
-                                {!! Form::file('doc_4', ['id' => 'doc_4', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {!! Form::file('doc_4', ['id' => 'doc_4', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg , .jpeg , .png , .bmp , .tiff , .pdf']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="doc_4"></div>
                             </div>
                         </div>
@@ -103,14 +103,14 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                <iframe src="#" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="doc_5" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</span>
                                 </label>
-                                {!! Form::file('doc_5', ['id' => 'doc_5', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {!! Form::file('doc_5', ['id' => 'doc_5', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg , .jpeg , .png , .bmp , .tiff , .pdf']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="doc_5"></div>
                             </div>
                         </div>
@@ -118,14 +118,14 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="" frameborder="0" class="embed-responsive-item"></iframe>
+                                <iframe src="#" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="doc_6" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-document-input') }}</span>
                                 </label>
-                                {!! Form::file('doc_6', ['id' => 'doc_6', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg,.jpeg,.png,.bmp,.tiff,.pdf']) !!}
+                                {!! Form::file('doc_6', ['id' => 'doc_6', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => '.jpg , .jpeg , .png , .bmp , .tiff , .pdf']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="doc_6"></div>
                             </div>
                         </div>

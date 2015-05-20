@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid" id="view-edit-project">
         <div class="row">
-            <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2 form-element mt-1em">
+            <div class="col-md-6 col-sm-10 col-md-offset-3 col-sm-offset-1 form-element mt-1em">
                 <div class="row mb-3em">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-label">{{ trans('adminpanel.project-owner') }}</div>

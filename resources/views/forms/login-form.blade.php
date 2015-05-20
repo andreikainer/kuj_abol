@@ -8,7 +8,7 @@
 
 <!-- Username Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
-    	{!! Form::label(null, trans('login-page.username'), ['class' => 'form-label form-inline']) !!}
+    	{!! Form::label('user_name', trans('login-page.username'), ['class' => 'form-label form-inline']) !!}
         {!! Form::text('user_name', null,
         		array('required',
               		'class'=>'form-input form-inline',
@@ -19,7 +19,7 @@
 
 <!-- Password Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
-    	{!! Form::label(null, trans('login-page.password'), ['class' => 'form-label form-inline']) !!}
+    	{!! Form::label('password', trans('login-page.password'), ['class' => 'form-label form-inline']) !!}
         {!! Form::password('password',
                 array('required',
                     'class'=>'form-input form-inline',
@@ -31,7 +31,7 @@
 <!-- Remember Form Input -->
     <div class="col-xs-12 col-sm-12 form-group">
         {!! Form::checkbox('remember', null) !!}
-        {!! Form::label(null, trans('login-page.remember-me')) !!}
+        {!! Form::label('remember', trans('login-page.remember-me')) !!}
     </div>
 <!-- end remember input -->
 

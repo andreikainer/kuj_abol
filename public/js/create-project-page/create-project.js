@@ -133,17 +133,33 @@
 
         $.subscribe('next-button.click', function(event, data)
         {
+            if(window.innerWidth <= 991)
+            {
+                var currTab = $(data).parents('fieldset').data('section')+5;
+            }
+            else
+            {
+                var currTab = $(data).parents('fieldset').data('section');
+            }
             var currSection = $(data).parents('fieldset').data('section');
             showSection(fieldsetCollection, currSection+1);
-            makeTabActive(tabCollection, currSection+1);
+            makeTabActive(tabCollection, currTab+1);
             checkForErrors(currSection);
         });
 
         $.subscribe('back-button.click', function(event, data)
         {
+            if(window.innerWidth <= 991)
+            {
+                var currTab = $(data).parents('fieldset').data('section')+5;
+            }
+            else
+            {
+                var currTab = $(data).parents('fieldset').data('section');
+            }
             var currSection = $(data).parents('fieldset').data('section');
             showSection(fieldsetCollection, currSection-1);
-            makeTabActive(tabCollection, currSection-1);
+            makeTabActive(tabCollection, currTab-1);
             checkForErrors(currSection);
         });
 

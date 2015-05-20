@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row" role="main">
-            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+            <div class="col-md-6 col-sm-10 col-md-offset-3 col-sm-offset-1">
                 <div class="success-container">
                     <h3 class="text-center success-heading">{{ trans('create-project-success.title') }}</h3>
 
@@ -66,5 +66,5 @@
                 </div>
             </div>
         </div>
-    </div>
+
 @endsection

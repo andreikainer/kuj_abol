@@ -56,5 +56,13 @@ return array(
 */
     'search-results'        => 'Suchergebnis',
     'no-search-results'     => 'Leider wurden keine Förderungsprojekte gefunden für',
-    'search-invalid'        => '<p class="orange">Leider war Ihre Eingabe nicht korrekt.</p>'
+    'search-invalid'        => '<p class="orange">Leider war Ihre Eingabe nicht korrekt.</p>',
+
+/*
+|--------------------------------------------------------------------------
+| 404 PAGE
+|--------------------------------------------------------------------------
+*/
+    '404-line-1'            => 'hoppla!',
+    '404-line-2'            => 'Nicht ganz die Seite, die Sie gesucht haben?'
 );

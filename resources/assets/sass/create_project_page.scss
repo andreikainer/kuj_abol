@@ -300,9 +300,16 @@
     background: tint($blue, 75%);
     border: 1px dashed $blue;
     cursor: pointer;
+
+    span {
+      display: block;
+      margin-bottom: 0.5em;
+    }
   }
 
   .image-upload-label-heading {
+    display: block;
+    width: 100%;
     margin-top: 10px;
     color: $blue;
   }
