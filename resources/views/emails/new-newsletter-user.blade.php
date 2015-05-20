@@ -1,11 +1,11 @@
 <body>
 
-    {{ trans('emails.hi') }}
+    {! trans('emails.hi') !}
 
     <p>
-        {{ $user_email }} {{ trans('emails.new-sign-up') }}
+        {{ $user_email }} {! trans('emails.new-sign-up') !}
     </p>
 
-    {{ trans('emails.signature') }}
+    {! trans('emails.signature') !}
 
 </body>
