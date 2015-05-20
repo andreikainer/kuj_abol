@@ -238,7 +238,8 @@ footer {
   background-color: $bluegrey;
 
   @media(max-width: 992px) {
-    position: fixed;
+    position: fixed !important;
+    bottom: 0;
   }
 
   div {

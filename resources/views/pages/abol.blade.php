@@ -129,7 +129,7 @@
                     </a>
                     <div class="caption">
                         <h2>Kinder-und Jugenfönderungen</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur inventore laborum molestias odit optio quam quas quidem sapiente sed totam veniam, vero voluptas? Eos laborum magnam quia totam voluptates!</p>
+                        <p>Development of social crowdfunding platform based in Austria, Europe with main focus to support chronically ill, mentally or physically disabled children and their families.</p>
                         <a href="http://kinderfoerderungen.at" class="sec-link text-center"><i class="fa fa-hand-o-right"></i>Have a look on Web</a>
                         {{--<a href="https://github.com" class="sec-link text-center"><i class="fa fa-github"></i>Check this on GitHub</a>--}}
                     </div>

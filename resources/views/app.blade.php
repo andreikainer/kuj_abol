@@ -232,7 +232,7 @@
                         <form class="form" action="{{ action('ContactFormController@postNewsletter') }}" method="post" id="newsletter-signup">
                             <div class="form-group">
                                 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                                <label class="hidden">Newsletter</label>
+                                <label for="email" class="hidden">Newsletter</label>
                                 <input type="email" class="form-control" placeholder="{{ trans('app.newsletter') }}" name="email">
                             </div>
                             <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('app.sign-up') }}</button>

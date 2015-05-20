@@ -36,15 +36,15 @@ class ProjectsController extends Controller {
       */
     public function index()
     {
-        $projects = Project::all()
-            ->where('approved', 1)
-            ->where('succ_funded', 0)
-            ->sortByDesc('completed_on');
+        $allProjects = Project::where('approved', 1)
+                    ->where('succ_funded', 0)
+                    ->get();
+        $projects = $allProjects->sortByDesc('completed_on');
 
         $succ_projects = Project::where('succ_funded', 1)
             ->paginate(3);
 
-        $logos = Sponsor::all()->where('active', 1);
+        $logos = Sponsor::where('active', 1)->get();
 
         return view('pages.home', compact('projects', 'succ_projects', 'logos'));
     }
@@ -58,7 +58,7 @@ class ProjectsController extends Controller {
     {
         // fetch data according to slug
         $project = $slug;
-        $logos = Sponsor::all()->where('active', 1);
+        $logos = Sponsor::where('active', 1)->get();
 
         // find the Users Favourites and catch them
         $favourites = Favourite::all()->where('user_id', Session::get('userId'))->where('project_id', $project->id);

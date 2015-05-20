@@ -15,7 +15,6 @@ $(document).ready(function()
 {
     // Store the user's current language to `locale`.
     window.locale;
-    //getLocale();
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -122,58 +121,6 @@ $(document).ready(function()
 
 
 
-
-/*------------------------------------------------------------------*/
-  /*-- LANGUAGE CHANGE OPTION --*/
-/*------------------------------------------------------------------*/
-function getLocale(response)
-{
-    $.ajax({
-        url:        '/get-locale',
-        method:     'GET',
-        success:    function(response)
-        {
-            window.locale = response;
-            console.log(window.locale);
-        },
-        error:      function(response)
-        {
-            window.locale = 'de';
-            console.log(window.locale);
-        }
-    });
-}
-
-    var langBtnArray = Array.prototype.slice.call(document.querySelectorAll('.flag'));
-
-        langBtnArray[1].addClass('at');
-        langBtnArray[2].addClass('gb');
-
-
-/*
- * check what land flag is displaying
- * toggle the flag on a press button event
- */
-    $('.language-toggle').on("click", function(e)
-    {
-        $locale = window.locale;
-
-        if($locale === 'de')
-        {
-            //console.log('de');
-            $new_locale = 'en';
-            getLocale($new_locale);
-            //window.locale = 'en';
-            //getLocale();
-        }else{
-            //console.log('en');
-            $new_locale = 'de';
-            getLocale($new_locale);
-            //window.locale = 'de';
-            //getLocale();
-        }
-
-    });
 
 /*------------------------------------------------------------------*/
     /*-- CODE --*/

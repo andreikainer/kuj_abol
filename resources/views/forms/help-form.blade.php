@@ -8,7 +8,7 @@
 {!! Form::open(['action' => 'ContactFormController@postContactForm', 'method' => 'post']) !!}
 <!-- Name Form Input -->
     <div class="form-group">
-    	{!! Form::label(null, trans('contact-page.name'), ['class' => 'form-label form-inline']) !!}
+    	{!! Form::label('name', trans('contact-page.name'), ['class' => 'form-label form-inline']) !!}
    	    {!! Form::text('name', null,
         		array('required',
               		'class'=>'form-input form-inline',
@@ -20,7 +20,7 @@
 
 <!-- Email Form Input -->
     <div class="form-group">
-    	{!! Form::label(null, trans('contact-page.email'), ['class' => 'form-label']) !!}
+    	{!! Form::label('email', trans('contact-page.email'), ['class' => 'form-label']) !!}
     	{!! Form::text('email', null,
         		array('required',
               		'class'=>'form-input',
@@ -32,7 +32,7 @@
 
 <!-- Message_body Form Input -->
     <div class="form-group">
-    	{!! Form::label(null, trans('contact-page.message-body'), ['class' => 'form-label']) !!}
+    	{!! Form::label('message_body', trans('contact-page.message-body'), ['class' => 'form-label']) !!}
     	{!! Form::textarea('message_body', null,
         		array('required',
               		'class'=>'form-input',
