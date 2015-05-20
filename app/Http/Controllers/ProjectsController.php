@@ -36,15 +36,15 @@ class ProjectsController extends Controller {
       */
     public function index()
     {
-        $projects = Project::all()
-            ->where('approved', 1)
+        $allProjects = Project::where('approved', 1)
             ->where('succ_funded', 0)
-            ->sortByDesc('completed_on');
+            ->get();
+        $projects = $allProjects->sortByDesc('completed_on');
 
         $succ_projects = Project::where('succ_funded', 1)
             ->paginate(3);
 
-        $logos = Sponsor::all()->where('active', 1);
+        $logos = Sponsor::where('active', 1)->get();
 
         return view('pages.home', compact('projects', 'succ_projects', 'logos'));
     }

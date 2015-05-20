@@ -5488,8 +5488,13 @@ fieldset.summary-group {
   background: #cfe8f6;
   border: 1px dashed #3fa3db;
   cursor: pointer; }
+  .image-upload-label span {
+    display: block;
+    margin-bottom: 0.5em; }
 
 .image-upload-label-heading {
+  display: block;
+  width: 100%;
   margin-top: 10px;
   color: #3fa3db; }
 
