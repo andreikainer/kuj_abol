@@ -5829,6 +5829,8 @@ a.tip-title {
 
 .no-contributions {
   padding: 3rem; }
+  .no-contributions h4 {
+    color: #4b4b4b; }
 
 .adminpanel-useravatar {
   width: 90px !important; }
