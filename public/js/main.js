@@ -65,7 +65,7 @@ $(document).ready(function()
 
     if (body_height < window_height) {
 
-        $('.content').css('height', window_height);
+        $('.content').css('height', window_height-230);
     }
 
 
