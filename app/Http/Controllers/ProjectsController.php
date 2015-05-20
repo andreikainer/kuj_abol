@@ -39,6 +39,7 @@ class ProjectsController extends Controller {
         $allProjects = Project::where('approved', 1)
                     ->where('succ_funded', 0)
                     ->get();
+
         $projects = $allProjects->sortByDesc('completed_on');
 
         $succ_projects = Project::where('succ_funded', 1)

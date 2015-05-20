@@ -15,6 +15,7 @@ use KuJ\CustomExceptions\UserNotOwnerOfProjectException;
 use KuJ\CustomExceptions\UserRequiresAuthenticationException;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler {
 
@@ -57,6 +58,11 @@ class Handler extends ExceptionHandler {
         if ($e instanceof MethodNotAllowedHttpException)
         {
             return redirect('/');
+        }
+
+        if ($e instanceof NotFoundHttpException)
+        {
+            return response(view('errors.404'), 404);
         }
 
         if ($e instanceof InvalidConfirmationCodeException)

@@ -39,6 +39,7 @@
 $(document).ready(function()
 {
     // Store the user's current language to `locale`.
+    // This is needed for bi-lingual client-side validation.
     window.locale;
 
 /*------------------------------------------------------------------*/
@@ -143,6 +144,7 @@ $(document).ready(function()
         e.stopPropagation();
         slideModule($(this));
     });
+
 
 
 

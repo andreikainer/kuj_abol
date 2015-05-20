@@ -107,8 +107,8 @@
                                 <div class="alignme-center clearfix">
 
                                 <!-- language_btn -->
-                                <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag at"></button></a>
-                                <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag gb"></button></a>
+                                <a rel="alternate" hreflang="de" href="{{LaravelLocalization::getLocalizedURL("de") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag at"></a>
+                                <a rel="alternate" hreflang="en" href="{{LaravelLocalization::getLocalizedURL("en") }}" class="navbar-toggle hidden-xs hvr-push button-circle flag gb"></a>
 
                                 <!-- help_btn -->
                                 <a href="{{ action('ContactFormController@getContactForm') }}" class="navbar-toggle button-circle hvr-push question">

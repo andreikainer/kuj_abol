@@ -34,17 +34,17 @@
             <div class="col-md-12 col-sm-12">
                 <div class="form-label">{{ trans('create-project-form.main-image') }}</div>
                 <div class="image-upload-wrapper">
-                    <img src="" alt="" class="image-upload-preview img-responsive"/>
+                    <img src="#" alt="#" class="image-upload-preview img-responsive"/>
                     <div class="image-upload-controls">
                         <div class="image-loader"></div>
                         <label for="main_img" class="image-upload-label form-input-disabled text-center">
-                            <p class="image-upload-label-heading">{{ trans('create-project-form.exp-main-image-1') }}</p>
-                            <p>
+                            <span class="image-upload-label-heading">{{ trans('create-project-form.exp-main-image-1') }}</span>
+                            <span>
                                 {!! trans('create-project-form.exp-main-image-2') !!}
-                            </p>
-                            <p>
+                            </span>
+                            <span>
                                 {!! trans('create-project-form.exp-main-image-3') !!}
-                            </p>
+                            </span>
                         </label>
                         {!! Form::file('main_img', ['id' => 'main_img', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => 'image/*']) !!}
                     </div>
@@ -62,11 +62,11 @@
                     <div class="col-md-12 col-sm-12 form-label">{{ trans('create-project-form.secondary-images') }}</div>
                     <div class="col-md-4 col-sm-4">
                         <div class="image-upload-wrapper">
-                            <img src="" alt="" class="image-upload-preview img-responsive"/>
+                            <img src="#" alt="#" class="image-upload-preview img-responsive"/>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="img_2" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-secondary-image') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-secondary-image') }}</span>
                                 </label>
                                 {!! Form::file('img_2', ['id' => 'img_2', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => 'image/*']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="img_2"></div>
@@ -75,11 +75,11 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="image-upload-wrapper">
-                            <img src="" alt="" class="image-upload-preview img-responsive"/>
+                            <img src="#" alt="#" class="image-upload-preview img-responsive"/>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="img_3" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-secondary-image') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-secondary-image') }}</span>
                                 </label>
                                 {!! Form::file('img_3', ['id' => 'img_3', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => 'image/*']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="img_3"></div>
@@ -88,11 +88,11 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="image-upload-wrapper">
-                            <img src="" alt="" class="image-upload-preview img-responsive"/>
+                            <img src="#" alt="#" class="image-upload-preview img-responsive"/>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
                                 <label for="img_4" class="image-upload-label form-input-disabled text-center">
-                                    <p class="image-upload-label-heading">{{ trans('create-project-form.exp-secondary-image') }}</p>
+                                    <span class="image-upload-label-heading">{{ trans('create-project-form.exp-secondary-image') }}</span>
                                 </label>
                                 {!! Form::file('img_4', ['id' => 'img_4', 'class' => 'image-upload-input', 'disabled' => 'disabled', 'accept' => 'image/*']) !!}
                                 <div class="form-error cpp-error pad-zero" data-error="img_4"></div>
