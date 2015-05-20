@@ -39,9 +39,24 @@
 $(document).ready(function()
 {
     // Store the user's current language to `locale`.
-    // This is needed for bi-lingual client-side validation.
     window.locale;
     getLocale();
+
+    function getLocale(response)
+    {
+        $.ajax({
+            url:        '/get-locale',
+            method:     'GET',
+            success:    function(response)
+            {
+                window.locale = response;
+            },
+            error:      function(response)
+            {
+                window.locale = 'de';
+            }
+        });
+    }
 
 
 /*------------------------------------------------------------------*/
@@ -88,22 +103,6 @@ $(document).ready(function()
 /*------------------------------------------------------------------*/
     /*-- FUNCTIONS --*/
 /*------------------------------------------------------------------*/
-
-    function getLocale(response)
-    {
-        $.ajax({
-            url:        '/get-locale',
-            method:     'GET',
-            success:    function(response)
-            {
-                window.locale = response;
-            },
-            error:      function(response)
-            {
-                window.locale = 'de';
-            }
-        });
-    }
 /*
  * changeCircleBtnGroupAlignment
  * changes the grid layout components of a group of circle buttons (search_btn, help_btn, lang_btn)
@@ -177,9 +176,6 @@ $(document).ready(function()
         e.stopPropagation();
         slideModule($(this));
     });
-
-
-
 
 
 /*------------------------------------------------------------------*/

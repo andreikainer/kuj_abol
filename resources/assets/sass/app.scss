@@ -785,6 +785,7 @@ footer {
       background: $dgrey;
       cursor: pointer;
       box-shadow: inset  0.5rem 0 0 0 $blue !important;
+      background: #ECECFB;
     }
 
     h4 {
@@ -998,4 +999,8 @@ footer {
 
 .tpad-zero {
   padding-top: 0 !important;
+}
+
+.imprint{
+  padding: 1em;
 }

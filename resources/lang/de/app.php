@@ -19,7 +19,7 @@ return array(
 */
 
     'how-it-works' 		    => 'Wer wir sind',
-    'create-project' 	    => 'Asuchen einreichen',
+    'create-project' 	    => 'Ansuchen einreichen',
     'contribute' 			=> 'Fördern',
     'login'					=> 'Einloggen',
     'logout'                => 'Abmelden',

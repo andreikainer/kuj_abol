@@ -155,9 +155,9 @@
                 </div>
 
 
-                    <div class="panel-group list-group" id="faqAccordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="faqAccordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading faq list-group-item" role="tab" id="faqHeadingOne">
+                            <div class="panel-heading faq" role="tab" id="faqHeadingOne">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#faqAccordion" href="#faqCollapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         {{ trans('faq.qu1') }}

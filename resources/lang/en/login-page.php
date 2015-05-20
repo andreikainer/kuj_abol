@@ -23,7 +23,7 @@ return [
     /**
      * Buttons.
      */
-    'login'             => 'Log in',
+    'login'             => 'Login',
     'forgot-password'   => 'Forgot password',
     'send'              => 'Send password reset link',
     'reset-password'    => 'Reset password',

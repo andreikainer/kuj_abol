@@ -105,3 +105,11 @@
       }
   }
 }
+
+.orange_btn {
+  background-color: $orange;
+  border-color: #ed5a4d !important;
+
+ &:hover {
+  background-color: #eb4536; }
+}

@@ -44,6 +44,7 @@ return [
     'sponsor/relist'        => 'sponsor/relist',
     'sponsor/add'           => 'sponsor/add',
     'abol'                  => 'abol',
+    'imprint'               => 'imprint',
 
     'newsletter'            => 'newsletter',
 

@@ -8,9 +8,10 @@
     <br>
     <h4 class="text-center no-contributions">You do not have any Projects.</h4>
 @else
+<div class="table-responsive">
 
 
-    <table class="table table-striped table-hover table-responsive mt-3em">
+    <table class="table table-striped table-hover mt-3em">
         <thead>
         <tr>
             <th></th>
@@ -57,4 +58,5 @@
         @endforeach
         </tbody>
     </table>
+</div>
 @endif

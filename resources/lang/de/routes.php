@@ -44,6 +44,7 @@ return [
     'sponsor/relist'        => 'sponsor/wiedereinstellen',
     'sponsor/add'           => 'sponsor/hinzufuegen',
     'abol'                  => 'abol',
+    'imprint'               => 'impressum',
 
     'newsletter'            => 'newsletter',
 

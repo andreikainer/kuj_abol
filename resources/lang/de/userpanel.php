@@ -9,7 +9,7 @@ return [
     */
 
     'dashboard'               => 'Benutzerkonto',
-    'my-contributions'        => 'Meine geförderten Projekte',
+    'my-contributions'        => 'Meine Unterstützungen',
     'my-favourites'           => 'Meine Favoriten',
     'my-projects'             => 'Meine Förderungsprojekte',
     'my-details'              => 'Meine Details',
