@@ -45,6 +45,9 @@ Route::group(
     /*-- Sponsors Page --*/
         Route::get(LaravelLocalization::transRoute('routes.sponsors'), 'PagesController@sponsors');
 
+    /*-- Imprint Page --*/
+        Route::get(LaravelLocalization::transRoute('routes.imprint'), 'PagesController@imprint');
+
     /*-- Contact Page --*/
         Route::get(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@getContactForm');
         Route::post(LaravelLocalization::transRoute('routes.contact'), 'ContactFormController@postContactForm');
@@ -114,6 +117,8 @@ Route::group(
 
     /*-- Newsletter sign up --*/
         Route::post(LaravelLocalization::transRoute('routes.newsletter'), 'ContactFormController@postNewsletter');
+
+
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
 

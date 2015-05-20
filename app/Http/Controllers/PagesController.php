@@ -19,7 +19,7 @@ class PagesController extends Controller {
 /*-- Sponsors Page --*/
     public function sponsors()
     {
-        $logos = Sponsor::all()->where('active', 1);
+        $logos = Sponsor::where('active', 1)->get();
         return view('pages.sponsors', compact('logos'));
     }
 
@@ -27,6 +27,12 @@ class PagesController extends Controller {
     public function abol()
     {
         return view('pages.abol');
+    }
+
+    /*-- Imprint Page --*/
+    public function imprint()
+    {
+        return view('pages.imprint');
     }
 
 }

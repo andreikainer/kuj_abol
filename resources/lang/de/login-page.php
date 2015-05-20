@@ -17,7 +17,7 @@ return [
     'username'      => 'Benutzername:',
     'password'      => 'Passwort:',
     'password-confirmation'      => 'Password Confirm:',
-    'remember-me'   => 'Erinnere dich an mich',
+    'remember-me'   => 'Auf diesem Gerät erinnern',
     'email'         => 'Email',
 
     /**
