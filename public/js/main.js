@@ -39,8 +39,9 @@
 $(document).ready(function()
 {
     // Store the user's current language to `locale`.
+    // This is needed for bi-lingual client-side validation.
     window.locale;
-    //getLocale();
+    getLocale();
 
 /*------------------------------------------------------------------*/
     /*-- BACKUPS --*/
@@ -159,12 +160,10 @@ function getLocale(response)
         success:    function(response)
         {
             window.locale = response;
-            console.log(window.locale);
         },
         error:      function(response)
         {
             window.locale = 'de';
-            console.log(window.locale);
         }
     });
 }
