@@ -1,15 +1,11 @@
 <body>
 
-    <h2>Dear Wilhemine Bauer,</h2>
-    <p>you have received an email from kinderfoerderungen.at</p>
+    {{ trans('emails.hi') }}
 
     <p>
-        New user ({{ $user_email }}) just have signed up for a newsletter.
+        {{ $user_email }} {{ trans('emails.new-sign-up') }}
     </p>
 
-    <p>
-        Kind regards,
-        kinderfoerderungen.at team
-    </p>
+    {{ trans('emails.signature') }}
 
 </body>

@@ -6138,6 +6138,8 @@ footer {
 /*------------------------------------------------------------------*/
 .jumbotron {
   padding: 0; }
+  .jumbotron p {
+    font-weight: 300; }
   .jumbotron div {
     padding: 0;
     /*-- Correcting some Slick default styles --*/ }
@@ -6172,10 +6174,10 @@ footer {
           background-color: #4b4b4b; } }
     @media (min-width: 1366px) and (max-width: 1500px) {
       .jumbotron .jumbotron-text {
-        left: 14rem; } }
+        left: 12rem; } }
     @media (min-width: 1501px) {
       .jumbotron .jumbotron-text {
-        left: 15%; } }
+        left: 17%; } }
     .jumbotron .jumbotron-text p:nth-child(3) {
       margin-top: 3rem !important; }
       @media (min-width: 768px) {
