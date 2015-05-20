@@ -15,6 +15,23 @@ $(document).ready(function()
 {
     // Store the user's current language to `locale`.
     window.locale;
+    getLocale();
+
+    function getLocale(response)
+    {
+        $.ajax({
+            url:        '/get-locale',
+            method:     'GET',
+            success:    function(response)
+            {
+                window.locale = response;
+            },
+            error:      function(response)
+            {
+                window.locale = 'de';
+            }
+        });
+    }
 
 
 /*------------------------------------------------------------------*/
