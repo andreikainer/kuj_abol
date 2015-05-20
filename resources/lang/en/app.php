@@ -55,6 +55,14 @@ return [
 */
     'search-results'        => 'Search results',
     'no-search-results'     => 'Sorry, no project were found for',
-    'search-invalid'        => '<p class="orange">Sorry, invalid input.</p>'
+    'search-invalid'        => '<p class="orange">Sorry, invalid input.</p>',
+
+/*
+|--------------------------------------------------------------------------
+| 404 PAGE
+|--------------------------------------------------------------------------
+*/
+    '404-line-1'            => 'Whoops!',
+    '404-line-2'            => 'Not quite the page you were looking for?'
 
 ];
