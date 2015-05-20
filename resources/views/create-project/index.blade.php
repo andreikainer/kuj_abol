@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row content" role="main">
+    <div class="row" role="main">
         <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
             <h2 class="heading">{{ trans('app.create-project')  }}</h2>
         </div>

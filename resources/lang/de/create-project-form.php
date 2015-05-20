@@ -75,7 +75,7 @@ return [
     'exp-evidence-3'        => 'Ein Dokument, Nachweise über Ihre finanzielle Situation, einschließlich Kinderbetreuungsgeld.',
     'exp-evidence-4'        => 'Je mehr Beweise, die Sie einreichen, desto wahrscheinlicher ist das erfolgreiche Ergebnis der Anwendung.',
     'exp-document-label'    => 'mindestens 2 Dokumente obligatorisch',
-    'exp-document-input'    => 'Klicken Sie hier um ein Dokument hochladen',
+    'exp-document-input'    => 'Klicken Sie hier um ein Dokument hochzuladen',
 
     /**
      * Messages
