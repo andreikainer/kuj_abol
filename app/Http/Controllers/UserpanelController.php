@@ -33,7 +33,7 @@ class UserpanelController extends Controller
     public function __construct()
     {
         $this->middleware('auth');          //check if the user is authorized
-        $this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);    // check if the user is authorized for the routes except Favourites
+        //$this->middleware('checkRoute', ['except' => ['addFavourite', 'removeFavourite']]);    // check if the user is authorized for the routes except Favourites
     }
 
     /**
@@ -187,25 +187,14 @@ class UserpanelController extends Controller
         return redirect()->back();
     }
 
-    protected function saveImageToDB($avatar, $userName)
+    public function saveImageToDB($avatar, $userName)
     {
 
-        // If $image is not an instance of a file, it is the hidden field value sent,
-        // with a saved image preview.
-        if($avatar instanceof UploadedFile)
-        {
-            $extension = explode('.', $avatar->getClientOriginalName());
-            $extension = $extension[count($extension)-1];
-            // Name images by user's name.
-            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
-        }
-        else
-        {
-            $extension = explode('.', $avatar->getClientOriginalName());
-            $extension = $extension[count($extension)-1];
-            // Name images by user's name.
-            $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
-        }
+        $extension = explode('.', $avatar->getClientOriginalName());
+        $extension = $extension[count($extension)-1];
+        // Name images by user's name.
+        $filename = (strtolower(preg_replace('/[\s]+/', '_', $userName).'.'.$extension));
+
 
         $user = \Auth::user();
         $user->avatar = $filename;

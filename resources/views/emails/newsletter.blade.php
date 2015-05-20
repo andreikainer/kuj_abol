@@ -1,15 +1,9 @@
 <body>
 
-    <h2>Hi!</h2>
-    <p>you have received an email from kinderfoerderungen.at</p>
+    {{ trans('emails.hi') }}
 
-    <p>
-        We are glad to confirm you that you've been successfully signed up for our newsletter.
-    </p>
+    {{ trans('emails.suc-newsletter-sign-up') }}
 
-    <p>
-        Kind regards,
-        kinderfoerderungen.at team
-    </p>
+    {{ trans('emails.signature') }}
 
 </body>
