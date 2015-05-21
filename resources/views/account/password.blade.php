@@ -6,7 +6,7 @@
         <div class="container-fluid" role="main">
             <div class="row" id="send-reset-link-page">
 
-               <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 mt-2em form-element">
+               <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 mt-2em form-element content">
 
                     <div class="no-projects">{{ trans('login-page.reset') }}</div>
 

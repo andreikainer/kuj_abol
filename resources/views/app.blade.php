@@ -205,7 +205,7 @@
 
 
 <!--================== Footer =================================================-->
-	        <footer class="row">
+	        <footer class="row clearfix">
 
             <!-- Social Media Buttons -->
 	            <div class="col-xs-12 col-sm-4 col-md-4 col-md-push-4 col-lg-4 block socialmedia">
