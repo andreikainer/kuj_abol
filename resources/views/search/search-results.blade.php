@@ -7,7 +7,7 @@
 <!-- Current projects -->
          <div class="row">
 
-             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+             <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em">
                  <h2 class="heading" id="contribute">{{ trans('app.search-results') }}</h2>
              </div>
 
@@ -67,5 +67,4 @@
 
 @section('additional_js')
     <script src="{{ asset('js/progress-bar.js') }}"></script>
-    <script src="{{ asset('js/search.js') }}"></script>
 @endsection

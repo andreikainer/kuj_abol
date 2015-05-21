@@ -41,7 +41,7 @@ return [
                 <li>Provide financial support for much needed therapies and disabled facilities.</li>
                 <li>Give children equal opportunities for their development.</li>
                 </ul>',
-    'an2' => 'The all for kids Sponsoring Agentur is the Founder and Initiator of the Initiative Kinder- und Jugendförderungen  to support chronically ill, mentally or physically disabled children and their families.',
+    'an2' => 'The all for kids Sponsoring Agentur is the Founder and Initiator of the Initiative Kinder- und Jugendförderungen  to support chronically ill, mentally or physically disabled children and their families. The agencys role is also to attract and promote the crowdfunding plattform.',
     'an3' => 'Crowdfunding in generall is a modern alternative of financing a project through smaller financial resources on a common plattform. We have implemented this model on a social basis to:
                 <ul>
                 <li>Alleviate family fortunes.</li>

@@ -38,7 +38,7 @@
                     <div class="countdown-value"><span id="countdown-seconds">0</span></div>
                     <div id="time">{!! trans('view-project-page.time-to-goal') !!}</div>
                 </div>
-                <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
+                <div class="btn btn-primary button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
                 <div class="btn">
                     <div id="facebook-share" class="btn btn-primary button-main fb-share" role="button"><i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}</div><div id="fb-root"></div>
                 </div>
@@ -101,7 +101,7 @@
         <!-- Sponsors' logos -->
         <div class="row">
 
-            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+            <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em">
                 <h2 class="heading">{{ trans('app.our-sponsors') }}</h2>
             </div>
 

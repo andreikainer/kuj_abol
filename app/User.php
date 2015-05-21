@@ -127,8 +127,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->projects()
             ->where('live', '=', '1')
-            ->where('application_status', '=', '1')
-            ->where('approved', '=', '1');
+            ->where('application_status', '=', '1')   // application is completed and submitted for review
+            ->where('approved', '=', '1');            //
     }
 
 }

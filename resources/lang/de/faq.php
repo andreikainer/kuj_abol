@@ -40,7 +40,7 @@ return [
     'an4' => '',
     'an5' => '',
     'an6' => '',
-    'an7' => 'Da die Initiative kein selbstständiges Organ ist, sondern von der AK Sponsoring-Agentur verwaltet wird, erfolgt die Fakturierung  auch durch die GmbH. Weiters ermöglicht diese Strukturierung die bestmögliche Steuerbegünstigung für Ihr Unternehmen. Ihre Rechnung ist somit 100% absetzbar.',
+    'an7' => 'Da die Initiative kein selbstständiges Organ ist, sondern von der AK Sponsoring-Agentur verwaltet wird, erfolgt die Fakturierung auch durch die GmbH. Weiters ermöglicht diese Strukturierung die bestmögliche Steuerbegünstigung für Ihr Unternehmen. Ihre Rechnung ist somit 100% steuerlich absetzbar.',
     'an8' => '',
     'an9' => '',
     'an10' => '',

@@ -57,18 +57,8 @@
 }
 
 .contribute {
-  margin: 0.7em 0;
-  background-color: $blue;
-  //border: solid 3px $green !important;
-  color: $green;
-  font-size: 1.6rem;
-  font-weight: 600;
-  height: 2em;
-  &:hover {
-    background-color: darken($blue, 10%) !important;
-    border-color: darken($green, 10%) !important;
-  }
-//  font-weight: bold; OLGA
+  margin: 1em 0 1em 0;
+//   OLGA
   @media(min-width: 992px) and (max-width: 1199px){
 //    font-size: 2rem; OLGA
   }

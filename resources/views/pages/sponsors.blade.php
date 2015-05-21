@@ -4,7 +4,7 @@
 
     <div class="container-fluid" role="main" id="sponsors-page">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
+            <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                 <h2 class="heading" id="faq">{{ trans('app.our-sponsors') }}</h2>
             </div>
         </div>

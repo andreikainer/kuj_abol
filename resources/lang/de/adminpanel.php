@@ -8,34 +8,34 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'user-management'           => 'User management',
-    'sponsors-management'       => 'Sponsors management',
-    'project-approve'           => 'Project approve',
+    'user-management'           => 'Benutzerverwaltung',
+    'sponsors-management'       => 'Sponsorenverwaltung',
+    'project-approve'           => 'Bewilligungen',
 
     /**
      * Sponsors management.
      */
-    'business-name'             => 'Firmenname',
+    'business-name'             => 'Unternehmen',
     'online-since'              => 'Online seit',
-    'remove'                    => 'entfernen',
+    'remove'                    => 'Entfernen',
     'add-logo'                  => 'Logo hinzufügen',
-    'view'                      => 'ansehen',
-    'relist'                    => 'wiedereinstellen',
+    'view'                      => 'Ansehen',
+    'relist'                    => 'Einstellen',
 
     /**
      * User management.
      */
     'user-avatar'   => 'Avatar:',
-    'username'      => 'Username:',
+    'username'      => 'Benutzer:',
     'status'        => 'Status:',
-    'change'        => 'Change status',
+    'change'        => 'Status ändern',
 
     /**
      * Project Approval
      */
-    'project-owner' => 'Project Owner:',
-    'project-title' => 'Project Title',
-    'uploaded-images' => 'Uploaded Images',
+    'project-owner' => 'Antragsteller:',
+    'project-title' => 'Projekt Titel',
+    'uploaded-images' => 'Bilder',
     'supporting-evd'  => 'Supporting Evidence',
     'edit'          => 'View/Edit',
     'approve'       => 'Approve',
@@ -47,9 +47,9 @@ return [
     /**
      * Buttons.
      */
-    'toggle'        => 'Toggle',
-    'active'        => 'Active',
-    'banned'        => 'Banned',
+    'toggle'        => 'ändern',
+    'active'        => 'Aktiv',
+    'banned'        => 'Blockiert',
 
 
     /**

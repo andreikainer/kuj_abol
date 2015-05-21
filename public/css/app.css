@@ -4983,9 +4983,11 @@ input[type="submit"], button[type="submit"] {
 
 /*-- main big CTA's buttons --*/
 .button-main-big, .button-main-big:link, .button-main-big:visited {
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
   font-size: 1.1em;
-  line-height: 1.6rem; }
+  line-height: 1.6rem;
+  font-weight: bold; }
   @media (max-width: 768px) {
     .button-main-big, .button-main-big:link, .button-main-big:visited {
       font-size: 1.1rem; } }
@@ -5078,7 +5080,7 @@ input[type="submit"], button[type="submit"] {
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: #4b4b4b;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -5674,15 +5676,7 @@ a.tip-title {
       font-size: 0.7rem; } }
 
 .contribute, .contribute-td {
-  margin: 0.7em 0;
-  background-color: #3fa3db;
-  color: #2ecc71;
-  font-size: 1.6rem;
-  font-weight: 600;
-  height: 2em; }
-  .contribute:hover, .contribute-td:hover {
-    background-color: #248ac3 !important;
-    border-color: #25a25a !important; }
+  margin: 1em 0 1em 0; }
 
 #facebook-share {
   width: 100%;
@@ -6183,8 +6177,7 @@ footer {
   .jumbotron .jumbotron-text {
     position: absolute;
     top: 2rem;
-    left: 5rem;
-    text-shadow: 3px 2px 3px #323232; }
+    left: 5rem; }
     @media (max-width: 768px) {
       .jumbotron .jumbotron-text {
         top: 0rem;

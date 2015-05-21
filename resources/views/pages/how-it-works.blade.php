@@ -9,7 +9,7 @@
             <div class="col-md-10">
 <!-- Tips for success grafics-->
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
+                    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                         <h2 class="heading" id="tips_for_success">{{ trans('app.tips-for-success') }}</h2>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
 
 <!-- FAQ accordion -->
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
+                    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                         <h2 class="heading" id="faq">FAQ</h2>
                     </div>
                 </div>
@@ -400,7 +400,7 @@
 
 <!-- Our goal -->
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
+                    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                         <h2 class="heading" id="our_goal">{{ trans('app.our-mission') }}</h2>
                     </div>
                 </div>
@@ -418,7 +418,7 @@
 
 <!-- Our team -->
                 <div class="row mb-1em">
-                    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em mb-1em">
+                    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                         <h2 class="heading" id="our_team">{{ trans('app.our-team') }}</h2>
                     </div>
                 </div>

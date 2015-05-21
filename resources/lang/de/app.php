@@ -18,7 +18,7 @@ return array(
 |--------------------------------------------------------------------------
 */
 
-    'how-it-works' 		    => 'Wer wir sind',
+    'how-it-works' 		    => 'Wie es funktioniert',
     'create-project' 	    => 'Ansuchen einreichen',
     'contribute' 			=> 'Fördern',
     'login'					=> 'Einloggen',
