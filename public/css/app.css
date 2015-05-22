@@ -5636,8 +5636,6 @@ a.tip-title {
 .boarder {
   border: 3px solid #d2d2d2; }
 
-#project_statistics h3 {
-  text-decoration: underline; }
 #project_statistics h4 {
   text-transform: uppercase;
   font-size: 14px;
@@ -5681,6 +5679,8 @@ a.tip-title {
 #facebook-share {
   width: 100%;
   background: #6f798b; }
+  #facebook-share:hover {
+    background-color: #5f6877 !important; }
 
 #favorite {
   width: 100%;
@@ -5709,7 +5709,7 @@ a.tip-title {
       margin: 2%; } }
 
 .pack1:hover {
-  background: #2ecc71; }
+  background-color: #5f6877 !important; }
 
 .packs2-4 {
   background: #3fa3db;
@@ -5724,7 +5724,7 @@ a.tip-title {
       margin: 2%; } }
 
 .packs2-4:hover {
-  background: #2ecc71; }
+  background-color: #2793cf !important; }
 
 .list-item {
   list-style: disc;
@@ -5855,9 +5855,25 @@ a.tip-title {
 
 .orange_btn {
   background-color: #ed5a4d;
-  border-color: #ed5a4d !important; }
-  .orange_btn:hover {
-    background-color: #eb4536; }
+  color: white !important;
+  border-color: #ed5a4d !important;
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  letter-spacing: .06em; }
+  .orange_btn:hover, .orange_btn:active {
+    background-color: #d82616;
+    color: white !important;
+    cursor: pointer; }
+
+.blue_btn {
+  background-color: #3fa3db;
+  color: white !important;
+  border-color: #3fa3db !important;
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  letter-spacing: .06em; }
+  .blue_btn:hover, .blue_btn:active {
+    background-color: #207bad;
+    color: white !important;
+    cursor: pointer; }
 
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/
@@ -6342,7 +6358,7 @@ footer {
 #how-it-works {
   font-size: 1.1rem; }
   #how-it-works img {
-    width: 110px; }
+    margin: 0 auto; }
   #how-it-works .add-nav {
     position: fixed;
     top: 8rem; }

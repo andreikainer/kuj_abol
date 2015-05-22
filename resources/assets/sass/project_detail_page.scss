@@ -9,10 +9,6 @@
 
 #project_statistics{
 
-  h3{
-    text-decoration: underline;
-  }
-
   h4{
     text-transform: uppercase;
     font-size: 14px;
@@ -67,6 +63,10 @@
 #facebook-share {
   width: 100%;
   background: $bluegrey;
+
+  &:hover {
+    background-color: darken($bluegrey, 7%) !important;
+  }
 }
 
 #favorite {
@@ -103,7 +103,7 @@
 }
 
 .pack1:hover {
-    background: $green;
+  background-color: darken($bluegrey, 7%) !important;
 }
 
 .packs2-4 {
@@ -120,7 +120,7 @@
 }
 
 .packs2-4:hover{
-  background: $green;
+  background-color: darken($blue, 7%) !important;
 }
 
 .list-item {

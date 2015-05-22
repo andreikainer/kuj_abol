@@ -278,7 +278,7 @@
                         <br>
 
                         <p class="no-bottom-margin">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
-                        <p>{{ trans('app.website-made-by') }} <a href="{{ action('PagesController@abol') }}">ABOL</a></p>
+                        <p>{{ trans('app.website-made-by') }} <a href="{{ action('PagesController@abol') }}">ABOL Web</a></p>
                 	</div>
                 </div>
 

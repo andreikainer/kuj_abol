@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><h4 id="add-logo" type="button" class="btn btn-xs button-main button-user">{{ trans('adminpanel.add-logo') }}</h4></td>
+                <td><h4 id="add-logo" type="button" class="blue_btn">{{ trans('adminpanel.add-logo') }}</h4></td>
             </tr>
             {!! Form::open(['action' => 'AdminController@addSponsor', 'class' => 'row', 'method' => 'post', 'files' => 'true']) !!}
             <tr>
@@ -63,9 +63,9 @@
 
                 <td class="col-md-3 col-sm-2 col-xs-3">
                     @if($Sponsor->active == 1)
-                    <a href="{{ action('AdminController@removeSponsor', $Sponsor->id) }}" type="button" id="username-btn" class="btn btn-xs button-main button-user">{{ trans('adminpanel.remove') }}</a>
+                    <a href="{{ action('AdminController@removeSponsor', $Sponsor->id) }}" type="button" class="orange_btn"">{{ trans('adminpanel.remove') }}</a>
                     @else
-                        <a href="{{ action('AdminController@relistSponsor', $Sponsor->id) }}" type="button" class="btn btn-xs button-main button-user">{{ trans('adminpanel.relist') }}</a>
+                        <a href="{{ action('AdminController@relistSponsor', $Sponsor->id) }}" type="button" class="blue_btn">{{ trans('adminpanel.relist') }}</a>
                     @endif
                 </td>
 

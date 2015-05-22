@@ -29,13 +29,13 @@
                     </div>
                 </div>
 
-                {{--<div class="main_carousel_item">--}}
-                     {{--<img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">--}}
+                <div class="main_carousel_item">
+                     <img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">
 
-                     {{--<div class="jumbotron-text">--}}
-                         {{--{!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}--}}
-                     {{--</div>--}}
-                {{--</div>--}}
+                     <div class="jumbotron-text">
+                         {!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}
+                     </div>
+                </div>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
 <!-- Current projects -->
             <div class="row">
 
-                <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
                     <h2 class="heading" id="contribute">{{ trans('home-page.current-projects') }}</h2>
                 </div>
 
@@ -75,7 +75,7 @@
                                             <span class="sr-only">In progress</span>
                                         </div>
                                     </div>
-
+                                    {{--<p>{{ $now }} days to go</p>--}}
                                     <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">{{trans('home-page.read-more')}}</a></p>
 
                                 </div>
@@ -91,7 +91,7 @@
 <!-- Successful projects -->
             <div class="row">
 
-                <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
                     <h2 class="heading">{{ trans('home-page.successfully-funded-projects') }}</h2>
                 </div>
 
@@ -144,7 +144,7 @@
 <!-- Sponsors' logos -->
             <div class="row">
 
-                <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em">
+                <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
                     <h2 class="heading">{{ trans('app.our-sponsors') }}</h2>
                 </div>
 

@@ -108,8 +108,30 @@
 
 .orange_btn {
   background-color: $orange;
-  border-color: #ed5a4d !important;
+  color: $white !important;
+  border-color: $orange !important;
 
- &:hover {
-  background-color: #eb4536; }
+  font-family: $lato;
+  letter-spacing: .06em;
+
+  &:hover, &:active {
+    background-color: darken($orange, 15%);
+    color: $white !important;
+    cursor: pointer;
+  }
+}
+
+.blue_btn {
+  background-color: $blue;
+  color: $white !important;
+  border-color: $blue !important;
+
+  font-family: $lato;
+  letter-spacing: .06em;
+
+  &:hover, &:active {
+    background-color: darken($blue, 15%);
+    color: $white !important;
+    cursor: pointer;
+  }
 }

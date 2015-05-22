@@ -36,12 +36,12 @@ return [
     'project-owner' => 'Antragsteller:',
     'project-title' => 'Projekt Titel',
     'uploaded-images' => 'Bilder',
-    'supporting-evd'  => 'Supporting Evidence',
-    'edit'          => 'View/Edit',
-    'approve'       => 'Approve',
-    'no-approvals'  => 'There are no pending project submissions to approve.',
-    'click-edit'    => '* click project content to edit',
-    'approve-submit' => 'Approve Project',
+    'supporting-evd'  => 'Beilagen',
+    'edit'          => 'Ansehen',
+    'approve'       => 'Bewilligen',
+    'no-approvals'  => 'Keine neuen Förderungsanträge',
+    'click-edit'    => '* anklicken zum ändern',
+    'approve-submit' => 'Projekt Bewilligen',
 
 
     /**
@@ -55,6 +55,6 @@ return [
     /**
      * Messages.
      */
-    'approved-message' => 'The project was approved'
+    'approved-message' => 'Das Projekt wurde bewilligt',
 
 ];
