@@ -11,7 +11,7 @@
 
         <div class="row sponsors">
              <div class="col-sm-10 col-sm-offset-1 mt-2em">
-                <div class="row content">
+                <div class="row">
 
         @foreach($logos as $logo)
             <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-md-3 img-responsive mb-1em">

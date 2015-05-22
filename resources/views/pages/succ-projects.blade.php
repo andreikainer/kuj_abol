@@ -14,7 +14,7 @@
 
             </div>
 
-            <div class="row content">
+            <div class="row">
 
                 <div class="col-lg-10 col-lg-offset-1 mt-2em">
                     <div class="row content">
@@ -33,13 +33,13 @@
                                     <p class="percentage succ text-right">100%</p>
 
                                     <div class="progress mb-0">
-                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="1000" aria-valuemin="0" aria-valuemax="100" style="width: 1000%">
+                                        <div class="progress-bar prog-bar-green" role="progressbar" aria-valuenow="1000" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                             <span class="sr-only">100% Completed</span>
                                         </div>
                                     </div>
 
-                                    <p class="finished-green text-center mb-0">{{ trans('home-page.finished') }}</p>
-                                    <p class="text-right mb-0"><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
+                                    <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
+                                    <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big mt-1em" role="button">{{trans('home-page.read-more')}}</a></p>
                                 </div>
                             </div>
                         </div>

@@ -20,7 +20,7 @@
                 <!-- end tabs -->
 
                 <!-- Panel content -->
-                    <div class="row-fluid bt-none clearfix content">
+                    <div class="row-fluid bt-none clearfix">
                         <div id="userpanel-wrapper" class="col-sm-12">
 
                             @include('userpanel.tabs-overview')

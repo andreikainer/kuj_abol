@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
                 <div class="form-element imprint">
-                    <div class="row content">
+                    <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <h4> Firmensitz & Seiteninhaber:</h4><p> AK Sponsoring-Agentur GmbH</br> Mühlhofstraße 3/2/12</br>2524 Teesdorf<p/>
                             <h4>Bankverbindung:</h4> <p>Bank: Sparkasse Baden</br> IBAN: AT63 20205 01000 015501</br> BIC: SPBDAT 21XXX</p>
