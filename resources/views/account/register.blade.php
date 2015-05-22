@@ -6,7 +6,7 @@
         <div class="col-md-6 col-sm-10 col-md-offset-3 col-sm-offset-1">
             <div class="register-container form-element">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12">
+                    <div class="col-md-12 col-sm-12 content">
                         @include('forms.register-form')
                     </div>
                 </div>

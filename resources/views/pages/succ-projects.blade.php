@@ -17,7 +17,7 @@
             <div class="row content">
 
                 <div class="col-lg-10 col-lg-offset-1 mt-2em">
-                    <div class="row">
+                    <div class="row content">
 
                     @foreach($succ_projects as $project)
                         <div class="col-sm-6 col-md-4">

@@ -21,7 +21,7 @@
                  <div class="row-fluid">
 
                  @if($message !== '')
-                    <div class="col-xs-12 form-element text-center dependsOnWindowH">
+                    <div class="col-xs-12 form-element text-center">
                         <h4>{!!  $message !!}</h4>
                     </div>
                  @else

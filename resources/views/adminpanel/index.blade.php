@@ -19,7 +19,7 @@
                 <!-- end tabs -->
 
                 <!-- Panel content -->
-                    <div class="row-fluid bt-none clearfix">
+                    <div class="row-fluid bt-none clearfix content">
                         <div id="userpanel-wrapper" class="col-sm-12">
 
                             @include('adminpanel.tabs-overview')

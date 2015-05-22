@@ -5,7 +5,7 @@
     <div class="container-fluid" role="main">
         <div class="account">
 
-            <div class="row content">
+            <div class="row">
                 <div class="col-xs-12 col-md-9 mt-3em">
                 <!-- Tabs -->
 
@@ -20,7 +20,7 @@
                 <!-- end tabs -->
 
                 <!-- Panel content -->
-                    <div class="row-fluid bt-none clearfix">
+                    <div class="row-fluid bt-none clearfix content">
                         <div id="userpanel-wrapper" class="col-sm-12">
 
                             @include('userpanel.tabs-overview')
