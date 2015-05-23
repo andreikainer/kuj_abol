@@ -28,9 +28,9 @@ return array(
     'search'                => 'Suchen',
     'search-for-a-project'  => 'Förderungsprojekt suchen',
 
-    'our-mission'           => 'Unsere Philosphie',
+    'about-us'              => 'Über uns',
     'our-team'              => 'Unser Team',
-    'tips-for-success'      => 'Überblick',
+    'overview'              => 'Überblick',
     'our-sponsors'          => 'Sponsoren',
 
 
@@ -47,6 +47,7 @@ return array(
     'contacts'              => 'Kontakt',
     'website-made-by'       => 'Webdevelopment by',
     'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der AK Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich behinderten Kinder sowie deren Familie.',
+    'imprint'               => 'Impressum',
 
 
 /*

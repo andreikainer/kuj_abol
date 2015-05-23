@@ -10,7 +10,7 @@
 <!-- Tips for success grafics-->
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
-                        <h2 class="heading" id="tips_for_success">{{ trans('app.tips-for-success') }}</h2>
+                        <h2 class="heading" id="tips_for_success">{{ trans('app.overview') }}</h2>
                     </div>
                 </div>
                 <div class="row form-element">
@@ -144,11 +144,14 @@
                 </div>
 
 <!-- FAQ accordion -->
-                <div class="row">
+                <div class="row" id="faq">
                     <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                         <h2 class="heading" id="faq">FAQ</h2>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2>
 
 
                     <div class="panel-group" id="faqAccordion" role="tablist" aria-multiselectable="true">
@@ -390,14 +393,15 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    </div>
+                {{--</div>--}}
 
 
-<!-- Our goal -->
+<!-- About us -->
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
-                        <h2 class="heading" id="our_goal">{{ trans('app.our-mission') }}</h2>
+                        <h2 class="heading" id="our_goal">{{ trans('app.about-us') }}</h2>
                     </div>
                 </div>
 
@@ -421,10 +425,10 @@
 
                 <div class="row form-element text-center">
                     <div class="col-md-4 xs-mt">
-                       <h4>Bernhard Ehn</h4>
+                       <h4>Andreas Huber</h4>
                        <p class="team-role">{!! trans('how-it-works-page.team-1') !!}</p>
                        <p class="team"><i class="fa fa-phone"></i><a href="tel:+436801412012"> +43 680 / 14 12 012</a></p>
-                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', array('address' => 'bernhard@kinderfoerderungen.at', 'addressee' => 'Bernhard Ehn')) }}"> bernhard@kinderfoerderungen.at</a></p>
+                       <p class="team"><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm', array('address' => 'bernhard@kinderfoerderungen.at', 'addressee' => 'Bernhard Ehn')) }}"> andreas@kinderfoerderungen.at</a></p>
                     </div>
                     <div class="col-md-4 xs-mt">
                        <h4>Wilhelmine Bauer</h4>
@@ -443,9 +447,9 @@
 
             <div class="hidden-xs hidden-sm col-md-2 col-md-push-10 add-nav">
                 <div class="list-group">
-                    <a href="#tips_for_success" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-compass"></i> {{ trans('app.tips-for-success') }}</a>
+                    <a href="#tips_for_success" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-compass"></i> {{ trans('app.overview') }}</a>
                     <a href="#faq" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-comments-o"></i>FAQ</a>
-                    <a href="#our_goal" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-life-ring"></i> {{ trans('app.our-mission') }}</a>
+                    <a href="#our_goal" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-life-ring"></i> {{ trans('app.about-us') }}</a>
                     <a href="#our_team" data-scroll class="list-group-item sidemenu-item"><i class="fa fa-group"></i> {{ trans('app.our-team') }}</a>
                 </div>
             </div>
