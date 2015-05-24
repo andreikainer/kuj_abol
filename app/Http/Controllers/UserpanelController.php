@@ -83,6 +83,7 @@ class UserpanelController extends Controller
         $favourite = Favourite::where('project_id', $projectId);
         $favourite->delete();
 
+        Session::flash('section_key', '1');
         return redirect()->back();
     }
 
@@ -191,6 +192,8 @@ class UserpanelController extends Controller
             }
 
         }
+
+        Session::flash('section_key', 3);
         return redirect()->back();
     }
 
