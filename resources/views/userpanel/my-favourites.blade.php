@@ -42,7 +42,7 @@
                 </td>
 
                 <td class="col-md-3 col-sm-3 col-xs-3">
-                    <a href="{{ action('UserpanelController@removeFavourite', $favourite->project->id) }}" type="button" class="btn btn-xs button-main orange_btn">{{ trans('my-contributions.unfavourite') }}</a>
+                    <a href="{{ action('UserpanelController@removeFavourite', $favourite->project->id) }}" type="button" class="btn btn-xs orange_btn">{{ trans('my-contributions.unfavourite') }}</a>
                 </td>
 
                 <td class="col-md-2 col-sm-2 col-xs-2">

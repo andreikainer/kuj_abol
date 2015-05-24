@@ -97,10 +97,10 @@ return [
      */
     'tips-heading'          => 'Helpful tips for creating a successful campaign',
 
-    'tip-1-title'           => 'Bold Title',
+    'tip-1-title'           => 'Project Title',
     'tip-1-1'               => 'The title of your project, is what describes your cause. It should clearly identify what you are fundraising for.',
 
-    'tip-2-title'           => 'Captivating Short Description',
+    'tip-2-title'           => 'Short Description',
     'tip-2-1'               => 'The short description of your project, is what our viewers see first. This is a perfect time to captivate an audience.',
     'tip-2-2'               => 'So be sure to describe your project well, and touch the hearts of our audiences!',
 
@@ -109,7 +109,7 @@ return [
     'tip-3-2'               => 'Be sure to choose an image that relates well to your short description. Having an image that is not blurry, and high in definition will work in your favour.',
     'tip-3-3'               => 'Like words, an image also tells a story to our audiences.',
 
-    'tip-4-title'           => 'Tell Your Story',
+    'tip-4-title'           => 'Full Description',
     'tip-4-1'               => 'The full description of your project is the place where you can tell your story to our audiences.',
     'tip-4-2'               => 'This is the time to express your needs in detail, and to share with our audiences some information about your child and how the fundraised money will make a positive impact to your lives.',
     'tip-4-3'               => 'A well planned and thought out full description of your project, will ultimately help our audiences make the right decision to donate money to you and your child.',

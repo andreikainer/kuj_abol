@@ -42,8 +42,8 @@ return [
     'current-projects'      => 'current projects',
     'successfully-funded-projects'  => 'successfully funded projects',
     'finished'              => 'Funded',
-    'view-more'             => 'View more',
-    'view-all'              => 'View all',
+    'view-more'             => 'View more successfully funded projects',
+    'view-all'              => 'View all Sponsors',
     'read-more'             => 'Read more',
     'details'               => 'Details',
 

@@ -157,7 +157,7 @@
                    	        	<li class="dropdown">
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#tips_for_success">{{ trans('app.overview') }}</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">{{ trans('app.overview') }}</a></li>
                             		    <li><a href="{{ action('PagesController@howItWorks') }}/#faq">FAQ</a></li>
                             		    <li role="presentation" class="divider"></li>
                             		    <li><a href="{{ action('PagesController@sponsors') }}">{{ trans('app.our-sponsors') }}</a></li>
