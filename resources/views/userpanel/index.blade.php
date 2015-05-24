@@ -11,10 +11,22 @@
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="col-sm-3 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0">{{ trans('userpanel.my-contributions') }}</div>
-                            <div class="col-sm-3 text-center form-section-tab" data-section="1">{{ trans('userpanel.my-favourites') }}</div>
-                            <div class="col-sm-3 text-center form-section-tab" data-section="2">{{ trans('userpanel.my-projects') }}</div>
-                            <div class="col-sm-3 text-center form-section-tab" data-section="3">{{ trans('userpanel.my-details') }}</div>
+                            @if(Session::has('section_key') && Session::get('section_key') == 1)
+                                <div class="col-sm-3 text-center form-section-tab form-section-tab-border-left" data-section="0">{{ trans('userpanel.my-contributions') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab form-section-tab-active" data-section="1">{{ trans('userpanel.my-favourites') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab" data-section="2">{{ trans('userpanel.my-projects') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab" data-section="3">{{ trans('userpanel.my-details') }}</div>
+                            @elseif(Session::has('section_key') && Session::get('section_key') == 3)
+                                <div class="col-sm-3 text-center form-section-tab form-section-tab-border-left" data-section="0">{{ trans('userpanel.my-contributions') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab" data-section="1">{{ trans('userpanel.my-favourites') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab" data-section="2">{{ trans('userpanel.my-projects') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab form-section-tab-active" data-section="3">{{ trans('userpanel.my-details') }}</div>
+                            @else
+                                <div class="col-sm-3 text-center form-section-tab form-section-tab-border-left form-section-tab-active" data-section="0">{{ trans('userpanel.my-contributions') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab" data-section="1">{{ trans('userpanel.my-favourites') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab" data-section="2">{{ trans('userpanel.my-projects') }}</div>
+                                <div class="col-sm-3 text-center form-section-tab" data-section="3">{{ trans('userpanel.my-details') }}</div>
+                            @endif
                         </div>
                     </div>
                 <!-- end tabs -->
