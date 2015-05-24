@@ -157,11 +157,11 @@
                    	        	<li class="dropdown">
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#tips_for_success">{{ trans('app.tips-for-success') }}</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}">{{ trans('app.overview') }}</a></li>
                             		    <li><a href="{{ action('PagesController@howItWorks') }}/#faq">FAQ</a></li>
                             		    <li role="presentation" class="divider"></li>
                             		    <li><a href="{{ action('PagesController@sponsors') }}">{{ trans('app.our-sponsors') }}</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#our_goal">{{ trans('app.our-mission') }}</a></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#our_goal">{{ trans('app.about-us') }}</a></li>
                             			<li><a href="{{ action('PagesController@howItWorks') }}/#our_team">{{ trans('app.our-team') }}</a></li>
                             		</ul>
                   	        	</li>
@@ -205,7 +205,7 @@
 
 
 <!--================== Footer =================================================-->
-	        <footer class="row">
+	        <footer class="row clearfix">
 
             <!-- Social Media Buttons -->
 	            <div class="col-xs-12 col-sm-4 col-md-4 col-md-push-4 col-lg-4 block socialmedia">
@@ -259,7 +259,7 @@
                         <br>
 
                         <a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('app.terms-and-conditions') }}</a>
-                        <a href="{{ action('PagesController@imprint') }}">{{ trans('routes.imprint') }}</a>
+                        <a href="{{ action('PagesController@imprint') }}">{{ trans('app.imprint') }}</a>
 	                </div>
 	            </div>
 
@@ -278,7 +278,7 @@
                         <br>
 
                         <p class="no-bottom-margin">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
-                        <p>{{ trans('app.website-made-by') }} <a href="{{ action('PagesController@abol') }}">ABOL</a></p>
+                        <p>{{ trans('app.website-made-by') }} <a href="{{ action('PagesController@abol') }}">ABOL Web</a></p>
                 	</div>
                 </div>
 

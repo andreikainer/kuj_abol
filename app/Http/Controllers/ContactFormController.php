@@ -83,7 +83,7 @@ class ContactFormController extends Controller {
                 'user_email' => $user_email
             ], function($message) use ($user_email)
             {
-                $message->to('ladiez.os@gmail.com', $user_email)->subject(trans('contact-page.new-newsletter-user'));
+                $message->to('wilhelmine.bauer@sponsoring-agentur.at', $user_email)->subject(trans('contact-page.new-newsletter-user'));
             });
 
         // 4. store success feed back message in a session

@@ -4983,9 +4983,11 @@ input[type="submit"], button[type="submit"] {
 
 /*-- main big CTA's buttons --*/
 .button-main-big, .button-main-big:link, .button-main-big:visited {
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
   font-size: 1.1em;
-  line-height: 1.6rem; }
+  line-height: 1.6rem;
+  font-weight: bold; }
   @media (max-width: 768px) {
     .button-main-big, .button-main-big:link, .button-main-big:visited {
       font-size: 1.1rem; } }
@@ -5078,7 +5080,7 @@ input[type="submit"], button[type="submit"] {
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: #4b4b4b;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -5634,8 +5636,6 @@ a.tip-title {
 .boarder {
   border: 3px solid #d2d2d2; }
 
-#project_statistics h3 {
-  text-decoration: underline; }
 #project_statistics h4 {
   text-transform: uppercase;
   font-size: 14px;
@@ -5674,19 +5674,13 @@ a.tip-title {
       font-size: 0.7rem; } }
 
 .contribute, .contribute-td {
-  margin: 0.7em 0;
-  background-color: #3fa3db;
-  color: #2ecc71;
-  font-size: 1.6rem;
-  font-weight: 600;
-  height: 2em; }
-  .contribute:hover, .contribute-td:hover {
-    background-color: #248ac3 !important;
-    border-color: #25a25a !important; }
+  margin: 1em 0 1em 0; }
 
 #facebook-share {
   width: 100%;
   background: #6f798b; }
+  #facebook-share:hover {
+    background-color: #5f6877 !important; }
 
 #favorite {
   width: 100%;
@@ -5715,7 +5709,7 @@ a.tip-title {
       margin: 2%; } }
 
 .pack1:hover {
-  background: #2ecc71; }
+  background-color: #5f6877 !important; }
 
 .packs2-4 {
   background: #3fa3db;
@@ -5730,7 +5724,7 @@ a.tip-title {
       margin: 2%; } }
 
 .packs2-4:hover {
-  background: #2ecc71; }
+  background-color: #2793cf !important; }
 
 .list-item {
   list-style: disc;
@@ -5861,9 +5855,25 @@ a.tip-title {
 
 .orange_btn {
   background-color: #ed5a4d;
-  border-color: #ed5a4d !important; }
-  .orange_btn:hover {
-    background-color: #eb4536; }
+  color: white !important;
+  border-color: #ed5a4d !important;
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  letter-spacing: .06em; }
+  .orange_btn:hover, .orange_btn:active {
+    background-color: #d82616;
+    color: white !important;
+    cursor: pointer; }
+
+.blue_btn {
+  background-color: #3fa3db;
+  color: white !important;
+  border-color: #3fa3db !important;
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  letter-spacing: .06em; }
+  .blue_btn:hover, .blue_btn:active {
+    background-color: #207bad;
+    color: white !important;
+    cursor: pointer; }
 
 /*------------------------------------------------------------------*/
 /*-- Logo styles --*/
@@ -6183,8 +6193,7 @@ footer {
   .jumbotron .jumbotron-text {
     position: absolute;
     top: 2rem;
-    left: 5rem;
-    text-shadow: 3px 2px 3px #323232; }
+    left: 5rem; }
     @media (max-width: 768px) {
       .jumbotron .jumbotron-text {
         top: 0rem;
@@ -6349,7 +6358,7 @@ footer {
 #how-it-works {
   font-size: 1.1rem; }
   #how-it-works img {
-    width: 110px; }
+    margin: 0 auto; }
   #how-it-works .add-nav {
     position: fixed;
     top: 8rem; }

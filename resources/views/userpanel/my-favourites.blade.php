@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center">
+    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
         <h2 class="heading">{{ trans('userpanel.my-favourites') }}</h2>
     </div>
 </div>
@@ -42,7 +42,7 @@
                 </td>
 
                 <td class="col-md-3 col-sm-3 col-xs-3">
-                    <a href="{{ action('UserpanelController@removeFavourite', $favourite->project->id) }}" type="button" class="btn btn-xs button-main orange_btn">{{ trans('my-contributions.unfavourite') }}</a>
+                    <a href="{{ action('UserpanelController@removeFavourite', $favourite->project->id) }}" type="button" class="btn btn-xs orange_btn">{{ trans('my-contributions.unfavourite') }}</a>
                 </td>
 
                 <td class="col-md-2 col-sm-2 col-xs-2">

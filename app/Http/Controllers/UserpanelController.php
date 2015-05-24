@@ -158,7 +158,6 @@ class UserpanelController extends Controller
             'business_name' => $request->get('business_name'),
             'tel_number'    => $request->get('tel_number'),
             'address'       => $request->get('address'),
-            //'avatar'        => $request->file('avatar')
         ];
 
         // Update user info in DB
@@ -173,16 +172,24 @@ class UserpanelController extends Controller
 
         if($avatar !== null)
         {
-            // Make the image and document directories.
-            $imageFolderPath = public_path("img/avatars");
+            try
+            {
+                // Make the image and document directories.
+                $imageFolderPath = public_path("img/avatars");
 
-            // Resize the images to our needs, and save them in their directories.
-            $this->resizeAvatarAndSave($avatar, $user->user_name, $imageFolderPath);
+                // Resize the images to our needs, and save them in their directories.
+                $this->resizeAvatarAndSave($avatar, $user->user_name, $imageFolderPath);
 
-            // Create new Image instances in the database.
-            $this->saveImageToDB($avatar, $user->user_name);
+                // Create new Image instances in the database.
+                $this->saveImageToDB($avatar, $user->user_name);
 
-            Session::flash('flash_message', trans('userpanel.form-change-success'));
+                Session::flash('flash_message', trans('userpanel.form-change-success'));
+            }
+            catch (NotReadableException $e)
+            {
+                Session::flash('flash_message', trans('userpanel.image-not-accepted'));
+            }
+
         }
         return redirect()->back();
     }

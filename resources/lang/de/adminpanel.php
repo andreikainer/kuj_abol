@@ -8,53 +8,53 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'user-management'           => 'User management',
-    'sponsors-management'       => 'Sponsors management',
-    'project-approve'           => 'Project approve',
+    'user-management'           => 'Benutzerverwaltung',
+    'sponsors-management'       => 'Sponsorenverwaltung',
+    'project-approve'           => 'Bewilligungen',
 
     /**
      * Sponsors management.
      */
-    'business-name'             => 'Firmenname',
+    'business-name'             => 'Unternehmen',
     'online-since'              => 'Online seit',
-    'remove'                    => 'entfernen',
+    'remove'                    => 'Entfernen',
     'add-logo'                  => 'Logo hinzufügen',
-    'view'                      => 'ansehen',
-    'relist'                    => 'wiedereinstellen',
+    'view'                      => 'Ansehen',
+    'relist'                    => 'Einstellen',
 
     /**
      * User management.
      */
     'user-avatar'   => 'Avatar:',
-    'username'      => 'Username:',
+    'username'      => 'Benutzer:',
     'status'        => 'Status:',
-    'change'        => 'Change status',
+    'change'        => 'Status ändern',
 
     /**
      * Project Approval
      */
-    'project-owner' => 'Project Owner:',
-    'project-title' => 'Project Title',
-    'uploaded-images' => 'Uploaded Images',
-    'supporting-evd'  => 'Supporting Evidence',
-    'edit'          => 'View/Edit',
-    'approve'       => 'Approve',
-    'no-approvals'  => 'There are no pending project submissions to approve.',
-    'click-edit'    => '* click project content to edit',
-    'approve-submit' => 'Approve Project',
+    'project-owner' => 'Antragsteller:',
+    'project-title' => 'Projekt Titel',
+    'uploaded-images' => 'Bilder',
+    'supporting-evd'  => 'Beilagen',
+    'edit'          => 'Ansehen',
+    'approve'       => 'Bewilligen',
+    'no-approvals'  => 'Keine neuen Förderungsanträge',
+    'click-edit'    => '* anklicken zum ändern',
+    'approve-submit' => 'Projekt Bewilligen',
 
 
     /**
      * Buttons.
      */
-    'toggle'        => 'Toggle',
-    'active'        => 'Active',
-    'banned'        => 'Banned',
+    'toggle'        => 'ändern',
+    'active'        => 'Aktiv',
+    'banned'        => 'Blockiert',
 
 
     /**
      * Messages.
      */
-    'approved-message' => 'The project was approved'
+    'approved-message' => 'Das Projekt wurde bewilligt',
 
 ];

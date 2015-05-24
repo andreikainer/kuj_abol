@@ -12,7 +12,7 @@
             </div> <!-- project title end-->
         </div>
 
-            <div class="row content">
+            <div class="row">
             <div class="col-sm-12 col-md-8 col-md-offset-0 project-gallery mt-3em"> <!-- project images beginn-->
                 @foreach($galleryImages as $image)
                 <div class="project-gallery-item">
@@ -22,7 +22,7 @@
             </div> <!-- project images end-->
 
             <div id="project_statistics" class="col-sm-12 col-md-4 text-center boarder mt-3em">  <!-- statistics beginn-->
-                <h3 id="funds_text" data-funds-text="{{ trans('view-project-page.funs-text') }}">{{ trans('view-project-page.total-funds-raised') }}</h3>
+                <h3 id="funds_text" data-funds-text="{{ trans('view-project-page.funds-text') }}">{{ trans('view-project-page.total-funds-raised') }}</h3>
                 <h2 id="amount_raised" data-amount-raised="{{ $project->amount_raised }}"><strong>&euro; {{ $amount_raised }}</strong></h2>
                 <h4 id="minimum_goal" data-minimum-goal="{{ $project->target_amount }}"><strong>{{ trans('view-project-page.of-minimum-goal', ['goal' => $target_amount]) }}</strong></h4>
                 <h3>{{ trans('view-project-page.progress') }}</h3>
@@ -38,7 +38,7 @@
                     <div class="countdown-value"><span id="countdown-seconds">0</span></div>
                     <div id="time">{!! trans('view-project-page.time-to-goal') !!}</div>
                 </div>
-                <div class="btn button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
+                <div class="btn btn-primary button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
                 <div class="btn">
                     <div id="facebook-share" class="btn btn-primary button-main fb-share" role="button"><i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}</div><div id="fb-root"></div>
                 </div>
@@ -57,6 +57,7 @@
                 </div>
             </div> <!-- statistics end-->
             </div>
+
         <!-- Modal -->
         <div class="modal fade modal-message" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-sm">
@@ -79,21 +80,21 @@
             </div> <!-- project description end-->
 
             <div id="contribution-packs" class="col-sm-12 col-md-4 col-md-offset-1 text-center clearfix"> <!-- contribution packages beginn-->
-                <h2 class="heading">{{ trans('view-project-page.support-options') }}</h2>
+                <p class="tips-heading text-center mt-2em">{{ trans('view-project-page.support-options') }}</p>
                 <a href="#" role="button"><div class="pack1 padding-none pull-left"> <!-- contribution package 1-->
                         {!! trans('view-project-page.business-building-block') !!}
                 </div></a>
                 <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 2-->
-                        {!! trans('view-project-page.small-block', ['euro' => '15,00']) !!}
-                            {!! trans('view-project-page.individual-building-block', ['euro' => '15,00']) !!}
-                </div></a>
-                <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 3-->
-                        {!! trans('view-project-page.medium-block', ['euro' => '25,00']) !!}
+                        {!! trans('view-project-page.small-block', ['euro' => '25,00']) !!}
                             {!! trans('view-project-page.individual-building-block', ['euro' => '25,00']) !!}
                 </div></a>
+                <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 3-->
+                        {!! trans('view-project-page.medium-block', ['euro' => '50,00']) !!}
+                            {!! trans('view-project-page.individual-building-block', ['euro' => '50,00']) !!}
+                </div></a>
                     <a href="#" role="button"><div class="packs2-4 padding-none pull-left"> <!-- contribution package 4-->
-                        {!! trans('view-project-page.large-block', ['euro' => '50,00']) !!}
-                           {!! trans('view-project-page.individual-building-block', ['euro' => '50,00']) !!}
+                        {!! trans('view-project-page.large-block', ['euro' => '100,00']) !!}
+                           {!! trans('view-project-page.individual-building-block', ['euro' => '100,00']) !!}
                 </div></a>
             </div> <!-- contribution packages end-->
             </div>
@@ -101,7 +102,7 @@
         <!-- Sponsors' logos -->
         <div class="row">
 
-            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center mt-3em">
+            <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em">
                 <h2 class="heading">{{ trans('app.our-sponsors') }}</h2>
             </div>
 

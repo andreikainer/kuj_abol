@@ -41,4 +41,5 @@ return [
     'form-delete-success' => 'Your account were deleted successfully.',
     'avatar-upload'     => 'To upload new avatar,  click this image.',
     'logo-upload-success' => 'Logo erfolgreich hinzugefügt',
+    'image-not-accepted'  => 'Bildformat nicht unterstützt',
 ];

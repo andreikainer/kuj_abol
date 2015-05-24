@@ -95,7 +95,7 @@ Route::group(
         Route::get(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@getReset');
         Route::post(LaravelLocalization::transRoute('routes.password/reset').'/{token}', 'Auth\PasswordController@postReset');
 
-    /*-- Userpanel, Adminpanel Pages --*/
+    /*-- Userpanel, Pages --*/
         Route::get(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@show');
         Route::post(LaravelLocalization::transRoute('routes.account').'/{username}', 'UserpanelController@update');
         Route::get(LaravelLocalization::transRoute('routes.account/delete').'/{username}', 'UserpanelController@delete');

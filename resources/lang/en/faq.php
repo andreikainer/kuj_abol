@@ -36,25 +36,25 @@ return [
      */
     'an1' => 'Kinder- und Jugendförderungen is an Initiative with the main emphasis for:
                 <ul>
-                <li>Alleviate family fortunes.</li>
-                <li>Fulfil child wishes.</li>
-                <li>Provide financial support for much needed therapies and disabled facilities.</li>
-                <li>Give children equal opportunities for their development.</li>
+                <li class="list-item">Alleviate family fortunes.</li>
+                <li class="list-item">Fulfil child wishes.</li>
+                <li class="list-item">Provide financial support for much needed therapies and disabled facilities.</li>
+                <li class="list-item">Give children equal opportunities for their development.</li>
                 </ul>',
-    'an2' => 'The all for kids Sponsoring Agentur is the Founder and Initiator of the Initiative Kinder- und Jugendförderungen  to support chronically ill, mentally or physically disabled children and their families.',
+    'an2' => 'The all for kids Sponsoring Agentur is the Founder and Initiator of the Initiative Kinder- und Jugendförderungen  to support chronically ill, mentally or physically disabled children and their families. The agencys role is also to attract and promote the crowdfunding plattform.',
     'an3' => 'Crowdfunding in generall is a modern alternative of financing a project through smaller financial resources on a common plattform. We have implemented this model on a social basis to:
                 <ul>
-                <li>Alleviate family fortunes.</li>
-                <li>Fulfil child wishes.</li>
-                <li>Provide financial support for much needed therapies and disabled facilities.</li>
-                <li>Give children equal opportunities for their development.</li>
+                <li class="list-item">Alleviate family fortunes.</li>
+                <li class="list-item">Fulfil child wishes.</li>
+                <li class="list-item">Provide financial support for much needed therapies and disabled facilities.</li>
+                <li class="list-item">Give children equal opportunities for their development.</li>
                 </ul>',
     'an4' => 'With an KuJ account you can maximise the social funding experience.
                 <ul>
-                <li>You will be able to favorite projects to review them later</li>
-                <li>Have an insight of your past contributions</li>
-                <li>You can update your details and upload a profile photo</li>
-                <li>As a business you can even upload your company profile and logo</li>
+                <li class="list-item">You will be able to favorite projects to review them later</li>
+                <li class="list-item">Have an insight of your past contributions</li>
+                <li class="list-item">You can update your details and upload a profile photo</li>
+                <li class="list-item">As a business you can even upload your company profile and logo</li>
                 </ul>
                 Of course alls this functionallity is for free and doesn’t involve any costs.',
     'an5' => 'Displaying your business logo obviously will have an positive impact on your company social reputation as well as your online presence and search engine ranking. Each logo is linked to your company website which will increase your unique visitors traffic. It also gives you the chance to attract potential customers as the plattform is b2b focused. ',

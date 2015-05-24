@@ -18,7 +18,7 @@ return array(
 |--------------------------------------------------------------------------
 */
 
-    'how-it-works' 		    => 'Wer wir sind',
+    'how-it-works' 		    => 'Wie\'s funktioniert',
     'create-project' 	    => 'Ansuchen einreichen',
     'contribute' 			=> 'Fördern',
     'login'					=> 'Einloggen',
@@ -28,9 +28,9 @@ return array(
     'search'                => 'Suchen',
     'search-for-a-project'  => 'Förderungsprojekt suchen',
 
-    'our-mission'           => 'Unsere Philosphie',
+    'about-us'              => 'Über uns',
     'our-team'              => 'Unser Team',
-    'tips-for-success'      => 'Tips zum Erfolg',
+    'overview'              => 'Überblick',
     'our-sponsors'          => 'Sponsoren',
 
 
@@ -44,9 +44,10 @@ return array(
     'sign-up'               => 'Anmelden',
     'site-map'              => 'Sitemap',
     'terms-and-conditions'  => 'Allgemeine Geschäftsbedingungen',
-    'contacts'              => 'Contacts',
-    'website-made-by'       => 'Webseite gemacht von',
-    'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der All for Kids Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich behinderten Kinder sowie deren Familie.',
+    'contacts'              => 'Kontakt',
+    'website-made-by'       => 'Webdevelopment by',
+    'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der AK Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich behinderten Kinder sowie deren Familie.',
+    'imprint'               => 'Impressum',
 
 
 /*
@@ -63,6 +64,6 @@ return array(
 | 404 PAGE
 |--------------------------------------------------------------------------
 */
-    '404-line-1'            => 'hoppla!',
+    '404-line-1'            => 'Hoppla!',
     '404-line-2'            => 'Nicht ganz die Seite, die Sie gesucht haben?'
 );

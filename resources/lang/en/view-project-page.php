@@ -16,7 +16,7 @@ return [
   'progress'               => 'Progress:',
   'fund-this-project'      => 'Fund this Project',
   'completed'              => 'Completed',
-  'support-options'        =>  'Support Options',
+  'support-options'        => 'Support Options:',
   'share-on-facebook'      => 'Share on Facebook',
   'add-to-favourites'      => 'Add to Favourites',
   'unfavourite'            => 'Unfavourite',
@@ -25,7 +25,7 @@ return [
   'login-message'          => 'Please log in or register to favourite this project',
 
 
-  'business-building-block' => '<h3>"Business" Building-block<br> &euro; 150,00 + Ust each</h3>
+  'business-building-block' => '<h3>"Business" Building-block</h3>
                                <h4>Our special offer for Businesses of all kind. Fund this project and receive in return:</h4>
                                   <ul>
                                       <li class="list-item">Business Logo display on our website for 3 months</li>
@@ -34,7 +34,8 @@ return [
                                       <li class="list-item">Your contribution is 100% tax deductible</li>
                                       <li class="list-item">Official "Kinder- und Jugendförderungen" Sponsor certificate</li>
                                       <li class="list-item">On request: transfer of our "KuJ official Sponsor" - button </li>
-                                  </ul>',
+                                  </ul>
+                                  <h3>&euro; 150,00 + Ust each</h3>',
 
   'individual-building-block' => '<ul>
                                       <li class="list-item">Fund this project with a fixed amount of &euro; :euro</li>

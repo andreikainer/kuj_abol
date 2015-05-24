@@ -9,10 +9,6 @@
 
 #project_statistics{
 
-  h3{
-    text-decoration: underline;
-  }
-
   h4{
     text-transform: uppercase;
     font-size: 14px;
@@ -57,18 +53,8 @@
 }
 
 .contribute {
-  margin: 0.7em 0;
-  background-color: $blue;
-  //border: solid 3px $green !important;
-  color: $green;
-  font-size: 1.6rem;
-  font-weight: 600;
-  height: 2em;
-  &:hover {
-    background-color: darken($blue, 10%) !important;
-    border-color: darken($green, 10%) !important;
-  }
-//  font-weight: bold; OLGA
+  margin: 1em 0 1em 0;
+//   OLGA
   @media(min-width: 992px) and (max-width: 1199px){
 //    font-size: 2rem; OLGA
   }
@@ -77,6 +63,10 @@
 #facebook-share {
   width: 100%;
   background: $bluegrey;
+
+  &:hover {
+    background-color: darken($bluegrey, 7%) !important;
+  }
 }
 
 #favorite {
@@ -113,7 +103,7 @@
 }
 
 .pack1:hover {
-    background: $green;
+  background-color: darken($bluegrey, 7%) !important;
 }
 
 .packs2-4 {
@@ -130,7 +120,7 @@
 }
 
 .packs2-4:hover{
-  background: $green;
+  background-color: darken($blue, 7%) !important;
 }
 
 .list-item {

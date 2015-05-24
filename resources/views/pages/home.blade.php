@@ -25,17 +25,17 @@
                     <img src="{{ asset('img/main-carousel/lg/three.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {!! trans('home-page.carousel-text-3', ['cta-link' => trans('routes.sponsors')]) !!}
+                        {!! trans('home-page.carousel-text-3', ['cta-link' => action('PagesController@sponsors')]) !!}
                     </div>
                 </div>
 
-                {{--<div class="main_carousel_item">--}}
-                     {{--<img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">--}}
+                <div class="main_carousel_item">
+                     <img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">
 
-                     {{--<div class="jumbotron-text">--}}
-                         {{--{!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}--}}
-                     {{--</div>--}}
-                {{--</div>--}}
+                     <div class="jumbotron-text">
+                         {!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}
+                     </div>
+                </div>
             </div>
         </div>
 
@@ -75,7 +75,7 @@
                                             <span class="sr-only">In progress</span>
                                         </div>
                                     </div>
-
+                                    {{--<p>{{ $now }} days to go</p>--}}
                                     <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big" role="button">{{trans('home-page.read-more')}}</a></p>
 
                                 </div>
@@ -122,7 +122,7 @@
                                     </div>
 
                                     <p class="finished-green text-center mb-0"><i class="fa fa-check"></i>{{ trans('home-page.finished') }}</p>
-                                    <p class="text-right mb-0"><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.details') }}</a></p>
+                                    <p><a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}" class="btn btn-primary button-main-big mt-1em" role="button">{{trans('home-page.read-more')}}</a></p>
                                 </div>
                             </div>
                         </div>

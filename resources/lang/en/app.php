@@ -28,9 +28,9 @@ return [
     'search'                => 'Search',
     'search-for-a-project'  => 'Search for a project',
 
-    'our-mission'           => 'Our Goals',
+    'about-us'              => 'About Us',
     'our-team'              => 'Our Team',
-    'tips-for-success'      => 'Tips For Success',
+    'overview'              => 'Overview',
     'our-sponsors'          => 'Our Sponsors',
 
 
@@ -46,7 +46,8 @@ return [
     'terms-and-conditions'  => 'Terms and conditions',
     'contacts'              => 'Contacts',
     'website-made-by'       => 'website made by',
-    'legal-stuff'           => 'Kinder- und Jugendförderungen is an initiative of the All for Kids Sponsoring Agency to support chronically ill, mentally or physically disabled children and their families.',
+    'legal-stuff'           => 'Kinder- und Jugendförderungen is an initiative of the AK Sponsoring Agency to support chronically ill, mentally or physically disabled children and their families.',
+    'imprint'               => 'Imprint',
 
 /*
 |--------------------------------------------------------------------------

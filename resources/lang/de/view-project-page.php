@@ -16,7 +16,7 @@ return [
   'progress'               => 'Progress:',
   'fund-this-project'      => 'Projekt Fördern',
   'completed'              => 'Abgeschlossen',
-  'support-options'        => 'Förderungsbausteine',
+  'support-options'        => 'Förderungsbausteine:',
   'share-on-facebook'      => 'Auf Facebook Teilen',
   'add-to-favourites'      => 'Zu meinen Favoriten',
   'unfavourite'            => 'Favorit entfernen',
@@ -24,8 +24,8 @@ return [
   'login'                  => 'Einloggen',
   'login-message'          => 'Bitte loggen Sie sich ein oder registrieren um dieses Förderungsprojekt zu favorisieren',
 
-  'business-building-block' => '<h3>"Business" Förderungs-Baustein<br> &euro; 150,00 + Ust pro Baustein</h3>
-                               <h4>Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
+  'business-building-block' => '<h3>"Business" - Förderungs-Baustein</h3>
+                               <h4 class="text-justify">Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
                                   <ul>
                                       <li class="list-item">Firmenlogo Darstellung auf unserer Webseite für drei Monate</li>
                                       <li class="list-item">Verlinkung zu Ihrer Firmen-Webseite</li>
@@ -33,16 +33,18 @@ return [
                                       <li class="list-item">Ihre Förderung ist zu 100% Steuerabzugsfähig</li>
                                       <li class="list-item">Offizielle Kinder- und Jugendförderungen Sponsorenurkunde</li>
                                       <li class="list-item">Auf Anfrage: Übertragung unseres "Offizieller Sponsor"- Button </li>
-                                  </ul>',
+                                  </ul>
+                                  <h3>&euro; 150,00 + Ust pro Baustein</h3>',
 
   'individual-building-block' => '<ul>
                                       <li class="list-item">Unterstützen Sie dieses Projekt mit einem fixen Betrag von &euro; :euro</li>
-                                      <li class="list-item">Sie erhalten ein persönliches Dankschreiben der Familie </li>
+                                      <li class="list-item">Sie erhalten ein persönliches Dankschreiben von der geförderten Familie </li>
                                       <li class="list-item">Ihr Beitrag wir ausschließlich für dieses Förderungsprojekt verwendet</li>
-                                  </ul>',
+                                  </ul>
+                                  <h3>Einmahlig &euro; :euro</h3>',
 
-  'small-block'               => '<h3>Kleiner Förderungs-Baustein  | &euro; :euro</h3>',
-  'medium-block'              => '<h3>Mittlerer Förderungs-Baustein  | &euro; :euro</h3>',
-  'large-block'               => '<h3>Großer Förderungs-Baustein  | &euro; :euro oder mehr</h3>',
+  'small-block'               => '<h3>Kleiner Förderungs-Baustein</h3>',
+  'medium-block'              => '<h3>Mittlerer Förderungs-Baustein</h3>',
+  'large-block'               => '<h3>Großer Förderungs-Baustein</h3>',
 
 ];
