@@ -20,7 +20,7 @@ $(document).ready(function()
     function getLocale(response)
     {
         $.ajax({
-            url:        '/get-locale',
+            url:        'http://abol.co.nz/get-locale', // #1 change to absolute url
             method:     'GET',
             success:    function(response)
             {
@@ -290,7 +290,7 @@ $(document).ready(function()
     $.fn.dropdown.Constructor = Dropdown
 
     // bootstrap dropdown fix for mobile
-    if(window.innerWidth < 768) {
+    if(window.innerWidth < 1025) {
 
         /* APPLY TO STANDARD DROPDOWN ELEMENTS
          * =================================== */
