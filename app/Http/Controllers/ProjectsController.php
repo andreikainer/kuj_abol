@@ -157,7 +157,10 @@ class ProjectsController extends Controller {
             'last_name'     => $request->get('last_name'),
             'email'         => $request->get('email'),
             'tel_number'    => $request->get('tel_number'),
-            'address'       => $request->get('address')
+            'street'        => $request->get('street'),
+            'postcode'      => $request->get('postcode'),
+            'city'          => $request->get('city'),
+            'country'       => $request->get('country')
         ];
 
         $userDocuments = [
@@ -251,7 +254,10 @@ class ProjectsController extends Controller {
             'last_name'     => $request->get('last_name'),
             'email'         => $request->get('email'),
             'tel_number'    => $request->get('tel_number'),
-            'address'       => $request->get('address')
+            'street'        => $request->get('street'),
+            'postcode'      => $request->get('postcode'),
+            'city'          => $request->get('city'),
+            'country'       => $request->get('country')
         ];
 
         $userDocuments = [
@@ -383,7 +389,10 @@ class ProjectsController extends Controller {
             'last_name'     => $request->get('last_name'),
             'email'         => $request->get('email'),
             'tel_number'    => $request->get('tel_number'),
-            'address'       => $request->get('address')
+            'street'        => $request->get('street'),
+            'postcode'      => $request->get('postcode'),
+            'city'          => $request->get('city'),
+            'country'       => $request->get('country')
         ];
 
         $userDocuments = [

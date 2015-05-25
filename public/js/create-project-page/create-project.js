@@ -719,8 +719,8 @@
                 .then(function()
                 {
                     inputControls.fadeOut('slow');
-                    iframe.attr('src', 'http://kinderfoerderungen.at/public/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
-                    // #3 change to server + /public/
+                    iframe.attr('src', 'http://kinderfoerderungen.at/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+                    // #3 change to server
                 })
                 .wait(700)
                 .then(function()
