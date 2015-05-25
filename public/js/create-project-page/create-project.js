@@ -1089,7 +1089,7 @@
 
         $.subscribe('project-start.success', function(event, data)
         {
-            var formFields = $('form#create-project input, textarea');
+            var formFields = $('form#create-project input, textarea').not('input[name="country"]');
             var fileLabels = $('label.form-input-disabled');
             var saveButtons = $('.form-save-button-disabled');
 
