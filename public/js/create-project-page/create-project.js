@@ -50,6 +50,10 @@
                 {
                     return 'This field must not exceed '+limit+' characters';
                 },
+                'minLength' : function(required)
+                {
+                    return 'This field must be at least '+required+' characters';
+                },
                 'maxSize' : function(limit)
                 {
                     return 'File size must not exceed '+limit+'MB.'
@@ -70,6 +74,10 @@
                 'maxLength' : function(limit)
                 {
                     return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+                },
+                'minLength' : function(required)
+                {
+                    return 'Dieses Feld muss mindestens '+required+' Charaktere enthalten';
                 },
                 'maxSize' : function(limit)
                 {
@@ -243,12 +251,28 @@
             $.publish('email.blur', this);
         });
 
-        $('textarea[name="address"]').on('blur', function()
+        $('input[name="street"]').on('blur', function()
         {
             // Don't display the blur validation if form is disabled.
             if($(this).hasClass('form-input-disabled')) {return false;}
 
-            $.publish('address.blur', this);
+            $.publish('street.blur', this);
+        });
+
+        $('input[name="postcode"]').on('blur', function()
+        {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
+            $.publish('postcode.blur', this);
+        });
+
+        $('input[name="city"]').on('blur', function()
+        {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
+            $.publish('city.blur', this);
         });
 
         $('input[name="tel_number"]').on('blur', function()
@@ -415,12 +439,64 @@
             hideErrorMessage(name);
         });
 
-        $.subscribe('address.blur', function(event, data)
+        $.subscribe('street.blur', function(event, data)
         {
             var name = data.getAttribute('name');
 
             if (! FormValidation.checkNotEmpty(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].required);
+                addFailClass(data);
+                return false;
+            }
+
+            removeFailClass(data);
+            hideErrorMessage(name);
+        });
+
+        $.subscribe('postcode.blur', function(event, data)
+        {
+            var name = data.getAttribute('name');
+
+            if (! FormValidation.checkNotEmpty(data.value)) {
+                showErrorMessage(name, errorMessages[window.locale].required);
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkNumOnly(data.value))
+            {
+                showErrorMessage(name, errorMessages[window.locale].numOnly);
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkMinLength(data.value, 4))
+            {
+                showErrorMessage(name, errorMessages[window.locale].minLength(4))
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkMaxLength(data.value, 4))
+            {
+                showErrorMessage(name, errorMessages[window.locale].maxLength(4));
+                addFailClass(data);
+                return false;
+            }
+
+            removeFailClass(data);
+            hideErrorMessage(name);
+        });
+
+        $.subscribe('city.blur', function(event, data)
+        {
+            var name = data.getAttribute('name');
+
+            if (! FormValidation.checkNotEmpty(data.value)) {
+                showErrorMessage(name, errorMessages[window.locale].required);
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkAlphaOnly(data.value))
+            {
+                showErrorMessage(name, errorMessages[window.locale].alphaOnly);
                 addFailClass(data);
                 return false;
             }

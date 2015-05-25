@@ -130,8 +130,19 @@ return [
             'unique'    => 'Diese E-Mail -Adresse bereits ein Benutzer registriert.'
         ],
 
-        'address'       => [
+        'street'        => [
             'required'  => 'Dieses Feld ist erforderlich.'
+        ],
+
+        'postcode'      => [
+            'required'  => 'This field is required',
+            'integer'   => 'This field must contain numbers only',
+            'digits'    => 'Postcode must be :digits characters',
+        ],
+
+        'city'          => [
+            'required'  => 'This field is required',
+            'regex'     => 'Must contain letters only. And not begin with a space.',
         ],
 
         'tel_number'    => [

@@ -46,7 +46,10 @@ return [
     'first-name'            => 'Ihr Vorname:',
     'last-name'             => 'Ihr Nachname:',
     'email'                 => 'Ihre E-Mail Adresse:',
-    'address'               => 'Wohnanschrift:',
+    'street'                => 'Straße:',
+    'postcode'              => 'PLZ:',
+    'city'                  => 'Ort:',
+    'country'               => 'Land:',
     'tel-number'            => 'Telefonnummer:',
     'main-documents'        => 'Antragsbeilagen:',
     'secondary-documents'   => 'Zusätzliche Beilagen:',
@@ -58,6 +61,7 @@ return [
     'place-short-desc'      => 'Eine kurze Beschreibung Ihrer Situation. In 180 Zeichen oder weniger.',
     'place-full-desc'       => 'Die detailierte Beschreibung. Hier können Sie Ihre Situation im Detail beschreiben.',
     'place-fundraise-amt'   => 'Den Förderungsbetrag den Sie benötigen. Minimum &#8364;500',
+    'place-country'         => 'Österreich',
 
     /**
      * Explanations

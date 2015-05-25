@@ -52,6 +52,8 @@ class SaveProjectRequest extends Request {
             'last_name'     => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'email'         => 'required|regex:/[a-zA-ZÀ-ž0-9_\.\+-]+@[a-zA-ZÀ-ž0-9-]+\.[a-zA-ZÀ-ž0-9-\.]/',
             'tel_number'    => 'regex:/^[+()\/0-9]+([\s+()\/0-9]+)*$/',
+            'postcode'      => 'integer|digits:4',
+            'city'          => 'regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'main_img'      => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'img_2'         => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'img_3'         => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',
