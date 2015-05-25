@@ -6372,7 +6372,7 @@ footer {
 #how-it-works {
   font-size: 1.1rem; }
   #how-it-works img {
-    width: 110px; }
+    margin: 0 auto; }
   #how-it-works .add-nav {
     position: fixed;
     top: 8rem; }

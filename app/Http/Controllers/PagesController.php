@@ -15,7 +15,7 @@ class PagesController extends Controller {
     {
         return view('pages.how-it-works');
     }
--
+
 /*-- Sponsors Page --*/
     public function sponsors()
     {

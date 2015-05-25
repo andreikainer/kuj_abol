@@ -43,7 +43,7 @@ return array(
     'current-projects'              => 'Aktuelle Förderungsprojekte',
     'successfully-funded-projects'  => 'Erfolgreich geförderte Projekte',
     'finished'                      => 'Gefördert',
-    'view-more-curr'                => 'Mehr aktuelle Projekte',
+    'view-more-curr'                => 'Mehr aktuelle Förderungsprojekte',
     'view-more-succ'                => 'Mehr erfolgreich geförderte Projekte',
     'view-all'                      => 'Alle Sponsoren',
     'read-more'                     => 'Mehr Erfahren',
