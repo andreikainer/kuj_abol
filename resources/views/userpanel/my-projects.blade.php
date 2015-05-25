@@ -26,7 +26,7 @@
             <tr>
                 @foreach($submittedproject->mainImage as $image)
                     <td class="col-md-2 col-sm-2 col-xs-2">
-                        <img src="{{ asset('img/'.$submittedproject->slug.'/small/'.$image->filename) }}" alt="{{ $submittedproject->title }}" class="img-responsive"/>
+                        <img src="{{ asset('img/'.$submittedproject->slug.'/small/'.$image->filename) }}" alt="{{ $submittedproject->title }}" width="100%"/>
                     </td>
                 @endforeach
                 <td class="col-md-3 col-sm-3 col-xs-3">

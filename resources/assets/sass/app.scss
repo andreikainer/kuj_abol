@@ -150,16 +150,15 @@ hr {
 /*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
 #logout {
   width: 38%;
+}
+#username-btn {
+  width: 59%;
   background-color: $orange;
   border-color: $orange !important;
 
   &:hover {
     background-color: darken($orange, 5%);
   }
-}
-#username-btn {
-  width: 59%;
-
 }
 /*------------------------------------------------------------------*/
 /*-- Group of circle buttons --*/
@@ -450,6 +449,10 @@ footer {
     top: 2rem;
     left: 5rem;
 
+    p {
+      font-size: 2rem;
+    }
+
     //text-shadow: 3px 2px 3px rgba(50, 50, 50, 1);
 
     @media (max-width: 768px) {
@@ -460,6 +463,10 @@ footer {
 
       h1 {
         font-size: 1.8rem;
+      }
+
+      p{
+        font-size: 1.3rem;
       }
       p a {
         font-size: 1rem;

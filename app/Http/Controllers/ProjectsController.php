@@ -38,12 +38,12 @@ class ProjectsController extends Controller {
     {
         $allProjects = Project::where('approved', 1)
                     ->where('succ_funded', 0)
-                    ->get();
+                    ->paginate(6);
 
         $projects = $allProjects->sortByDesc('completed_on');
 
         $dbSuccProjects = Project::where('succ_funded', 1)
-            ->paginate(3);
+            ->paginate(6);
 
         $succ_projects = $dbSuccProjects->sortByDesc('completed_on');
 

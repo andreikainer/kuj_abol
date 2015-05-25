@@ -9,7 +9,7 @@
                     <img src="{{ asset('img/main-carousel/lg/one.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {!! trans('home-page.carousel-text-1', ['cta-link' => '#contribute']) !!}
+                        {!! trans('home-page.carousel-text-1', ['cta-link' => action('PagesController@howItWorks')]) !!}
                     </div>
                 </div>
 
@@ -17,7 +17,7 @@
                     <img src="{{ asset('img/main-carousel/lg/six.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {!! trans('home-page.carousel-text-2', ['cta-link' => trans('routes.how-it-works')]) !!}
+                        {!! trans('home-page.carousel-text-2', ['cta-link' => '#contribute']) !!}
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@
                     <img src="{{ asset('img/main-carousel/lg/three.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
-                        {!! trans('home-page.carousel-text-3', ['cta-link' => action('PagesController@sponsors')]) !!}
+                        {!! trans('home-page.carousel-text-3', ['cta-link' => action('ProjectsController@createProject')]) !!}
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@
                      <img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">
 
                      <div class="jumbotron-text">
-                         {!! trans('home-page.carousel-text-4', ['cta-link' => trans('routes.how-it-works')]) !!}
+                         {!! trans('home-page.carousel-text-4', ['cta-link' => action('PagesController@sponsors')]) !!}
                      </div>
                 </div>
             </div>
@@ -54,11 +54,11 @@
 
             <div class="row">
 
-                <div class="col-lg-10 col-lg-offset-1 mt-2em">
+                <div class="col-lg-10 col-lg-offset-1 ">
                     <div class="row">
 
                     @foreach($projects as $project)
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-4 mt-2em">
                             <div class="thumbnail pad-zero tile">
                                 <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}">
                                     <img src="{!! asset('img/' . $project->slug .'/small/' . $project->mainImage[0]->filename) !!}" alt="{{ $project->child_name }}" class="img-responsive">
@@ -84,6 +84,12 @@
                     @endforeach
 
                     </div> <!-- row ends -->
+
+                    <div class="row">
+                        <p class="text-center">
+                            <a href="{{ action('ProjectsController@showMoreProjects') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-more-curr') }}</a>
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -99,11 +105,11 @@
 
             <div class="row">
 
-                <div class="col-lg-10 col-lg-offset-1 mt-2em">
+                <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
 
                     @foreach($succ_projects as $project)
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-4 mt-2em">
                             <div class="thumbnail pad-zero success">
                                 <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.project'), $project->slug) }}">
                                     <img src="{!! asset('img/' . $project->slug .'/small/' . $project->mainImage[0]->filename) !!}" alt="{{ $project->child_name }}">
@@ -133,7 +139,7 @@
 
                     <div class="row">
                         <p class="text-center">
-                            <a href="{{ action('ProjectsController@showMoreSuccProjects') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-more') }}</a>
+                            <a href="{{ action('ProjectsController@showMoreSuccProjects') }}" class="button-link" role="button"><i class="fa fa-long-arrow-right"></i>{{ trans('home-page.view-more-succ') }}</a>
                         </p>
                     </div>
 

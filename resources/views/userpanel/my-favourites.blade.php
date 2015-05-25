@@ -25,8 +25,8 @@
         @foreach($favourites as $key => $favourite)
             <tr>
                 @foreach($favourite->project->mainImage as $image)
-                    <td class="col-md-2 col-sm-2 col-xs-2">
-                        <img src="{{ asset('img/'.$favourite->project->slug.'/small/'.$image->filename) }}" alt="{{ $favourite->project->slug }}" class="img-responsive"/>
+                    <td class="col-md-2 col-sm-2 col-xs-2 hidden-xs">
+                        <img src="{{ asset('img/'.$favourite->project->slug.'/small/'.$image->filename) }}" alt="{{ $favourite->project->slug }}" width="100%"/>
                     </td>
                 @endforeach
                 <td class="col-md-3 col-sm-3 col-xs-3">
