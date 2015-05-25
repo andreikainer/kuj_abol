@@ -89,7 +89,8 @@ return [
         'project_name'  => [
             'required'  => 'Dieses Feld ist erforderlich.',
             'regex'     => 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
-            'unique'    => 'Dieser Titel ist bereits getan.'
+            'unique'    => 'Dieser Titel ist bereits getan.',
+            'max'       => 'This field must not exceed :max characters',
         ],
 
         'short_desc'    => [

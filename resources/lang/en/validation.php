@@ -89,7 +89,8 @@ return [
 		'project_name'  => [
 			'required'  => 'This field is required.',
             'regex'     => 'Must contain letters and numbers only. And not begin with a space.',
-            'unique'    => 'This title has already been taken.'
+            'unique'    => 'This title has already been taken.',
+            'max'       => 'This field must not exceed :max characters',
 		],
 
         'short_desc'    => [

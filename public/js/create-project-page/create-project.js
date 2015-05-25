@@ -276,6 +276,12 @@
                 addFailClass(data);
                 return false;
             }
+            if (! FormValidation.checkMaxLength(data.value, 60))
+            {
+                showErrorMessage(name, errorMessages[window.locale].maxLength(60));
+                addFailClass(data);
+                return false;
+            }
 
             removeFailClass(data);
             hideErrorMessage(name);

@@ -22,7 +22,7 @@ class AdminEditProjectRequest extends Request {
 	public function rules()
 	{
 		return [
-			'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/',
+			'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/|max:60',
             'short_desc'    => 'required|max:180',
             'full_desc'     => 'required',
             'target_amount' => 'required|regex:/^[0-9]+([\s0-9,.]+)*$/',
