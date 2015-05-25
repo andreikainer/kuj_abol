@@ -594,7 +594,7 @@
         {
             // Make AJAX request to PHP script, POST up the received data from event.
             $.ajax({
-                url : 'http://abol.co.nz/temp-document', // #2 change to your server
+                url : 'http://kinderfoerderungen.at/temp-document', // #2 change to your server
                 method : 'POST',
                 data : data,
                 cache : false,
@@ -637,9 +637,7 @@
                 .then(function()
                 {
                     inputControls.fadeOut('slow');
-                    //var src = previewContainer.attr('src');
-                    //iframe.attr('src', src+'/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
-                    iframe.attr('src', 'http://abol.co.nz/public/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+                    iframe.attr('src', 'http://kinderfoerderungen.at/public/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
                     // #3 change to server + /public/
                 })
                 .wait(700)
@@ -852,7 +850,7 @@
 
         $.subscribe('form-submit.success', function()
         {
-            window.location = 'http://abol.co.nz/create-project/success';
+            window.location = 'http://kinderfoerderungen.at/create-project/success';
             // #4 change to server url
         });
 

@@ -20,7 +20,7 @@ $(document).ready(function()
     function getLocale(response)
     {
         $.ajax({
-            url:        'http://abol.co.nz/get-locale', // #1 change to absolute url
+            url:        'http://kinderfoerderungen.at/get-locale', // #1 change to absolute url
             method:     'GET',
             success:    function(response)
             {
