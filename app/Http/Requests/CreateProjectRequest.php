@@ -44,7 +44,7 @@ class CreateProjectRequest extends Request {
 	public function rules()
 	{
 		return [
-			'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/',
+			'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/|max:60',
             'short_desc'    => 'required|max:180',
             'full_desc'     => 'required',
             'target_amount' => 'required|regex:/^[0-9]+([\s0-9,.]+)*$/',
@@ -52,7 +52,10 @@ class CreateProjectRequest extends Request {
             'first_name'    => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'last_name'     => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'email'         => 'required|regex:/[a-zA-ZÀ-ž0-9_\.\+-]+@[a-zA-ZÀ-ž0-9-]+\.[a-zA-ZÀ-ž0-9-\.]/',
-            'address'       => 'required',
+            'street'        => 'required',
+            'postcode'      => 'required|integer|digits:4',
+            'city'          => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
+            'country'       => 'required',
             'tel_number'    => 'required|regex:/^[+()\/0-9]+([\s+()\/0-9]+)*$/',
             'main_img'      => 'required_without:mainImage|mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'img_2'         => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',

@@ -44,7 +44,7 @@ class SaveProjectRequest extends Request {
 	public function rules()
 	{
 		return [
-            'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/',
+            'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/|max:60',
             'short_desc'    => 'max:180',
             'target_amount' => 'regex:/^[0-9]+([\s0-9,.]+)*$/',
             'child_name'    => 'regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/|required_with:main_img,img_2,img_3,img_4',
@@ -52,6 +52,8 @@ class SaveProjectRequest extends Request {
             'last_name'     => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'email'         => 'required|regex:/[a-zA-ZÀ-ž0-9_\.\+-]+@[a-zA-ZÀ-ž0-9-]+\.[a-zA-ZÀ-ž0-9-\.]/',
             'tel_number'    => 'regex:/^[+()\/0-9]+([\s+()\/0-9]+)*$/',
+            'postcode'      => 'integer|digits:4',
+            'city'          => 'regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'main_img'      => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'img_2'         => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'img_3'         => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',

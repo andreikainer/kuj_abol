@@ -40,7 +40,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
@@ -60,6 +60,7 @@
                                 <span class="image-upload-close-button">X</span>
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview display">
                                     <iframe src="{{ 'http://kinderfoerderungen.at/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="embed-responsive-item"></iframe>
+                                    <!-- #5 change to server + /documents/ -->
                                 </div>
                                 <input type="hidden" name="{{ 'doc'.(1+$i).'Mand' }}" value="{{ $project->documents[$i]->filename }}"/>
                                 <div class="image-upload-controls display-none">
@@ -94,7 +95,7 @@
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
@@ -114,6 +115,7 @@
                                 <span class="image-upload-close-button">X</span>
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview display">
                                     <iframe src="{{ 'http://kinderfoerderungen.at/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="embed-responsive-item"></iframe>
+                                    <!-- #6 change to server + /documents/ -->
                                 </div>
                                 <input type="hidden" name="{{ 'doc'.(1+$i) }}" value="{{ $project->documents[$i]->filename }}"/>
                                 <div class="image-upload-controls display-none">
@@ -144,7 +146,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
@@ -159,7 +161,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
@@ -183,7 +185,7 @@
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
@@ -198,7 +200,7 @@
                         <div class="col-md-6 col-sm-6 supporting-doc">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
@@ -213,7 +215,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>
@@ -228,7 +230,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="image-upload-wrapper">
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                    <iframe src="#" class="embed-responsive-item"></iframe>
+                                    <iframe src="" class="embed-responsive-item"></iframe>
                                 </div>
                                 <div class="image-upload-controls">
                                     <div class="image-loader"></div>

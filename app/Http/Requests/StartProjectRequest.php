@@ -44,7 +44,7 @@ class StartProjectRequest extends Request {
 	public function rules()
 	{
 		return [
-            'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/|unique:projects_tbl',
+            'project_name'  => 'required|regex:/^[a-zA-ZÀ-ž0-9]+([\sa-zA-ZÀ-ž0-9]+)*$/|max:60|unique:projects_tbl',
 		];
 	}
 

@@ -48,7 +48,10 @@ return [
     'first-name'            => 'Your First Name:',
     'last-name'             => 'Your Last Name:',
     'email'                 => 'Your Email Address:',
-    'address'               => 'Residential Address:',
+    'street'                => 'Street:',
+    'postcode'              => 'Postcode:',
+    'city'                  => 'City:',
+    'country'               => 'Country:',
     'tel-number'            => 'Telephone Number:',
     'main-documents'        => 'Documents of Evidence:',
     'secondary-documents'   => 'Additional Documents:',
@@ -60,6 +63,7 @@ return [
     'place-short-desc'      => 'A short description about your project. In 180 characters or less.',
     'place-full-desc'       => 'The full description of your project. This is where you tell your story.',
     'place-fundraise-amt'   => 'The amount you wish to fundraise. Minimum &#8364;500',
+    'place-country'         => 'Austria',
 
     /**
      * Explanations

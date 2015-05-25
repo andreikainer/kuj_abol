@@ -89,7 +89,8 @@ return [
         'project_name'  => [
             'required'  => 'Dieses Feld ist erforderlich.',
             'regex'     => 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
-            'unique'    => 'Dieser Titel ist bereits getan.'
+            'unique'    => 'Dieser Titel ist bereits getan.',
+            'max'       => 'This field must not exceed :max characters',
         ],
 
         'short_desc'    => [
@@ -129,8 +130,19 @@ return [
             'unique'    => 'Diese E-Mail -Adresse bereits ein Benutzer registriert.'
         ],
 
-        'address'       => [
+        'street'        => [
             'required'  => 'Dieses Feld ist erforderlich.'
+        ],
+
+        'postcode'      => [
+            'required'  => 'This field is required',
+            'integer'   => 'This field must contain numbers only',
+            'digits'    => 'Postcode must be :digits characters',
+        ],
+
+        'city'          => [
+            'required'  => 'This field is required',
+            'regex'     => 'Must contain letters only. And not begin with a space.',
         ],
 
         'tel_number'    => [

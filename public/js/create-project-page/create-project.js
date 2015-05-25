@@ -50,6 +50,10 @@
                 {
                     return 'This field must not exceed '+limit+' characters';
                 },
+                'minLength' : function(required)
+                {
+                    return 'This field must be at least '+required+' characters';
+                },
                 'maxSize' : function(limit)
                 {
                     return 'File size must not exceed '+limit+'MB.'
@@ -70,6 +74,10 @@
                 'maxLength' : function(limit)
                 {
                     return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+                },
+                'minLength' : function(required)
+                {
+                    return 'Dieses Feld muss mindestens '+required+' Charaktere enthalten';
                 },
                 'maxSize' : function(limit)
                 {
@@ -243,12 +251,28 @@
             $.publish('email.blur', this);
         });
 
-        $('textarea[name="address"]').on('blur', function()
+        $('input[name="street"]').on('blur', function()
         {
             // Don't display the blur validation if form is disabled.
             if($(this).hasClass('form-input-disabled')) {return false;}
 
-            $.publish('address.blur', this);
+            $.publish('street.blur', this);
+        });
+
+        $('input[name="postcode"]').on('blur', function()
+        {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
+            $.publish('postcode.blur', this);
+        });
+
+        $('input[name="city"]').on('blur', function()
+        {
+            // Don't display the blur validation if form is disabled.
+            if($(this).hasClass('form-input-disabled')) {return false;}
+
+            $.publish('city.blur', this);
         });
 
         $('input[name="tel_number"]').on('blur', function()
@@ -273,6 +297,12 @@
             }
             if (! FormValidation.checkAlphaNumeric(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].alphaNumeric);
+                addFailClass(data);
+                return false;
+            }
+            if (! FormValidation.checkMaxLength(data.value, 60))
+            {
+                showErrorMessage(name, errorMessages[window.locale].maxLength(60));
                 addFailClass(data);
                 return false;
             }
@@ -409,12 +439,64 @@
             hideErrorMessage(name);
         });
 
-        $.subscribe('address.blur', function(event, data)
+        $.subscribe('street.blur', function(event, data)
         {
             var name = data.getAttribute('name');
 
             if (! FormValidation.checkNotEmpty(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].required);
+                addFailClass(data);
+                return false;
+            }
+
+            removeFailClass(data);
+            hideErrorMessage(name);
+        });
+
+        $.subscribe('postcode.blur', function(event, data)
+        {
+            var name = data.getAttribute('name');
+
+            if (! FormValidation.checkNotEmpty(data.value)) {
+                showErrorMessage(name, errorMessages[window.locale].required);
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkNumOnly(data.value))
+            {
+                showErrorMessage(name, errorMessages[window.locale].numOnly);
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkMinLength(data.value, 4))
+            {
+                showErrorMessage(name, errorMessages[window.locale].minLength(4))
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkMaxLength(data.value, 4))
+            {
+                showErrorMessage(name, errorMessages[window.locale].maxLength(4));
+                addFailClass(data);
+                return false;
+            }
+
+            removeFailClass(data);
+            hideErrorMessage(name);
+        });
+
+        $.subscribe('city.blur', function(event, data)
+        {
+            var name = data.getAttribute('name');
+
+            if (! FormValidation.checkNotEmpty(data.value)) {
+                showErrorMessage(name, errorMessages[window.locale].required);
+                addFailClass(data);
+                return false;
+            }
+            if(! FormValidation.checkAlphaOnly(data.value))
+            {
+                showErrorMessage(name, errorMessages[window.locale].alphaOnly);
                 addFailClass(data);
                 return false;
             }
@@ -594,7 +676,7 @@
         {
             // Make AJAX request to PHP script, POST up the received data from event.
             $.ajax({
-                url : 'http://kinderfoerderungen.at/temp-document',
+                url : 'http://kinderfoerderungen.at/temp-document', // #2 change to your server
                 method : 'POST',
                 data : data,
                 cache : false,
@@ -637,9 +719,8 @@
                 .then(function()
                 {
                     inputControls.fadeOut('slow');
-                    //var src = previewContainer.attr('src');
-                    //iframe.attr('src', src+'/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
                     iframe.attr('src', 'http://kinderfoerderungen.at/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+                    // #3 change to server
                 })
                 .wait(700)
                 .then(function()
@@ -663,7 +744,6 @@
         $.subscribe('document-preview.close', function(event, button)
         {
             $(button).siblings('input[type="hidden"]').remove();
-            //$(button).siblings('.image-upload-preview').children('iframe').attr('src', 'http://kinderfoerderungen.at');
             $(button).siblings('.image-upload-preview').children('iframe').attr('src', '');
             closeFilePreview(button);
         });
@@ -853,6 +933,7 @@
         $.subscribe('form-submit.success', function()
         {
             window.location = 'http://kinderfoerderungen.at/create-project/success';
+            // #4 change to server url
         });
 
         /**

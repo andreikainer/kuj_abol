@@ -34,7 +34,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="#" class="embed-responsive-item"></iframe>
+                                <iframe src="" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
@@ -49,7 +49,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="#" class="embed-responsive-item"></iframe>
+                                <iframe src="" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
@@ -73,7 +73,7 @@
                     <div class="col-md-6 col-sm-6 supporting-doc">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="#" class="embed-responsive-item"></iframe>
+                                <iframe src="" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
@@ -88,7 +88,7 @@
                     <div class="col-md-6 col-sm-6 supporting-doc">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="#" class="embed-responsive-item"></iframe>
+                                <iframe src="" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
@@ -103,7 +103,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="#" class="embed-responsive-item"></iframe>
+                                <iframe src="" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>
@@ -118,7 +118,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="image-upload-wrapper">
                             <div class="embed-responsive embed-responsive-16by9 image-upload-preview">
-                                <iframe src="#" class="embed-responsive-item"></iframe>
+                                <iframe src="" class="embed-responsive-item"></iframe>
                             </div>
                             <div class="image-upload-controls">
                                 <div class="image-loader"></div>

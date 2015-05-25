@@ -72,17 +72,48 @@
         <!-- Residential Address Form Input -->
         <div class="row form-group">
             <div class="col-md-12 col-sm-12">
-                {!! Form::label('address', trans('create-project-form.address'), ['class' => 'form-label']) !!}
+                {!! Form::label('street', trans('create-project-form.street'), ['class' => 'form-label']) !!}
                 @if($user == null)
-                {!! Form::textarea('address', null, ['class' => 'form-input']) !!}
+                {!! Form::text('street', null, ['class' => 'form-input']) !!}
                 @else
-                {!! Form::textarea('address', $user->address, ['class' => 'form-input']) !!}
+                {!! Form::text('street', $user->street, ['class' => 'form-input']) !!}
                 @endif
             </div>
             <div class="col-md-12 col-sm-12">
-                <div class="form-error cpp-error pad-zero" data-error="address"></div>
+                <div class="form-error cpp-error pad-zero" data-error="street"></div>
             </div>
         </div> <!-- end residential address -->
+
+        <!-- Postcode Form Input -->
+        <div class="row form-group">
+            <div class="col-md-6 col-sm-6">
+                {!! Form::label('postcode', trans('create-project-form.postcode'), ['class' => 'form-label']) !!}
+                @if($user == null)
+                {!! Form::text('postcode', null, ['class' => 'form-input']) !!}
+                @else
+                {!! Form::text('postcode', $user->postcode, ['class' => 'form-input']) !!}
+                @endif
+                <div class="form-error cpp-error pad-zero" data-error="postcode"></div>
+            </div>
+            <div class="col-md-6 col-sm-6 form-pair">
+                {!! Form::label('city', trans('create-project-form.city'), ['class' => 'form-label']) !!}
+                @if($user == null)
+                {!! Form::text('city', null, ['class' => 'form-input']) !!}
+                @else
+                {!! Form::text('city', $user->city, ['class' => 'form-input']) !!}
+                @endif
+                <div class="form-error cpp-error pad-zero" data-error="city"></div>
+            </div>
+        </div> <!-- end postcode --> <!-- end city -->
+
+        <!-- Country Form Input -->
+        <div class="row form-group">
+            <div class="col-md-6 col-sm-6">
+                {!! Form::label('country', trans('create-project-form.country'), ['class' => 'form-label']) !!}
+                {!! Form::text('country', trans('create-project-form.place-country'), ['class' => 'form-input', 'disabled' => 'disabled']) !!}
+                <div class="form-error cpp-error pad-zero" data-error="country"></div>
+            </div>
+        </div> <!-- end country -->
 
         <div class="row form-group">
             <div class="col-md-6 col-sm-6 col-xs-6">
