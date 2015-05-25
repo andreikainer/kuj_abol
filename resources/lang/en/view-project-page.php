@@ -26,7 +26,7 @@ return [
 
 
   'business-building-block' => '<h3>"Business" Building-block</h3>
-                               <h4>Our special offer for Businesses of all kind. Fund this project and receive in return:</h4>
+                               <h4>Our special offer for Businesses of all kind. </br> Fund this project and receive in return:</h4>
                                   <ul>
                                       <li class="list-item">Business Logo display on our website for 3 months</li>
                                       <li class="list-item">Linked to your business website</li>

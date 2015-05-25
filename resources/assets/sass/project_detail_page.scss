@@ -83,6 +83,7 @@
 .description{
   font-size: 1.1rem;
   margin-top: 2em;
+  line-height: 2rem;
 }
 
 #contribution-packs a {
@@ -96,6 +97,7 @@
   margin-top: 2em;
   border-radius: 0.35em;
   width: 100%;
+  font-size: 1.05rem;
   @media(min-width: 768px) and (max-width: 991px) {
     width: 45%;
     margin: 2%;
@@ -113,6 +115,7 @@
   border-radius: 0.35em;
   margin-top: 2em;
   width: 100%;
+  font-size: 1.05rem;
   @media(min-width: 768px) and (max-width: 991px) {
     width: 45%;
     margin: 2%;

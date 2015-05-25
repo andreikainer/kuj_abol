@@ -134,7 +134,7 @@
         <div class="col-xs-12 col-sm-12">
             <div class="row-fluid clearfix">
                 {!! Form::submit(trans('userpanel.save-changes'), ['class' => 'col-xs-12 col-sm-5 col-md-5 pull-left btn login-submit button-main mt-1em text-center', 'id' => 'log-me-in']) !!}
-                <a href="{{ action('UserpanelController@delete', $user->id) }}" id="forgot-my-password" class="col-xs-12 col-sm-5 col-md-5 pull-right btn login-submit mt-1em text-center">{{ trans('userpanel.delete-account') }}</a>
+                <a href="{{ action('UserpanelController@delete', $user->id) }}" class="col-xs-12 col-sm-5 col-md-5 pull-right mt-1em text-right">{{ trans('userpanel.delete-account') }}</a>
             </div>
         </div>
         <!-- end submit buttons -->

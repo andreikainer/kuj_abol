@@ -5691,7 +5691,8 @@ a.tip-title {
 
 .description {
   font-size: 1.1rem;
-  margin-top: 2em; }
+  margin-top: 2em;
+  line-height: 2rem; }
 
 #contribution-packs a {
   text-decoration: none; }
@@ -5702,7 +5703,8 @@ a.tip-title {
   padding: 0.5em;
   margin-top: 2em;
   border-radius: 0.35em;
-  width: 100%; }
+  width: 100%;
+  font-size: 1.05rem; }
   @media (min-width: 768px) and (max-width: 991px) {
     .pack1 {
       width: 45%;
@@ -5717,7 +5719,8 @@ a.tip-title {
   padding: 0.5em;
   border-radius: 0.35em;
   margin-top: 2em;
-  width: 100%; }
+  width: 100%;
+  font-size: 1.05rem; }
   @media (min-width: 768px) and (max-width: 991px) {
     .packs2-4 {
       width: 45%;
