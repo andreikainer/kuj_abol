@@ -54,7 +54,7 @@ class CreateProjectRequest extends Request {
             'email'         => 'required|regex:/[a-zA-ZÀ-ž0-9_\.\+-]+@[a-zA-ZÀ-ž0-9-]+\.[a-zA-ZÀ-ž0-9-\.]/',
             'street'        => 'required',
             'postcode'      => 'required|integer|digits:4',
-            'city'          => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
+            'city'          => 'required|regex:/^[a-zA-ZÀ-ž-]+([\sa-zA-ZÀ-ž-]+)*$/',
             'country'       => 'required',
             'tel_number'    => 'required|regex:/^[+()\/0-9]+([\s+()\/0-9]+)*$/',
             'main_img'      => 'required_without:mainImage|mimes:jpg,jpeg,png,bmp,tiff|max:20000',

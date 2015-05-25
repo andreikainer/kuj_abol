@@ -19,7 +19,7 @@
             <div class="row">
                 <!-- Username Form Input -->
                 <div class="col-xs-12 form-group">
-                    {!! Form::label(null, trans('userpanel.username'), ['class' => 'form-label form-inline']) !!}
+                    {!! Form::label('user_name', trans('userpanel.username'), ['class' => 'form-label form-inline']) !!}
                     {!! Form::text('user_name', $user->user_name,
                     array('required',
                     'class'=>'form-input form-inline')) !!}
@@ -30,7 +30,7 @@
 
                 <!-- Email Form Input -->
                 <div class="col-xs-12 form-group">
-                    {!! Form::label(null, trans('userpanel.email'), ['class' => 'form-label form-inline']) !!}
+                    {!! Form::label('email', trans('userpanel.email'), ['class' => 'form-label form-inline']) !!}
                     {!! Form::email('email', $user->email,
                     array('required',
                     'class'=>'form-input form-inline')) !!}
@@ -38,6 +38,18 @@
                 <div class="form-error none pad" data-error="email"></div>
                 <div class="form-error pad">{{ $errors->first('email') }}</div>
                 <!-- end email input -->
+
+                @if($user->business_name !== null)
+                    <!-- Companyname Form Input -->
+                    <div class="col-xs-12 col-sm-12 form-group">
+                        {!! Form::label('business_name', trans('userpanel.b-name'), ['class' => 'form-label form-inline']) !!}
+                        {!! Form::text('business_name', $user->business_name,
+                        array('class'=>'form-input form-inline')) !!}
+                        <div class="form-error none" data-error="business_name"></div>
+                        <div class="form-error">{{ $errors->first('business_name') }}</div>
+                    </div>
+                    <!-- end companyname input -->
+                @endif
 
             </div>
         </div>
@@ -75,7 +87,7 @@
     <div class="row">
         <!-- Firstname Form Input -->
         <div class="col-xs-12 col-sm-6 form-group">
-            {!! Form::label(null, trans('userpanel.f-name'), ['class' => 'form-label form-inline']) !!}
+            {!! Form::label('first_name', trans('userpanel.f-name'), ['class' => 'form-label form-inline']) !!}
             {!! Form::text('first_name', $user->first_name,
             array('required',
             'class'=>'form-input form-inline')) !!}
@@ -86,7 +98,7 @@
 
         <!-- Lastname Form Input -->
         <div class="col-xs-12 col-sm-6 form-group">
-            {!! Form::label(null, trans('userpanel.l-name'), ['class' => 'form-label form-inline']) !!}
+            {!! Form::label('last_name', trans('userpanel.l-name'), ['class' => 'form-label form-inline']) !!}
             {!! Form::text('last_name', $user->last_name,
             array('required',
             'class'=>'form-input form-inline')) !!}
@@ -94,32 +106,61 @@
             <div class="form-error">{{ $errors->first('last_name') }}</div>
         </div>
         <!-- end lastname input -->
+    </div> <!-- /.row -->
 
-        @if($user->business_name !== null)
-            <!-- Companyname Form Input -->
-            <div class="col-xs-12 col-sm-12 form-group">
-                {!! Form::label(null, trans('userpanel.b-name'), ['class' => 'form-label form-inline']) !!}
-                {!! Form::text('business_name', $user->business_name,
-                array('class'=>'form-input form-inline')) !!}
-                <div class="form-error none" data-error="business_name"></div>
-                <div class="form-error">{{ $errors->first('business_name') }}</div>
-            </div>
-            <!-- end companyname input -->
-        @endif
+    <div class="row">
 
-        <!-- Address Form Input -->
-        <div class="col-xs-12 col-sm-6 form-group">
-            {!! Form::label(null, trans('userpanel.address'), ['class' => 'form-label form-inline']) !!}
-            {!! Form::text('address', $user->address,
+        <!-- Street Form Input -->
+        <div class="col-xs-12 col-sm-12 form-group">
+            {!! Form::label('street', trans('create-project-form.street'), ['class' => 'form-label form-inline']) !!}
+            {!! Form::text('street', $user->street,
             array('class'=>'form-input form-inline')) !!}
-             <div class="form-error none" data-error="address"></div>
-             <div class="form-error">{{ $errors->first('address') }}</div>
+             <div class="form-error none" data-error="street"></div>
+             <div class="form-error">{{ $errors->first('street') }}</div>
         </div>
-        <!-- end address input -->
+        <!-- end street input -->
+
+    </div> <!-- /.row -->
+
+    <div class="row">
+
+        <!-- Postcode Form Input -->
+        <div class="col-xs-12 col-sm-6 form-group">
+            {!! Form::label('postcode', trans('create-project-form.postcode'), ['class' => 'form-label form-inline']) !!}
+            {!! Form::text('postcode', $user->postcode,
+            array('class'=>'form-input form-inline')) !!}
+             <div class="form-error none" data-error="postcode"></div>
+             <div class="form-error">{{ $errors->first('postcode') }}</div>
+        </div>
+        <!-- end postcode input -->
+
+        <!-- City Form Input -->
+        <div class="col-xs-12 col-sm-6 form-group">
+            {!! Form::label('city', trans('create-project-form.city'), ['class' => 'form-label form-inline']) !!}
+            {!! Form::text('city', $user->city,
+            array('class'=>'form-input form-inline')) !!}
+             <div class="form-error none" data-error="city"></div>
+             <div class="form-error">{{ $errors->first('city') }}</div>
+        </div>
+        <!-- end city input -->
+
+    </div> <!-- /.row -->
+
+    <div class="row">
+
+        <!-- Country Form Input -->
+        <div class="col-xs-12 col-sm-6 form-group">
+            {!! Form::label('country', trans('create-project-form.country'), ['class' => 'form-label form-inline']) !!}
+            {!! Form::text('country', $user->country,
+            array('class'=>'form-input form-inline')) !!}
+             <div class="form-error none" data-error="country"></div>
+             <div class="form-error">{{ $errors->first('country') }}</div>
+        </div>
+        <!-- end country input -->
 
         <!-- Phone Form Input -->
         <div class="col-xs-12 col-sm-6 form-group">
-            {!! Form::label(null, trans('userpanel.phone'), ['class' => 'form-label form-inline']) !!}
+            {!! Form::label('tel_number', trans('userpanel.phone'), ['class' => 'form-label form-inline']) !!}
             {!! Form::text('tel_number', $user->tel_number,
             array('class'=>'form-input form-inline')) !!}
              <div class="form-error none" data-error="tel_number"></div>
@@ -127,8 +168,9 @@
         </div>
         <!-- end phone input -->
 
+    </div> <!-- /.row -->
 
-
+    <div class="row">
 
         <!-- Submit buttons -->
         <div class="col-xs-12 col-sm-12">
@@ -138,6 +180,7 @@
             </div>
         </div>
         <!-- end submit buttons -->
-    </div>
+
+    </div> <!-- /.row -->
 </div>
 {!! Form::close() !!}

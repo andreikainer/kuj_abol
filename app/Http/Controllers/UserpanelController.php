@@ -158,7 +158,10 @@ class UserpanelController extends Controller
             'last_name'     => $request->get('last_name'),
             'business_name' => $request->get('business_name'),
             'tel_number'    => $request->get('tel_number'),
-            'address'       => $request->get('address'),
+            'street'        => $request->get('street'),
+            'postcode'      => $request->get('postcode'),
+            'city'          => $request->get('city'),
+            'country'       => $request->get('country')
         ];
 
         // Update user info in DB

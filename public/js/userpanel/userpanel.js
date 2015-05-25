@@ -38,6 +38,26 @@ function makeTabActive(collection, i)
     collection.eq(i).addClass('form-section-tab-active');
 }
 
+/**
+ * Add the error styles to the form input.
+ *
+ * @param el
+ */
+function addFailClass(el)
+{
+    $(el).removeClass('form-input-correct').addClass('form-input-error');
+}
+
+/**
+ * Remove the error styles from the form input.
+ *
+ * @param el
+ */
+function removeFailClass(el)
+{
+    $(el).removeClass('form-input-error');
+}
+
 (function()
 {
     /*------------------------------------------------------------------*/
@@ -48,26 +68,44 @@ function makeTabActive(collection, i)
         'en' : {
             'required'  : 'This field is required.',
             'alphaNumeric' : 'Must contain letters and numbers only. And not begin with a space.',
+            'alphaOnly' : 'Must contain letters only. And not begin with a space.',
             'email' : 'Must be of a correct email format. And not begin with a space.',
             'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
             'numOnly' : 'Must contain numbers only. And not begin with a space.',
             'image' : 'Please choose a valid image format.',
+            'minLength' : function(required)
+            {
+                return 'This field must be at least '+required+' characters';
+            },
             'maxSize' : function(limit)
             {
                 return 'File size must not exceed '+limit+'MB.'
             },
+            'maxLength' : function(limit)
+            {
+                return 'This field must not exceed '+limit+' characters';
+            }
         },
         'de' : {
             'required'  : 'Dieses Feld ist erforderlich',
             'alphaNumeric' : 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
+            'alphaOnly' : 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.',
             'email' : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
             'phone' : 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.',
             'numOnly' : 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
             'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
+            'minLength' : function(required)
+            {
+                return 'Dieses Feld muss mindestens '+required+' Charaktere enthalten';
+            },
             'maxSize' : function(limit)
             {
                 return 'Dateigröße darf '+limit+'MB nicht überschreiten.'
             },
+            'maxLength' : function(limit)
+            {
+                return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+            }
         }
     };
 
@@ -130,9 +168,19 @@ function makeTabActive(collection, i)
         $.publish('business_name.blur', this);
     });
 
-    $('.account input[name="address"]').on('blur', function()
+    $('.account input[name="postcode"]').on('blur', function()
     {
-        $.publish('address.blur', this);
+        $.publish('postcode.blur', this);
+    });
+
+    $('.account input[name="city"]').on('blur', function()
+    {
+        $.publish('city.blur', this);
+    });
+
+    $('.account input[name="country"]').on('blur', function()
+    {
+        $.publish('country.blur', this);
     });
 
     $('.account input[name="tel_number"]').on('blur', function()
@@ -212,12 +260,51 @@ function makeTabActive(collection, i)
         hideErrorMessage(name);
     });
 
-    $.subscribe('address.blur', function(event, data)
+    $.subscribe('postcode.blur', function(event, data)
     {
         var name = data.getAttribute('name');
 
-        if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages[window.locale].required);
+        if(FormValidation.checkNotEmpty(data.value) && ! FormValidation.checkNumOnly(data.value))
+        {
+            showErrorMessage(name, errorMessages[window.locale].numOnly);
+            addFailClass(data);
+            return false;
+        }
+        if(FormValidation.checkNotEmpty(data.value) && ! FormValidation.checkMinLength(data.value, 4))
+        {
+            showErrorMessage(name, errorMessages[window.locale].minLength(4))
+            addFailClass(data);
+            return false;
+        }
+        if(FormValidation.checkNotEmpty(data.value) && ! FormValidation.checkMaxLength(data.value, 4))
+        {
+            showErrorMessage(name, errorMessages[window.locale].maxLength(4));
+            addFailClass(data);
+            return false;
+        }
+
+        removeFailClass(data);
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('city.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (FormValidation.checkNotEmpty(data.value) && ! FormValidation.checkAlphaOnly(data.value)) {
+            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
+    });
+
+    $.subscribe('country.blur', function(event, data)
+    {
+        var name = data.getAttribute('name');
+
+        if (FormValidation.checkNotEmpty(data.value) && ! FormValidation.checkAlphaOnly(data.value)) {
+            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
             return false;
         }
 
@@ -228,11 +315,7 @@ function makeTabActive(collection, i)
     {
         var name = data.getAttribute('name');
 
-        if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages[window.locale].required);
-            return false;
-        }
-        if (! FormValidation.checkValidPhone(data.value)) {
+        if (FormValidation.checkNotEmpty(data.value) && ! FormValidation.checkValidPhone(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].phone);
             return false;
         }

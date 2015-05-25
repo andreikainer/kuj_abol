@@ -34,7 +34,7 @@ var FormValidation = {
     // Allow letters only, must not begin with a space.
     checkAlphaOnly: function(value)
     {
-        var regex = /^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/;
+        var regex = /^[a-zA-ZÀ-ž-]+([\sa-zA-ZÀ-ž-]+)*$/;
         return regex.test(value);
     },
 

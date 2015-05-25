@@ -28,7 +28,9 @@ class UserDetailsRequest extends Request {
             'first_name'    => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'last_name'     => 'required|regex:/^[a-zA-ZÀ-ž]+([\sa-zA-ZÀ-ž]+)*$/',
             'business_name' => 'regex:/^[A-Za-z0-9\-! ,\'\"\/@\.:\(\)]+$/',
-            'address'       => 'regex:/^[a-zA-ZÀ-ž0-9,]+([\sa-zA-ZÀ-ž0-9,]+)*$/',
+            'postcode'      => 'integer|digits:4',
+            'city'          => 'regex:/^[a-zA-ZÀ-ž-]+([\sa-zA-ZÀ-ž-]+)*$/',
+            'country'       => 'regex:/^[a-zA-ZÀ-ž-]+([\sa-zA-ZÀ-ž-]+)*$/',
             'tel_number'    => 'regex:/^[+()\/0-9]+([\s+()\/0-9]+)*$/',
             'avatar'        => 'mimes:jpg,jpeg,png,bmp,tiff|max:20000',
         ];
