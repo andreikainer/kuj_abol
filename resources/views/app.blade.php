@@ -126,7 +126,7 @@
                                 <!-- if there is a logged in user in the session, change the buttons to LOGOUT and USERNAME -->
                                     @if(Session::has('username'))
                                         <a href="{{ action('Auth\AuthController@getLogout') }}" class="btn btn-xs button-main button-user" id="logout">{{ trans('app.logout') }}</a>
-                                        <a href="{{ action('UserpanelController@show', Session::get('username')) }}" class="btn btn-xs button-main button-user" id="username-btn">{{ ucfirst(Session::get('username')) }}</a>
+                                        <a href="{{ action('UserpanelController@show', Session::get('username')) }}" class="btn btn-xs button-main" id="username-btn">{{ Session::get('username') }}</a>
 
                                     @else
                                 <!-- if there is no logged in user in the session, change the buttons to LOGIN and REGISTER -->
@@ -146,7 +146,7 @@
                                 <!-- if there is a logged in user in the session, change the buttons to LOGOUT and USERNAME -->
                                     @if(Session::has('username'))
                                         <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('Auth\AuthController@getLogout') }}"><i class="fa fa-sign-in"></i>{{ trans('app.logout') }}</a></li>
-                                        <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('UserpanelController@show', Session::get('username')) }}"><i class="fa fa-user"></i>{{ ucfirst(Session::get('username')) }}</a></li>
+                                        <li class="hidden-sm hidden-md hidden-lg"><a href="{{ action('UserpanelController@show', Session::get('username')) }}"><i class="fa fa-user"></i>{{ Session::get('username') }}</a></li>
 
                                     @else
                                 <!-- if there is no logged in user in the session, change the buttons to LOGIN and REGISTER -->
@@ -211,19 +211,19 @@
 	            <div class="col-xs-12 col-sm-4 col-md-4 col-md-push-4 col-lg-4 block socialmedia">
 	                <div class="clearfix">
 	                <!-- facebook_btn -->
-                        <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="facebook">
+                        <a href="https://www.facebook.com/kinderfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="facebook" target="_blank">
                                 <i class="fa fa-facebook"></i>
                         </a>
                     <!-- twitter_btn -->
-                        <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="twitter">
+                        <a href="https://twitter.com/KuJfoerderungen" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="twitter" target="_blank">
                                 <i class="fa fa-twitter"></i>
                         </a>
                     <!-- youtube_btn -->
-                        <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="youtube">
+                        <a href="https://www.youtube.com/channel/UC4FjChxkG7VmTYNQGbQbTyw" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="youtube" target="_blank">
                                 <i class="fa fa-youtube-play"></i>
                         </a>
                     <!-- googleplus_btn -->
-                        <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="googleplus">
+                        <a href="https://plus.google.com/114913587570028591368/videos" class="clearfix alignme-center navbar-toggle button-circle hvr-push" id="googleplus" target="_blank">
                                 <i class="fa fa-google-plus"></i>
                         </a>
                     </div>
@@ -237,7 +237,7 @@
                             </div>
                             <button type="submit" class="btn btn-default button-sec" id="newsletter">{{ trans('app.sign-up') }}</button>
                         </form>
-                        <p class="mt-2em">{{ trans('app.legal-stuff') }}</p>
+                        <p class="mt-2em text-justify">{{ trans('app.legal-stuff') }}</p>
                     </div>
 
                 </div>
@@ -246,15 +246,12 @@
             <!-- Site Map -->
 	            <div class="col-xs-11 col-xs-push-1 col-sm-3 col-md-3 col-md-pull-12 col-lg-3">
 	                <div class="footer-text-content">
-	                    <h5>{{ trans('app.site-map') }}</h5>
-	                    <a href="{{ trans('routes.how-it-works') }}">{{ trans('app.how-it-works') }}</a>
-	                    <a href="{{ action('ProjectsController@createProject') }}">{{ trans('app.create-project') }}</a>
-	                    <a href="{{ action('ProjectsController@showMoreProjects') }}">{{ trans('app.contribute') }}</a>
+	                    <a href="{{ trans('routes.how-it-works') }}"><h5>{{ trans('app.how-it-works') }}</h5></a>
+	                    <a href="{{ action('ProjectsController@createProject') }}"><h5>{{ trans('app.create-project') }}</h5></a>
+	                    <a href="{{ action('ProjectsController@showMoreProjects') }}"><h5>{{ trans('app.contribute') }}</h5></a>
+                        <a href="{{ trans('routes.sponsors') }}"><h5>{{ trans('app.our-sponsors') }}</h5></a>
+                        <a href="{{ action('ContactFormController@getContactForm') }}"><h5>{{ trans('app.contacts') }}</h5></a>
 
-	                    <br>
-
-	                    {{--<a href="#">Blog</a>--}}
-                        <a href="{{ trans('routes.sponsors') }}">{{ trans('app.our-sponsors') }}</a>
 
                         <br>
 
@@ -267,17 +264,14 @@
             <!-- Contacts -->
                 <div class="col-xs-10 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
                     <div class="footer-text-content">
-                        <h5>{{ trans('app.contacts') }}</h5>
-
-                        <p><i class="fa fa-home form-inline"></i> <a href="https://www.google.co.nz/maps/place/M%C3%BChlhofstra%C3%9Fe+3,+2524+Teesdorf,+Austria/@47.9513791,16.2887902,14z/data=!4m2!3m1!1s0x476db403c8f03ef3:0x19b6531c4b2dc01c">Mühlhofstraße 3/2/12<br>
-                                                                        2524 Teesdorf Austria
-                                                            </a></p>
-                        <p><i class="fa fa-envelope"></i><a href="{{ action('ContactFormController@getContactForm') }}">wilhelmine.bauer@sponsoring-agentur.at</a></p>
-                        <p><i class="fa fa-phone"></i><a href="tel:+4366488299511">+43 664 8829 9511</a></p>
+                        <img src="{{ asset('img/logo.svg') }}" class="img-responsive">
 
                         <br>
 
-                        <p class="no-bottom-margin">&copy;copyright {{ Carbon\Carbon::now()->year }}</p>
+                        <img src="{{ asset('img/ak-sponsoring-logo-white.png') }}" class="img-responsive">
+
+                        <br>
+
                         <p>{{ trans('app.website-made-by') }} <a href="{{ action('PagesController@abol') }}">ABOL Web</a></p>
                 	</div>
                 </div>

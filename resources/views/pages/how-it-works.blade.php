@@ -417,7 +417,7 @@
                 </div>
 
 <!-- Our team -->
-                <div class="row mb-1em">
+                <div class="row mb-1em" id="team">
                     <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                         <h2 class="heading" id="our_team">{{ trans('app.our-team') }}</h2>
                     </div>

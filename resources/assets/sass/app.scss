@@ -150,15 +150,16 @@ hr {
 /*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
 #logout {
   width: 38%;
-}
-#username-btn {
-  width: 59%;
   background-color: $orange;
   border-color: $orange !important;
 
   &:hover {
     background-color: darken($orange, 5%);
   }
+}
+#username-btn {
+  width: 59%;
+
 }
 /*------------------------------------------------------------------*/
 /*-- Group of circle buttons --*/
@@ -693,7 +694,7 @@ footer {
 #how-it-works {
   font-size: 1.1rem;
   img {
-    margin: 0 auto;
+    width: 110px;
   }
   .add-nav {
     position: fixed;
