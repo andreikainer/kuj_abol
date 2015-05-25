@@ -15,7 +15,7 @@
                 </div>
                 <div class="row form-element">
 
-                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 xs-mt">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
                         <h2 class="text-center">{{ trans('how-it-works-page.step-1s')}}</h2>
                         <img src="{{ asset('/img/steps/step-1.png') }}" alt="step-1" class="img-responsive">
                         <h4 class="text-center mb-1em">{{ trans('how-it-works-page.step-1h')}}</h4>
@@ -417,7 +417,7 @@
                 </div>
 
 <!-- Our team -->
-                <div class="row mb-1em">
+                <div class="row mb-1em" id="team">
                     <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
                         <h2 class="heading" id="our_team">{{ trans('app.our-team') }}</h2>
                     </div>

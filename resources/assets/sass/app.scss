@@ -449,6 +449,10 @@ footer {
     top: 2rem;
     left: 5rem;
 
+    p {
+      font-size: 2rem;
+    }
+
     //text-shadow: 3px 2px 3px rgba(50, 50, 50, 1);
 
     @media (max-width: 768px) {
@@ -459,6 +463,10 @@ footer {
 
       h1 {
         font-size: 1.8rem;
+      }
+
+      p{
+        font-size: 1.3rem;
       }
       p a {
         font-size: 1rem;
@@ -692,6 +700,7 @@ footer {
 /*------------------------------------------------------------------*/
 #how-it-works {
   font-size: 1.1rem;
+
   img {
     margin: 0 auto;
   }

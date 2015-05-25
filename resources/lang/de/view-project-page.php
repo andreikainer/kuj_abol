@@ -25,14 +25,14 @@ return [
   'login-message'          => 'Bitte loggen Sie sich ein oder registrieren um dieses Förderungsprojekt zu favorisieren',
 
   'business-building-block' => '<h3>"Business" - Förderungs-Baustein</h3>
-                               <h4 class="text-justify">Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
+                               <h4 class="text-justify">Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt mittles Sponsoring und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
                                   <ul>
-                                      <li class="list-item">Firmenlogo Darstellung auf unserer Webseite für drei Monate</li>
-                                      <li class="list-item">Verlinkung zu Ihrer Firmen-Webseite</li>
+                                      <li class="list-item">Firmenlogo Darstellung auf unserer Webseite für 90 Tage</li>
+                                      <li class="list-item">Verlinkung zu Ihrer eigenen Firmen-Webseite</li>
                                       <li class="list-item">Einmalige Nennung in unserem monatlichen Newsletter mit 2000 Empfängern</li>
                                       <li class="list-item">Ihre Förderung ist zu 100% Steuerabzugsfähig</li>
                                       <li class="list-item">Offizielle Kinder- und Jugendförderungen Sponsorenurkunde</li>
-                                      <li class="list-item">Auf Anfrage: Übertragung unseres "Offizieller Sponsor"- Button </li>
+                                      <li class="list-item">Auf Anfrage: Übertragung unseres "Offizieller KuJ Sponsor"- Button </li>
                                   </ul>
                                   <h3>&euro; 150,00 + Ust pro Baustein</h3>',
 
@@ -41,7 +41,7 @@ return [
                                       <li class="list-item">Sie erhalten ein persönliches Dankschreiben von der geförderten Familie </li>
                                       <li class="list-item">Ihr Beitrag wir ausschließlich für dieses Förderungsprojekt verwendet</li>
                                   </ul>
-                                  <h3>Einmahlig &euro; :euro</h3>',
+                                  <h3>Einmalig &euro; :euro</h3>',
 
   'small-block'               => '<h3>Kleiner Förderungs-Baustein</h3>',
   'medium-block'              => '<h3>Mittlerer Förderungs-Baustein</h3>',

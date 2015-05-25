@@ -44,7 +44,7 @@ return [
     'sign-up'               => 'Sign up',
     'site-map'              => 'Site Map',
     'terms-and-conditions'  => 'Terms and conditions',
-    'contacts'              => 'Contacts',
+    'contacts'              => 'Contact us',
     'website-made-by'       => 'website made by',
     'legal-stuff'           => 'Kinder- und Jugendförderungen is an initiative of the AK Sponsoring Agency to support chronically ill, mentally or physically disabled children and their families.',
     'imprint'               => 'Imprint',

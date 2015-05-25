@@ -75,8 +75,9 @@
         </div>
 
             <div class="row">
-            <div class="col-sm-12 col-md-6 col-md-offset-1 text-justify description form-element"> <!-- project description beginn-->
-                <p>{{ $project->full_desc }}</p>
+            <div class="col-sm-12 col-md-6 col-md-offset-1 description form-element"> <!-- project description beginn-->
+                <h3 class="text-center" style="line-height: 1.5em">{{ $project->short_desc }}</h3>
+                <p class="mt-2em">{{ $project->full_desc }}</p>
             </div> <!-- project description end-->
 
             <div id="contribution-packs" class="col-sm-12 col-md-4 col-md-offset-1 text-center clearfix"> <!-- contribution packages beginn-->

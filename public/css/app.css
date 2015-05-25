@@ -5080,7 +5080,7 @@ input[type="submit"], button[type="submit"] {
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
   border-radius: 5px;
-  background-color: #4b4b4b;
+  background-color: transparent;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -5088,6 +5088,7 @@ input[type="submit"], button[type="submit"] {
   color: white; }
   .button-transparent:hover, .button-transparent:active, .button-transparent:link:hover, .button-transparent:link:active, .button-transparent:visited:hover, .button-transparent:visited:active {
     color: #e6e6e6;
+    background-color: #4b4b4b;
     text-decoration: none; }
 
 /*------------------------------------------------------------------*/
@@ -5691,7 +5692,8 @@ a.tip-title {
 
 .description {
   font-size: 1.1rem;
-  margin-top: 2em; }
+  margin-top: 2em;
+  line-height: 2rem; }
 
 #contribution-packs a {
   text-decoration: none; }
@@ -5702,7 +5704,8 @@ a.tip-title {
   padding: 0.5em;
   margin-top: 2em;
   border-radius: 0.35em;
-  width: 100%; }
+  width: 100%;
+  font-size: 1.05rem; }
   @media (min-width: 768px) and (max-width: 991px) {
     .pack1 {
       width: 45%;
@@ -5717,7 +5720,8 @@ a.tip-title {
   padding: 0.5em;
   border-radius: 0.35em;
   margin-top: 2em;
-  width: 100%; }
+  width: 100%;
+  font-size: 1.05rem; }
   @media (min-width: 768px) and (max-width: 991px) {
     .packs2-4 {
       width: 45%;
@@ -5759,6 +5763,12 @@ a.tip-title {
 
 .modal-body {
   min-height: 0 !important; }
+
+.modal {
+  top: 40%; }
+
+.modal-backdrop {
+  position: fixed; }
 
 /*------------------------------------------------------------------*/
 /*-- REGISTER PAGE SPECIFIC --*/
@@ -6194,6 +6204,8 @@ footer {
     position: absolute;
     top: 2rem;
     left: 5rem; }
+    .jumbotron .jumbotron-text p {
+      font-size: 2rem; }
     @media (max-width: 768px) {
       .jumbotron .jumbotron-text {
         top: 0rem;
@@ -6202,6 +6214,8 @@ footer {
         padding-top: 0; }
         .jumbotron .jumbotron-text h1 {
           font-size: 1.8rem; }
+        .jumbotron .jumbotron-text p {
+          font-size: 1.3rem; }
         .jumbotron .jumbotron-text p a {
           font-size: 1rem;
           background-color: #4b4b4b; } }
