@@ -48,7 +48,7 @@
                     </div> <!-- row ends -->
 
                     <div class="row text-center">
-                        <?php echo $succ_projects->render(); ?>
+                        {{--{{ $succ_projects->render() }}  --}}
                     </div>
 
                 </div>

@@ -27,12 +27,12 @@ return [
   'business-building-block' => '<h3>"Business" - Förderungs-Baustein</h3>
                                <h4 class="text-justify">Unser spezielles Angebot für Geschäftsteibende aller Art. Unterstützen Sie dieses Projekt und Ihr Unternehmen erhält folgende Gegenleistungen:</h4>
                                   <ul>
-                                      <li class="list-item">Firmenlogo Darstellung auf unserer Webseite für drei Monate</li>
+                                      <li class="list-item">Firmenlogo Darstellung auf unserer Webseite für 90 Tage</li>
                                       <li class="list-item">Verlinkung zu Ihrer Firmen-Webseite</li>
                                       <li class="list-item">Einmalige Nennung in unserem monatlichen Newsletter mit 2000 Empfängern</li>
                                       <li class="list-item">Ihre Förderung ist zu 100% Steuerabzugsfähig</li>
                                       <li class="list-item">Offizielle Kinder- und Jugendförderungen Sponsorenurkunde</li>
-                                      <li class="list-item">Auf Anfrage: Übertragung unseres "Offizieller Sponsor"- Button </li>
+                                      <li class="list-item">Auf Anfrage: Übertragung unseres "Offizieller KuJ Sponsor"- Button </li>
                                   </ul>
                                   <h3>&euro; 150,00 + Ust pro Baustein</h3>',
 

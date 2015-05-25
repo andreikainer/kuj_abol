@@ -42,8 +42,10 @@ class ProjectsController extends Controller {
 
         $projects = $allProjects->sortByDesc('completed_on');
 
-        $succ_projects = Project::where('succ_funded', 1)
+        $dbSuccProjects = Project::where('succ_funded', 1)
             ->paginate(3);
+
+        $succ_projects = $dbSuccProjects->sortByDesc('completed_on');
 
         $logos = Sponsor::where('active', 1)->get();
 
@@ -727,9 +729,11 @@ class ProjectsController extends Controller {
     */
     public function showMoreProjects()
     {
-        $projects = Project::where('approved', 1)
-                            ->where('succ_funded', 0)
-                            ->paginate(6);
+        $currentProjects = Project::where('approved', 1)
+            ->where('succ_funded', 0)
+            ->get();
+
+        $projects = $currentProjects->sortByDesc('completed_on');
 
         return view('pages.current-projects', compact('projects'));
     }
@@ -739,8 +743,9 @@ class ProjectsController extends Controller {
      */
     public function showMoreSuccProjects()
     {
-        $succ_projects = Project::where('succ_funded', 1)
-                        ->paginate(6);
+        $dbSuccProjects = Project::where('succ_funded', 1)->get();
+
+        $succ_projects = $dbSuccProjects->sortByDesc('completed_on');
 
         return view('pages.succ-projects', compact('succ_projects'));
     }
