@@ -158,11 +158,11 @@
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
                             		    <li><a href="{{ action('PagesController@howItWorks') }}">{{ trans('app.overview') }}</a></li>
+                                        <li><a href="{{ action('PagesController@sponsors') }}">{{ trans('app.our-sponsors') }}</a></li>
                             		    <li><a href="{{ action('PagesController@howItWorks') }}/#faq">FAQ</a></li>
-                            		    <li role="presentation" class="divider"></li>
-                            		    <li><a href="{{ action('PagesController@sponsors') }}">{{ trans('app.our-sponsors') }}</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#our_goal">{{ trans('app.about-us') }}</a></li>
-                            			<li><a href="{{ action('PagesController@howItWorks') }}/#our_team">{{ trans('app.our-team') }}</a></li>
+                                        <li role="presentation" class="divider"></li>
+                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#about_us">{{ trans('app.about-us') }}</a></li>
+                            			<li><a href="{{ action('PagesController@howItWorks') }}/#team">{{ trans('app.contacts') }}</a></li>
                             		</ul>
                   	        	</li>
                    	        	<li><a href="{{ action('ProjectsController@createProject') }}">{{ trans('app.create-project') }}</a></li>
@@ -250,7 +250,7 @@
 	                    <a href="{{ action('ProjectsController@createProject') }}"><h5>{{ trans('app.create-project') }}</h5></a>
 	                    <a href="{{ action('ProjectsController@showMoreProjects') }}"><h5>{{ trans('app.contribute') }}</h5></a>
                         <a href="{{ trans('routes.sponsors') }}"><h5>{{ trans('app.our-sponsors') }}</h5></a>
-                        <a href="{{ action('ContactFormController@getContactForm') }}"><h5>{{ trans('app.contacts') }}</h5></a>
+                        <a href="{{ action('PagesController@howItWorks') }}/#team"><h5>{{ trans('app.contacts') }}</h5></a>
 
 
                         <br>

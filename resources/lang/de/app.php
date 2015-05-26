@@ -65,5 +65,13 @@ return array(
 |--------------------------------------------------------------------------
 */
     '404-line-1'            => 'Hoppla!',
-    '404-line-2'            => 'Nicht ganz die Seite, die Sie gesucht haben?'
+    '404-line-2'            => 'Nicht ganz die Seite, die Sie gesucht haben?',
+
+    /*
+|--------------------------------------------------------------------------
+| HOW IT WORKS
+|--------------------------------------------------------------------------
+*/
+    'contact-form'          => 'Zum Kontaktformular',
+
 );
