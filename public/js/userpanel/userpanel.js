@@ -1,69 +1,32 @@
-var panelCollection = $('div.userpanel-section');
-var tabCollection = $('.form-section-tab');
-var sideCollection = $('.sidemenu-item');
-
-// tabs click events
-$('.form-section-tab').on('click', function()
-{
-    $.publish('section-tab.click', this);
-});
-
-// side menu click events
-$('.sidemenu-item').on('click', function()
-{
-    $.publish('section-tab.click', this);
-});
-
-$.subscribe('section-tab.click', function(event, data)
-{
-    showSection(panelCollection, $(data).data('section'));
-    makeTabActive(tabCollection, $(data).data('section'));
-    //makeSidemenuItemActive(sideCollection, $(data));
-});
-//
-//function makeSidemenuItemActive(collection)
-//{
-//    collection.toggleClass('.active-sidemenu-item', true);
-//}
-
-function showSection(collection, i)
-{
-    collection.fadeOut();
-    collection.eq(i).fadeIn()
-}
-
-function makeTabActive(collection, i)
-{
-    collection.removeClass('form-section-tab-active');
-    collection.eq(i).addClass('form-section-tab-active');
-}
-
-/**
- * Add the error styles to the form input.
- *
- * @param el
- */
-function addFailClass(el)
-{
-    $(el).removeClass('form-input-correct').addClass('form-input-error');
-}
-
-/**
- * Remove the error styles from the form input.
- *
- * @param el
- */
-function removeFailClass(el)
-{
-    $(el).removeClass('form-input-error');
-}
-
 (function()
 {
+    var panelCollection = $('div.userpanel-section');
+    var tabCollection = $('.form-section-tab');
+    var sideCollection = $('.sidemenu-item');
+
+    // tabs click events
+    $('.form-section-tab').on('click', function()
+    {
+        $.publish('section-tab.click', this);
+    });
+
+    // side menu click events
+    $('.sidemenu-item').on('click', function()
+    {
+        $.publish('section-tab.click', this);
+    });
+
+    $.subscribe('section-tab.click', function(event, data)
+    {
+        showSection(panelCollection, $(data).data('section'));
+        makeTabActive(tabCollection, $(data).data('section'));
+        //makeSidemenuItemActive(sideCollection, $(data));
+    });
+
     /*------------------------------------------------------------------*/
     /*-- CHANGE DETAILS OPTION --*/
     /*------------------------------------------------------------------*/
-/*-- Messages Object --*/
+    /*-- Messages Object --*/
     var errorMessages = {
         'en' : {
             'required'  : 'This field is required.',
@@ -110,7 +73,7 @@ function removeFailClass(el)
     };
 
 
-/*-- Functions --*/
+    /*-- Functions --*/
 
     /**
      * Validate an image's mime type against a 'white-list'
@@ -140,8 +103,57 @@ function removeFailClass(el)
         return (value <= limit);
     }
 
+    function showSection(collection, i)
+    {
+        collection.fadeOut();
+        collection.eq(i).fadeIn()
+    }
 
-/*-- Publish Events --*/
+    function makeTabActive(collection, i)
+    {
+        collection.removeClass('form-section-tab-active');
+        collection.eq(i).addClass('form-section-tab-active');
+    }
+
+    /**
+     * Add the error styles to the form input.
+     *
+     * @param el
+     */
+    function addFailClass(el)
+    {
+        $(el).removeClass('form-input-correct').addClass('form-input-error');
+    }
+
+    /**
+     * Remove the error styles from the form input.
+     *
+     * @param el
+     */
+    function removeFailClass(el)
+    {
+        $(el).removeClass('form-input-error');
+    }
+
+    /**
+     * Run the user's selected image through the FileReader object.
+     * Set the src of the preview image element.
+     *
+     * @param file
+     * @param container
+     */
+    function loadImagePreview(file, container)
+    {
+        var reader = new FileReader();
+        reader.onload = function(e)
+        {
+            container.attr('src', e.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
+
+
+    /*-- Publish Events --*/
     // Form Field blur events.
     $('.account input[name="user_name"]').on('blur', function()
     {
@@ -323,7 +335,7 @@ function removeFailClass(el)
         hideErrorMessage(name);
     });
 
- /*-- Image input --*/
+     /*-- Image input --*/
     /**
      * PUBLISH EVENTS
      */
@@ -351,6 +363,19 @@ function removeFailClass(el)
         }
 
         hideErrorMessage(data.id);
+
+        var loaderImage = $(data).siblings('.image-loader');
+        var previewImage = $(data).siblings('label.image-upload-label').children('img');
+
+        // Show the loading animation.
+        loaderImage.fadeIn('slow')
+            .wait(1000)
+            .fadeOut()
+            .then(function()
+            {
+                // Show the image preview.
+                loadImagePreview(data.files[0], previewImage);
+            });
     });
 
 
@@ -360,15 +385,3 @@ function removeFailClass(el)
     });
 
 })();
-
-//// show - hide logo upload form
-//document.getElementById('add-logo').addEventListener('click', function()
-//{
-//    if(document.getElementById("admin-logo-form").style.display = "none")
-//    { console.log('yes');
-//        document.getElementById('admin-logo-form').style.display = "block";
-//    }else(document.getElementById('admin-logo-form').style.display = "block")
-//    {
-//        document.getElementById('admin-logo-form').style.display = "none";
-//    }
-//});
