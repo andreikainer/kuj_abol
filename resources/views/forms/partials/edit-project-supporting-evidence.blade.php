@@ -59,7 +59,7 @@
                             <div class="image-upload-wrapper">
                                 <span class="image-upload-close-button">X</span>
                                 <div class="embed-responsive embed-responsive-16by9 image-upload-preview display">
-                                    <iframe src="{{ 'http://kinderfoerderungen.at/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="embed-responsive-item"></iframe>
+                                    <iframe src="{{ 'http://kinderfoerderungen.dev/documents/'.$project->slug.'/'.$project->documents[$i]->filename }}" frameborder="0" class="embed-responsive-item"></iframe>
                                     <!-- #5 change to server + /documents/ -->
                                 </div>
                                 <input type="hidden" name="{{ 'doc'.(1+$i).'Mand' }}" value="{{ $project->documents[$i]->filename }}"/>
