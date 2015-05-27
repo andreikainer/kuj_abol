@@ -10,8 +10,8 @@
             'email'     : 'Must be of a correct email format. And not begin with a space.'
         },
         'de' : {
-            'required'  : 'Dieses Feld ist erforderlich',
-            'email'     : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.'
+            'required'  : 'Dieses Feld darf nicht leer seien.',
+            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
         }
     };
 

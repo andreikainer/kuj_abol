@@ -24,7 +24,7 @@ return [
      * Buttons.
      */
     'login'             => 'Login',
-    'forgot-password'   => 'Forgot password',
+    'forgot-password'   => 'Forgot password?',
     'send'              => 'Send password reset link',
     'reset-password'    => 'Reset password',
 
@@ -38,7 +38,7 @@ return [
     /**
      * Top text box.
      */
-    'reset'        => 'Please, send the password reset request. You\'ll receive the link to your email address.',
+    'reset'        => 'Here you can reset your password. </br> You will receive a link to your registered email address.',
 
     /**
      * Messages.

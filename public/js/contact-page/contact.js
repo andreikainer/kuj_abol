@@ -5,7 +5,7 @@
     var errorMessages = {
         'en' : {
             'required'  : 'This field is required.',
-            'email'     : 'Must be of a correct email format. And not begin with a space.',
+            'email'     : 'Must be a correct email format. And not begin with a space.',
             'textArea'  : 'Letters and punctuation signs only.',
             'letters'   : 'Letters and spaces only.',
             'minLength' : function(limit)
@@ -18,17 +18,17 @@
             }
         },
         'de' : {
-            'required'  : 'Dieses Feld ist erforderlich',
-            'email'     : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
+            'required'  : 'Dieses Feld darf nicht leer seien.',
+            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
             'textArea'  : 'Dieses Feld darf nur Buchstaben enthalten.',
             'letters'   : 'Dieses Feld darf nur Buchstaben und Leerzeichen enthalten.',
             'minLength' : function(limit)
             {
-                return 'Diese Feld muss mindestens '+limit+' Charaktere enthalten';
+                return 'Diese Feld muss mindestens '+limit+' Zeichen enthalten';
             },
             'maxLength' : function(limit)
             {
-                return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+                return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten';
             }
         }
     };
@@ -107,13 +107,8 @@
 
             return false;
         }
-        if (! FormValidation.checkMaxLength(data.value, 700)) {
-            showErrorMessage(name, errorMessages[window.locale].maxLength(700));
-
-            return false;
-        }
-        if (! FormValidation.checkValidTextarea(data.value)) {
-            showErrorMessage(name, errorMessages[window.locale].textArea);
+        if (! FormValidation.checkMaxLength(data.value, 10000)) {
+            showErrorMessage(name, errorMessages[window.locale].maxLength(10000));
 
             return false;
         }

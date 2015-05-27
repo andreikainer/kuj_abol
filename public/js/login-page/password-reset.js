@@ -11,11 +11,11 @@
             }
         },
         'de' : {
-            'required'  : 'Dieses Feld ist erforderlich',
-            'email'     : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
+            'required'  : 'Dieses Feld darf nicht leer seien.',
+            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
             'minLength' : function(required)
             {
-                return 'Bitte dieses Feld '+required+' Zeichen mindestens.';
+                return 'Dieses Feld muss mindestens '+required+' Zeichen enthalten';
             }
         }
     };

@@ -87,16 +87,16 @@ function removeFailClass(el)
             }
         },
         'de' : {
-            'required'  : 'Dieses Feld ist erforderlich',
-            'alphaNumeric' : 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
-            'alphaOnly' : 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.',
-            'email' : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
-            'phone' : 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.',
-            'numOnly' : 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
+            'required' : 'Dieses Feld darf nicht leer seien.',
+            'alphaNumeric' : 'Darf nur Buchstaben und Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+            'numOnly' : 'Darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+            'alphaOnly' : 'Darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.',
+            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
+            'phone' : 'Dieses Feld muss in einem korrekten Telefonnummer Format sein und darf keine Leerzeichen enthalten.',
             'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
             'minLength' : function(required)
             {
-                return 'Dieses Feld muss mindestens '+required+' Charaktere enthalten';
+                return 'Dieses Feld muss mindestens '+required+' Zeichen enthalten';
             },
             'maxSize' : function(limit)
             {
@@ -104,7 +104,7 @@ function removeFailClass(el)
             },
             'maxLength' : function(limit)
             {
-                return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+                return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten';
             }
         }
     };
