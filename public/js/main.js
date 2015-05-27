@@ -190,6 +190,13 @@ $(document).ready(function()
     }
 });
 
+
+/*------------------------------------------------------------------*/
+/*-- FLASH MESSAGE ANIMATION --*/
+/*------------------------------------------------------------------*/
+
+
+
 /* ============================================================
  * bootstrap-dropdown.js v2.2.1
  * http://twitter.github.com/bootstrap/javascript.html#dropdowns
