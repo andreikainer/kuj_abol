@@ -197,7 +197,7 @@
 
   border: .125rem solid $white;
   @include border-radius(5px);
-  background-color: transparent;
+  background-color: $text;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -207,7 +207,7 @@
 
   &:hover, &:active {
     color: darken($white, 10%);
-    background-color: $text;
+    background-color: $blue;
     text-decoration: none;
   }
 }

@@ -38,27 +38,35 @@
                     <div class="countdown-value"><span id="countdown-seconds">0</span></div>
                     <div id="time">{!! trans('view-project-page.time-to-goal') !!}</div>
                 </div>
-                <div class="btn btn-primary button-main-big contribute">{{ trans('view-project-page.fund-this-project') }}</div>
-                <div class="btn">
-                    <div id="facebook-share" class="btn btn-primary button-main fb-share" role="button"><i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}</div><div id="fb-root"></div>
-                </div>
-                <div class="btn">
-                    @if(Session::has('username') && $favourites->isEmpty() )
-                        <a href="{{ action('UserpanelController@addFavourite', $project->id) }}">
-                            <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}</div>
-                        </a>
-                    @elseif(Session::has('username') && !empty($favourites->all())  )
-                        <a href="{{ action('UserpanelController@removeFavourite', $project->id) }}">
-                            <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.unfavourite') }}</div>
-                        </a>
-                    @else
-                        <div id="favorite" class="btn btn-primary button-main" role="button" data-toggle="modal" data-target=".modal-message"><i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}</div>
-                    @endif
-                </div>
+                <div class="btn btn-primary button-main-big contribute" role="button" data-toggle="modal" data-target=".modal-message2">{{ trans('view-project-page.fund-this-project') }}</div>
+                    <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12">
+                        <div id="facebook-share" class="btn btn-primary button-main fb-share" role="button"><i class="fa fa-facebook"></i> {{ trans('view-project-page.share-on-facebook') }}</div><div id="fb-root"></div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12">
+
+                            @if(Session::has('username') && $favourites->isEmpty() )
+                                <a href="{{ action('UserpanelController@addFavourite', $project->id) }}">
+                                    <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.add-to-favourites') }}</div>
+                                </a>
+                            @elseif(Session::has('username') && !empty($favourites->all())  )
+                                <a href="{{ action('UserpanelController@removeFavourite', $project->id) }}">
+                                    <div id="favorite" class="btn btn-primary button-main" role="button"><i class="fa fa-star"></i> {{ trans('view-project-page.unfavourite') }}</div>
+                                </a>
+                            @else
+                                <div id="favorite" class="btn btn-primary button-main" role="button" data-toggle="modal" data-target=".modal-message"><i class="fa fa-heart"></i> {{ trans('view-project-page.add-to-favourites') }}</div>
+                            @endif
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12">
+                        <a href="#"><div id="email-share" class="btn btn-primary button-main email-share" role="button"><i class="fa fa-envelope"></i> {{ trans('view-project-page.share-via-email') }}</div></a>
+                    </div>
+
             </div> <!-- statistics end-->
             </div>
 
-        <!-- Modal -->
+        <!-- Favourite Modal message -->
         <div class="modal fade modal-message" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -67,8 +75,24 @@
                         <p>{{ trans('view-project-page.login-message') }}</p>
                     </div>
                     <div class="modal-footer">
-                        <button id="closing-btn" type="button" class="btn button-main button-user" data-dismiss="modal">{{ trans('view-project-page.close') }}</button>
+                        {{--<button id="closing-btn" type="button" class="btn button-main button-user" data-dismiss="modal">{{ trans('view-project-page.close') }}</button>--}}
+                        <a href="{{ action('Auth\AuthController@getRegister') }}" class="btn button-main button-user">{{ trans('app.register') }}</a>
                         <a href="{{ action('Auth\AuthController@getLogin') }}"><button type="button" class="btn button-main button-user login">{{ trans('view-project-page.login') }}</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- payment modal message -->
+        <div class="modal fade modal-message2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p>{{ trans('view-project-page.payment-not-available') }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="closing-btn" type="button" class="btn button-main button-user" data-dismiss="modal">{{ trans('view-project-page.close') }}</button>
                     </div>
                 </div>
             </div>
@@ -77,23 +101,23 @@
             <div class="row">
             <div class="col-sm-12 col-md-6 col-md-offset-1 description form-element"> <!-- project description beginn-->
                 <h3 class="text-center" style="line-height: 1.5em">{{ $project->short_desc }}</h3>
-                <p class="mt-2em">{{ $project->full_desc }}</p>
+                <p class="mt-2em text-justify">{{ $project->full_desc }}</p>
             </div> <!-- project description end-->
 
             <div id="contribution-packs" class="col-sm-12 col-md-4 col-md-offset-1 text-center clearfix"> <!-- contribution packages beginn-->
                 <p class="tips-heading text-center mt-2em">{{ trans('view-project-page.support-options') }}</p>
-                <a href="#" role="button"><div class="pack1 padding-none pull-left"> <!-- contribution package 1-->
+                <a href="#" role="button" data-toggle="modal" data-target=".modal-message2"><div class="pack1 padding-none pull-left"> <!-- contribution package 1-->
                         {!! trans('view-project-page.business-building-block') !!}
                 </div></a>
-                <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 2-->
+                <a href="#" role="button" data-toggle="modal" data-target=".modal-message2"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 2-->
                         {!! trans('view-project-page.small-block', ['euro' => '25,00']) !!}
                             {!! trans('view-project-page.individual-building-block', ['euro' => '25,00']) !!}
                 </div></a>
-                <a href="#" role="button"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 3-->
+                <a href="#" role="button" data-toggle="modal" data-target=".modal-message2"><div class="packs2-4 padding-none pull-right"> <!-- contribution package 3-->
                         {!! trans('view-project-page.medium-block', ['euro' => '50,00']) !!}
                             {!! trans('view-project-page.individual-building-block', ['euro' => '50,00']) !!}
                 </div></a>
-                    <a href="#" role="button"><div class="packs2-4 padding-none pull-left"> <!-- contribution package 4-->
+                    <a href="#" role="button" data-toggle="modal" data-target=".modal-message2"><div class="packs2-4 padding-none pull-left"> <!-- contribution package 4-->
                         {!! trans('view-project-page.large-block', ['euro' => '100,00']) !!}
                            {!! trans('view-project-page.individual-building-block', ['euro' => '100,00']) !!}
                 </div></a>

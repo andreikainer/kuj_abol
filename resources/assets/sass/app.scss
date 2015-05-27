@@ -150,15 +150,16 @@ hr {
 /*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
 #logout {
   width: 38%;
-}
-#username-btn {
-  width: 59%;
   background-color: $orange;
   border-color: $orange !important;
 
   &:hover {
     background-color: darken($orange, 5%);
   }
+}
+#username-btn {
+  width: 59%;
+
 }
 /*------------------------------------------------------------------*/
 /*-- Group of circle buttons --*/
@@ -423,6 +424,7 @@ footer {
 
     h1, p {
       color: $white;
+      text-shadow: 3px 2px 3px rgba(50, 50, 50, 1);
     }
 
     /*-- Correcting some Slick default styles --*/
@@ -452,8 +454,6 @@ footer {
     p {
       font-size: 2rem;
     }
-
-    //text-shadow: 3px 2px 3px rgba(50, 50, 50, 1);
 
     @media (max-width: 768px) {
       top: 0rem;

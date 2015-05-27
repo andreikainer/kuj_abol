@@ -20,6 +20,7 @@ return [
   'share-on-facebook'      => 'Share on Facebook',
   'add-to-favourites'      => 'Add to Favourites',
   'unfavourite'            => 'Unfavourite',
+  'share-via-email'        => 'Share via email',
   'close'                  => 'Close',
   'login'                  => 'Login',
   'login-message'          => 'Please log in or register to favourite this project',
@@ -35,16 +36,21 @@ return [
                                       <li class="list-item">Official "Kinder- und Jugendförderungen" Sponsor certificate</li>
                                       <li class="list-item">On request: transfer of our "KuJ official Sponsor" - button </li>
                                   </ul>
-                                  <h3>&euro; 150,00 + Ust each</h3>',
+                                  <hr>
+                                  <h3>&euro; 150,00 + VAT each</h3>',
 
   'individual-building-block' => '<ul>
                                       <li class="list-item">Fund this project with a fixed amount of &euro; :euro</li>
                                       <li class="list-item">You receive a personal "Thank-you" letter from the supported familiy</li>
                                       <li class="list-item">Your contribution will we used for this project only</li>
-                                  </ul>',
+                                  </ul>
+                                  <hr>
+                                  <h3>Fund with &euro; :euro</h3>',
 
-  'small-block'               => '<h3>Small Building-block  | &euro; :euro</h3>',
-  'medium-block'              => '<h3>Medium Building-block  | &euro; :euro</h3>',
-  'large-block'               => '<h3>Large Building-block  | &euro; :euro or more</h3>',
+  'small-block'               => '<h3>Small Building-block</h3>',
+  'medium-block'              => '<h3>Medium Building-block</h3>',
+  'large-block'               => '<h3>Large Building-block</h3>',
+
+    'payment-not-available'     => 'Unfortunately the online funding functionality is not available yet. We will try our best to make it available as soon as possible.'
 
 ];

@@ -15,7 +15,14 @@
     font-family: $lato;
   }
   @media(max-width: 767px) {
-    height: 43em;
+    height: 47.5em;
+  }
+
+}
+
+#time-text{
+  @media(max-width: 320px){
+    font-size: 1.3rem;
   }
 }
 
@@ -30,6 +37,9 @@
   @media(min-width: 992px) and (max-width: 1199px) {
     margin: 0.2em;
   }
+  @media(max-width: 320px){
+    margin: 0;
+  }
 }
 
 .countdown-value span {
@@ -38,6 +48,9 @@
   width: 100%;
   height: 100%;
   padding-top: 0.15em;
+//  @media(max-width: 400px){
+//    font-size: 1.8em;
+//  }
 
 
 }
@@ -50,39 +63,54 @@
     margin: 0.75em;
     font-size: 0.7rem;
   }
+  @media(max-width: 320px) {
+    margin: 0.4em 0.2em;
+    font-size: 0.8rem;
+  }
+
 }
 
 .contribute {
   margin: 1em 0 1em 0;
-//   OLGA
-  @media(min-width: 992px) and (max-width: 1199px){
-//    font-size: 2rem; OLGA
-  }
+  font-size: 1.6em;
 }
 
 #facebook-share {
-  width: 100%;
   background: $bluegrey;
+  margin: .5em 0 1em 0;
+  width: 80%;
 
   &:hover {
     background-color: darken($bluegrey, 7%) !important;
   }
+
+}
+
+#email-share {
+  background: $text;
+  margin: .5em 0 1em 0;
+  width: 80%;
+
+  &:hover {
+    background-color: darken($text, 7%) !important;
+  }
+
 }
 
 #favorite {
-  width: 100%;
-
   background-color: $orange !important;
-  border-color: $orange !important;
+  margin: .5em 0 1em 0;
+  width: 80%;
 
   &:hover {
     background-color: darken($orange, 7%) !important;
   }
+
 }
 
 .description{
   font-size: 1.1rem;
-  margin-top: 2em;
+  margin-top: 1em;
   line-height: 2rem;
 }
 

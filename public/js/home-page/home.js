@@ -13,11 +13,11 @@
         cssEase: 'linear',
         autoplay: true,
         arrows: false,
-        pauseOnHover: true,
+        pauseOnHover: false,
         pauseonDotsHover: true,
         swipe: true,
         centerMode: true,
-        respondTo: 'slider'
+        respondTo: 'window'
   });
 
 /*-- Changing img size according to the window size --*/
@@ -39,11 +39,11 @@
       {
           aImg[a].src = 'img/main-carousel/md/' + imgName + '.jpg';
 
-      }else if($(window).innerWidth() >= 992 && $(window).innerWidth() < 1200)
+      }else if($(window).innerWidth() >= 992 && $(window).innerWidth() < 1700)
       {
           aImg[a].src = 'img/main-carousel/lg/' + imgName + '.jpg';
 
-      }else if($(window).innerWidth() >= 1200)
+      }else if($(window).innerWidth() >= 1700)
       {
           aImg[a].src = 'img/main-carousel/xlg/' + imgName + '.jpg';
       }else if(window.devicePixelRatio >= 3)
