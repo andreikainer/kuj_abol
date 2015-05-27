@@ -261,7 +261,7 @@
 	            </div>
 
 
-            <!-- Contacts -->
+            <!-- Logos -->
                 <div class="col-xs-10 col-xs-push-1 col-sm-4 col-md-3 col-md-offset-1 col-lg-3">
                     <div class="footer-text-content">
                         <img src="{{ asset('img/logo.svg') }}" class="img-responsive">

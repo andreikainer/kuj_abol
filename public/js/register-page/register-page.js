@@ -99,6 +99,17 @@
             addFailClass(data);
             return false;
         }
+        if( ! FormValidation.checkMinLength(data.value, 3)){
+            showErrorMessage(name, errorMessages[window.locale].minLength(3));
+            addFailClass(data);
+            return false;
+        }
+        if( ! FormValidation.checkMaxLength(data.value, 16)){
+            showErrorMessage(name, errorMessages[window.locale].maxLength(16));
+            addFailClass(data);
+            return false;
+        }
+
         removeFailClass(data);
         hideErrorMessage(name);
     });
