@@ -118,6 +118,9 @@ Route::group(
     /*-- Newsletter sign up --*/
         Route::post(LaravelLocalization::transRoute('routes.newsletter'), 'ContactFormController@postNewsletter');
 
+        /*-- Payment --*/
+        Route::controller('paytest', 'PaymentController');
+
 
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/
