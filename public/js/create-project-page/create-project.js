@@ -61,23 +61,23 @@
                 'charRemaining' : 'characters remaining'
             },
             'de' : {
-                'disabled' : 'Bitte nennen Sie Ihr Projekt, und klicken Sie auf "Projekt starten", um Form zu ermöglichen.',
-                'required' : 'Dieses Feld ist erforderlich.',
-                'alphaNumeric' : 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
-                'numOnly' : 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
-                'alphaOnly' : 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.',
-                'email' : 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
-                'phone' : 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.',
+                'disabled' : 'Bitte benennen Sie Ihr Projekt , klicken Sie anschließend auf Ansuchen beginnen.',
+                'required' : 'Dieses Feld darf nicht leer seien.',
+                'alphaNumeric' : 'Darf nur Buchstaben und Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+                'numOnly' : 'Darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+                'alphaOnly' : 'Darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.',
+                'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
+                'phone' : 'Dieses Feld muss in einem korrekten Telefonnummer Format sein und darf keine Leerzeichen enthalten.',
                 'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
-                'document' : 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
-                'currency' : 'Muss nur Zahlen, Kommas und Punkte. Und nicht mit einem Leerzeichen beginnen.',
+                'document' : 'Akzeptiert sind JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+                'currency' : 'Diese Feld darf nur Zahlen, Kommas enthalten und nicht mit einem Leerzeichen beginnen.',
                 'maxLength' : function(limit)
                 {
-                    return 'Dieses Feld muss '+limit+' Zeichen nicht überschreiten';
+                    return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten';
                 },
                 'minLength' : function(required)
                 {
-                    return 'Dieses Feld muss mindestens '+required+' Charaktere enthalten';
+                    return 'Dieses Feld muss mindestens '+required+' Zeichen enthalten';
                 },
                 'maxSize' : function(limit)
                 {
@@ -676,7 +676,7 @@
         {
             // Make AJAX request to PHP script, POST up the received data from event.
             $.ajax({
-                url : 'http://kinderfoerderungen.at/temp-document', // #2 change to your server
+                url : 'http://kinderfoerderungen.dev/temp-document', // #2 change to your server
                 method : 'POST',
                 data : data,
                 cache : false,
@@ -719,7 +719,7 @@
                 .then(function()
                 {
                     inputControls.fadeOut('slow');
-                    iframe.attr('src', 'http://kinderfoerderungen.at/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
+                    iframe.attr('src', 'http://kinderfoerderungen.dev/'+data.path.substr(data.path.indexOf('temp'), data.path.length));
                     // #3 change to server
                 })
                 .wait(700)
@@ -932,7 +932,7 @@
 
         $.subscribe('form-submit.success', function()
         {
-            window.location = 'http://kinderfoerderungen.at/create-project/success';
+            window.location = 'http://kinderfoerderungen.dev/create-project/success';
             // #4 change to server url
         });
 

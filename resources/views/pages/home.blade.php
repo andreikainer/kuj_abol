@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <div class="container-fluid clearfix main_carousel">
                 <div class="main_carousel_item">
-                    <img src="{{ asset('img/main-carousel/lg/one.jpg') }}" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/mc_one.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         {!! trans('home-page.carousel-text-1', ['cta-link' => action('PagesController@howItWorks')]) !!}
@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                    <img src="{{ asset('img/main-carousel/lg/six.jpg') }}" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/mc_two.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         {!! trans('home-page.carousel-text-2', ['cta-link' => '#contribute']) !!}
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="main_carousel_item">
-                    <img src="{{ asset('img/main-carousel/lg/three.jpg') }}" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/mc_four.jpg') }}" class="img-responsive" alt="image">
 
                     <div class="jumbotron-text">
                         {!! trans('home-page.carousel-text-3', ['cta-link' => action('ProjectsController@createProject')]) !!}
@@ -30,12 +30,13 @@
                 </div>
 
                 <div class="main_carousel_item">
-                     <img src="{{ asset('img/main-carousel/lg/five.jpg') }}" class="img-responsive" alt="image">
+                    <img src="{{ asset('img/main-carousel/lg/mc_five.jpg') }}" class="img-responsive" alt="image">
 
-                     <div class="jumbotron-text">
-                         {!! trans('home-page.carousel-text-4', ['cta-link' => action('PagesController@sponsors')]) !!}
-                     </div>
+                    <div class="jumbotron-text">
+                        {!! trans('home-page.carousel-text-4', ['cta-link' => action('PagesController@sponsors')]) !!}
+                    </div>
                 </div>
+
             </div>
         </div>
 

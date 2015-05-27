@@ -5080,7 +5080,7 @@ input[type="submit"], button[type="submit"] {
 .button-transparent, .button-transparent:link, .button-transparent:visited {
   border: .125rem solid white;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: #4b4b4b;
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -5088,7 +5088,7 @@ input[type="submit"], button[type="submit"] {
   color: white; }
   .button-transparent:hover, .button-transparent:active, .button-transparent:link:hover, .button-transparent:link:active, .button-transparent:visited:hover, .button-transparent:visited:active {
     color: #e6e6e6;
-    background-color: #4b4b4b;
+    background-color: #3fa3db;
     text-decoration: none; }
 
 /*------------------------------------------------------------------*/
@@ -5643,7 +5643,11 @@ a.tip-title {
   font-family: 'Lato', 'Open Sans', sans-serif; }
 @media (max-width: 767px) {
   #project_statistics {
-    height: 43em; } }
+    height: 47.5em; } }
+
+@media (max-width: 320px) {
+  #time-text {
+    font-size: 1.3rem; } }
 
 /* Countdown */
 .countdown-value {
@@ -5656,6 +5660,9 @@ a.tip-title {
   @media (min-width: 992px) and (max-width: 1199px) {
     .countdown-value {
       margin: 0.2em; } }
+  @media (max-width: 320px) {
+    .countdown-value {
+      margin: 0; } }
 
 .countdown-value span {
   display: block;
@@ -5673,26 +5680,39 @@ a.tip-title {
     #time strong {
       margin: 0.75em;
       font-size: 0.7rem; } }
+  @media (max-width: 320px) {
+    #time strong {
+      margin: 0.4em 0.2em;
+      font-size: 0.8rem; } }
 
 .contribute, .contribute-td {
-  margin: 1em 0 1em 0; }
+  margin: 1em 0 1em 0;
+  font-size: 1.6em; }
 
 #facebook-share {
-  width: 100%;
-  background: #6f798b; }
+  background: #6f798b;
+  margin: .5em 0 1em 0;
+  width: 80%; }
   #facebook-share:hover {
     background-color: #5f6877 !important; }
 
+#email-share {
+  background: #4b4b4b;
+  margin: .5em 0 1em 0;
+  width: 80%; }
+  #email-share:hover {
+    background-color: #393939 !important; }
+
 #favorite {
-  width: 100%;
   background-color: #ed5a4d !important;
-  border-color: #ed5a4d !important; }
+  margin: .5em 0 1em 0;
+  width: 80%; }
   #favorite:hover {
     background-color: #ea3c2d !important; }
 
 .description {
   font-size: 1.1rem;
-  margin-top: 2em;
+  margin-top: 1em;
   line-height: 2rem; }
 
 #contribution-packs a {
@@ -5988,14 +6008,14 @@ hr {
 
 /*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
 #logout {
-  width: 38%; }
-
-#username-btn {
-  width: 59%;
+  width: 38%;
   background-color: #ed5a4d;
   border-color: #ed5a4d !important; }
-  #username-btn:hover {
+  #logout:hover {
     background-color: #eb4536; }
+
+#username-btn {
+  width: 59%; }
 
 /*------------------------------------------------------------------*/
 /*-- Group of circle buttons --*/
@@ -6188,7 +6208,8 @@ footer {
     padding: 0;
     /*-- Correcting some Slick default styles --*/ }
     .jumbotron div h1, .jumbotron div p {
-      color: white; }
+      color: white;
+      text-shadow: 3px 2px 3px #323232; }
     .jumbotron div .slick-prev, .jumbotron div .slick-next, .jumbotron div .slick-next::before, .jumbotron div .slick-prev::before {
       display: none !important; }
     @media (min-width: 1366px) {

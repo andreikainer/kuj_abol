@@ -13,10 +13,10 @@
             }
         },
         'de' : {
-            'required'  : 'Dieses Feld ist erforderlich',
+            'required'  : 'Dieses Feld darf nicht leer seien.',
             'minLength' : function(limit)
             {
-                return 'Diese Feld muss mindestens '+limit+' Charaktere enthalten';
+                return 'Diese Feld muss mindestens '+limit+' Zeichen enthalten';
             }
         }
     };
@@ -52,11 +52,11 @@
     {
         var name = data.getAttribute('name');
 
-        if (! FormValidation.checkNotEmpty(data.value)) {
-            showErrorMessage(name, errorMessages[window.locale].required);
-
-            return false;
-        }
+        //if (! FormValidation.checkNotEmpty(data.value)) {
+        //    showErrorMessage(name, errorMessages[window.locale].required);
+        //
+        //    return false;
+        //}
         if (! FormValidation.checkMinLength(data.value, 6)) {
             showErrorMessage(name, errorMessages[window.locale].minLength(6));
 

@@ -38,8 +38,8 @@ class ContactFormController extends Controller {
             Session::forget('addressee');
         }else{
         // 1b. if there are no stored parameters in session, use the defaults for mail function
-            $data = array('toWhere' => 'wilhelmine.bauer@sponsoring-agentur.at',
-                           'toWhom' => 'Wilhemine Bauer');
+            $data = array('toWhere' => 'info@kinderfoerderungen.at',
+                           'toWhom' => 'Kinder- und Jugendförderungen');
         }
 
         // 2. send the email
@@ -83,7 +83,7 @@ class ContactFormController extends Controller {
                 'user_email' => $user_email
             ], function($message) use ($user_email)
             {
-                $message->to('wilhelmine.bauer@sponsoring-agentur.at', $user_email)->subject(trans('contact-page.new-newsletter-user'));
+                $message->to('office@sponsoring-agentur.at', $user_email)->subject(trans('contact-page.new-newsletter-user'));
             });
 
         // 4. store success feed back message in a session
