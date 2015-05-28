@@ -30,10 +30,10 @@ return [
     'place-message-body'=> 'Ihre Nachricht',
 
 /*-- Email subjects --*/
-    'new-newsletter-user' => 'Newsletter-Anmeldung',
-    'newsletter-success'  => 'Newsletter sign up',
-    'question'            => 'Online-Anfrage vom Benutzer',
+    'new-newsletter-user' => 'Neue Newsletter Anmeldung eines Benutzers',
+    'newsletter-success'  => 'Bestätigung zur Newsletter Anmeldung ',
+    'question'            => 'Online-Anfrage eines Benutzers',
 
 /*-- Flash message --*/
-    'flash'             => 'Bitte überprüfen Sie Ihren Email Posteingang.',
+    'flash'             => 'Vielen Dank für Ihre Newsletter Anmeldung. Wir haben Ihnen eine Bestätigungsemail gesendet',
 ];

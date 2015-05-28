@@ -21,7 +21,7 @@ return [
     'create-project/store' => 'antrag-einreichen/speichern',
     'create-project/success' => 'antrag-einreichen/erfolgreich',
     'successful-projects'  => 'erfolgreich-gefoerderte-projekte',
-    'current-projects'     => 'current-projects',
+    'current-projects'     => 'aktuelle-projekte',
     'account/verify'       => 'account/verify',         //****
     'account/register'      => 'account/register',      //****
     'account/login'         => 'account/login',         //****
@@ -37,8 +37,8 @@ return [
     'password/reset'        => 'password/reset',        //****
     'create-project/start'  => 'antrag-einreichen/start',
     'temp-document'         => 'temp-document',
-    'favourite/add'         => 'favoriten/hinzufuegen',
-    'favourite/remove'      => 'favoriten/entfernen',
+    'favourite/add'         => 'favourite/hinzufuegen',
+    'favourite/remove'      => 'favourite/entfernen',
     'toggle'                => 'aendern',
     'sponsor/remove'        => 'sponsor/entfernen',
     'sponsor/relist'        => 'sponsor/wiedereinstellen',

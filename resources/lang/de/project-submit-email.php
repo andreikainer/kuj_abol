@@ -13,17 +13,17 @@ return [
     /**
      * Admin
      */
-    'admin-title'       => 'New Application Submitted',
-    'admin-line-1'      => 'Hi KuJ Team,',
-    'admin-line-2'      => 'You have a new application pending for approval.',
-    'admin-line-3'      => 'Click the link below, to view:',
+    'admin-title'       => 'Neues Ansuchen eingegangen',
+    'admin-line-1'      => 'Hallo KuJ Team,',
+    'admin-line-2'      => 'Sie haben ein neues Ansuchen für ein Förderungsprojekt erhalten.',
+    'admin-line-3'      => 'Klicke auf den Link um das Ansuchen zu sehen:',
 
     /**
      * User
      */
-    'user-title'        => 'Your Project was successfully submitted',
-    'user-line-1'       => 'Hi,',
-    'user-line-2'       => 'This is an email to confirm, we have received your project submission.',
-    'user-line-3'       => 'We will begin our approval process, at the earliest possible time.',
-    'user-line-4'       => 'One of our team members, will be in contact with you shortly.'
+    'user-title'        => 'Ihr Förderungs-Ansuchen wurde erfolgreich eingereicht',
+    'user-line-1'       => 'Guten Tag,',
+    'user-line-2'       => 'Hiermit bestätigen wir den erfolgreichen Eingang Ihres Ansuchens.',
+    'user-line-3'       => 'Wir werden Ihren Antrag so schnell wie möglich bearbeiten und Sie darüber informieren.',
+    'user-line-4'       => ''
 ];

@@ -87,7 +87,7 @@ function removeFailClass(el)
             }
         },
         'de' : {
-            'required' : 'Dieses Feld darf nicht leer seien.',
+            'required' : 'Dieses Feld darf nicht leer sein.',
             'alphaNumeric' : 'Darf nur Buchstaben und Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
             'numOnly' : 'Darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
             'alphaOnly' : 'Darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.',

@@ -16,8 +16,8 @@ return [
      */
     'username'      => 'Benutzername:',
     'password'      => 'Passwort:',
-    'password-confirmation'      => 'Password Confirm:',
-    'remember-me'   => 'Auf diesem Gerät erinnern',
+    'password-confirmation'      => 'Passwort bestätigen:',
+    'remember-me'   => 'Auf diesem Gerät angemeldet bleiben',
     'email'         => 'Email',
 
     /**
@@ -25,30 +25,30 @@ return [
      */
     'login'             => 'Einloggen',
     'forgot-password'   => 'Passwort vergessen?',
-    'send'              => 'Send password reset link',
-    'reset-password'    => 'Reset password',
+    'send'              => 'Passwort Rückstellungs-Email senden',
+    'reset-password'    => 'Neues Passwort speichern',
 
     /**
      * Placeholders.
      */
     'place-username'    => 'Ihr Benutzername',
     'place-password'    => 'Ihr Passwort',
-    'place-email'        =>'Your email',
+    'place-email'        =>'Ihre Email Adresse',
 
     /**
      * Top text box.
      */
-    'reset'        => 'Hier können Sie Ihr Passwort per Email neu vergeben.</br> Sie erhalten einen Link zu Ihrer bei uns registrierten Email-Adresse.',
+    'reset'        => 'Hier können Sie Ihr Passwort per Email neu vergeben.</br> Sie erhalten einen Link zum zurückstellen per Email.',
 
     /**
      * Messages.
      */
-    'login-fail'    => 'Email oder passwort nicht korrket. Bitte versuche es nochmal.',
+    'login-fail'    => 'Email oder Passwort nicht korrket. Bitte versuchen Sie es nochmals.',
     'login-success' => 'Sie haben sich erfolgreich eingeloggt.',
-    'logout'        => 'Sie haben sich abgemeldet',
+    'logout'        => 'Sie haben sich erfolgreich abgemeldet',
     'baned-user'    => 'Deine Registrierung wurde deaktiviert.',
-    'email-fail'         => 'Woops! There is an error in your input. Please try again.',
-    'email-success' => 'We sent you the password recovery link. Please check your email.',
-    'email-subject' => 'Your Password Reset Link',
+    'email-fail'    => 'Hoppala! In Ihrer Eingabe sind ein oder mehrere Fehler aufgetretten. Bitte versuchen Sie es nochmals.',
+    'email-success' => 'Wir haben Ihnen einen Link zum zurückstellen Ihres Passwortes per Email gesendet.',
+    'email-subject' => 'Passwort zurückstellen',
 
 ];

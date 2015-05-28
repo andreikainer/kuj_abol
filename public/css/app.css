@@ -4940,7 +4940,7 @@ input[type="submit"], button[type="submit"] {
 /*-- CLASSES --*/
 /*------------------------------------------------------------------*/
 /*-- to remove blue frame from links, buttons and input fields --*/
-.no-outline, .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main:visited, .button-sec, .button-sec:link, .button-sec:visited, .button-user, .button-circle, .button-circle:link, .button-circle:visited, .button-link, .button-transparent, .button-transparent:link, .button-transparent:visited, .module input:not([type=submit]):not([type=checkbox]), .module textarea {
+.no-outline, .button-main, .button-main-big, .button-main-big:link, .button-main-big:visited, .button-main:link, .button-main:visited, .button-sec, .button-sec:link, .button-sec:visited, .button-user, .button-circle, .button-circle:link, .button-circle:visited, .button-link, .button-transparent, .button-transparent:link, .button-transparent:visited, .module input:not([type=submit]):not([type=checkbox]), .module textarea, #facebook-share, #favorite {
   outline: none !important; }
 
 /*-- to give an elem white bg color --*/
@@ -5688,6 +5688,9 @@ a.tip-title {
 .contribute, .contribute-td {
   margin: 1em 0 1em 0;
   font-size: 1.6em; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .contribute, .contribute-td {
+      font-size: 1rem; } }
 
 #facebook-share {
   background: #6f798b;
@@ -5697,6 +5700,7 @@ a.tip-title {
     background-color: #5f6877 !important; }
 
 #email-share {
+  outline: none;
   background: #4b4b4b;
   margin: .5em 0 1em 0;
   width: 80%; }

@@ -35,6 +35,6 @@ return [
     'question'            => 'Question from a user',
 
 /*-- Flash message --*/
-    'flash'             => 'Please, check your email.',
+    'flash'             => 'Thank you for signing up for our Newsletter. We sent you a confirmation via email.',
 
 ];

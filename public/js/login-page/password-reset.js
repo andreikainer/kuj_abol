@@ -11,7 +11,7 @@
             }
         },
         'de' : {
-            'required'  : 'Dieses Feld darf nicht leer seien.',
+            'required'  : 'Dieses Feld darf nicht leer sein.',
             'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
             'minLength' : function(required)
             {
