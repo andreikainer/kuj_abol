@@ -14,7 +14,7 @@ return [
   'project-ends-in'        => 'Förderungsprojekt endet in:',
   'time-to-goal'           => '<strong>Tage</strong><strong>Stunden</strong><strong>Minuten</strong><strong>Sekunden</strong>',
   'progress'               => 'Progress:',
-  'fund-this-project'      => 'Projekt Fördern',
+  'fund-this-project'      => 'Dieses Projekt Fördern',
   'completed'              => 'Abgeschlossen',
   'support-options'        => 'Förderungsbausteine:',
   'share-on-facebook'      => 'Auf Facebook teilen',

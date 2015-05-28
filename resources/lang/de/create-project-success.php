@@ -10,18 +10,18 @@ return [
     | Language translation keys for the create-project success page.
     */
 
-    'title'         => 'Antrag erfolgreich gesendet',
-    'what-happens'  => 'Was passiert jetzt?',
-    'success'       => 'Was passiert, nachdem mein Antrag genehmigt?',
-    'failure'       => 'Was passiert, wenn mein Antrag abgelehnt wird?',
-    'link'          => 'weiter Startseite',
+    'title'         => 'Ansuchen erfolgreich eingereicht',
+    'what-happens'  => 'Was passiert als nächstes?',
+    'success'       => 'Was passiert, nachdem mein Ansuchen genehmigt wurde?',
+    'failure'       => 'Was passiert, wenn mein Ansuchen abgelehnt wird?',
+    'link'          => 'weiter zur Startseite',
 
-    'exp-what-happens-1'    => 'Ihre Anfrage wird durch unser Verwaltungsteam beurteilt werden, zum frühestmöglichen Zeitpunkt.',
-    'exp-what-happens-2'    => 'Eines unserer Teammitglieder wird in über die Details, die Sie zur Verfügung gestellt mit Ihnen in Verbindung setzen.',
-    'exp-success-1'         => 'Sobald Ihr Antrag genehmigt wird, wird es live auf unserer Website zu werden.',
-    'exp-success-2'         => 'Sie erhalten eine E-Mail von unserem Team empfangen, wird dies einen Link zu Ihrem Projekt.',
-    'exp-success-3'         => 'Das bedeutet, Ihr Projekt ist nun für die Öffentlichkeit zugänglich. Nun können die Spenden beginnen!',
-    'exp-failure-1'         => 'Sollten wir benötigen keine weiteren Belege oder Beweise, die Sie eingereicht ist nicht wesentlich,',
-    'exp-failure-2'         => 'Einer unserer Mitarbeiter, werden Sie über die Details, die Sie zur Verfügung gestellt zu kontaktieren. Um an einer Lösung arbeiten.',
+    'exp-what-happens-1'    => 'Ihr Ansuchen wird von uns bearbeitet und auf die Richtigkeit überprüft.',
+    'exp-what-happens-2'    => 'Bitte bachten Sie, dass wir in manchen Fällen die Zuständige medizinische bzw öffentliche Antstalt kontaktieren, die Sie mit diesen Ansuchen angeführt haben.',
+    'exp-success-1'         => 'Sobald Ihr Ansuchen genehmigt wird, wird es auf unserer Plattform under dem Bereich "Aktuelle Projekte" für 60 Tage eingestellt.',
+    'exp-success-2'         => 'Sie erhalten eine E-Mail von uns in dem sich ein Link zu Ihrem Projekt befindet.',
+    'exp-success-3'         => 'Von diesem Zeitpunkt an kann die Öffentlichkeit für Ihr Projekt fördern. Bitte machen auch Sie Ihre Freunde und Bekannte darauf aufmerksam und Teilen Sie Ihr Projekt auf Facebook.',
+    'exp-failure-1'         => 'Sie werden per Email verständigt warum wir Ihr Ansuchen nicht genehmigen können.',
+    'exp-failure-2'         => 'In den meisten Fällen hat dies mit nicht ausreichenden Nachweis-Beilagen zu tuen und wir können gemeinsam an einer Lösung arbeiten. ',
 
 ];

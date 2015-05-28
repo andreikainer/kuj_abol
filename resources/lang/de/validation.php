@@ -87,138 +87,138 @@ return [
 
     'custom' => [
         'project_name'  => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'regex'     => 'Muss Buchstaben und Zahlen enthalten nur. Und nicht mit einem Leerzeichen beginnen.',
-            'unique'    => 'Dieser Titel ist bereits getan.',
-            'max'       => 'This field must not exceed :max characters',
+            'required'  => 'Projekttitel darf nicht leer sein.',
+            'regex'     => 'Der Projekttitel darf nur Buchstaben und Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+            'unique'    => 'Dieser Projekttitel ist bereits vergeben.',
+            'max'       => 'Der Projekttitel darf :max Zeichen nicht überschreiten',
         ],
 
         'short_desc'    => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'max'       => 'Dieses Feld muss :max Zeichen nicht überschreiten.'
+            'required'  => 'Die Kurzbeschreibung darf nicht leer sein.',
+            'max'       => 'Die Kurzbeschreibung darf :max Zeichen nicht überschreiten.'
         ],
 
         'full_desc'     => [
-            'required'  => 'Dieses Feld ist erforderlich.'
+            'required'  => 'Die ausführliche Beschreibung darf nicht leer sein.',
         ],
 
         'target_amount' => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'integer'   => 'Muss nur Zahlen enthalten. Und nicht mit einem Leerzeichen beginnen.',
-            'min'       => 'Der Betrag, der Fundraising muss 500 &euro;'
+            'required'  => 'Der gewünschte Förderungsbetrag darf nicht leer sein.',
+            'integer'   => 'Der gewünschte Förderungsbetrag darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+            'min'       => 'Der gewünschte Förderungsbetrag muss höher als &euro; 500 sein'
         ],
 
         'child_name'    => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.',
-            'required_with' => 'Dieses Feld ist erforderlich.'
+            'required'  => 'Der Vorname des Kindes darf nicht leer sein.',
+            'regex'     => 'Der Vorname des Kindes darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.',
+            'required_with' => 'Der Vorname des Kindes darf nicht leer sein.',
         ],
 
         'first_name'    => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.'
+            'required'  => 'Ihr Vorname darf nicht leer sein.',
+            'regex'     => 'Ihr Vorname darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.'
         ],
 
         'last_name'     => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'regex'     => 'Müssen Buchstaben nur enthalten. Und nicht mit einem Leerzeichen beginnen.'
+            'required'  => 'Ihr Nachname darf nicht leer sein.',
+            'regex'     => 'Ihr Nachname darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.'
         ],
 
         'email'         => [
-            'required'  => 'Dieses Feld ist erforderlich..',
-            'regex'     => 'Muss für eine korrekte E-Mail- Format sein. Und nicht mit einem Leerzeichen beginnen.',
-            'unique'    => 'Diese E-Mail -Adresse bereits ein Benutzer registriert.'
+            'required'  => 'Ihr Email Adresse darf nicht leer sein.',
+            'regex'     => 'Ihre Email Adresse muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
+            'unique'    => 'Diese E-Mail Adresse ist bereits vergeben. Bitte kontaktieren Sie uns per Email falls weitere Probleme auftretten.'
         ],
 
         'street'        => [
-            'required'  => 'Dieses Feld ist erforderlich.'
+            'required'  => 'Straße darf nicht leer sein.'
         ],
 
         'postcode'      => [
-            'required'  => 'This field is required',
-            'integer'   => 'This field must contain numbers only',
-            'digits'    => 'Postcode must be :digits characters',
+            'required'  => 'Das Postleitzahl Feld darf nicht leer sein',
+            'integer'   => 'Das Postleitzahl Feld darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+            'digits'    => 'Das Postleitzahl Feld muss :digits Nummern enthalten',
         ],
 
         'city'          => [
-            'required'  => 'This field is required',
-            'regex'     => 'Must contain letters only. And not begin with a space.',
+            'required'  => 'Der Ort darf nicht leer sein.',
+            'regex'     => 'Der Ort darf nur Buchstaben enthalten und nicht mit einen Leerzeichen beginnen.',
         ],
 
         'tel_number'    => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'regex'     => 'Muss für eine korrekte Telefonnummer -Format vorliegen. Und nicht mit einem Leerzeichen beginnen.'
+            'required'  => 'Telefonnummer Feld ist erforderlich.',
+            'regex'     => 'Muss in einem korrekten Telefonnummer -Format sein und nicht mit einem Leerzeichen beginnen.'
         ],
 
         'main_img'      => [
-            'required_without'  => 'Ein Hauptbilderforderlich.',
+            'required_without'  => 'Das Hauptbilder ist verpflichtend.',
             'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'img_2'         => [
             'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'img_3'         => [
             'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'img_4'         => [
             'mimes'     => 'Bitte wählen Sie ein gültiges Bildformat.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'doc_1_mand'    => [
-            'required_without'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'required_without'  => 'Mindestens zwei Beilagen sind verpflichtend.',
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'doc_2_mand'    => [
-            'required_without'  => 'Mindestens zwei Dokumente von Beweisen erforderlich sind.',
+            'required_without'  => 'Mindestens zwei Beilagen sind verpflichtend.',
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'doc_3'    => [
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'doc_4'    => [
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'doc_5'    => [
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'doc_6'    => [
             'mimes'     => 'Wir akzeptieren JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
-            'max'      => 'Darf 20MB in Größe überschreiten.'
+            'max'      => 'Darf nicht 20MB in Größe überschreiten.'
         ],
 
         'user_name' => [
-            'required'  => 'Dieses Feld ist erforderlich.',
-            'max'       => 'Dieses Feld muss :max Zeichen nicht überschreiten.',
-            'unique'    => 'Dieser Benutzername ist bereits getan.'
+            'required'  => 'Der Benutzername darf nicht leer sein.',
+            'max'       => 'Dieses Feld darf :max Zeichen nicht überschreiten.',
+            'unique'    => 'Dieser Benutzername ist bereits vergeben.'
         ],
 
         'password'      => [
-            'required'  => 'Dieses Feld ist erforderlich.'
+            'required'  => 'Das Passwort Feld darf nicht leer seien.'
         ],
 
         'password_confirmation' => [
-            'required'  => 'Dieses Feld ist erforderlich.'
+            'required'  => 'Bitte wiederholen Sie Ihr Passwort.'
         ],
 
         'business_name' => [
-            'required_if'   => 'Dieses Feld ist erforderlich.'
+            'required_if'   => 'Firmenwortlaut ist erforderlich.'
         ],
     ],
 

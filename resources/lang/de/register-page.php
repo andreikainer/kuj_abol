@@ -27,13 +27,13 @@ return [
     /**
      * Verification Email.
      */
-    'line-1'    => 'Willkommen in der Kinder- und Jugendförderungen',
+    'line-1'    => 'Herzlich willkommen zur Initiative Kinder- und Jugendförderungen',
     'line-2'    => 'Hallo,',
-    'line-3'    => 'Danke für die Registrierung mit unserer Website.',
-    'line-4'    => 'Sie haben es fast geschafft! Klicken Sie einfach auf dem Link unten um Ihre Email Adresse zu bestätigen:',
-    'line-5'    => 'Herzliche Grüße,',
-    'line-6'    => 'Das Team an der Kinder- und Jugendförderungen',
-    'subject'   => 'Überprüfen Sie Benutzer',
+    'line-3'    => 'Danke für Ihre Registrierung auf kinderförderungen.at.',
+    'line-4'    => 'Sie haben es fast geschafft! Klicken Sie bitte auf dem Link unten um Ihre Email Adresse zu bestätigen:',
+    'line-5'    => 'Mit gesunden Grüßen,',
+    'line-6'    => 'Ihr Kinder- und Jugendförderungen Team',
+    'subject'   => 'Benutzer Anmeldung bestätigen',
 
     /**
      * Flash Messages.

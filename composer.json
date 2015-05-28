@@ -12,8 +12,9 @@
 		"mcamara/laravel-localization": "~1.0",
         "guzzlehttp/guzzle": "~5.0",
         "nicolaslopezj/searchable": "1.*",
-		"jenssegers/date": "~3.0"
-	},
+		"jenssegers/date": "~3.0",
+        "stalinko/laravel-mpay24": "dev-master"
+    },
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1"

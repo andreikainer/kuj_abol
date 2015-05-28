@@ -1,12 +1,12 @@
 <body>
 
-    {! trans('emails.password-reset') !}
+    {!! trans('emails.password-reset') !!}
 
     <p>
-        {{ url('password/reset/'.$token) }}
+        <a href="{{ url('password/reset/'.$token) }}">{{ trans('emails.reset-link') }}</a>
     </p>
 
-    {! trans('emails.signature') !}
+    {!! trans('emails.signature') !!}
 
 </body>
 

@@ -4,81 +4,66 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use LaravelMPay24\Models\BasicShop;
+use LaravelMPay24\ORDER;
+use LaravelMPay24\PaymentResponse;
+use LaravelMPay24\Transaction;
 
 class PaymentController extends Controller {
+    /**
+     * Show the application welcome screen to the user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getIndex()
+    {
+        return view('welcome');
+    }
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
+    /**
+     * Create a test transaction and redirect user to mpay24 page
+     */
+    public function postIndex()
+    {
+        $transaction = new Transaction('test transaction');
+        $transaction->PRICE = 100.11;
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+        $order = new ORDER();
+        $order->Order->Tid   = $transaction->TID;
+        $order->Order->Price = $transaction->PRICE;
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+        $shopDelegator = new BasicShop();
+        $shopDelegator->setTransaction($transaction);
+        $shopDelegator->setOrder($order);
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+        /** @var \LaravelMPay24\Shop $mpay24 */
+        $mpay24 = app()->mpay24;
+        $mpay24->setShopDelegator($shopDelegator);
+        /** @var PaymentResponse $result */
+        $result = app()->mpay24->pay();
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+        if($result->getGeneralResponse()->getStatus() == 'OK') {
+            $url = $result->getLocation();
+            header('Location: '.$url);
+        } else {
+            echo "Return Code: " . $result->getGeneralResponse()->getReturnCode();
+        }
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    public function anySuccess()
+    {
+        echo 'Success';
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    public function anyError()
+    {
+        echo 'Error';
+    }
+
+    public function anyConfirmation()
+    {
+        echo 'Confirmation';
+    }
+
 
 }

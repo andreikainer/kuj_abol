@@ -139,6 +139,7 @@ return [
 		'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Jenssegers\Date\DateServiceProvider',
+        'LaravelMPay24\LaravelMPay24ServiceProvider',
 
 		/*
 		 * Application Service Providers...

@@ -29,7 +29,7 @@ return [
     'submit'                => 'Antrag einreichen',
     'continue'              => 'fortsetzen',
     'delete'                => 'löschen',
-    'terms-cond-1'          => 'Mit Einreichung dieses Formulars bestättigen Sie unsere ',
+    'terms-cond-1'          => 'Mit Einreichung dieses Formulars bestätigen Sie unsere ',
     'terms-cond-2'          => 'Allgemeinen Geschäftsbedingungen',
     'terms-cond-3'          => 'Schließen',
 
@@ -42,7 +42,7 @@ return [
     'secondary-images'      => 'Mehr Bilder:',
     'full-description'      => 'Ausführliche Beschreibung:',
     'fundraise-amount'      => 'Gewünschter Förderungsbetrag:',
-    'child-name'            => 'Name des Kindes:',
+    'child-name'            => 'Vorname des Kindes:',
     'first-name'            => 'Ihr Vorname:',
     'last-name'             => 'Ihr Nachname:',
     'email'                 => 'Ihre E-Mail Adresse:',
@@ -73,25 +73,25 @@ return [
     'exp-main-image-1'      => 'Wählen Sie ein Bild von Ihrem Computer.',
     'exp-main-image-2'      => 'Das wird das Hauptphoto für Ihr Projekt, <br/> Bitte wählen Sie eines in guter Qualität',
     'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB maximum. <br/> Mindestgröße 768 x 1024 Pixel',
-    'exp-secondary-image'   => 'Klicken Sie, um ein Bild hochzuladen.',
-    'exp-evidence-1'        => 'Wir benötigen Beweise für Ihr Kind die Krankheit.',
-    'exp-evidence-2'        => 'Eine schriftliche Brief von Ihrem Arzt oder Krankenhaus, die besagt, den Zustand Ihres Kindes Krankheit.',
-    'exp-evidence-3'        => 'Ein Dokument, Nachweise über Ihre finanzielle Situation, einschließlich Kinderbetreuungsgeld.',
-    'exp-evidence-4'        => 'Je mehr Beweise, die Sie einreichen, desto wahrscheinlicher ist das erfolgreiche Ergebnis der Anwendung.',
-    'exp-document-label'    => 'mindestens 2 Dokumente obligatorisch',
-    'exp-document-input'    => 'Klicken Sie hier um ein Dokument hochzuladen',
+    'exp-secondary-image'   => 'Klicken Sie hier, um weitere Photos hochzuladen.',
+    'exp-evidence-1'        => 'Mit Ihren Ansuchen benötigen Beilagen die den gesundheitlichen Zustand Ihres Kindes, sowie Ihre finanzielle Situation belegen.',
+    'exp-evidence-2'        => 'Es handlt sich hierbei um Befunde oder Arztschreiben vom zuständigen Facharzt oder der medizinischen Anstalt.',
+    'exp-evidence-3'        => 'Schriflicher Bescheid für erhöhtes Kinderbetreuungsgeld oder Zusagen / Absagen von öffentlichen Stellen',
+    'exp-evidence-4'        => 'Bitte fügen Sie alle nötigen Beilagen diesen Antrag bei um eine Bewilligung zu erziehlen.',
+    'exp-document-label'    => 'Mindestens 2 Beilagen sind verpflichtend',
+    'exp-document-input'    => 'Bitte klicken Sie hier um eine Beilage hochzuladen',
 
     /**
      * Messages
      */
     'validation-error'      => ' Leider enthält Ihr Formular Fehler.',
-    'project-complete'      => 'Antrag kann nicht mehr bearbeitet werden.',
+    'project-complete'      => 'Dieser Antrag kann nicht mehr bearbeitet werden.',
     'save-success'          => 'Antrag erfolgreich gespeichert.',
     'delete-success'        => 'Antrag erfolgreich entfernt.',
-    'login'                 => ' Bitte <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Einloggen</a> oder <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Registrieren</a> um einen Antrag zu beginnen.',
+    'login'                 => ' Bitte <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/login')).'">Einloggen</a> oder <a href="'.url(LaravelLocalization::getCurrentLocale().'/'.trans('routes.account/register')).'">Registrieren</a> um das Antragsformular zu aktivieren.',
     'incomplete'            => ' Sie haben derzeit einen unvollständigen Antrag gespeichert. Bitte fahren Sie mit dem gespeicherten Antrag fort, oder löschen Sie diesen.',
-    'live-project'          => ' Sie haben momentan ein Förderungsprojekt live auf unserer Webseite. Sie können erst nach Ablauf wieder einen Antrag stellen.',
-    'duplicate-name'        => ' Leider können Sie das Förderungsprojekt nicht mit diesen Titel benennen das es schon vergeben ist',
+    'live-project'          => ' Sie haben momentan ein Förderungsprojekt live auf unserer Webseite. Sie können erst nach Ablauf einen weieren Antrag stellen.',
+    'duplicate-name'        => ' Leider können Sie das Förderungsprojekt nicht mit diesen Titel benennen da dieser schon vergeben ist',
     'pending-project'       => ' Sie haben bereits einen Antrag in Bearbeitung.',
     'not-owner'             => 'Sie haben keinen Zugriff auf dieses Förderungsprojekt',
     'not-authenticated'     => 'Bitte Einloggen um fortzufahren',
@@ -99,27 +99,27 @@ return [
     /**
      * Tips for Successful Campaign
      */
-    'tips-heading'          => 'Helpful tips for creating a successful campaign',
+    'tips-heading'          => 'Hilfreiche Tips zur Antragsstellung',
 
-    'tip-1-title'           => 'Project Title',
-    'tip-1-1'               => 'The title of your project, is what describes your cause. It should clearly identify what you are fundraising for.',
+    'tip-1-title'           => 'Projekttitel',
+    'tip-1-1'               => 'Bitte Bennen Sie ihr Projekt zuerst um das Formular zu aktivieren. Der Projekttitel ist gleichzeitig die Überschrift Ihres Förderungsprojektes in einem kurzen expliziten Satz. 60 Zeichen maximum.',
 
-    'tip-2-title'           => 'Short Description',
-    'tip-2-1'               => 'The short description of your project, is what our viewers see first. This is a perfect time to captivate an audience.',
-    'tip-2-2'               => 'So be sure to describe your project well, and touch the hearts of our audiences!',
+    'tip-2-title'           => 'Kurzbeschreibung',
+    'tip-2-1'               => 'Eine kurze Beschreibung in 180 Zeichen oder weniger.',
+    'tip-2-2'               => 'Schildern Sie die Beeinträchtigung des Kindes sowie für welches Vorhaben Sie eine finanzielle Förderung benötigen.',
 
-    'tip-3-title'           => 'Main Image',
-    'tip-3-1'               => 'Selecting your main image, is a very important part of setting up your project.',
-    'tip-3-2'               => 'Be sure to choose an image that relates well to your short description. Having an image that is not blurry, and high in definition will work in your favour.',
-    'tip-3-3'               => 'Like words, an image also tells a story to our audiences.',
+    'tip-3-title'           => 'Hauptphoto',
+    'tip-3-1'               => 'Das wird Ihr Hauptanzeigebild für Ihr Projekt.',
+    'tip-3-2'               => 'Bitte verwenden Sie ein qualitativ hochwertiges Foto mit einer Mindestauflösung von 768 x 1024 Pixel.',
+    'tip-3-3'               => 'Es ist auch empfehlenswert ein aussagekräftiges Foto zu wählen. ',
 
-    'tip-4-title'           => 'Full Description',
-    'tip-4-1'               => 'The full description of your project is the place where you can tell your story to our audiences.',
-    'tip-4-2'               => 'This is the time to express your needs in detail, and to share with our audiences some information about your child and how the fundraised money will make a positive impact to your lives.',
-    'tip-4-3'               => 'A well planned and thought out full description of your project, will ultimately help our audiences make the right decision to donate money to you and your child.',
+    'tip-4-title'           => 'Ausführliche Beschreibung',
+    'tip-4-1'               => 'Hier haben Sie die Möglichkeit Ihre Projekt im Detail zu erzählen. ',
+    'tip-4-2'               => 'Beschreiben Sie einfach warum Sie und für was Sie eine Förderung benötigen und wie diese Ihrer Familie zu Gute kommt.',
+    'tip-4-3'               => 'Bitte lassen Sie keine wichtigen Informationen aus um eine erfolgreiche Förderung Ihres Projektes zu erzielen. ',
 
-    'tip-5-title'           => 'Supporting Evidence',
-    'tip-5-1'               => 'Creating a successful campaign, means having it approved by our staff.',
-    'tip-5-2'               => 'The best way to have this happen, is to provide us with documents of evidence that clearly express to us, your situation and the reasons for you requiring support.',
-    'tip-5-3'               => 'We only ask for two documents, as a mandatory requirement. However the more evidence you can supply the better the likelyhood of us approving your request.'
+    'tip-5-title'           => 'Beilagen und Belege',
+    'tip-5-1'               => 'Verpflichtend mit Ihrem Ansuchen müssen Sie uns mindestens 2 Beilagen anfügen die, die gesundheitliche und finanzielle Situation belegen.',
+    'tip-5-2'               => 'Medizinische Befunde, Einkommensnachweise und oder Bestätigungen von öffentlichen Stellen eignen sich am Besten.',
+    'tip-5-3'               => 'Sie haben die Möglichkeit bis zu 6 Beilagen anzufügen.'
 ];

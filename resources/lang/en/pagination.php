@@ -4,7 +4,7 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
-	| Pagination Language Lines
+	| Pagination Language Lines ENGLISH
 	|--------------------------------------------------------------------------
 	|
 	| The following language lines are used by the paginator library to build

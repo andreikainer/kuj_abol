@@ -12,7 +12,7 @@ return [
 
 /*-- Pre-form message --*/
     'pre-form'          => '<p>Have a question? Check out our <a href=":cta-link" class="button-link">FAQ section</a>, or use the form provided below.</p>
-                            <p>Our staff will be back to you in 24 hours.</p>',
+                            <p>We will try to process your query as soon as possible .</p>',
     'woops'             => 'Woops! There is an error in your input. Please try again.',
     'thanks'            => 'Thanks for contacting us! Our staff will be back to you in 24 hours.',
 
@@ -35,6 +35,6 @@ return [
     'question'            => 'Question from a user',
 
 /*-- Flash message --*/
-    'flash'             => 'Please, check your email.',
+    'flash'             => 'Thank you for signing up for our Newsletter. We sent you a confirmation via email.',
 
 ];
