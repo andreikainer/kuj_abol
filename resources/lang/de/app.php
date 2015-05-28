@@ -46,7 +46,7 @@ return array(
     'terms-and-conditions'  => 'Allgemeine Geschäftsbedingungen',
     'contacts'              => 'Kontakt',
     'website-made-by'       => 'Webdesign by',
-    'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der AK Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich behinderten Kinder sowie deren Familie.',
+    'legal-stuff'           => 'Kinder- und Jugendförderungen ist eine Initiative der AK Sponsoring-Agentur zur Unterstützung chronisch kranker, geistig oder körperlich beeinträchtigten Kinder sowie deren Familie.',
     'imprint'               => 'Impressum',
 
 

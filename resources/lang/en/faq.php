@@ -24,9 +24,9 @@ return [
     'qu9' => 'How do you make sure to keep administrative costs low?',
     'qu10' => 'Who can apply for support?',
     'qu11' => 'How long does it take for my contribution to show ?',
-    'qu12' => 'Can I contribute annonymiously?',
+    'qu12' => 'Can I contribute anonymously?',
     'qu13' => 'If I contribute as a guest, will my details be saved?',
-    'qu14' => 'What happens with my saved data when I unregister? ',
+    'qu14' => 'What happens with my data when I delete my account? ',
     'qu15' => 'How much does it cost to appoint a project?',
     'qu16' => 'Which documents to I have to provide to back my circumstance?',
     'qu17' => 'How much money got paid out so far?',
@@ -58,19 +58,19 @@ return [
                 </ul>
                 Of course alls this functionallity is for free and doesn’t involve any costs.',
     'an5' => 'Displaying your business logo obviously will have an positive impact on your company social reputation as well as your online presence and search engine ranking. Each logo is linked to your company website which will increase your unique visitors traffic. It also gives you the chance to attract potential customers as the plattform is b2b focused. ',
-    'an6' => '“Business” contributions are 100% tax deductible. You will receive a proper invoice to BMF standards that you can declare as an advertising expense (Sponsoring) in your business accounting.
+    'an6' => '“Business” contributions via Sponsoring are 100% tax deductible. You will receive a proper invoice to BMF standards that you can declare as an advertising expense (Sponsoring) in your business accounting.
     <br>All other Building-blocks (“Small”, “Medium”, “Large”) are not tax deduction capable. In eg: If you are a business and you funded a project with any of these Building-blocks, then your support can not be processed for the BMF. Please always be aware to purchase the appropriate package.',
     'an7' => 'Since the Initiative Kinder- und Jugendförderungen is not an independent  Institute and managed by AK Sponsoring-Agentur, all accounting is also processed through the GmbH.',
-    'an8' => 'The “Small”, “Medium” and “Large” Building-blocks contributed online will get forwarded 1:1 without ANY deductions to the family in need . Contributions made by the “Business” Building-block are beeing used for the Projects as well but also cover for the administrative costs of running this plattform and the initiative.',
+    'an8' => 'The “Small”, “Medium” and “Large” Building-blocks contributed online will get forwarded 1:1 without ANY deductions to the family in need . Contributions made by the “Business” Building-block are beeing used for the Projects as well but also cover for the administrative costs of running this platform and the initiative.',
     'an9' => 'Our  big scope is to keep running costs to a minimum. Unlike other organisations we do not have the imense expences of a public office or company vehicles. Our small team is based individually in home offices and we use public transport to get around. We manage the plattform ourself so no Third-Party business is involved. ',
     'an10' => 'Any family with residence in Austria with (a) chronically ill, mental or physicall disabled child(ren) under the age of 18 are welcome to put their application forward.  We will review your application, check that all criteria was met and inform you if the outcome.',
     'an11' => 'If you funded online via the “Small”, “Medium” and “Large” Building-block your contribution will add up to the current raised funs immediately after successful payment. Contributions via the “Business” Building-block will be added to the project shortly before completition after deduction the administration costs.',
-    'an12' => 'Lorem Ipsum',
-    'an13' => 'Lorem Ipsum',
-    'an14' => 'Lorem Ipsum',
-    'an15' => 'Lorem Ipsum',
-    'an16' => 'Lorem Ipsum',
-    'an17' => 'Lorem Ipsum',
+    'an12' => 'We do not offer anonymous contributions at this stage. However if you fund as a guest, your contribution details will not be passed to anyone else then the supported Family so they can submit the thank you letter.',
+    'an13' => 'If you fund as a guest your details will be saved temporary so we can email you the receipt for your contribution. The contribution details will not get passed to anyone else besides the supported family',
+    'an14' => 'Once you have deleted your account, your saved data will remain in our database for 1 months. After this period your data will be deleted permanently.',
+    'an15' => 'At no stage any costs incur for the supported family. No hidden fees or processing charges. The only obligation after project completion is to thank the supports via Email or Post letter',
+    'an16' => 'To back  your child\'s medical and your families financial situation we require supporting evidence. This can be a medical certificate of any kind usually issued by the relevant health authority. Further we need at least one evidence of your families financial status.',
+    'an17' => 'Until June 2015 the initiative Kinder- und Jugendförderungen paied out a total of &euro; 32.444,00 to  Austrian based families and institutions in need.',
 
 ];
 

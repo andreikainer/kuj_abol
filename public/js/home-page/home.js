@@ -9,6 +9,7 @@
         dots: true,
         infinite: true,
         speed: 500,
+        autoplaySpeed: 4000,
         fade: true,
         cssEase: 'linear',
         autoplay: true,
@@ -16,7 +17,6 @@
         pauseOnHover: false,
         pauseonDotsHover: true,
         swipe: true,
-        centerMode: true,
         respondTo: 'window'
   });
 

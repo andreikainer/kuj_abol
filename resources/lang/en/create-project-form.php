@@ -121,7 +121,7 @@ return [
     'tip-4-3'               => 'A well planned and thought out full description of your project, will ultimately help our audiences make the right decision to fund money to you and your child.',
 
     'tip-5-title'           => 'Supporting Evidence',
-    'tip-5-1'               => 'Creating a successful campaign, means having it approved..',
+    'tip-5-1'               => 'Creating a successful campaign, means having it approved.',
     'tip-5-2'               => 'The best way to have this happen, is to provide us with documents of evidence that clearly express to us, your situation and the reasons for you requiring support.',
     'tip-5-3'               => 'We only ask for two documents, as a mandatory requirement. However the more evidence you can supply the better the likelyhood of your application beeing approved.'
 ];
