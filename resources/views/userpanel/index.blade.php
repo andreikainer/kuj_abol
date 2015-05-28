@@ -69,5 +69,6 @@
 
 @section('additional_js')
     <script src="{{ asset('js/FormValidation.js') }}"></script>
+    <script src="{{ asset('js/timing.js') }}"></script>
     <script src="{{ asset('js/userpanel/userpanel.js') }}"></script>
 @endsection
