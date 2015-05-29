@@ -171,6 +171,7 @@
 @endsection
 
 @section('additional_js')
+<script src="{{ asset('js/FormValidation.js') }}"></script>
 <script src="{{ asset('js/view-project-page/view-project.js') }}"></script>
 
 <!--Facebook Share Modal-->
