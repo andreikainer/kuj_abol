@@ -121,6 +121,9 @@ Route::group(
         /*-- Payment --*/
         Route::controller('paytest', 'PaymentController');
 
+    /*-- Share Project via Email --*/
+        Route::post(LaravelLocalization::transRoute('routes.share-project'), 'ProjectsController@shareProject');
+
 
 
         /** ADD ADDITIONAL ROUTES INSIDE HERE (INSIDE OF THIS GROUP) **/

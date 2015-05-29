@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12">
-                        <a href="#"><div id="email-share" class="btn btn-primary button-main email-share" role="button"><i class="fa fa-envelope"></i> {{ trans('view-project-page.share-via-email') }}</div></a>
+                        <div id="email-share" class="btn btn-primary button-main email-share" role="button" data-toggle="modal" data-target="#emailModal"><i class="fa fa-envelope"></i> {{ trans('view-project-page.share-via-email') }}</div>
                     </div>
 
             </div> <!-- statistics end-->
@@ -96,6 +96,24 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- email share modal -->
+        <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Share this Project</h4>
+                    </div> <!-- /.modal-header -->
+                    <div class="modal-body">
+                        @include('forms.email-share')
+                    </div> <!-- /.modal-body -->
+                    <div class="modal-footer">
+                        <button id="closing-btn" type="button" class="btn button-main button-user" data-dismiss="modal">{{ trans('view-project-page.close') }}</button>
+                    </div> <!-- /.modal-footer -->
+                </div> <!-- /.modal-content -->
+            </div> <!-- /.modal-dialog -->
         </div>
 
             <div class="row">

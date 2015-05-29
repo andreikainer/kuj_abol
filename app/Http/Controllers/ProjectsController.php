@@ -79,6 +79,11 @@ class ProjectsController extends Controller {
         return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages', 'favourites'));
     }
 
+    public function shareProject()
+    {
+        dd('hello');
+    }
+
     /**
      * Show the create-project page.
      *

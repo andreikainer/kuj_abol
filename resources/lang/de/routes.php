@@ -52,4 +52,6 @@ return [
     'admin/edit-project'    => 'admin/edit-project',    //****
     'admin/approve-project' => 'admin/approve-project', //****
 
+    'share-project'         => 'share-project',
+
 ];
