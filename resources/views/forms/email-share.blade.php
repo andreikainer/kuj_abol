@@ -8,7 +8,7 @@
                     <div class="form-error cpp-error pad-zero" data-error="sender_name"></div>
                     <div class="form-error cpp-error pad-zero">{{ $errors->first('sender_name') }}</div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-6 form-pair">
                     {!! Form::label('sender_email', 'Your Email:', ['class' => 'form-label']) !!}
                     {!! Form::text('sender_email', null, ['class' => 'form-input']) !!}
                     <div class="form-error cpp-error pad-zero" data-error="sender_email"></div>
@@ -25,7 +25,7 @@
                     <div class="form-error cpp-error pad-zero" data-error="friend_name"></div>
                     <div class="form-error cpp-error pad-zero">{{ $errors->first('friend_name') }}</div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-6 form-pair">
                     {!! Form::label('friend_email', 'Your Friend\'s Email:', ['class' => 'form-label']) !!}
                     {!! Form::text('friend_email', null, ['class' => 'form-input']) !!}
                     <div class="form-error cpp-error pad-zero" data-error="friend_email"></div>
