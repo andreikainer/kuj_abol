@@ -220,6 +220,26 @@ return [
         'business_name' => [
             'required_if'   => 'Firmenwortlaut ist erforderlich.'
         ],
+
+        'sender_name'   => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must contain letters only, and not begin with a space.'
+        ],
+
+        'friend_name'   => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must contain letters only, and not begin with a space.'
+        ],
+
+        'sender_email'  => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must be of a correct email format. And not begin with a space.'
+        ],
+
+        'friend_email'  => [
+            'required'  => 'This field is required.',
+            'regex'     => 'Must be of a correct email format. And not begin with a space.'
+        ],
     ],
 
     /*
