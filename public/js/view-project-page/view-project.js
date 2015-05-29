@@ -46,6 +46,7 @@
     /*------------------------------------------------------------------*/
     /*-- SHARE VIA EMAIL --*/
     /*------------------------------------------------------------------*/
+    // Validation
     $('#emailModal input[name="sender_name"]').on('blur', function()
     {
         $.publish('sender-name.blur', this);
@@ -63,6 +64,15 @@
         $.publish('friend-email.blur', this);
     });
 
+    // Submit
+    $('#emailModal input[type="submit"]').on('click', function(event)
+    {
+        event.preventDefault();
+        var form = $('#emailModal form');
+        $.publish('form.submit', form);
+    });
+
+    // Validation
     $.subscribe('sender-name.blur', function(event, data)
     {
         var name = $(data).attr('name');
@@ -145,6 +155,56 @@
 
         hideErrorMessage(name);
         removeFailClass(data);
+    });
+
+    // Submit
+    $.subscribe('form.submit', function(event, data)
+    {
+        var formData = $(data).serialize();
+
+        $.ajax({
+            'url' : $(data).attr('action'),
+            'method' : 'POST',
+            'data' : formData,
+            'dataType' : 'json',
+            'success' : function(response)
+            {
+                if(response.errors)
+                {
+                    $.publish('email-share.fail', response);
+                    return false;
+                }
+
+                $.publish('email-share.success', response);
+            },
+            'error' : function(response)
+            {
+                $.publish('email-share.error', response);
+            }
+        });
+    });
+
+    $.subscribe('email-share.success', function(event, url)
+    {
+        window.location = url;
+    });
+
+    $.subscribe('email-share.fail', function(event, data)
+    {
+        var inputFields = $('#emailModal input');
+
+        // Locate each form field with an error.
+        // Add an error CSS class, and display its error message.
+        $.each(data.errors, function(name, message)
+        {
+            inputFields.filter('#'+name).addClass('form-input-error');
+            showErrorMessage(name, message);
+        });
+    });
+
+    $.subscribe('email-share.error', function(event, response)
+    {
+        console.log(response);
     });
 
     /*------------------------------------------------------------------*/

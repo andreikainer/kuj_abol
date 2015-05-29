@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\SaveProjectRequest;
+use App\Http\Requests\ShareViaEmailRequest;
 use App\Http\Requests\StartProjectRequest;
 use App\Project;
 use App\Pledge;
@@ -79,9 +80,25 @@ class ProjectsController extends Controller {
         return view('pages.projectpage', compact('project', 'logos', 'finish_date', 'amount_raised', 'target_amount', 'galleryImages', 'favourites'));
     }
 
-    public function shareProject()
+    /**
+     * Email the user's friend, with a link to check out the project.
+     *
+     * @param ShareViaEmailRequest $request
+     * @return string
+     */
+    public function shareProject(ShareViaEmailRequest $request)
     {
-        dd('hello');
+        $url = Session::get('_previous.url');
+        $formDetails = $request->all();
+
+        Mail::queue('emails.share-project', ['details' => $formDetails, 'url' => $url], function($message) use ($formDetails)
+        {
+            $message->to($formDetails['friend_email'], $formDetails['friend_name'])->subject($formDetails['sender_name'].' wants you to check out a project on kinderörderungen.at');
+        });
+
+        Session::flash('flash_message', 'Project shared successfully via email!');
+
+        return json_encode($url);
     }
 
     /**
