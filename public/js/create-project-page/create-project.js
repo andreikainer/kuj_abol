@@ -153,6 +153,9 @@
             showSection(fieldsetCollection, currSection+1);
             makeTabActive(tabCollection, currTab+1);
             checkForErrors(currSection);
+
+            // Scroll to top of form.
+            $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
         });
 
         $.subscribe('back-button.click', function(event, data)
@@ -169,6 +172,9 @@
             showSection(fieldsetCollection, currSection-1);
             makeTabActive(tabCollection, currTab-1);
             checkForErrors(currSection);
+
+            // Scroll to top of form.
+            $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
         });
 
         $.subscribe('short-description.keyup', function(event, data)
@@ -894,6 +900,9 @@
 
                     if ( response.duplicateName )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.duplicateName);
                         return false;
                     }
@@ -904,6 +913,10 @@
                 error : function(response)
                 {
                     loaderImage.fadeOut();
+
+                    // Scroll to top of form.
+                    $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                     displayErrorFlashMessage(' An unexpected error occurred.');
                 }
             });
@@ -926,6 +939,9 @@
             {
                 checkForErrors($(value).attr('data-section'));
             });
+
+            // Scroll to top of form.
+            $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
 
             displayErrorFlashMessage(data.message);
         });
@@ -992,6 +1008,9 @@
                     // Render duplicate name errors.
                     if ( response.duplicateName )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.duplicateName);
                         return false;
                     }
@@ -1002,6 +1021,10 @@
                 error : function(response)
                 {
                     loaderImage.fadeOut();
+
+                    // Scroll to top of form.
+                    $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                     displayErrorFlashMessage(' An unexpected error occurred.');
                 }
             });
@@ -1047,6 +1070,9 @@
                     // Render authentication errors.
                     if( response.login )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.login);
                         return false;
                     }
@@ -1054,6 +1080,9 @@
                     // Render incomplete project errors.
                     if( response.incomplete )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.incomplete);
                         return false;
                     }
@@ -1061,6 +1090,9 @@
                     // Render pending project error.
                     if( response.pendingProject )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.pendingProject);
                         return false;
                     }
@@ -1068,6 +1100,9 @@
                     // Render current live project error.
                     if( response.liveProject )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.liveProject);
                         return false;
                     }
@@ -1081,8 +1116,11 @@
                 error : function(response)
                 {
                     loaderImage.fadeOut();
+                    
+                    // Scroll to top of form.
+                    $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                     displayErrorFlashMessage(' An unexpected error occurred.');
-                    console.log(response);
                 }
             });
         });
