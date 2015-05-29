@@ -192,7 +192,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3 col-sm-12">
-                                <div class="alert flash-message text-center fade in">
+                                <div class="alert flash-message text-center">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
                                     {{ Session::get('flash_message') }}
                                 </div>
@@ -308,6 +308,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>
 
 <!-- ABOL js -->
+    <script src="{{ asset('/js/timing.js') }}"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 	@yield('additional_js')
 
