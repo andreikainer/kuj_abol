@@ -97,6 +97,8 @@ return [
     'pending-project'       => ' You currently have a project submitted for approval. We will welcome another submission once it has successfully ended.',
     'not-owner'             => 'Sorry, you are not the owner of this project.',
     'not-authenticated'     => 'Please login to continue to page.',
+    'pending-approval'      => 'Pending Approval',
+    'currently-live'        => 'Currently Live',
 
     /**
      * Tips for Successful Campaign

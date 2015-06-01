@@ -46,6 +46,10 @@
                 'image' : 'Please choose a valid image format.',
                 'document' : 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
                 'currency' : 'Must only contain numbers, commas and periods. And not begin with a space.',
+                'minValue' : function(amount)
+                {
+                    return 'The amount to fundraise must be at least &euro; '+amount;
+                },
                 'maxLength' : function(limit)
                 {
                     return 'This field must not exceed '+limit+' characters';
@@ -71,6 +75,10 @@
                 'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
                 'document' : 'Akzeptiert sind JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
                 'currency' : 'Diese Feld darf nur Zahlen, Kommas enthalten und nicht mit einem Leerzeichen beginnen.',
+                'minValue' : function(amount)
+                {
+                    return 'The amount to fundraise must be at least &euro; '+amount;
+                },
                 'maxLength' : function(limit)
                 {
                     return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten';
@@ -112,11 +120,13 @@
         $('*[data-button="next"]').on('click', function()
         {
             $.publish('next-button.click', this);
+            $.publish('summary-page.render');
         });
 
         $('*[data-button="back"]').on('click', function()
         {
             $.publish('back-button.click', this);
+            $.publish('summary-page.render');
         });
 
         $('textarea[name="short_desc"]').on('keyup', function()
@@ -353,6 +363,16 @@
         $.subscribe('target-amount.blur', function(event, data)
         {
             var name = data.getAttribute('name');
+            var amount = data.value;
+
+            if(amount.indexOf(',') > 0)
+            {
+                amount = parseInt(amount.substr(0, amount.indexOf(',')).replace('.', ''));
+            }
+            else
+            {
+                amount = parseInt(amount);
+            }
 
             if (! FormValidation.checkNotEmpty(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].required);
@@ -361,6 +381,12 @@
             }
             if (! FormValidation.checkValidCurrency(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].currency);
+                addFailClass(data);
+                return false;
+            }
+            if (amount < 500)
+            {
+                showErrorMessage(name, errorMessages[window.locale].minValue(500));
                 addFailClass(data);
                 return false;
             }
@@ -1155,10 +1181,16 @@
             saveButtons.removeClass('form-save-button-disabled');
 
             // Move user to the next section.
-            makeTabActive(tabCollection, 1);
-            makeTabActive(tabCollection, 6);
-            showSection(fieldsetCollection, 1);
+            if(window.innerWidth <= 991)
+            {
+                makeTabActive(tabCollection, 6);
+            }
+            else
+            {
+                makeTabActive(tabCollection, 1);
+            }
 
+            showSection(fieldsetCollection, 1);
         });
 
         /**
