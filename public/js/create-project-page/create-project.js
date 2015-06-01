@@ -46,6 +46,10 @@
                 'image' : 'Please choose a valid image format.',
                 'document' : 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
                 'currency' : 'Must only contain numbers, commas and periods. And not begin with a space.',
+                'minValue' : function(amount)
+                {
+                    return 'The amount to fundraise must be at least &euro; '+amount;
+                },
                 'maxLength' : function(limit)
                 {
                     return 'This field must not exceed '+limit+' characters';
@@ -71,6 +75,10 @@
                 'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
                 'document' : 'Akzeptiert sind JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
                 'currency' : 'Diese Feld darf nur Zahlen, Kommas enthalten und nicht mit einem Leerzeichen beginnen.',
+                'minValue' : function(amount)
+                {
+                    return 'The amount to fundraise must be at least &euro; '+amount;
+                },
                 'maxLength' : function(limit)
                 {
                     return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten';
@@ -355,6 +363,8 @@
         $.subscribe('target-amount.blur', function(event, data)
         {
             var name = data.getAttribute('name');
+            var amount = data.value;
+                amount = parseInt(amount.substr(0, amount.indexOf(',')).replace('.', ''));
 
             if (! FormValidation.checkNotEmpty(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].required);
@@ -363,6 +373,12 @@
             }
             if (! FormValidation.checkValidCurrency(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].currency);
+                addFailClass(data);
+                return false;
+            }
+            if (amount < 500)
+            {
+                showErrorMessage(name, errorMessages[window.locale].minValue(500));
                 addFailClass(data);
                 return false;
             }
