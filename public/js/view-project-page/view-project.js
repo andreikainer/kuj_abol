@@ -248,7 +248,7 @@
             cssEase: 'linear',
             autoplay: true,
             arrows: true,
-            pauseOnHover: true,
+            pauseOnHover: false,
             pauseonDotsHover: true,
             swipe: true
         });

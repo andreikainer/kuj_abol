@@ -6414,13 +6414,14 @@ footer {
     font-size: 1.2rem;
     font-weight: bold;
     color: #4b4b4b; }
-  #how-it-works .form-element, #how-it-works .success-container, #how-it-works .userpanel-section {
-    margin-left: .65rem !important;
-    margin-right: .65rem !important; }
-    @media (min-width: 1200px) {
-      #how-it-works .form-element, #how-it-works .success-container, #how-it-works .userpanel-section {
-        padding-left: 3rem !important;
-        padding-right: 3rem !important; } }
+  @media (max-width: 1199px) {
+    #how-it-works .form-element, #how-it-works .success-container, #how-it-works .userpanel-section {
+      padding-left: 0.65rem !important;
+      padding-right: 0.65rem !important; } }
+  @media (min-width: 1200px) {
+    #how-it-works .form-element, #how-it-works .success-container, #how-it-works .userpanel-section {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important; } }
   #how-it-works div h4 {
     font-weight: 700 !important;
     margin-bottom: .1rem;

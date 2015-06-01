@@ -30,8 +30,8 @@
                     </div>
 
                 </div>
-                <div class="row">
 
+                <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
                         <h2 class="text-center">{{ trans('how-it-works-page.step-3s')}}</h2>
                         <img src="{{ asset('/img/steps/step-3.png') }}" alt="step-3" class="img-responsive">
