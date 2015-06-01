@@ -364,8 +364,16 @@
         {
             var name = data.getAttribute('name');
             var amount = data.value;
-                amount = parseInt(amount.substr(0, amount.indexOf(',')).replace('.', ''));
 
+            if(amount.indexOf(',') > 0)
+            {
+                amount = parseInt(amount.substr(0, amount.indexOf(',')).replace('.', ''));
+            }
+            else
+            {
+                amount = parseInt(amount);
+            }
+            
             if (! FormValidation.checkNotEmpty(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].required);
                 addFailClass(data);
