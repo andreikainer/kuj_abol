@@ -15,7 +15,7 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-			'user_name' => 'required|regex:/^[a-zA-zÀ-ž0-9_-]{3,16}$/',
+			'user_name' => 'required|regex:/^[a-zA-zÀ-ž0-9_-]{3,16}$/|unique:users_tbl',
 			'email'     => 'required|email|max:255|unique:users_tbl',
 			'password'  => 'required|confirmed|min:6',
             'password_confirmation' => 'required',
