@@ -369,13 +369,9 @@
             {
                 amount = parseInt(amount.substr(0, amount.indexOf(',')).replace('.', ''));
             }
-            else if(amount.indexOf('.') == 3 && amount.length <= 6)
-            {
-                amount = parseInt(amount);
-            }
             else
             {
-                amount = parseInt(amount.replace('.', ''));
+                amount = parseInt(amount);
             }
 
             if (! FormValidation.checkNotEmpty(data.value)) {
