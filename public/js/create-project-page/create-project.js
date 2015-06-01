@@ -1156,6 +1156,7 @@
 
             // Move user to the next section.
             makeTabActive(tabCollection, 1);
+            makeTabActive(tabCollection, 6);
             showSection(fieldsetCollection, 1);
 
         });
