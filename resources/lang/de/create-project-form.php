@@ -95,6 +95,8 @@ return [
     'pending-project'       => ' Sie haben bereits einen Antrag in Bearbeitung.',
     'not-owner'             => 'Sie haben keinen Zugriff auf dieses Förderungsprojekt',
     'not-authenticated'     => 'Bitte Einloggen um fortzufahren',
+    'pending-approval'      => 'Pending Approval',
+    'currently-live'        => 'Currently Live',
 
     /**
      * Tips for Successful Campaign

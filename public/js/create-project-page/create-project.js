@@ -112,11 +112,13 @@
         $('*[data-button="next"]').on('click', function()
         {
             $.publish('next-button.click', this);
+            $.publish('summary-page.render');
         });
 
         $('*[data-button="back"]').on('click', function()
         {
             $.publish('back-button.click', this);
+            $.publish('summary-page.render');
         });
 
         $('textarea[name="short_desc"]').on('keyup', function()
@@ -1155,10 +1157,16 @@
             saveButtons.removeClass('form-save-button-disabled');
 
             // Move user to the next section.
-            makeTabActive(tabCollection, 1);
-            makeTabActive(tabCollection, 6);
-            showSection(fieldsetCollection, 1);
+            if(window.innerWidth <= 991)
+            {
+                makeTabActive(tabCollection, 6);
+            }
+            else
+            {
+                makeTabActive(tabCollection, 1);
+            }
 
+            showSection(fieldsetCollection, 1);
         });
 
         /**

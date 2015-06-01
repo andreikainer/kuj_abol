@@ -5298,6 +5298,16 @@ input[type="submit"], button[type="submit"] {
 .fa-no-margin {
   margin-right: 0; }
 
+.project-pending-approval, .project-currently-live {
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  color: #3fa3db;
+  font-size: 1.1em;
+  font-weight: 600; }
+
+.project-currently-live {
+  color: #2ecc71; }
+
 /*
  +--------------------------------------------------------------------
  |

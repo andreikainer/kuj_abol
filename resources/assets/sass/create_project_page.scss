@@ -53,6 +53,19 @@
   .fa-no-margin {
     margin-right: 0;
   }
+
+  .project-pending-approval {
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    color: $blue;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .project-currently-live {
+    @extend .project-pending-approval;
+    color: $green;
+  }
 /*
  +--------------------------------------------------------------------
  |
