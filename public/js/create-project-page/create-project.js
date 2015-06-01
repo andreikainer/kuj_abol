@@ -369,11 +369,15 @@
             {
                 amount = parseInt(amount.substr(0, amount.indexOf(',')).replace('.', ''));
             }
-            else
+            else if(amount.indexOf('.') == 3 && amount.length <= 6)
             {
                 amount = parseInt(amount);
             }
-            
+            else
+            {
+                amount = parseInt(amount.replace('.', ''));
+            }
+
             if (! FormValidation.checkNotEmpty(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].required);
                 addFailClass(data);
