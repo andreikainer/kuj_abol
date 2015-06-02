@@ -32,6 +32,7 @@ return array(
     'our-team'              => 'Unser Team',
     'overview'              => 'Überblick',
     'our-sponsors'          => 'Sponsoren',
+    'top-sponsors'          => 'Top Sponsoren',
 
 
 /*
