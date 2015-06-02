@@ -46,6 +46,10 @@
                 'image' : 'Please choose a valid image format.',
                 'document' : 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
                 'currency' : 'Must only contain numbers, commas and periods. And not begin with a space.',
+                'minValue' : function(amount)
+                {
+                    return 'The amount to fundraise must be at least &euro; '+amount;
+                },
                 'maxLength' : function(limit)
                 {
                     return 'This field must not exceed '+limit+' characters';
@@ -71,6 +75,10 @@
                 'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
                 'document' : 'Akzeptiert sind JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
                 'currency' : 'Diese Feld darf nur Zahlen, Kommas enthalten und nicht mit einem Leerzeichen beginnen.',
+                'minValue' : function(amount)
+                {
+                    return 'The amount to fundraise must be at least &euro; '+amount;
+                },
                 'maxLength' : function(limit)
                 {
                     return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten';
@@ -112,11 +120,13 @@
         $('*[data-button="next"]').on('click', function()
         {
             $.publish('next-button.click', this);
+            $.publish('summary-page.render');
         });
 
         $('*[data-button="back"]').on('click', function()
         {
             $.publish('back-button.click', this);
+            $.publish('summary-page.render');
         });
 
         $('textarea[name="short_desc"]').on('keyup', function()
@@ -153,6 +163,9 @@
             showSection(fieldsetCollection, currSection+1);
             makeTabActive(tabCollection, currTab+1);
             checkForErrors(currSection);
+
+            // Scroll to top of form.
+            $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
         });
 
         $.subscribe('back-button.click', function(event, data)
@@ -169,6 +182,9 @@
             showSection(fieldsetCollection, currSection-1);
             makeTabActive(tabCollection, currTab-1);
             checkForErrors(currSection);
+
+            // Scroll to top of form.
+            $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
         });
 
         $.subscribe('short-description.keyup', function(event, data)
@@ -347,6 +363,16 @@
         $.subscribe('target-amount.blur', function(event, data)
         {
             var name = data.getAttribute('name');
+            var amount = data.value;
+
+            if(amount.indexOf(',') > 0)
+            {
+                amount = parseInt(amount.substr(0, amount.indexOf(',')).replace('.', ''));
+            }
+            else
+            {
+                amount = parseInt(amount);
+            }
 
             if (! FormValidation.checkNotEmpty(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].required);
@@ -355,6 +381,12 @@
             }
             if (! FormValidation.checkValidCurrency(data.value)) {
                 showErrorMessage(name, errorMessages[window.locale].currency);
+                addFailClass(data);
+                return false;
+            }
+            if (amount < 500)
+            {
+                showErrorMessage(name, errorMessages[window.locale].minValue(500));
                 addFailClass(data);
                 return false;
             }
@@ -894,6 +926,9 @@
 
                     if ( response.duplicateName )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.duplicateName);
                         return false;
                     }
@@ -904,6 +939,10 @@
                 error : function(response)
                 {
                     loaderImage.fadeOut();
+
+                    // Scroll to top of form.
+                    $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                     displayErrorFlashMessage(' An unexpected error occurred.');
                 }
             });
@@ -926,6 +965,9 @@
             {
                 checkForErrors($(value).attr('data-section'));
             });
+
+            // Scroll to top of form.
+            $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
 
             displayErrorFlashMessage(data.message);
         });
@@ -992,6 +1034,9 @@
                     // Render duplicate name errors.
                     if ( response.duplicateName )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.duplicateName);
                         return false;
                     }
@@ -1002,6 +1047,10 @@
                 error : function(response)
                 {
                     loaderImage.fadeOut();
+
+                    // Scroll to top of form.
+                    $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                     displayErrorFlashMessage(' An unexpected error occurred.');
                 }
             });
@@ -1047,6 +1096,9 @@
                     // Render authentication errors.
                     if( response.login )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.login);
                         return false;
                     }
@@ -1054,6 +1106,9 @@
                     // Render incomplete project errors.
                     if( response.incomplete )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.incomplete);
                         return false;
                     }
@@ -1061,6 +1116,9 @@
                     // Render pending project error.
                     if( response.pendingProject )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.pendingProject);
                         return false;
                     }
@@ -1068,6 +1126,9 @@
                     // Render current live project error.
                     if( response.liveProject )
                     {
+                        // Scroll to top of form.
+                        $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                         displayErrorFlashMessage(response.liveProject);
                         return false;
                     }
@@ -1081,8 +1142,11 @@
                 error : function(response)
                 {
                     loaderImage.fadeOut();
+
+                    // Scroll to top of form.
+                    $('html, body').animate({ scrollTop: $('h2.heading').offset().top }, 'slow');
+
                     displayErrorFlashMessage(' An unexpected error occurred.');
-                    console.log(response);
                 }
             });
         });
@@ -1117,9 +1181,16 @@
             saveButtons.removeClass('form-save-button-disabled');
 
             // Move user to the next section.
-            makeTabActive(tabCollection, 1);
-            showSection(fieldsetCollection, 1);
+            if(window.innerWidth <= 991)
+            {
+                makeTabActive(tabCollection, 6);
+            }
+            else
+            {
+                makeTabActive(tabCollection, 1);
+            }
 
+            showSection(fieldsetCollection, 1);
         });
 
         /**

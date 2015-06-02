@@ -1,5 +1,212 @@
 (function()
 {
+    var errorMessages = {
+        'en' : {
+            'disabled' : 'Please name your project, and click "Start Project" to enable form.',
+            'required' : 'This field is required.',
+            'alphaNumeric' : 'Must contain letters and numbers only. And not begin with a space.',
+            'numOnly' : 'Must contain numbers only. And not begin with a space.',
+            'alphaOnly' : 'Must contain letters only. And not begin with a space.',
+            'email' : 'Must be of a correct email format. And not begin with a space.',
+            'phone' : 'Must be of a correct telephone number format. And not begin with a space.',
+            'image' : 'Please choose a valid image format.',
+            'document' : 'We accept JPG, JPEG, PNG, BMP, TIFF, and PDF formats.',
+            'maxLength' : function(limit)
+            {
+                return 'This field must not exceed '+limit+' characters';
+            },
+            'minLength' : function(required)
+            {
+                return 'This field must be at least '+required+' characters';
+            },
+            'charRemaining' : 'characters remaining'
+        },
+        'de' : {
+            'disabled' : 'Bitte benennen Sie Ihr Projekt , klicken Sie anschließend auf Ansuchen beginnen.',
+            'required' : 'Dieses Feld darf nicht leer sein.',
+            'alphaNumeric' : 'Darf nur Buchstaben und Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+            'numOnly' : 'Darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
+            'alphaOnly' : 'Darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.',
+            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
+            'phone' : 'Dieses Feld muss in einem korrekten Telefonnummer Format sein und darf keine Leerzeichen enthalten.',
+            'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
+            'document' : 'Akzeptiert sind JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'maxLength' : function(limit)
+            {
+                return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten.';
+            },
+            'minLength' : function(required)
+            {
+                return 'Dieses Feld muss mindestens '+required+' Zeichen enthalten';
+            },
+            'charRemaining' : 'noch freie Zeichen'
+        }
+    };
+
+    /*------------------------------------------------------------------*/
+    /*-- SHARE VIA EMAIL --*/
+    /*------------------------------------------------------------------*/
+    // Validation
+    $('#emailModal input[name="sender_name"]').on('blur', function()
+    {
+        $.publish('sender-name.blur', this);
+    });
+    $('#emailModal input[name="sender_email"]').on('blur', function()
+    {
+        $.publish('sender-email.blur', this);
+    });
+    $('#emailModal input[name="friend_name"]').on('blur', function()
+    {
+        $.publish('friend-name.blur', this);
+    });
+    $('#emailModal input[name="friend_email"]').on('blur', function()
+    {
+        $.publish('friend-email.blur', this);
+    });
+
+    // Submit
+    $('#emailModal input[type="submit"]').on('click', function(event)
+    {
+        event.preventDefault();
+        var form = $('#emailModal form');
+        $.publish('form.submit', form);
+    });
+
+    // Validation
+    $.subscribe('sender-name.blur', function(event, data)
+    {
+        var name = $(data).attr('name');
+
+        if(! FormValidation.checkNotEmpty(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].required);
+            return false;
+        }
+        if(! FormValidation.checkAlphaOnly(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
+        removeFailClass(data);
+    });
+
+    $.subscribe('sender-email.blur', function(event, data)
+    {
+        var name = $(data).attr('name');
+
+        if(! FormValidation.checkNotEmpty(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].required);
+            return false;
+        }
+        if(! FormValidation.checkValidEmail(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].email);
+            return false;
+        }
+
+        hideErrorMessage(name);
+        removeFailClass(data);
+    });
+
+    $.subscribe('friend-name.blur', function(event, data)
+    {
+        var name = $(data).attr('name');
+
+        if(! FormValidation.checkNotEmpty(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].required);
+            return false;
+        }
+        if(! FormValidation.checkAlphaOnly(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
+            return false;
+        }
+
+        hideErrorMessage(name);
+        removeFailClass(data);
+    });
+
+    $.subscribe('friend-email.blur', function(event, data)
+    {
+        var name = $(data).attr('name');
+
+        if(! FormValidation.checkNotEmpty(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].required);
+            return false;
+        }
+        if(! FormValidation.checkValidEmail(data.value))
+        {
+            addFailClass(data);
+            showErrorMessage(name, errorMessages[window.locale].email);
+            return false;
+        }
+
+        hideErrorMessage(name);
+        removeFailClass(data);
+    });
+
+    // Submit
+    $.subscribe('form.submit', function(event, data)
+    {
+        var formData = $(data).serialize();
+
+        $.ajax({
+            'url' : $(data).attr('action'),
+            'method' : 'POST',
+            'data' : formData,
+            'dataType' : 'json',
+            'success' : function(response)
+            {
+                if(response.errors)
+                {
+                    $.publish('email-share.fail', response);
+                    return false;
+                }
+
+                $.publish('email-share.success', response);
+            },
+            'error' : function(response)
+            {
+                $.publish('email-share.error', response);
+            }
+        });
+    });
+
+    $.subscribe('email-share.success', function(event, url)
+    {
+        window.location = url;
+    });
+
+    $.subscribe('email-share.fail', function(event, data)
+    {
+        var inputFields = $('#emailModal input');
+
+        // Locate each form field with an error.
+        // Add an error CSS class, and display its error message.
+        $.each(data.errors, function(name, message)
+        {
+            inputFields.filter('#'+name).addClass('form-input-error');
+            showErrorMessage(name, message);
+        });
+    });
+
+    $.subscribe('email-share.error', function(event, response)
+    {
+        console.log(response);
+    });
+
     /*------------------------------------------------------------------*/
     /*-- FACEBOOK SDK IMPORT --*/
     /*------------------------------------------------------------------*/
@@ -316,4 +523,25 @@ var GKCounter = new Class({
 
 new GKCounter(document.id('countdown'));
 
+/*------------------------------------------------------------------*/
+/*-- FUNCTIONS --*/
+/*------------------------------------------------------------------*/
+function showErrorMessage(name, message)
+{
+    $('.form-error[data-error*="'+name+'"]').html(message).fadeIn();
+}
 
+function hideErrorMessage(name)
+{
+    $('.form-error[data-error*="'+name+'"]').fadeOut();
+}
+
+function addFailClass(el)
+{
+    $(el).removeClass('form-input-correct').addClass('form-input-error');
+}
+
+function removeFailClass(el)
+{
+    $(el).removeClass('form-input-error');
+}

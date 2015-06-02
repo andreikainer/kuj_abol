@@ -15,8 +15,8 @@
 
         @foreach($logos as $logo)
             <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-md-3 img-responsive mb-1em">
-                <a href="{{ $logo->url }}"><div class="logo-name img-responsive text-center invisible">{{$logo->business_name}}</div>
-                <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive m0auto form-element" alt="{{ $logo->business_name }}"></a>
+                <a href="{{ $logo->url }}"><div class="logo-name img-responsive text-center hidden">{{$logo->business_name}}</div>
+                <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}"></a>
             </div>
         @endforeach
                 </div>

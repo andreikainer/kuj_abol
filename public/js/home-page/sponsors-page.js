@@ -12,11 +12,11 @@
     $('.form-element').parent().on({
         mouseenter: function()
         {
-            $(this).find('.logo-name').toggleClass('invisible', false);
+            $(this).find('.logo-name').toggleClass('hidden', false);
         },
         mouseleave: function()
         {
-            $(this).find('.logo-name').toggleClass('invisible', true);
+            $(this).find('.logo-name').toggleClass('hidden', true);
         }
     });
 })();

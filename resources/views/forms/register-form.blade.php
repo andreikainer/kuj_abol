@@ -98,6 +98,20 @@
             </div>
         </div>
 
+        @if(Request::old('business_name') != null)
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12">
+               {!! Form::label('business_name', trans('register-page.business-name'), ['class' => 'form-label']) !!}
+               @if($errors->first('business_name'))
+               {!! Form::text('business_name', null, ['class' => 'form-input form-input-error']) !!}
+               @else
+               {!! Form::text('business_name', null, ['class' => 'form-input']) !!}
+               @endif
+               <div class="form-error cpp-error pad-zero display-block">{{ $errors->first('business_name') }}</div>
+               <div class="form-error cpp-error pad-zero" data-error="business_name"></div>
+            </div>
+        </div>
+        @else
         <div class="row form-group business-name-wrapper">
             <div class="col-md-12 col-sm-12">
                {!! Form::label('business_name', trans('register-page.business-name'), ['class' => 'form-label']) !!}
@@ -110,6 +124,7 @@
                <div class="form-error cpp-error pad-zero" data-error="business_name"></div>
             </div>
         </div>
+        @endif
 
         <div class="row form-group">
             <div class="col-md-12 col-sm-12">

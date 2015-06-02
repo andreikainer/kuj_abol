@@ -78,8 +78,22 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <fieldset class="summary-group">
-                    <legend>{{ trans('create-project-form.address') }}</legend>
-                    <p data-field="address"></p>
+                    <legend>{{ trans('create-project-form.street') }}</legend>
+                    <p data-field="street"></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <fieldset class="summary-group">
+                    <legend>{{ trans('create-project-form.postcode') }}</legend>
+                    <p data-field="postcode"></p>
+                </fieldset>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <fieldset class="summary-group">
+                    <legend>{{ trans('create-project-form.city') }}</legend>
+                    <p data-field="city"></p>
                 </fieldset>
             </div>
         </div>
