@@ -15,14 +15,14 @@
                 </div>
                 <div class="form-element">
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 border-thin">
                         <h2 class="text-center">{{ trans('how-it-works-page.step-1s')}}</h2>
                         <img src="{{ asset('/img/steps/step-1.png') }}" alt="step-1" class="img-responsive">
                         <h4 class="text-center mb-1em">{{ trans('how-it-works-page.step-1h')}}</h4>
                         <p class="text-justify">{{trans('how-it-works-page.step-1')}}</p>
                     </div>
 
-                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 border-thin">
                         <h2 class="text-center">{{ trans('how-it-works-page.step-2s')}}</h2>
                         <img src="{{ asset('/img/steps/step-2.png') }}" alt="step-2" class="img-responsive">
                         <h4 class="text-center mb-1em">{{trans('how-it-works-page.step-2h')}}</h4>
@@ -32,14 +32,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 border-thin">
                         <h2 class="text-center">{{ trans('how-it-works-page.step-3s')}}</h2>
                         <img src="{{ asset('/img/steps/step-3.png') }}" alt="step-3" class="img-responsive">
                         <h4 class="text-center mb-1em">{{trans('how-it-works-page.step-3h')}}</h4>
                         <p class="text-justify">{{trans('how-it-works-page.step-3')}}</p>
                     </div>
 
-                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 border-thin">
                         <h2 class="text-center">{{ trans('how-it-works-page.step-4s')}}</h2>
                         <img src="{{ asset('/img/steps/step-4.png') }}" alt="step-4" class="img-responsive">
                         <h4 class="text-center mb-1em">{{trans('how-it-works-page.step-4h')}}</h4>

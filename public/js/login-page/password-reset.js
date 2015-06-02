@@ -12,7 +12,7 @@
         },
         'de' : {
             'required'  : 'Dieses Feld darf nicht leer sein.',
-            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
+            'email' : 'Bitte geben Sie eine gültige E-Mail Adresse an und vermeiden Sie Leerzeichen.',
             'minLength' : function(required)
             {
                 return 'Dieses Feld muss mindestens '+required+' Zeichen enthalten';

@@ -55,6 +55,6 @@
     </div>
 @else
     <div class="col-md-12 col-sm-12 text-center no-contributions">
-        <h4>You currently have not made any contributions. <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">Make a contribution today!</a></h4>
+        <h4>{{ trans('my-contributions.no-contributions') }} <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">{{ trans('my-contributions.contribute-link') }}</a></h4>
     </div>
 @endif

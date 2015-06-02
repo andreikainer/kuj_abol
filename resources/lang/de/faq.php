@@ -15,61 +15,55 @@ return [
     */
     'qu1' => 'Was ist die Initiative Kinder- und Jugendförderungen?',
     'qu2' => 'Wer ist die AK Sponsoring-Agentur?',
-    'qu3' => 'Was heißt soziales Crowdfunding? Was hat die Initiative KuJ damit zu tuen?',
-    'qu4' => 'Für was brauche ich ein Benutzerkonto? Kostet es ewtas sich zu registrieren?',
-    'qu5' => 'Was sind die Vorteile für mein Unternehmen wenn mein Firmenlogo auf kinderförderungen.at angezeigt wird?',
+    'qu3' => 'Was ist „soziales Crowdfunding“ und was hat die Initiative KuJ damit zu tun?',
+    'qu4' => 'Für was braucht man ein Benutzerkonto und kostet die Registrierung etwas?',
+    'qu5' => 'Welche Vorteile hat es für mein Unternehmen, wenn mein Firmenlogo auf kinderförderungen.at angezeigt wird?',
     'qu6' => 'Ist meine Förderung steuerlich absetzbar?',
     'qu7' => 'Wieso habe ich eine Rechnung von einer GmbH erhalten?',
-    'qu8' => 'Wieviel Geld erhält die Familie des betroffenen Kindes wirklich?',
-    'qu9' => 'Wie werden die Administrativen Kosten versucht niedrig zu halten?',
-    'qu10' => 'Wer kann um Förderung ansuchen?',
-    'qu11' => 'Wie lange dauert es bis meine Unterstützung angezeigt wird?',
-    'qu12' => 'Kann ich annonym fördern?',
-    'qu13' => 'Wenn ich als Gast fördere, werden meine Angaben gespeichert?',
+    'qu8' => 'Wie viel Geld erhält die Familie des betroffenen Kindes wirklich?',
+    'qu9' => 'Wie werden die administrativen Kosten der Initiative auf ein Minimum reduziert?',
+    'qu10' => 'Wer kann bei uns um eine Förderung ansuchen?',
+    'qu11' => 'Wie lange dauert es, bis mein Förderungsbeitrag auf der Plattform angezeigt wird?',
+    'qu12' => 'Ich möchte anonym fördern. Ist das möglich?',
+    'qu13' => 'Werden meine persönlichen Angaben gespeichert, wenn ich als Gast fördere?',
     'qu14' => 'Was passiert mit meinen Daten nachdem ich mein Benutzerkonto gelöscht habe?',
-    'qu15' => 'Welche Kosten fallen an wenn ich um Förderung ansuchen möchte?',
-    'qu16' => 'Welche Unterlagen muss ich dem Antrag anfügen um meine Situation zu belegen?',
-    'qu17' => 'Wie hoch ist die Summe die bis jetzt ausbezahlt wurde?',
+    'qu15' => 'Mit welchen Kosten muss ich rechnen, wenn ich um eine Förderung ansuchen möchte?',
+    'qu16' => 'Welche Unterlagen muss ich mit meinem Förderungsantrag übermitteln?',
+    'qu17' => 'Wie hoch ist die Summe der Förderungen, die von der Initiative Kinder- und Jugendförderungen bis heute ausgezahlt wurde?',
 
     /*
      * ANSWERS
      */
-    'an1' => 'Kinder- und Jugendförderungen is an Initiative with the main emphasis for:
+    'an1' => 'Die Initiative Kinder- und Jugendförderungen macht es sich zur Aufgabe:
                 <ul>
-                <li class="list-item">Alleviate family fortunes.</li>
-                <li class="list-item">Fulfil child wishes.</li>
-                <li class="list-item">Provide financial support for much needed therapies and disabled facilities.</li>
-                <li class="list-item">Give children equal opportunities for their development.</li>
+                <li class="list-item">Familien finanziell zu entlasten</li>
+                <li class="list-item">Kinderwünsche zu erfüllen</li>
+                <li class="list-item">Finanzielle Unterstützung für notwendige medizinische Therapien zur Verfügung zu stellen</li>
+                <li class="list-item">Beeinträchtigten Kindern eine faire Chance zur weiteren Entwicklung zu geben.</li>
                 </ul>',
-    'an2' => 'The all for kids Sponsoring Agentur is the Founder and Initiator of the Initiative Kinder- und Jugendförderungen  to support chronically ill, mentally or physically disabled children and their families. The agencys role is also to attract and promote the crowdfunding plattform.',
-    'an3' => 'Crowdfunding in generall is a modern alternative of financing a project through smaller financial resources on a common plattform. We have implemented this model on a social basis to:
+    'an2' => 'Die AK Sponsoring-Agentur agiert als Gründer der Initiative Kinder- und Jugendförderungen zur Unterstützung chronisch kranker, geistig oder körperlich beeinträchtigter Kinder und deren Familien. Die Agentur ist für den Inhalt und die Instandhaltung der Internetplattform verantwortlich und bewirbt diese aktiv bei Sponsoren aller Art.',
+    'an3' => 'Unter Crowdfunding (auch „Gruppenfinanzierung“) versteht man eine moderne Art der Finanzierung, bei der Projekte durch die finanzielle Unterstützung einer Vielzahl an Personen realisiert werden. Anders als beim herkömmlichen Crowdfunding betreiben wir soziales Crowdfunding, um bedürftigen Kindern und deren Familien zu helfen.',
+    'an4' => 'Mit Ihrem persönlichen Benutzerkonto auf kinderförderungen.at stehen Ihnen folgende Funktionalitäten zur Verfügung:
                 <ul>
-                <li class="list-item">Alleviate family fortunes.</li>
-                <li class="list-item">Fulfil child wishes.</li>
-                <li class="list-item">Provide financial support for much needed therapies and disabled facilities.</li>
-                <li class="list-item">Give children equal opportunities for their development.</li>
-                </ul>',
-    'an4' => 'With an KuJ account you can maximise the social funding experience.
-                <ul>
-                <li class="list-item">You will be able to favorite projects to review them later</li>
-                <li class="list-item">Have an insight of your past contributions</li>
-                <li class="list-item">You can update your details and upload a profile photo</li>
-                <li class="list-item">As a business you can even upload your company profile and logo</li>
+                <li class="list-item">Sie können Ihre persönliche Förderungsübersicht einsehen</li>
+                <li class="list-item">Sie können Ihre Favoritenprojekte speichern, um Sie später schneller wiederzufinden</li>
+                <li class="list-item">Sie können Ihre persönlichen Daten aktualisieren und ein Profilfoto hochladen</li>
+                <li class="list-item">Als Unternehmen können Sie Ihr Firmenlogo hochladen</li>
                 </ul>
-                Of course alls this functionallity is for free and doesn’t involve any costs.',
-    'an5' => 'Displaying your business logo obviously will have an positive impact on your company social reputation as well as your online presence and search engine ranking. Each logo is linked to your company website which will increase your unique visitors traffic. It also gives you the chance to attract potential customers as the plattform is b2b focused. ',
-    'an6' => '“Business” contributions via Sponsoring are 100% tax deductible. You will receive a proper invoice to BMF standards that you can declare as an advertising expense (Sponsoring) in your business accounting.
-    <br>All other Building-blocks (“Small”, “Medium”, “Large”) are not tax deduction capable. In eg: If you are a business and you funded a project with any of these Building-blocks, then your support can not be processed for the BMF. Please always be aware to purchase the appropriate package.',
-    'an7' => 'Da die Initiative kein selbstständiges Organ ist, sondern von der AK Sponsoring-Agentur verwaltet wird, erfolgt die Fakturierung auch durch die GmbH. Weiters ermöglicht diese Strukturierung die bestmögliche Steuerbegünstigung für Ihr Unternehmen. Ihre Rechnung ist somit 100% steuerlich absetzbar.',
-    'an8' => 'The “Small”, “Medium” and “Large” Building-blocks contributed online will get forwarded 1:1 without ANY deductions to the family in need . Contributions made by the “Business” Building-block are beeing used for the Projects as well but also cover for the administrative costs of running this platform and the initiative.',
-    'an9' => 'Our  big scope is to keep running costs to a minimum. Unlike other organisations we do not have the imense expences of a public office or company vehicles. Our small team is based individually in home offices and we use public transport to get around. We manage the plattform ourself so no Third-Party business is involved. ',
-    'an10' => 'Any family with residence in Austria with (a) chronically ill, mental or physicall disabled child(ren) under the age of 18 are welcome to put their application forward.  We will review your application, check that all criteria was met and inform you of the outcome.',
-    'an11' => 'If you funded online via the “Small”, “Medium” and “Large” Building-block your contribution will add up to the current raised funs immediately after successful payment. Contributions via the “Business” Building-block will be added to the project shortly before completition after deduction the administration costs.',
-    'an12' => 'We do not offer anonymous contributions at this stage. However if you fund as a guest, your contribution details will not be passed to anyone else then the supported Family so they can submit the thank you letter.',
-    'an13' => 'If you fund as a guest your details will be saved temporary so we can email you the receipt for your contribution. The contribution details will not get passed to anyone else besides the supported family',
-    'an14' => 'Once you have deleted your account, your saved data will remain in our database for 1 months. After this period your data will be deleted permanently.',
-    'an15' => 'At no stage any costs incur for the supported family. No hidden fees or processing charges. The only obligation after project completion is to thank the supports via Email or Post letter',
-    'an16' => 'To back  your child\'s medical and your families financial situation we require supporting evidence. This can be a medical certificate of any kind usually issued by the relevant health authority. Further we need at least one evidence of your families financial status.',
-    'an17' => 'Until June 2015 the initiative Kinder- und Jugendförderungen paied out a total of &euro; 32.444,00 to  Austrian based families and institutions in need.',
+                Die Registrierung und alle damit verbundenen Funktionen sind selbstverständlich kostenlos.',
+    'an5' => 'Nachdem Sie Ihr Firmenlogo bei uns hochgeladen haben ist es für alle Besucher unserer Seite ersichtlich. Dadurch steigern Sie nicht nur die allgemeine Bekanntheit Ihres Unternehmens und verbessern Ihr Suchmaschinenranking, sondern tragen auch einen wertvollen Beitrag zur sozialen Wahrnehmung Ihres Unternehmens bei. Ihr Firmenlogo ist außerdem mit einem Link zu Ihrer Firmenwebsite unterlegt, damit unsere Besucher mit einem Klick zu Ihren Besuchern werden.',
+    'an6' => 'Förderungen von Unternehmen mittels Sponsoring sind in Österreich zu 100% steuerlich absetzbar. Für jede Förderung, die Sie bei uns tätigen, erhalten Sie eine Rechnung, welche den Richtlinien des BMF entsprechen. Mit dieser Rechnung können Sie Ihre Förderung als Werbeausgaben (Sponsoring) deklarieren.
+    <br><br>Alle anderen von uns angebotenen Förderungsbausteine („Klein“, „Mittel“, „Groß“) sind nicht steuerlich absetzbar. Achten Sie als Unternehmen daher unbedingt darauf, dass Sie den <strong>"Business" Sponsoring-Baustein</strong> auswählen.',
+    'an7' => 'Da die Initiative kein selbstständiges Organ ist, sondern von der AK Sponsoring-Agentur betrieben wird, erfolgt die Fakturierung auch durch diese GmbH. Diese Strukturierung ermöglicht auch die bestmögliche Steuerbegünstigung für Ihr Unternehmen. Ihre Rechnung ist somit zu 100% steuerlich absetzbar. ',
+    'an8' => 'Online-Förderungen mittels der Bausteine „Klein“, „Mittel“ und „Groß“ werden ohne jegliche Abzüge 1:1 an die betroffene Familie ausgezahlt. Förderungen mittels des "Business"-Bausteins werden ebenfalls für die beschriebenen Förderungsprojekte verwendet; ein Teil davon fließt hier jedoch auch in die Verwaltung und deckt die Kosten zum Betreiben dieser Plattform.',
+    'an9' => 'Unser Ziel ist es, unsere eigenen Betriebskosten möglichst niedrig zu halten, damit der Großteil der bei uns eintreffenden Förderungen an die betroffenen Familien weitergegeben werden können. Dazu zählt insbesondere auch, dass wir auf öffentliche Büros und Firmenautos verzichten – unser kleines Team an Mitarbeitern arbeitet individuell von zu Hause aus. Auch die Online Plattform wird von uns selbst betrieben und verwaltet.',
+    'an10' => 'Grundsätzlich kann jede Familie mit einem oder mehreren chronisch kranken, geistig oder körperlich beeinträchtigten Kind(ern) unter 18 Jahren ein Ansuchen bei uns einreichen. Voraussetzung dafür ist, dass die Familie ihren Hauptwohnsitz in Österreich hat und das Ansuchen wahrheitsgemäß und vollständig ausfüllt. Nach der Antragsstellung überprüfen wir alle Daten und Voraussetzungen und informieren Sie über unsere Entscheidung.',
+    'an11' => 'Wenn Sie eines unserer Projekte mittels der Bausteine „Klein“, „Mittel“ oder „Groß“ gefördert haben wird Ihr Beitrag automatisch und sofort zur aktuellen Förderungssumme addiert. Wenn Sie Ihren Beitrag mittels des "Business"-Bausteins geleistet haben addieren wir die Summe kurz vor dem Ablauf der 60 tägigen Förderungsperiode abzüglich der anfallenden Verwaltungskosten.',
+    'an12' => 'Zu diesem Zeitpunkt können wir leider keine anonymen Förderungen entgegen nehmen. Sie haben allerdings die Möglichkeit, als nicht registrierter Gast zu fördern. Ihr Name scheint niemals und in keinem Fall auf unserer Plattform auf sondern wird lediglich nur and die betroffene Familie weiter gegeben damit diese sich bei Ihnen bedanken kann.',
+    'an13' => 'Wenn Sie als Gast eine Förderung leisten werden Ihre Daten nur temporär gespeichert, damit wir Ihnen Ihren Förderungsbeleg sowie ein Dankschreiben der betroffenen Familie zustellen können.',
+    'an14' => 'Nachdem Sie Ihr Benutzerkonto auf kinderförderungen.at gelöscht haben speichern wir Ihre Daten noch für den Zeitraum von einem Monat falls Sie sich doch eintscheiden sollten Ihr Benutzerkonto zu reaktivieren. Nach diesem Monat werden Ihre Daten vollständig gelöscht.',
+    'an15' => 'Zu keinem Zeitpunkt verrechnen wir Ihnen als betroffener Familie irgendwelche Kosten. Bei uns gibt es keine versteckten Kosten oder Verwaltungsgebühren. Sie verpflichten sich aber, uns nach dem Ende Ihres erfolgreichen Förderungsprojektes einen Nachweis über die Verwendung Ihrer Förderungssumme zu erbringen, sowie sich bei Ihren Unterstützern schriftlich zu bedanken.',
+    'an16' => 'Um die von Ihnen angegebenen Familienumstände überprüfen zu können bitten wir Sie um einen Nachweis über den Gesundheitszustands Ihres Kindes, sowie um einen  Beleg über Ihre finanzielle Situation. Als Beleg gelten medizinische Befunde und Gutachten, Einkommensnachweise, sowie diverse Bestätigungen von öffentlich anerkannten Stellen.',
+    'an17' => 'Bis Juni 2015 hat die Initiative Kinder- und Jugendförderungen insgesamt € 32.444,00 an bedürftige Familien und Institutionen in und aus Österreich ausbezahlt.',
 
 ];

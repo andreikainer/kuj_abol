@@ -16,7 +16,7 @@
             'required'  : 'Dieses Feld darf nicht leer sein.',
             'minLength' : function(limit)
             {
-                return 'Diese Feld muss mindestens '+limit+' Zeichen enthalten';
+                return 'Dieses Feld muss mindestens '+limit+' Zeichen enthalten.';
             }
         }
     };

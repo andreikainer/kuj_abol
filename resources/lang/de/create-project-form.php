@@ -101,27 +101,27 @@ return [
     /**
      * Tips for Successful Campaign
      */
-    'tips-heading'          => 'Hilfreiche Tips zur Antragsstellung',
+    'tips-heading'          => 'Hilfreiche Tipps zur Antragsstellung',
 
     'tip-1-title'           => 'Projekttitel',
-    'tip-1-1'               => 'Bitte Bennen Sie ihr Projekt zuerst um das Formular zu aktivieren. Der Projekttitel ist gleichzeitig die Überschrift Ihres Förderungsprojektes in einem kurzen expliziten Satz. 60 Zeichen maximum.',
+    'tip-1-1'               => 'Um Ihre Förderung zu beantragen braucht Ihr Projekt zunächst einen aussagekräftigen Titel. Dieser Projekttitel sollte Ihr Förderungsprojekt in einem kurzen, präzisen Satz eindeutig zusammenfassen und darf eine Maximallänge von 60 Zeichen haben.',
 
     'tip-2-title'           => 'Kurzbeschreibung',
-    'tip-2-1'               => 'Eine kurze Beschreibung in 180 Zeichen oder weniger.',
-    'tip-2-2'               => 'Schildern Sie die Beeinträchtigung des Kindes sowie für welches Vorhaben Sie eine finanzielle Förderung benötigen.',
+    'tip-2-1'               => 'Die Kurzbeschreibung dient dazu, Ihre Situation bzw. Ihr Projekt in wenigen Sätzen zu beschreiben.',
+    'tip-2-2'               => 'Schildern Sie uns die Beeinträchtigung, unter der Ihr Kind leidet, und geben Sie genau an, für welches Vorhaben Sie finanzielle Unterstützung benötigen. Bitte halten Sie sich an die Maximallänge von 180 Zeichen.',
 
-    'tip-3-title'           => 'Hauptphoto',
-    'tip-3-1'               => 'Das wird Ihr Hauptanzeigebild für Ihr Projekt.',
-    'tip-3-2'               => 'Bitte verwenden Sie ein qualitativ hochwertiges Foto mit einer Mindestauflösung von 768 x 1024 Pixel.',
-    'tip-3-3'               => 'Es ist auch empfehlenswert ein aussagekräftiges Foto zu wählen. ',
+    'tip-3-title'           => 'Hauptfoto',
+    'tip-3-1'               => 'Das Hauptfoto ist das Hauptanzeigebild für Ihr Förderungsprojekt und zeigt üblicherweise ein aussagekräftiges Foto Ihres Kindes.',
+    'tip-3-2'               => 'Bitte verwenden Sie hier ein hochauflösendes und qualitativ hochwertiges Bild im Format 768x1024 Pixel.',
+    'tip-3-3'               => '',
 
     'tip-4-title'           => 'Ausführliche Beschreibung',
-    'tip-4-1'               => 'Hier haben Sie die Möglichkeit Ihre Projekt im Detail zu erzählen. ',
-    'tip-4-2'               => 'Beschreiben Sie einfach warum Sie und für was Sie eine Förderung benötigen und wie diese Ihrer Familie zu Gute kommt.',
-    'tip-4-3'               => 'Bitte lassen Sie keine wichtigen Informationen aus um eine erfolgreiche Förderung Ihres Projektes zu erzielen. ',
+    'tip-4-1'               => 'Hier haben Sie die Möglichkeit, Ihr Förderungsprojekt im Detail vorzustellen. ',
+    'tip-4-2'               => 'Beschreiben Sie Ihre Situation, weshalb Sie eine Förderung benötigen und für welchen Zweck Sie die Förderungssumme verwenden werden.',
+    'tip-4-3'               => 'Wir empfehlen Ihnen insbesondere zu verdeutlichen, wie eine Förderung Ihrer ganzen Familie zu Gute kommen wird. ',
 
     'tip-5-title'           => 'Beilagen und Belege',
-    'tip-5-1'               => 'Verpflichtend mit Ihrem Ansuchen müssen Sie uns mindestens 2 Beilagen anfügen die, die gesundheitliche und finanzielle Situation belegen.',
-    'tip-5-2'               => 'Medizinische Befunde, Einkommensnachweise und oder Bestätigungen von öffentlichen Stellen eignen sich am Besten.',
-    'tip-5-3'               => 'Sie haben die Möglichkeit bis zu 6 Beilagen anzufügen.'
+    'tip-5-1'               => 'Um Ihr Ansuchen bei uns einzureichen sind Sie verpflichtet, uns mindestens 2 Beilagen zu übermitteln, welche die gesundheitliche und finanzielle Situation Ihrer Familie belegen.',
+    'tip-5-2'               => 'Als Beilage gelten zum Beispiel medizinische Befunde, Einkommensnachweise oder diverse Bestätigungen von öffentlichen Stellen.',
+    'tip-5-3'               => 'Sie haben die Möglichkeit, hier bis zu 6 Beilagen anzuhängen.'
 ];

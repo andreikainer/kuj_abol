@@ -7,7 +7,7 @@
 
 @if($favourites->isEmpty())
     <br>
-    <h4 class="text-center no-contributions">You don't have any favoured projects. <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">See all current projects</a> </h4>
+    <h4 class="text-center no-contributions">{{ trans('my-contributions.no-favorites') }} <a href="{{ url(LaravelLocalization::getCurrentLocale().'/'.LaravelLocalization::transRoute('routes.current-projects')) }}">{{ trans('my-contributions.favorite-link') }}</a> </h4>
 
 @else
 <div class="table-responsive">

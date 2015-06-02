@@ -19,7 +19,7 @@ return [
     /**
      * Form labels.
      */
-    'username'      => 'Benutyername:',
+    'username'      => 'Benutzername:',
     'email'         => '*Email:',
     'f-name'        => '*Vorname:',
     'l-name'        => '*Nachname:',
@@ -42,4 +42,5 @@ return [
     'avatar-upload'     => 'Bitte kicken sie hier um ein Profilphoto hochzuladen.',
     'logo-upload-success' => 'Logo erfolgreich hinzugefügt',
     'image-not-accepted'  => 'Bildformat nicht unterstützt',
+    'delete-message'   => 'Wollen Sie Ihr Benutzerkonto wirklich endgültig löschen?',
 ];

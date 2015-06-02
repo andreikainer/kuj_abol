@@ -44,7 +44,7 @@ class ProjectsController extends Controller {
         $projects = $allProjects->sortByDesc('completed_on');
 
         $dbSuccProjects = Project::where('succ_funded', 1)
-            ->paginate(6);
+            ->paginate(3);
 
         $succ_projects = $dbSuccProjects->sortByDesc('completed_on');
 

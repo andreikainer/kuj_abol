@@ -6,7 +6,7 @@
 
 @if($user->projects->isEmpty())
     <br>
-    <h4 class="text-center no-contributions">You do not have any Projects.</h4>
+    <h4 class="text-center no-contributions">{{ trans('my-contributions.no-project') }}</h4>
 @else
 <div class="table-responsive">
 

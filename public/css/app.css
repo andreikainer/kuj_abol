@@ -6408,6 +6408,9 @@ footer {
 #login-page .form-error, #send-reset-link-page .form-error {
   padding-left: 1rem; }
 
+.border-thin {
+  border: 1px dotted #555555; }
+
 /*------------------------------------------------------------------*/
 /*-- How It Works page styles --*/
 /*------------------------------------------------------------------*/

@@ -9,7 +9,7 @@
 
                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 mt-2em form-element">
 
-                    <div class="no-projects">{!! trans('contact-page.pre-form', ['cta-link' => trans('routes.how-it-works'), 'faq' => '#faq']) !!}</div>
+                    <div class="no-projects">{!! trans('contact-page.pre-form', ['faq-link' => trans('routes.how-it-works').'/#faq' ]) !!}</div>
 
                <!-- Contact form -->
                         @include('forms.help-form')

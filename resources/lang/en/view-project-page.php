@@ -24,6 +24,8 @@ return [
   'close'                  => 'Close',
   'login'                  => 'Login',
   'login-message'          => 'Please log in or register to favourite this project',
+  'favorite-added'         => 'This Project was successfully added to your Favorite List.',
+  'favorite-removed'       => 'This Project was successfully removed from your Favorite List.',
 
 
   'business-building-block' => '<h3>"Business" Building-block</h3>

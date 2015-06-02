@@ -21,7 +21,7 @@
 
 <!-- Submit button -->
     <div class="form-group col-xs-12 clearfix">
-    	{!! Form::submit(trans('login-page.send'),
+    	{!! Form::submit(trans('contact-page.send'),
       		array('class'=>'btn btn-primary button-main-big mt-1em',
       		      'id' => 'send-reset')) !!}
     </div>

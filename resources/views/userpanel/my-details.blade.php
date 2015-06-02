@@ -22,7 +22,7 @@
                     {!! Form::label('user_name', trans('userpanel.username'), ['class' => 'form-label form-inline']) !!}
                     {!! Form::text('user_name', $user->user_name,
                     array('required',
-                    'class'=>'form-input form-inline')) !!}
+                    'class'=>'form-input form-inline form-input-disabled', 'readonly' => 'readonly')) !!}
                 </div>
                 <div class="form-error none pad" data-error="user_name"></div>
                 <div class="form-error pad">{{ $errors->first('user_name') }}</div>
@@ -80,6 +80,22 @@
                     </div>
                 </div>
                 <!-- end avatar input -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete account Modal message -->
+    <div class="modal fade modal-message" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <p>{{ trans('userpanel.delete-message') }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="closing-btn" type="button" class="btn button-main button-user" data-dismiss="modal">{{ trans('view-project-page.close') }}</button>
+                    <a href="{{ action('UserpanelController@delete', $user->id) }}"><button type="button" class="btn button-main">{{ trans('userpanel.delete-account') }}</button></a>
+                </div>
             </div>
         </div>
     </div>
@@ -176,7 +192,7 @@
         <div class="col-xs-12 col-sm-12">
             <div class="row-fluid clearfix">
                 {!! Form::submit(trans('userpanel.save-changes'), ['class' => 'col-xs-12 col-sm-5 col-md-5 pull-left btn login-submit button-main mt-1em text-center', 'id' => 'log-me-in']) !!}
-                <a href="{{ action('UserpanelController@delete', $user->id) }}" class="col-xs-12 col-sm-5 col-md-5 pull-right mt-1em text-right">{{ trans('userpanel.delete-account') }}</a>
+                <a href="" class="col-xs-12 col-sm-5 col-md-5 pull-right mt-1em text-right" data-toggle="modal" data-target=".modal-message">{{ trans('userpanel.delete-account') }}</a>
             </div>
         </div>
         <!-- end submit buttons -->

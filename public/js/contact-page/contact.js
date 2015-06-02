@@ -19,12 +19,12 @@
         },
         'de' : {
             'required'  : 'Dieses Feld darf nicht leer sein.',
-            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
+            'email' : 'Bitte geben Sie eine gültige E-Mail Adresse an und vermeiden Sie Leerzeichen.',
             'textArea'  : 'Dieses Feld darf nur Buchstaben enthalten.',
             'letters'   : 'Dieses Feld darf nur Buchstaben und Leerzeichen enthalten.',
             'minLength' : function(limit)
             {
-                return 'Diese Feld muss mindestens '+limit+' Zeichen enthalten';
+                return 'Dieses Feld muss mindestens '+limit+' Zeichen enthalten.';
             },
             'maxLength' : function(limit)
             {

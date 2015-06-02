@@ -44,7 +44,7 @@
 
 <!-- Submit button -->
     <div class="form-group clearfix">
-    	{!! Form::submit('Send',
+    	{!! Form::submit(trans('contact-page.send'),
       		array('class'=>'col-xs-12 col-sm-3 btn btn-primary button-main-big',
       		      'id' => 'send-question')) !!}
     </div>

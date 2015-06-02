@@ -54,7 +54,7 @@
             'alphaNumeric' : 'Darf nur Buchstaben und Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
             'numOnly' : 'Darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
             'alphaOnly' : 'Darf nur Buchstaben enthalten und nicht mit einem Leerzeichen beginnen.',
-            'email' : 'Dieses Feld muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
+            'email' : 'Bitte geben Sie eine gültige E-Mail Adresse an und vermeiden Sie Leerzeichen.',
             'phone' : 'Dieses Feld muss in einem korrekten Telefonnummer Format sein und darf keine Leerzeichen enthalten.',
             'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
             'minLength' : function(required)
@@ -67,7 +67,7 @@
             },
             'maxLength' : function(limit)
             {
-                return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten';
+                return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten.';
             }
         }
     };
@@ -209,10 +209,6 @@
 
         if (! FormValidation.checkNotEmpty(data.value)) {
             showErrorMessage(name, errorMessages[window.locale].required);
-            return false;
-        }
-        if (! FormValidation.checkAlphaOnly(data.value)) {
-            showErrorMessage(name, errorMessages[window.locale].alphaOnly);
             return false;
         }
 

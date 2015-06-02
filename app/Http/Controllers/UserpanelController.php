@@ -70,6 +70,7 @@ class UserpanelController extends Controller
         $favourite->project_id = $projectId;
         $favourite->save();
 
+        Session::flash('flash_message', trans('view-project-page.favorite-added'));
         return redirect()->back();
     }
 
@@ -84,6 +85,7 @@ class UserpanelController extends Controller
         $favourite->delete();
 
         Session::flash('section_key', '1');
+        Session::flash('flash_message', trans('view-project-page.favorite-removed'));
         return redirect()->back();
     }
 
@@ -195,7 +197,7 @@ class UserpanelController extends Controller
             }
 
         }
-
+        Session::flash('flash_message', trans('userpanel.form-change-success'));
         Session::flash('section_key', 3);
         return redirect()->back();
     }

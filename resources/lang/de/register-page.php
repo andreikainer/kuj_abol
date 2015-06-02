@@ -27,22 +27,24 @@ return [
     /**
      * Verification Email.
      */
-    'line-1'    => 'Herzlich willkommen zur Initiative Kinder- und Jugendförderungen',
+    'subject'   => 'Vielen Dank für Ihre Registrierung - bitte bestätigen Sie Ihre Email Adresse!',
+
+    'line-1'    => 'Herzlich Willkommen zur Initiative Kinder- und Jugendförderungen!',
     'line-2'    => 'Hallo,',
-    'line-3'    => 'Danke für Ihre Registrierung auf kinderförderungen.at.',
-    'line-4'    => 'Sie haben es fast geschafft! Klicken Sie bitte auf dem Link unten um Ihre Email Adresse zu bestätigen:',
+    'line-3'    => 'Danke für Ihre Registrierung auf <strong>kinderförderungen.at</strong>.',
+    'line-4'    => 'Sie haben es fast geschafft! Um Ihre Registrierung abzuschließen bitten wir Sie, Ihre E-Mail Adresse zu bestätigen. Bitte klicken Sie dazu auf den nachfolgenden Link:',
     'line-5'    => 'Mit gesunden Grüßen,',
     'line-6'    => 'Ihr Kinder- und Jugendförderungen Team',
-    'subject'   => 'Benutzer Anmeldung bestätigen',
+
 
     /**
      * Flash Messages.
      */
-    'flash-1'   => 'Leider können wir Ihnen einen Link zu Ihrer E-Mail- Bestätigung geschickt.',
-    'flash-2'   => 'Please register an account.',
-    'flash-3'   => 'Account already verified.',
-    'flash-4'   => 'Account successfully verified. Continue to login.',
+    'flash-1'   => 'Wir haben Ihnen einen Link zu Ihrer E-Mail- Bestätigung geschickt.',
+    'flash-2'   => 'Bitte registrieren Sie sich.',
+    'flash-3'   => 'Benutzerkonto ist schon bestätigt.',
+    'flash-4'   => 'Registrierung erfolgreich abgeschlossen. Sie können sich jetzt einloggen.',
 
-    'terms-cond-1' => 'By registering an account, you agree to our ',
-    'terms-cond-2' => 'Terms and Conditions'
+    'terms-cond-1' => 'Wenn Sie einen Benutzer anlegen erklären Sie sich einverstanden mit unseren ',
+    'terms-cond-2' => 'Allgemeinen Geschäftsbedingungen.'
 ];

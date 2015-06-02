@@ -8,11 +8,11 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'hi'                => '<h2>Hallo</h2>
-                            <p>Willkommen zur Initiative Kinder- und Jugendförderungen.</p>',
+    'hi'                => '<h2>Hallo,</h2>
+                            <p>Herzlich Willkommen zur Initiative Kinder- und Jugendförderungen.</p>',
     'signature'         => '<p>Wir wünschen Ihnen noch einen großartigen Tag!</br>
                                 Mit gesunden Grüßen,
-                                Ihr Kinder- und Jugendförderungen Team
+                                Ihr Team von Kinder- und Jugendförderungen
                            </p>',
 
     /**
@@ -38,8 +38,8 @@ return [
     'new-sign-up'       => ' wurde zur Newsletter Emailliste hinzugefügt.',
 
     'suc-newsletter-sign-up' => '<p>
-                                Wir freuen uns, dass Sie sich in unserer Newsletter Emailliste eingetragen haben.<br>
+                                und vielen Dank für Ihre Anmeldung zu unserem Newsletter. Wit halten Sie ab sofort immer auf dem neuesten Stand rund um Kinder- und Jugenförderungen.<br>
                                 Jetzt bleiben Sie immer auf den Letzten Stand rund um Kinder- und Jugendförderungen.</p>
-                                <p>Falls Sie sich irrtümlich angemeldet haben oder Sie sich wieder abmelden wollen senden Sie uns bitte eine EMail an: email@kinderfoerderungen.at</p>',
+                                <p>Falls Sie sich irrtümlich angemeldet haben oder den Newsletter nicht mehr erhalten wollen, so können Sie sich jederzeit wieder abmelden. Senden Sie uns bitte einfach eine EMail an: email@kinderfoerderungen.at</p>',
 
 ];

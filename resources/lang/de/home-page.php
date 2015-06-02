@@ -18,19 +18,19 @@ return array(
 */
 
     'carousel-text-1'  =>   '<h1>Gemeinsam machen wir es möglich!</h1>
-                            <p class="hidden-xs">Willkommen zu Österreich\'s erster Förderungs-Plattform.</p>
-                            <p><a class="button-transparent" href=":cta-link">WIE\'S FUNKTIONIERT</a></p>',
+                            <p class="hidden-xs">Willkommen auf Österreichs erster Förderungsplattform.</p>
+                            <p><a class="button-transparent" href=":cta-link">SO FUNKTIONIERT\'S</a></p>',
 
     'carousel-text-2'  =>   '<h1>Jeder kann mithelfen!</h1>
-                            <p class="hidden-xs">Helfen Sie einer Familie und ermöglichen Sie Erleichterung im Alltag</p>
+                            <p class="hidden-xs">Ihre Unterstützung ermöglicht es, einer Familie den Alltag zu erleichtern.</p>
                             <p><a class="button-transparent" href=":cta-link" data-scroll>JETZT FÖRDERN</a></p>',
 
-    'carousel-text-3'  =>   '<h1>Finanziellen Beistand leisten!</h1>
-                            <p class="hidden-xs">In Ihrer Familie liegt eine Beeinträchtigung vor? Wir können helfen.</p>
+    'carousel-text-3'  =>   '<h1>Wir sind für Sie da!</h1>
+                            <p class="hidden-xs">Ihre Familie ist betroffen? Wir können helfen.</p>
                             <p><a class="button-transparent" href=":cta-link">ANSUCHEN EINREICHEN</a></p>',
 
     'carousel-text-4'  =>   '<h1>Ein großes DANKE an alle Sponsoren!</h1>
-                            <p class="hidden-xs">Unsere tatkräftigen Unternehmen ermöglichen unser gutes Werk.</p>
+                            <p class="hidden-xs">Unsere Arbeit wird erst durch Ihre Unterstützung ermöglicht.</p>
                             <p><a class="button-transparent" href=":cta-link">UNSERE SPONSOREN</a></p>',
 
 

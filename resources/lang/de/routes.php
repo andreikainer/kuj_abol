@@ -10,7 +10,7 @@ return [
 	| This keys are used to translate routes. key => german
 	*/
 
-    'how-it-works'         => 'wie-es-funktioniert',
+    'how-it-works'         => 'so-funktionierts',
 	'create-project'       => 'ansuchen-einreichen',
 	'project'              => 'project',                //****
     'get-locale'           => 'get-locale',

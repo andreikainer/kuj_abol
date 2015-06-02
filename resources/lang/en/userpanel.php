@@ -42,5 +42,6 @@ return [
     'avatar-upload'     => 'To upload new avatar,  click this image.',
     'logo-upload-success' => 'Logo upload successful',
     'image-not-accepted'  => 'Image Format not accepted',
+    'delete-message'   => 'Are you sure you wan\'t to delete your account permanently?',
 
 ];

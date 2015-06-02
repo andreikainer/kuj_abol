@@ -28,13 +28,13 @@ return [
         "array"   => ":attribute muss zwischen :min & :max Elemente haben.",
     ],
     "boolean"          => ":attribute muss entweder 'true' oder 'false' sein.",
-    "confirmed"        => ":attribute stimmt nicht mit der Bestätigung überein.",
+    "confirmed"        => "Das eingegebene :attribute stimmt nicht mit der Bestätigung überein.",
     "date"             => ":attribute muss ein gültiges Datum sein.",
     "date_format"      => ":attribute entspricht nicht dem gültigen Format für :format.",
     "different"        => ":attribute und :other müssen sich unterscheiden.",
     "digits"           => ":attribute muss :digits Stellen haben.",
     "digits_between"   => ":attribute muss zwischen :min und :max Stellen haben.",
-    "email"            => ":attribute Format ist ungültig.",
+    "email"            => "Das eingegebene :attribute Format ist ungültig.",
     "exists"           => "Der gewählte Wert für :attribute ist ungültig.",
     "filled"           => ":attribute muss ausgefüllt sein.",
     "image"            => ":attribute muss ein Bild sein.",
@@ -125,9 +125,9 @@ return [
         ],
 
         'email'         => [
-            'required'  => 'Ihr Email Adresse darf nicht leer sein.',
-            'regex'     => 'Ihre Email Adresse muss in einem korrekten E-Mail Format sein und darf keine Leerzeichen enthalten.',
-            'unique'    => 'Diese E-Mail Adresse ist bereits vergeben. Bitte kontaktieren Sie uns per Email falls weitere Probleme auftretten.'
+            'required'  => 'Bitte geben Sie Ihre E-Mail Adresse ein.',
+            'regex'     => 'Bitte geben Sie eine gültige E-Mail Adresse an und vermeiden Sie Leerzeichen.',
+            'unique'    => 'Diese E-Mail Adresse ist bereits vergeben. Bitte kontaktieren Sie uns per E-Mail falls weitere Probleme auftreten.'
         ],
 
         'street'        => [

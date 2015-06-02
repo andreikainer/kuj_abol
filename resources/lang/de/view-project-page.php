@@ -24,6 +24,9 @@ return [
   'close'                  => 'Schließen',
   'login'                  => 'Einloggen',
   'login-message'          => 'Bitte Einloggen oder Registrieren um dieses Förderungsprojekt zu favorisieren',
+  'favorite-added'         => 'Sie haben das ausgewählte Projekt erfolgreich zu Ihren Favoriten hinzugefügt.',
+  'favorite-removed'       => 'Sie haben das ausgewählte Projekt erfolgreich von Ihren Favoriten entfernt.',
+
 
   'business-building-block' => '<h3>"Business" Sponsoring-Baustein</h3>
                                 <hr>
