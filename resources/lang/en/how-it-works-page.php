@@ -26,7 +26,7 @@ return [
     'step-4h'       => 'Step 4: Say Thank you',
 
     'step-1'        => 'You have a child with a mental or physical impairment? Fill out our online create-project form and submit it to us. We will review your application and check that all criteria was met.',
-    'step-2'        => 'Once approved, your project will be displayed on our platform for 60 days and the funding can begin. Share your project with friends via email or facebook to maximise your support.',
+    'step-2'        => 'Once approved, your project will be displayed on our platform for 60 days and the funding can begin. Share your project with friends via email or facebook to maximise your support. We will also try our best to promote your project through clever marketing campaigns',
     'step-3'        => 'When the funding time has elapsed you will receive the full funds collected at project completion to be used for your described situation.',
     'step-4'        => 'It\'s in your care to thank all your contributors within 30 days of the payment received. You can do this with a personal letter or email. We will also require proof that your financial support was used justified.'
 
