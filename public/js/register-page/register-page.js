@@ -22,7 +22,7 @@
             'charRemaining' : 'characters remaining'
         },
         'de' : {
-            'disabled' : 'Bitte benennen Sie Ihr Projekt , klicken Sie anschließend auf Ansuchen beginnen.',
+            'disabled' : 'Bitte geben Sie Ihrem Projekt einen Titel unter der "Start"-Leiste.',
             'required' : 'Dieses Feld darf nicht leer sein.',
             'alphaNumeric' : 'Darf nur Buchstaben und Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
             'numOnly' : 'Darf nur Zahlen enthalten und nicht mit einem Leerzeichen beginnen.',
@@ -30,7 +30,7 @@
             'email' : 'Bitte geben Sie eine gültige E-Mail Adresse an und vermeiden Sie Leerzeichen.',
             'phone' : 'Dieses Feld muss in einem korrekten Telefonnummer Format sein und darf keine Leerzeichen enthalten.',
             'image' : 'Bitte wählen Sie ein gültiges Bildformat.',
-            'document' : 'Akzeptiert sind JPG, JPEG , PNG, BMP, TIFF und PDF -Formate.',
+            'document' : 'Format: JPG, JPEG, PNG, BMP, TIFF und PDF.',
             'maxLength' : function(limit)
             {
                 return 'Dieses Feld darf '+limit+' Zeichen nicht überschreiten.';
@@ -39,7 +39,7 @@
             {
                 return 'Dieses Feld muss mindestens '+required+' Zeichen enthalten.';
             },
-            'charRemaining' : 'noch freie Zeichen'
+            'charRemaining' : 'freie Zeichen'
         }
     };
 

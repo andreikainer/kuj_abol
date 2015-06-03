@@ -15,7 +15,7 @@ return [
      */
     'start'                 => 'Start',
     'project-details'       => 'Projektdetails',
-    'your-details'          => 'Deine Angaben',
+    'your-details'          => 'Ihre Angaben',
     'supporting-evidence'   => 'Antragsunterlagen',
     'summary'               => 'Zusammenfassung',
 
@@ -29,8 +29,8 @@ return [
     'submit'                => 'Antrag einreichen',
     'continue'              => 'fortsetzen',
     'delete'                => 'löschen',
-    'terms-cond-1'          => 'Mit Einreichung dieses Formulars bestätigen Sie unsere ',
-    'terms-cond-2'          => 'Allgemeinen Geschäftsbedingungen',
+    'terms-cond-1'          => 'Mit dem Abschicken dieses Formulars stimmen Sie unseren ',
+    'terms-cond-2'          => 'Allgemeinen Geschäftsbedingungen zu.',
     'terms-cond-3'          => 'Schließen',
 
     /**
@@ -41,16 +41,16 @@ return [
     'main-image'            => 'Hauptphoto:',
     'secondary-images'      => 'Mehr Bilder:',
     'full-description'      => 'Ausführliche Beschreibung:',
-    'fundraise-amount'      => 'Gewünschter Förderungsbetrag:',
-    'child-name'            => 'Vorname des Kindes:',
+    'fundraise-amount'      => 'Erforderlicher Förderungsbetrag:',
+    'child-name'            => 'Vorname des betroffenen Kindes:',
     'first-name'            => 'Ihr Vorname:',
     'last-name'             => 'Ihr Nachname:',
     'email'                 => 'Ihre E-Mail Adresse:',
-    'street'                => 'Straße:',
+    'street'                => 'Straße / Hausnummer / Stiege / Stock / Tür:',
     'postcode'              => 'PLZ:',
     'city'                  => 'Ort:',
     'country'               => 'Land:',
-    'tel-number'            => 'Telefonnummer:',
+    'tel-number'            => 'Ihre Telefonnummer:',
     'main-documents'        => 'Antragsbeilagen:',
     'secondary-documents'   => 'Zusätzliche Beilagen:',
     'images-and-documents'  => 'Bilder & Beilagen:',
@@ -59,25 +59,25 @@ return [
      * Form Field Placeholders
      */
     'place-short-desc'      => 'Eine kurze Beschreibung Ihrer Situation. In 180 Zeichen oder weniger.',
-    'place-full-desc'       => 'Die detailierte Beschreibung. Hier können Sie Ihre Situation im Detail beschreiben.',
-    'place-fundraise-amt'   => 'Den Förderungsbetrag den Sie benötigen. Minimum &#8364;500',
+    'place-full-desc'       => 'Hier haben Sie Platz für eine ausführliche Beschreibung Ihres Förderungsprojekts. Schildern Sie Ihre Familiensituation und sagen Sie uns, weshalb und wofür Sie eine Förderung benötigen.',
+    'place-fundraise-amt'   => 'Bitte nennen Sie hier den benötigten Förderungsbetrag. Mindestbetrag  &#8364; 500',
     'place-country'         => 'Österreich',
 
     /**
      * Explanations
      */
-    'exp-project-title'     => 'Bitte benennen Sie Ihr Projekt , klicken Sie anschließend auf Ansuchen beginnen.',
+    'exp-project-title'     => 'Bitte geben Sie Ihrem Projekt einen aussagekräftigen Titel und klicken Sie anschließend auf <strong>„Ansuchen beginnen“</strong>.',
     'exp-recent-project'    => 'Gespeicherte Anträge.',
     'exp-no-recent-project-1' => 'Großartig! Sie haben kein unvollständiges Ansuchen.',
     'exp-no-recent-project-2' => 'Sie können nun ein neues Ansuchen einreichen',
-    'exp-main-image-1'      => 'Wählen Sie ein Bild von Ihrem Computer.',
-    'exp-main-image-2'      => 'Das wird das Hauptphoto für Ihr Projekt, <br/> Bitte wählen Sie eines in guter Qualität',
-    'exp-main-image-3'      => 'JPEG, PNG, BMP, TIFF. 20MB maximum. <br/> Mindestgröße 768 x 1024 Pixel',
-    'exp-secondary-image'   => 'Klicken Sie hier, um weitere Photos hochzuladen.',
-    'exp-evidence-1'        => 'Mit Ihren Ansuchen benötigen Beilagen die den gesundheitlichen Zustand Ihres Kindes, sowie Ihre finanzielle Situation belegen.',
-    'exp-evidence-2'        => 'Es handlt sich hierbei um Befunde oder Arztschreiben vom zuständigen Facharzt oder der medizinischen Anstalt.',
-    'exp-evidence-3'        => 'Schriflicher Bescheid für erhöhtes Kinderbetreuungsgeld oder Zusagen / Absagen von öffentlichen Stellen',
-    'exp-evidence-4'        => 'Bitte fügen Sie alle nötigen Beilagen diesen Antrag bei um eine Bewilligung zu erziehlen.',
+    'exp-main-image-1'      => 'Wählen Sie ein Bild zum Hochladen als Hauptfoto für Ihr Projekt.',
+    'exp-main-image-2'      => 'Bitte verwenden Sie ein Foto in guter Qualität,<br>im Format JPEG, PNG, BMP oder TIFF mit den Maßen 1250 x 700 Pixel.',
+    'exp-main-image-3'      => 'Bitte beachten Sie die Maximalgröße von 20 MB.',
+    'exp-secondary-image'   => 'Klicken Sie hier, um weitere Fotos hochzuladen.',
+    'exp-evidence-1'        => 'Um Ihr Ansuchen bei uns einzureichen benötigen wir Beilagen, die den gesundheitlichen Zustand Ihres Kindes, sowie Ihre finanzielle Situation belegen..',
+    'exp-evidence-2'        => 'Als Beilage akzeptieren wir medizinische Befunde und Gutachten, Arztschreiben vom zuständigen Facharzt oder der zuständigen medizinischen Anstalt; Einkommensbescheide, schriftliche Bescheide über den Bezug von erhöhtem Kinderbetreuungsgeld; Bestätigungen von öffentlichen Stellen.',
+    'exp-evidence-3'        => '',
+    'exp-evidence-4'        => 'Bitte laden Sie hier alle benötigten Beilagen hoch, damit einer weiteren Bearbeitung Ihres Antrages nichts im Wege steht.',
     'exp-document-label'    => 'Mindestens 2 Beilagen sind verpflichtend',
     'exp-document-input'    => 'Bitte klicken Sie hier um eine Beilage hochzuladen',
 

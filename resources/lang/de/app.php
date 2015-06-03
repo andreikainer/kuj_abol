@@ -31,6 +31,7 @@ return array(
     'about-us'              => 'Über uns',
     'our-team'              => 'Unser Team',
     'overview'              => 'Überblick',
+    'faq'                   => 'Fragen (FAQ)',
     'our-sponsors'          => 'Sponsoren',
     'top-sponsors'          => 'Top Sponsoren',
 

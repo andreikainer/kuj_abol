@@ -158,8 +158,8 @@
                             		<a class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.how-it-works') }}<span class="caret"></span></a>
                             		<ul class="dropdown-menu">
                             		    <li><a href="{{ action('PagesController@howItWorks') }}">{{ trans('app.overview') }}</a></li>
+                                        <li><a href="{{ action('PagesController@howItWorks') }}/#faq">{{ trans('app.faq') }}</a></li>
                                         <li><a href="{{ action('PagesController@sponsors') }}">{{ trans('app.our-sponsors') }}</a></li>
-                            		    <li><a href="{{ action('PagesController@howItWorks') }}/#faq">FAQ</a></li>
                                         <li role="presentation" class="divider"></li>
                             		    <li><a href="{{ action('PagesController@howItWorks') }}/#about_us">{{ trans('app.about-us') }}</a></li>
                             			<li><a href="{{ action('PagesController@howItWorks') }}/#team">{{ trans('app.contacts') }}</a></li>

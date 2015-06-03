@@ -4882,6 +4882,9 @@ label {
   text-transform: uppercase;
   color: #6f798b;
   border-top: 2px solid #6f798b; }
+  @media (max-width: 320px) {
+    .heading {
+      font-size: 1.2rem; } }
 
 .mt-3em {
   margin-top: 3rem; }

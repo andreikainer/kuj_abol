@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12 col-sm-12">
         <div class="form-explanation">
-            {{ trans('create-project-form.exp-project-title') }}
+            {!! trans('create-project-form.exp-project-title') !!}
         </div>
     </div>
 </div>

@@ -31,6 +31,7 @@ return [
     'about-us'              => 'About Us',
     'our-team'              => 'Our Team',
     'overview'              => 'Overview',
+    'faq'                   => 'FAQ',
     'our-sponsors'          => 'Sponsors',
     'top-sponsors'          => 'Top Sponsors',
 

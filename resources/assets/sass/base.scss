@@ -70,6 +70,11 @@ label {
   text-transform: uppercase;
   color: $bluegrey;
   border-top: 2px solid $bluegrey;
+
+  @media(max-width: 320px){
+    font-size: 1.2rem;
+  }
+
 }
 
 .mt-3em {
