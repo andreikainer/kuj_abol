@@ -236,7 +236,7 @@ class ProjectsController extends Controller {
         $project = Auth::user()->project;
         Mail::queue('emails.project-submit', ['project' => $project], function($message)
         {
-            $message->to('wilhelmine@kinderfoerderungen.at', 'Wilhelmine Bauer')->subject(trans('project-submit-email.admin-title'));
+            $message->to('andrei@kinderfoerderungen.at', 'Administrator')->subject(trans('project-submit-email.admin-title'));
         });
 
         // Mail the user, of a successful project submission.
@@ -476,7 +476,7 @@ class ProjectsController extends Controller {
         $project = Auth::user()->project;
         Mail::queue('emails.project-submit', ['project' => $project], function($message)
         {
-            $message->to('wilhelmine@kinderfoerderungen.at', 'Wilhelmine Bauer')->subject(trans('create-project-form.email-subject'));
+            $message->to('andrei@kinderfoerderungen.at', 'Administrator')->subject(trans('create-project-form.email-subject'));
         });
 
         // Mail the user, of a successful project submission.
