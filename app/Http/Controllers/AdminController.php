@@ -241,10 +241,12 @@ class AdminController extends Controller {
 
         // Save the new Sponsor Logo in the DB
         $sponsor = new Sponsor;
-        $sponsor->user_id = 1;
+        $sponsor->user_id = 2;
+        $sponsor->top_sponsor = $request->get('top_sponsor');
         $sponsor->business_name = $request->get('business_name');
         $sponsor->url           = $request->get('url');
-        $sponsor->online_since  = date('Y-m-d');
+        $sponsor->online_until  = '2015-12-31';
+        $sponsor->active        = 1;
         $sponsor->save();
 
         $logo = $request->file('logo');

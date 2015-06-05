@@ -48,7 +48,8 @@ class ProjectsController extends Controller {
 
         $succ_projects = $dbSuccProjects->sortByDesc('completed_on');
 
-        $logos = Sponsor::where('active', 1)->get();
+        $logo_num = Sponsor::where('active', 1)->count();
+        $logos = Sponsor::where('active', 1)->get()->shuffle();
 
         return view('pages.home', compact('projects', 'succ_projects', 'logos'));
     }

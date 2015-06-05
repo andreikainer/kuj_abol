@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sponsor extends Model {
 
-   protected $table = 'sponsors_tbl';
+    protected $table = 'sponsors_tbl';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +17,8 @@ class Sponsor extends Model {
         'business_name',
         'logo',
         'url',
-        'online_since',
+        'online_until',
+        'active',
     ];
 
     /**
@@ -30,4 +31,3 @@ class Sponsor extends Model {
         return $this->belongsTo('App\User');
     }
 }
-

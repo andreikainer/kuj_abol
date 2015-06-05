@@ -38,6 +38,11 @@
                 </td>
 
                 <td>
+                    {!! Form::text('top_sponsor', '', array('class'=>'form-input form-inline')) !!}
+                    {{ $errors->first('top_sponsor') }}
+                </td>
+
+                <td>
                    {!! Form::submit('ADD') !!}
                 </td>
             </tr>
