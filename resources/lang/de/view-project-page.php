@@ -22,6 +22,7 @@ return [
   'unfavourite'            => 'Favorit entfernen',
   'share-via-email'        => 'Via Email teilen',
   'close'                  => 'Schließen',
+    'cancel'               => 'Abbrechen',
   'login'                  => 'Einloggen',
   'login-message'          => 'Bitte Einloggen oder Registrieren um dieses Förderungsprojekt zu favorisieren',
   'favorite-added'         => 'Sie haben das ausgewählte Projekt erfolgreich zu Ihren Favoriten hinzugefügt.',
@@ -53,6 +54,13 @@ return [
   'small-block'               => '<h3>Kleiner Förderungsbaustein</h3>',
   'medium-block'              => '<h3>Mittlerer Förderungsbaustein</h3>',
   'large-block'               => '<h3>Großer Förderungsbaustein</h3>',
+
+'share-project'         =>  'Projekt teilen:',
+'sender_name'           =>  'Dein Name:',
+'sender_email'          =>  'Deine Email:',
+'friend_name'           =>  'Empfänger Vor- und Nachname:',
+'friend_email'          =>  'Empfänger Email:',
+'message'               =>  'Deine Nachricht',
 
   'payment-not-available'     => 'Leider ist die Online Förderung momentan noch nicht möglich. Wir bemühen uns diese so schnell wie möglich verfügbar zu machen.'
 

@@ -22,6 +22,7 @@ return [
   'unfavourite'            => 'Unfavourite',
   'share-via-email'        => 'Share via email',
   'close'                  => 'Close',
+    'cancel'               => 'Cancel',
   'login'                  => 'Login',
   'login-message'          => 'Please log in or register to favourite this project',
   'favorite-added'         => 'This Project was successfully added to your Favorite List.',
@@ -52,6 +53,13 @@ return [
   'small-block'               => '<h3>Small Building-block</h3>',
   'medium-block'              => '<h3>Medium Building-block</h3>',
   'large-block'               => '<h3>Large Building-block</h3>',
+
+    'share-project'         =>  'Projekt teilen:',
+    'sender_name'           =>  'Your Name:',
+    'sender_email'          =>  'Your Email:',
+    'friend_name'           =>  'Your friend\'s name:',
+    'friend_email'          =>  'Your friend\'s email:',
+    'message'               =>  'Your message',
 
     'payment-not-available'     => 'Unfortunately the online funding functionality is not available yet. We will try our best to make it available as soon as possible.'
 
