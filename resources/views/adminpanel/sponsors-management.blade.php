@@ -23,23 +23,34 @@
             {!! Form::open(['action' => 'AdminController@addSponsor', 'class' => 'row', 'method' => 'post', 'files' => 'true']) !!}
             <tr>
                 <td>
+                    {!! Form::label('logo', 'Datei', ['class' => 'form-label']) !!}
                     {!! Form::file('logo', ['class' => 'admin-logo-upload form-input', 'accept' => 'image/*']) !!}
                     {{ $errors->first('logo') }}
                 </td>
 
                 <td>
+                    {!! Form::label('business_name', 'Firmenwortlaut', ['class' => 'form-label']) !!}
                     {!! Form::text('business_name', '', array('required', 'class'=>'form-input form-inline')) !!}
                     {{ $errors->first('business_name') }}
                 </td>
 
                 <td>
+                    {!! Form::label('url', 'url', ['class' => 'form-label']) !!}
                     {!! Form::text('url', 'http://', array('class'=>'form-input form-inline')) !!}
                     {{ $errors->first('url') }}
                 </td>
-
+            </tr>
+            <tr>
                 <td>
+                    {!! Form::label('top_sponsor', 'Top Sponsor? 1 / 0', ['class' => 'form-label']) !!}
                     {!! Form::text('top_sponsor', '', array('class'=>'form-input form-inline')) !!}
                     {{ $errors->first('top_sponsor') }}
+                </td>
+
+                <td>
+                    {!! Form::label('ranking', 'Ranking - 10 standard', ['class' => 'form-label']) !!}
+                    {!! Form::text('ranking', '', array('class'=>'form-input form-inline')) !!}
+                    {{ $errors->first('ranking') }}
                 </td>
 
                 <td>

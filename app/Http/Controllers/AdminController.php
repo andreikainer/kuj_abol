@@ -246,6 +246,7 @@ class AdminController extends Controller {
         $sponsor->business_name = $request->get('business_name');
         $sponsor->url           = $request->get('url');
         $sponsor->online_until  = '2015-12-31';
+        $sponsor->ranking       = $request->get('ranking');
         $sponsor->active        = 1;
         $sponsor->save();
 
