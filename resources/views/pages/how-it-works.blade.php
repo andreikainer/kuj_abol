@@ -150,7 +150,7 @@
 <!-- FAQ accordion -->
                 <div class="row" id="faq">
                     <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center mt-3em mb-1em">
-                        <h2 class="heading" id="faq">FAQ</h2>
+                        <h2 class="heading">{{ trans('how-it-works-page.faq') }}</h2>
                     </div>
                 </div>
 

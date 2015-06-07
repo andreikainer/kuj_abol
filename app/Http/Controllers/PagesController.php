@@ -19,16 +19,12 @@ class PagesController extends Controller {
 /*-- Sponsors Page --*/
     public function sponsors()
     {
-        $logos = Sponsor::where('active', 1)->where('top_sponsor', 0)->get();
-        $top_sponsors = Sponsor::where('active', 1)->where('top_sponsor', 1)->get();
+        $logos = Sponsor::where('active', 1)->where('top_sponsor', 0)->get()->sortBy('ranking');
+        $top_sponsors = Sponsor::where('active', 1)->where('top_sponsor', 1)->get()->sortBy('ranking');
+
         return view('pages.sponsors', compact('logos', 'top_sponsors'));
     }
 
-/*-- ABOL Page --*/
-    public function abol()
-    {
-        return view('pages.abol');
-    }
 
     /*-- Imprint Page --*/
     public function imprint()

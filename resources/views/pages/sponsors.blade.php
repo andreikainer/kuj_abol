@@ -18,7 +18,7 @@
                         <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-md-3 img-responsive mb-1em">
                             <a href="{{ $top_sponsor->url }}"><div class="logo-name img-responsive text-center hidden">{{$top_sponsor->business_name}}</div>
                                 <img src="{{ asset('img/logos/' . $top_sponsor->logo) }}" class="img-responsive form-element" alt="{{ $top_sponsor->business_name }}"></a>
-                            <a><h4>Unternehmensbeschreibung</h4></a>
+                            {{--<a><h4>Unternehmensbeschreibung</h4></a>--}}
                         </div>
 
                     @endforeach
