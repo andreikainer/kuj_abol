@@ -11,7 +11,7 @@
 		<meta charset="utf-8" />
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
 
-		<title>Initiative Kinder-und Jugenförderungen</title>
+		<title>Initiative Kinder-und Jugendförderungen</title>
 		<link rel="icon" type="image/png" href="{{ asset('/img/logo_tab.png') }}">
 
     <!-- Slick carousel -->
@@ -311,6 +311,19 @@
     <script src="{{ asset('/js/timing.js') }}"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 	@yield('additional_js')
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49673864-1', 'kinderfoerderungen.at');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>
