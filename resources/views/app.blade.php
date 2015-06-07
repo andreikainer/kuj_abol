@@ -6,8 +6,7 @@
 
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="descripion" content="Crowdfunding für den guten Zweck. Helfen Sie einer Familie aus Österreich und ermöglichen Sie somit Erleichterung im Alltag">
-		<meta name="robots" content="noindex, nofollow" />
+		<meta name="descripion" content="Gemeinsam machen wir es möglich! Fördern Sie einer Familie aus Österreich und ermöglichen Sie somit Erleichterung im Alltag">
 		<meta charset="utf-8" />
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -255,7 +254,7 @@
 
                         <br>
 
-                        <a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('app.terms-and-conditions') }}</a>
+                        {{--<a href="{{ asset('documents/terms-and-conditions.pdf') }}" target="_blank">{{ trans('app.terms-and-conditions') }}</a>--}}
                         <a href="{{ action('PagesController@imprint') }}">{{ trans('app.imprint') }}</a>
 	                </div>
 	            </div>
@@ -272,7 +271,7 @@
 
                         <br>
 
-                        <p>{{ trans('app.website-made-by') }} <a href="{{ action('PagesController@abol') }}">ABOL Web</a></p>
+                        <p>{{ trans('app.website-made-by') }} <a href="http://abol.co.nz">ABOL Web</a></p>
                 	</div>
                 </div>
 

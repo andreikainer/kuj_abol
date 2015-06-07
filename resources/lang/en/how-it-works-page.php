@@ -10,7 +10,17 @@ return [
     | Language translation keys for the contact-page form.
     */
 
-    'goals-list'    => 'Business description and Company history, philosophy and goals go here',
+    'about-us-text'    => '<p>Kinder und Jugendliche mit chronischen Erkrankungen, sowie körperlichen oder geistigen Beeinträchtigung, bedürfen einer ganz besonderen Pflege und Zuwendung. Leider werden die betroffenen Eltern immer öfter vor finanzielle Hürden gestellt und sind nicht in der Lage, ihren Kindern die notwendige Versorgung zu bieten. Der Grund dafür ist, dass die erforderlichen Therapiemaßnahmen oft nur noch zu einem kleinen Teil oder gar nicht von den Krankenkassen bzw. aus öffentlicher Hand finanziert werden. Dadurch vergrößert sich natürlich die Sorge und Angst der betroffenen Mütter und Väter, die auch ohne diese immense Zusatzbelastung unter hohem emotionalem Druck stehen.<br>
+                            Aus diesem Grund hat es sich die AK Sponsoring-Agentur zur Aufgabe gemacht, mittels der Initiative Kinder- und Jugendförderungen Helfer zu mobilisieren um die betroffenen Familien zu unterstützen. Unser kleines, aber höchst engagiertes Team ist bemüht, den Familien mit Lebensmittelpunkt in Österreich ein wenig Entlastung und kleine Freuden im Alltag zu ermöglichen.</br>
+                            Unsere Aufgabenbereiche umfassen:</p>
+                            <ul>
+                                <li class="list-item">Familien finanziell zu entlasten</li>
+                                <li class="list-item">Kinderwünsche zu erfüllen</li>
+                                <li class="list-item">Finanzielle Unterstützung für notwendige medizinische Therapien zur Verfügung zu stellen</li>
+                                <li class="list-item">Beeinträchtigen Kindern eine faire Chance zur weiteren Entwicklung zu geben</li>
+                            </ul><br>
+<p>Um diese Ziele zu verwirklichen betreiben wir soziales Crowdfunding mittels Förderungen / Sponsoring und bewerben die laufenden Projekte durch cleveres Online- und Telefonmarketing. Wir laden Sie alle dazu ein, einen Beitrag zu diesem wichtigen Vorhaben mittels Ihrer Förderung zu leisten! Ganz nach dem Motto: <strong>Gemeinsam machen wir es möglich!</strong></p>',
+
 
     'team-1'        => 'Administration and Project Management',
     'team-2'        => 'Sponsoring Representative',

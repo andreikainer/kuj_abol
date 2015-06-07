@@ -166,7 +166,7 @@
                                 <a href="{{ $logo->url }}">
                                     <div class="logo-name img-responsive text-center hidden">{{$logo->business_name}}</div>
 
-                                    <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive center-block form-element" alt="{{ $logo->business_name }}">
+                                    <img src="{{ asset('img/logos/' . $logo->logo) }}" class="img-responsive form-element" alt="{{ $logo->business_name }}">
                                 </a>
                             </div>
                         @endforeach

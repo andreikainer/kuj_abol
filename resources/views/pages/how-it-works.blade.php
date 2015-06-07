@@ -409,9 +409,9 @@
                     </div>
                 </div>
 
-                <div class="row form-element">
+                <div class="row description form-element">
                     <ul class="col-xs-12 text-left">
-                        {!! trans('how-it-works-page.goals-list') !!}
+                        {!! trans('how-it-works-page.about-us-text') !!}
                     </ul>
                 </div>
 
