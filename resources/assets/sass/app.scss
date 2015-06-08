@@ -1,0 +1,1023 @@
+@import "bootstrap-sass-3.3.2/assets/stylesheets/bootstrap";
+@import 'vars';
+@import 'base';
+@import 'elements';
+@import 'create_project_page';
+@import 'project_detail_page';
+@import 'register_page';
+@import 'userpanel';
+
+/*------------------------------------------------------------------*/
+/*-- Logo styles --*/
+/*------------------------------------------------------------------*/
+.logo {
+  padding-top: .25em;
+  padding-left: .25em;
+  @media (min-width: 768px) {
+    padding-top: .43em;
+  }
+
+  img {
+    width: 150px;
+
+    @media(max-width: 767px) {
+      width: 100px;
+      margin-top: .65rem;
+    }
+    @media (min-width: 768px) {
+      width: 212px;
+      height: 76px;
+    }
+    @media (min-width: 992px) {
+      margin-left: 1rem;
+    }
+    @media (min-width: 1240px) {
+      margin-left: 1.56em;
+    }
+  }
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Main Navigation styles --*/
+/*------------------------------------------------------------------*/
+#main_nav {
+  margin-top: 0;
+
+  ul li a, ul li a:link, ul li a:visited {
+    font-family: $montserrat;
+    font-size: 1.16em;
+    text-transform: uppercase;
+    color: $bluegrey;
+  }
+  ul>li a:hover, ul>li a:active {
+    color: $text;
+  }
+  ul li>ul li.divider {
+    height: 1px;
+    width: 100%;
+  }
+  ul li>ul li a, ul li>ul li a:link, ul li>ul li a:visited {
+    color: $text;
+    font-size: 1em;
+  }
+  ul li>ul li a:hover, ul li>ul li a:active {
+    color: $bluegrey;
+  }
+
+
+  @media(min-width: 768px) and (max-width: 991px) {
+    margin-top: .2em;
+
+    ul>li {
+      padding: .465em;
+      margin-left: 1.1em;
+      margin-right: 1.1em;
+    }
+
+    ul li {
+      padding: .1em;
+    }
+    ul li>ul li {
+      height: auto;
+      padding: auto;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    ul>li a:hover, ul>li a:active {
+      color: $blue;
+    }
+
+
+    ul>li:nth-child(3) {
+      @media(min-width: 768px) and (max-width: 991px) {
+        margin-left: 5rem;
+      }
+      @media(min-width: 911px) and (max-width: 991px) {
+        margin-left: 8rem;
+      }
+    }
+    ul>li:nth-child(4) {
+      margin-left: 3.2rem;
+      margin-right: 3.2rem;
+    }
+    ul li>ul li {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    ul li>ul li:nth-child(3) {
+      margin-left: 0;
+    }
+    ul li>ul li:nth-child(4) {
+      @media(min-width: 768px) and (max-width: 992px) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    margin-top: 3.48em;
+
+    ul>li:not(last-child) {
+      margin-right: 1.4rem;
+    }
+    ul>li a, ul>li a:link, ul>li a:visited {
+      border-top: solid .25em $white;
+      padding: .465em;
+    }
+    ul>li a:hover, ul>li a:active {
+      border-top: solid .25em $blue;
+    }
+    ul li>ul li a, ul li>ul li a:link, ul li>ul li a:visited {
+      border-top: none;
+    }
+    ul li>ul li a:hover, ul li>ul li a:active {
+      border-top: none;
+    }
+  }
+}
+/*-- the line that separates main menu links on small view --*/
+hr {
+  width: 130%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/*-- to adjust the LOGOUT and USERNAME buttons after successful log-in procedure --*/
+#logout {
+  width: 38%;
+  background-color: $orange;
+  border-color: $orange !important;
+
+  &:hover {
+    background-color: darken($orange, 5%);
+  }
+}
+#username-btn {
+  width: 59%;
+
+}
+/*------------------------------------------------------------------*/
+/*-- Group of circle buttons --*/
+/*------------------------------------------------------------------*/
+.circles {
+  display: inline-block;
+  margin-bottom: .5em;
+
+  @media(max-width: 1199px) and (min-width: 1100px) {
+    padding-left: 3.75em;
+  }
+  @media(min-width: 992px){
+    padding-left: 3.5em;
+  }
+  @media(min-width: 1200px){
+    padding-left: 0;
+  }
+}
+
+/*-- Humburger btn --*/
+.mobile-circle-button {
+  margin-bottom: .9em;
+  margin-top: .9em;
+}
+
+.circles>div div {
+  width: 11.25rem;
+}
+.circles>div div:nth-child(2) {
+  margin-top: .6em;
+}
+
+.question i {
+  margin-left: .2rem;
+}
+
+
+/*------------------------------------------------------------------*/
+/*-- Flags for language button --*/
+/*------------------------------------------------------------------*/
+/*
+  SassyFlags - v1.4
+  Daniel Thomas
+*/
+//Default variables
+$flag-x: 2.35rem !default; //changed from 48px to correct the visual effect
+$flag-y: 2.35rem !default;
+
+//Base
+.flag {
+  @extend .inline-block;
+  width: $flag-x; height: $flag-y;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 0;
+  /* Austria */  &.AT, &.at { background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/AT+(Austria)'); }
+  /* UK */       &.GB, &.gb { background-image: url('https://s3-us-west-2.amazonaws.com/layerful-flags/UK+(United+Kingdom).svg'); }
+}
+// Cross browser inline-block
+.inline-block {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Footer styles --*/
+/*------------------------------------------------------------------*/
+footer {
+  margin-top: 1rem;
+  background-color: $bluegrey;
+
+  div {
+    margin-top: 1rem;
+    margin-bottom: 1em;
+  }
+
+  .socialmedia a {
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .socialmedia a i {
+    margin-left: .2rem;
+  }
+
+  #facebook, #twitter, #googleplus, #youtube {
+    background-color: $blue;
+  }
+
+  .socialmedia {
+    margin-top: 2rem;
+  }
+
+  .socialmedia > div {
+    width: 11rem;
+    margin: 0 auto;
+  }
+
+  .socialmedia div:nth-child(2) {
+    width: auto;
+    @media(min-width: 768px) {
+      width: 19rem;
+    }
+  }
+
+  .socialmedia div:nth-child(3) {
+    width: 100%;
+  }
+
+  .socialmedia form {
+    margin: 0 auto;
+    @media(max-width: 400px) {
+      width: 100%;
+    }
+    @media(min-width: 401px) and (max-width: 768px) {
+      width: 86%;
+    }
+    @media(min-width: 769px) and (max-width: 991px) {
+      width: 100%;
+    }
+    @media(min-width: 922px) {
+      width: 83%;
+    }
+  }
+
+  .socialmedia form div:first-of-type {
+    display: inline-block;
+    margin-top: .9rem;
+    vertical-align: middle;
+    @media(min-width: 768px) and (max-width: 991px) {
+      width: 11rem;
+    }
+  }
+
+  .socialmedia input {
+    width: 13rem;
+    @media(min-width: 768px) and (max-width: 991px) {
+      width: 11rem;
+    }
+    @media(min-width: 992px) {
+      width: 10rem;
+    }
+  }
+
+  #newsletter {
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: $dgrey;
+  }
+
+  .footer-text-content a, h5, p {
+    display: block;
+    color: $white;
+  }
+
+  .footer-text-content h5 {
+    font-family: $montserrat;
+    font-size: 1rem;
+    /*-- to adjust the text size for different views --*/
+    @media(min-width: 768px) and (max-width: 991px) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+    @media(min-width: 992px) {
+      font-size: .9rem;
+    }
+  }
+
+  .footer-text-content a, p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    /*-- to adjust the text size for different views --*/
+    @media(min-width: 768px) and (max-width: 991px) {
+      font-size: .8rem;
+      line-height: 1.2rem;
+    }
+    @media(min-width: 992px) {
+      font-size: .8rem;
+      line-height: 1.3rem;
+    }
+  }
+
+  .footer-text-content a {
+    text-decoration: underline;
+  }
+
+  .footer-text-content a:hover {
+    text-decoration: none;
+  }
+
+  .footer-text-content p {
+    font-weight: 100;
+    line-height: 1.4rem;
+    @media(min-width: 992px) {
+      line-height: 1rem;
+    }
+  }
+
+  .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top;
+  }
+
+  div:nth-child(3) i {
+    margin-right: 1rem;
+    @media(min-width: 992px) {
+      margin-right: .6rem;
+    }
+  }
+
+  /*-- to adjust the position of three footer's blocks --*/
+  @media(min-width: 992px) {
+    div:nth-child(2) {
+      left: -20rem;
+    }
+  }
+
+  .no-bottom-margin {
+    margin-bottom: 0;
+  }
+
+  .footer-text-content p {
+    font-weight: 100;
+  }
+  .footer-text-content p a {
+    display: inline-block;
+    line-height: auto;
+    vertical-align: top;
+  }
+
+  #newsletter-signup {
+    input {
+      box-shadow: none !important;
+    }
+  }
+}
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Jumbotron styles --*/
+/*------------------------------------------------------------------*/
+.jumbotron {
+  padding: 0;
+
+  p {
+    font-weight: 300;
+  }
+
+  div {
+    padding: 0;
+
+    h1, p {
+      color: $white;
+      text-shadow: 3px 2px 3px rgba(50, 50, 50, 1);
+    }
+
+    /*-- Correcting some Slick default styles --*/
+    .slick-prev, .slick-next, .slick-next::before, .slick-prev::before {
+      display: none !important;
+    }
+    .slick-slide img {
+      @media (min-width: 1366px) {
+        margin: 0 auto;
+      }
+    }
+    .slick-dots li button:before {
+      font-size: .875rem;
+      color: $bluegrey !important;
+    }
+    .slick-dots li .slick-active button:before {
+      color: $bluegrey !important;
+      opacity: 100% !important;
+    }
+  }
+
+  .jumbotron-text {
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+
+    p {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      top: 0rem;
+      left: 0rem;
+      padding: 1em;
+      padding-top: 0;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p{
+        font-size: 1.3rem;
+      }
+      p a {
+        font-size: 1rem;
+        background-color: $text;
+      }
+    }
+    @media (min-width: 1366px) and (max-width: 1500px) {
+      left: 12rem;
+    }
+    @media (min-width: 1501px) {
+      left: 17%;
+    }
+
+    p:nth-child(3) {
+      margin-top: 3rem !important;
+
+      @media(min-width: 768px) {
+        margin-top: 6rem !important;
+      }
+    }
+  }
+}
+
+.caption {
+  h3 {
+    font-size: 1.8rem;
+    height: auto;
+    @media(min-width: 768px) and (max-width: 991px) {
+      height: 4.5rem !important;
+
+    }
+    @media(min-width: 992px) {
+      height: 6rem !important;
+    }
+  }
+  p:first-of-type {
+    font-size: 1.1rem;
+    height: auto;
+    @media(min-width: 768px) and (max-width: 991px) {
+      height: 8rem !important;
+    }
+    @media(min-width: 992px) {
+      height: 11.1rem !important;
+    }
+  }
+}
+
+
+/*------------------------------------------------------------------*/
+/*-- Project Tiles styles --*/
+/*------------------------------------------------------------------*/
+/*-- Progress bar styles --*/
+.percentage {
+  margin-bottom: 0;
+
+  font-family: $montserrat;
+  font-size: 1.3rem;
+  color: $green;
+}
+
+.progress {
+  background: $dgrey;
+}
+.prog-bar-green {
+  background-color: $green !important;
+  min-width: 2em;
+
+  span {
+    font-size: 2em;
+    line-height: 40px;
+
+  }
+}
+
+/*-- Finished + check styles --*/
+.finished-green {
+  font-family: $montserrat;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $green;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Sponsors Carousel styles --*/
+/*------------------------------------------------------------------*/
+.sponsors_carousel, #sponsors-page {
+  .slick-prev, .slick-next, .slick-prev:before, .slick-next:before {
+    display: block !important;
+    color: $bluegrey !important;
+  }
+
+  div img {
+    min-width: 150px;
+    height: auto;
+  }
+}
+
+/*-- to show the sponsor's name --*/
+.logo-name {
+  display: block;
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+
+  padding: .5rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: $white;
+
+  .form-element {
+    cursor: pointer;
+  }
+}
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Modules styles --*/
+/*------------------------------------------------------------------*/
+.module {
+  .module-submit {
+    font-family: $lato;
+    font-size: 1.1rem;
+    background-color: $bluegrey;
+    border-color: $bluegrey;
+
+    @media(max-width: 1240px) {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  }
+  .module-submit:hover, .module-submit:focus, .module-submit:active {
+    color: $white;
+    border-color: $lgrey;
+  }
+}
+#search_module {
+  height: auto;
+}
+#search-for-this {
+  margin-top: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Contact page, Login page, Send-Reset-Link page, Password-Reset, Account page styles --*/
+/*------------------------------------------------------------------*/
+#help-page, #login-page, #send-reset-link-page, #password-reset-page, .account {
+  font-size: 1.1rem !important;
+
+  .no-projects {
+    margin-bottom: 2rem;
+  }
+
+  input:not([type=submit]):not([type=checkbox]), input[type=password], textarea {
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+
+    &:hover, &:focus, &:active {
+      box-shadow: inset 0 0.5rem 0 0 $blue;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0 !important;
+    margin-top: .925em;
+  }
+
+  .form-error {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+  }
+  .form-error li {
+    list-style-type: disc !important;
+  }
+
+  .cpp-error {
+    margin-top: 0 !important;
+    margin-bottom: 1rem;
+  }
+
+  /*-- Login page buttons -*/
+  #log-me-in {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1em !important;
+  }
+  #forgot-my-password {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: $bluegrey !important;
+    color: $white !important;
+    font-family: $lato;
+    font-size: 1em !important;
+    &:hover {
+      background-color: darken($bluegrey, 10%) !important;
+    }
+  }
+}
+
+#login-page, #send-reset-link-page {
+  .form-error {
+    padding-left: 1rem;
+  }
+}
+
+.border-thin{
+  border: 1px dotted $gray;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*-- How It Works page styles --*/
+/*------------------------------------------------------------------*/
+#how-it-works {
+  font-size: 1.1rem;
+
+  img {
+    margin: 0 auto;
+  }
+  .add-nav {
+    position: fixed;
+    top: 8rem;
+  }
+
+  .m-2em{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $text;
+
+  }
+
+  .form-element {
+//    margin-left: .65rem !important;
+//    margin-right: .65rem !important;
+
+    @media(max-width: 1199px) {
+      padding-left: 0.65rem !important;
+      padding-right: 0.65rem !important;
+    }
+
+    @media(min-width: 1200px) {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+  }
+  div h4 {
+    font-weight: 700 !important;
+    margin-bottom: .1rem;
+    margin-top: 1.6rem;
+    @media(max-width: 992px) {
+      margin-top: 2rem !important;
+    }
+  }
+
+  i {
+    margin-right: .4rem !important;
+  }
+  i.fa-check {
+    color: $green;
+    margin-right: 1rem !important;
+  }
+
+  .team {
+    font-size: 1rem;
+    margin-bottom: .1rem;
+  }
+  .team-role {
+    color: $bluegrey !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    @media(min-width: 992px) {
+      height: 3rem;
+    }
+  }
+
+  .tips {
+    line-height: inherit !important;
+  }
+}
+
+.xs-mt {
+  @media(max-width: 991px) {
+    margin-top: 2rem;
+  }
+  @media(min-width: 992px) {
+    margin-bottom: 2em;
+  }
+}
+
+#how-it-works, .account {
+  .sidemenu-item {
+    font-size: 1rem;
+    box-shadow: inset  0.5rem 0 0 0 $bluegrey !important;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+
+    &:hover, &:active, &:focus {
+      box-shadow: inset  0.5rem 0 0 0 $blue !important;
+    }
+  }
+  .faq {
+
+    @extend .sidemenu-item;
+
+
+    &:hover, &:active, &:focus {
+      color: $blue;
+      background: $dgrey;
+      cursor: pointer;
+      box-shadow: inset  0.5rem 0 0 0 $blue !important;
+      background: #ECECFB;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      vertical-align: middle;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      box-shadow: none !important;
+      a {
+        text-decoration: none !important;
+      }
+    }
+  }
+}
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Account page styles --*/
+/*------------------------------------------------------------------*/
+.account {
+  font-size: 1.1rem;
+
+  .form-section-tab {
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top: none;
+
+    &:hover, &:active, &:focus {
+      box-shadow: inset 0 0.5rem 0 0 $blue !important;
+    }
+  }
+
+  .pad {
+    padding-left: 1em;
+  }
+
+  .form-section-tab-active:not(.userpanel-active) {
+      box-shadow: inset 0 0.5rem 0 0 $blue !important;
+  }
+}
+
+#userpanel-wrapper {
+  background-color: $white;
+  border: 1px solid $dgrey;
+  border-top: none;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+.avatar {
+  width: 250px;
+  height: 160px;
+}
+
+/*------------------------------------------------------------------*/
+/*-- Flash Message styles --*/
+/*------------------------------------------------------------------*/
+.flash-message {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: none;
+
+  z-index: 100;
+  padding: 1rem;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: $blue;
+  background: tint($blue, 75%);
+  border: 1px dashed $blue;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*-- Abol page styles --*/
+/*------------------------------------------------------------------*/
+#abol {
+  background-color: rgb(60,60,74);
+  color: white;
+  font-family: $lato;
+  font-size: 1.2rem;
+
+  .abol-logo {
+    @media(max-width: 768px) {
+      width: 90px;
+      margin-right: .2rem;
+      margin-left: .4rem;
+    }
+    margin-left: 1.9rem;
+    margin-right: 1rem;
+  }
+
+  .main-link {
+    color: white;
+    border-top: solid 2px rgb(246,100,88);
+    border-bottom: solid 2px rgb(246,100,88);
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover, &:active, &:focus {
+      color: rgb(246,100,88);
+      text-decoration: none;
+    }
+  }
+
+  .abol-team {
+    width: 250px;
+    height: 250px;
+    border: solid 3px rgb(60,60,74);
+    transition: all 0.5s ease;
+    &:hover {
+      border: solid 3px rgb(246,100,88);
+    }
+  }
+
+  h2 {
+    font-family: $lato;
+    color: white;
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+  .sec-link {
+    display: block;
+    color: rgb(120, 140, 150);
+    font-weight: 700;
+    transition: all 0.5s ease;
+    &:hover {
+      color: rgb(246,100,88);
+      text-decoration: none;
+    }
+
+    i {
+      margin-right: .5rem;
+      color: rgb(246,100,88);
+      transition: all 0.3s ease;
+    }
+  }
+
+  .mt-5em {
+    margin-top: 5rem;
+  }
+
+  #works {
+    background-color: white;
+
+    h2 {
+      color: rgb(246,100,88);
+      padding-top: 1.5rem;
+      padding-bottom: .6rem;
+      @media(max-width: 767px) {
+        font-size: 140%;
+      }
+    }
+    p {
+      color: white;
+      @media(max-width: 767px) {
+        font-size: 80%;
+      }
+    }
+    img {
+      margin-top: 1rem;
+    }
+
+    .abol-thumbnail {
+      border: solid 2px rgb(60,60,74) !important;
+      transition: all 0.3s ease;
+
+      &:hover, &:active, &:focus {
+        border: solid 2px rgb(246,100,88) !important;
+      }
+    }
+    .caption {
+      background-color: rgb(60,60,74);
+    }
+    .caption, .abol-thumbnail {
+      padding-top: 0 !important;
+    }
+  }
+
+  #footer {
+    background-color: white;
+
+    .copywrite {
+      font-size: .6rem;
+      color: rgb(60,60,74);
+    }
+  }
+
+  .scrollToTop {
+    text-align: center;
+    position: fixed;
+    top: 8em;
+    left: 2em;
+    border: solid 2px rgb(246,100,88);
+    background-color: rgb(246,100,88);
+    display: block;
+    color: white;
+    padding: .3rem;
+
+    &:hover {
+      border-color: white;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.tpad-zero {
+  padding-top: 0 !important;
+}
+
+.imprint{
+  padding: 1em;
+}

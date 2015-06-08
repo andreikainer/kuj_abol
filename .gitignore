@@ -1,0 +1,10 @@
+.idea
+/.idea
+/vendor
+/node_modules
+.env
+.DS_Store
+/public/css/app.css.map
+/public/js/main.js.map
+/composer.lock
+

@@ -1,0 +1,488 @@
+/*------------------------------------------------------------------*/
+/*-- CREATE PROJECT PAGE SPECIFIC --*/
+/*------------------------------------------------------------------*/
+
+/*
+ +--------------------------------------------------------------------
+ |
+ |  GENERAL STYLES
+ |
+ +--------------------------------------------------------------------
+*/
+  .bt-none {
+    border-top: none;
+  }
+
+  .padding-none {
+    padding: 0;
+  }
+
+  .display {
+    display: block !important;
+  }
+
+  .display-none {
+    display: none !important;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .character-count {
+    display: none;
+  }
+
+  .terms-and-conditions {
+    margin-top: 1rem;
+    font-size: 1.0125rem;
+    font-weight: 500;
+
+    a {
+      color: $blue;
+      font-weight: 700;
+    }
+  }
+
+  .project-start-button {
+    @media all and (max-width: 767px) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .fa-no-margin {
+    margin-right: 0;
+  }
+
+  .project-pending-approval {
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    color: $blue;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .project-currently-live {
+    @extend .project-pending-approval;
+    color: $green;
+  }
+/*
+ +--------------------------------------------------------------------
+ |
+ |  FIELD SET STYLES
+ |
+ +--------------------------------------------------------------------
+*/
+  .create-project-fieldset {
+    padding: 0;
+    font-size: 1.0125rem;
+    display: none;
+  }
+
+  .fieldset-active {
+    display: inherit;
+  }
+/*
++--------------------------------------------------------------------
+|
+|  FORM ELEMENT STYLES
+|
++--------------------------------------------------------------------
+*/
+  .form-group {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  .form-pair {
+    @media all and (max-width: 767px) {
+      margin-top: 1rem;
+    }
+  }
+
+  .label-desc {
+    font-size: 1.0125rem;
+    font-weight: normal;
+  }
+
+  fieldset.summary-group {
+    display: block !important;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid $dgrey;
+
+    legend {
+      display: inline-block;
+      width: auto;
+      margin-bottom: 0;
+      padding: 0 0.25rem;
+      font-size: 1.0125rem;
+      font-weight: 700;
+      color: $bluegrey;
+      border: none;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .no-projects {
+    padding: 1.25rem;
+    border: 1px solid $dgrey;
+    background: $lgrey;
+
+    p:first-of-type {
+      margin-top: 10px;
+    }
+  }
+
+  .project-links {
+    @extend .no-projects
+  }
+
+  .saved-project-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: $bluegrey;
+
+    @media all and (max-width: 991px) {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    @media all and (max-width: 767px) {
+      margin: 0;
+    }
+  }
+
+  .supporting-doc {
+    margin-bottom: 2rem;
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .form-explanation {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid $dgrey;
+    color: $bluegrey;
+
+    p:first-of-type {
+      margin-top: 10px;
+    }
+  }
+/*
++--------------------------------------------------------------------
+|
+|  FORM BUTTON STYLES
+|
++--------------------------------------------------------------------
+*/
+  .form-button {
+    padding: 0.65rem;
+    font-weight: 500;
+    color: $white;
+    background: $green;
+    border: 1px solid darken($green, 10%);
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: lighten($green, 10%);
+    }
+  }
+
+  .form-button-secondary {
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    background: $bluegrey;
+    border: 1px solid darken($bluegrey, 10%);
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: lighten($bluegrey, 10%);
+    }
+
+    a {
+      color: $white;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      padding: 0.65rem;
+
+      &:hover, &:active, &:visited, &:focus {
+        color: $white;
+        text-decoration: none !important;
+      }
+    }
+  }
+
+  .form-button-nav {
+    display: inline-block;
+    background: $blue;
+    border: 1px solid darken($blue, 10%);
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: lighten($blue, 10%);
+    }
+  }
+
+  .form-button-full-width {
+    width: 100%;
+  }
+
+  .form-save-button-disabled {
+    background: $dgrey;
+    border-color: $dgrey;
+
+    &:hover {
+      background: $dgrey;
+    }
+  }
+
+  .saved-project-continue {
+    @extend .form-button;
+    display: inline-block;
+    width: 100%;
+
+    &:visited, &:focus, &:active, &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  .saved-project-delete {
+    @extend .saved-project-continue;
+    background: $bluegrey;
+    border: 1px solid darken($bluegrey, 10%);
+    border-radius: 0.35rem;
+
+    &:hover {
+      background: lighten($bluegrey, 10%);
+    }
+  }
+
+  .summary-page-button {
+    margin-top: 0.5rem;
+
+    @media all and (max-width: 991px) {
+      margin-bottom: 2.5rem;
+    }
+  }
+/*
++--------------------------------------------------------------------
+|
+|  FILE UPLOAD STYLES
+|
++--------------------------------------------------------------------
+*/
+  .image-upload-wrapper {
+    position: relative !important;
+
+    @media all and (max-width: 768px) {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  .image-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../img/loader.gif") no-repeat center center;
+    display: none;
+  }
+
+  .image-upload-preview {
+    width: 100%;
+    display: none;
+  }
+
+  .image-upload-label {
+    z-index: 1001;
+    width: 100%;
+    padding: 1.25rem;
+    margin-bottom: 0;
+    background: tint($blue, 75%);
+    border: 1px dashed $blue;
+    cursor: pointer;
+
+    span {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .image-upload-label-heading {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    color: $blue;
+  }
+
+  .image-upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+  }
+
+  .image-upload-close-button {
+    position: absolute;
+    z-index: 1020;
+    top: -2%;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-top: 2px;
+    border-radius: 50%;
+    font-family: $montserrat;
+    text-align: center;
+    font-weight: 500;
+    color: $white;
+    background: $bluegrey;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: lighten($bluegrey, 10%);
+    }
+  }
+/*
++--------------------------------------------------------------------
+|
+|  ERROR MESSAGE STYLES
+|
++--------------------------------------------------------------------
+*/
+  .cpp-error {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    background: none;
+    border: none;
+  }
+
+  .error-box {
+    margin-bottom: 2rem;
+    font-size: 1.0125rem;
+    background: tint($orange, 60%) !important;
+    border: 1px dashed $orange !important;
+  }
+
+  .form-input-error {
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: inset 0 0.5rem 0 0 $orange !important;
+    -moz-box-shadow: inset 0 0.5rem 0 0 $orange !important;
+    box-shadow: inset 0 0.5rem 0 0 $orange !important;
+    border-radius: 0;
+
+    &:hover, &:focus {
+      -webkit-appearance: none !important;
+      -webkit-box-shadow: inset 0 0.5rem 0 0 $orange !important;
+      -moz-box-shadow: inset 0 0.5rem 0 0 $orange !important;
+      box-shadow: inset 0 0.5rem 0 0 $orange !important;
+      border-radius: 0;
+    }
+  }
+
+  .form-section-tab-error {
+    border-top: 4px solid $orange;
+  }
+
+  .form-input-disabled {
+    cursor: not-allowed;
+  }
+/*
++--------------------------------------------------------------------
+|
+|  SIDE BAR STYLES
+|
++--------------------------------------------------------------------
+*/
+  .aside-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .tips-heading {
+    margin-bottom: 0;
+    color: $blue !important;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  a.tip-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $blue;
+
+    &:hover, &:active, &:visited, &:focus {
+      text-decoration: none !important;
+    }
+  }
+
+  .tip-explanation {
+    p {
+      margin-top: 0.75em;
+      font-size: 1.0125rem;
+      line-height: 1.65em;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {}
+      margin-bottom: 0;
+    }
+  }
+/*
++--------------------------------------------------------------------
+|
+|  SUCCESS PAGE STYLES
+|
++--------------------------------------------------------------------
+*/
+  .success-container {
+    @extend .form-element;
+
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    border-radius: 0;
+  }
+
+  .success-heading {
+    margin: 0 -15px 1rem -15px !important;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px darken($green, 15%);
+    color: $white;
+    background: $green;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+  }
+
+  .success-sub-heading {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: $bluegrey;
+  }
+
+  .success-page-link {
+    transition: color 0.3s ease;
+  }

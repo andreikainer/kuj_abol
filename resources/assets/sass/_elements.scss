@@ -1,0 +1,458 @@
+/*------------------------------------------------------------------*/
+/*-- CLASSES --*/
+/*------------------------------------------------------------------*/
+
+/*-- to remove blue frame from links, buttons and input fields --*/
+.no-outline {
+  outline: none !important;
+}
+
+/*-- to give an elem white bg color --*/
+.white-bg {
+  background-color: $white;
+}
+
+/*-- to center align the block --*/
+.alignme-center {
+  @media(min-width: 768px) {
+    display: inline-block;
+  }
+}
+
+/*-- messages for old browsers and users with disabled JS --*/
+.message {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 1000;
+  padding: 1em;
+  background-color: $orange;
+}
+.message>p {
+  font-family: $lato;
+  font-size: 1.3em;
+  font-weight: 100;
+  color: $white;
+}
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- BUTTONS --*/
+/*------------------------------------------------------------------*/
+/*-- main small CTA's buttons --*/
+.button-main, .button-main:link, .button-main:visited {
+  @extend .no-outline;
+
+  background-color: $blue;
+  color: $white !important;
+  border-color: $blue !important;
+
+  font-family: $lato;
+  letter-spacing: .06em;
+
+  &:hover, &:active {
+    background-color: darken($blue, 15%);
+    color: $white !important;
+  }
+}
+
+/*-- main big CTA's buttons --*/
+.button-main-big, .button-main-big:link, .button-main-big:visited {
+  @extend .no-outline;
+  @extend .button-main;
+
+  width: 80%;
+  margin-left: 10%;
+  font-size: 1.1em;
+  line-height: 1.6rem;
+  font-weight: bold;
+
+  @media(max-width: 768px)
+  {
+    font-size: 1.1rem;
+  }
+
+  &:hover, &:active {
+    @extend .button-main:hover;
+  }
+}
+
+/*-- secondary CTA's buttons --*/
+.button-sec, .button-sec:link, .button-sec:visited  {
+  @extend .no-outline;
+
+  background-color: $dgrey;
+  color: $text;
+  border-color: $dgrey;
+
+  font-weight: 300;
+
+  &:hover, &:active {
+    color: $white;
+    background-color: darken($dgrey, 10%);
+    border-color: darken($dgrey, 10%);
+  }
+}
+
+/*-- LOG IN and REGISTER buttons --*/
+.button-user {
+  @extend .no-outline;
+  width: 7.2em;
+}
+
+
+/*-- for HELP, SEARCH, HUMBURGER, LANGUAGE CHOOSING buttons --*/
+.button-circle, .button-circle:link, .button-circle:visited {
+  @extend .no-outline;
+
+  width: 2.45rem;
+  margin-right: .2em;
+  margin-bottom: 0;
+  border-radius: 50%;
+
+  background-color: $bluegrey;
+  color: $white;
+
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.0.2
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ * Hover.css Copyright Ian Lunn 2014. Generated with Sass.
+ */
+/* Push */
+@-webkit-keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.hvr-push {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+  -webkit-animation-name: hvr-push;
+  animation-name: hvr-push;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+
+
+.button-link {
+  @extend .no-outline;
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: $blue;
+  text-decoration: underline !important;
+}
+
+.button-transparent, .button-transparent:link, .button-transparent:visited {
+  @extend .no-outline;
+
+  border: .125rem solid $white;
+  @include border-radius(5px);
+  background-color: $text;
+  padding: .5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  font-family: $montserrat;
+  color: $white;
+
+  &:hover, &:active {
+    color: darken($white, 10%);
+    background-color: $blue;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+/*------------------------------------------------------------------*/
+  /*-- FORMS --*/
+/*------------------------------------------------------------------*/
+.top-error {
+  background: tint($orange, 60%) !important;
+  border: 1px dashed $orange !important;
+  padding: 0.65rem !important;
+}
+
+.form-error {
+  padding: 0.65rem;
+  color: $orange;
+  background: tint($orange, 60%);
+  border: 1px dashed $orange;
+}
+
+.form-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: $bluegrey;
+}
+
+.form-input {
+  display: block !important;
+  -webkit-appearance: none !important;
+  width: 100%;
+  padding: 1.15rem 0.65rem 0.65rem 0.65rem;
+  border: 1px solid $dgrey;
+  border-top: none;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+  -moz-box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+  box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    -webkit-box-shadow: inset 0 0.5rem 0 0 $blue;
+    -moz-box-shadow: inset 0 0.5rem 0 0 $blue;
+    box-shadow: inset 0 0.5rem 0 0 $blue;
+  }
+
+  &:focus {
+    outline: none !important;
+    -webkit-box-shadow: inset 0 0.5rem 0 0 $blue;
+    -moz-box-shadow: inset 0 0.5rem 0 0 $blue;
+    box-shadow: inset 0 0.5rem 0 0 $blue;
+  }
+}
+
+.form-element {
+  background: $white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid $dgrey;
+  @include border-radius(0.35rem);
+}
+
+.form-section-tab {
+  padding: 0.65rem 0 0.7rem 0;
+  line-height: 2.25rem;
+  font-size: 1.0125rem;
+  font-weight: 500;
+  background: tint($text, 90%);
+  border-top: 4px solid $bluegrey;
+  border-bottom: 1px solid $dgrey;
+  border-right: 1px solid $dgrey;
+  border-top-right-radius: 0.35rem;
+  border-top-left-radius: 0.35rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    background: tint($dgrey, 92%);
+  }
+}
+
+.form-section-tab-border-left {
+  border-left: 1px solid $dgrey;
+}
+
+.form-section-tab-active {
+  background: $white;
+  border-top: 4px solid $blue;
+  border-bottom: 1px solid $white;
+  color: $blue;
+
+  &:hover {
+    background: $white;
+  }
+}
+
+.form-radius-btm-only {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+// to make the top-border of input field red color when there is an error
+.error-red-top {
+  -webkit-appearance: none !important;
+  -webkit-box-shadow: inset 0 0.5rem 0 0 $orange !important;
+  -moz-box-shadow: inset 0 0.5rem 0 0 $orange !important;
+  box-shadow: inset 0 0.5rem 0 0 $orange !important;
+}
+
+.active-sidemenu-item {
+  -webkit-box-shadow: inset 0.5rem 0 0 0 $blue;
+  -moz-box-shadow: inset 0.5rem 0 0 0 $blue;
+  box-shadow: inset 0.5rem 0 0 0 $blue;
+}
+
+
+/*------------------------------------------------------------------*/
+  /*-- PROJECT TILE --*/
+/*------------------------------------------------------------------*/
+.tile {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0;
+  box-shadow: inset 0 .5rem 0 0 $bluegrey;
+  padding-top: .5rem !important;
+}
+.tile:hover, .tile:focus, .tile:active {
+  box-shadow: inset 0 .5rem 0 0 $blue;
+}
+
+.success {
+  @extend .tile;
+}
+.success:hover, .success:focus, .success:active {
+  box-shadow: inset 0 .5rem 0 0 $green;
+}
+
+/*-- GREEN TICK for successful projects --*/
+.fa-check {
+  margin-right: .5rem;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*-- MODULES --*/
+/*------------------------------------------------------------------*/
+.module {
+  display: none;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  width: 80%;
+  left: 11%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: $dgrey;
+
+  font-size: 1rem !important;
+  border-bottom-left-radius: .35rem;
+  border-bottom-right-radius: .35rem;
+  border: solid 1px $bluegrey;
+  border-top-color: $dgrey;
+
+  @media(max-width: 768px) {
+    .form-group {
+      padding: 0;
+    }
+  }
+
+  i {
+    display: none;
+
+    @media(min-width: 768px) {
+      & {
+        display: block;
+        background: $white;
+        border-radius: 50%;
+        height: .5em;
+        width: .8em;
+        padding: 0;
+
+        &::before {
+          position: absolute;
+          bottom: -.25em;
+          color: $orange;
+          cursor: pointer;
+        }
+      }
+    }
+
+    form {
+      font-size: 1rem;
+    }
+  }
+
+  button.button-circle {
+    background-color: $orange !important;
+    margin-bottom: 1rem;
+    margin-top: 0 !important;
+  }
+
+  i[data-mobile=true] {
+    display: block;
+    background-color: $orange !important;
+
+    &::before {
+      color: $white;
+    }
+  }
+
+  input:not([type=submit]):not([type=checkbox]), textarea {
+    @extend .no-outline;
+    @extend .form-input;
+
+    box-shadow: inset 0 0.5rem 0 0 $bluegrey;
+    z-index: 11;
+  }
+
+  h4 {
+    color: $bluegrey;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media(min-width: 768px) {
+      margin-left: 1rem;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $blue;
+
+      &:hover {
+        color: darken($blue, 10%);
+      }
+    }
+  }
+}

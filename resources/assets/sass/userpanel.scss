@@ -1,0 +1,143 @@
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+.userpanel-section {
+  @extend .form-element;
+  @extend .form-radius-btm-only;
+  @extend .create-project-fieldset;
+
+  border: none;
+
+}
+
+.userpanel-active {
+  @extend .fieldset-active;
+  @extend .form-section-tab-active;
+}
+
+.finished-td, .ongoing-td, .banned-td {
+  @extend .finished-green;
+
+  padding: 0;
+  font-size: 1em !important;
+  line-height: 1em !important;
+}
+
+.ongoing-td {
+  color: $blue !important;
+}
+
+.banned-td {
+  color: $orange !important;
+}
+
+.contribute-td {
+  @extend .contribute;
+
+  margin: 0;
+  padding: 0 0.5em 0 0.5em;
+  height: auto !important;
+  font-size: 1em !important;
+  font-family: $montserrat !important;
+}
+
+.btn_sec-td {
+  @extend .btn_sec;
+
+  padding: 0 !important;
+  font-weight: 700 !important;
+  vertical-align: top !important;
+}
+
+.no-contributions {
+  padding: 3rem;
+
+  h4 {
+    color: $text;
+  }
+}
+
+.adminpanel-useravatar {
+  width: 90px !important;
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image: none !important;
+}
+
+.image-modal-control {
+  color: $blue !important;
+}
+
+#view-edit-project {
+  font-size: 1.0125rem;
+}
+
+.admin-preview-element {
+  @extend .form-input;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+
+  border-top: 1px solid $dgrey;
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+.project-owner-details {
+  @extend .admin-preview-element;
+
+  cursor: default;
+
+  p {
+      i {
+        width: 1em;
+        margin-right: 0.5em;
+        color: $bluegrey;
+      }
+  }
+
+  .col-md-12:last-of-type, .col-sm-12:last-of-type {
+      p {
+        margin-bottom: 0;
+      }
+  }
+}
+
+.orange_btn {
+  background-color: $orange;
+  color: $white !important;
+  border-color: $orange !important;
+
+  font-family: $lato;
+  letter-spacing: .06em;
+
+  &:hover, &:active {
+    background-color: darken($orange, 15%);
+    color: $white !important;
+    cursor: pointer;
+  }
+}
+
+.blue_btn {
+  background-color: $blue;
+  color: $white !important;
+  border-color: $blue !important;
+
+  font-family: $lato;
+  letter-spacing: .06em;
+
+  &:hover, &:active {
+    background-color: darken($blue, 15%);
+    color: $white !important;
+    cursor: pointer;
+  }
+}
+
+//.table{
+//
+//  table-layout: fixed;
+//
+//}
