@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52765a66-2949-42bc-9044-2d55892d7328" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj" afterPath="$PROJECT_DIR$/kuj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/app/Http/Controllers/ContactFormController.php" afterPath="$PROJECT_DIR$/kuj/app/Http/Controllers/ContactFormController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/app/Http/Controllers/ProjectsController.php" afterPath="$PROJECT_DIR$/kuj/app/Http/Controllers/ProjectsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/kuj/resources/views/app.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/de/app.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/de/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/en/app.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/en/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/public/js/create-project-page/create-project.js" afterPath="$PROJECT_DIR$/kuj/public/js/create-project-page/create-project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/views/forms/partials/edit-project-supporting-evidence.blade.php" afterPath="$PROJECT_DIR$/kuj/resources/views/forms/partials/edit-project-supporting-evidence.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/de/emails.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/de/emails.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/en/emails.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/en/emails.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/de/faq.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/de/faq.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/en/faq.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/en/faq.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/de/how-it-works-page.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/de/how-it-works-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/en/how-it-works-page.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/en/how-it-works-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/views/pages/how-it-works.blade.php" afterPath="$PROJECT_DIR$/kuj/resources/views/pages/how-it-works.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/views/pages/imprint.blade.php" afterPath="$PROJECT_DIR$/kuj/resources/views/pages/imprint.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/config/mail.php" afterPath="$PROJECT_DIR$/kuj/config/mail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/public/js/main.js.map" afterPath="$PROJECT_DIR$/kuj/public/js/main.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/public/js/main.js" afterPath="$PROJECT_DIR$/kuj/public/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/assets/js/main.js" afterPath="$PROJECT_DIR$/kuj/resources/assets/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/readme.md" afterPath="$PROJECT_DIR$/kuj/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/de/register-page.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/de/register-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/en/register-page.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/en/register-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/de/view-project-page.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/de/view-project-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kuj/resources/lang/en/view-project-page.php" afterPath="$PROJECT_DIR$/kuj/resources/lang/en/view-project-page.php" />
     </list>
     <ignored path="kuj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,21 +154,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kuj/resources/lang/de/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.333002" vertical-offset="765" max-vertical-offset="1870">
-              <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+            <state vertical-scroll-proportion="-12.935484" vertical-offset="765" max-vertical-offset="1870">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kuj/readme.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.04" vertical-offset="0" max-vertical-offset="330">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.19093539" vertical-offset="0" max-vertical-offset="1037">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,7 +177,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/kuj" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -241,7 +265,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -270,6 +294,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="kuj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kuj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kuj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -409,6 +443,7 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.gitignore" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -556,18 +591,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kuj/readme.md">
+    <entry file="file://$PROJECT_DIR$/kuj/resources/lang/de/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.04" vertical-offset="0" max-vertical-offset="330">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        <state vertical-scroll-proportion="-12.935484" vertical-offset="765" max-vertical-offset="1870">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kuj/resources/lang/de/app.php">
+    <entry file="file://$PROJECT_DIR$/kuj/readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.333002" vertical-offset="765" max-vertical-offset="1870">
-          <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.19093539" vertical-offset="0" max-vertical-offset="1037">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
